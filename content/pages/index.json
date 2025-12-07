@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "badge": "Cultivating Sustainable Futures",
+    "titleLine1": "Regenerative",
+    "titleHighlight": "Agriculture for",
+    "titleLine3": "Tomorrow",
+    "subtitle": "ZenTrust empowers communities through sustainable farming practices, environmental restoration, and educational programs that create lasting positive impact for generations to come.",
+    "primaryCta": "Make a Donation",
+    "primaryCtaLink": "/donate",
+    "secondaryCta": "Watch Our Story",
+    "secondaryCtaLink": "",
+    "achievements": [
+      "Regenerative Agriculture Training",
+      "Watershed Restoration",
+      "Community Education Programs",
+      "Scientific Research Initiatives"
+    ],
+    "impactStats": [
+      { "number": "50,000+", "label": "Trees Planted" },
+      { "number": "1,200+", "label": "Farmers Trained" },
+      { "number": "15", "label": "Research Projects" },
+      { "number": "25", "label": "Communities Served" }
+    ],
+    "callout": {
+      "title": "Join Our Mission",
+      "subtitle": "Every action counts. Together, we can restore our planet.",
+      "cta": "Explore Programs",
+      "ctaLink": "/programs"
+    }
+  },
+  "stats": [
+    {
+      "number": "25+",
+      "label": "Communities Served",
+      "description": "Across multiple regions globally"
+    },
+    {
+      "number": "15+",
+      "label": "Partner Organizations",
+      "description": "Collaborating for greater impact"
+    },
+    {
+      "number": "50+",
+      "label": "Research Publications",
+      "description": "Advancing sustainable practices"
+    },
+    {
+      "number": "98%",
+      "label": "Donation Transparency",
+      "description": "Directly funding our mission"
+    }
+  ],
+  "programsSection": {
+    "title": "Our Programs",
+    "subtitle": "Discover how we're making a difference through innovative programs \n              focused on sustainable agriculture, environmental restoration, and community education.",
+    "ctaText": "View All Programs",
+    "ctaLink": "/programs"
+  },
+  "storiesSection": {
+    "title": "Success Stories",
+    "subtitle": "Real stories of transformation and hope from communities we've had the \n              privilege to work alongside in our mission for a sustainable future.",
+    "ctaText": "Read More Stories",
+    "ctaLink": "/impact#stories"
+  },
+  "newsletter": {
+    "title": "Stay Connected",
+    "subtitle": "Get updates on our latest programs, success stories, and ways you can \n              contribute to our mission of creating a more sustainable future.",
+    "emailPlaceholder": "Enter your email",
+    "buttonText": "Subscribe",
+    "disclaimer": "We respect your privacy. Unsubscribe at any time."
+  }
+}

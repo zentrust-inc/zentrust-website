@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Our Impact in Action",
+    "subtitle": "See the tangible difference we're making together. Every donation, every volunteer hour, every program participant contributes to measurable positive change in communities worldwide.",
+    "primaryCta": "Support Our Impact",
+    "primaryCtaLink": "/donate",
+    "secondaryCta": "Read Success Stories",
+    "secondaryCtaLink": "#stories"
+  },
+  "focusAreas": {
+    "title": "Our Focus Areas",
+    "subtitle": "We tackle environmental challenges through four interconnected focus areas, each designed to create lasting, measurable impact."
+  },
+  "stories": {
+    "title": "Success Stories",
+    "subtitle": "Real stories of transformation and hope from communities we've had the privilege to work alongside. These are the faces and places behind our impact numbers.",
+    "cta": "View All Success Stories"
+  },
+  "awards": {
+    "title": "Recognition & Awards",
+    "subtitle": "Our impact has been recognized by leading environmental and social impact organizations."
+  },
+  "transparency": {
+    "title": "Transparency & Accountability",
+    "subtitle": "We believe in complete transparency. Every dollar donated, every project completed, and every person impacted is tracked and reported.",
+    "cards": [
+      {
+        "title": "Financial Transparency",
+        "body": "98% of donations go directly to programs. Complete financial reports available quarterly.",
+        "cta": "View Financial Reports"
+      },
+      {
+        "title": "Impact Measurement",
+        "body": "Every project includes clear metrics and regular impact assessments by third parties.",
+        "cta": "See Our Methodology"
+      },
+      {
+        "title": "Community Voice",
+        "body": "Regular surveys and feedback from program participants ensure we're meeting real needs.",
+        "cta": "Read Testimonials"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Be Part of Our Impact Story",
+    "subtitle": "Your support helps us continue creating measurable positive change. Join thousands of donors who are making a real difference in communities worldwide.",
+    "primaryCta": "Donate Now",
+    "secondaryCta": "Get Involved",
+    "secondaryCtaLink": "/contact"
+  }
+}

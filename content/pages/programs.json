@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Our Programs",
+    "subtitle": "Explore our comprehensive programs designed to create lasting positive change through sustainable agriculture, environmental restoration, and community empowerment.",
+    "primaryCta": "Support Our Programs",
+    "primaryCtaLink": "/donate",
+    "secondaryCta": "See Our Impact",
+    "secondaryCtaLink": "/impact"
+  },
+  "featured": {
+    "title": "Featured Program",
+    "subtitle": "Our flagship program that's making the biggest impact in sustainable agriculture training."
+  },
+  "allPrograms": {
+    "title": "All Programs",
+    "subtitle": "Browse our complete range of programs by category",
+    "emptyTitle": "No programs found",
+    "emptySubtitle": "Try selecting a different category to see more programs.",
+    "resetCta": "View All Programs"
+  },
+  "impact": {
+    "title": "Program Impact",
+    "subtitle": "Combined impact from all our programs working together to create change.",
+    "metrics": [
+      {
+        "value": "6",
+        "label": "Active Programs",
+        "subtext": "Across 4 categories"
+      },
+      {
+        "value": "25+",
+        "label": "Communities",
+        "subtext": "Globally served"
+      },
+      {
+        "value": "15,000+",
+        "label": "People Impacted",
+        "subtext": "Direct beneficiaries"
+      },
+      {
+        "value": "5+",
+        "label": "Years Running",
+        "subtext": "Proven track record"
+      }
+    ]
+  },
+  "getInvolved": {
+    "title": "Get Involved in Our Programs",
+    "subtitle": "Whether you're a farmer looking to learn new techniques, a student interested in environmental science, or a community member wanting to make a difference, we have opportunities for you.",
+    "audiences": [
+      {
+        "title": "For Farmers",
+        "description": "Join our training programs and learn sustainable farming practices",
+        "cta": "Learn More"
+      },
+      {
+        "title": "For Students",
+        "description": "Apply for our youth leadership and internship programs",
+        "cta": "Apply Now"
+      },
+      {
+        "title": "For Communities",
+        "description": "Partner with us to bring programs to your community",
+        "cta": "Partner With Us"
+      },
+      {
+        "title": "For Organizations",
+        "description": "Corporate partnerships and collaboration opportunities",
+        "cta": "Explore Partnership"
+      }
+    ],
+    "contactCta": "Contact Our Team",
+    "supportCta": "Support Our Programs"
+  }
+}

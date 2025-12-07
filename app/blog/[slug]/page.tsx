@@ -1,0 +1,92 @@
+// /app/blog/[slug]/page.tsx
+import fs from "fs";
+import path from "path";
+import { notFound } from "next/navigation";
+import client from "../../../tina/__generated__/client";
+import TinaBlogClient from "./TinaBlogClient";
+
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const slug = params?.slug;
+  if (!slug) {
+    return notFound();
+  }
+
+  let data;
+  try {
+    data = await client.queries.blog({
+      relativePath: `${slug}.mdx`,
+    });
+  } catch (e) {
+    return notFound();
+  }
+
+  const post = data?.data?.blog;
+  if (!post) {
+    return notFound();
+  }
+
+  let allPostsRes;
+  try {
+    allPostsRes = await client.queries.blogConnection();
+  } catch (e) {
+    allPostsRes = null;
+  }
+
+  const allPosts =
+    allPostsRes?.data?.blogConnection?.edges
+      ?.map((edge) => edge?.node)
+      .filter(Boolean)
+      .sort(
+        (a, b) =>
+          new Date(b?.date || "").getTime() -
+          new Date(a?.date || "").getTime()
+      ) ?? [];
+
+  const relatedPosts =
+    allPosts
+      ?.filter((p) => p?._sys?.filename !== slug)
+      ?.filter((p) => {
+        if (!p) return false;
+        const matchPrimary = p.primaryCategory && p.primaryCategory === post.primaryCategory;
+        const matchCategories =
+          Array.isArray(p.categories) &&
+          Array.isArray(post.categories) &&
+          p.categories.some((cat: string) => post.categories?.includes?.(cat));
+        const matchTags =
+          Array.isArray(p.tags) &&
+          Array.isArray(post.tags) &&
+          p.tags.some((tag: string) => post.tags?.includes?.(tag));
+        return matchPrimary || matchCategories || matchTags;
+      })
+      .slice(0, 3) ?? [];
+
+  const currentIndex = allPosts.findIndex((p) => p?._sys?.filename === slug);
+  const prevPost = currentIndex >= 0 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
+  return (
+    <TinaBlogClient
+      data={{
+        post: {
+          ...post,
+          date: post?.date ?? "",
+        },
+      }}
+      query={data?.query}
+      variables={data?.variables}
+      relatedPosts={relatedPosts}
+      prevPost={prevPost}
+      nextPost={nextPost}
+    />
+  );
+}
+export async function generateStaticParams() {
+  const blogDir = path.join(process.cwd(), "content", "blog");
+  const files = fs.existsSync(blogDir) ? fs.readdirSync(blogDir) : [];
+
+  return files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => ({
+      slug: file.replace(/\.mdx$/, ""),
+    }));
+}

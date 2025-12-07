@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTrust - Styled Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ["class"],
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(214.3, 31.8%, 91.4%)",
+                        input: "hsl(214.3, 31.8%, 91.4%)",
+                        ring: "hsl(142.1, 70.6%, 45.3%)",
+                        background: "hsl(0, 0%, 100%)",
+                        foreground: "hsl(222.2, 84%, 4.9%)",
+                        primary: {
+                            DEFAULT: "hsl(142.1, 70.6%, 45.3%)",
+                            foreground: "hsl(355.7, 100%, 97.3%)",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(210, 40%, 96%)",
+                            foreground: "hsl(222.2, 84%, 4.9%)",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(210, 40%, 96%)",
+                            foreground: "hsl(215.4, 16.3%, 46.9%)",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(210, 40%, 96%)",
+                            foreground: "hsl(222.2, 84%, 4.9%)",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(0, 84.2%, 60.2%)",
+                            foreground: "hsl(210, 40%, 98%)",
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, hsl(142.1, 70.6%, 45.3%), #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <!-- Hero Section Demo -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-emerald-500/10"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                    Cultivating Sustainable Futures
+                </div>
+
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Regenerative
+                    <span class="block gradient-text">Agriculture for</span>
+                    <span class="block">Tomorrow</span>
+                </h1>
+
+                <p class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    ZenTrust empowers communities through sustainable farming practices, 
+                    environmental restoration, and educational programs that create lasting 
+                    positive impact for generations to come.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+                        Make a Donation
+                        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-input bg-background font-medium hover:bg-accent transition-colors">
+                        Watch Our Story
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section Demo -->
+    <section class="py-16 bg-card border-t border-border">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold mb-2">25+</div>
+                    <div class="text-sm font-medium mb-1">Communities Served</div>
+                    <div class="text-xs text-muted-foreground">Across multiple regions globally</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold mb-2">15+</div>
+                    <div class="text-sm font-medium mb-1">Partner Organizations</div>
+                    <div class="text-xs text-muted-foreground">Collaborating for greater impact</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold mb-2">50+</div>
+                    <div class="text-sm font-medium mb-1">Research Publications</div>
+                    <div class="text-xs text-muted-foreground">Advancing sustainable practices</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold mb-2">98%</div>
+                    <div class="text-sm font-medium mb-1">Donation Transparency</div>
+                    <div class="text-xs text-muted-foreground">Directly funding our mission</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section Demo -->
+    <section class="py-24 bg-background">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Our <span class="gradient-text">Programs</span>
+                </h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Discover how we're making a difference through innovative programs 
+                    focused on sustainable agriculture, environmental restoration, and community education.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Program Card 1 -->
+                <div class="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Regenerative Agriculture Training</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Empowering farmers with sustainable farming techniques that restore soil health and increase biodiversity.
+                    </p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                        Education
+                    </div>
+                    <div class="text-primary font-bold text-lg">1,200+ Farmers Trained</div>
+                </div>
+
+                <!-- Program Card 2 -->
+                <div class="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+                        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Watershed Restoration Initiative</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Restoring critical watershed areas through native tree planting and erosion control measures.
+                    </p>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                        Conservation
+                    </div>
+                    <div class="text-primary font-bold text-lg">50,000+ Trees Planted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section Demo -->
+    <section class="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Stay Connected
+                </h2>
+                <p class="text-lg text-muted-foreground mb-8">
+                    Get updates on our latest programs, success stories, and ways you can 
+                    contribute to our mission of creating a more sustainable future.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                    <button class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+                        Subscribe
+                    </button>
+                </div>
+                
+                <p class="text-xs text-muted-foreground mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
