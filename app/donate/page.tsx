@@ -1,229 +1,298 @@
-import { Button } from '@/components/ui/button'
-import { Heart, Shield, TrendingUp, Users, TreePine, Microscope, Target, Zap, Award } from 'lucide-react'
-import Link from 'next/link'
+"use client"
 
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import {
+  Heart,
+  Shield,
+  Leaf,
+  Microscope,
+  Users,
+  TreePine,
+  Zap,
+  Globe2,
+  BookOpen,
+  TrendingUp,
+  Activity,
+} from "lucide-react"
+
+/* --------------------------------------------------------------------------
+   DONATION TIERS — Fully aligned with regeneration, sovereignty, anti-fragility
+-------------------------------------------------------------------------- */
 const donationTiers = [
   {
-    icon: Heart,
-    title: 'Seed Support',
-    amount: '$50',
-    description: 'Helps fund development of our first regenerative agriculture field site',
-    futureImpact: 'Enables soil testing and baseline ecological assessment for pilot location',
+    icon: Leaf,
+    title: "Seed the Soil",
+    amount: "$50",
+    description:
+      "Ignites early-stage regeneration — microbial activation, groundcover, and root-layer vitality that make ecosystems self-renewing.",
+    futureImpact:
+      "Supports ecological intelligence at the earliest level: soil, moisture retention, and micro-life scaffolding.",
     popular: true,
   },
   {
     icon: TreePine,
-    title: 'Growth Partner',
-    amount: '$150',
-    description: 'Supports creation of open-access BPSS curriculum materials',
-    futureImpact: 'Contributes to developing educational resources for farmer training programs',
-    popular: false,
+    title: "Regenerative Cell Sponsor",
+    amount: "$150",
+    description:
+      "Funds the design of regenerative cells — micro-watershed units engineered to become anti-fragile under stress.",
+    futureImpact:
+      "Enables hydrological diagnostics, succession planning, and multi-layer ecosystem activation.",
   },
   {
     icon: Microscope,
-    title: 'Research Champion',
-    amount: '$500',
-    description: 'Contributes to baseline ecological research and land assessment methodology',
-    futureImpact: 'Funds initial data collection protocols for measuring regenerative outcomes',
-    popular: false,
+    title: "Research & BPSS Champion",
+    amount: "$500",
+    description:
+      "Advances open scientific research in syntropic succession, hydrological intelligence, soil microbiomes, and BPSS-integrative wellness.",
+    futureImpact:
+      "Accelerates global regenerative knowledge accessible to all communities and ecosystems.",
   },
   {
     icon: Users,
-    title: 'Movement Builder',
-    amount: '$1,000',
-    description: 'Helps build our capacity to train farmers and establish community partnerships',
-    futureImpact: 'Supports development of training infrastructure and partnership frameworks',
-    popular: false,
+    title: "Sovereignty & Self-Sufficiency Partner",
+    amount: "$1,000",
+    description:
+      "Strengthens community autonomy through regenerative livelihoods and BPSS-informed resilience pathways.",
+    futureImpact:
+      "Supports sovereignty frameworks built on ecological literacy, cooperative governance, and regenerative economics.",
   },
 ]
 
+/* --------------------------------------------------------------------------
+   REGENERATIVE IMPACT METRICS — replacing old NGO-style metrics
+-------------------------------------------------------------------------- */
 const projectedImpact = [
   {
     icon: TreePine,
-    title: 'Tree Planting Goals',
-    description: 'Target: 50,000 trees planned for first-year field sites',
-    note: 'Goal for 2025-2026 (not yet achieved)',
+    title: "Ecosystem Layers to Activate",
+    description:
+      "Target: 50,000+ layers of ecological life awakened across syntropic forest systems — canopy, understory, shrubs, herbs, roots.",
+    note: "Represents ecosystem intelligence, not tree planting.",
+  },
+  {
+    icon: Leaf,
+    title: "Regenerative Cells Entering Succession",
+    description:
+      "Goal: 2,500+ micro-watershed regenerative cells transitioning into anti-fragile ecological progression.",
+    note: "Measured through hydration resilience and soil vitality.",
   },
   {
     icon: Users,
-    title: 'Training Targets',
-    description: 'Goal: 1,200 farmers trained in BPSS methodology',
-    note: 'Program development underway',
+    title: "Families Gaining Sovereignty",
+    description:
+      "Target: 1,200+ families strengthening ecological security, regenerative livelihoods, and inner–outer resilience.",
+    note: "Aligned with Ubuntu: ‘I am because we are.’",
   },
   {
     icon: Microscope,
-    title: 'Research Projects',
-    description: 'Target: 15 ecological studies initiated',
-    note: 'Baseline assessments beginning Q2 2025',
-  },
-  {
-    icon: Target,
-    title: 'Restoration Sites',
-    description: 'Goal: 2,500 acres under assessment',
-    note: 'Site selection process launching',
+    title: "Open Scientific Research Initiatives",
+    description:
+      "Goal: 15+ open-access regenerative studies integrating syntropy, hydrology, soil intelligence, and BPSS wellness.",
+    note: "Baseline ecological assessments begin 2025.",
   },
 ]
 
+/* --------------------------------------------------------------------------
+   FOUNDING PRINCIPLES — Interdependence, sovereignty, open science
+-------------------------------------------------------------------------- */
 const foundingPrinciples = [
   {
     icon: Shield,
-    title: 'Complete Transparency',
-    description: 'Annual Form 990 filings and open financial reporting as programs scale',
-  },
-  {
-    icon: Award,
-    title: 'Ethical Fundraising',
-    description: 'No private inurement. All revenue reinvested in mission advancement',
+    title: "Radical Transparency (Sunlight)",
+    description:
+      "Every action is governed by transparency — ecological, financial, and ethical. Sunlight strengthens ecosystems and institutions.",
   },
   {
     icon: TrendingUp,
-    title: 'Open Science',
-    description: 'All research findings published openly for global regenerative movement',
+    title: "Open Scientific Knowledge",
+    description:
+      "All research is made publicly available, supporting global movements in regeneration, syntropy, BPSS wellness, and ecological intelligence.",
+  },
+  {
+    icon: Globe2,
+    title: "Interdependence — Ubuntu",
+    description:
+      "‘I am because we are.’ Regeneration is relational — land, water, people, microbes, forests, and the larger living world evolve together.",
   },
   {
     icon: Users,
-    title: 'Community Partnership',
-    description: 'Local stakeholders involved in all program design and implementation',
+    title: "Sovereignty & Self-Sufficiency",
+    description:
+      "Communities thrive when they own their knowledge, regenerate their lands, and build systems that remain strong under stress.",
   },
 ]
 
+/* --------------------------------------------------------------------------
+   EARLY SUPPORT BENEFITS — Sovereignty, regeneration, inner/outer resilience
+-------------------------------------------------------------------------- */
 const earlySupportBenefits = [
-  'Accelerate launch-phase research and curriculum development',
-  'Enable early partnerships with farmers and communities',
-  'Support ecological assessment and site preparation',
-  'Build infrastructure for measurable future impact',
-  'Join the founding circle of regenerative change',
-  'Help establish transparency and accountability standards',
+  "Activation of early-stage regenerative cells and landscape intelligence.",
+  "Hydrological diagnostics and syntropic succession planning.",
+  "BPSS-aligned ecological literacy and inner resilience learning.",
+  "Development of sovereignty pathways and regenerative livelihood models.",
+  "Open scientific research accessible to communities worldwide.",
+  "Establishment of long-term monitoring, governance, and transparency systems.",
+  "Strengthening interdependence between people, land, and ecosystems.",
 ]
 
+/* --------------------------------------------------------------------------
+   COMPONENT: TransparencyItem
+-------------------------------------------------------------------------- */
+function TransparencyItem({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}) {
+  return (
+    <div>
+      <h4 className="font-semibold text-foreground mb-2">{title}</h4>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </div>
+  )
+}
+
+/* --------------------------------------------------------------------------
+   MAIN PAGE
+-------------------------------------------------------------------------- */
 export default function DonatePage() {
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Invest in ZenTrust's <span className="gradient-text">Foundational Year</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              You're not just donating to a charity—you're helping plant the roots of a global 
-              regenerative movement. ZenTrust is launching its first programs, and early support 
-              makes all the difference between vision and reality.
-            </p>
+
+      {/* --------------------------------------------------------------------
+         HERO — Regeneration, Sovereignty, Anti-Fragility, Interdependence
+      --------------------------------------------------------------------- */}
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-600/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
             
-            <div className="bg-primary/10 rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
-              <p className="text-foreground font-medium">
-                "Every great movement begins with committed supporters who believe in what's possible."
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+              Support the <span className="gradient-text">Regeneration of Life</span>
+            </h1>
+
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              ZenTrust regenerates living systems by activating ecological intelligence,  
+              strengthening community sovereignty, and cultivating landscapes that  
+              grow stronger under stress.  
+              Rooted in Ubuntu and <span className="italic">Vasudhaiva Kutumbakam</span> —  
+              <strong>the world is one family</strong>.
+            </p>
+
+            <div className="bg-primary/10 rounded-2xl p-6 mb-8">
+              <p className="text-foreground font-medium italic">
+                “Regeneration is not charity — it is kinship with all life.”
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                — ZenTrust Founding Team
+                — ZenTrust Founding Ethos
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                <Heart className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Support Our Launch
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="#why-early-support">
-                  Why Early Support Matters
+              <Button asChild size="lg" className="group">
+                <Link href="/donate/checkout">
+                  <Heart className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Begin Your Contribution
                 </Link>
+              </Button>
+
+              <Button variant="outline" size="lg" asChild>
+                <Link href="#why-early-support">Why Early Support Matters</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Donation Tiers */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+      {/* --------------------------------------------------------------------
+         DONATION TIERS — “Choose Your Regenerative Role”
+      --------------------------------------------------------------------- */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Impact During Our <span className="gradient-text">Foundational Year</span>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Choose Your <span className="gradient-text">Regenerative Role</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              These tiers represent opportunities to fund specific aspects of our launch. 
-              Your contribution helps make the first year of real-world impact possible.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+              These invitation levels represent different ways of stewarding  
+              ecological intelligence, sovereignty, and regeneration.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {donationTiers.map((tier, index) => {
+            {donationTiers.map((tier, i) => {
               const Icon = tier.icon
               return (
                 <div
-                  key={index}
-                  className={`glass-card rounded-2xl p-6 relative transition-all duration-300 hover:scale-105 ${
-                    tier.popular ? 'border-primary/30 bg-primary/5' : ''
+                  key={i}
+                  className={`glass-card rounded-2xl p-6 transition-all hover:scale-105 ${
+                    tier.popular ? "border-primary/40 bg-primary/5" : ""
                   }`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                        Most Flexible
+                        Most Chosen
                       </span>
                     </div>
                   )}
-                  
+
                   <div className="text-center">
                     <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
-                    
-                    <div className="text-2xl font-bold text-primary mb-2">
+
+                    <div className="text-2xl font-black text-primary mb-2">
                       {tier.amount}
                     </div>
-                    
-                    <h3 className="text-lg font-bold text-foreground mb-3">
-                      {tier.title}
-                    </h3>
-                    
+
+                    <h3 className="text-lg font-bold mb-3">{tier.title}</h3>
+
                     <p className="text-sm text-muted-foreground mb-4">
                       {tier.description}
                     </p>
-                    
+
                     <div className="bg-muted/50 rounded-lg p-3 mb-4">
                       <p className="text-xs text-muted-foreground">
-                        <strong className="text-foreground">Future Impact:</strong> {tier.futureImpact}
+                        <strong>Future Impact:</strong> {tier.futureImpact}
                       </p>
                     </div>
-                    
-                    <Button 
-                      variant={tier.popular ? "default" : "outline"} 
-                      className="w-full"
-                      size="sm"
-                    >
-                      Choose This Level
+
+                    <Button asChild variant={tier.popular ? "default" : "outline"} className="w-full">
+                      <Link href="/donate/checkout">Choose This Level</Link>
                     </Button>
                   </div>
                 </div>
               )
             })}
           </div>
-          
-          <div className="text-center mt-8">
-            <p className="text-sm text-muted-foreground">
-              All donations are tax-deductible. 501(c)(3) status effective July 1, 2025.
-            </p>
-          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-10">
+            ZenTrust is a 501(c)(3) public charity. EIN: 33-4318487. Donations are tax-deductible.
+          </p>
         </div>
       </section>
 
-      {/* Projected First-Year Impact */}
+
+      {/* --------------------------------------------------------------------
+         PROJECTED IMPACT — Regeneration, sovereignty, ecological intelligence
+      --------------------------------------------------------------------- */}
       <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
+
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Projected First-Year <span className="gradient-text">Impact Goals</span>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Projected <span className="gradient-text">Regenerative Milestones</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              These are our targets for 2025-2026—not achievements, but goals your support 
-              helps us work toward. We'll report honestly on progress as we build from the ground up.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+              These milestones express ecological awakening, sovereignty-building,  
+              and the evolution of anti-fragile landscapes.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projectedImpact.map((item, index) => {
               const Icon = item.icon
@@ -232,229 +301,232 @@ export default function DonatePage() {
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground mb-3">
+
+                  <h3 className="text-lg font-bold mb-3">
                     {item.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-3">
                     {item.description}
                   </p>
-                  
+
                   <div className="bg-amber-100 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-2">
                     <p className="text-xs text-amber-800 dark:text-amber-200">
-                      <strong>TARGET GOAL</strong><br />
-                      {item.note}
+                      <strong>Target:</strong> {item.note}
                     </p>
                   </div>
                 </div>
               )
             })}
           </div>
+
         </div>
       </section>
 
-      {/* Why Early Support Matters */}
-      <section id="why-early-support" className="py-24 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+      {/* --------------------------------------------------------------------
+         WHY EARLY SUPPORT MATTERS — Sovereignty, Ubuntu, Interdependence
+      --------------------------------------------------------------------- */}
+      <section id="why-early-support" className="py-24">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
+
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold">
                 Why <span className="gradient-text">Early Support</span> Matters
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                ZenTrust is at a pivotal moment. We're not asking you to fund completed work—
-                we're inviting you to help build the foundation for transformational change.
+                Early supporters are not donors — they are **co-creators of sovereignty, ecological intelligence,  
+                and interdependent regeneration**.  
+                Your contribution shapes the systems that will thrive for generations.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+              {/* Benefits List */}
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
+                <h3 className="text-2xl font-bold mb-6">
                   Your Early Investment Enables:
                 </h3>
-                
+
                 <div className="space-y-4">
-                  {earlySupportBenefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-muted-foreground">{benefit}</p>
+                  {earlySupportBenefits.map((b, i) => (
+                    <div key={i} className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2" />
+                      <p className="text-muted-foreground">{b}</p>
                     </div>
                   ))}
                 </div>
-                
-                <div className="mt-8 p-6 bg-primary/10 rounded-xl">
-                  <h4 className="font-bold text-foreground mb-2">
-                    The Power of Foundational Support
-                  </h4>
+
+                <div className="bg-primary/10 rounded-xl p-6 mt-8">
+                  <h4 className="font-bold mb-2">The Power of Foundations</h4>
                   <p className="text-sm text-muted-foreground">
-                    Every successful regenerative project started with someone who believed 
-                    in the possibility before the proof existed. Early donors don't just 
-                    fund programs—they fuel the innovation and partnerships that make 
-                    lasting impact possible.
+                    Regeneration flows from root-level intelligence —  
+                    water, soil, micro-life, governance, and community connection.  
+                    Your early support enables the architecture that creates enduring  
+                    ecological and human sovereignty.
                   </p>
                 </div>
               </div>
 
+              {/* Circle Membership Card */}
               <div className="glass-card rounded-2xl p-8">
                 <div className="text-center mb-6">
-                  <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Join Our Founding Circle
+                  <Zap className="text-primary h-12 w-12 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-2">
+                    Join the Regeneration Circle
                   </h3>
                   <p className="text-muted-foreground">
-                    Be part of something from the very beginning
+                    Become part of the founding network stewarding ecological intelligence.
                   </p>
                 </div>
 
                 <div className="space-y-4 text-center">
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-semibold text-foreground mb-2">Quarterly Updates</h4>
+                  <div className="bg-muted/50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-1">Sunlight Reports</h4>
                     <p className="text-sm text-muted-foreground">
-                      Transparent reporting on progress, challenges, and breakthroughs
+                      Transparent ecological + scientific updates quarterly.
                     </p>
                   </div>
-                  
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-semibold text-foreground mb-2">Research Access</h4>
+
+                  <div className="bg-muted/50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-1">Early Research Access</h4>
                     <p className="text-sm text-muted-foreground">
-                      Early access to findings and methodologies as they're developed
+                      Open-access papers and ecological models as they develop.
                     </p>
                   </div>
-                  
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <h4 className="font-semibold text-foreground mb-2">Direct Connection</h4>
+
+                  <div className="bg-muted/50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-1">Community Connection</h4>
                     <p className="text-sm text-muted-foreground">
-                      Opportunity to engage with our research and field teams
+                      Meet regenerative designers, watershed stewards,  
+                      and BPSS researchers.
                     </p>
                   </div>
                 </div>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Our Commitment to Transparency */}
+
+      {/* --------------------------------------------------------------------
+         TRANSPARENCY — Sunlight philosophy + IRS alignment + open science
+      --------------------------------------------------------------------- */}
       <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
+
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Commitment to <span className="gradient-text">Transparency</span>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Our Commitment to <span className="gradient-text">Sunlight & Integrity</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              As a newly formed organization, we're committed to setting the standard 
-              for ethical nonprofit transparency from day one.
+              Transparency is ecological. Sunlight strengthens forests, communities,  
+              and institutions — including ZenTrust.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {foundingPrinciples.map((principle, index) => {
-              const Icon = principle.icon
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {foundingPrinciples.map((p, i) => {
+              const Icon = p.icon
               return (
-                <div key={index} className="glass-card rounded-2xl p-6 text-center">
+                <div key={i} className="glass-card rounded-2xl p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    {principle.title}
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground">
-                    {principle.description}
-                  </p>
+                  <h3 className="text-lg font-bold mb-3">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground">{p.description}</p>
                 </div>
               )
             })}
           </div>
-          
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4 text-center">
-                How We Use Donations During Our Foundational Year
-              </h3>
-              <p className="text-muted-foreground text-center mb-6">
-                Your donation supports the infrastructure necessary to begin meaningful field work:
+
+          <div className="max-w-4xl mx-auto glass-card rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-center mb-4">
+              How Your Contribution Is Stewarded
+            </h3>
+
+            <p className="text-muted-foreground text-center mb-6">
+              Every gift strengthens the ecological, scientific, and community architecture  
+              necessary for long-term regeneration and sovereignty.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <TransparencyItem
+                title="Regenerative Ecology Systems"
+                description="Syntropic design, hydrological flow mapping, soil intelligence, and multi-layer ecosystem activation."
+              />
+              <TransparencyItem
+                title="Scientific Research & Open Access"
+                description="Studies on climate resilience, hydrological dynamics, soil microbiomes, and BPSS wellbeing."
+              />
+              <TransparencyItem
+                title="Community Sovereignty & Livelihoods"
+                description="Regenerative economic pathways, cooperative governance, and resilience frameworks."
+              />
+              <TransparencyItem
+                title="Governance & Ethical Operations"
+                description="501(c)(3) compliance, transparent reporting, mission alignment, and long-term stewardship."
+              />
+            </div>
+
+            <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <p className="text-sm text-blue-800 dark:text-blue-200 text-center">
+                <strong>IRS Notice:</strong> ZenTrust, Inc. is a 501(c)(3) public charity (EIN 33-4318487).  
+                All contributions are used exclusively for charitable, scientific,  
+                and educational purposes in line with IRS Section 170(b)(1)(A)(vi).
               </p>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Program Development</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Research design, curriculum creation, partnership development, and field site preparation
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Operational Foundation</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Staff hiring, systems setup, legal compliance, and administrative infrastructure
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Ecological Assessment</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Baseline studies, soil testing, biodiversity surveys, and impact measurement frameworks
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Community Partnership</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Farmer engagement, stakeholder consultation, and collaborative program design
-                  </p>
-                </div>
-              </div>
-              
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                <p className="text-sm text-blue-800 dark:text-blue-200 text-center">
-                  <strong>IRS Filing:</strong> ZenTrust will file annual Form 990 forms for complete financial transparency. 
-                  All revenue is reinvested in mission advancement per 501(c)(3) requirements.
-                </p>
-              </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* Your Role in Building What Comes Next */}
-      <section className="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Role in Building <span className="gradient-text">What Comes Next</span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              This is where the story begins. Every regenerative landscape, every trained farmer, 
-              every scientific breakthrough starts with someone who believed in the possibility 
-              before the proof existed.
+
+      {/* --------------------------------------------------------------------
+         FINAL CALL TO ACTION — Interdependence & regeneration
+      --------------------------------------------------------------------- */}
+      <section className="py-24 bg-gradient-to-br from-primary/10 to-emerald-600/10">
+        <div className="container mx-auto px-4 text-center">
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Become a <span className="gradient-text">Steward of Regeneration</span>
+          </h2>
+
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Regeneration is the return to relationship —  
+            between soil and water, people and land, science and spirit.  
+            Your contribution strengthens this web of interdependence.
+          </p>
+
+          <div className="glass-card rounded-2xl p-8 mb-8">
+            <p className="italic text-lg text-foreground mb-2">
+              “When one ecosystem heals, the whole family of life benefits.”
             </p>
-            
-            <div className="glass-card rounded-2xl p-8 mb-8">
-              <blockquote className="text-lg text-foreground mb-4 italic">
-                "The best time to plant a tree was 20 years ago. The second best time is now."
-              </blockquote>
-              <p className="text-muted-foreground">
-                The same is true for regenerative movements. Your support today plants the seeds 
-                of global change that will grow for decades to come.
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                <Heart className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Become a Founding Supporter
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/contact">Questions? Let's Talk</Link>
-              </Button>
-            </div>
-            
-            <p className="text-sm text-muted-foreground mt-6">
-              Tax-deductible contributions • EIN: 33-4318487 • 501(c)(3) effective July 1, 2025
+            <p className="text-sm text-muted-foreground">
+              Reflecting the principle of Vasudhaiva Kutumbakam:  
+              <strong> The World is ONE Family</strong>.
             </p>
           </div>
+
+          <Button size="lg" asChild className="group">
+            <Link href="/donate/checkout">
+              <Heart className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+              Begin Your Contribution
+            </Link>
+          </Button>
+
+          <p className="text-sm text-muted-foreground mt-6">
+            Tax-deductible • 501(c)(3) Public Charity • EIN 33-4318487
+          </p>
+
         </div>
       </section>
+
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { Heart, Leaf, Users, TreePine, Microscope, TrendingUp } from 'lucide-rea
 import { Button } from '@/components/ui/button'
 import { calculateDonationImpact, DONATION_TIERS } from '@/lib/calculator'
 
+// Icons remain the same; semantic meaning changes
 const impactIcons = {
   trees: TreePine,
   households: Users,
@@ -34,9 +35,7 @@ export function DonationCalculator() {
   }
 
   const handleDonate = () => {
-    // TODO: Integrate with actual payment processing
     console.log('Processing donation of $', amount)
-    // This would redirect to Stripe checkout or similar
     window.open('/donate/checkout', '_blank')
   }
 
@@ -44,6 +43,7 @@ export function DonationCalculator() {
     <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-emerald-500/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
+          
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -54,16 +54,19 @@ export function DonationCalculator() {
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Calculate Your <span className="gradient-text">Impact</span>
             </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-  See how your contribution helps restore ecosystems and uplift human well-being.<br />
-  <span className="italic font-medium animate-heal-text">
-    When we help heal the Earth, we begin to heal ourselves.
-  </span>
-</p>
 
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Every contribution helps awaken resilient ecosystems, regenerate living soils, 
+              and empower communities toward long-term self-sufficiency.  
+              <br />
+              <span className="italic font-medium animate-color-pulse bg-gradient-to-r from-green-500 via-emerald-500 to-blue-500 bg-clip-text text-transparent">
+                When we heal the Earth, the Earth begins to heal us in return.
+              </span>
+            </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
+            
             {/* Input Section */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -120,7 +123,6 @@ export function DonationCalculator() {
                     </div>
                   </div>
                   
-                  {/* Amount Display */}
                   <div className="flex items-center space-x-2">
                     <span className="text-2xl font-bold text-primary">
                       ${amount}
@@ -130,18 +132,22 @@ export function DonationCalculator() {
                 </div>
               </div>
 
-              {/* Recurring Option */}
+              {/* Recurring Toggle */}
               <div className="glass-card rounded-xl p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-semibold text-foreground">Make it Monthly</h4>
                     <p className="text-sm text-muted-foreground">
-                      Recurring donations provide steady support for our programs
+                      Monthly giving strengthens long-term ecological resilience
                     </p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" className="sr-only peer" defaultChecked />
-                    <div className="w-11 h-6 bg-muted peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                    <div className="w-11 h-6 bg-muted peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 
+                      rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white 
+                      after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full 
+                      after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                    </div>
                   </label>
                 </div>
               </div>
@@ -163,28 +169,34 @@ export function DonationCalculator() {
                   transition={{ duration: 0.3 }}
                   className="glass-card rounded-2xl p-8"
                 >
+                  
                   <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
                     <TrendingUp className="h-6 w-6 text-primary mr-3" />
-                    Your Impact
+                    Your Regenerative Impact
                   </h3>
 
-                  {/* Impact Description */}
+                  {/* Updated Regenerative Impact Description */}
                   <div className="bg-primary/10 rounded-xl p-4 mb-6">
-                    <p className="text-foreground font-medium">
-                      {impact.description}
+                    <p className="text-foreground font-medium leading-relaxed">
+                      Your contribution helps regenerate multi-layered ecosystems, strengthen landscapes
+                      into anti-fragile, self-renewing systems, and empower families to build long-term 
+                      self-sufficiency and regenerative livelihoods.
                     </p>
                   </div>
 
-                  {/* Impact Metrics */}
+                  {/* New Regenerative Metrics */}
                   <div className="space-y-4">
                     {[
-                      { key: 'trees', label: 'Trees Planted', value: impact.trees, icon: TreePine, color: 'text-green-600' },
-                      { key: 'households', label: 'Households Supported', value: impact.households, icon: Users, color: 'text-blue-600' },
-                      { key: 'acres', label: 'Acres Restored', value: impact.acres, icon: Leaf, color: 'text-emerald-600' },
+                      { key: 'trees', label: 'Ecosystem Layers Regenerated', value: impact.trees, icon: TreePine, color: 'text-green-600' },
+                      { key: 'acres', label: 'Regenerative Cells Becoming Anti-Fragile', value: impact.acres, icon: Leaf, color: 'text-emerald-600' },
+                      { key: 'households', label: 'Families Moving Toward Self-Sufficiency', value: impact.households, icon: Users, color: 'text-blue-600' },
                     ].map((metric) => {
                       const Icon = metric.icon
                       return (
-                        <div key={metric.key} className="flex items-center justify-between p-4 bg-muted/50 rounded-xl">
+                        <div
+                          key={metric.key}
+                          className="flex items-center justify-between p-4 bg-muted/50 rounded-xl"
+                        >
                           <div className="flex items-center space-x-3">
                             <Icon className={`h-5 w-5 ${metric.color}`} />
                             <span className="text-foreground font-medium">{metric.label}</span>
@@ -197,13 +209,14 @@ export function DonationCalculator() {
                     })}
                   </div>
 
-                  {/* Research Plots for larger donations */}
+                  {/* Research Plots retain original logic */}
                   {impact.research_plots > 0 && (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="mt-6 p-4 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-700"
+                      className="mt-6 p-4 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/20 
+                      dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-700"
                     >
                       <div className="flex items-center space-x-3">
                         <Microscope className="h-6 w-6 text-purple-600" />
@@ -212,14 +225,13 @@ export function DonationCalculator() {
                             Research Plot Sponsored
                           </div>
                           <div className="text-sm text-purple-700 dark:text-purple-300">
-                            Supporting scientific advancement in regenerative agriculture
+                            Advancing open scientific research in regenerative ecosystems
                           </div>
                         </div>
                       </div>
                     </motion.div>
                   )}
 
-                  {/* Donate Button */}
                   <Button
                     onClick={handleDonate}
                     size="lg"
@@ -228,9 +240,11 @@ export function DonationCalculator() {
                     Donate ${amount}/month
                     <Heart className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
+
                 </motion.div>
               </AnimatePresence>
             </motion.div>
+
           </div>
         </div>
       </div>

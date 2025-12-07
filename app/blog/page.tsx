@@ -27,7 +27,7 @@ export default async function BlogPage() {
   const posts =
     blogRes?.data?.blogConnection?.edges
       ?.map((edge) => edge?.node)
-      .filter(Boolean)
+      .filter((node): node is NonNullable<typeof node> => Boolean(node))
       .sort(
         (a, b) =>
           new Date(b?.date || "").getTime() -
@@ -46,10 +46,20 @@ export default async function BlogPage() {
   }
 
   const [featuredPost, ...recentPosts] = posts
+  if (!featuredPost) {
+    return (
+      <main className="max-w-5xl mx-auto pt-24 px-4">
+        <h1 className="text-4xl font-bold">ZenTrust Journal</h1>
+        <p className="text-muted-foreground mt-2">
+          No articles published yet.
+        </p>
+      </main>
+    )
+  }
   const categoriesSet = new Set<string>()
   posts.forEach((p) => {
     if (p?.primaryCategory) categoriesSet.add(p.primaryCategory)
-    p?.categories?.forEach((cat: string) => {
+    p?.categories?.forEach((cat) => {
       if (cat) categoriesSet.add(cat)
     })
   })

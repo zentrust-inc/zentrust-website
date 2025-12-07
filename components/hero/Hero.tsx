@@ -6,20 +6,36 @@ import { motion } from "framer-motion"
 import { ArrowRight, Play, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// Mission achievements (truthful & compliant)
-const achievements = [
-  "Regenerative Ecology Foundations",
-  "BPSS Integrative Wellness Research",
-  "Watershed & Soil Restoration Planning",
-  "Open-Access Scientific Education",
+// Updated pillars (IRS-aligned + descriptive)
+const missionAreas = [
+  {
+    title: "Regenerative Ecology",
+    desc: "Restoring forests, watersheds, soils, and native ecosystems.",
+    status: "Launching 2025",
+  },
+  {
+    title: "BPSS Integrative Wellness Research",
+    desc: "Research linking ecological conditions and holistic human health using the BPSS model.",
+    status: "In Development",
+  },
+  {
+    title: "Open Scientific Education & Community Training",
+    desc: "Workshops, farmer training, and open-access public education programs.",
+    status: "Starting Soon",
+  },
+  {
+    title: "Global Partnerships & Grantmaking",
+    desc: "Supporting aligned nonprofits and community-led regeneration worldwide.",
+    status: "Forming Now",
+  },
 ]
 
-// Ethical mission areas
-const missionAreas = [
-  { title: "Ecological Restoration", status: "Launching 2025" },
-  { title: "Community Training", status: "Starting Soon" },
-  { title: "Scientific Research", status: "In Development" },
-  { title: "Global Partnerships", status: "Forming Now" },
+// Achievement highlights (kept concise and mission-aligned)
+const achievements = [
+  "Regenerative Ecology Foundations",
+  "BPSS Wellness Research Initiatives",
+  "Watershed & Soil Restoration Planning",
+  "Open-Access Scientific Education",
 ]
 
 export function Hero() {
@@ -28,13 +44,13 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % missionAreas.length)
-    }, 2500)
+    }, 3200)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Subtle background gradient */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-emerald-500/10" />
 
       {/* Soft pattern overlay */}
@@ -49,7 +65,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT SIDE CONTENT */}
+          {/* LEFT SIDE — TEXT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -63,7 +79,7 @@ export function Hero() {
               className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
             >
               <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" />
-              Advancing ecological regeneration, wellness science & public education.
+              Advancing ecological regeneration, BPSS research & public scientific education.
             </motion.div>
 
             {/* HEADLINE */}
@@ -78,7 +94,7 @@ export function Hero() {
               <span className="block">Science for Regeneration.</span>
             </motion.h1>
 
-            {/* SUBHEADLINE */}
+            {/* SUBHEADLINE — refined for clarity */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,31 +102,22 @@ export function Hero() {
               className="text-xl text-muted-foreground mb-8 max-w-xl"
             >
               ZenTrust is a <strong>501(c)(3) public charity (EIN 33-4318487)</strong> advancing regenerative ecology,
-              integrative wellness (BPSS), and open scientific research.  
-              We are building foundational programs that restore ecosystems, empower communities, 
-              and renew our relationship with the living world.
+              BPSS-integrative wellness research, and open scientific education.  
+              We are building long-term ecological and scientific foundations that benefit communities and the living world.
             </motion.p>
 
-            {/* IRS DETERMINATION LINK */}
+            {/* IRS LETTER */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="text-sm text-muted-foreground mb-8"
             >
-              ZenTrust is recognized by the IRS as a 501(c)(3) public charity.  
+              ZenTrust is recognized by the IRS as a 170(b)(1)(A)(vi) public charity.  
               <Link
-                href="https://apps.irs.gov/pub/epostcard/dl/FinalLetter_33-4318487_ZENTRUSTINC_04072025_00.pdf"
+                href="/IRS_Determination_Letter.pdf"
                 target="_blank"
-                className="
-                  ml-1
-                  font-semibold
-                  text-foreground
-                  underline
-                  animate-pulse
-                  hover:text-primary
-                  transition-colors
-                "
+                className="ml-1 font-semibold text-foreground underline hover:text-primary transition-colors"
               >
                 View official IRS determination letter
               </Link>
@@ -120,7 +127,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0.55, duration: 0.6 }}
               className="grid grid-cols-2 gap-3 mb-8"
             >
               {achievements.map((text, index) => (
@@ -140,7 +147,7 @@ export function Hero() {
             >
               <Button asChild size="lg" className="group">
                 <Link href="/donate">
-                  Support the Foundation
+                  Support the Regeneration
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -152,7 +159,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT SIDE MISSION CARD */}
+          {/* RIGHT SIDE — MISSION CARD */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -168,17 +175,14 @@ export function Hero() {
                 {missionAreas.map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`text-center p-4 rounded-xl transition-all duration-300 ${
-                      current === index ? "bg-primary/10 scale-105" : "bg-muted/50 hover:bg-muted"
+                    whileHover={{ scale: 1.03 }}
+                    className={`p-4 rounded-xl transition-all duration-300 ${
+                      current === index ? "bg-primary/10 scale-[1.03]" : "bg-muted/50 hover:bg-muted"
                     }`}
-                    whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-lg font-semibold text-foreground mb-1">
-                      {item.title}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-medium">
-                      {item.status}
-                    </div>
+                    <div className="text-lg font-semibold text-foreground mb-1">{item.title}</div>
+                    <div className="text-xs text-muted-foreground font-medium mb-1">{item.status}</div>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -188,11 +192,9 @@ export function Hero() {
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="text-center">
-                  <div className="text-xl font-bold text-foreground mb-2">
-                    The Journey Begins
-                  </div>
+                  <div className="text-xl font-bold text-foreground mb-2">The Journey Begins</div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    As a newly recognized 501(c)(3), ZenTrust is laying the ecological, scientific, 
+                    As a newly recognized 501(c)(3), ZenTrust is establishing the ecological, scientific, 
                     and community foundations that will shape long-term regenerative impact. 
                     Your support helps build this future from the ground up.
                   </p>

@@ -9,6 +9,7 @@ node_modules
 # Next.js
 /.next/
 /out/
+/dist/
 
 # Production
 /build
@@ -24,6 +25,7 @@ yarn-error.log*
 
 # Local env files
 .env*.local
+.env.*.local
 .env
 .env.development.local
 .env.test.local
@@ -31,6 +33,7 @@ yarn-error.log*
 
 # Vercel
 .vercel
+.vercel/
 
 # TypeScript
 *.tsbuildinfo
@@ -39,6 +42,9 @@ next-env.d.ts
 # TinaCMS
 public/admin
 .tina
+tina/__generated__/
+tina/transpile/
+tina-lock.json
 
 # IDE
 .vscode/

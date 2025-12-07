@@ -221,8 +221,7 @@ var config = defineConfig({
             type: "image",
             name: "heroImage",
             label: "Hero Image",
-            uploadDir: () => "images/programs",
-            previewSrc: (src) => src
+            uploadDir: () => "images/programs"
           },
           { type: "rich-text", name: "body", label: "Program Description", isBody: true },
           { type: "string", name: "category", label: "Category" },
@@ -248,8 +247,7 @@ var config = defineConfig({
             type: "image",
             name: "image",
             label: "Story Image",
-            uploadDir: () => "images/stories",
-            previewSrc: (src) => src
+            uploadDir: () => "images/stories"
           },
           { type: "rich-text", name: "body", label: "Story Body", isBody: true },
           { type: "string", name: "category", label: "Category" },
@@ -273,8 +271,7 @@ var config = defineConfig({
             type: "image",
             name: "photo",
             label: "Photo",
-            uploadDir: () => "images/team",
-            previewSrc: (src) => src
+            uploadDir: () => "images/team"
           },
           { type: "rich-text", name: "bio", label: "Biography", isBody: true }
         ]

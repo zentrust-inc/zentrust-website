@@ -5,58 +5,65 @@ import { motion, useInView } from 'framer-motion'
 import { Leaf, Users, TreePine, BookOpen, Microscope } from 'lucide-react'
 
 /**
- * These forward-looking metrics reflect ZenTrust’s planned ecological,
- * educational, and scientific initiatives for its first year of operation,
- * consistent with our IRS-approved charitable mission.
+ * Regenerative Milestones for ZenTrust’s first year.
+ * These are not charity outputs — but indicators of ecological awakening,
+ * anti-fragile landscape development, and community self-sufficiency.
+ * 
+ * Each metric represents a deeper transformation:
+ * - Layers awakened in emerging ecosystems
+ * - Regenerative cells transitioning into anti-fragile systems
+ * - Families moving toward sovereignty and interdependence
+ * - Research expanding collective ecological intelligence
+ * - Hours of inner & outer learning shaping resilient communities
  */
 const impactMetrics = [
   {
     icon: TreePine,
     value: 50000,
-    label: 'Trees Planned',
+    label: 'Ecosystem Layers to Regenerate',
     suffix: '+',
     description:
-      'Our 12-month target for native tree planting across priority watershed and restoration sites.',
+      'Layers of life — canopy, understory, shrubs, herbs, roots — we aim to activate in emerging syntropic forests across watershed nodes. This is not planting trees; it is awakening whole ecosystems.',
     color: 'text-green-600',
     bgColor: 'bg-green-100 dark:bg-green-900/20',
   },
   {
-    icon: Users,
-    value: 1200,
-    label: 'Farmers to Train',
-    suffix: '+',
-    description:
-      'Projected number of farmers and land stewards we aim to train in regenerative agriculture and sustainable land care.',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100 dark:bg-blue-900/20',
-  },
-  {
     icon: Leaf,
     value: 2500,
-    label: 'Acres Identified',
+    label: 'Regenerative Cells Becoming Anti-Fragile',
     suffix: '+',
     description:
-      'Acres of land identified for long-term ecological restoration, watershed renewal, and community-led regeneration.',
+      'Micro-watershed zones transitioning into self-renewing, drought-resilient, biodiversity-rich systems. Land that does not merely recover — but grows stronger under stress.',
     color: 'text-emerald-600',
     bgColor: 'bg-emerald-100 dark:bg-emerald-900/20',
   },
   {
+    icon: Users,
+    value: 1200,
+    label: 'Families Moving Toward Self-Sufficiency',
+    suffix: '+',
+    description:
+      'Families gaining the tools, skills, and ecological security to thrive without dependency. Not aid, not charity — but the return to autonomy, dignity, and regenerative livelihoods.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100 dark:bg-blue-900/20',
+  },
+  {
     icon: Microscope,
     value: 15,
-    label: 'Research Studies',
+    label: 'Regenerative Research Initiatives',
     suffix: '',
     description:
-      'Planned scientific studies advancing regenerative ecosystems and BPSS-aligned public health research.',
+      'Studies that deepen humanity’s understanding of climate resilience, syntropic design, watershed behavior, soil regeneration, and BPSS-aligned wellness ecosystems.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100 dark:bg-purple-900/20',
   },
   {
     icon: BookOpen,
     value: 8500,
-    label: 'Education Hours',
+    label: 'Hours of Ecological & Inner Learning',
     suffix: '+',
     description:
-      'Projected annual hours of learning, workshops, and community training in ecology, resilience, and wellness.',
+      'Workshops, apprenticeships, and community learning journeys cultivating ecological literacy, inner resilience, and a worldview grounded in Ubuntu — “I am because we are.”',
     color: 'text-orange-600',
     bgColor: 'bg-orange-100 dark:bg-orange-900/20',
   },
@@ -107,7 +114,7 @@ export function ImpactCounters() {
   return (
     <section ref={ref} className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -115,13 +122,14 @@ export function ImpactCounters() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Building <span className="gradient-text">Impact</span> Together
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            Regeneration Is a Collective Journey  
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            These are ZenTrust’s first-year program goals in ecological restoration,
-            regenerative education, and scientific research — aligned with our
-            nonprofit mission to advance public knowledge and environmental well-being.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            These milestones are more than numbers — they are signs of life returning,  
+            communities strengthening, and landscapes remembering how to heal themselves.  
+            Every step we take honors the principle of 
+            <span className="italic text-foreground"> Vasudhaiva Kutumbakam — the world is one family.</span>
           </p>
         </motion.div>
 
@@ -153,7 +161,9 @@ export function ImpactCounters() {
                     />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-foreground mb-4">{metric.label}</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                    {metric.label}
+                  </h3>
 
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {metric.description}
@@ -173,12 +183,13 @@ export function ImpactCounters() {
         >
           <div className="glass-card rounded-2xl p-8 md:p-12 bg-gradient-to-r from-primary/10 to-emerald-500/10 border-primary/20">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Help Us Achieve These Milestones
+              Become a Steward of Regeneration
             </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              ZenTrust’s first year sets the foundation for long-term ecological and
-              educational impact. Your support directly accelerates restoration,
-              research, and public education.
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              Regeneration is not achieved by a single hand — 
+              but by a collective heart.  
+              Join us in creating ecosystems, communities, and futures  
+              that become stronger with every challenge they face.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -188,7 +199,7 @@ export function ImpactCounters() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Support Our Work
+                Support Regeneration
               </motion.a>
 
               <motion.a

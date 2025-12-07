@@ -51,11 +51,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         const matchCategories =
           Array.isArray(p.categories) &&
           Array.isArray(post.categories) &&
-          p.categories.some((cat: string) => post.categories?.includes?.(cat));
+          p.categories.some((cat) => cat && post.categories?.includes?.(cat));
         const matchTags =
           Array.isArray(p.tags) &&
           Array.isArray(post.tags) &&
-          p.tags.some((tag: string) => post.tags?.includes?.(tag));
+          p.tags.some((tag) => tag && post.tags?.includes?.(tag));
         return matchPrimary || matchCategories || matchTags;
       })
       .slice(0, 3) ?? [];

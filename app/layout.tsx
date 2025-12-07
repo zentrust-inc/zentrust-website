@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { GA4 } from '@/components/analytics/GA4'
+import { TrackPageView } from '@/components/analytics/TrackPageView'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -92,6 +95,10 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className} suppressHydrationWarning>
+        <GA4 />
+        <Suspense fallback={null}>
+          <TrackPageView />
+        </Suspense>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

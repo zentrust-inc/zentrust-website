@@ -227,7 +227,6 @@ const config = defineConfig({
             name: "heroImage",
             label: "Hero Image",
             uploadDir: () => "images/programs",
-            previewSrc: (src) => src,
           },
           { type: "rich-text", name: "body", label: "Program Description", isBody: true },
           { type: "string", name: "category", label: "Category" },
@@ -256,7 +255,6 @@ const config = defineConfig({
             name: "image",
             label: "Story Image",
             uploadDir: () => "images/stories",
-            previewSrc: (src) => src,
           },
 
           { type: "rich-text", name: "body", label: "Story Body", isBody: true },
@@ -284,7 +282,6 @@ const config = defineConfig({
             name: "photo",
             label: "Photo",
             uploadDir: () => "images/team",
-            previewSrc: (src) => src,
           },
 
           { type: "rich-text", name: "bio", label: "Biography", isBody: true },
