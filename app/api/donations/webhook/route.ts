@@ -3,13 +3,14 @@ import Stripe from "stripe"
 
 export const runtime = "nodejs"
 
-const stripeSecret = process.env.STRIPE_SECRET_KEY
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+// Explicitly assert env vars as strings for TypeScript
+const stripeSecret = process.env.STRIPE_SECRET_KEY as string
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET as string
 
 if (!stripeSecret) throw new Error("Missing STRIPE_SECRET_KEY")
 if (!webhookSecret) throw new Error("Missing STRIPE_WEBHOOK_SECRET")
 
-// FIXED: Do not specify apiVersion, Stripe types will reject older versions
+// Do not specify apiVersion – let Stripe use the account default
 const stripe = new Stripe(stripeSecret)
 
 export async function POST(req: Request) {
@@ -17,7 +18,10 @@ export async function POST(req: Request) {
   const sig = req.headers.get("stripe-signature")
 
   if (!sig) {
-    return NextResponse.json({ error: "Missing Stripe signature" }, { status: 400 })
+    return NextResponse.json(
+      { error: "Missing Stripe signature" },
+      { status: 400 },
+    )
   }
 
   let event: Stripe.Event
@@ -50,6 +54,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ received: true })
   } catch (err: any) {
     console.error("❌ Webhook handling error:", err)
-    return NextResponse.json({ error: "Webhook handler failed" }, { status: 500 })
+    return NextResponse.json(
+      { error: "Webhook handler failed" },
+      { status: 500 },
+    )
   }
 }
