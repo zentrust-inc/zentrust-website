@@ -1,22 +1,27 @@
 import { NextResponse } from "next/server"
 import Stripe from "stripe"
 
+export const runtime = "nodejs"
+
+// Load Stripe secret key
 const stripeSecret = process.env.STRIPE_SECRET_KEY
 if (!stripeSecret) {
-  throw new Error("STRIPE_SECRET_KEY is missing in environment variables.")
+  throw new Error("Missing STRIPE_SECRET_KEY environment variable.")
 }
 
+// Initialize Stripe (no apiVersion override → prevents TS mismatch)
 const stripe = new Stripe(stripeSecret)
- 
+
 export async function POST(req: Request) {
   try {
     const body = await req.json()
+
     const amount = Number(body?.amount ?? 0)
     const frequency = body?.frequency === "monthly" ? "monthly" : "once"
     const impactPath = body?.impactPath || "flexible"
 
     // -------------------------------------------------------
-    // 1) Basic Amount Validation (NEVER trust client amount)
+    // 1) BASIC VALIDATION
     // -------------------------------------------------------
     if (!amount || amount < 1 || amount > 200000) {
       return NextResponse.json(
@@ -25,20 +30,18 @@ export async function POST(req: Request) {
       )
     }
 
-    // Convert dollars → cents for Stripe
+    // Convert USD → cents
     const amountInCents = Math.round(amount * 100)
 
-    // -------------------------------------------------------
-    // 2) Metadata (safe for Stripe + later database logging)
-    // -------------------------------------------------------
+    // Shared metadata
     const metadata = {
-      impactPath,
-      frequency,
       donationAmountUSD: amount.toString(),
+      frequency,
+      impactPath,
     }
 
     // -------------------------------------------------------
-    // 3A) Create one-time donation (PaymentIntent)
+    // 2) ONE-TIME DONATION
     // -------------------------------------------------------
     if (frequency === "once") {
       const paymentIntent = await stripe.paymentIntents.create({
@@ -55,17 +58,15 @@ export async function POST(req: Request) {
     }
 
     // -------------------------------------------------------
-    // 3B) Create monthly recurring donation (Subscription)
+    // 3) MONTHLY DONATION (Subscription)
     // -------------------------------------------------------
-    // For monthly donors, Stripe requires:
-    // 1) A customer object
-    // 2) A subscription with payment behavior set to default_incomplete
-    // 3) Return `clientSecret` from the latest invoice's PaymentIntent
 
+    // Step 1 — Create customer
     const customer = await stripe.customers.create({
       metadata,
     })
 
+    // Step 2 — Create dynamic price for monthly donation
     const price = await stripe.prices.create({
       unit_amount: amountInCents,
       currency: "usd",
@@ -76,6 +77,7 @@ export async function POST(req: Request) {
       metadata,
     })
 
+    // Step 3 — Create subscription in incomplete state
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [{ price: price.id }],
@@ -84,13 +86,32 @@ export async function POST(req: Request) {
       metadata,
     })
 
-    const clientSecret =
-      subscription.latest_invoice?.payment_intent?.client_secret
+    // -------------------------------------------------------
+    // 4) EXTRACT CLIENT SECRET SAFELY
+    // -------------------------------------------------------
 
-    if (!clientSecret) {
-      throw new Error("Unable to obtain client secret for subscription.")
+    const latestInvoice = subscription.latest_invoice
+
+    let clientSecret: string | null = null
+
+    if (typeof latestInvoice === "object" && latestInvoice !== null) {
+      const invoiceObj = latestInvoice as Stripe.Invoice
+      const paymentIntent = invoiceObj.payment_intent
+
+      if (paymentIntent && typeof paymentIntent !== "string") {
+        clientSecret = paymentIntent.client_secret
+      }
     }
 
+    if (!clientSecret) {
+      throw new Error(
+        "Unable to obtain client secret for subscription PaymentIntent."
+      )
+    }
+
+    // -------------------------------------------------------
+    // 5) SEND RESPONSE TO CLIENT
+    // -------------------------------------------------------
     return NextResponse.json({
       type: "subscription",
       clientSecret,
@@ -99,7 +120,7 @@ export async function POST(req: Request) {
   } catch (err: any) {
     console.error("Stripe create-intent error:", err)
     return NextResponse.json(
-      { error: err?.message ?? "Unable to create payment session" },
+      { error: err?.message ?? "Unable to create payment intent" },
       { status: 500 }
     )
   }
