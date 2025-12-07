@@ -6,10 +6,8 @@ if (!stripeSecret) {
   throw new Error("STRIPE_SECRET_KEY is missing in environment variables.")
 }
 
-const stripe = new Stripe(stripeSecret, {
-  apiVersion: "2023-10-16", // Latest stable API version
-})
-
+const stripe = new Stripe(stripeSecret)
+ 
 export async function POST(req: Request) {
   try {
     const body = await req.json()
