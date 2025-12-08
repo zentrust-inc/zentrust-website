@@ -2,9 +2,17 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      // EXISTING unsplash config
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      // ⭐ REQUIRED FOR TINA CLOUD MEDIA
+      {
+        protocol: 'https',
+        hostname: 'assets.tina.io',
         port: '',
         pathname: '/**',
       },
@@ -17,12 +25,11 @@ const nextConfig = {
       {
         source: '/:path*',
         headers: [
-          // Allow TinaCMS dev server + Next.js to embed each other in iframes
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' http://localhost:3000 http://localhost:4001;",
+            value:
+              "frame-ancestors 'self' http://localhost:3000 http://localhost:4001;",
           },
-          // MUST override for Tina preview to work
           {
             key: 'X-Frame-Options',
             value: 'ALLOWALL',
