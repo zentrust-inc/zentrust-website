@@ -48,8 +48,7 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [])
 
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[110px] md:pt-[140px]">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-emerald-500/10" />
 
