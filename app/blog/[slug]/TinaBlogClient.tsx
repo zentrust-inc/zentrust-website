@@ -75,12 +75,14 @@ const TinaBlogClient: FC<TinaBlogClientProps> = ({
   const tina = useTina({ data, query, variables });
 
   const post = tina.data?.post;
-  const heroSrc =
-    post?.heroImage && post.heroImage.startsWith("/")
-      ? post.heroImage
-      : post?.heroImage
-      ? `/${post.heroImage}`
-      : "/images/default.jpg";
+ // Tina Cloud returns images as objects: { src, alt }
+// Local images are strings
+const heroSrc =
+  typeof post?.heroImage === "string"
+    ? post.heroImage
+    : post?.heroImage?.src
+    ? post.heroImage.src
+    : "/images/default.jpg";
   const bodyContent =
     typeof post?.body === "string"
       ? post.body
