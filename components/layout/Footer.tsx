@@ -22,7 +22,7 @@ const footerLinks = {
     { name: 'Accessibility', href: '/accessibility' },
   ],
   support: [
-    { name: 'Donate', href: '/donate' },
+    { name: 'Stewardship', href: '/donate' },
     { name: 'Partnership', href: '/partner' },
     { name: 'General Inquiries', href: '/contact' },
   ],
@@ -133,7 +133,7 @@ export function Footer() {
 
             {/* Support Section */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Get Involved</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-4">Participate</h3>
               <ul className="space-y-2">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
