@@ -146,7 +146,7 @@ export function Hero() {
             >
               <Button asChild size="lg" className="group">
                 <Link href="/donate">
-                  Support the Regeneration
+                  Enter the Regeneration Portal
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -193,9 +193,9 @@ export function Hero() {
                 <div className="text-center">
                   <div className="text-xl font-bold text-foreground mb-2">The Journey Begins</div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    As a newly recognized 501(c)(3), ZenTrust is establishing the ecological, scientific, 
-                    and community foundations that will shape long-term regenerative impact. 
-                    Your support helps build this future from the ground up.
+                   As a newly recognized 501(c)(3), ZenTrust is cultivating the ecological, 
+  scientific, and community architectures that enable long-term regeneration.  
+  Participation in any form emerges voluntarily as individuals resonate with this vision.
                   </p>
                   <Button asChild size="sm" className="w-full">
                     <Link href="/about">Explore Our Vision</Link>
