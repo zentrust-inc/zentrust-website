@@ -114,7 +114,7 @@ export function Hero() {
               ZenTrust is recognized by the IRS as a 170(b)(1)(A)(vi) public charity.  
               <Link
                 href="/IRS_Determination_Letter.pdf"
-                target="_blank"
+                target="https://apps.irs.gov/pub/epostcard/dl/FinalLetter_33-4318487_ZENTRUSTINC_04072025_00.pdf"
                 className="ml-1 font-semibold text-foreground underline hover:text-primary transition-colors"
               >
                 View official IRS determination letter
