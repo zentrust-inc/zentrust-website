@@ -173,47 +173,49 @@ export function ImpactCounters() {
             )
           })}
         </div>
+{/* CTA Section */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+  transition={{ duration: 0.6, delay: 0.8 }}
+  className="text-center mt-16"
+>
+  <div className="glass-card rounded-2xl p-8 md:p-12 bg-gradient-to-r from-primary/10 to-emerald-500/10 border-primary/20">
+    
+    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+      Explore Regenerative Pathways
+    </h3>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="glass-card rounded-2xl p-8 md:p-12 bg-gradient-to-r from-primary/10 to-emerald-500/10 border-primary/20">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Become a Steward of Regeneration
-            </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Regeneration is not achieved by a single hand — 
-              but by a collective heart.  
-              Join us in creating ecosystems, communities, and futures  
-              that become stronger with every challenge they face.
-            </p>
+    <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+      Regeneration emerges from relationship — between people, land, and the 
+      intelligence of living systems. Explore how your voluntary participation 
+      may align with this unfolding work.
+    </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="/donate"
-                className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Support Regeneration
-              </motion.a>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <motion.a
+        href="/donate"
+        className="btn-primary"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Enter the Stewardship Portal
+      </motion.a>
 
-              <motion.a
-                href="/programs"
-                className="btn-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Our Programs
-              </motion.a>
-            </div>
-          </div>
-        </motion.div>
+      <motion.a
+        href="/programs"
+        className="btn-secondary"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Explore Our Programs
+      </motion.a>
+    </div>
 
+  </div>
+</motion.div>
+
+        
       </div>
     </section>
   )
