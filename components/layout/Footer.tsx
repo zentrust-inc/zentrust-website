@@ -16,7 +16,7 @@ const footerLinks = {
   ],
   resources: [
     { name: 'Newsletter', href: '/newsletter' },
-    { name: 'Stewardship Rights', href: '/donor-rights' }, // ← Paraphrased
+    { name: 'Stewardship Rights', href: '/stewardship-rights' }, // ← Paraphrased
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Accessibility', href: '/accessibility' },
