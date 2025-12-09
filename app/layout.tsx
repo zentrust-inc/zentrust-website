@@ -5,6 +5,7 @@ export const revalidate = 0;
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Suspense } from 'react'
+import Script from "next/script"
 import './globals.css'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { Navbar } from '@/components/layout/Navbar'
@@ -19,8 +20,16 @@ export const metadata: Metadata = {
     default: 'ZenTrust - Regenerative Agriculture & Environmental Stewardship',
     template: '%s | ZenTrust',
   },
-  description: 'ZenTrust promotes sustainable agriculture, environmental restoration, and community empowerment through research, education, and direct action programs.',
-  keywords: ['sustainable agriculture', 'regenerative farming', 'environmental restoration', 'community education', 'sustainability', 'nonprofit'],
+  description:
+    'ZenTrust promotes sustainable agriculture, environmental restoration, and community empowerment through research, education, and direct action programs.',
+  keywords: [
+    'sustainable agriculture',
+    'regenerative farming',
+    'environmental restoration',
+    'community education',
+    'sustainability',
+    'nonprofit',
+  ],
   authors: [{ name: 'ZenTrust' }],
   creator: 'ZenTrust',
   publisher: 'ZenTrust',
@@ -39,7 +48,8 @@ export const metadata: Metadata = {
     url: 'https://zentrust.org',
     siteName: 'ZenTrust',
     title: 'ZenTrust - Regenerative Agriculture & Environmental Stewardship',
-    description: 'Promoting sustainable agriculture and environmental restoration through research, education, and community programs.',
+    description:
+      'Promoting sustainable agriculture and environmental restoration through research, education, and community programs.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -52,7 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ZenTrust - Regenerative Agriculture & Environmental Stewardship',
-    description: 'Promoting sustainable agriculture and environmental restoration through research, education, and community programs.',
+    description:
+      'Promoting sustainable agriculture and environmental restoration through research, education, and community programs.',
     images: ['/images/twitter-image.jpg'],
   },
   robots: {
@@ -72,8 +83,52 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+
+        {/* Manifest + Icons */}
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* ------------------------------
+            GOOGLE CONSENT MODE (Default)
+           ------------------------------ */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Default: deny until user accepts (GDPR safe)
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'analytics_storage': 'denied'
+            });
+          `}
+        </Script>
+
+        {/* ------------------------------
+            GOOGLE TAG (GA4)
+           ------------------------------ */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2G4CVKHFZR"
+        />
+
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            gtag('js', new Date());
+
+            gtag('config', 'G-2G4CVKHFZR', {
+              anonymize_ip: true
+            });
+          `}
+        </Script>
+
+        {/* ------------------------------
+            SERVICE WORKER
+           ------------------------------ */}
         {process.env.NODE_ENV === 'production' && (
           <script
             dangerouslySetInnerHTML={{
@@ -93,12 +148,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           />
         )}
+
       </head>
+
       <body className={inter.className} suppressHydrationWarning>
+        {/* Existing Analytics Components */}
         <GA4 />
         <Suspense fallback={null}>
           <TrackPageView />
         </Suspense>
+
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen bg-background text-foreground">
             <Navbar />
