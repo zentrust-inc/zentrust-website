@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://zentrust.org'),
+  metadataBase: new URL('https://zentrust.world'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://zentrust.org',
+    url: 'https://zentrust.world',
     siteName: 'ZenTrust',
     title: 'ZenTrust - Regenerative Agriculture & Environmental Stewardship',
     description:
