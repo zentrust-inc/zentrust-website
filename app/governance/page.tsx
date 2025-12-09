@@ -353,58 +353,59 @@ export default function GovernancePage() {
           </div>
         </div>
       </section>
+{/* Stewardship Rights */}
+<section className="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-4xl mx-auto text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+        Stewardship <span className="gradient-text">Rights</span>
+      </h2>
+      <p className="text-lg text-muted-foreground mb-8">
+        ZenTrust affirms the rights of all individuals who voluntarily engage with our
+        regenerative ecosystem. These rights reflect autonomy, clarity, transparency,
+        and sovereignty — not fundraising or solicitation obligations.
+      </p>
 
-      {/* Donor Rights */}
-      <section className="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Donor <span className="gradient-text">Rights</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              ZenTrust is committed to protecting and respecting the rights of all donors. 
-              We align with the AFP Donor Bill of Rights and maintain the highest ethical standards.
-            </p>
-            
-            <div className="glass-card rounded-2xl p-8 mb-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                Your Rights as a ZenTrust Donor
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Information Rights</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Access to financial information and impact reports</li>
-                    <li>• Transparency about governance and operations</li>
-                    <li>• Clear communication about how funds are used</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Privacy Rights</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Protection of personal and financial information</li>
-                    <li>• Control over communication preferences</li>
-                    <li>• Right to access, correct, or delete personal data</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild>
-                <Link href="/donor-rights">
-                  View Full Donor Rights Policy
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="/contact">
-                  Contact Us About Your Rights
-                </Link>
-              </Button>
-            </div>
+      <div className="glass-card rounded-2xl p-8 mb-8">
+        <h3 className="text-xl font-bold text-foreground mb-4">
+          Your Rights as a ZenTrust Participant & Steward
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6 text-left">
+          <div>
+            <h4 className="font-semibold text-foreground mb-2">Clarity & Transparency</h4>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• Understand how resources are stewarded</li>
+              <li>• Access governance and compliance information</li>
+              <li>• Receive communication grounded in honesty and accuracy</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-2">Privacy & Autonomy</h4>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li>• Control over personal data and communication preferences</li>
+              <li>• Engage privately or anonymously when desired</li>
+              <li>• Withdraw or modify participation at any time</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button asChild>
+          <Link href="/stewardship-rights">
+            View Full Stewardship Rights
+          </Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/contact">
+            Contact Us About Governance or Rights
+          </Link>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   )
 }
