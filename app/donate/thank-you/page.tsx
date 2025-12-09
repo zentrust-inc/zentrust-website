@@ -22,35 +22,43 @@ function StewardshipAcknowledgementInner() {
 
   return (
     <div className="py-20 px-4 text-center max-w-3xl mx-auto">
+      {/* Heading */}
       <h1 className="text-4xl font-extrabold mb-6 gradient-text">
         Stewardship Exchange Received
       </h1>
 
+      {/* Tao-Inspired Amount Line */}
       <p className="text-lg text-muted-foreground leading-relaxed mb-6">
         Your voluntary resource flow of{" "}
         <span className="font-semibold text-foreground">
           ${amount.toLocaleString()}
         </span>{" "}
-        has been integrated into ZenTrust’s regenerative ecosystem.
+        has entered the living ecosystem of ZenTrust.
       </p>
 
+      {/* Tao-Inspired Quote + Meaning */}
       <div className="glass-card rounded-2xl p-8 mx-auto mb-8">
         <p className="italic text-foreground text-xl mb-3">
-          “When resources move with intention, ecosystems remember their strength.”
+          “When a river gives without effort, valleys flourish without seeking.”
         </p>
-        <p className="text-sm text-muted-foreground">
-          This exchange supports the long arc of regeneration—ecological,
-          scientific, and communal—flowing into the architectures that
-          strengthen under stress.
+
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          This exchange is not a transaction — it is a movement of intention.
+          A quiet alignment with regeneration, joining the long work of soil,
+          water, community, and science as they remember how to heal
+          themselves. Your offering becomes part of a widening field of
+          interdependence, where resources move where they are needed and
+          ecosystems strengthen by being seen.
         </p>
       </div>
 
+      {/* Receipt Notice */}
       <p className="text-sm text-muted-foreground mb-4">
         A stewardship receipt has been sent to your email.  
-        This acknowledgement reflects your participation in a wider field of
-        interdependence and ecological awakening.
+        May this moment reflect your place in a renewing world.
       </p>
 
+      {/* Return Button */}
       <a
         href="/"
         className="inline-flex items-center gap-2 px-6 py-3 mt-4 rounded-xl text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-all"
@@ -58,6 +66,7 @@ function StewardshipAcknowledgementInner() {
         Return to ZenTrust
       </a>
 
+      {/* Legal Footer */}
       <p className="mt-6 text-xs text-muted-foreground">
         ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487  
         Stewardship exchanges are voluntary and are used exclusively for
@@ -69,7 +78,13 @@ function StewardshipAcknowledgementInner() {
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="p-10 text-center text-muted-foreground">Integrating stewardship…</div>}>
+    <Suspense
+      fallback={
+        <div className="p-10 text-center text-muted-foreground">
+          Integrating stewardship…
+        </div>
+      }
+    >
       <StewardshipAcknowledgementInner />
     </Suspense>
   );
