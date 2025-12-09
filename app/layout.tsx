@@ -1,8 +1,6 @@
-"use client";
-
 export const dynamic = "force-dynamic";
-export const revalidate = 0;
 export const fetchCache = "force-no-store";
+export const revalidate = 0;
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -70,11 +68,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -105,17 +99,10 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <TrackPageView />
         </Suspense>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen bg-background text-foreground">
             <Navbar />
-            <main className="flex-1">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
