@@ -1,6 +1,8 @@
+// MUST COME BEFORE ANYTHING ELSE
+export const dynamic = "force-dynamic"
+
 "use client"
 
-export const dynamic = "force-dynamic"
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { loadStripe } from "@stripe/stripe-js"
@@ -35,7 +37,7 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
     })
 
     if (error) {
-      setErrorMessage(error.message || "An error occurred.")
+      setErrorMessage(error.message || "Something went wrong.")
       setIsProcessing(false)
     }
   }
@@ -44,19 +46,19 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <PaymentElement />
 
-      <Button type="submit" size="lg" disabled={isProcessing} className="w-full">
-        {isProcessing ? "Processing..." : "Confirm Stewardship Flow"}
+      <Button disabled={isProcessing} className="w-full" size="lg">
+        {isProcessing ? "Processing…" : "Confirm Stewardship Flow"}
       </Button>
 
       {errorMessage && (
-        <p className="text-sm text-red-500 text-center">{errorMessage}</p>
+        <p className="text-red-500 text-sm text-center">{errorMessage}</p>
       )}
 
-      <p className="text-xs text-muted-foreground text-center mt-4">
+      <p className="text-xs text-muted-foreground text-center">
         ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487  
         <br />
-        Stewardship exchanges are voluntary and used only for charitable, scientific,  
-        and educational purposes.
+        Stewardship exchanges are voluntary and used exclusively for charitable,
+        scientific, and educational purposes.
       </p>
     </form>
   )
@@ -64,7 +66,7 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
 
 export default function PaymentPage() {
   const params = useSearchParams()
-  const amount = params.get("amount") // ★ READ AMOUNT FROM URL
+  const amount = params.get("amount")
   const [clientSecret, setClientSecret] = useState<string | null>(null)
 
   useEffect(() => {
@@ -102,7 +104,6 @@ export default function PaymentPage() {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Quiet Header */}
       <section className="pb-12 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-3">
           Stewardship Confirmation
@@ -112,7 +113,6 @@ export default function PaymentPage() {
         </p>
       </section>
 
-      {/* Stripe Element */}
       <section className="pb-24">
         <div className="max-w-md mx-auto px-4">
           <Elements
@@ -121,7 +121,9 @@ export default function PaymentPage() {
               clientSecret,
               appearance: {
                 theme: "flat",
-                variables: { borderRadius: "8px" },
+                variables: {
+                  borderRadius: "8px",
+                },
               },
             }}
           >
