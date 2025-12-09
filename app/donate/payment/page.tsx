@@ -1,8 +1,7 @@
-"use client"               // MUST BE FIRST LINE
-export const dynamic = "force-dynamic"
+"use client"
 
-import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
+import { useEffect, useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import {
   Elements,
@@ -62,7 +61,7 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
   )
 }
 
-export default function PaymentPage() {
+export default function PaymentClient() {
   const params = useSearchParams()
   const amount = params.get("amount")
   const [clientSecret, setClientSecret] = useState<string | null>(null)
