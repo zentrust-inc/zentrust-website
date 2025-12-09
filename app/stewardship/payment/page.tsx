@@ -77,7 +77,7 @@ function PaymentForm({
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${window.location.origin}/donate/thank-you`,
+          return_url: `${window.location.origin}/stewardship/thank-you`,
         },
         redirect: "if_required",
       });
