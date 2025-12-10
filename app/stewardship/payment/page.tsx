@@ -202,7 +202,7 @@ export default function StewardshipPaymentPage() {
       try {
         setStatus("loading");
 
-        const res = await fetch("/api/donations/create-intent", {
+        const res = await fetch("/api/stewardship/create-intent", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
