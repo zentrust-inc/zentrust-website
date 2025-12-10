@@ -1,15 +1,22 @@
 /** @type {import('next').NextConfig} */
+
+// Import next-pwa safely (it may or may not be installed)
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: true,           // 🔥 THIS IS THE KEY — DISABLE SERVICE WORKER
+  register: false,
+  skipWaiting: false,
+});
+
 const nextConfig = {
   images: {
     remotePatterns: [
-      // EXISTING unsplash config
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
       },
-      // ⭐ REQUIRED FOR TINA CLOUD MEDIA
       {
         protocol: 'https',
         hostname: 'assets.tina.io',
@@ -42,4 +49,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = withPWA(nextConfig);
