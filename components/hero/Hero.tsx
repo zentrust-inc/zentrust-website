@@ -3,12 +3,11 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { AmbientBackground } from "@/components/global/AmbientBackground"
 import { Button } from "@/components/ui/button"
 
-/* -------------------------------
+/* -----------------------------------------
    PREMIUM ANIMATION VARIANTS
--------------------------------- */
+------------------------------------------ */
 const wordFade = {
   hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
   visible: (i: number) => ({
@@ -52,47 +51,41 @@ export function Hero() {
         min-h-[75vh] md:min-h-screen
       "
     >
-      {/* ------------------------------ */}
-      {/* MOBILE AMBIENT BACKGROUND      */}
-      {/* ------------------------------ */}
-      <AmbientBackground
+
+      {/* ----------------------------------------- */}
+      {/*     MOBILE BACKGROUND IMAGE               */}
+      {/* ----------------------------------------- */}
+      <div
+        className="absolute inset-0 bg-cover bg-center md:hidden"
+        style={{
+          backgroundImage: "url('/images/hero-mobile.jpeg')",
+        }}
+      ></div>
+
+      {/* ----------------------------------------- */}
+      {/*     DESKTOP BACKGROUND IMAGE (BOTH MODES) */}
+      {/* ----------------------------------------- */}
+      <div
         className="
-          absolute inset-0 w-full h-full
-          z-0 block md:hidden pointer-events-none
+          absolute inset-0 hidden md:block
+          bg-cover bg-center will-change-transform
         "
-      />
+        style={{
+          backgroundImage: "url('/images/zentrust-hero-image.jpeg')",
+          transform: `translateY(${offsetY}px)`,
+        }}
+      ></div>
 
-      {/* ------------------------------ */}
-      {/* DESKTOP BACKGROUNDS            */}
-      {/* ------------------------------ */}
-      <div className="absolute inset-0 hidden md:block z-0">
-        {/* Light mode → Ambient animated background */}
-        <div className="block dark:hidden absolute inset-0">
-          <AmbientBackground className="absolute inset-0 w-full h-full pointer-events-none" />
-        </div>
+      {/* DARK OVERLAY FOR DESKTOP FOR READABILITY */}
+      <div className="absolute inset-0 hidden md:block bg-black/25" />
 
-        {/* Dark mode → parallax forest image */}
-        <div
-          className="
-            hidden dark:block absolute inset-0
-            bg-cover bg-center will-change-transform
-          "
-          style={{
-            backgroundImage: "url('/images/zentrust-hero-image.jpeg')",
-            transform: `translateY(${offsetY}px)`,
-          }}
-        />
 
-        {/* Dark overlay for readability */}
-        <div className="hidden dark:block absolute inset-0 bg-black/35" />
-      </div>
-
-      {/* -------------------------------------------------- */}
-      {/* HERO CONTENT (CENTERED)                           */}
-      {/* -------------------------------------------------- */}
+      {/* ----------------------------------------- */}
+      {/*     HERO CONTENT                           */}
+      {/* ----------------------------------------- */}
       <div className="relative z-20 max-w-4xl mx-auto px-6 flex flex-col items-center">
 
-        {/* Badge */}
+        {/* BADGE */}
         <div
           className="
             inline-flex items-center px-3 py-1.5 rounded-full
@@ -105,15 +98,17 @@ export function Hero() {
           Advancing ecological regeneration, BPSS research & scientific education.
         </div>
 
-        {/* -------------------------------------------------- */}
-        {/* CINEMATIC HEADLINE                                */}
-        {/* -------------------------------------------------- */}
+
+        {/* ----------------------------------------- */}
+        {/*     CINEMATIC HEADLINE                     */}
+        {/* ----------------------------------------- */}
         <motion.h1
           className="font-bold leading-tight text-center space-y-1 mt-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
+
           {/* HEALING LAND */}
           <div className="flex justify-center gap-2 flex-wrap text-white drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)]">
             {["Healing", "Land."].map((word, i) => (
@@ -130,7 +125,7 @@ export function Hero() {
             ))}
           </div>
 
-          {/* ELEVATING HUMANITY — Golden shimmer */}
+          {/* ELEVATING HUMANITY — GOLD SHIMMER */}
           <motion.div
             className="
               flex justify-center gap-2 flex-wrap
@@ -170,11 +165,13 @@ export function Hero() {
               </motion.span>
             ))}
           </div>
+
         </motion.h1>
 
-        {/* -------------------------------------------------- */}
-        {/* SUPPORTING TEXT                                    */}
-        {/* -------------------------------------------------- */}
+
+        {/* ----------------------------------------- */}
+        {/*     SUPPORTING TEXT                        */}
+        {/* ----------------------------------------- */}
         <motion.p
           className="
             mt-6 text-lg md:text-xl font-medium max-w-2xl mx-auto text-center
@@ -187,6 +184,7 @@ export function Hero() {
           ZenTrust is a <strong>501(c)(3) public charity (EIN 33-4318487)</strong> advancing regenerative
           ecology, BPSS-integrative wellness research, and open scientific education.
         </motion.p>
+
 
         {/* IRS LINE */}
         <motion.p
@@ -208,9 +206,8 @@ export function Hero() {
           </a>
         </motion.p>
 
-        {/* -------------------------------------------------- */}
-        {/* CTA BUTTON                                         */}
-        {/* -------------------------------------------------- */}
+
+        {/* CTA BUTTON */}
         <motion.div
           className="mt-8"
           initial={{ opacity: 0, scale: 0.95 }}
