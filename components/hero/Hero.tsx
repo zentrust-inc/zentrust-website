@@ -7,6 +7,15 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   const [offsetY, setOffsetY] = useState(0)
 
+  /* Enable transparent body on mobile so immersive BG shows */
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      document.body.classList.add("hero-transparent")
+    } else {
+      document.body.classList.remove("hero-transparent")
+    }
+  }, [])
+
   /* PARALLAX SCROLL — desktop only */
   useEffect(() => {
     const onScroll = () => setOffsetY(window.scrollY * 0.3)
@@ -35,11 +44,11 @@ export function Hero() {
         }}
       />
 
-      {/* DESKTOP OVERLAY (unchanged) */}
+      {/* DESKTOP OVERLAY */}
       <div className="absolute inset-0 bg-emerald-900/40 backdrop-blur-[1px] hidden md:block" />
 
-      {/* HERO TEXT BLOCK */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-white drop-shadow-xl">
+      {/* HERO TEXT */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-white">
 
         {/* BADGE */}
         <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 text-white text-xs sm:text-sm font-medium backdrop-blur mb-6">
@@ -47,8 +56,8 @@ export function Hero() {
           Advancing ecological regeneration, BPSS research & scientific education.
         </div>
 
-        {/* HEADLINE (3 clean rows) */}
-        <h1 className="font-bold leading-tight">
+        {/* HEADLINE */}
+        <h1 className="font-bold leading-tight space-y-2">
 
           <span className="block text-4xl sm:text-5xl md:text-6xl">
             Healing Land.
@@ -70,7 +79,7 @@ export function Hero() {
           BPSS-integrative wellness research, and open scientific education.
         </p>
 
-        {/* IRS DETERMINATION LINK */}
+        {/* IRS LINK */}
         <p className="text-sm opacity-90 mt-2">
           Recognized by the IRS as a 170(b)(1)(A)(vi) public charity.
           <a
@@ -82,7 +91,7 @@ export function Hero() {
           </a>
         </p>
 
-        {/* CTA BUTTON */}
+        {/* CTA */}
         <div className="mt-8 flex justify-center">
           <Button
             size="lg"
@@ -92,6 +101,7 @@ export function Hero() {
             <Link href="/stewardship">Enter the Stewardship Portal</Link>
           </Button>
         </div>
+
       </div>
     </section>
   )
