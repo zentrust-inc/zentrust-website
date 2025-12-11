@@ -1,176 +1,92 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CheckCircle } from "lucide-react"
-
-const missionAreas = [
-  {
-    title: "Regenerative Ecology",
-    desc: "Restoring forests, watersheds, soils, and native ecosystems.",
-    status: "Launching 2025",
-  },
-  {
-    title: "BPSS Integrative Wellness Research",
-    desc: "Research linking ecological conditions and holistic human health.",
-    status: "In Development",
-  },
-  {
-    title: "Open Scientific Education",
-    desc: "Workshops, training, and open-access public education programs.",
-    status: "Starting Soon",
-  },
-  {
-    title: "Global Partnerships & Grantmaking",
-    desc: "Supporting aligned nonprofits advancing regeneration.",
-    status: "Forming Now",
-  },
-]
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
-  const [offsetY, setOffsetY] = useState(0)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  /* PARALLAX SCROLL */
-  useEffect(() => {
-    const onScroll = () => setOffsetY(window.scrollY * 0.3)
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
-  /* PARTICLE FOG */
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")!
-    let width = (canvas.width = window.innerWidth)
-    let height = (canvas.height = window.innerHeight)
-
-    const particles = Array.from({ length: 60 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      r: Math.random() * 2 + 1,
-      s: Math.random() * 0.4 + 0.2,
-    }))
-
-    const animate = () => {
-      ctx.clearRect(0, 0, width, height)
-      particles.forEach((p) => {
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = "rgba(255,255,255,0.25)"
-        ctx.fill()
-        p.y -= p.s
-        if (p.y < 0) p.y = height
-      })
-      requestAnimationFrame(animate)
-    }
-    animate()
-
-    const onResize = () => {
-      width = canvas.width = window.innerWidth
-      height = canvas.height = window.innerHeight
-    }
-    window.addEventListener("resize", onResize)
-    return () => window.removeEventListener("resize", onResize)
-  }, [])
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-36">
+    <section className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden">
+      {/* Background Video or Image */}
+      <div className="absolute inset-0 -z-10">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero/forest.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+      </div>
 
-      {/* BACKGROUND IMAGE + PARALLAX */}
-      <div
-        className="absolute inset-0 bg-cover bg-center will-change-transform"
-        style={{
-          backgroundImage: `url('/images/zentrust-hero-image.jpeg')`,
-          transform: `translateY(${offsetY}px)`,
-        }}
-      />
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl px-6 text-center flex flex-col items-center">
+        {/* Top Tagline Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6"
+        >
+          <span className="px-4 py-2 text-sm rounded-full bg-white/20 backdrop-blur text-white font-medium">
+            Advancing ecological regeneration, BPSS research & scientific education.
+          </span>
+        </motion.div>
 
-      {/* DARK GREEN OVERLAY */}
-      <div className="absolute inset-0 bg-emerald-900/40 backdrop-blur-[1px]" />
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-white font-extrabold leading-tight text-5xl sm:text-6xl md:text-7xl space-y-2"
+        >
+          <div>Healing Land.</div>
+          <div className="text-green-300">Elevating Humanity.</div>
+          <div>Science for Regeneration.</div>
+        </motion.h1>
 
-      {/* PARTICLE FOG */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-      />
-
-      {/* CONTENT GRID (LEFT TEXT + RIGHT MISSION AREAS) */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 text-white">
-
-        {/* LEFT SIDE TEXT */}
-        <div className="space-y-6 max-w-xl">
-
-          {/* BADGE */}
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 text-white text-xs sm:text-sm font-medium backdrop-blur">
-            <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
-            Advancing ecological regeneration, BPSS research & open education.
-          </div>
-
-          {/* HEADLINE */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight drop-shadow-xl">
-            Healing Land.<br />
-            Elevating Humanity.<br />
-            Science for Regeneration.
-          </h1>
-
-          {/* DESCRIPTION */}
-          <p className="text-lg md:text-xl font-light drop-shadow-md">
-            ZenTrust is a <strong>501(c)(3) public charity (EIN 33-4318487)</strong> advancing regenerative ecology,
-            BPSS-integrative wellness research, and open scientific education.
-          </p>
-
-          {/* IRS LINK */}
-          <p className="text-sm opacity-90 drop-shadow">
-            Recognized by the IRS as a 170(b)(1)(A)(vi) public charity.
-            <a
-              href="https://apps.irs.gov/pub/epostcard/dl/FinalLetter_33-4318487_ZENTRUSTINC_04072025_00.pdf"
-              target="_blank"
-              className="underline ml-1 font-semibold hover:text-emerald-200"
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: mounted ? 1 : 0 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+          className="text-white/90 mt-6 text-lg md:text-xl leading-relaxed max-w-3xl"
+        >
+          ZenTrust is a 501(c)(3) public charity (EIN 33-4318487) advancing
+          regenerative ecology, BPSS-integrative wellness research, and open
+          scientific education.
+          <br />
+          <span className="block mt-3 text-sm opacity-80">
+            Recognized by the IRS as a 170(b)(1)(A)(vi) public charity.{" "}
+            <Link
+              href="/irs-letter"
+              className="underline hover:text-green-200 transition"
             >
-              View determination letter
-            </a>
-          </p>
+              View official determination letter
+            </Link>
+          </span>
+        </motion.p>
 
-          {/* CTA BUTTON */}
-          <Button
-            size="lg"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-xl"
-            asChild
-          >
-            <Link href="/stewardship">Enter the Stewardship Portal</Link>
-          </Button>
-        </div>
-
-        {/* RIGHT SIDE: MISSION AREAS */}
-        <div className="space-y-4 backdrop-blur-sm">
-
-          <h3 className="text-2xl font-bold mb-2 drop-shadow">Our Mission Areas</h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {missionAreas.map((item, idx) => (
-              <div key={idx} className="p-3 rounded-lg bg-white/10 backdrop-blur text-white shadow">
-                <div className="font-semibold text-lg mb-1">{item.title}</div>
-                <div className="text-xs opacity-90 mb-1">{item.status}</div>
-                <p className="text-xs opacity-80 leading-snug">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-4">
-            <h4 className="text-lg font-bold drop-shadow">The Journey Begins</h4>
-            <p className="text-sm opacity-90 drop-shadow">
-              Building long-term ecological and community architectures that support regeneration.
-            </p>
-            <Button asChild size="sm" className="mt-3 bg-white/10 backdrop-blur text-white hover:bg-white/20 w-full">
-              <Link href="/about">Explore Our Vision</Link>
-            </Button>
-          </div>
-
-        </div>
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-10"
+        >
+          <Link href="/stewardship">
+            <button className="px-8 py-4 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold text-lg shadow-lg flex items-center gap-2 transition">
+              Enter the Stewardship Portal <ArrowRight size={20} />
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }
