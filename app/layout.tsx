@@ -156,7 +156,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen text-foreground relative z-10">
+          <div className="min-h-screen text-foreground">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

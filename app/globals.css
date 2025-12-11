@@ -27,9 +27,8 @@
     --ring: 142.1 70.6% 45.3%;
     --radius: 0.75rem;
 
-    --hero-heading: #064e3b;
-    --hero-subheading: #065f46;
-    --hero-body: #047857;
+    --hero-light-head: #064e3b;
+    --hero-light-body: #047857;
   }
 
   .dark {
@@ -53,9 +52,8 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 142.1 70.6% 45.3%;
 
-    --hero-heading: #ffffff;
-    --hero-subheading: #ffffff;
-    --hero-body: #ffffff;
+    --hero-light-head: #ffffff;
+    --hero-light-body: #e5ffef;
   }
 
   * {
@@ -68,15 +66,19 @@
   }
 
   .hero-heading {
-    color: var(--hero-heading);
+    color: var(--hero-light-head);
   }
 
   .hero-subheading {
-    color: var(--hero-subheading);
+    color: #065f46;
+  }
+
+  .dark .hero-subheading {
+    color: #ffffff;
   }
 
   .hero-body {
-    color: var(--hero-body);
+    color: var(--hero-light-body);
   }
 }
 
