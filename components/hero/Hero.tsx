@@ -3,37 +3,32 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import clsx from "clsx"
 
 export function Hero() {
   const [offsetY, setOffsetY] = useState(0)
-  const fgParallaxRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  /* DESKTOP PARALLAX MOVEMENT */
+  /* PARALLAX SCROLL */
   useEffect(() => {
-    const onScroll = () => {
-      if (window.innerWidth < 768) return
-      setOffsetY(window.scrollY * 0.2)
-    }
+    const onScroll = () => setOffsetY(window.scrollY * 0.3)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  /* PARTICLE FLOATING LAYER */
+  /* PARTICLE CANVAS */
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
     const ctx = canvas.getContext("2d")!
+
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
 
-    const particles = Array.from({ length: 80 }, () => ({
+    const particles = Array.from({ length: 60 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 1.8 + 0.6,
-      s: Math.random() * 0.3 + 0.1,
+      r: Math.random() * 2 + 1,
+      s: Math.random() * 0.4 + 0.2,
     }))
 
     const animate = () => {
@@ -43,7 +38,6 @@ export function Hero() {
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx.fillStyle = "rgba(255,255,255,0.25)"
         ctx.fill()
-
         p.y -= p.s
         if (p.y < 0) p.y = height
       })
@@ -53,126 +47,81 @@ export function Hero() {
     animate()
 
     const resize = () => {
-      width = canvas.width = window.innerWidth
-      height = canvas.height = window.innerHeight
+      width = (canvas.width = window.innerWidth)
+      height = (canvas.height = window.innerHeight)
     }
     window.addEventListener("resize", resize)
     return () => window.removeEventListener("resize", resize)
   }, [])
 
-  /* CAMERA SWAY (Global breathing motion) */
-  useEffect(() => {
-    let angle = 0
-    const sway = () => {
-      angle += 0.002
-      if (fgParallaxRef.current) {
-        fgParallaxRef.current.style.transform =
-          `translateY(${offsetY}px) rotate(${Math.sin(angle) * 0.6}deg)`
-      }
-      requestAnimationFrame(sway)
-    }
-    sway()
-  }, [offsetY])
-
   return (
-    <section
-      className="
-        relative min-h-screen flex items-center justify-center text-center
-        px-6 pt-24 pb-20 overflow-hidden
-        bg-gradient-to-b from-[#FAFAF7] to-[#F2F2ED]
-        dark:from-[#060B08] dark:to-[#0A1E17]
-      "
-    >
-      {/* DESKTOP BACKGROUND IMAGE */}
+    <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-24 md:pt-32">
+
+      {/* BACKGROUND IMAGE */}
       <div
-        ref={fgParallaxRef}
-        className="
-          hidden md:block absolute inset-0 bg-cover bg-center 
-          brightness-[0.75] contrast-[1.15] saturate-[0.9]
-          will-change-transform
-        "
+        className="absolute inset-0 bg-cover bg-center will-change-transform"
         style={{
           backgroundImage: `url('/images/zentrust-hero-image.jpeg')`,
+          transform: `translateY(${offsetY}px)`
         }}
       />
 
-      {/* LIGHT RAY OVERLAY */}
-      <div className="
-        hidden md:block absolute inset-0 
-        bg-[url('/images/light-rays.png')] opacity-[0.35] 
-        mix-blend-screen animate-pulse-slow
-      " />
+      {/* DARK GREEN OVERLAY */}
+      <div className="absolute inset-0 bg-emerald-900/40 backdrop-blur-[1px]" />
 
-      {/* DARKENING VIGNETTE FOR READABILITY */}
-      <div className="
-        hidden md:block absolute inset-0 
-        bg-[rgba(0,0,0,0.55)]
-        backdrop-blur-[2px]
-      " />
+      {/* PARTICLE LAYER */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
 
-      {/* FLOATING PARTICLES */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.5]"
-      />
-
-      {/* TEXT BLOCK */}
-      <div className="relative z-20 max-w-2xl mx-auto animate-fade-in">
+      {/* HERO TEXT BLOCK */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-white drop-shadow-xl">
 
         {/* BADGE */}
-        <div className="
-          inline-flex items-center px-4 py-1.5 mb-6 rounded-full
-          bg-emerald-700/20 dark:bg-white/10
-          text-emerald-900 dark:text-white
-          text-sm font-medium backdrop-blur
-        ">
-          ZenTrust · Ecological & Scientific Stewardship
+        <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 text-white text-xs sm:text-sm font-medium backdrop-blur mb-6">
+          <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+          Advancing ecological regeneration, BPSS research & scientific education.
         </div>
 
-        {/* IMMERSIVE BREATHING HEADLINE */}
-        <h1 className="font-bold leading-tight space-y-4 animate-breathe">
+        {/* HEADLINE (3 clean rows) */}
+        <h1 className="font-bold leading-tight">
 
-          <span className="
-            block text-4xl sm:text-5xl md:text-6xl
-            bg-gradient-to-r from-emerald-300 to-emerald-500
-            bg-clip-text text-transparent
-            drop-shadow-[0_0_14px_rgba(0,0,0,0.65)]
-          ">
+          <span className="block text-4xl sm:text-5xl md:text-6xl">
             Healing Land.
           </span>
 
-          <span className="
-            block text-4xl sm:text-5xl md:text-6xl
-            bg-gradient-to-r from-amber-300 to-orange-500
-            bg-clip-text text-transparent
-            drop-shadow-[0_0_14px_rgba(0,0,0,0.65)]
-          ">
+          <span className="block text-4xl sm:text-5xl md:text-6xl text-orange-300">
             Elevating Humanity.
           </span>
 
-          <span className="
-            block text-4xl sm:text-5xl md:text-6xl
-            bg-gradient-to-r from-cyan-300 to-blue-500
-            bg-clip-text text-transparent
-            drop-shadow-[0_0_14px_rgba(0,0,0,0.65)]
-          ">
+          <span className="block text-4xl sm:text-5xl md:text-6xl">
             Science for Regeneration.
           </span>
+
         </h1>
 
-        <p className="mt-6 text-base md:text-lg text-neutral-700 dark:text-neutral-300 font-light leading-relaxed max-w-xl mx-auto animate-fade-up">
-          ZenTrust is a <strong>501(c)(3) public charity</strong> advancing regenerative ecology,
+        {/* DESCRIPTION */}
+        <p className="mt-6 text-lg md:text-xl font-light max-w-2xl mx-auto">
+          ZenTrust is a <strong>501(c)(3) public charity (EIN 33-4318487)</strong> advancing regenerative ecology,
           BPSS-integrative wellness research, and open scientific education.
         </p>
 
-        <div className="mt-10 animate-fade-up-delayed">
+        {/* IRS DETERMINATION LINK */}
+        <p className="text-sm opacity-90 mt-2">
+          Recognized by the IRS as a 170(b)(1)(A)(vi) public charity.
+          <a
+            href="https://apps.irs.gov/pub/epostcard/dl/FinalLetter_33-4318487_ZENTRUSTINC_04072025_00.pdf"
+            target="_blank"
+            className="underline ml-1 font-semibold hover:text-emerald-200"
+          >
+            View official determination letter
+          </a>
+        </p>
+
+        {/* CTA BUTTON */}
+        <div className="mt-8 flex justify-center">
           <Button
+            size="lg"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-xl"
             asChild
-            className="
-              px-9 py-4 rounded-full text-lg shadow-xl
-              bg-emerald-600 hover:bg-emerald-700 text-white
-              transition-all duration-300 hover:shadow-emerald-500/40
-            "
           >
             <Link href="/stewardship">Enter the Stewardship Portal</Link>
           </Button>
