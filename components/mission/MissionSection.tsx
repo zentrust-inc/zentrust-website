@@ -32,17 +32,17 @@ export default function MissionSection() {
   ]
 
   return (
-    <section className="w-full py-24 bg-background overflow-hidden">
-      
+    <section className="w-full py-16 bg-background overflow-hidden">
+
       {/* INTRO CAPTION */}
       <motion.div
-        className="w-full px-6 text-center max-w-[1500px] mx-auto mb-20"
+        className="w-full px-6 text-center max-w-[1500px] mx-auto mb-12"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+        <p className="text-[20px] md:text-[22px] font-medium text-muted-foreground leading-snug md:leading-normal">
           These five pillars guide ZenTrust’s work in restoring ecosystems, uplifting communities,
           protecting cultural wisdom, and advancing holistic human and planetary wellbeing.
         </p>
@@ -62,19 +62,19 @@ export default function MissionSection() {
         {pillars.map((pillar, index) => (
           <motion.div
             key={index}
-            className="relative p-8 rounded-2xl bg-card shadow-sm border border-border/40 flex flex-col items-center text-center cursor-default"
+            className="relative p-8 rounded-2xl bg-card shadow-sm border border-border/30 flex flex-col items-center text-center cursor-default"
             variants={{
-              hidden: { opacity: 0, y: 35, filter: "brightness(0.6)" },
+              hidden: { opacity: 0, y: 35, filter: "brightness(0.7)" },
               visible: {
                 opacity: 1,
                 y: 0,
                 filter: "brightness(1)",
-                transition: { duration: 0.6, ease: "easeOut" },
+                transition: { duration: 0.55, ease: "easeOut" },
               },
             }}
             whileHover={{
               scale: 1.04,
-              boxShadow: "0 12px 30px rgba(0, 0, 0, 0.18)",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
             }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
@@ -88,12 +88,12 @@ export default function MissionSection() {
             </motion.div>
 
             {/* TITLE */}
-            <h3 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg md:text-xl font-semibold mb-4 tracking-tight">
               {pillar.title}
             </h3>
 
             {/* DESCRIPTION */}
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
               {pillar.text}
             </p>
           </motion.div>
@@ -102,16 +102,16 @@ export default function MissionSection() {
 
       {/* UNIFYING STATEMENT */}
       <motion.div
-        className="mt-24 mb-10 w-full text-center max-w-[1500px] mx-auto px-6"
+        className="mt-16 mb-4 w-full text-center max-w-[1500px] mx-auto px-6"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed">
+        <p className="text-xl md:text-2xl font-semibold text-foreground leading-normal">
           Modern life has divided us from ourselves, each other, and the Earth.
           <br />
-          <span className="text-primary font-semibold">
+          <span className="text-primary font-bold text-[22px] md:text-[24px]">
             ZenTrust exists to weave these three back into wholeness.
           </span>
         </p>
