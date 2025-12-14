@@ -27,7 +27,7 @@ import { Button } from "@/components/ui/button";
 import { calculateDonationImpact } from "@/lib/calculator";
 
 // ─────────────────────────────────────────────
-// Stripe setup
+// Stripe
 // ─────────────────────────────────────────────
 
 const stripePromise = loadStripe(
@@ -63,7 +63,7 @@ function PaymentForm({
     setError(null);
 
     if (!stripe || !elements) {
-      setError("Stripe is not ready yet.");
+      setError("Stripe not ready.");
       return;
     }
 
@@ -131,7 +131,7 @@ export default function StewardshipPaymentPage() {
   const searchParams = useSearchParams();
 
   const amount = Math.max(Number(searchParams.get("amount") ?? 50), 1);
-  const frequency =
+  const frequency: Frequency =
     searchParams.get("frequency") === "monthly" ? "monthly" : "once";
   const path = searchParams.get("path") ?? "flexible";
 
@@ -202,7 +202,6 @@ export default function StewardshipPaymentPage() {
 
         <div className="grid lg:grid-cols-[1.6fr_1.2fr] gap-12 mt-8">
 
-          {/* LEFT */}
           <div className="space-y-6">
             <h1 className="text-3xl font-bold">
               Finalize Your Stewardship
@@ -220,7 +219,6 @@ export default function StewardshipPaymentPage() {
                 options={{
                   clientSecret,
                   appearance: { theme: "flat" },
-                  mode: frequency === "monthly" ? "setup" : "payment", // 🔥 FIX
                 }}
               >
                 <PaymentForm
@@ -236,7 +234,6 @@ export default function StewardshipPaymentPage() {
             )}
           </div>
 
-          {/* RIGHT */}
           <aside className="rounded-2xl bg-muted/60 p-6 space-y-4">
             <div className="flex items-center gap-2">
               <Heart className="h-5 w-5 text-primary" />
