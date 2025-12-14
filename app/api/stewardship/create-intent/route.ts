@@ -6,7 +6,9 @@ export const runtime = "nodejs";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+// ─────────────────────────────
 // Request schema
+// ─────────────────────────────
 const DonationSchema = z.object({
   amount: z.number().min(1).max(200000),
   frequency: z.enum(["once", "monthly"]),
@@ -87,25 +89,26 @@ export async function POST(req: Request) {
     });
 
     const latestInvoice = subscription.latest_invoice;
-
     if (!latestInvoice || typeof latestInvoice === "string") {
       throw new Error("Latest invoice missing");
     }
 
+    // ⚠️ Stripe typing gap: trust runtime, not TS
+    const invoiceAny = latestInvoice as any;
+
     let clientSecret: string | undefined;
 
-    // Preferred SCA path
-    const confirmationSecret = (latestInvoice as any).confirmation_secret;
-    if (confirmationSecret?.client_secret) {
-      clientSecret = confirmationSecret.client_secret;
+    // 1️⃣ Preferred SCA path (confirmation_secret)
+    if (invoiceAny.confirmation_secret?.client_secret) {
+      clientSecret = invoiceAny.confirmation_secret.client_secret;
     }
 
-    // Fallback: retrieve PaymentIntent safely
-    if (!clientSecret && latestInvoice.payment_intent) {
+    // 2️⃣ Fallback: retrieve PaymentIntent manually
+    if (!clientSecret && invoiceAny.payment_intent) {
       const paymentIntentId =
-        typeof latestInvoice.payment_intent === "string"
-          ? latestInvoice.payment_intent
-          : latestInvoice.payment_intent.id;
+        typeof invoiceAny.payment_intent === "string"
+          ? invoiceAny.payment_intent
+          : invoiceAny.payment_intent.id;
 
       const paymentIntent =
         await stripe.paymentIntents.retrieve(paymentIntentId);
