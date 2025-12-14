@@ -3,12 +3,8 @@ export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-// -----------------------------------------------------------------------------
-// Stripe initialization
-// -----------------------------------------------------------------------------
-
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  typescript: true,
+  apiVersion: "2024-04-10",
 });
 
 // -----------------------------------------------------------------------------
@@ -20,9 +16,8 @@ const MAX_AMOUNT_USD = 1000;
 
 type Frequency = "once" | "monthly";
 
-// REQUIRED:
-// This must be a $1.00 / month recurring price created ONCE in Stripe
 const MONTHLY_PRICE_ID = process.env.STRIPE_MONTHLY_PRICE_ID!;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 
 // -----------------------------------------------------------------------------
 // POST handler
@@ -30,22 +25,18 @@ const MONTHLY_PRICE_ID = process.env.STRIPE_MONTHLY_PRICE_ID!;
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { amount, frequency } = body as {
+    const { amount, frequency } = (await req.json()) as {
       amount: number;
       frequency: Frequency;
     };
 
-    // -------------------------------------------------------------------------
-    // Validation
-    // -------------------------------------------------------------------------
+    // ------------------ Validation ------------------
 
     if (
       typeof amount !== "number" ||
-      Number.isNaN(amount) ||
+      !Number.isInteger(amount) ||
       amount < MIN_AMOUNT_USD ||
-      amount > MAX_AMOUNT_USD ||
-      !Number.isInteger(amount)
+      amount > MAX_AMOUNT_USD
     ) {
       return NextResponse.json(
         { error: "Invalid amount." },
@@ -60,17 +51,26 @@ export async function POST(req: Request) {
       );
     }
 
-    const amountInCents = amount * 100;
-
-    // -------------------------------------------------------------------------
-    // ONE-TIME PAYMENT
-    // -------------------------------------------------------------------------
+    // ------------------ ONE-TIME ------------------
 
     if (frequency === "once") {
-      const intent = await stripe.paymentIntents.create({
-        amount: amountInCents,
-        currency: "usd",
-        automatic_payment_methods: { enabled: true },
+      const session = await stripe.checkout.sessions.create({
+        mode: "payment",
+        payment_method_types: ["card"],
+        line_items: [
+          {
+            price_data: {
+              currency: "usd",
+              unit_amount: amount * 100,
+              product_data: {
+                name: "ZenTrust One-Time Stewardship",
+              },
+            },
+            quantity: 1,
+          },
+        ],
+        success_url: `${SITE_URL}/stewardship/thank-you`,
+        cancel_url: `${SITE_URL}/stewardship/checkout`,
         metadata: {
           purpose: "zentrust_stewardship",
           frequency: "once",
@@ -78,75 +78,41 @@ export async function POST(req: Request) {
         },
       });
 
-      return NextResponse.json({
-        clientSecret: intent.client_secret,
-      });
+      return NextResponse.json({ url: session.url });
     }
 
-    // -------------------------------------------------------------------------
-    // MONTHLY SUBSCRIPTION ($1 × quantity)
-    // -------------------------------------------------------------------------
+    // ------------------ MONTHLY (FIXED) ------------------
 
     if (!MONTHLY_PRICE_ID) {
       throw new Error("Missing STRIPE_MONTHLY_PRICE_ID");
     }
 
-    const customer = await stripe.customers.create({
-      metadata: {
-        purpose: "zentrust_stewardship",
-        frequency: "monthly",
-      },
-    });
-
-    const subscription = await stripe.subscriptions.create({
-      customer: customer.id,
-      items: [
+    const session = await stripe.checkout.sessions.create({
+      mode: "subscription",
+      payment_method_types: ["card"],
+      line_items: [
         {
-          price: MONTHLY_PRICE_ID,
-          quantity: amount, // e.g. 5 → $5/month
+          price: MONTHLY_PRICE_ID, // $1/month
+          quantity: amount,         // slider value
         },
       ],
-      collection_method: "charge_automatically",
-      payment_behavior: "default_incomplete",
-      payment_settings: {
-        payment_method_types: ["card"],
-        save_default_payment_method: "on_subscription",
-      },
-      expand: ["latest_invoice.payment_intent"],
-      metadata: {
-        purpose: "zentrust_stewardship",
-        frequency: "monthly",
-        amount_usd: amount.toString(),
+      success_url: `${SITE_URL}/stewardship/thank-you`,
+      cancel_url: `${SITE_URL}/stewardship/checkout`,
+      subscription_data: {
+        metadata: {
+          purpose: "zentrust_stewardship",
+          frequency: "monthly",
+          amount_usd: amount.toString(),
+        },
       },
     });
 
-    // -------------------------------------------------------------------------
-    // TS-SAFE PaymentIntent extraction (THIS FIXES YOUR BUILD)
-    // -------------------------------------------------------------------------
+    return NextResponse.json({ url: session.url });
 
-    const latestInvoice = subscription.latest_invoice as
-      | Stripe.Invoice
-      | null;
-
-    const paymentIntent =
-      typeof latestInvoice === "object" &&
-      latestInvoice !== null &&
-      "payment_intent" in latestInvoice
-        ? (latestInvoice.payment_intent as Stripe.PaymentIntent | null)
-        : null;
-
-    if (!paymentIntent?.client_secret) {
-      throw new Error("Missing subscription payment intent.");
-    }
-
-    return NextResponse.json({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Create intent error:", error);
-
     return NextResponse.json(
-      { error: "Unable to create payment intent." },
+      { error: error.message || "Stripe error" },
       { status: 500 }
     );
   }
