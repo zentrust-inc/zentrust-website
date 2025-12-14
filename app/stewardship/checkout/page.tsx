@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Lock, ShieldCheck, ArrowRight } from "lucide-react";
+import { TaxDeductionInfo } from "@/components/Taxcalculator/TaxDeductionInfo";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -80,8 +81,9 @@ export default function StewardshipCheckoutPage() {
           <div className="flex items-start gap-3 text-sm text-muted-foreground">
   <Lock className="h-4 w-4 mt-0.5" />
   <span>
-    501(c)(3) public charity · EIN 33-4318487 · IRS-recognized ·
-    Tax-deductible (up to 60% of income for most U.S. donors) · Secure Stripe checkout
+     501(c)(3) public charity · EIN 33-4318487 · IRS-recognized ·{" "}
+    <TaxDeductionInfo /> (up to 60% of income for most U.S. donors) ·
+    Secure Stripe checkout
   </span>
           </div>
         </div>
