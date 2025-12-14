@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // ─────────────────────────────
-// Request schema
+// Request validation
 // ─────────────────────────────
 const DonationSchema = z.object({
   amount: z.number().min(1).max(200000),
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     };
 
     // ─────────────────────────────
-    // ONE-TIME DONATION
+    // ONE-TIME DONATION (PaymentIntent)
     // ─────────────────────────────
     if (frequency === "once") {
       const paymentIntent = await stripe.paymentIntents.create({
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       });
 
       if (!paymentIntent.client_secret) {
-        throw new Error("Missing client_secret on PaymentIntent");
+        throw new Error("Stripe did not return PaymentIntent client_secret");
       }
 
       return NextResponse.json({
@@ -60,14 +60,17 @@ export async function POST(req: Request) {
     }
 
     // ─────────────────────────────
-    // MONTHLY SUBSCRIPTION
+    // MONTHLY STEWARDSHIP (Subscription)
     // ─────────────────────────────
+
+    // 1️⃣ Create customer
     const customer = await stripe.customers.create({
       email,
       name,
       metadata,
     });
 
+    // 2️⃣ Create price
     const price = await stripe.prices.create({
       currency: "usd",
       unit_amount: amountInCents,
@@ -77,6 +80,7 @@ export async function POST(req: Request) {
       },
     });
 
+    // 3️⃣ Create subscription (Stripe-correct 2025 flow)
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [{ price: price.id }],
@@ -84,40 +88,39 @@ export async function POST(req: Request) {
       payment_settings: {
         save_default_payment_method: "on_subscription",
       },
-      expand: ["latest_invoice"],
+      expand: [
+        "latest_invoice.payment_intent",
+        "pending_setup_intent",
+      ],
       metadata,
     });
 
-    const latestInvoice = subscription.latest_invoice;
-    if (!latestInvoice || typeof latestInvoice === "string") {
-      throw new Error("Latest invoice missing");
-    }
-
-    // ⚠️ Stripe typing gap: trust runtime, not TS
-    const invoiceAny = latestInvoice as any;
-
     let clientSecret: string | undefined;
 
-    // 1️⃣ Preferred SCA path (confirmation_secret)
-    if (invoiceAny.confirmation_secret?.client_secret) {
-      clientSecret = invoiceAny.confirmation_secret.client_secret;
+    // ─────────────────────────────
+    // PATH A — Immediate charge (PaymentIntent)
+    // ─────────────────────────────
+    const invoiceAny = subscription.latest_invoice as any;
+    if (invoiceAny?.payment_intent?.client_secret) {
+      clientSecret = invoiceAny.payment_intent.client_secret;
     }
 
-    // 2️⃣ Fallback: retrieve PaymentIntent manually
-    if (!clientSecret && invoiceAny.payment_intent) {
-      const paymentIntentId =
-        typeof invoiceAny.payment_intent === "string"
-          ? invoiceAny.payment_intent
-          : invoiceAny.payment_intent.id;
+    // ─────────────────────────────
+    // PATH B — Card collection first (SetupIntent)
+    // ─────────────────────────────
+    if (!clientSecret && subscription.pending_setup_intent) {
+      const setupIntent =
+        typeof subscription.pending_setup_intent === "string"
+          ? await stripe.setupIntents.retrieve(
+              subscription.pending_setup_intent
+            )
+          : subscription.pending_setup_intent;
 
-      const paymentIntent =
-        await stripe.paymentIntents.retrieve(paymentIntentId);
-
-      clientSecret = paymentIntent.client_secret ?? undefined;
+      clientSecret = setupIntent.client_secret ?? undefined;
     }
 
     if (!clientSecret) {
-      throw new Error("Unable to retrieve payment client_secret");
+      throw new Error("Stripe did not return any client_secret");
     }
 
     return NextResponse.json({
