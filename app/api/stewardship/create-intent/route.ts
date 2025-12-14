@@ -4,11 +4,9 @@ import { z } from "zod";
 
 export const runtime = "nodejs";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2023-10-16",
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-// 1. Define Request Schema for safety
+// Request schema
 const DonationSchema = z.object({
   amount: z.number().min(1).max(200000),
   frequency: z.enum(["once", "monthly"]),
@@ -21,15 +19,15 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const validated = DonationSchema.safeParse(body);
-    if (!validated.success) {
+    const parsed = DonationSchema.safeParse(body);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Invalid request data", details: validated.error.format() },
+        { error: "Invalid request data", details: parsed.error.format() },
         { status: 400 }
       );
     }
 
-    const { amount, frequency, impactPath, email, name } = validated.data;
+    const { amount, frequency, impactPath, email, name } = parsed.data;
     const amountInCents = Math.round(amount * 100);
 
     const metadata = {
@@ -38,9 +36,9 @@ export async function POST(req: Request) {
       impactPath,
     };
 
-    // ─────────────────────────
+    // ─────────────────────────────
     // ONE-TIME DONATION
-    // ─────────────────────────
+    // ─────────────────────────────
     if (frequency === "once") {
       const paymentIntent = await stripe.paymentIntents.create({
         amount: amountInCents,
@@ -50,7 +48,7 @@ export async function POST(req: Request) {
       });
 
       if (!paymentIntent.client_secret) {
-        throw new Error("PaymentIntent missing client_secret");
+        throw new Error("Missing client_secret on PaymentIntent");
       }
 
       return NextResponse.json({
@@ -59,9 +57,9 @@ export async function POST(req: Request) {
       });
     }
 
-    // ─────────────────────────
+    // ─────────────────────────────
     // MONTHLY SUBSCRIPTION
-    // ─────────────────────────
+    // ─────────────────────────────
     const customer = await stripe.customers.create({
       email,
       name,
@@ -94,18 +92,15 @@ export async function POST(req: Request) {
       throw new Error("Latest invoice missing");
     }
 
-    // ─────────────────────────
-    // STRIPE-SAFE CLIENT SECRET EXTRACTION
-    // ─────────────────────────
     let clientSecret: string | undefined;
 
-    // 1️⃣ New SCA-preferred path
+    // Preferred SCA path
     const confirmationSecret = (latestInvoice as any).confirmation_secret;
     if (confirmationSecret?.client_secret) {
       clientSecret = confirmationSecret.client_secret;
     }
 
-    // 2️⃣ Fallback: retrieve PaymentIntent safely
+    // Fallback: retrieve PaymentIntent safely
     if (!clientSecret && latestInvoice.payment_intent) {
       const paymentIntentId =
         typeof latestInvoice.payment_intent === "string"
