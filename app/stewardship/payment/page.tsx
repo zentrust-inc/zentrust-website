@@ -32,14 +32,14 @@ import { calculateDonationImpact } from "@/lib/calculator";
 // Stripe Setup
 // ---------------------------------------------------------------------------
 
-const stripePublicKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-const stripePromise = stripePublicKey ? loadStripe(stripePublicKey) : null;
+const stripePublicKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!;
+const stripePromise = loadStripe(stripePublicKey);
 
 type Frequency = "once" | "monthly";
 type PaymentStatus = "idle" | "loading" | "submitting" | "error";
 
 // ---------------------------------------------------------------------------
-// Helper Components
+// Payment Form
 // ---------------------------------------------------------------------------
 
 function PaymentForm({
@@ -59,25 +59,25 @@ function PaymentForm({
 }) {
   const stripe = useStripe();
   const elements = useElements();
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [processing, setProcessing] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!stripe || !elements) {
-      setError("The stewardship payment system is not ready yet. Please try again.");
+      setError("Payment system not ready. Please try again.");
       return;
     }
 
     try {
-      setIsProcessing(true);
+      setProcessing(true);
       setStatus("submitting");
 
       let result;
 
       if (frequency === "monthly") {
-        // ✅ SetupIntent flow
+        // ✅ SetupIntent confirmation
         result = await stripe.confirmSetup({
           elements,
           confirmParams: {
@@ -86,7 +86,7 @@ function PaymentForm({
           redirect: "if_required",
         });
       } else {
-        // ✅ PaymentIntent flow
+        // ✅ PaymentIntent confirmation
         result = await stripe.confirmPayment({
           elements,
           confirmParams: {
@@ -96,12 +96,9 @@ function PaymentForm({
         });
       }
 
-      const { error } = result || {};
-
-      if (error) {
-        console.error(error);
-        setError(error.message || "Payment attempt failed. Try another card.");
-        setIsProcessing(false);
+      if (result?.error) {
+        setError(result.error.message ?? "Payment failed.");
+        setProcessing(false);
         setStatus("idle");
         return;
       }
@@ -109,8 +106,8 @@ function PaymentForm({
       onSuccess();
     } catch (err) {
       console.error(err);
-      setError("Unexpected error occurred. Please try again.");
-      setIsProcessing(false);
+      setError("Unexpected error occurred.");
+      setProcessing(false);
       setStatus("idle");
     }
   };
@@ -121,8 +118,12 @@ function PaymentForm({
         <PaymentElement options={{ layout: "tabs" }} />
       </div>
 
-      <Button type="submit" className="w-full inline-flex items-center justify-center gap-2">
-        {buttonLabel(isProcessing)}
+      <Button
+        type="submit"
+        disabled={processing}
+        className="w-full flex items-center justify-center gap-2"
+      >
+        {buttonLabel(processing)}
         <ArrowRight className="h-4 w-4" />
       </Button>
     </form>
@@ -130,7 +131,7 @@ function PaymentForm({
 }
 
 // ---------------------------------------------------------------------------
-// Main Page Component
+// Page
 // ---------------------------------------------------------------------------
 
 export default function StewardshipPaymentPage() {
@@ -141,19 +142,14 @@ export default function StewardshipPaymentPage() {
   const frequencyQuery = (searchParams.get("frequency") as Frequency) || "once";
   const pathFromQuery = searchParams.get("path") || "flexible";
 
+  const amount = amountFromQuery > 0 ? amountFromQuery : 50;
+  const frequency: Frequency = frequencyQuery === "monthly" ? "monthly" : "once";
+
+  const impact = useMemo(() => calculateDonationImpact(amount), [amount]);
+
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [status, setStatus] = useState<PaymentStatus>("loading");
   const [error, setError] = useState<string | null>(null);
-
-  const amount = useMemo(
-    () => (amountFromQuery > 0 ? amountFromQuery : 50),
-    [amountFromQuery]
-  );
-
-  const frequency: Frequency =
-    frequencyQuery === "monthly" ? "monthly" : "once";
-
-  const impact = useMemo(() => calculateDonationImpact(amount), [amount]);
 
   const buttonLabel = (processing: boolean) =>
     processing
@@ -162,14 +158,11 @@ export default function StewardshipPaymentPage() {
           frequency === "monthly" ? "/month" : "one-time"
         } resource flow`;
 
+  // ---------------------------------------------------------------------------
   // Create Intent
-  useEffect(() => {
-    if (!stripePromise) {
-      setError("Stripe publishable key missing.");
-      setStatus("error");
-      return;
-    }
+  // ---------------------------------------------------------------------------
 
+  useEffect(() => {
     const createIntent = async () => {
       try {
         setStatus("loading");
@@ -184,15 +177,16 @@ export default function StewardshipPaymentPage() {
           }),
         });
 
-        if (!res.ok) throw new Error("Could not create stewardship session.");
+        if (!res.ok) throw new Error("Failed to create Stripe session");
 
         const data = await res.json();
-        if (!data.clientSecret) throw new Error("Missing client secret.");
+        if (!data.clientSecret) throw new Error("Missing client secret");
 
         setClientSecret(data.clientSecret);
         setStatus("idle");
       } catch (err: any) {
-        setError(err.message || "Unable to prepare Stripe session.");
+        console.error(err);
+        setError(err.message || "Unable to prepare payment.");
         setStatus("error");
       }
     };
@@ -200,29 +194,105 @@ export default function StewardshipPaymentPage() {
     createIntent();
   }, [amount, frequency, pathFromQuery]);
 
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container mx-auto px-4 py-12 lg:py-20">
-        {clientSecret && status !== "error" && (
-          <Elements
-            stripe={stripePromise}
-            options={{
-              clientSecret,
-              appearance: { theme: "flat" },
-              mode: frequency === "monthly" ? "setup" : "payment", // 🔧 THIS LINE FIXES EVERYTHING
-            }}
-          >
-            <PaymentForm
-              amount={amount}
-              frequency={frequency}
-              buttonLabel={buttonLabel}
-              onSuccess={() => router.push("/stewardship/thank-you")}
-              setError={setError}
-              setStatus={setStatus}
-            />
-          </Elements>
-        )}
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/40">
+      <div className="container mx-auto px-4 py-12 max-w-5xl">
+
+        <Link
+          href="/stewardship"
+          className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="h-3 w-3" />
+          Back
+        </Link>
+
+        <div className="grid lg:grid-cols-[1.6fr_1.2fr] gap-12 mt-8">
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold">
+              Finalize Your Stewardship Exchange
+            </h1>
+
+            {status === "error" && (
+              <div className="rounded-xl bg-red-100 px-4 py-3 text-xs text-red-700">
+                {error}
+              </div>
+            )}
+
+            {clientSecret && status === "idle" && (
+              <Elements
+                stripe={stripePromise}
+                options={{
+                  clientSecret,
+                  appearance: { theme: "flat" },
+                }}
+              >
+                <PaymentForm
+                  amount={amount}
+                  frequency={frequency}
+                  buttonLabel={buttonLabel}
+                  onSuccess={() =>
+                    router.push("/stewardship/thank-you")
+                  }
+                  setError={setError}
+                  setStatus={setStatus}
+                />
+              </Elements>
+            )}
+          </div>
+
+          <aside className="space-y-4">
+            <div className="rounded-2xl bg-muted/60 p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <Heart className="h-5 w-5 text-primary" />
+                <h2 className="text-sm font-semibold">
+                  Regenerative Impact Preview
+                </h2>
+              </div>
+
+              <div className="space-y-3 text-xs">
+                <Metric icon={TreePine} label="Trees" value={impact.trees} />
+                <Metric icon={Leaf} label="Acres" value={impact.acres} />
+                <Metric icon={Users} label="Households" value={impact.households} />
+                {impact.research_plots > 0 && (
+                  <Metric
+                    icon={Microscope}
+                    label="Research Plots"
+                    value={impact.research_plots}
+                  />
+                )}
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Metric Component
+// ---------------------------------------------------------------------------
+
+function Metric({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: number;
+}) {
+  return (
+    <div className="flex justify-between items-center">
+      <div className="flex items-center gap-2 text-muted-foreground">
+        <Icon className="h-4 w-4 text-primary" />
+        {label}
+      </div>
+      <span className="font-semibold">{value.toLocaleString()}</span>
     </div>
   );
 }
