@@ -36,7 +36,7 @@ export default function ParticipationPortalPage() {
     }
 
     router.push(
-      `/stewardship/payment?amount=${amount}&frequency=${frequency}`
+      `/stewardship/checkout?amount=${amount}&frequency=${frequency}`
     );
   };
 
