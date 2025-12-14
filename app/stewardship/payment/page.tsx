@@ -73,14 +73,30 @@ function PaymentForm({
     try {
       setIsProcessing(true);
       setStatus("submitting");
+let result;
 
-      const { error } = await stripe.confirmPayment({
-        elements,
-        confirmParams: {
-          return_url: `${window.location.origin}/stewardship/thank-you`,
-        },
-        redirect: "if_required",
-      });
+if (frequency === "monthly") {
+  // SetupIntent flow (subscriptions)
+  result = await stripe.confirmSetup({
+    elements,
+    confirmParams: {
+      return_url: `${window.location.origin}/stewardship/thank-you`,
+    },
+    redirect: "if_required",
+  });
+} else {
+  // PaymentIntent flow (one-time)
+  result = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      return_url: `${window.location.origin}/stewardship/thank-you`,
+    },
+    redirect: "if_required",
+  });
+}
+
+const { error } = result || {};
+      
 
       if (error) {
         console.error(error);
