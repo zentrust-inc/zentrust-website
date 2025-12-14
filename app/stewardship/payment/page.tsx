@@ -5,20 +5,21 @@ export const dynamic = "force-dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
+  PaymentElement,
   useStripe,
   useElements,
-  PaymentElement,
 } from "@stripe/react-stripe-js";
 
 import {
   ArrowLeft,
   ArrowRight,
   Heart,
-  Leaf,
   TreePine,
+  Leaf,
   Users,
   Microscope,
 } from "lucide-react";
@@ -26,50 +27,46 @@ import {
 import { Button } from "@/components/ui/button";
 import { calculateDonationImpact } from "@/lib/calculator";
 
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Stripe setup
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
 
-type PaymentStatus = "idle" | "loading" | "submitting" | "error";
+type Frequency = "once" | "monthly";
+type Status = "loading" | "idle" | "submitting" | "error";
 
-// ---------------------------------------------------------------------------
-// Payment Form (FIXED)
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// Payment Form (CRITICAL FIX INSIDE)
+// -----------------------------------------------------------------------------
 
 function PaymentForm({
-  clientSecret,
+  frequency,
   buttonLabel,
   onSuccess,
   setError,
   setStatus,
 }: {
-  clientSecret: string;
+  frequency: Frequency;
   buttonLabel: (processing: boolean) => string;
   onSuccess: () => void;
   setError: (msg: string | null) => void;
-  setStatus: (s: PaymentStatus) => void;
+  setStatus: (s: Status) => void;
 }) {
   const stripe = useStripe();
   const elements = useElements();
+
   const [processing, setProcessing] = useState(false);
+  const [elementsReady, setElementsReady] = useState(false); // 🔑 REQUIRED
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    if (!stripe || !elements) {
-      setError("Payment system not ready.");
-      return;
-    }
-
-    // 🔒 Ensure PaymentElement is mounted
-    const paymentElement = elements.getElement(PaymentElement);
-    if (!paymentElement) {
-      setError("Payment form still loading. Please wait a moment.");
+    if (!stripe || !elements || !elementsReady) {
+      setError("Payment form is still loading. Please wait.");
       return;
     }
 
@@ -77,34 +74,29 @@ function PaymentForm({
       setProcessing(true);
       setStatus("submitting");
 
-      // ✅ REQUIRED by Stripe
-      const { error: submitError } = await elements.submit();
-      if (submitError) {
-        setError(submitError.message ?? "Invalid payment details.");
-        setProcessing(false);
-        setStatus("idle");
-        return;
+      let result;
+
+      if (frequency === "monthly") {
+        // SetupIntent confirmation
+        result = await stripe.confirmSetup({
+          elements,
+          confirmParams: {
+            return_url: `${window.location.origin}/stewardship/thank-you`,
+          },
+          redirect: "if_required",
+        });
+      } else {
+        // PaymentIntent confirmation
+        result = await stripe.confirmPayment({
+          elements,
+          confirmParams: {
+            return_url: `${window.location.origin}/stewardship/thank-you`,
+          },
+          redirect: "if_required",
+        });
       }
 
-      const isSetupIntent = clientSecret.startsWith("seti_");
-
-      const result = isSetupIntent
-        ? await stripe.confirmSetup({
-            elements,
-            confirmParams: {
-              return_url: `${window.location.origin}/stewardship/thank-you`,
-            },
-            redirect: "if_required",
-          })
-        : await stripe.confirmPayment({
-            elements,
-            confirmParams: {
-              return_url: `${window.location.origin}/stewardship/thank-you`,
-            },
-            redirect: "if_required",
-          });
-
-      if (result.error) {
+      if (result?.error) {
         setError(result.error.message ?? "Payment failed.");
         setProcessing(false);
         setStatus("idle");
@@ -114,7 +106,7 @@ function PaymentForm({
       onSuccess();
     } catch (err) {
       console.error(err);
-      setError("Unexpected payment error.");
+      setError("Unexpected error occurred.");
       setProcessing(false);
       setStatus("idle");
     }
@@ -123,12 +115,15 @@ function PaymentForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="rounded-xl border border-border/60 bg-muted/40 p-4">
-        <PaymentElement options={{ layout: "tabs" }} />
+        <PaymentElement
+          options={{ layout: "tabs" }}
+          onReady={() => setElementsReady(true)} // 🔑 THIS FIXES EVERYTHING
+        />
       </div>
 
       <Button
         type="submit"
-        disabled={!stripe || !elements || processing}
+        disabled={!elementsReady || processing}
         className="w-full flex items-center justify-center gap-2"
       >
         {buttonLabel(processing)}
@@ -138,31 +133,37 @@ function PaymentForm({
   );
 }
 
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Page
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 export default function StewardshipPaymentPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const amount = Math.max(Number(searchParams.get("amount") ?? 50), 1);
-  const frequency = searchParams.get("frequency") === "monthly" ? "monthly" : "once";
-  const impactPath = searchParams.get("path") ?? "flexible";
+  const amount = Math.max(Number(searchParams.get("amount") || 50), 1);
+  const frequency: Frequency =
+    searchParams.get("frequency") === "monthly" ? "monthly" : "once";
+  const impactPath = searchParams.get("path") || "flexible";
 
-  const impact = useMemo(() => calculateDonationImpact(amount), [amount]);
+  const impact = useMemo(
+    () => calculateDonationImpact(amount),
+    [amount]
+  );
 
   const [clientSecret, setClientSecret] = useState<string | null>(null);
-  const [status, setStatus] = useState<PaymentStatus>("loading");
+  const [status, setStatus] = useState<Status>("loading");
   const [error, setError] = useState<string | null>(null);
 
   const buttonLabel = (processing: boolean) =>
     processing
       ? "Processing…"
-      : `Confirm $${amount} ${frequency === "monthly" ? "/month" : "one-time"} resource flow`;
+      : `Confirm $${amount} ${
+          frequency === "monthly" ? "/month" : "one-time"
+        } resource flow`;
 
   // ---------------------------------------------------------------------------
-  // Create intent
+  // Create Intent
   // ---------------------------------------------------------------------------
 
   useEffect(() => {
@@ -180,16 +181,16 @@ export default function StewardshipPaymentPage() {
           }),
         });
 
-        if (!res.ok) throw new Error("Failed to create payment session");
+        if (!res.ok) throw new Error("Failed to create Stripe session");
 
         const data = await res.json();
-        if (!data.clientSecret) throw new Error("Missing Stripe client secret");
+        if (!data.clientSecret) throw new Error("Missing client secret");
 
         setClientSecret(data.clientSecret);
         setStatus("idle");
       } catch (err: any) {
         console.error(err);
-        setError(err.message ?? "Unable to initialize payment.");
+        setError(err.message || "Unable to prepare payment.");
         setStatus("error");
       }
     };
@@ -204,7 +205,6 @@ export default function StewardshipPaymentPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/40">
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-
         <Link
           href="/stewardship"
           className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground"
@@ -234,9 +234,11 @@ export default function StewardshipPaymentPage() {
                 }}
               >
                 <PaymentForm
-                  clientSecret={clientSecret}
+                  frequency={frequency}
                   buttonLabel={buttonLabel}
-                  onSuccess={() => router.push("/stewardship/thank-you")}
+                  onSuccess={() =>
+                    router.push("/stewardship/thank-you")
+                  }
                   setError={setError}
                   setStatus={setStatus}
                 />
@@ -271,9 +273,9 @@ export default function StewardshipPaymentPage() {
   );
 }
 
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Metric
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 function Metric({
   icon: Icon,
@@ -285,7 +287,7 @@ function Metric({
   value: number;
 }) {
   return (
-    <div className="flex justify-between items-center text-sm py-1">
+    <div className="flex justify-between items-center text-xs">
       <div className="flex items-center gap-2 text-muted-foreground">
         <Icon className="h-4 w-4 text-primary" />
         {label}
