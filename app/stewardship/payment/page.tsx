@@ -27,23 +27,26 @@ import { Button } from "@/components/ui/button";
 // Stripe setup
 // -----------------------------------------------------------------------------
 
-const stripePublicKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-const stripePromise = stripePublicKey ? loadStripe(stripePublicKey) : null;
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
+);
 
 type Frequency = "once" | "monthly";
 type Status = "loading" | "idle" | "submitting" | "error";
 
 // -----------------------------------------------------------------------------
-// Payment Form
+// Payment Form (handles Stripe-confirm errors correctly)
 // -----------------------------------------------------------------------------
 
 function PaymentForm({
-  buttonLabel,
+  amount,
+  frequency,
   onSuccess,
   setError,
   setStatus,
 }: {
-  buttonLabel: (processing: boolean) => string;
+  amount: number;
+  frequency: Frequency;
   onSuccess: () => void;
   setError: (msg: string | null) => void;
   setStatus: (s: Status) => void;
@@ -57,7 +60,7 @@ function PaymentForm({
     setError(null);
 
     if (!stripe || !elements) {
-      setError("Payment system not ready. Please try again.");
+      setError("Payment system is not ready. Please try again.");
       return;
     }
 
@@ -74,7 +77,15 @@ function PaymentForm({
       });
 
       if (error) {
-        setError(error.message || "Payment failed. Please try another card.");
+        // 🔑 DO NOT MASK STRIPE ERRORS
+        console.error("Stripe confirm error:", error);
+
+        const friendlyMessage =
+          error.code === "card_declined"
+            ? "Your card was declined. Please enter a valid card."
+            : error.message || "Payment failed. Please try another card.";
+
+        setError(friendlyMessage);
         setProcessing(false);
         setStatus("idle");
         return;
@@ -82,7 +93,7 @@ function PaymentForm({
 
       onSuccess();
     } catch (err) {
-      console.error(err);
+      console.error("Unexpected confirm error:", err);
       setError("Unexpected error occurred. Please try again.");
       setProcessing(false);
       setStatus("idle");
@@ -98,8 +109,13 @@ function PaymentForm({
       <Button
         type="submit"
         className="w-full inline-flex items-center justify-center gap-2"
+        disabled={processing}
       >
-        {buttonLabel(processing)}
+        {processing
+          ? "Processing…"
+          : `Confirm $${amount.toLocaleString()} ${
+              frequency === "monthly" ? "/month" : "one-time"
+            }`}
         <ArrowRight className="h-4 w-4" />
       </Button>
     </form>
@@ -129,29 +145,15 @@ export default function StewardshipPaymentPage() {
   const [status, setStatus] = useState<Status>("loading");
   const [error, setError] = useState<string | null>(null);
 
-  const buttonLabel = (processing: boolean) =>
-    processing
-      ? "Processing…"
-      : `Confirm $${amount.toLocaleString()} ${
-          frequency === "monthly" ? "/month" : "one-time"
-        }`;
-
   // ---------------------------------------------------------------------------
-  // Create PaymentIntent
+  // Create PaymentIntent / Subscription session
   // ---------------------------------------------------------------------------
 
   useEffect(() => {
-    if (!stripePromise) {
-      setError(
-        "Stripe is not configured. Missing NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY."
-      );
-      setStatus("error");
-      return;
-    }
-
     const createIntent = async () => {
       try {
         setStatus("loading");
+        setError(null);
 
         const res = await fetch("/api/stewardship/create-intent", {
           method: "POST",
@@ -163,39 +165,29 @@ export default function StewardshipPaymentPage() {
         });
 
         if (!res.ok) {
-          throw new Error("Unable to create secure payment session.");
+          const data = await res.json().catch(() => null);
+          throw new Error(
+            data?.error || "Unable to create secure payment session."
+          );
         }
 
         const data = await res.json();
 
         if (!data.clientSecret) {
-          throw new Error("Stripe session missing client secret.");
+          throw new Error("Missing payment session details.");
         }
 
         setClientSecret(data.clientSecret);
         setStatus("idle");
       } catch (err: any) {
-        console.error(err);
-        setError(err.message || "Unable to prepare payment.");
+        console.error("Create intent error:", err);
+        setError(err.message || "Unable to create secure payment session.");
         setStatus("error");
       }
     };
 
     createIntent();
   }, [amount, frequency]);
-
-  if (!stripePromise) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-md text-center space-y-4">
-          <h1 className="text-2xl font-bold">Payment system unavailable</h1>
-          <p className="text-muted-foreground">
-            Stripe is not configured for this environment.
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/40">
@@ -214,7 +206,7 @@ export default function StewardshipPaymentPage() {
         </div>
       </div>
 
-      {/* Body */}
+      {/* Page Body */}
       <div className="container mx-auto px-4 py-12 max-w-xl">
 
         <Link
@@ -238,7 +230,6 @@ export default function StewardshipPaymentPage() {
 
           <div className="glass-card p-8 rounded-2xl space-y-6">
 
-            {/* Summary */}
             <div className="text-sm">
               <p className="text-xs uppercase text-muted-foreground">
                 Summary
@@ -256,8 +247,8 @@ export default function StewardshipPaymentPage() {
               </div>
             )}
 
-            {status === "error" && error && (
-              <div className="rounded-xl bg-destructive/10 border border-destructive/40 px-4 py-3 text-xs text-destructive">
+            {error && (
+              <div className="rounded-xl bg-destructive/10 border border-destructive/40 px-4 py-3 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -271,8 +262,11 @@ export default function StewardshipPaymentPage() {
                 }}
               >
                 <PaymentForm
-                  buttonLabel={buttonLabel}
-                  onSuccess={() => router.push("/stewardship/thank-you")}
+                  amount={amount}
+                  frequency={frequency}
+                  onSuccess={() =>
+                    router.push("/stewardship/thank-you")
+                  }
                   setError={setError}
                   setStatus={setStatus}
                 />
