@@ -102,17 +102,22 @@ export async function POST(req: Request) {
 
       // 5️⃣ Invoice paid (monthly truth)
       case "invoice.paid": {
-        const invoice = event.data.object as Stripe.Invoice;
+  const invoice = event.data.object as Stripe.Invoice;
 
-        console.log("📄 invoice.paid", {
-          id: invoice.id,
-          customer: invoice.customer,
-          amount_paid: invoice.amount_paid,
-          subscription: invoice.subscription,
-        });
+  const subscriptionId =
+    "subscription" in invoice
+      ? (invoice as any).subscription
+      : null;
 
-        break;
-      }
+  console.log("📄 invoice.paid", {
+    id: invoice.id,
+    customer: invoice.customer,
+    amount_paid: invoice.amount_paid,
+    subscription: subscriptionId,
+  });
+
+  break;
+}
 
       default:
         console.log("ℹ️ Ignored event:", event.type);
