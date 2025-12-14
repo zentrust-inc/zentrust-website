@@ -59,6 +59,12 @@ function CheckoutForm({
   const stripe = useStripe();
   const elements = useElements();
   const [processing, setProcessing] = useState(false);
+  const [isElementReady, setIsElementReady] = useState(false);
+
+  // Handle PaymentElement ready state
+  const handlePaymentElementReady = () => {
+    setIsElementReady(true);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,6 +72,13 @@ function CheckoutForm({
 
     if (!stripe || !elements) {
       setError("Payment system not ready. Please try again.");
+      return;
+    }
+
+    // Check if PaymentElement is ready
+    const paymentElement = elements.getElement("payment");
+    if (!paymentElement || !isElementReady) {
+      setError("Payment form is still loading. Please wait and try again.");
       return;
     }
 
@@ -109,16 +122,18 @@ function CheckoutForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="rounded-xl border border-border/60 bg-muted/40 p-4">
-        <PaymentElement />
+        <PaymentElement onReady={handlePaymentElementReady} />
       </div>
 
       <Button
         type="submit"
-        disabled={!stripe || processing}
+        disabled={!stripe || processing || !isElementReady}
         className="w-full flex items-center justify-center gap-2"
       >
         {processing
           ? "Processing…"
+          : !isElementReady
+          ? "Loading payment form…"
           : `Confirm $${amount} ${
               frequency === "monthly" ? "/month" : "one-time"
             }`}
