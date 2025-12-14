@@ -1,4 +1,5 @@
 export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
@@ -18,6 +19,10 @@ const MIN_AMOUNT_USD = 5;
 const MAX_AMOUNT_USD = 1000;
 
 type Frequency = "once" | "monthly";
+
+// REQUIRED:
+// This must be a $1.00 / month recurring price created ONCE in Stripe
+const MONTHLY_PRICE_ID = process.env.STRIPE_MONTHLY_PRICE_ID!;
 
 // -----------------------------------------------------------------------------
 // POST handler
@@ -57,7 +62,7 @@ export async function POST(req: Request) {
     const amountInCents = Math.round(amount * 100);
 
     // -------------------------------------------------------------------------
-    // ONE-TIME PAYMENT
+    // ONE-TIME PAYMENT (PaymentIntent)
     // -------------------------------------------------------------------------
 
     if (frequency === "once") {
@@ -68,6 +73,7 @@ export async function POST(req: Request) {
         metadata: {
           purpose: "zentrust_stewardship",
           frequency: "once",
+          amount_usd: amount.toString(),
         },
       });
 
@@ -77,9 +83,14 @@ export async function POST(req: Request) {
     }
 
     // -------------------------------------------------------------------------
-    // MONTHLY SUBSCRIPTION
+    // MONTHLY SUBSCRIPTION (NO dynamic price creation)
     // -------------------------------------------------------------------------
 
+    if (!MONTHLY_PRICE_ID) {
+      throw new Error("Missing STRIPE_MONTHLY_PRICE_ID");
+    }
+
+    // Create customer (lightweight, fine to do per checkout)
     const customer = await stripe.customers.create({
       metadata: {
         purpose: "zentrust_stewardship",
@@ -87,18 +98,16 @@ export async function POST(req: Request) {
       },
     });
 
-    const price = await stripe.prices.create({
-      currency: "usd",
-      unit_amount: amountInCents,
-      recurring: { interval: "month" },
-      product_data: {
-        name: "ZenTrust Monthly Stewardship",
-      },
-    });
-
+    // Create subscription using:
+    // $1/month price × quantity = slider amount
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
-      items: [{ price: price.id }],
+      items: [
+        {
+          price: MONTHLY_PRICE_ID, // $1/month
+          quantity: amount,         // e.g. 5 → $5/month
+        },
+      ],
       payment_behavior: "default_incomplete",
       payment_settings: {
         save_default_payment_method: "on_subscription",
@@ -107,11 +116,12 @@ export async function POST(req: Request) {
       metadata: {
         purpose: "zentrust_stewardship",
         frequency: "monthly",
+        amount_usd: amount.toString(),
       },
     });
 
     // -------------------------------------------------------------------------
-    // SAFELY EXTRACT PAYMENT INTENT (TypeScript-correct)
+    // Extract client_secret safely
     // -------------------------------------------------------------------------
 
     const invoice = subscription.latest_invoice;
