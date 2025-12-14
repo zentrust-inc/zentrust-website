@@ -1,17 +1,33 @@
-import Stripe from "stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
+import Stripe from "stripe";
 
-export const runtime = "nodejs";
+/**
+ * IMPORTANT
+ * Do NOT hardcode apiVersion unless you REALLY need to.
+ * Let Stripe SDK use the account default to avoid TS errors.
+ */
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  typescript: true,
+});
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+/**
+ * Webhook signing secret from Stripe Dashboard
+ */
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
+/**
+ * Stripe requires raw body
+ */
 export async function POST(req: Request) {
   const body = await req.text();
-  const signature = headers().get("stripe-signature");
+  const sig = headers().get("stripe-signature");
 
-  if (!signature) {
-    return new NextResponse("Missing signature", { status: 400 });
+  if (!sig) {
+    return NextResponse.json(
+      { error: "Missing Stripe signature" },
+      { status: 400 }
+    );
   }
 
   let event: Stripe.Event;
@@ -19,76 +35,106 @@ export async function POST(req: Request) {
   try {
     event = stripe.webhooks.constructEvent(
       body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      sig,
+      webhookSecret
     );
-  } catch (err) {
-    console.error("❌ Webhook signature failed", err);
-    return new NextResponse("Invalid signature", { status: 400 });
+  } catch (err: any) {
+    console.error("❌ Webhook signature verification failed:", err.message);
+    return NextResponse.json(
+      { error: "Invalid signature" },
+      { status: 400 }
+    );
   }
 
+  /**
+   * 🔑 ONLY EVENTS YOU NEED (5)
+   */
   try {
     switch (event.type) {
 
-      // 1️⃣ Donor identity (email + customer)
+      // 1️⃣ Checkout completed (entry point)
       case "checkout.session.completed": {
-        const s = event.data.object as Stripe.Checkout.Session;
+        const session = event.data.object as Stripe.Checkout.Session;
 
-        await upsertDonor({
-          email: s.customer_details?.email!,
-          stripe_customer_id: s.customer as string,
+        console.log("✅ checkout.session.completed", {
+          id: session.id,
+          email: session.customer_details?.email,
+          customer: session.customer,
+          mode: session.mode,
+          amount_total: session.amount_total,
+          currency: session.currency,
         });
+
         break;
       }
 
-      // 2️⃣ One-time payment landed
+      // 2️⃣ Payment succeeded (one-time OR subscription invoice)
       case "payment_intent.succeeded": {
         const pi = event.data.object as Stripe.PaymentIntent;
 
-        await recordPayment({
-          stripe_payment_intent_id: pi.id,
-          stripe_customer_id: pi.customer as string,
-          amount_usd: pi.amount / 100,
-          kind: "one_time",
-          event: event.type,
+        console.log("💰 payment_intent.succeeded", {
+          id: pi.id,
+          amount: pi.amount,
+          currency: pi.currency,
+          customer: pi.customer,
         });
+
         break;
       }
 
-      // 3️⃣ Monthly payment landed
+      // 3️⃣ Subscription started or updated
+      case "customer.subscription.created":
+      case "customer.subscription.updated": {
+        const sub = event.data.object as Stripe.Subscription;
+
+        console.log("🔁 subscription active", {
+          id: sub.id,
+          customer: sub.customer,
+          status: sub.status,
+          current_period_end: sub.current_period_end,
+        });
+
+        break;
+      }
+
+      // 4️⃣ Subscription canceled
+      case "customer.subscription.deleted": {
+        const sub = event.data.object as Stripe.Subscription;
+
+        console.log("🛑 subscription canceled", {
+          id: sub.id,
+          customer: sub.customer,
+        });
+
+        break;
+      }
+
+      // 5️⃣ Invoice paid (monthly recurring truth)
       case "invoice.paid": {
         const invoice = event.data.object as Stripe.Invoice;
 
-        await recordPayment({
-          stripe_payment_intent_id: invoice.payment_intent as string,
-          stripe_customer_id: invoice.customer as string,
-          stripe_subscription_id: invoice.subscription as string,
-          amount_usd: invoice.amount_paid / 100,
-          kind: "recurring",
-          event: event.type,
+        console.log("📄 invoice.paid", {
+          id: invoice.id,
+          customer: invoice.customer,
+          amount_paid: invoice.amount_paid,
+          currency: invoice.currency,
+          subscription: invoice.subscription,
         });
+
         break;
       }
 
-      // 4️⃣ Monthly payment failed
-      case "invoice.payment_failed": {
-        const invoice = event.data.object as Stripe.Invoice;
-        await markSubscription(invoice.subscription as string, "past_due");
-        break;
-      }
-
-      // 5️⃣ Subscription canceled
-      case "customer.subscription.deleted": {
-        const sub = event.data.object as Stripe.Subscription;
-        await markSubscription(sub.id, "canceled");
-        break;
-      }
+      // Ignore everything else
+      default:
+        console.log("ℹ️ Ignored event:", event.type);
     }
 
     return NextResponse.json({ received: true });
-
   } catch (err) {
-    console.error("🔥 Webhook processing failed", err);
-    return new NextResponse("Webhook handler error", { status: 500 });
+    console.error("❌ Webhook handler error:", err);
+    return NextResponse.json(
+      { error: "Webhook handler failed" },
+      { status: 500 }
+    );
   }
 }
