@@ -2,23 +2,12 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-/**
- * IMPORTANT
- * Do NOT hardcode apiVersion unless you REALLY need to.
- * Let Stripe SDK use the account default to avoid TS errors.
- */
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   typescript: true,
 });
 
-/**
- * Webhook signing secret from Stripe Dashboard
- */
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
-/**
- * Stripe requires raw body
- */
 export async function POST(req: Request) {
   const body = await req.text();
   const sig = headers().get("stripe-signature");
@@ -39,36 +28,32 @@ export async function POST(req: Request) {
       webhookSecret
     );
   } catch (err: any) {
-    console.error("❌ Webhook signature verification failed:", err.message);
+    console.error("❌ Invalid webhook signature:", err.message);
     return NextResponse.json(
       { error: "Invalid signature" },
       { status: 400 }
     );
   }
 
-  /**
-   * 🔑 ONLY EVENTS YOU NEED (5)
-   */
   try {
     switch (event.type) {
 
-      // 1️⃣ Checkout completed (entry point)
+      // 1️⃣ Checkout completed
       case "checkout.session.completed": {
-        const session = event.data.object as Stripe.Checkout.Session;
+        const s = event.data.object as Stripe.Checkout.Session;
 
         console.log("✅ checkout.session.completed", {
-          id: session.id,
-          email: session.customer_details?.email,
-          customer: session.customer,
-          mode: session.mode,
-          amount_total: session.amount_total,
-          currency: session.currency,
+          id: s.id,
+          email: s.customer_details?.email,
+          customer: s.customer,
+          mode: s.mode,
+          amount_total: s.amount_total,
         });
 
         break;
       }
 
-      // 2️⃣ Payment succeeded (one-time OR subscription invoice)
+      // 2️⃣ Payment succeeded
       case "payment_intent.succeeded": {
         const pi = event.data.object as Stripe.PaymentIntent;
 
@@ -82,16 +67,22 @@ export async function POST(req: Request) {
         break;
       }
 
-      // 3️⃣ Subscription started or updated
+      // 3️⃣ Subscription created / updated
       case "customer.subscription.created":
       case "customer.subscription.updated": {
         const sub = event.data.object as Stripe.Subscription;
+
+        // 🔐 SAFE extraction (TS-proof)
+        const currentPeriodEnd =
+          "current_period_end" in sub
+            ? (sub as any).current_period_end
+            : null;
 
         console.log("🔁 subscription active", {
           id: sub.id,
           customer: sub.customer,
           status: sub.status,
-          current_period_end: sub.current_period_end,
+          current_period_end: currentPeriodEnd,
         });
 
         break;
@@ -109,7 +100,7 @@ export async function POST(req: Request) {
         break;
       }
 
-      // 5️⃣ Invoice paid (monthly recurring truth)
+      // 5️⃣ Invoice paid (monthly truth)
       case "invoice.paid": {
         const invoice = event.data.object as Stripe.Invoice;
 
@@ -117,23 +108,21 @@ export async function POST(req: Request) {
           id: invoice.id,
           customer: invoice.customer,
           amount_paid: invoice.amount_paid,
-          currency: invoice.currency,
           subscription: invoice.subscription,
         });
 
         break;
       }
 
-      // Ignore everything else
       default:
         console.log("ℹ️ Ignored event:", event.type);
     }
 
     return NextResponse.json({ received: true });
   } catch (err) {
-    console.error("❌ Webhook handler error:", err);
+    console.error("❌ Webhook handler failed:", err);
     return NextResponse.json(
-      { error: "Webhook handler failed" },
+      { error: "Webhook handler error" },
       { status: 500 }
     );
   }
