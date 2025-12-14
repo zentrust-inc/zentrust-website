@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // ─────────────────────────────
-// Request validation
+// Validation
 // ─────────────────────────────
 const DonationSchema = z.object({
   amount: z.number().min(1).max(200000),
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       });
 
       if (!paymentIntent.client_secret) {
-        throw new Error("Stripe did not return PaymentIntent client_secret");
+        throw new Error("Missing PaymentIntent client_secret");
       }
 
       return NextResponse.json({
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     }
 
     // ─────────────────────────────
-    // MONTHLY STEWARDSHIP
+    // MONTHLY STEWARDSHIP (CORRECT FLOW)
     // ─────────────────────────────
 
     // 1️⃣ Customer
@@ -80,49 +80,30 @@ export async function POST(req: Request) {
       },
     });
 
-    // 3️⃣ Subscription (FORCE SetupIntent creation)
+    // 3️⃣ Subscription (NO expectation of intents)
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [{ price: price.id }],
       payment_behavior: "default_incomplete",
-      payment_settings: {
-        save_default_payment_method: "on_subscription",
-        payment_method_types: ["card"], // 🔑 THIS IS THE FIX
-      },
-      expand: [
-        "latest_invoice.payment_intent",
-        "pending_setup_intent",
-      ],
       metadata,
     });
 
-    let clientSecret: string | undefined;
+    // 4️⃣ EXPLICIT SetupIntent (THIS IS THE FIX)
+    const setupIntent = await stripe.setupIntents.create({
+      customer: customer.id,
+      payment_method_types: ["card"],
+      metadata: {
+        subscriptionId: subscription.id,
+      },
+    });
 
-    // Path A — Immediate charge
-    const invoiceAny = subscription.latest_invoice as any;
-    if (invoiceAny?.payment_intent?.client_secret) {
-      clientSecret = invoiceAny.payment_intent.client_secret;
-    }
-
-    // Path B — Card collection first (MOST COMMON)
-    if (!clientSecret && subscription.pending_setup_intent) {
-      const setupIntent =
-        typeof subscription.pending_setup_intent === "string"
-          ? await stripe.setupIntents.retrieve(
-              subscription.pending_setup_intent
-            )
-          : subscription.pending_setup_intent;
-
-      clientSecret = setupIntent.client_secret ?? undefined;
-    }
-
-    if (!clientSecret) {
-      throw new Error("Stripe did not return any client_secret");
+    if (!setupIntent.client_secret) {
+      throw new Error("Stripe did not return SetupIntent client_secret");
     }
 
     return NextResponse.json({
       type: "subscription",
-      clientSecret,
+      clientSecret: setupIntent.client_secret,
       subscriptionId: subscription.id,
     });
   } catch (err: any) {
