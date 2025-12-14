@@ -6,9 +6,10 @@ import { Info, X } from "lucide-react";
 export function TaxDeductionInfo() {
   const [open, setOpen] = useState(false);
   const [donation, setDonation] = useState(10000);
-  const [bracket, setBracket] = useState(22);
+  const [bracket, setBracket] = useState(35);
 
   const estimatedSavings = Math.round(donation * (bracket / 100));
+  const afterTaxCost = donation - estimatedSavings;
 
   return (
     <>
@@ -22,12 +23,12 @@ export function TaxDeductionInfo() {
         <Info className="h-4 w-4" />
       </button>
 
-      {/* Overlay */}
+      {/* Modal / Popover */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
           <div className="w-full max-w-md rounded-2xl bg-background p-5 shadow-xl">
             {/* Header */}
-            <div className="flex items-start justify-between mb-3">
+            <div className="mb-3 flex items-start justify-between">
               <h3 className="text-sm font-semibold text-foreground">
                 How tax deductibility works (U.S.)
               </h3>
@@ -41,8 +42,8 @@ export function TaxDeductionInfo() {
             </div>
 
             {/* Explanation */}
-            <p className="text-xs text-muted-foreground mb-3">
-              Your donation reduces your taxable income.  
+            <p className="mb-3 text-xs text-muted-foreground">
+              Your donation reduces your taxable income.
               Your actual tax savings depend on your tax bracket.
             </p>
 
@@ -75,29 +76,31 @@ export function TaxDeductionInfo() {
                 </select>
               </div>
 
-             <div className="pt-3 border-t space-y-3">
-  <div className="text-foreground">
-    Estimated federal tax savings
-    <div className="text-lg font-semibold">
-      ${estimatedSavings.toLocaleString()}
-    </div>
-  </div>
+              {/* Results */}
+              <div className="border-t pt-3 space-y-3">
+                <div className="text-foreground">
+                  Estimated federal tax savings
+                  <div className="text-lg font-semibold">
+                    ${estimatedSavings.toLocaleString()}
+                  </div>
+                </div>
 
-  {/* Clarity line */}
-  <div className="rounded-lg bg-muted/50 px-3 py-2 text-xs text-muted-foreground">
-    Your donation remains{" "}
-    <span className="font-medium text-foreground">
-      ${donation.toLocaleString()}
-    </span>
-    . After estimated tax savings, the cost to you is about{" "}
-    <span className="font-medium text-foreground">
-      ${(donation - estimatedSavings).toLocaleString()}
-    </span>
-    .
-  </div>
-</div>
+                {/* Clarity line */}
+                <div className="rounded-lg bg-muted/50 px-3 py-2 text-xs text-muted-foreground">
+                  Your donation remains{" "}
+                  <span className="font-medium text-foreground">
+                    ${donation.toLocaleString()}
+                  </span>
+                  . After estimated tax savings, the cost to you is about{" "}
+                  <span className="font-medium text-foreground">
+                    ${afterTaxCost.toLocaleString()}
+                  </span>
+                  .
+                </div>
+              </div>
+            </div>
 
-            {/* Legal clarity */}
+            {/* Legal note */}
             <p className="mt-3 text-[11px] text-muted-foreground">
               Cash contributions to a 501(c)(3) public charity are generally
               deductible up to 60% of income for eligible U.S. donors.
