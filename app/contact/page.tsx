@@ -65,7 +65,7 @@ export default function ContactPage() {
     <div className="min-h-screen pt-16">
 
       {/* Minimal Hero */}
-      <section className="py-24 bg-gradient-to-b from-primary/10 via-background to-background text-center">
+      <section className="py-24 text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Contact <span className="gradient-text">ZenTrust</span>
@@ -99,7 +99,7 @@ export default function ContactPage() {
       </section>
 
       {/* Inquiry Categories */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
             Inquiry Categories
@@ -193,7 +193,7 @@ export default function ContactPage() {
       </section>
 
       {/* Location */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Our Location

@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function ResearchPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24 space-y-8">
         <header className="space-y-3">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Research</p>

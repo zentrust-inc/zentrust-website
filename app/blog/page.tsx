@@ -72,7 +72,7 @@ export default async function BlogPage() {
   const categories = Array.from(categoriesSet)
 
   return (
-    <main className="min-h-screen pt-24 bg-background">
+    <main className="min-h-screen pt-24">
 
       {/* HEADER */}
       <section className="border-b border-border/40">

@@ -114,7 +114,7 @@ export default function AccessibilityPage() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -155,7 +155,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Commitment Statement */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -229,7 +229,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* WCAG 2.1 AA Standards */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -286,7 +286,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Current Accessibility Features */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -359,7 +359,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Ongoing Improvements */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -434,7 +434,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Report Accessibility Issues */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -521,7 +521,7 @@ export default function AccessibilityPage() {
       </section>
 
       {/* Response Commitment */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">

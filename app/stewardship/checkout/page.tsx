@@ -60,7 +60,7 @@ export default function StewardshipCheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/40">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16 max-w-2xl">
 
         {/* Header */}

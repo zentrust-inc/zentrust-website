@@ -85,7 +85,7 @@ export function ImpactCounters() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section ref={ref} className="w-full py-20 bg-background overflow-hidden">
+    <section ref={ref} className="w-full py-20 overflow-hidden">
 
       {/* INTRO */}
       <motion.div

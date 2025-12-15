@@ -9,7 +9,7 @@ const DETERMINATION_LETTER_URL =
 
 export function Hero() {
   return (
-    <section className="min-h-[85svh] flex items-center justify-center px-6 pt-20 pb-16 bg-[#F6F0E6] dark:bg-[#0f1110]">
+    <section className="min-h-[85svh] flex items-center justify-center px-6 pt-20 pb-16">
       <div className="max-w-3xl w-full text-center">
         {/* Sprout — primary emotional anchor */}
         <div className="flex justify-center mb-5">

@@ -37,7 +37,7 @@ export default function NewsletterPage() {
     <div className="min-h-screen pt-16">
 
       {/* Minimal Hero */}
-      <section className="py-24 bg-gradient-to-b from-primary/10 via-background to-background text-center">
+      <section className="py-24 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             The <span className="gradient-text">Quiet Newsletter</span>
@@ -112,7 +112,7 @@ export default function NewsletterPage() {
       </section>
 
       {/* Closing */}
-      <section className="py-24 bg-muted/30 text-center">
+      <section className="py-24 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             A Gentle Stream of Updates

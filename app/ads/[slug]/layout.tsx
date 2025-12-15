@@ -8,13 +8,7 @@ export default function AdsSlugLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white via-white to-zinc-50 text-zinc-900 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950 dark:text-zinc-50">
-      {/* Calm background glow (no motion, no urgency) */}
-      <div className="pointer-events-none fixed inset-0 -z-10 opacity-60">
-        <div className="absolute left-1/2 top-[-180px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-zinc-200/40 blur-3xl dark:bg-zinc-800/20" />
-        <div className="absolute bottom-[-220px] left-[15%] h-[460px] w-[460px] rounded-full bg-zinc-200/30 blur-3xl dark:bg-zinc-800/15" />
-        <div className="absolute bottom-[-260px] right-[12%] h-[520px] w-[520px] rounded-full bg-zinc-200/25 blur-3xl dark:bg-zinc-800/15" />
-      </div>
+    <main className="min-h-screen text-zinc-900 dark:text-zinc-50">
 
       {/* Minimal top bar (no CTA) */}
       <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
