@@ -1,25 +1,57 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Sprout, Waves, Wind } from "lucide-react";
+import { Waves, Wind } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
+/* =========================
+   Rotating emotional lines
+========================= */
 const ROTATING_LINES = [
   "Nothing was taken. Something began to move.",
   "Your gift is the water that wakes the seed.",
   "A small flow, entering a much longer river.",
 ];
 
+/* =========================
+   Custom transparent sprout
+========================= */
+function BreathingSprout() {
+  return (
+    <svg
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-green-600/80 animate-[sproutBreath_8s_ease-in-out_infinite]"
+      aria-hidden="true"
+    >
+      {/* Ground */}
+      <path d="M7 20h10" />
+      {/* Stem */}
+      <path d="M12 20V10" />
+      {/* Right leaf */}
+      <path d="M12 10c0-3.5 3-6 6-6 0 3.5-3 6-6 6z" />
+      {/* Left leaf */}
+      <path d="M12 10c0-3.5-3-6-6-6 0 3.5 3 6 6 6z" />
+    </svg>
+  );
+}
+
 export default function ThankYouPage() {
   const [index, setIndex] = useState(0);
-  const [iconToggle, setIconToggle] = useState(true);
+  const [iconFlip, setIconFlip] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % ROTATING_LINES.length);
-      setIconToggle((v) => !v);
-    }, 9000); // slow, dignified
+      setIconFlip((v) => !v);
+    }, 9000); // slow, dignified cadence
 
     return () => clearInterval(interval);
   }, []);
@@ -28,27 +60,25 @@ export default function ThankYouPage() {
     <main className="min-h-[100svh] flex items-center justify-center px-6 py-16 bg-[#F6F0E6]">
       <div className="max-w-md w-full text-center">
         {/* Icon */}
-        <div className="flex justify-center mb-5">
+        <div className="flex justify-center mb-6">
           <div className="rounded-2xl bg-white/70 border border-black/5 shadow-sm px-6 py-5">
-            <Sprout className="h-11 w-11 text-green-600" />
+            <BreathingSprout />
           </div>
         </div>
 
-        {/* Stewardship Received — NOW VISIBLE */}
-        <div className="mb-4">
-          <p className="text-[13px] tracking-[0.18em] uppercase font-medium text-black/70">
-            Stewardship Received
-          </p>
-        </div>
+        {/* Stewardship Received */}
+        <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black/70">
+          Stewardship Received
+        </p>
 
         {/* Headline */}
-        <h1 className="text-2xl sm:text-3xl font-semibold text-black/85 leading-tight mb-7">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-black/85 leading-tight mb-8">
           The ecosystem is stronger because you are in it.
         </h1>
 
-        {/* Rotating Line */}
+        {/* Rotating line */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          {iconToggle ? (
+          {iconFlip ? (
             <Waves className="h-5 w-5 text-sky-700/70" />
           ) : (
             <Wind className="h-5 w-5 text-sky-700/70" />
@@ -101,6 +131,18 @@ export default function ThankYouPage() {
             to {
               opacity: 1;
               transform: translateY(0);
+            }
+          }
+
+          @keyframes sproutBreath {
+            0%,
+            100% {
+              opacity: 0.85;
+              transform: scale(1);
+            }
+            50% {
+              opacity: 1;
+              transform: scale(1.035);
             }
           }
         `}</style>
