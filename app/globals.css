@@ -1,53 +1,78 @@
-/* Import Tailwind CSS v3 - stable version */
+/* Import Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* ============================
+   BASE THEME TOKENS
+   ============================ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* --- CANONICAL LIGHT MODE CANVAS --- */
+    /* #F6F0E6 */
+    --background: 39 33% 93%;
     --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
+
+    --card: 39 33% 93%;
     --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
+
+    --popover: 39 33% 93%;
     --popover-foreground: 222.2 84% 4.9%;
+
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 355.7 100% 97.3%;
+
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
+
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
+
     --accent: 210 40% 96%;
     --accent-foreground: 222.2 84% 4.9%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 142.1 70.6% 45.3%;
+
     --radius: 0.75rem;
 
+    /* Hero / headline color helpers */
     --hero-light-head: #064e3b;
     --hero-light-body: #047857;
   }
 
+  /* ============================
+     DARK MODE (UNCHANGED)
+     ============================ */
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
+
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 355.7 100% 97.3%;
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 142.1 70.6% 45.3%;
@@ -56,62 +81,52 @@
     --hero-light-body: #e5ffef;
   }
 
+  /* ============================
+     GLOBAL ELEMENT NORMALIZATION
+     ============================ */
   * {
     border-color: hsl(var(--border));
+  }
+
+  html {
+    background-color: hsl(var(--background));
   }
 
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    /* Prevent horizontal scrolling */
     overflow-x: hidden;
-    /* Ensure smooth scrolling */
     scroll-behavior: smooth;
-  }
-
-  /* Hero section text styles - theme-aware */
-  .hero-heading {
-    color: var(--hero-light-head);
-  }
-
-  .hero-subheading {
-    color: #065f46;
-  }
-
-  .dark .hero-subheading {
-    color: #ffffff;
-  }
-
-  .hero-body {
-    color: var(--hero-light-body);
   }
 }
 
-/* Component styles */
+/* ============================
+   UTILITIES (EXISTING + SAFE)
+   ============================ */
 @layer utilities {
-
   .glass-card {
     backdrop-filter: blur(4px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .dark .glass-card {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .gradient-text {
-    background: linear-gradient(to right, hsl(var(--primary)), #10b981);
+    background: linear-gradient(
+      to right,
+      hsl(var(--primary)),
+      #10b981
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
 
-  /* ------------------------------ */
-  /* BUTTONS (YOUR ORIGINAL CODE)   */
-  /* ------------------------------ */
-
+  /* Button helpers (kept intact) */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -131,11 +146,6 @@
     background-color: hsl(var(--primary) / 0.9);
   }
 
-  .btn-primary:focus {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-  }
-
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -146,7 +156,6 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-    transition: background-color 0.15s ease-in-out;
     border: 1px solid hsl(var(--input));
     cursor: pointer;
   }
@@ -155,40 +164,4 @@
     background-color: hsl(var(--accent));
     color: hsl(var(--accent-foreground));
   }
-/* ------------------------------ */
-/* HEALING MANTRA ANIMATION (WORKING) */
-/* ------------------------------ */
-
-@keyframes healPulse {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.85;
-  }
-  50% {
-    background-position: 100% 50%;
-    opacity: 1;
-  }
-  100% {
-    background-position: 0% 50%;
-    opacity: 0.85;
-  }
-}
-
-.animate-heal-text {
-  background-size: 200% 200%;
-  background-image: linear-gradient(
-    to right,
-    #166534,
-    #059669,
-    #0d9488,
-    #10b981,
-    #059669,
-    #166534
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: healPulse 6s ease-in-out infinite;
-}
-/* CLOSE THE UTILITIES LAYER */
 }
