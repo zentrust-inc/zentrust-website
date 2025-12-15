@@ -18,8 +18,8 @@ export default function HomePage() {
       {/* Temporarily Hidden */}
       {/* <ProgramsSection /> */}
       {/* <StoriesSection /> */}
-      
-      <DonationCalculator />
+       {/* <DonationCalculator /> */}
+   
       <NewsletterSignup />
     </div>
   )
