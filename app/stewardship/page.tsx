@@ -2,86 +2,88 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Leaf, Heart, TreePine, Microscope, Users } from "lucide-react"
+import { Leaf, TreePine, Microscope, Heart } from "lucide-react"
 
 export default function StewardshipPortalPage() {
   return (
     <div className="min-h-screen pt-16">
 
-      {/* HERO — Minimal, poetic, calm */}
-      <section className="py-28 text-center">
-        <div className="max-w-3xl mx-auto px-4">
+      {/* HERO — calm, compressed */}
+      <section className="pt-14 md:pt-18 pb-10 text-center">
+        <div className="max-w-3xl mx-auto px-6">
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            A Quiet Portal for  
-            <span className="gradient-text"> Regenerative Stewardship</span>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            A Quiet Portal for
+            <span className="gradient-text block">Regenerative Stewardship</span>
           </h1>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Participation is not asked for.  
-            It arises naturally — like water finding its way downhill,  
-            or roots reaching for deeper soil.  
+          <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed">
+            Participation is not asked for.
+            <br />
+            It arises naturally — like water finding its way downhill,
+            or roots reaching for deeper soil.
             <span className="italic block mt-2">
               Nature does not hurry, yet everything is accomplished.
             </span>
           </p>
 
-          <Button asChild size="lg" className="group mt-6">
+          <Button asChild size="lg" className="mt-6">
             <Link href="/stewardship/checkout">
-              <Heart className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+              <Heart className="h-5 w-5 mr-2" />
               Enter the Stewardship Portal
             </Link>
           </Button>
 
-          <p className="text-xs text-muted-foreground mt-6">
-            ZenTrust is a 501(c)(3) public charity. EIN: 33-4318487.  
-            Participation is voluntary and never solicited.
+          <p className="text-xs text-muted-foreground mt-4">
+            ZenTrust is a 501(c)(3) public charity · EIN 33-4318487
           </p>
 
         </div>
       </section>
 
+      {/* PATHWAYS — no new surface, no borders */}
+      <section className="pt-10 md:pt-12 pb-10">
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
-      {/* THREE SYMBOLIC PATHWAYS — Soft, minimal, optional */}
-
-      <section className="py-24 border-t border-border">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Pathways of Quiet Participation
           </h2>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-16">
-            These are not tiers or transactions —  
-            only metaphors for how one might choose to participate  
-            in the great work of regeneration.
+          <p className="text-[16px] md:text-[17px] text-muted-foreground max-w-2xl mx-auto mb-8">
+            These are not tiers or transactions —
+            only metaphors for how one might choose to participate
+            in the long work of regeneration.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-5">
 
-            <div className="glass-card p-8 rounded-2xl">
-              <Leaf className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Root</h3>
-              <p className="text-sm text-muted-foreground">
-                Foundations. Soil. Beginnings.  
+            {/* Root */}
+            <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <Leaf className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg mb-2">Root</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Foundations. Soil. Beginnings.
                 The subtle intelligence of life taking hold.
               </p>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl">
-              <TreePine className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Rise</h3>
-              <p className="text-sm text-muted-foreground">
-                Canopy building. Hydrology shaping.  
-                Early regenerative architectures emerging.
+            {/* Rise */}
+            <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <TreePine className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg mb-2">Rise</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Canopy forming. Water cycles stabilizing.
+                Regenerative structures emerging.
               </p>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl">
-              <Microscope className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Observe</h3>
-              <p className="text-sm text-muted-foreground">
-                Inquiry. Science. Listening to ecosystems  
-                as they teach us how to heal.
+            {/* Observe */}
+            <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <Microscope className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-lg mb-2">Observe</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Inquiry. Science. Listening carefully
+                to what ecosystems reveal.
               </p>
             </div>
 
@@ -89,21 +91,21 @@ export default function StewardshipPortalPage() {
         </div>
       </section>
 
+      {/* CLOSING — gentle continuation, no reset */}
+      <section className="pt-10 md:pt-12 pb-20 text-center">
+        <div className="max-w-3xl mx-auto px-6">
 
-      {/* CLOSING — Minimal, philosophical */}
-
-      <section className="py-24">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Stewardship is a Relationship
           </h2>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            We do not rush.  
-            We do not ask.  
-            We simply cultivate conditions —  
-            and whatever emerges, emerges.
+          <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed mb-6">
+            We do not rush.
+            <br />
+            We do not ask.
+            <br />
+            We cultivate conditions —
+            and allow what is ready to emerge.
           </p>
 
           <Button asChild size="lg">
