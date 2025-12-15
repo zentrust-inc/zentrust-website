@@ -13,7 +13,7 @@ type Props = {
 
 export function BlogPreviewClient({ posts }: Props) {
   return (
-    <section className="bg-background py-20 sm:py-24">
+    <section className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-3 pb-12">
           <FadeIn className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">

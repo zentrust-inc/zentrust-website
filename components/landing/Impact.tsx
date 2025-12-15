@@ -12,7 +12,7 @@ const metrics = [
 
 export function Impact() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 sm:py-24">
+    <section className="relative overflow-hidden py-20 sm:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(16,185,129,0.08),transparent_30%),radial-gradient(circle_at_15%_40%,rgba(6,182,212,0.06),transparent_26%)] dark:bg-[radial-gradient(circle_at_50%_10%,rgba(16,185,129,0.08),transparent_30%),radial-gradient(circle_at_15%_40%,rgba(6,182,212,0.06),transparent_26%)]" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-3 pb-10">

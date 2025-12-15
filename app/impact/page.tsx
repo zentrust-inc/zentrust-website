@@ -5,10 +5,10 @@ import { TreePine, Users, Microscope, Globe } from "lucide-react"
 
 export default function ImpactPage() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-16">
 
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10 text-center">
+      <section className="py-24 text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
 
           <motion.h1
@@ -111,7 +111,7 @@ export default function ImpactPage() {
       </section>
 
       {/* The Real Impact */}
-      <section className="py-24 bg-muted/30 border-y border-border">
+      <section className="py-24 border-y border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
 
           <motion.h2
@@ -170,7 +170,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Closing */}
-      <section className="py-28 bg-gradient-to-r from-primary/10 to-emerald-500/10">
+      <section className="py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
 
           <motion.h2

@@ -1,9 +1,9 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
 
       {/* Hero */}
-      <section className="py-20 md:py-28 border-b border-border bg-gradient-to-b from-primary/5 via-background to-background">
+      <section className="py-20 md:py-28 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <p className="text-xs tracking-widest text-primary mb-3 uppercase">
             About ZenTrust
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       {/* Governance Block */}
-      <section className="py-20 md:py-24 bg-muted/30 border-t border-border">
+      <section className="py-20 md:py-24 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
             Governance & Transparency

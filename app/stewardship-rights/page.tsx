@@ -1,7 +1,7 @@
 export default function StewardshipRightsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <section className="py-16 md:py-24 border-b border-border bg-gradient-to-b from-primary/5 via-background to-background">
+    <div className="min-h-screen">
+      <section className="py-16 md:py-24 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <p className="text-xs font-semibold tracking-[0.2em] text-primary mb-4 uppercase">
             Governance & Ethics

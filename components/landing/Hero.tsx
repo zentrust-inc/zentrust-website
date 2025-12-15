@@ -1,16 +1,12 @@
 "use client"
 
 import { ArrowRight, Play, Sparkles } from 'lucide-react'
-import { FadeIn, FloatingOrb, MotionButton, ParallaxText, Stagger, StaggerItem } from './animations'
+import { FadeIn, MotionButton, ParallaxText, Stagger, StaggerItem } from './animations'
 import { Counter } from '@/components/motion/Counter'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50/70 via-white to-white text-foreground dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.12),transparent_42%),radial-gradient(circle_at_80%_10%,rgba(6,182,212,0.14),transparent_38%),radial-gradient(circle_at_70%_70%,rgba(236,254,255,0.12),transparent_32%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.16),transparent_42%),radial-gradient(circle_at_80%_10%,rgba(6,182,212,0.18),transparent_38%),radial-gradient(circle_at_70%_70%,rgba(236,254,255,0.08),transparent_32%)]" />
-      <FloatingOrb size={420} blur={160} offset={0.4} className="top-10 -left-32" />
-      <FloatingOrb size={360} blur={120} color="rgba(6,182,212,0.16)" offset={1.2} className="bottom-0 right-[-120px]" />
-      <FloatingOrb size={220} blur={90} color="rgba(94,234,212,0.18)" offset={0.8} className="top-1/2 left-10" />
+    <section className="relative overflow-hidden text-foreground">
 
       <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-24 sm:px-8 lg:px-10">
         <div className="mb-12 inline-flex items-center rounded-full border border-border/80 bg-card/80 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">

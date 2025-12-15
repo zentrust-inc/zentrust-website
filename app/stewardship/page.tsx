@@ -6,10 +6,10 @@ import { Leaf, Heart, TreePine, Microscope, Users } from "lucide-react"
 
 export default function StewardshipPortalPage() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-16">
 
       {/* HERO — Minimal, poetic, calm */}
-      <section className="py-28 text-center bg-gradient-to-b from-primary/10 via-background to-background">
+      <section className="py-28 text-center">
         <div className="max-w-3xl mx-auto px-4">
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -44,7 +44,7 @@ export default function StewardshipPortalPage() {
 
       {/* THREE SYMBOLIC PATHWAYS — Soft, minimal, optional */}
 
-      <section className="py-24 bg-muted/30 border-t border-border">
+      <section className="py-24 border-t border-border">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-10">
             Pathways of Quiet Participation

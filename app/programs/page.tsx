@@ -84,10 +84,10 @@ export default function ProgramsPage() {
   const featured = programs[0]
 
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-16">
 
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10 border-b border-border">
+      <section className="py-24 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             Programs Arriving in <span className="gradient-text">2026</span>
@@ -113,7 +113,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-12 bg-muted/30 border-y border-border">
+      <section className="py-12 border-y border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <h3 className="text-xl font-semibold mb-6">Browse by Focus Area</h3>
 
@@ -151,7 +151,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Closing */}
-      <section className="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10 border-t border-border">
+      <section className="py-24 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Growing Slowly, Growing Strong

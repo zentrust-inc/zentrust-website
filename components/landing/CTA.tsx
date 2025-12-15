@@ -5,7 +5,7 @@ import { FadeIn, MotionButton } from './animations'
 
 export function CTA() {
   return (
-    <section className="bg-background py-16 sm:py-20">
+    <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

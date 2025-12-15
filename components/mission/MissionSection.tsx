@@ -32,7 +32,7 @@ export default function MissionSection() {
   ]
 
   return (
-    <section className="w-full py-16 bg-background overflow-hidden">
+    <section className="w-full py-16 overflow-hidden">
 
       {/* INTRO CAPTION */}
       <motion.div

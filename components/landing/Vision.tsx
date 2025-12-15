@@ -6,7 +6,7 @@ import { SlideIn, FadeIn, GradientBorderCard } from './animations'
 
 export function Vision() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50/50 via-white to-white py-20 text-foreground dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 sm:py-24">
+    <section className="relative overflow-hidden py-20 text-foreground sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(16,185,129,0.12),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(6,182,212,0.14),transparent_28%),linear-gradient(135deg,rgba(14,165,233,0.05),rgba(16,185,129,0.08))]" />
       <div className="absolute inset-4 rounded-[32px] bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.25),_transparent_45%)] blur-3xl dark:bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.08),_transparent_45%)]" />
 

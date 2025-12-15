@@ -73,7 +73,7 @@ export default function GovernancePage() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -98,7 +98,7 @@ export default function GovernancePage() {
       </section>
 
       {/* IRS Compliance Section */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -179,7 +179,7 @@ export default function GovernancePage() {
       </section>
 
       {/* Governance Principles */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -215,7 +215,7 @@ export default function GovernancePage() {
       </section>
 
       {/* Board Responsibilities */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -271,7 +271,7 @@ export default function GovernancePage() {
       </section>
 
       {/* Policies and Procedures */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -314,7 +314,7 @@ export default function GovernancePage() {
       </section>
 
       {/* International Grantmaking */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -354,7 +354,7 @@ export default function GovernancePage() {
         </div>
       </section>
 {/* Stewardship Rights */}
-<section className="py-24 bg-gradient-to-r from-primary/10 to-emerald-500/10">
+<section className="py-24">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8">
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">

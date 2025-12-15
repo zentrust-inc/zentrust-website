@@ -43,7 +43,7 @@ export function DonationCalculator() {
   }, [amount])
 
   return (
-    <section className="w-full py-20 bg-background overflow-hidden">
+    <section className="w-full py-20 overflow-hidden">
 
       {/* INTRO */}
       <motion.div
