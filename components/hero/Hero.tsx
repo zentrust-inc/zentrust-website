@@ -9,10 +9,10 @@ const DETERMINATION_LETTER_URL =
 
 export function Hero() {
   return (
-    <section className="min-h-[85svh] flex items-center justify-center px-6 bg-[#F6F0E6] dark:bg-[#0f1110]">
+    <section className="min-h-[85svh] flex items-center justify-center px-6 pt-20 pb-16 bg-[#F6F0E6] dark:bg-[#0f1110]">
       <div className="max-w-3xl w-full text-center">
-        {/* Institutional mark */}
-        <div className="flex justify-center mb-6">
+        {/* Sprout — primary emotional anchor */}
+        <div className="flex justify-center mb-5">
           <Sprout
             className="h-12 w-12 text-green-600/80 dark:text-green-400/70"
             strokeWidth={1.6}
@@ -20,24 +20,9 @@ export function Hero() {
           />
         </div>
 
-        {/* Legal identity */}
-        <p className="mb-2 text-[13px] tracking-[0.18em] uppercase font-medium text-black/70 dark:text-white/60">
+        {/* Institutional identity (quiet) */}
+        <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black/70 dark:text-white/60">
           ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487
-        </p>
-
-        {/* Trust link */}
-        <p className="mb-6 text-sm text-black/55 dark:text-white/55">
-          Recognized as a 170(b)(1)(A)(vi) public charity.{" "}
-          <a
-            href={DETERMINATION_LETTER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 font-medium
-                       text-black/70 hover:text-black/90
-                       dark:text-white/70 dark:hover:text-white"
-          >
-            View official determination letter
-          </a>
         </p>
 
         {/* Core thesis */}
@@ -56,7 +41,22 @@ export function Hero() {
           and long-horizon stewardship.
         </p>
 
-        {/* Gentle continuation */}
+        {/* Trust confirmation — placed at decision point */}
+        <p className="mb-4 text-sm text-black/55 dark:text-white/55">
+          Recognized as a 170(b)(1)(A)(vi) public charity.{" "}
+          <a
+            href={DETERMINATION_LETTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 font-medium
+                       text-black/70 hover:text-black/90
+                       dark:text-white/70 dark:hover:text-white"
+          >
+            View official determination letter
+          </a>
+        </p>
+
+        {/* CTA */}
         <div className="flex justify-center">
           <Button
             size="lg"
