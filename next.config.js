@@ -8,6 +8,38 @@ const nextConfig = {
   },
 
   // ─────────────────────────────
+  // Canonical redirects (GOOGLE AD GRANTS)
+  // ─────────────────────────────
+  async redirects() {
+    return [
+      // WWW → non-WWW (single canonical domain)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.zentrust.world",
+          },
+        ],
+        destination: "https://zentrust.world/:path*",
+        permanent: true,
+      },
+
+      // Index variants → /
+      {
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
+
+  // ─────────────────────────────
   // Images
   // ─────────────────────────────
   images: {
