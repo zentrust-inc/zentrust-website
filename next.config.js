@@ -1,30 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ─────────────────────────────
-  // Build stability (MANDATORY)
-  // ─────────────────────────────
   eslint: {
     ignoreDuringBuilds: true,
   },
 
-  // ─────────────────────────────
-  // Canonical redirects (GOOGLE AD GRANTS)
-  // ─────────────────────────────
   async redirects() {
     return [
-      // WWW → non-WWW (single canonical domain)
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.zentrust.world",
-          },
-        ],
-        destination: "https://zentrust.world/:path*",
-        permanent: true,
-      },
-
       // Index variants → /
       {
         source: "/index.html",
@@ -39,9 +20,6 @@ const nextConfig = {
     ];
   },
 
-  // ─────────────────────────────
-  // Images
-  // ─────────────────────────────
   images: {
     remotePatterns: [
       {
@@ -58,9 +36,6 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
-  // ─────────────────────────────
-  // Security headers
-  // ─────────────────────────────
   async headers() {
     return [
       {
