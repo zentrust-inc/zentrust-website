@@ -160,31 +160,46 @@ export default function SyntropicEcologyPage() {
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <Link
-              href="/stewardship"
-              className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
-            >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Button 1</div>
-              <div className="mt-2 text-base font-semibold">
-                Be a Steward. Activate an Acre of Regeneration.
-              </div>
-              <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
-              </div>
-            </Link>
+           <Link
+  href="/stewardship"
+  className="group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
+>
+  <h4 className="text-base font-semibold">
+    Be a Steward
+  </h4>
 
-            <Link
-              href="/investor/pri"
-              className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
-            >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Button 2</div>
-              <div className="mt-2 text-base font-semibold">
-                Invest in the Protocol: Review the Syntropic PRI Model.
-              </div>
-              <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
-              </div>
-            </Link>
+  <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+    Activate an acre of regeneration through direct care of land and soil.
+  </p>
+
+  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+    Grounded, tangible, and human-scale.
+  </p>
+
+  <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
+    Explore stewardship →
+  </div>
+</Link>
+ <Link
+  href="/investor/pri"
+  className="group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
+>
+  <h4 className="text-base font-semibold">
+    Invest in the Protocol
+  </h4>
+
+  <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+    Review the Syntropic PRI model and how regeneration becomes self-sustaining.
+  </p>
+
+  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+    Structural, long-horizon, and permanent.
+  </p>
+
+  <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
+    Review the protocol →
+  </div>
+</Link>
           </div>
         </div> {/* ✅ THIS WAS THE MISSING CLOSING DIV */}
 
@@ -216,3 +231,4 @@ export default function SyntropicEcologyPage() {
     </main>
   );
 }
+
