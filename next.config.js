@@ -8,13 +8,6 @@ const nextConfig = {
   },
 
   // ─────────────────────────────
-  // PERFORMANCE: modern browsers only
-  // ─────────────────────────────
-  experimental: {
-    legacyBrowsers: false, // ✅ removes unnecessary polyfills
-  },
-
-  // ─────────────────────────────
   // Images
   // ─────────────────────────────
   images: {
