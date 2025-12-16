@@ -21,8 +21,9 @@
     --popover: 39 33% 93%;
     --popover-foreground: 222.2 84% 4.9%;
 
+    /* PRIMARY — FIXED FOR WCAG */
     --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --primary-foreground: 0 0% 100%; /* pure white for contrast */
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
@@ -54,8 +55,9 @@
     --popover: 222 30% 6%;
     --popover-foreground: 210 40% 98%;
 
+    /* PRIMARY — FIXED FOR WCAG */
     --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --primary-foreground: 0 0% 100%; /* pure white */
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
