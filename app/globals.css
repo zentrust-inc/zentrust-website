@@ -11,7 +11,6 @@
 @layer base {
   :root {
     /* ---------- LIGHT MODE (CANONICAL) ---------- */
-    /* #F6F0E6 — paper / parchment */
     --background: 39 33% 93%;
     --foreground: 222.2 84% 4.9%;
 
@@ -21,9 +20,13 @@
     --popover: 39 33% 93%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* PRIMARY — FIXED FOR WCAG */
+    /* Brand green (accents, rings, icons) */
     --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 0 0% 100%; /* pure white for contrast */
+    --primary-foreground: 0 0% 100%;
+
+    /* ✅ WCAG-SAFE PRIMARY BUTTON GREEN */
+    --primary-cta: 142 70% 36%;
+    --primary-cta-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
@@ -44,9 +47,9 @@
     --radius: 0.75rem;
   }
 
-  /* ---------- DARK MODE (CANONICAL SKY) ---------- */
+  /* ---------- DARK MODE ---------- */
   .dark {
-    --background: 222 30% 6%; /* base under sky */
+    --background: 222 30% 6%;
     --foreground: 210 40% 98%;
 
     --card: 222 30% 6%;
@@ -55,9 +58,13 @@
     --popover: 222 30% 6%;
     --popover-foreground: 210 40% 98%;
 
-    /* PRIMARY — FIXED FOR WCAG */
+    /* Brand green */
     --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 0 0% 100%; /* pure white */
+    --primary-foreground: 0 0% 100%;
+
+    /* ✅ WCAG-SAFE PRIMARY BUTTON GREEN */
+    --primary-cta: 142 70% 36%;
+    --primary-cta-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -76,7 +83,6 @@
     --ring: 142.1 70.6% 45.3%;
   }
 
-  /* ---------- GLOBAL NORMALIZATION ---------- */
   * {
     border-color: hsl(var(--border));
   }
@@ -90,50 +96,5 @@
   body {
     overflow-x: hidden;
     scroll-behavior: smooth;
-  }
-}
-
-/* =========================================
-   DARK MODE — CANONICAL SKY
-   ========================================= */
-.dark .bg-dark-sky {
-  background: radial-gradient(
-    ellipse at top,
-    #0b1220 0%,
-    #05080f 45%,
-    #02040a 100%
-  );
-}
-
-/* =========================================
-   DARK MODE — STARFIELD (SUBTLE)
-   ========================================= */
-.dark .starfield {
-  background-image:
-    radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.35), transparent 40%),
-    radial-gradient(1px 1px at 45% 15%, rgba(255,255,255,0.25), transparent 40%),
-    radial-gradient(1px 1px at 65% 35%, rgba(255,255,255,0.30), transparent 40%),
-    radial-gradient(1px 1px at 25% 55%, rgba(255,255,255,0.22), transparent 40%),
-    radial-gradient(1px 1px at 75% 65%, rgba(255,255,255,0.28), transparent 40%),
-    radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,0.20), transparent 40%);
-  animation: starTwinkle 16s ease-in-out infinite;
-}
-
-/* Extremely slow, low-contrast breathing */
-@keyframes starTwinkle {
-  0%, 100% {
-    opacity: 0.85;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* =========================================
-   ACCESSIBILITY SAFETY
-   ========================================= */
-@media (prefers-reduced-motion: reduce) {
-  .starfield {
-    animation: none;
   }
 }
