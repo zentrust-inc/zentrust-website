@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
 type Props = {
   mobileVideoSrc: string;
   heroImageSrc: string;
   heroImageAlt: string;
+  children?: ReactNode;
 };
 
 function usePrefersReducedMotion() {
@@ -41,6 +42,7 @@ export default function QuietMirrorHeroMedia({
   mobileVideoSrc,
   heroImageSrc,
   heroImageAlt,
+  children,
 }: Props) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const isMobile = useIsMobile();
@@ -93,7 +95,10 @@ export default function QuietMirrorHeroMedia({
       )}
 
       {/* GLOBAL contrast plane */}
-      <div className="hero-contrast-plane" />
+      <div className="hero-contrast-plane" aria-hidden="true" />
+
+      {/* Canonical hero foreground */}
+      {children && <div className="hero-foreground">{children}</div>}
     </div>
   );
 }
