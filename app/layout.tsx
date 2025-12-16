@@ -10,7 +10,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";ark
+import { Footer } from "@/components/layout/Footer";
 import { TrackPageView } from "@/components/analytics/TrackPageView";
 import { DarkSky } from "@/components/background/DarkSky";
 
