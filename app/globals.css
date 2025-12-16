@@ -97,4 +97,32 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
+/* =========================================
+   HERO CONTRAST SYSTEM (GLOBAL INVARIANT)
+   ========================================= */
+
+@layer components {
+  /* HERO CONTRAST PLANE
+     Guarantees minimum luminance regardless of media
+  */
+  .hero-contrast-plane {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.55); /* deterministic luminance floor */
+  }
+
+  /* HERO TEXT (GLOBAL STANDARD) */
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    color: #ffffff; /* always white */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-text-inner {
+    display: inline-block;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+  }
 }
