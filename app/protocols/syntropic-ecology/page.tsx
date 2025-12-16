@@ -162,45 +162,41 @@ export default function SyntropicEcologyPage() {
             Which kind of capital will you deploy?
           </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+         <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {/* Stewardship */}
             <Link
               href="/stewardship"
               className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
             >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Button 1</div>
-              <div className="mt-2 text-base font-semibold">
-                Be a Steward. Activate an Acre of Regeneration.
-              </div>
-              <div className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-                (Destination: Stewardship Flow)
-              </div>
+              <h4 className="text-base font-semibold">
+                Be a Steward
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                Activate an acre of regeneration and help bring a living system
+                back online through direct care of land and soil.
+              </p>
               <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
+                Explore stewardship →
               </div>
             </Link>
 
+            {/* Protocol / PRI */}
             <Link
               href="/investor/pri"
               className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
             >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Button 2</div>
-              <div className="mt-2 text-base font-semibold">Invest in the Protocol: Review the Syntropic PRI Model.</div>
-              <div className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">(Destination: Investor Portal)</div>
+              <h4 className="text-base font-semibold">
+                Invest in the Protocol
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                Review the Syntropic PRI model and see how regeneration becomes
+                self-sustaining through long-horizon structure.
+              </p>
               <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
+                Review the protocol →
               </div>
             </Link>
           </div>
-
-          <div className="mt-6">
-            <Link
-              href="/protocols/bpss-wellness"
-              className="inline-flex items-center gap-2 text-sm text-neutral-700 underline-offset-4 hover:underline dark:text-neutral-300"
-            >
-              → Learn How This Protocol Heals the Human Condition (BPSS Wellness)
-            </Link>
-          </div>
-        </div>
 
         {/* Mandatory Trust Footer (quiet, plain) */}
         <footer className="mt-14 border-t border-neutral-200 pt-6 text-sm text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
@@ -230,3 +226,4 @@ export default function SyntropicEcologyPage() {
     </main>
   );
 }
+
