@@ -16,8 +16,8 @@ function usePrefersReducedMotion() {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => setReduced(mq.matches);
     update();
-    mq.addEventListener?.("change", update);
-    return () => mq.removeEventListener?.("change", update);
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   return reduced;
@@ -27,18 +27,21 @@ function useIsMobile() {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    // Coarse pointer + small viewport is a reliable heuristic for "phone-like"
     const mq = window.matchMedia("(pointer: coarse) and (max-width: 768px)");
     const update = () => setMobile(mq.matches);
     update();
-    mq.addEventListener?.("change", update);
-    return () => mq.removeEventListener?.("change", update);
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   return mobile;
 }
 
-export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, heroImageAlt }: Props) {
+export default function QuietMirrorHeroMedia({
+  mobileVideoSrc,
+  heroImageSrc,
+  heroImageAlt,
+}: Props) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const isMobile = useIsMobile();
 
@@ -46,13 +49,13 @@ export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, her
   const [videoDone, setVideoDone] = useState(false);
   const [videoError, setVideoError] = useState(false);
 
-  const shouldUseVideo = useMemo(() => {
-    return isMobile && !prefersReducedMotion && !videoError;
-  }, [isMobile, prefersReducedMotion, videoError]);
+  const shouldUseVideo = useMemo(
+    () => isMobile && !prefersReducedMotion && !videoError,
+    [isMobile, prefersReducedMotion, videoError]
+  );
 
   useEffect(() => {
     if (!shouldUseVideo) return;
-
     const v = videoRef.current;
     if (!v) return;
 
@@ -62,7 +65,6 @@ export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, her
     v.addEventListener("ended", onEnded);
     v.addEventListener("error", onError);
 
-    // Attempt autoplay; if blocked, fail gracefully to image.
     const p = v.play();
     if (p && typeof p.catch === "function") {
       p.catch(() => setVideoError(true));
@@ -76,7 +78,7 @@ export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, her
 
   return (
     <div className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Always render the image in the background (fallback + post-video still) */}
+      {/* Base image (fallback + final still state) */}
       <Image
         src={heroImageSrc}
         alt={heroImageAlt}
@@ -86,7 +88,7 @@ export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, her
         sizes="100vw"
       />
 
-      {/* Mobile: play once, muted, then allow the image behind to be the still state */}
+      {/* Mobile run-once video */}
       {shouldUseVideo && !videoDone && (
         <video
           ref={videoRef}
@@ -95,17 +97,28 @@ export default function QuietMirrorHeroMedia({ mobileVideoSrc, heroImageSrc, her
           muted
           playsInline
           preload="auto"
-          // Autoplay is attempted; if blocked, we fall back to image.
           autoPlay
-          // IMPORTANT: do not loop (run-once discipline)
           loop={false}
           controls={false}
-          aria-label="Quiet Mirror video: there is order beneath the disorder"
         />
       )}
 
-      {/* Subtle overlay to keep text legible (no drama) */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/10" />
+      {/* Bi-directional neutral scrim */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.45) 100%)",
+        }}
+      />
+
+      {/* Subtle vignette */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          boxShadow: "inset 0 0 140px rgba(0,0,0,0.45)",
+        }}
+      />
     </div>
   );
 }
