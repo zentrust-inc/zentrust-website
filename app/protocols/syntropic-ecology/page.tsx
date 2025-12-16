@@ -18,38 +18,36 @@ export default function SyntropicEcologyPage() {
           mobileVideoSrc="/video/mobile-syntropy-v1-quiet-mirror.mp4"
           heroImageSrc="/images/desktop-syntropy-v1-quiet-mirror.jpg"
           heroImageAlt="Quiet Mirror: rich soil with subtle mycelial structure beneath the surface"
-        />
-
-        {/* Quiet Mirror title (understated) */}
-        <div className="pointer-events-none absolute inset-x-0 top-0">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        >
+          <div className="mx-auto flex h-full max-w-6xl flex-col px-4 sm:px-6">
+            {/* Quiet Mirror title (understated) */}
             <div className="pt-5 sm:pt-6">
               <div className="inline-flex rounded-full bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-neutral-900 backdrop-blur dark:bg-black/50 dark:text-neutral-50">
                 There Is Order Beneath the Disorder.
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Pivot copy (still above the fold on most screens) */}
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="mx-auto max-w-6xl px-4 pb-8 sm:px-6 sm:pb-10">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                We Don’t Plant Trees. We Restore the Code that Lets Forests Return.
-              </h1>
-              <p className="mt-4 text-base leading-relaxed text-neutral-800 dark:text-neutral-200 sm:text-lg">
-                The world needs a protocol for regeneration, not another symptom-treating charity. This is the Syntropic
-                Ecology engine—the open-source foundation of a living civilization.
-              </p>
+            <div className="flex-1" />
 
-              {/* Gentle cue to continue (not a CTA) */}
-              <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
-                If you’d like to continue, the map is below.
-              </p>
+            {/* Pivot copy (still above the fold on most screens) */}
+            <div className="pb-8 sm:pb-10">
+              <div className="hero-text max-w-3xl">
+                <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                  We Don’t Plant Trees. We Restore the Code that Lets Forests Return.
+                </h1>
+                <p className="mt-4 text-base leading-relaxed sm:text-lg">
+                  The world needs a protocol for regeneration, not another symptom-treating charity. This is the Syntropic
+                  Ecology engine—the open-source foundation of a living civilization.
+                </p>
+
+                {/* Gentle cue to continue (not a CTA) */}
+                <p className="mt-4 text-sm sm:text-base">
+                  If you’d like to continue, the map is below.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </QuietMirrorHeroMedia>
       </section>
 
       {/* Body */}

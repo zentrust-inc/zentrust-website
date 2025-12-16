@@ -111,12 +111,22 @@
     inset: 0;
     pointer-events: none;
     background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+
+  /* HERO FOREGROUND LAYER (holds text + controls) */
+  .hero-foreground {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
   }
 
   /* HERO TEXT (GLOBAL STANDARD) */
   .hero-text {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: #ffffff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
