@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Sprout } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,12 +18,12 @@ export function Hero() {
           />
         </div>
 
-        {/* Institutional identity — slightly stronger contrast */}
-        <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black dark:text-white/80">
+        {/* Institutional identity */}
+        <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black/80 dark:text-white/80">
           ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487
         </p>
 
-        {/* H1 — unchanged (already good) */}
+        {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black dark:text-white leading-tight mb-6">
           Healing land.
           <br />
@@ -34,38 +32,34 @@ export function Hero() {
           Science for regeneration.
         </h1>
 
-        {/* Supporting text — remove opacity */}
-        <p className="text-lg text-black dark:text-white/80 max-w-2xl mx-auto mb-8">
+        {/* Supporting text */}
+        <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto mb-8">
           ZenTrust advances regenerative ecology, BPSS-integrative wellness
           research, and open scientific education — grounded in evidence,
           transparency, and long-horizon stewardship.
         </p>
 
-        {/* Trust confirmation — slightly stronger */}
-        <p className="mb-4 text-sm text-black/70 dark:text-white/70">
+        {/* Trust confirmation */}
+        <p className="mb-4 text-sm text-black/60 dark:text-white/60">
           Recognized as a 170(b)(1)(A)(vi) public charity.{" "}
           <a
             href={DETERMINATION_LETTER_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4 font-medium
-                       text-black hover:text-black
+                       text-black/80 hover:text-black
                        dark:text-white/80 dark:hover:text-white"
           >
             View official determination letter
           </a>
         </p>
 
-        {/* CTA — REAL BUTTON (no asChild) */}
+        {/* CTA — LINK (SERVER-RENDERED, FAST) */}
         <div className="flex justify-center mt-8">
-          <Button
-            size="lg"
-            className="px-8 py-5 text-lg rounded-xl"
-            onClick={() => {
-              window.location.href = "/stewardship";
-            }}
-          >
-            Enter the Stewardship Portal
+          <Button asChild size="lg" className="px-8 py-5 text-lg rounded-xl">
+            <Link href="/stewardship">
+              Enter the Stewardship Portal
+            </Link>
           </Button>
         </div>
       </div>
