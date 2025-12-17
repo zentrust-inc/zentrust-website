@@ -30,12 +30,12 @@ export default function BPSSHealthPage() {
             <div className="pb-8 sm:pb-10">
               <div className="max-w-3xl">
                 <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl text-white">
-                  Why do many treatments work — <br />
-                  yet many people still don’t feel whole?
+                  Why does treatment succeed? <br />
+                  Yet many still don’t feel fully well.
                 </h1>
 
                 <p className="mt-4 text-base leading-relaxed sm:text-lg text-white/90">
-                  What might explain that — without blame?
+                  This page explores why, without judgment.
                 </p>
 
                 <p className="mt-4 text-sm sm:text-base text-white/80">
@@ -59,7 +59,7 @@ export default function BPSSHealthPage() {
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  Why did things improve — but not feel better?
+                  Why did things improve, but not feel better?
                 </h2>
                 <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
                   Many people assume this means they failed. That assumption quietly causes harm.
@@ -74,7 +74,7 @@ export default function BPSSHealthPage() {
               <p>You took the medicine.</p>
               <p>You showed up.</p>
               <p>Your test results improved.</p>
-              <p>And yet — something didn’t fully settle.</p>
+              <p>And yet, something didn’t fully settle.</p>
               <p>Most people assume this means they failed.</p>
               <p>That assumption hurts more than the condition.</p>
             </div>
@@ -97,7 +97,7 @@ export default function BPSSHealthPage() {
             </summary>
             <div className="mt-5 space-y-3">
               <p>A gardener notices one plant looks weak.</p>
-              <p>The fertilizer helps — but not fully.</p>
+              <p>The fertilizer helps, but not fully.</p>
               <p>Eventually someone asks:</p>
               <ul className="space-y-1 pl-4">
                 <li>🌱 How’s the soil?</li>
@@ -149,7 +149,7 @@ export default function BPSSHealthPage() {
               </span>
             </summary>
             <div className="mt-5 space-y-3">
-              <p>Tune one string too much — another goes off.</p>
+              <p>Tune one string too much, another goes off.</p>
               <p>The problem isn’t the string.</p>
               <p>It’s treating a system as parts.</p>
             </div>
@@ -183,7 +183,7 @@ export default function BPSSHealthPage() {
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  What if this isn’t a rejection — but a completion?
+                  What if this isn’t a rejection, but a completion?
                 </h2>
                 <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
                   Medicine matters. Context completes it.
