@@ -3,214 +3,224 @@ import Link from "next/link";
 import QuietMirrorHeroMedia from "@/components/hero/QuietMirrorHeroMedia";
 
 export const metadata: Metadata = {
-  title: "BPSS Health: A Whole-System Protocol for Healing",
+  title: "BPSS Health: A Whole-System Perspective",
   description:
-    "BPSS Health: A whole-system health protocol that addresses biological, psychological, social, and meaning-based dimensions of healing—without blame or reductionism.",
+    "Many treatments work. Yet many people still don’t feel whole. Explore a whole-system perspective on health — without blame.",
 };
 
 export default function BPSSHealthPage() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
-      {/* Quiet Mirror entry: ask nothing, safe to leave */}
+      {/* ─────────────────────────────────────────────
+         Quiet Mirror Entry (Awakening Video)
+         ───────────────────────────────────────────── */}
       <section className="relative">
         <QuietMirrorHeroMedia
           mobileVideoSrc="/video/mobile-bpss-v1-quiet-mirror.mp4"
           heroImageSrc="/images/desktop-bpss-v1-quiet-mirror.jpg"
-          heroImageAlt="Quiet Mirror: subtle human nervous system patterns emerging into coherence"
+          heroImageAlt="Quiet Mirror: subtle human systems moving in calm coherence"
         >
           <div className="mx-auto flex h-full max-w-6xl flex-col px-4 sm:px-6">
-            {/* Quiet Mirror title */}
-            <div className="pt-5 sm:pt-6">
-              <div className="inline-flex rounded-full bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-neutral-900 backdrop-blur dark:bg-black/50 dark:text-neutral-50">
-                The System Was Speaking the Whole Time.
+            {/* TL;DR BLOCK — Above the fold */}
+            <div className="pt-6">
+              <div className="max-w-3xl">
+                <h1 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+                  Many treatments work. <br />
+                  Yet many people still don’t feel whole.
+                </h1>
+                <p className="mt-3 text-base leading-relaxed text-neutral-800 dark:text-neutral-200">
+                  This page explores why — without blame.
+                </p>
+                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+                  ⏱ About a 3-minute exploration
+                </p>
               </div>
             </div>
 
             <div className="flex-1" />
 
-            {/* Pivot copy */}
+            {/* Gentle cue (not CTA) */}
             <div className="pb-8 sm:pb-10">
-              <div className="hero-text max-w-3xl">
-                <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                  We Don’t Chase Symptoms. We Study the Systems Health Emerges From.
-                </h1>
-                <p className="mt-4 text-base leading-relaxed sm:text-lg">
-                  Many treatments work. Yet many people still don’t feel whole. BPSS Health is a
-                  whole-system protocol that explains why—without blame, rejection, or reduction.
-                </p>
-
-                {/* Gentle cue */}
-                <p className="mt-4 text-sm sm:text-base">
-                  If you’d like to continue, the map is below.
-                </p>
-              </div>
+              <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
+                If you’d like to continue, the map is below.
+              </p>
             </div>
           </div>
         </QuietMirrorHeroMedia>
       </section>
 
-      {/* Body */}
+      {/* ─────────────────────────────────────────────
+         BODY
+         ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        {/* Floodlight TL;DR */}
-        <div className="max-w-3xl">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-            When Healing Feels Incomplete, the Frame May Be Too Small.
-          </h2>
-          <p className="mt-4 leading-relaxed text-neutral-800 dark:text-neutral-200">
-            Modern health systems excel at isolating problems. A symptom appears. A cause is
-            identified. A treatment is applied. Often, this works.
-          </p>
-          <p className="mt-4 leading-relaxed text-neutral-800 dark:text-neutral-200">
-            But humans do not live in isolation. Health outcomes emerge from interacting biological,
-            psychological, social, and meaning-based systems. When these layers are separated,
-            unresolved suffering is often mistaken for failure.
-          </p>
-
-          <div className="mt-6 space-y-3 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-800 dark:bg-neutral-900/40">
-            <div className="flex gap-3">
-              <div className="shrink-0">🧠</div>
-              <p className="leading-relaxed text-neutral-900 dark:text-neutral-50">
-                <span className="font-medium">Biological Signals</span> respond to treatment, but do
-                not exist independently of stress, context, or meaning.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <div className="shrink-0">🤝</div>
-              <p className="leading-relaxed text-neutral-900 dark:text-neutral-50">
-                <span className="font-medium">Social Environments</span> shape safety, compliance,
-                recovery, and long-term resilience.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <div className="shrink-0">🧭</div>
-              <p className="leading-relaxed text-neutral-900 dark:text-neutral-50">
-                <span className="font-medium">Meaning and Coherence</span> change how effort feels,
-                how pain is carried, and how healing unfolds.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Depth accordion */}
-        <div className="mt-10 max-w-3xl">
+        {/* Trigger Blocks (Core Experience) */}
+        <div className="max-w-3xl space-y-4">
+          {/* Trigger 1 — Recognition */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
-                  The BPSS Protocol: Completion Without Rejection.
-                </h3>
-                <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                  View the lens (no hype, no urgency).
-                </p>
-              </div>
-              <span className="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
-                Expand
-              </span>
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-lg font-semibold tracking-tight">
+                When results improve, but relief doesn’t
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                Many people assume this means they failed. That assumption quietly causes harm.
+              </p>
             </summary>
-
-            <div className="mt-5 space-y-4 text-neutral-800 dark:text-neutral-200">
-              <p className="leading-relaxed">
-                BPSS stands for Biological, Psychological, Social, and Spiritual—not as separate
-                domains, but as interacting systems. The protocol does not replace medicine. It
-                restores context to healing.
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>You followed the instructions. You took the medicine. You showed up.</p>
+              <p>Your test results improved — yet something didn’t fully settle.</p>
+              <p>
+                Most people assume this means they didn’t try hard enough. That assumption hurts
+                more than the condition itself.
               </p>
+            </div>
+          </details>
 
-              <p className="leading-relaxed">
-                Just as soil science did not replace botany, whole-system health does not reject
-                treatment. It explains why treatment alone sometimes isn’t enough.
+          {/* Trigger 2 — Metaphor */}
+          <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-lg font-semibold tracking-tight">
+                The garden wasn’t broken
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                Sometimes the system around a problem is incomplete.
               </p>
+            </summary>
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>A gardener notices one plant looks weak.</p>
+              <p>The fertilizer helps — but not fully.</p>
+              <p>
+                Eventually someone asks about the soil, water flow, and sunlight. The plant wasn’t
+                broken. The frame was too small.
+              </p>
+            </div>
+          </details>
 
-              <div className="space-y-3">
-                <div className="rounded-xl bg-neutral-50 p-4 dark:bg-neutral-900/40">
-                  <p className="font-medium">Restore Interaction</p>
-                  <p className="mt-1 leading-relaxed">
-                    Health improves when biological care is aligned with psychological adaptation,
-                    social safety, and lived meaning.
-                  </p>
-                </div>
+          {/* Trigger 3 — Systems Insight */}
+          <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-lg font-semibold tracking-tight">
+                Humans don’t live in isolation
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                Outcomes change when biology, stress, and meaning interact.
+              </p>
+            </summary>
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>
+                Modern systems isolate symptoms. Often, that works.
+              </p>
+              <p>
+                But humans live inside relationships, environments, pressure, and meaning.
+              </p>
+              <p>
+                When these layers interact, outcomes change — even when treatment is correct.
+              </p>
+            </div>
+          </details>
 
-                <div className="rounded-xl bg-neutral-50 p-4 dark:bg-neutral-900/40">
-                  <p className="font-medium">Reduce Internalized Blame</p>
-                  <p className="mt-1 leading-relaxed">
-                    When systems are framed correctly, unresolved outcomes become intelligible
-                    rather than personal failures.
-                  </p>
-                </div>
+          {/* Trigger 4 — Gentle Reframe */}
+          <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-lg font-semibold tracking-tight">
+                Completion, not rejection
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                Whole-system health doesn’t replace medicine.
+              </p>
+            </summary>
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>Medicine saves lives. Diagnostics matter. Treatment is essential.</p>
+              <p>This perspective doesn’t reject medicine — it completes the frame.</p>
+              <p>
+                Just as soil science didn’t replace botany, systems thinking explains why treatment
+                alone may not be enough.
+              </p>
+            </div>
+          </details>
 
-                <div className="rounded-xl bg-neutral-50 p-4 dark:bg-neutral-900/40">
-                  <p className="font-medium">Enable Prevention</p>
-                  <p className="mt-1 leading-relaxed">
-                    Whole-system visibility reveals stress accumulation, environmental mismatch,
-                    and meaning erosion before crisis occurs.
-                  </p>
-                </div>
-              </div>
+          {/* Trigger 5 — Inversion Story */}
+          <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <summary className="cursor-pointer list-none">
+              <h2 className="text-lg font-semibold tracking-tight">
+                What if the river matters?
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                Sometimes the environment is part of the diagnosis.
+              </p>
+            </summary>
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>A fish is taken from a polluted river and examined carefully.</p>
+              <p>The fish is adjusted — then returned to the same water.</p>
+              <p>
+                Eventually someone asks: what if the river is part of the diagnosis?
+              </p>
             </div>
           </details>
         </div>
 
-        {/* Choice-based continuation */}
-        <div className="mt-12 max-w-3xl">
-          <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
-            Where This Lens Leads.
-          </h3>
-          <p className="mt-3 leading-relaxed text-neutral-800 dark:text-neutral-200">
-            BPSS Health is part of a larger regenerative system spanning land, communities, and
-            human wellbeing.
-          </p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <Link
-              href="/protocols/syntropic-ecology"
-              className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
-            >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Related Protocol</div>
-              <div className="mt-2 text-base font-semibold">
-                See How Regeneration Begins with Land.
-              </div>
-              <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
-              </div>
-            </Link>
-
-            <Link
-              href="/governance"
-              className="group rounded-2xl border border-neutral-200 bg-white p-5 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900/40"
-            >
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">Institutional Context</div>
-              <div className="mt-2 text-base font-semibold">
-                Learn How ZenTrust Operates as a Public Charity.
-              </div>
-              <div className="mt-4 text-sm text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200">
-                Continue →
-              </div>
-            </Link>
-          </div>
+        {/* Progressive Disclosure */}
+        <div className="mt-10 max-w-3xl">
+          <details className="rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <summary className="cursor-pointer list-none font-medium">
+              Why this perspective matters
+            </summary>
+            <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>
+                Narrow frames create blame and confusion.
+              </p>
+              <p>
+                Wider frames restore dignity, reduce pressure, and reveal prevention.
+              </p>
+              <p>
+                Confusion turns into clarity — quietly.
+              </p>
+            </div>
+          </details>
         </div>
 
-        {/* Mandatory Trust Footer */}
-        <footer className="mt-14 border-t border-neutral-200 pt-6 text-sm text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              ZenTrust, Inc. | EIN: <span className="font-medium">33-4318487</span> | IRS Status:{" "}
-              <span className="font-medium">170(b)(1)(A)(vi)</span>
-            </div>
+        {/* Context Block */}
+        <div className="mt-10 max-w-3xl">
+          <h3 className="text-lg font-semibold tracking-tight">
+            Why this page exists
+          </h3>
+          <p className="mt-3 leading-relaxed text-neutral-800 dark:text-neutral-200">
+            ZenTrust is a public charity supporting systems-level research and education across
+            health, land, and communities.
+          </p>
+          <p className="mt-3 leading-relaxed text-neutral-800 dark:text-neutral-200">
+            This page exists because many people already feel this pattern — but rarely see it named
+            without judgment.
+          </p>
+        </div>
 
-            <nav className="flex flex-wrap gap-x-4 gap-y-2">
-              <Link href="/docs/irs-determination-letter" className="hover:underline underline-offset-4">
-                IRS Determination Letter
-              </Link>
-              <Link href="/financials" className="hover:underline underline-offset-4">
-                Financials
-              </Link>
-              <Link href="/governance" className="hover:underline underline-offset-4">
-                Governance
-              </Link>
-              <Link href="/privacy" className="hover:underline underline-offset-4">
-                Privacy Policy
-              </Link>
-            </nav>
-          </div>
+        {/* Stillness Block */}
+        <div className="mt-12 max-w-3xl border-t border-neutral-200 pt-6 dark:border-neutral-800">
+          <p>You don’t need to agree.</p>
+          <p>You don’t need to act.</p>
+          <p>You don’t need to stay.</p>
+
+          <p className="mt-4 italic">
+            Sometimes healing doesn’t fail. <br />
+            Sometimes the frame was just too small.
+          </p>
+        </div>
+
+        {/* Continuations */}
+        <div className="mt-12 max-w-3xl grid gap-4 sm:grid-cols-3">
+          <Link href="/research" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+            Understand the research lens →
+          </Link>
+          <Link href="/protocols/syntropic-ecology" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+            See this pattern beyond health →
+          </Link>
+          <Link href="/governance" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+            Learn how ZenTrust works →
+          </Link>
+        </div>
+
+        {/* Trust Footer */}
+        <footer className="mt-14 border-t border-neutral-200 pt-6 text-sm text-neutral-700 dark:border-neutral-800 dark:text-neutral-300">
+          ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
         </footer>
       </section>
     </main>
