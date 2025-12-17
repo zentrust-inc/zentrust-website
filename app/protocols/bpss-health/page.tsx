@@ -11,51 +11,54 @@ export const metadata: Metadata = {
 export default function BPSSHealthPage() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
-      {/* ─────────────────────────────────────────────
-         Quiet Mirror Entry (Awakening Video)
-         ───────────────────────────────────────────── */}
+      {/* Quiet Mirror entry: ask nothing, safe to leave */}
       <section className="relative">
         <QuietMirrorHeroMedia
           mobileVideoSrc="/video/mobile-bpss-v1-quiet-mirror.mp4"
           heroImageSrc="/images/desktop-bpss-v1-quiet-mirror.jpg"
-          heroImageAlt="Quiet Mirror: subtle human systems moving in calm coherence"
+          heroImageAlt="Quiet Mirror: human biological, psychological, and social systems in calm coherence"
         >
           <div className="mx-auto flex h-full max-w-6xl flex-col px-4 sm:px-6">
-            {/* TL;DR BLOCK — Above the fold */}
-            <div className="pt-6">
-              <div className="max-w-3xl">
-                <h1 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                  Many treatments work. <br />
-                  Yet many people still don’t feel whole.
-                </h1>
-                <p className="mt-3 text-base leading-relaxed text-neutral-800 dark:text-neutral-200">
-                  This page explores why — without blame.
-                </p>
-                <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
-                  ⏱ About a 3-minute exploration
-                </p>
+            {/* Quiet Mirror label */}
+            <div className="pt-5 sm:pt-6">
+              <div className="inline-flex rounded-full bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-neutral-900 backdrop-blur dark:bg-black/50 dark:text-neutral-50">
+                There Is Coherence Beneath the Confusion.
               </div>
             </div>
 
             <div className="flex-1" />
 
-            {/* Gentle cue (not CTA) */}
+            {/* Hero copy */}
             <div className="pb-8 sm:pb-10">
-              <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
-                If you’d like to continue, the map is below.
-              </p>
+              <div className="hero-text max-w-3xl">
+                <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                  Yet many people still don’t feel whole.
+                </h1>
+
+                <p className="mt-4 text-base leading-relaxed sm:text-lg">
+                  This page explores why — without blame.
+                </p>
+
+                {/* Orientation FIRST */}
+                <p className="mt-4 text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
+                  ⏱ About a 3-minute exploration
+                </p>
+
+                {/* Permission SECOND */}
+                <p className="mt-2 text-sm sm:text-base text-neutral-700 dark:text-neutral-300">
+                  If you’d like to continue, the map is below.
+                </p>
+              </div>
             </div>
           </div>
         </QuietMirrorHeroMedia>
       </section>
 
-      {/* ─────────────────────────────────────────────
-         BODY
-         ───────────────────────────────────────────── */}
+      {/* Body */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        {/* Trigger Blocks (Core Experience) */}
+        {/* Trigger Blocks */}
         <div className="max-w-3xl space-y-4">
-          {/* Trigger 1 — Recognition */}
+          {/* Trigger 1 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <summary className="cursor-pointer list-none">
               <h2 className="text-lg font-semibold tracking-tight">
@@ -75,7 +78,7 @@ export default function BPSSHealthPage() {
             </div>
           </details>
 
-          {/* Trigger 2 — Metaphor */}
+          {/* Trigger 2 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <summary className="cursor-pointer list-none">
               <h2 className="text-lg font-semibold tracking-tight">
@@ -89,13 +92,13 @@ export default function BPSSHealthPage() {
               <p>A gardener notices one plant looks weak.</p>
               <p>The fertilizer helps — but not fully.</p>
               <p>
-                Eventually someone asks about the soil, water flow, and sunlight. The plant wasn’t
-                broken. The frame was too small.
+                Eventually someone asks about the soil, water flow, and sunlight.
+                The plant wasn’t broken. The frame was too small.
               </p>
             </div>
           </details>
 
-          {/* Trigger 3 — Systems Insight */}
+          {/* Trigger 3 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <summary className="cursor-pointer list-none">
               <h2 className="text-lg font-semibold tracking-tight">
@@ -106,19 +109,15 @@ export default function BPSSHealthPage() {
               </p>
             </summary>
             <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
+              <p>Modern health systems isolate symptoms — often successfully.</p>
+              <p>But humans live inside relationships, environments, pressure, and meaning.</p>
               <p>
-                Modern systems isolate symptoms. Often, that works.
-              </p>
-              <p>
-                But humans live inside relationships, environments, pressure, and meaning.
-              </p>
-              <p>
-                When these layers interact, outcomes change — even when treatment is correct.
+                When these layers interact, unresolved outcomes are often mistaken for failure.
               </p>
             </div>
           </details>
 
-          {/* Trigger 4 — Gentle Reframe */}
+          {/* Trigger 4 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <summary className="cursor-pointer list-none">
               <h2 className="text-lg font-semibold tracking-tight">
@@ -138,7 +137,7 @@ export default function BPSSHealthPage() {
             </div>
           </details>
 
-          {/* Trigger 5 — Inversion Story */}
+          {/* Trigger 5 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <summary className="cursor-pointer list-none">
               <h2 className="text-lg font-semibold tracking-tight">
@@ -165,20 +164,14 @@ export default function BPSSHealthPage() {
               Why this perspective matters
             </summary>
             <div className="mt-4 space-y-3 text-neutral-800 dark:text-neutral-200">
-              <p>
-                Narrow frames create blame and confusion.
-              </p>
-              <p>
-                Wider frames restore dignity, reduce pressure, and reveal prevention.
-              </p>
-              <p>
-                Confusion turns into clarity — quietly.
-              </p>
+              <p>Narrow frames create blame and confusion.</p>
+              <p>Wider frames restore dignity and reveal prevention.</p>
+              <p>Confusion turns into clarity — quietly.</p>
             </div>
           </details>
         </div>
 
-        {/* Context Block */}
+        {/* Context */}
         <div className="mt-10 max-w-3xl">
           <h3 className="text-lg font-semibold tracking-tight">
             Why this page exists
@@ -193,7 +186,7 @@ export default function BPSSHealthPage() {
           </p>
         </div>
 
-        {/* Stillness Block */}
+        {/* Stillness */}
         <div className="mt-12 max-w-3xl border-t border-neutral-200 pt-6 dark:border-neutral-800">
           <p>You don’t need to agree.</p>
           <p>You don’t need to act.</p>
@@ -207,13 +200,24 @@ export default function BPSSHealthPage() {
 
         {/* Continuations */}
         <div className="mt-12 max-w-3xl grid gap-4 sm:grid-cols-3">
-          <Link href="/research" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+          <Link
+            href="/research"
+            className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40"
+          >
             Understand the research lens →
           </Link>
-          <Link href="/protocols/syntropic-ecology" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+
+          <Link
+            href="/protocols/syntropic-ecology"
+            className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40"
+          >
             See this pattern beyond health →
           </Link>
-          <Link href="/governance" className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40">
+
+          <Link
+            href="/governance"
+            className="rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/40"
+          >
             Learn how ZenTrust works →
           </Link>
         </div>
