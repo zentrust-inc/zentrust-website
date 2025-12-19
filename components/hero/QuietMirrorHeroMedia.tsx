@@ -75,16 +75,15 @@ export default function QuietMirrorHeroMedia({
     if (!v) return;
 
     v.currentTime = 0;
-    v.play().catch(() => {
-      exitPause();
-    });
+    v.play().catch(exitPause);
   }, [isPaused]);
 
   return (
     <div className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Default hero state — always visible */}
+      {/* Default hero state */}
       {!isPaused && (
         <>
+          {/* Background image */}
           <Image
             src={heroImageSrc}
             alt={heroImageAlt}
@@ -94,22 +93,40 @@ export default function QuietMirrorHeroMedia({
             sizes="100vw"
           />
 
-          {/* Optional, subtle micro-pause trigger */}
+          {/* HERO CONTENT — GLOBALLY CENTERED */}
+          {children && (
+            <div className="relative z-10 flex h-full items-center">
+              <div className="w-full">
+                {children}
+              </div>
+            </div>
+          )}
+
+          {/* Micro-pause trigger — bottom center, noticeable but calm */}
           {canPause && (
             <button
               type="button"
               onClick={enterPause}
-              className="absolute bottom-4 right-4 z-10 text-xs text-white/70 hover:text-white/90"
               aria-label="Tap to continue"
+              className={`
+                absolute bottom-6 left-1/2 z-10
+                -translate-x-1/2
+                text-sm sm:text-base
+                tracking-wide
+                text-white/85
+                transition
+                ${
+                  prefersReducedMotion
+                    ? ""
+                    : "animate-[pulse_2.8s_ease-in-out_infinite]"
+                }
+              `}
+              style={{
+                textShadow: "0 0 14px rgba(255,255,255,0.45)",
+              }}
             >
               Tap to continue
             </button>
-          )}
-
-          {children && (
-            <div className="relative z-10 hero-foreground">
-              {children}
-            </div>
           )}
         </>
       )}
