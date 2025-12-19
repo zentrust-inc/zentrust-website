@@ -13,22 +13,16 @@ export default function BPSSHealthPage() {
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       {/* HERO — QUIET MIRROR */}
       <section className="relative">
-        <QuietMirrorHeroMedia
-          pauseVideoSrc="/video/mobile-bpss-v1-quiet-mirror.mp4"
-          heroImageSrc="/images/desktop-bpss-v1-quiet-mirror.jpg"
-          heroImageAlt="Human systems in quiet coherence"
-        >
-          <div className="mx-auto flex h-full max-w-6xl flex-col px-4 sm:px-6">
-            <div className="pt-5 sm:pt-6">
-              <div className="inline-flex rounded-full bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-neutral-900 backdrop-blur dark:bg-black/50 dark:text-neutral-50">
-                There Is Coherence Beneath the Confusion.
-              </div>
-            </div>
-
-            <div className="flex-1" />
-
-            <div className="pb-8 sm:pb-10">
+        <QuietMirrorHeroMedia pauseVideoSrc="/video/mobile-bpss-v1-quiet-mirror.mp4">
+          <div className="mx-auto flex h-full max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-1 items-center">
               <div className="max-w-3xl">
+                <div className="mb-4">
+                  <div className="inline-flex rounded-full bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-neutral-900 backdrop-blur dark:bg-black/50 dark:text-neutral-50">
+                    There Is Coherence Beneath the Confusion.
+                  </div>
+                </div>
+
                 <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
                   <span className="text-white">
                     Why does treatment work?
