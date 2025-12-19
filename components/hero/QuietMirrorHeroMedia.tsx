@@ -4,9 +4,10 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
 type Props = {
-  mobileVideoSrc: string;
+  pauseVideoSrc?: string; // optional ritual micro-pause video
   heroImageSrc: string;
   heroImageAlt: string;
+  pauseDurationMs?: number; // default 15000
   children?: ReactNode;
 };
 
@@ -24,101 +25,112 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-function useIsMobile() {
-  const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(pointer: coarse) and (max-width: 768px)");
-    const update = () => setMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  return mobile;
-}
-
 export default function QuietMirrorHeroMedia({
-  mobileVideoSrc,
+  pauseVideoSrc,
   heroImageSrc,
   heroImageAlt,
+  pauseDurationMs = 15000,
   children,
 }: Props) {
   const prefersReducedMotion = usePrefersReducedMotion();
-  const isMobile = useIsMobile();
-
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const timerRef = useRef<number | null>(null);
 
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [videoDone, setVideoDone] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const shouldUseVideo = useMemo(
-    () => isMobile && !prefersReducedMotion,
-    [isMobile, prefersReducedMotion]
+  const canPause = useMemo(
+    () => !!pauseVideoSrc && !prefersReducedMotion,
+    [pauseVideoSrc, prefersReducedMotion]
   );
 
-  // Attempt autoplay ONLY after interaction OR where browser allows it
-  useEffect(() => {
-    if (!shouldUseVideo) return;
-    if (!hasInteracted) return;
+  // Handle entering pause
+  const enterPause = () => {
+    if (!canPause) return;
+    setIsPaused(true);
+  };
 
+  // Handle exiting pause
+  const exitPause = () => {
+    setIsPaused(false);
+  };
+
+  // Auto-exit after duration
+  useEffect(() => {
+    if (!isPaused) return;
+
+    timerRef.current = window.setTimeout(() => {
+      exitPause();
+    }, pauseDurationMs);
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [isPaused, pauseDurationMs]);
+
+  // Play video when paused
+  useEffect(() => {
+    if (!isPaused) return;
     const v = videoRef.current;
     if (!v) return;
 
-    const onEnded = () => setVideoDone(true);
-    v.addEventListener("ended", onEnded);
-
+    v.currentTime = 0;
     v.play().catch(() => {
-      // If playback fails, we simply keep the still frame
-      setVideoDone(true);
+      // If playback fails, immediately restore default view
+      exitPause();
     });
-
-    return () => v.removeEventListener("ended", onEnded);
-  }, [shouldUseVideo, hasInteracted]);
+  }, [isPaused]);
 
   return (
     <div className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Always-present static image (fallback + first frame) */}
-      <Image
-        src={heroImageSrc}
-        alt={heroImageAlt}
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
+      {/* Default hero state */}
+      {!isPaused && (
+        <>
+          <Image
+            src={heroImageSrc}
+            alt={heroImageAlt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
 
-      {/* Mobile inline video */}
-      {shouldUseVideo && !videoDone && (
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          src={mobileVideoSrc}
-          muted
-          playsInline
-          preload="metadata"
-        />
+          {/* Optional subtle pause trigger */}
+          {canPause && (
+            <button
+              type="button"
+              onClick={enterPause}
+              className="absolute inset-0 z-10"
+              aria-label="Tap to continue"
+            >
+              <span className="sr-only">Tap to continue</span>
+            </button>
+          )}
+
+          {/* Hero foreground */}
+          {children && <div className="hero-foreground">{children}</div>}
+        </>
       )}
 
-      {/* Tap-to-Continue Overlay (mobile only, before interaction) */}
-      {shouldUseVideo && !hasInteracted && (
-        <button
-          type="button"
-          onClick={() => setHasInteracted(true)}
-          className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 text-white"
-          aria-label="Tap to continue"
+      {/* Micro-pause state */}
+      {isPaused && pauseVideoSrc && (
+        <div
+          className="absolute inset-0 z-20"
+          onClick={exitPause}
+          role="presentation"
         >
-          <span className="rounded-full bg-black/60 px-5 py-2 text-sm tracking-wide backdrop-blur">
-            Tap to Continue
-          </span>
-        </button>
+          <video
+            ref={videoRef}
+            className="h-full w-full object-cover"
+            src={pauseVideoSrc}
+            muted
+            playsInline
+            preload="auto"
+          />
+        </div>
       )}
-
-      {/* GLOBAL contrast plane */}
-      <div className="hero-contrast-plane" aria-hidden="true" />
-
-      {/* Canonical hero foreground */}
-      {children && <div className="hero-foreground">{children}</div>}
     </div>
   );
 }
