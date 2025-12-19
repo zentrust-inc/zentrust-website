@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import Image from "next/image";
 
 type Props = {
   pauseVideoSrc?: string; // optional ritual micro-pause video
-  heroImageSrc: string;
-  heroImageAlt: string;
   pauseDurationMs?: number; // default 15000
   children?: ReactNode;
 };
@@ -27,8 +24,6 @@ function usePrefersReducedMotion() {
 
 export default function QuietMirrorHeroMedia({
   pauseVideoSrc,
-  heroImageSrc,
-  heroImageAlt,
   pauseDurationMs = 15000,
   children,
 }: Props) {
@@ -68,7 +63,7 @@ export default function QuietMirrorHeroMedia({
     };
   }, [isPaused, pauseDurationMs]);
 
-  // Play video only when pause is active
+  // Play ritual video only when active
   useEffect(() => {
     if (!isPaused) return;
     const v = videoRef.current;
@@ -80,20 +75,10 @@ export default function QuietMirrorHeroMedia({
 
   return (
     <div className="relative h-[100svh] w-full overflow-hidden bg-black">
-      {/* Default hero state */}
+      {/* DEFAULT HERO STATE — TEXT ONLY */}
       {!isPaused && (
         <>
-          {/* Background image */}
-          <Image
-            src={heroImageSrc}
-            alt={heroImageAlt}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-
-          {/* HERO CONTENT — GLOBALLY CENTERED */}
+          {/* Centered hero content */}
           {children && (
             <div className="relative z-10 flex h-full items-center">
               <div className="w-full">
@@ -102,7 +87,7 @@ export default function QuietMirrorHeroMedia({
             </div>
           )}
 
-          {/* Micro-pause trigger — bottom center, noticeable but calm */}
+          {/* Ritual micro-pause trigger — bottom center */}
           {canPause && (
             <button
               type="button"
@@ -131,7 +116,7 @@ export default function QuietMirrorHeroMedia({
         </>
       )}
 
-      {/* Micro-pause state */}
+      {/* RITUAL MICRO-PAUSE STATE — VISUAL ONLY */}
       {isPaused && pauseVideoSrc && (
         <div
           className="absolute inset-0 z-20"
