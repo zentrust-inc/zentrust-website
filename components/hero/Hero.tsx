@@ -27,16 +27,14 @@ export function Hero() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black dark:text-white leading-tight mb-6">
           Healing land.
           <br />
-          Elevating humanity.
+          Supporting people.
           <br />
-          Science for regeneration.
+          Science for recovery.
         </h1>
 
         {/* Supporting text */}
         <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto mb-8">
-          ZenTrust advances regenerative ecology, BPSS-integrative wellness
-          research, and open scientific education — grounded in evidence,
-          transparency, and long-horizon stewardship.
+          ZenTrust is a public charity helping nature and communities heal together through research, learning, and long-term stewardship.
         </p>
 
         {/* Trust confirmation */}
