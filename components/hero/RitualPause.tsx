@@ -1,17 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { HeroRitual } from "./createHero";
 
 type Props = {
-  active: boolean;
-  used: boolean;
   ritual?: HeroRitual;
-  onStart: () => void;
-  onEnd: () => void;
+  onActiveChange?: (active: boolean) => void;
 };
 
-export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
+export function RitualPause({ ritual, onActiveChange }: Props) {
+  const [active, setActive] = useState(false);
+  const [used, setUsed] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [showPoster, setShowPoster] = useState(false);
@@ -26,11 +25,19 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
     [ritual]
   );
 
-  const available = Boolean(ritualDetails.videoSrc) && !used;
+  const hasVideo = Boolean(ritualDetails.videoSrc);
+  const available = hasVideo && !used;
+
+  const endRitual = useCallback(() => {
+    setActive(false);
+    onActiveChange?.(false);
+  }, [onActiveChange]);
 
   const beginRitual = () => {
-    if (!available || active) return;
-    onStart();
+    if (!available) return;
+    setUsed(true);
+    setActive(true);
+    onActiveChange?.(true);
   };
 
   useEffect(() => {
@@ -41,11 +48,11 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape" || event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        onEnd();
+        endRitual();
       }
     };
 
-    const handlePointer = () => onEnd();
+    const handlePointer = () => endRitual();
 
     window.addEventListener("keydown", handleKey);
     window.addEventListener("click", handlePointer, { capture: true });
@@ -59,7 +66,7 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    timeoutRef.current = setTimeout(onEnd, ritualDetails.timeoutMs);
+    timeoutRef.current = setTimeout(endRitual, ritualDetails.timeoutMs);
 
     const posterTimer = window.setTimeout(() => setShowPoster(false), 1000);
 
@@ -76,7 +83,7 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
         videoRef.current.pause();
       }
     };
-  }, [active, onEnd, ritualDetails.poster, ritualDetails.timeoutMs, ritualDetails.videoSrc]);
+  }, [active, endRitual, ritualDetails.poster, ritualDetails.timeoutMs, ritualDetails.videoSrc]);
 
   useEffect(() => {
     if (!active) {
@@ -84,12 +91,14 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
     }
   }, [active]);
 
+  if (!hasVideo) return null;
+
   return (
     <>
       <button
         type="button"
         onClick={beginRitual}
-        disabled={used || !available}
+        disabled={!available}
         className="text-sm font-medium text-foreground/70 disabled:text-foreground/30"
         aria-pressed={active}
       >
@@ -102,7 +111,7 @@ export function RitualPause({ active, used, ritual, onStart, onEnd }: Props) {
           role="button"
           aria-label="Pause active. Tap to exit."
           tabIndex={-1}
-          onClick={onEnd}
+          onClick={endRitual}
         >
           <div className="relative h-screen w-screen">
             {showPoster && ritualDetails.poster && (
