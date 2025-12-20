@@ -1,4 +1,3 @@
-import { UniversalHero } from "@/components/hero/UniversalHero";
 import type { ReactNode } from "react";
 
 export default function ProtocolsLayout({
@@ -7,9 +6,6 @@ export default function ProtocolsLayout({
   children: ReactNode;
 }) {
   return (
-    <>
-      <UniversalHero />
-      {children}
-    </>
+    <>{children}</>
   );
 }
