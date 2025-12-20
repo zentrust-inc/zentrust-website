@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { HeroRitual } from "./createHero";
 
-type Props = {
-  label?: string;
-  description?: string;
-  timeoutMs?: number;
-};
+type Props = HeroRitual;
 
 export function RitualPause({
   label = "Pause here",

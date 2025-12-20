@@ -1,6 +1,12 @@
 import { Sprout } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+export type HeroRitual = {
+  label?: string;
+  description?: string;
+  timeoutMs?: number;
+};
+
 export type HeroDefinition = {
   identity: string;
   icon?: "sprout";
@@ -11,11 +17,7 @@ export type HeroDefinition = {
     link?: { label: string; href: string };
   };
   cta?: { label: string; href: string };
-  ritual?: {
-    label?: string;
-    description?: string;
-    timeoutMs?: number;
-  };
+  ritual: HeroRitual;
 };
 
 export const iconRegistry: Record<string, LucideIcon> = {
@@ -24,6 +26,13 @@ export const iconRegistry: Record<string, LucideIcon> = {
 
 export const resolveHeroIcon = (name?: string) =>
   name ? iconRegistry[name] ?? null : null;
+
+export const defaultRitual: HeroRitual = {
+  label: "Pause here",
+  description:
+    "Take a brief pause. Tap anywhere or press Esc, Enter, or Space to return.",
+  timeoutMs: 15000,
+};
 
 export const defaultHero: HeroDefinition = {
   identity: "ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487",
@@ -47,10 +56,5 @@ export const defaultHero: HeroDefinition = {
     label: "Enter the Stewardship Portal",
     href: "/stewardship",
   },
-  ritual: {
-    label: "Pause here",
-    description:
-      "Take a brief pause. Tap anywhere or press Esc, Enter, or Space to return.",
-    timeoutMs: 15000,
-  },
+  ritual: defaultRitual,
 };
