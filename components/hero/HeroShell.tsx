@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { resolveHeroIcon, type HeroDefinition } from "./createHero";
-import { RitualPause } from "./RitualPause";
 
 export function HeroShell({ hero }: { hero: HeroDefinition }) {
   const Icon = resolveHeroIcon(hero.icon);
 
   return (
-    <section className="h-[100svh] flex items-center justify-center">
-      <div className="max-w-3xl text-center px-6 space-y-5">
+    <section className="min-h-[100svh] flex items-center justify-center">
+      <div className="text-center px-6 space-y-5">
         {Icon && <Icon className="mx-auto h-10 w-10 text-foreground/70" />}
 
         <p className="text-xs tracking-[0.18em] uppercase text-foreground/70">
@@ -54,8 +53,6 @@ export function HeroShell({ hero }: { hero: HeroDefinition }) {
             {hero.cta.label}
           </Link>
         )}
-
-        <RitualPause {...hero.ritual} />
       </div>
     </section>
   );
