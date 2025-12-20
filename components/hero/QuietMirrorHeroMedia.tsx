@@ -4,17 +4,10 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
 type Props = {
-  /** Ritual video (portrait 9:16). Enables ritual if provided. */
   pauseVideoSrc?: string;
-
-  /** Hero image (fallback / first frame). */
   heroImageSrc?: string;
   heroImageAlt?: string;
-
-  /** Hero foreground (text & layout controlled by page). */
   children?: ReactNode;
-
-  /** Max ritual duration (ms). Doctrine: ≤ 15000. */
   pauseDurationMs?: number;
 };
 
@@ -51,7 +44,7 @@ export default function QuietMirrorHeroMedia({
   const ritualEnabled =
     Boolean(pauseVideoSrc) && !prefersReducedMotion && !ritualUsed;
 
-  /** Show the invitation once, after a quiet delay */
+  /** Show invitation once, after a quiet delay */
   useEffect(() => {
     if (!ritualEnabled) return;
     const t = window.setTimeout(() => setShowInvite(true), 1400);
@@ -72,13 +65,10 @@ export default function QuietMirrorHeroMedia({
       try {
         v.pause();
         v.currentTime = 0;
-      } catch {
-        /* silence */
-      }
+      } catch {}
     }
   };
 
-  /** Ritual playback + hard stop */
   useEffect(() => {
     if (!ritualActive) return;
 
@@ -97,16 +87,15 @@ export default function QuietMirrorHeroMedia({
 
     return () => {
       if (timeoutRef.current) {
-        window.clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ritualActive]);
+  }, [ritualActive, pauseDurationMs]);
 
   return (
     <div className="relative h-[100svh] w-full overflow-hidden">
-      {/* HERO MEDIA (unchanged behavior) */}
+      {/* HERO MEDIA */}
       {heroImageSrc && (
         <Image
           src={heroImageSrc}
@@ -118,28 +107,31 @@ export default function QuietMirrorHeroMedia({
         />
       )}
 
-      {/* HERO CONTENT — EXACTLY AS PROVIDED */}
-      {!ritualActive && children}
+      {/* HERO CONTENT + RITUAL INVITE (NORMAL FLOW) */}
+      {!ritualActive && (
+        <div className="relative z-20">
+          {children}
 
-      {/* QUIET INVITATION — ONCE, INTENTIONAL */}
-      {ritualEnabled && showInvite && !ritualActive && (
-        <div className="absolute left-0 right-0 z-20 flex justify-center mt-6">
-          <button
-            type="button"
-            onClick={enterRitual}
-            aria-label="Pause here"
-            className="
-              text-sm tracking-wide
-              text-black/60 dark:text-white/60
-              transition-opacity duration-500
-            "
-          >
-            Pause here ▷ tap
-          </button>
+          {ritualEnabled && showInvite && (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={enterRitual}
+                aria-label="Pause here"
+                className="
+                  text-sm tracking-wide
+                  text-black/60 dark:text-white/60
+                  transition-opacity duration-500
+                "
+              >
+                Pause here ▷ tap
+              </button>
+            </div>
+          )}
         </div>
       )}
 
-      {/* RITUAL OVERLAY — NO TEXT, NO UI */}
+      {/* RITUAL OVERLAY */}
       {ritualActive && (
         <div
           className="fixed inset-0 z-[9999]"
@@ -158,7 +150,6 @@ export default function QuietMirrorHeroMedia({
             }
           }}
         >
-          {/* Centered 9:16 ritual frame */}
           <div className="relative mx-auto h-full aspect-[9/16] max-w-[56vh]">
             <video
               ref={videoRef}
