@@ -4,10 +4,17 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
 type Props = {
+  /** Ritual video (portrait 9:16). Enables ritual if provided. */
   pauseVideoSrc?: string;
+
+  /** Hero image (fallback / first frame). */
   heroImageSrc?: string;
   heroImageAlt?: string;
+
+  /** Hero foreground (text & layout controlled by page). */
   children?: ReactNode;
+
+  /** Max ritual duration (ms). Doctrine: ≤ 15000. */
   pauseDurationMs?: number;
 };
 
@@ -36,6 +43,7 @@ export default function QuietMirrorHeroMedia({
 
   const [ritualActive, setRitualActive] = useState(false);
   const [ritualUsed, setRitualUsed] = useState(false);
+  const [showInvite, setShowInvite] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
@@ -43,10 +51,18 @@ export default function QuietMirrorHeroMedia({
   const ritualEnabled =
     Boolean(pauseVideoSrc) && !prefersReducedMotion && !ritualUsed;
 
+  /** Show the invitation once, after a quiet delay */
+  useEffect(() => {
+    if (!ritualEnabled) return;
+    const t = window.setTimeout(() => setShowInvite(true), 1400);
+    return () => window.clearTimeout(t);
+  }, [ritualEnabled]);
+
   const enterRitual = () => {
     if (!ritualEnabled) return;
     setRitualActive(true);
     setRitualUsed(true);
+    setShowInvite(false);
   };
 
   const exitRitual = () => {
@@ -56,10 +72,13 @@ export default function QuietMirrorHeroMedia({
       try {
         v.pause();
         v.currentTime = 0;
-      } catch {}
+      } catch {
+        /* silence */
+      }
     }
   };
 
+  /** Ritual playback + hard stop */
   useEffect(() => {
     if (!ritualActive) return;
 
@@ -78,7 +97,7 @@ export default function QuietMirrorHeroMedia({
 
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        window.clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
       }
     };
@@ -99,29 +118,47 @@ export default function QuietMirrorHeroMedia({
         />
       )}
 
-      {/* Click-to-enter ritual — media only */}
-      {ritualEnabled && !ritualActive && (
-        <button
-          type="button"
-          onClick={enterRitual}
-          aria-label="Enter ritual"
-          className="absolute inset-0 z-10"
-          style={{ background: "transparent" }}
-        />
-      )}
-
-      {/* HERO CONTENT — EXACT SAME POSITION AS BEFORE */}
+      {/* HERO CONTENT — EXACTLY AS PROVIDED */}
       {!ritualActive && children}
 
-      {/* RITUAL OVERLAY — DOES NOT AFFECT LAYOUT */}
+      {/* QUIET INVITATION — ONCE, INTENTIONAL */}
+      {ritualEnabled && showInvite && !ritualActive && (
+        <div className="absolute left-0 right-0 z-20 flex justify-center mt-6">
+          <button
+            type="button"
+            onClick={enterRitual}
+            aria-label="Pause here"
+            className="
+              text-sm tracking-wide
+              text-black/60 dark:text-white/60
+              transition-opacity duration-500
+            "
+          >
+            Pause here ▷ tap
+          </button>
+        </div>
+      )}
+
+      {/* RITUAL OVERLAY — NO TEXT, NO UI */}
       {ritualActive && (
         <div
           className="fixed inset-0 z-[9999]"
-          onClick={exitRitual}
           role="button"
           tabIndex={0}
           aria-label="Exit ritual"
+          onClick={exitRitual}
+          onKeyDown={(e) => {
+            if (
+              e.key === "Escape" ||
+              e.key === "Enter" ||
+              e.key === " "
+            ) {
+              e.preventDefault();
+              exitRitual();
+            }
+          }}
         >
+          {/* Centered 9:16 ritual frame */}
           <div className="relative mx-auto h-full aspect-[9/16] max-w-[56vh]">
             <video
               ref={videoRef}
