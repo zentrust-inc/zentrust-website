@@ -17,7 +17,11 @@ export default function BPSSHealthPage() {
     orientation: [
       "Explore a whole-system understanding of wellbeing that integrates biology, psychology, social context, and meaning.",
     ],
-    ritual: defaultHero.ritual,
+    ritual: {
+      ...defaultHero.ritual,
+      videoSrc: "/video/mobile-bpss-v1-quiet-mirror.mp4",
+      poster: "/images/desktop-bpss-v1-quiet-mirror.jpg",
+    },
   };
 
   return (

@@ -5,6 +5,8 @@ export type HeroRitual = {
   label?: string;
   description?: string;
   timeoutMs?: number;
+  videoSrc?: string;
+  poster?: string;
 };
 
 export type HeroDefinition = {
@@ -28,10 +30,12 @@ export const resolveHeroIcon = (name?: string) =>
   name ? iconRegistry[name] ?? null : null;
 
 export const defaultRitual: HeroRitual = {
-  label: "Pause here",
+  label: "Pause here ▷ tap",
   description:
     "Take a brief pause. Tap anywhere or press Esc, Enter, or Space to return.",
   timeoutMs: 15000,
+  videoSrc: "/video/syntropic-food-forest.mp4",
+  poster: "/images/desktop-syntropy-v1-quiet-mirror.jpg",
 };
 
 export const defaultHero: HeroDefinition = {

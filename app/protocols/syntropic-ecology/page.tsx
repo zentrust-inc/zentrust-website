@@ -12,7 +12,11 @@ export default function SyntropicEcologyPage() {
     orientation: [
       "Restoring reciprocal relationships between life and land to regenerate ecosystems and community wealth.",
     ],
-    ritual: defaultHero.ritual,
+    ritual: {
+      ...defaultHero.ritual,
+      videoSrc: "/video/mobile-syntropy-v1-quiet-mirror.mp4",
+      poster: "/images/desktop-syntropy-v1-quiet-mirror.jpg",
+    },
   };
 
   return (
