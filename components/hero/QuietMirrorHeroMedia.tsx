@@ -3,33 +3,29 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
+/**
+ * QuietMirrorHeroMedia
+ * --------------------
+ * A doctrine-safe ritual container.
+ * - Media is environmental, never authoritative.
+ * - Ritual (micro-pause) hides ALL text/UI.
+ * - Ritual media is ALWAYS 9:16, even on desktop.
+ * - No forced background or text colors.
+ */
+
 type Props = {
-  /** Micro-pause visual (silent ritual). Required to enable micro-pause. */
+  /** Ritual video (silent, portrait). Enables ritual if provided. */
   pauseVideoSrc?: string;
 
-  /** Default hero image (fallback + first frame). Optional but recommended. */
+  /** Hero image (fallback + first frame). */
   heroImageSrc?: string;
   heroImageAlt?: string;
 
-  /** Foreground hero content (text/CTAs). Always visible by default. */
+  /** Hero foreground (text, CTAs). Controlled entirely by page. */
   children?: ReactNode;
 
-  /**
-   * Max micro-pause duration in ms (doctrine: ≤ 15s).
-   * Defaults to 15000.
-   */
+  /** Max ritual duration (ms). Doctrine: ≤ 15000. Default 15000. */
   pauseDurationMs?: number;
-
-  /**
-   * Show a subtle trigger. If false, micro-pause can still be entered by clicking hero media.
-   * Defaults to true.
-   */
-  showTrigger?: boolean;
-
-  /**
-   * Optional trigger label. Keep text-light.
-   */
-  triggerLabel?: string;
 };
 
 function usePrefersReducedMotion() {
@@ -52,47 +48,42 @@ export default function QuietMirrorHeroMedia({
   heroImageAlt = "",
   children,
   pauseDurationMs = 15000,
-  showTrigger = true,
-  triggerLabel = "Pause (15s)",
 }: Props) {
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Micro-pause state (never persisted)
-  const [pauseActive, setPauseActive] = useState(false);
+  /** Ritual state */
+  const [ritualActive, setRitualActive] = useState(false);
+  const [ritualUsed, setRitualUsed] = useState(false);
 
-  // Once used in this visit, never re-invite again (until page reload/navigation)
-  const [pauseUsed, setPauseUsed] = useState(false);
-
-  const pauseVideoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
 
-  const microPauseEnabled =
-    Boolean(pauseVideoSrc) && !prefersReducedMotion && !pauseUsed;
+  const ritualEnabled =
+    Boolean(pauseVideoSrc) && !prefersReducedMotion && !ritualUsed;
 
-  const enterPause = () => {
-    if (!microPauseEnabled) return;
-    setPauseActive(true);
-    setPauseUsed(true);
+  const enterRitual = () => {
+    if (!ritualEnabled) return;
+    setRitualActive(true);
+    setRitualUsed(true);
   };
 
-  const exitPause = () => {
-    setPauseActive(false);
+  const exitRitual = () => {
+    setRitualActive(false);
 
-    // Stop playback immediately; return hero exactly as it was.
-    const v = pauseVideoRef.current;
+    const v = videoRef.current;
     if (v) {
       try {
         v.pause();
         v.currentTime = 0;
       } catch {
-        // ignore
+        /* silent */
       }
     }
   };
 
-  // When pause becomes active, play and arm a hard timeout (≤ 15s).
+  /** Start ritual playback + hard timeout */
   useEffect(() => {
-    if (!pauseActive) {
+    if (!ritualActive) {
       if (timeoutRef.current) {
         window.clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
@@ -100,21 +91,17 @@ export default function QuietMirrorHeroMedia({
       return;
     }
 
-    // Hard timeout exit (doctrine: exit when duration completes)
-    timeoutRef.current = window.setTimeout(() => {
-      exitPause();
-    }, Math.min(Math.max(pauseDurationMs, 0), 15000));
+    timeoutRef.current = window.setTimeout(
+      exitRitual,
+      Math.min(Math.max(pauseDurationMs, 0), 15000)
+    );
 
-    const v = pauseVideoRef.current;
+    const v = videoRef.current;
     if (v) {
-      // Silent, inline. Never autoplay on load — only after explicit user entry.
       v.muted = true;
       v.playsInline = true;
-      v.loop = true; // allowed; we still hard-exit at ≤15s
-      v.play().catch(() => {
-        // If it cannot play, exit immediately (no trap, no message)
-        exitPause();
-      });
+      v.loop = true;
+      v.play().catch(exitRitual);
     }
 
     return () => {
@@ -124,81 +111,80 @@ export default function QuietMirrorHeroMedia({
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pauseActive]);
+  }, [ritualActive]);
 
   return (
-    <div className="relative h-[100svh] w-full overflow-hidden">
-      {/* DEFAULT HERO MEDIA (non-authoritative; no forced bg/text) */}
-      {heroImageSrc && (
-        <Image
-          src={heroImageSrc}
-          alt={heroImageAlt}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-      )}
+    <div className="relative min-h-[100svh] w-full overflow-hidden">
+      {/* =========================
+          RITUAL FRAME (9:16 ONLY)
+         ========================= */}
+      <div className="relative mx-auto h-[100svh] aspect-[9/16] max-w-[56vh]">
+        {/* Base hero image */}
+        {heroImageSrc && (
+          <Image
+            src={heroImageSrc}
+            alt={heroImageAlt}
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 56vh"
+          />
+        )}
 
-      {/* Click-to-enter micro-pause by clicking hero media area (NOT the text) */}
-      {microPauseEnabled && !pauseActive && (
-        <button
-          type="button"
-          aria-label="Enter micro-pause"
-          onClick={enterPause}
-          className="absolute inset-0 z-10"
-          // Important: doesn't style anything; it just captures clicks on media.
-          style={{ background: "transparent" }}
-        />
-      )}
+        {/* Click-to-enter ritual (media area only) */}
+        {ritualEnabled && !ritualActive && (
+          <button
+            type="button"
+            aria-label="Enter ritual pause"
+            onClick={enterRitual}
+            className="absolute inset-0 z-10"
+            style={{ background: "transparent" }}
+          />
+        )}
+      </div>
 
-      {/* Foreground hero content — ALWAYS visible by default */}
-      {children && (
-        <div className="relative z-20 text-inherit pointer-events-auto">
+      {/* =========================
+          HERO FOREGROUND (NORMAL)
+         ========================= */}
+      {!ritualActive && children && (
+        <div className="relative z-20 text-inherit">
           {children}
         </div>
       )}
 
-      {/* Optional subtle trigger (appears at most once; never reappears after use) */}
-      {microPauseEnabled && showTrigger && !pauseActive && (
-        <div className="absolute bottom-6 left-0 right-0 z-30 flex justify-center pointer-events-none">
-          <button
-            type="button"
-            onClick={enterPause}
-            className="pointer-events-auto rounded-full bg-black/40 px-4 py-2 text-xs tracking-wide text-white backdrop-blur"
-            aria-label="Pause for a moment"
-          >
-            {triggerLabel}
-          </button>
-        </div>
-      )}
-
-      {/* MICRO-PAUSE OVERLAY — no text, no logos, no overlays, no UI chrome */}
-      {pauseActive && (
+      {/* =========================
+          RITUAL OVERLAY (NO TEXT)
+         ========================= */}
+      {ritualActive && (
         <div
           className="fixed inset-0 z-[9999]"
-          onClick={exitPause}
           role="button"
           tabIndex={0}
-          aria-label="Exit micro-pause"
-          // No forced background color; video fills. If it doesn't, underlying page shows.
+          aria-label="Exit ritual"
+          onClick={exitRitual}
           onKeyDown={(e) => {
-            // allow immediate exit by keyboard (accessibility)
-            if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+            if (
+              e.key === "Escape" ||
+              e.key === "Enter" ||
+              e.key === " "
+            ) {
               e.preventDefault();
-              exitPause();
+              exitRitual();
             }
           }}
         >
-          <video
-            ref={pauseVideoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            src={pauseVideoSrc}
-            muted
-            playsInline
-            preload="metadata"
-          />
-          {/* Intentionally nothing else here (no captions, no exit text, no gradient). */}
+          {/* Centered 9:16 ritual window */}
+          <div className="relative mx-auto h-full aspect-[9/16] max-w-[56vh]">
+            <video
+              ref={videoRef}
+              className="absolute inset-0 h-full w-full object-cover"
+              src={pauseVideoSrc}
+              muted
+              playsInline
+              preload="metadata"
+            />
+          </div>
+          {/* Intentionally NOTHING else here */}
         </div>
       )}
     </div>
