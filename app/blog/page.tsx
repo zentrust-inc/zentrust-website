@@ -1,23 +1,35 @@
+import Link from "next/link";
+
+/**
+ * Blog index page.
+ * Hero is injected by app/blog/layout.tsx
+ */
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
-
-  if (!posts.length) {
-    return (
-      <main className="min-h-screen">
-        <h1 className="text-4xl font-bold">ZenTrust Journal</h1>
-        <p className="mt-2 text-foreground/70">
-          No articles available.
-        </p>
-      </main>
-    );
-  }
-
-  const [featuredPost, ...recentPosts] = posts;
-
   return (
     <main className="min-h-screen">
-      {/* blog body only — hero comes from layout */}
-      {/* existing blog listing code here */}
+      <section className="mx-auto max-w-5xl px-4 py-12 space-y-6">
+        <p className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/80">
+          ZenTrust Journal
+        </p>
+
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          Insights from the regenerative frontier
+        </h1>
+
+        <p className="max-w-xl text-sm text-foreground/80 dark:text-foreground/70">
+          Research, field notes, and stories shaping ecological restoration
+          and holistic human wellbeing.
+        </p>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/blog"
+            className="rounded-2xl border p-5 hover:bg-neutral-50 dark:hover:bg-neutral-900/40"
+          >
+            Articles will appear here as they are published.
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
