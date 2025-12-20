@@ -101,34 +101,48 @@ export function RitualPause({
 
       {active && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-background/95 px-4 text-foreground backdrop-blur-sm"
+          className="fixed inset-0 z-[70] bg-background/95 text-foreground"
           role="dialog"
           aria-label="Ritual pause overlay"
           tabIndex={-1}
           onClick={exitRitual}
         >
-          <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-foreground/10 bg-background/80 shadow-2xl">
+          <div className="relative h-full w-full">
             {videoSrc ? (
               <video
                 ref={videoRef}
                 muted
                 loop
                 playsInline
-                autoPlay
+                preload="metadata"
                 poster={poster}
-                className="h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               >
                 <source src={videoSrc} type="video/mp4" />
               </video>
             ) : (
-              <div className="p-10 text-center space-y-3">
-                <p className="text-lg font-semibold tracking-tight">{label}</p>
-                <p className="text-sm text-foreground/70">{description}</p>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center space-y-3">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-background/80 text-base font-semibold shadow">
+                    ▶
+                  </div>
+                  <p className="text-lg font-semibold tracking-tight">{label}</p>
+                  <p className="text-sm text-foreground/70">{description}</p>
+                </div>
               </div>
             )}
 
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent p-4 text-center text-xs text-foreground/70">
-              Tap anywhere, press Esc, Enter, or Space, or wait about 15 seconds to return.
+            <div className="relative z-20 flex h-full w-full items-center justify-center px-6 text-center">
+              <div className="space-y-3 rounded-3xl bg-background/70 px-6 py-5 shadow-2xl backdrop-blur">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-foreground/30 bg-background/70 text-sm font-semibold">
+                  ▶
+                </div>
+                <p className="text-lg font-semibold tracking-tight">{label}</p>
+                <p className="text-sm text-foreground/70">{description}</p>
+                <p className="text-xs text-foreground/60">
+                  Tap anywhere, press Esc, Enter, or Space, or wait about 15 seconds to return.
+                </p>
+              </div>
             </div>
           </div>
         </div>
