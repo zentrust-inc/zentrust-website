@@ -19,11 +19,20 @@ type Hero = {
 
 type Props = {
   hero: Hero;
+  hidden?: boolean;
+  onRitualActiveChange?: (hidden: boolean) => void;
 };
 
-export function HeroShell({ hero }: Props) {
+export function HeroShell({
+  hero,
+  hidden = false,
+  onRitualActiveChange,
+}: Props) {
   return (
-    <section className="relative overflow-hidden">
+    <section
+      className="relative overflow-hidden"
+      style={{ display: hidden ? "none" : "block" }}
+    >
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex min-h-[70vh] flex-col justify-center py-10 sm:py-16">
           {hero.title && (
@@ -49,10 +58,14 @@ export function HeroShell({ hero }: Props) {
                 </Link>
               )}
 
-              {/* Ritual is ALWAYS below CTA with safe spacing */}
               {hero.ritual && (
                 <div className="mt-8">
-                  <RitualPause {...hero.ritual} />
+                  <RitualPause
+                    {...hero.ritual}
+                    onActiveChange={(active) => {
+                      onRitualActiveChange?.(active);
+                    }}
+                  />
                 </div>
               )}
             </div>
