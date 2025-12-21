@@ -1,151 +1,134 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { HeroRitual } from "./createHero";
 
-type Props = {
-  ritual?: HeroRitual;
-  onActiveChange?: (active: boolean) => void;
-};
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
 
-export function RitualPause({ ritual, onActiveChange }: Props) {
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  return reduced;
+}
+
+type Props = HeroRitual;
+
+export function RitualPause({
+  label = "Pause here ▷ tap",
+  timeoutMs = 15000,
+  videoSrc,
+}: Props) {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [active, setActive] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [showPoster, setShowPoster] = useState(false);
 
-  const ritualDetails = useMemo(
-    () => ({
-      label: ritual?.label ?? "Pause here ▷ tap",
-      timeoutMs: Math.min(ritual?.timeoutMs ?? 15000, 15000),
-      videoSrc: ritual?.videoSrc,
-      poster: ritual?.poster,
-    }),
-    [ritual]
-  );
+  // Ritual MUST have video. No fallback UI.
+  const ritualAvailable = !!videoSrc && !prefersReducedMotion;
+  const cappedTimeout = Math.min(timeoutMs ?? 15000, 15000);
 
-  const hasVideo = Boolean(ritualDetails.videoSrc);
-  const available = hasVideo;
-
-  const endRitual = useCallback(() => {
+  const exitRitual = () => {
+    const vid = videoRef.current;
+    if (vid) {
+      vid.pause();
+      vid.currentTime = 0;
+    }
     setActive(false);
-    onActiveChange?.(false);
-  }, [onActiveChange]);
+  };
 
-  const beginRitual = () => {
-    if (!available) return;
+  const enterRitual = () => {
+    if (!ritualAvailable) return;
     setActive(true);
-    onActiveChange?.(true);
-
-    requestAnimationFrame(() => {
-      if (videoRef.current) {
-        videoRef.current.currentTime = 0;
-        videoRef.current.play().catch(() => {});
-      }
-    });
   };
 
   useEffect(() => {
-    if (!active || !ritualDetails.videoSrc) return;
+    if (!active) return;
 
-    setShowPoster(Boolean(ritualDetails.poster));
+    const vid = videoRef.current;
 
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape" || event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        endRitual();
+    if (vid) {
+      vid.muted = true;
+      // iOS safety
+      // @ts-ignore
+      vid.playsInline = true;
+
+      // Enforce playback (retry pattern)
+      const tryPlay = () => vid.play?.().catch(() => {});
+      tryPlay();
+      requestAnimationFrame(tryPlay);
+    }
+
+    const timeoutId = window.setTimeout(exitRitual, cappedTimeout);
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        exitRitual();
       }
     };
-
-    const handlePointer = () => endRitual();
 
     window.addEventListener("keydown", handleKey);
-    window.addEventListener("click", handlePointer, { capture: true });
-    window.addEventListener("touchstart", handlePointer, { capture: true });
-
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
-    }
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    timeoutRef.current = setTimeout(endRitual, ritualDetails.timeoutMs);
-
-    const posterTimer = window.setTimeout(() => setShowPoster(false), 1000);
 
     return () => {
+      window.clearTimeout(timeoutId);
       window.removeEventListener("keydown", handleKey);
-      window.removeEventListener("click", handlePointer, { capture: true } as any);
-      window.removeEventListener("touchstart", handlePointer, { capture: true } as any);
-      window.clearTimeout(posterTimer);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
+      vid?.pause?.();
     };
-  }, [active, endRitual, ritualDetails.poster, ritualDetails.timeoutMs, ritualDetails.videoSrc]);
-
-  useEffect(() => {
-    if (!active) {
-      setShowPoster(false);
-    }
-  }, [active]);
-
-  const affordanceVisible = hasVideo;
+  }, [active, cappedTimeout]);
 
   return (
     <>
-      <button
-        type="button"
-        onClick={beginRitual}
-        disabled={!available}
-        className={`mt-1 text-sm font-medium text-foreground/70 disabled:text-foreground/30 ${
-          affordanceVisible ? "" : "hidden"
-        }`}
-        aria-pressed={active}
-        aria-hidden={!affordanceVisible}
-        tabIndex={affordanceVisible ? 0 : -1}
-      >
-        {ritualDetails.label}
-      </button>
-
-      {active && ritualDetails.videoSrc && (
-        <div
-          className="fixed inset-0 z-[9999] bg-black"
-          role="button"
-          aria-label="Pause active. Tap to exit."
-          tabIndex={-1}
-          onClick={endRitual}
+      {/* Ritual affordance */}
+      <div className="flex flex-col items-center gap-2">
+        <button
+          type="button"
+          onClick={enterRitual}
+          disabled={!ritualAvailable}
+          className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm tracking-wide text-foreground/70 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 disabled:cursor-not-allowed disabled:text-foreground/40"
+          aria-pressed={active}
         >
-          <div className="relative h-screen w-screen">
-            {showPoster && ritualDetails.poster && (
-              <img
-                src={ritualDetails.poster}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            )}
+          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-foreground/30 text-[10px] font-semibold text-foreground/70">
+            ▶
+          </span>
+          <span>{label}</span>
+        </button>
 
-            <video
-              ref={videoRef}
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster={undefined}
-              className="absolute inset-0 h-screen w-screen object-cover"
-              style={{ aspectRatio: "9 / 16" }}
-              onPlaying={() => setShowPoster(false)}
-              onLoadedData={() => setShowPoster(false)}
-            >
-              <source src={ritualDetails.videoSrc} type="video/mp4" />
-            </video>
-          </div>
+        {prefersReducedMotion && (
+          <p className="text-xs text-foreground/50">
+            Pause suppressed due to reduced-motion preference.
+          </p>
+        )}
+      </div>
+
+      {/* Fullscreen ritual overlay */}
+      {active && videoSrc && (
+        <div
+          className="fixed inset-0 z-[80] bg-black"
+          role="dialog"
+          aria-label="Ritual pause"
+          tabIndex={-1}
+          onClick={exitRitual}
+        >
+          {/* FULLSCREEN 9:16 COVER — NO POSTER, NO FALLBACK */}
+          <video
+            ref={videoRef}
+            muted
+            loop
+            autoPlay
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+
+          {/* Invisible exit layer */}
+          <div className="absolute inset-0" />
         </div>
       )}
     </>
