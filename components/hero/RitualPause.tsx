@@ -3,6 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import type { HeroRitual } from "./createHero";
 
+/**
+ * RitualPauseProps intentionally EXTENDS HeroRitual.
+ * HeroRitual remains a pure config type (CMS / factory safe).
+ */
+type RitualPauseProps = HeroRitual & {
+  onActiveChange?: (active: boolean) => void;
+};
+
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
 
@@ -17,18 +25,16 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-type Props = HeroRitual;
-
 export function RitualPause({
   label = "Pause here ▷ tap",
   timeoutMs = 15000,
   videoSrc,
-}: Props) {
+  onActiveChange,
+}: RitualPauseProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const [active, setActive] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Ritual MUST have video. No fallback UI.
   const ritualAvailable = !!videoSrc && !prefersReducedMotion;
   const cappedTimeout = Math.min(timeoutMs ?? 15000, 15000);
 
@@ -39,11 +45,13 @@ export function RitualPause({
       vid.currentTime = 0;
     }
     setActive(false);
+    onActiveChange?.(false);
   };
 
   const enterRitual = () => {
     if (!ritualAvailable) return;
     setActive(true);
+    onActiveChange?.(true);
   };
 
   useEffect(() => {
@@ -53,11 +61,9 @@ export function RitualPause({
 
     if (vid) {
       vid.muted = true;
-      // iOS safety
-      // @ts-ignore
+      // @ts-ignore – iOS safety
       vid.playsInline = true;
 
-      // Enforce playback (retry pattern)
       const tryPlay = () => vid.play?.().catch(() => {});
       tryPlay();
       requestAnimationFrame(tryPlay);
@@ -114,7 +120,6 @@ export function RitualPause({
           tabIndex={-1}
           onClick={exitRitual}
         >
-          {/* FULLSCREEN 9:16 COVER — NO POSTER, NO FALLBACK */}
           <video
             ref={videoRef}
             muted
