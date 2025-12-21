@@ -14,10 +14,8 @@ export default function BPSSHealthPage() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       <GlobalHero
-  headlineLines={[
-    "Why did things improve,",
-    "but still not feel better?",
-  ]}
+ headline={`Why did things improve,
+but still not feel better?`}
  dek={`Many people assume this means they failed.
 That assumption quietly causes harm.
 When health is treated in parts, improvement isn’t the same as healing.`}
