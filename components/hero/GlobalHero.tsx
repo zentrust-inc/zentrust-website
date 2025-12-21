@@ -9,12 +9,26 @@ type Cta = { label: string; href: string };
 
 type GlobalHeroProps = {
   kicker?: string;
-  headline: string;          // newline-delimited supported
-  dek?: string;              // newline-delimited supported
+
+  /** Newline-delimited headline */
+  headline: string;
+
+  /** Newline-delimited supporting text */
+  dek?: string;
+
+  /** IRS / trust marker */
+  determination?: {
+    text: string;
+    label: string;
+    href: string;
+  };
+
   primaryCta?: Cta;
   secondaryCta?: Cta;
+
   belowAnchorId?: string;
   mode?: "answer" | "confirm";
+
   ritual?: { enabled: boolean };
 };
 
@@ -25,6 +39,7 @@ export function GlobalHero({
   kicker = DEFAULT_KICKER,
   headline,
   dek,
+  determination,
   primaryCta,
   secondaryCta,
   belowAnchorId = "content",
@@ -63,6 +78,19 @@ export function GlobalHero({
                 <p key={line}>{line}</p>
               ))}
             </div>
+          )}
+
+          {/* Determination / Trust marker */}
+          {determination && (
+            <p className="text-sm text-foreground/70">
+              {determination.text}{" "}
+              <Link
+                href={determination.href}
+                className="font-semibold text-primary underline underline-offset-4"
+              >
+                {determination.label}
+              </Link>
+            </p>
           )}
 
           {/* Confirm link */}
