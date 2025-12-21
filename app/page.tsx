@@ -26,9 +26,7 @@ export default function HomePage() {
         belowAnchorId={contentId}
         mode="answer"
         showIcon
-        ritualHelperText="15-second silent video. Closes on its own."
-        fullScreen
-      />
+       />
 
       <div id={contentId} className="relative z-0">
         <MissionSection />
