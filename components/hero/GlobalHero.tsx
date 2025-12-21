@@ -181,10 +181,7 @@ export function GlobalHero({
             )}
           >
             <RitualPause enabled={ritual?.enabled !== false} />
-            {ritual?.enabled !== false && ritualHelperText ? (
-              <p className="text-xs text-foreground/60">{ritualHelperText}</p>
-            ) : null}
-          </div>
+           </div>
         </div>
       </div>
     </section>
