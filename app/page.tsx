@@ -1,17 +1,28 @@
 // app/page.tsx
 
-import { UniversalHero } from "@/components/hero/UniversalHero";
+import { GlobalHero } from "@/components/hero/GlobalHero";
 import MissionSection from "@/components/mission/MissionSection";
 import { ImpactCounters } from "@/components/impact/ImpactCounters";
 import { NewsletterSignup } from "@/components/newsletter/NewsletterSignup";
 
 export default function HomePage() {
+  const contentId = "content";
+
   return (
     <div className="min-h-screen">
-      <UniversalHero />
-      <MissionSection />
-      <ImpactCounters />
-      <NewsletterSignup />
+      <GlobalHero
+        headline="ZenTrust heals land and people together through open science and long-term stewardship."
+        dek="Evidence-led regeneration across watersheds, Bio-Psycho-Social-Spiritual research, and quiet participation pathways for those who want to help."
+        belowAnchorId={contentId}
+        mode="answer"
+        showStewardshipCta
+      />
+
+      <div id={contentId}>
+        <MissionSection />
+        <ImpactCounters />
+        <NewsletterSignup />
+      </div>
     </div>
   );
 }

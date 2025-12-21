@@ -1,12 +1,24 @@
+import { GlobalHero } from "@/components/hero/GlobalHero";
+
 export const metadata = {
   title: "Research | ZenTrust",
   description: "Status update for ZenTrust research resources.",
-}
+};
 
 export default function ResearchPage() {
+  const contentId = "content";
+
   return (
     <main className="min-h-screen">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24 space-y-8">
+      <GlobalHero
+        kicker="Research"
+        headline="Research updates are being prepared for open release."
+        dek="Methods, findings, and field notes will publish here once they meet our clarity and rigor standards."
+        belowAnchorId={contentId}
+        mode="confirm"
+      />
+
+      <div id={contentId} className="mx-auto max-w-3xl px-6 py-16 sm:py-24 space-y-8 scroll-mt-24">
         <header className="space-y-3">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Research</p>
           <h1 className="text-4xl font-semibold text-foreground">Section status</h1>
