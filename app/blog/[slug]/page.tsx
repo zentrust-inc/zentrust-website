@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         belowAnchorId={contentId}
         mode="confirm"
       />
-      <div id={contentId} className="pt-[110px] md:pt-[130px] scroll-mt-24">
+      <div id={contentId} className="pt-[110px] md:pt-[130px]">
         <TinaBlogClient
           data={{
             post: {

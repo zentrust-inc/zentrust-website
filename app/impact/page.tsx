@@ -15,9 +15,10 @@ export default function ImpactPage() {
         dek="Before numbers appear, work is already underway—quiet, patient, and mostly unseen. The current signals are below."
         belowAnchorId="content"
         mode="confirm"
+        secondaryCta={{ label: "See current signals", href: "#content" }}
       />
 
-      <div id="content" className="pt-6 scroll-mt-24">
+      <div id="content" className="pt-6">
       {/* TRANSITION LINE (replaces video for now) */}
       <section className="pb-8 text-center">
         <div className="max-w-3xl mx-auto px-6">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -143,10 +142,7 @@ export function RitualPause({
     video.addEventListener("ended", handleEnded);
     window.addEventListener("keydown", handleKey);
 
-    document.body.style.overflow = "hidden";
-
     return () => {
-      document.body.style.overflow = "";
       video.removeEventListener("ended", handleEnded);
       window.removeEventListener("keydown", handleKey);
     };
@@ -155,49 +151,6 @@ export function RitualPause({
   useEffect(() => () => {
     if (timerRef.current) window.clearTimeout(timerRef.current);
   }, []);
-
-  const overlay = active && source
-    ? createPortal(
-        <div
-          className={cn(
-            "fixed inset-0 z-[200] transition duration-150",
-            active ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
-          )}
-          aria-hidden={!active}
-        >
-          <div className="absolute inset-0 bg-black" onClick={exitRitual} />
-
-          <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
-            <div
-              className={cn(
-                "relative w-full overflow-hidden rounded-2xl bg-black shadow-2xl",
-                isMobile ? "mx-auto max-w-[440px] aspect-[9/16]" : "max-w-5xl aspect-video",
-              )}
-            >
-              <video
-                ref={videoRef}
-                muted
-                playsInline
-                preload="auto"
-                className="absolute inset-0 h-full w-full object-cover"
-                poster={source?.poster}
-              >
-                <source src={source.src} type="video/mp4" />
-              </video>
-
-              <button
-                type="button"
-                onClick={exitRitual}
-                className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-black/70 px-3 py-1.5 text-xs font-semibold text-white shadow-sm ring-1 ring-white/40 hover:bg-black/80"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>,
-        document.body,
-      )
-    : null;
 
   return (
     <>
@@ -214,9 +167,46 @@ export function RitualPause({
           </span>
           <span>Pause here ▷ tap</span>
         </button>
+        <p className="text-xs text-foreground/55">15-second silent video. Closes on its own.</p>
       </div>
 
-      {overlay}
+      <div
+        className={cn(
+          "fixed inset-0 z-[90] transition duration-200",
+          active ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        )}
+        aria-hidden={!active}
+      >
+        <div className="absolute inset-0 bg-black/90" onClick={exitRitual} />
+
+        <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
+          <div
+            className={cn(
+              "relative w-full overflow-hidden rounded-2xl bg-black shadow-2xl",
+              isMobile ? "mx-auto max-w-[440px] aspect-[9/16]" : "max-w-5xl aspect-video"
+            )}
+          >
+            <video
+              ref={videoRef}
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 h-full w-full object-cover"
+              poster={source?.poster}
+            >
+              {source ? <source src={source.src} type="video/mp4" /> : null}
+            </video>
+
+            <button
+              type="button"
+              onClick={exitRitual}
+              className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-black/70 px-3 py-1.5 text-xs font-semibold text-white shadow-sm ring-1 ring-white/40 hover:bg-black/80"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

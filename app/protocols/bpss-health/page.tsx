@@ -19,10 +19,11 @@ export default function BPSSHealthPage() {
         dek="A calm look at how biology, psychology, social context, and meaning move together in wellbeing."
         belowAnchorId={contentId}
         mode="confirm"
+        secondaryCta={{ label: "Explore the protocol", href: `#${contentId}` }}
       />
 
       {/* BODY */}
-      <section id={contentId} className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 scroll-mt-24">
+      <section id={contentId} className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="max-w-3xl space-y-4">
           {/* 1 */}
           <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">

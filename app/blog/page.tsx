@@ -29,7 +29,7 @@ export default async function BlogPage() {
         mode="confirm"
       />
 
-      <section id={contentId} className="mx-auto max-w-5xl px-4 py-12 space-y-6 scroll-mt-24">
+      <section id={contentId} className="mx-auto max-w-5xl px-4 py-12 space-y-6">
         <p className="text-xs font-semibold tracking-[0.25em] uppercase text-primary/80">
           ZenTrust Journal
         </p>

@@ -122,10 +122,11 @@ export default function AccessibilityPage() {
         dek="We commit to digital access for all people and continuously improve every surface of our site and services. Details sit directly below."
         belowAnchorId={contentId}
         mode="confirm"
+        secondaryCta={{ label: "Review commitments", href: `#${contentId}` }}
       />
 
       {/* Commitment Statement */}
-      <section id={contentId} className="py-24 scroll-mt-24">
+      <section id={contentId} className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">

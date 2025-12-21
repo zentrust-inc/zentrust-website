@@ -35,7 +35,7 @@ export default async function CategoryPage({
         mode="confirm"
       />
 
-      <div id={contentId} className="max-w-5xl mx-auto px-4 py-12 scroll-mt-24">
+      <div id={contentId} className="max-w-5xl mx-auto px-4 py-12">
         {posts.length === 0 && (
           <p className="rounded-2xl border p-4 text-sm text-foreground/70">
             No posts found in this category yet.

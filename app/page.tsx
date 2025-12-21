@@ -13,9 +13,10 @@ export default function HomePage() {
       <GlobalHero
         headline="ZenTrust heals land and people together through open science and long-term stewardship."
         dek="Evidence-led regeneration across watersheds, Bio-Psycho-Social-Spiritual research, and quiet participation pathways for those who want to help."
+        primaryCta={{ label: "Enter the Stewardship Portal", href: "/stewardship" }}
+        secondaryCta={{ label: "See how we work", href: `#${contentId}` }}
         belowAnchorId={contentId}
-        mode="answer"
-        showStewardshipCta
+        mode="confirm"
       />
 
       <div id={contentId}>

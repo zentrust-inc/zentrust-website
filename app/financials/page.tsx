@@ -17,9 +17,10 @@ export default function FinancialsPage() {
         dek="ZenTrust operates as a 501(c)(3) public charity. Filings, budgets, and stewardship details stay readable and verifiable."
         belowAnchorId={contentId}
         mode="confirm"
+        secondaryCta={{ label: "Review the details", href: `#${contentId}` }}
       />
 
-      <div id={contentId} className="mx-auto max-w-3xl px-6 py-16 sm:py-24 space-y-10 scroll-mt-24">
+      <div id={contentId} className="mx-auto max-w-3xl px-6 py-16 sm:py-24 space-y-10">
         <header className="space-y-4">
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Governance</p>
           <h1 className="text-4xl font-semibold text-foreground">Financial transparency</h1>

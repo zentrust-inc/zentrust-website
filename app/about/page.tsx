@@ -14,9 +14,10 @@ export default function AboutPage() {
         dek="ZenTrust is a 501(c)(3) public charity working where land, science, and human wellbeing meet. We remember living systems instead of fixing broken machines."
         belowAnchorId="content"
         mode="confirm"
+        secondaryCta={{ label: "Read our perspective", href: "#content" }}
       />
 
-      <div id="content" className="pt-10 scroll-mt-24">
+      <div id="content" className="pt-10">
       {/* OUR PERSPECTIVE */}
       <section className="pt-10 md:pt-12 pb-10">
         <div className="max-w-4xl mx-auto px-6 text-center">

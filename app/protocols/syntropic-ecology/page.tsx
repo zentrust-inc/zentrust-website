@@ -14,10 +14,11 @@ export default function SyntropicEcologyPage() {
         dek="Restoring reciprocal relationships between life and land to regenerate ecosystems and community wealth."
         belowAnchorId={contentId}
         mode="confirm"
+        secondaryCta={{ label: "View protocol", href: `#${contentId}` }}
       />
 
       {/* BODY */}
-      <section id={contentId} className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 scroll-mt-24">
+      <section id={contentId} className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="max-w-3xl">
           <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
             The Shift from Transactional Pity to Systemic Power.

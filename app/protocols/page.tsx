@@ -12,9 +12,10 @@ export default function ProtocolsPage() {
         dek="Each protocol is published calmly and in full—no gates, no persuasion. The current set is below."
         belowAnchorId={contentId}
         mode="confirm"
+        secondaryCta={{ label: "View protocols", href: `#${contentId}` }}
       />
 
-      <main id={contentId} className="min-h-screen px-6 py-20 max-w-3xl mx-auto scroll-mt-24">
+      <main id={contentId} className="min-h-screen px-6 py-20 max-w-3xl mx-auto">
         <h1 className="text-3xl font-semibold mb-6">ZenTrust Protocols</h1>
         <p className="mb-10 text-neutral-600">
           Public education and research protocols.

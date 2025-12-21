@@ -70,9 +70,10 @@ export default function ContactPage() {
         dek="Choose the path that matches your question; we respond with clarity and no pressure."
         belowAnchorId="content"
         mode="confirm"
+        secondaryCta={{ label: "See contact options", href: "#content" }}
       />
 
-      <div id="content" className="pt-12 scroll-mt-24">
+      <div id="content" className="pt-12">
       {/* Contact Methods */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">
