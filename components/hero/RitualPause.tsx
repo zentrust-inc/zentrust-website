@@ -36,6 +36,13 @@ export function RitualPause({ ritual, onActiveChange }: Props) {
     if (!available) return;
     setActive(true);
     onActiveChange?.(true);
+
+    requestAnimationFrame(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play().catch(() => {});
+      }
+    });
   };
 
   useEffect(() => {

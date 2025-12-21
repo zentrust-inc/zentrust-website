@@ -6,7 +6,6 @@ import { resolveHero, type HeroDefinition } from "./createHero";
 
 export function UniversalHero({ hero }: { hero?: HeroDefinition }) {
   const [heroHidden, setHeroHidden] = useState(false);
-
   const resolvedHero = useMemo(() => resolveHero(hero), [hero]);
 
   return (
