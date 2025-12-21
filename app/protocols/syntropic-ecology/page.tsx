@@ -9,10 +9,8 @@ export default function SyntropicEcologyPage() {
   return (
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
   <GlobalHero
-  headlineLines={[
-    "What if the problem",
-    "was never the thing being fixed?",
-  ]}
+   headline={`What if the problem,
+was never the thing being fixed?`}
   dek={`We see the same pattern beyond health.
 When land is treated in parts, regeneration stalls.
 This page explores what changes when the frame gets larger.`}
