@@ -14,8 +14,7 @@ export default function StewardshipPortalPage() {
         dek="Participation is voluntary and patient—like water finding its way downhill. Enter when you are ready."
         belowAnchorId="content"
         mode="answer"
-        showStewardshipCta
-      />
+          />
 
       <div id="content" className="pt-6 scroll-mt-24">
       {/* PATHWAYS — no new surface, no borders */}
