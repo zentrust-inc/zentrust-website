@@ -242,11 +242,16 @@ function Details({
 }) {
   return (
     <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-      <summary className="flex cursor-pointer list-none flex-col gap-1">
-        <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {answer}
-        </p>
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+        <div>
+          <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            {answer}
+          </p>
+        </div>
+        <span className="shrink-0 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+          Expand
+        </span>
       </summary>
       <div className="mt-5 space-y-3 text-sm leading-relaxed">
         {children}
