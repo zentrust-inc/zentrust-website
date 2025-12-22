@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export const metadata: Metadata = {
@@ -31,7 +30,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
       >
         <div className="max-w-3xl space-y-4">
 
-          {/* 1 */}
           <Details
             title="Why did things improve, but still not feel better?"
             answer="Because treatments reduced symptoms, but the deeper conditions shaping your body, mind, life, and sense of meaning did not change."
@@ -48,7 +46,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             </p>
           </Details>
 
-          {/* 2 */}
           <Details
             title="Why didn’t anyone look at the real cause?"
             answer="Because modern systems are trained to treat visible problems, not the conditions that create them."
@@ -63,7 +60,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             <p>Looking up at the roof isn’t assigned to anyone. So it never happens.</p>
           </Details>
 
-          {/* 3 */}
           <Details
             title="Why did the treatments still help?"
             answer="Because managing symptoms prevents damage and allows survival, even if it cannot create healing."
@@ -80,7 +76,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             </p>
           </Details>
 
-          {/* 4 */}
           <Details
             title="What exactly is healthcare doing well?"
             answer="Healthcare is very good at managing harm once stress and illness are already inside the body."
@@ -91,16 +86,13 @@ When health is treated in parts, improvement isn’t the same as healing.`}
               <li><strong>Sweeping water away</strong> → sugar control, acid suppression, organ-protective drugs</li>
               <li><strong>Holding an umbrella</strong> → antidepressants, anxiolytics, stimulants</li>
             </ul>
-            <p>These actions save lives. They make life livable.</p>
             <p className="font-medium">But none of them stop the rain.</p>
           </Details>
 
-          {/* 5 */}
           <Details
             title="Why doesn’t my body ever fully relax?"
             answer="Because the body keeps responding to ongoing stress, even when symptoms are controlled."
           >
-            <p>Even on sunny days, you stay alert. You check the forecast. You notice clouds before others do.</p>
             <ul className="list-disc pl-6">
               <li>lingering fatigue</li>
               <li>background anxiety</li>
@@ -109,7 +101,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             <p>The body isn’t broken. It’s responding correctly to an unresolved problem.</p>
           </Details>
 
-          {/* 6 */}
           <Details
             title="What is the Biopsychosocial-Spiritual (BPSS) view of health?"
             answer="BPSS views health as the result of how the body, mind, social conditions, and sense of meaning interact together."
@@ -122,7 +113,7 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             </ul>
           </Details>
 
-          {/* 7 — ROOF + SUB-ACCORDIONS */}
+          {/* ================= ROOF SECTION ================= */}
           <Details
             title="How does this relate to the leaking roof?"
             answer="The roof represents all four BPSS layers working together to keep stress out of the body."
@@ -130,75 +121,62 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             <p>A roof is not one surface.</p>
             <p>It is a system of layers.</p>
             <p>Water leaks only when several layers fail together.</p>
-            <p>Human suffering works the same way.</p>
+            <p className="mb-6">Human suffering works the same way.</p>
 
-            <div className="mt-6 space-y-3 rounded-xl border border-neutral-200 p-4 dark:border-neutral-800">
+            <SubDetails
+              title="Biology — the body’s sensitivity and wear"
+              answer="Biology determines how easily stress turns into symptoms."
+            >
+              <ul className="list-disc pl-6">
+                <li>nervous system sensitivity</li>
+                <li>hormones</li>
+                <li>inflammation</li>
+                <li>genetics</li>
+                <li>exhaustion</li>
+              </ul>
+              <p>Medicine is excellent at limiting damage once stress breaks through.</p>
+              <p>It does not remove the stress itself.</p>
+            </SubDetails>
 
-              <SubDetails
-                title="Biology — the body’s sensitivity and wear"
-                answer="Biology determines how easily stress turns into symptoms."
-              >
-                <ul className="list-disc pl-6">
-                  <li>nervous system sensitivity</li>
-                  <li>hormones</li>
-                  <li>inflammation</li>
-                  <li>genetics</li>
-                  <li>exhaustion</li>
-                </ul>
-                <p>Medicine is excellent at limiting damage once stress breaks through.</p>
-                <p>It does not remove the stress itself.</p>
-              </SubDetails>
+            <SubDetails
+              title="Psychology — the internal load"
+              answer="Psychological strain keeps the body in a constant state of alert."
+            >
+              <p>Chronic stress, fear, unresolved grief, and pressure bend the system over time.</p>
+              <p>When this load never lifts, symptoms return — even with treatment.</p>
+            </SubDetails>
 
-              <SubDetails
-                title="Psychology — the internal load"
-                answer="Psychological strain keeps the body in a constant state of alert."
-              >
-                <p>
-                  Chronic stress, fear, unresolved grief, and pressure bend the system over time.
-                </p>
-                <p>
-                  When this load never lifts, symptoms return — even with treatment.
-                </p>
-              </SubDetails>
+            <SubDetails
+              title="Social conditions — the environment you live in"
+              answer="Social conditions decide whether stress keeps returning every day."
+            >
+              <p>Unsafe work, isolation, instability, and lack of rest are like constant storms.</p>
+              <p>If the storm never stops, leaks return.</p>
+            </SubDetails>
 
-              <SubDetails
-                title="Social conditions — the environment you live in"
-                answer="Social conditions decide whether stress keeps returning every day."
-              >
-                <p>
-                  Unsafe work, isolation, instability, and lack of rest are like constant storms.
-                </p>
-                <p>You can reinforce the roof endlessly.</p>
-                <p>If the storm never stops, leaks return.</p>
-              </SubDetails>
+            <SubDetails
+              title="Spiritual / meaning — why you are living this life"
+              answer="A lack of meaning keeps the system under strain, even when everything else improves."
+            >
+              <ul className="list-disc pl-6">
+                <li>“Why am I doing this?”</li>
+                <li>“Does my life make sense?”</li>
+                <li>“Am I living against what matters to me?”</li>
+              </ul>
+              <p>A house built without purpose gets patched forever.</p>
+              <p>So do lives without meaning.</p>
+            </SubDetails>
 
-              <SubDetails
-                title="Spiritual / meaning — why you are living this life"
-                answer="A lack of meaning keeps the system under strain, even when everything else improves."
-              >
-                <p>This is not religion.</p>
-                <ul className="list-disc pl-6">
-                  <li>“Why am I doing this?”</li>
-                  <li>“Does my life make sense?”</li>
-                  <li>“Am I living against what matters to me?”</li>
-                </ul>
-                <p>A house built without purpose gets patched forever.</p>
-                <p>So do lives without meaning.</p>
-              </SubDetails>
-
-              <SubDetails
-                title="When does suffering actually begin?"
-                answer="Suffering begins when biological strain, psychological stress, social pressure, and loss of meaning act together."
-              >
-                <p>Pain, fatigue, anxiety, illness — these are not the roof.</p>
-                <p>They are water on the floor.</p>
-                <p>Signals, not failures.</p>
-              </SubDetails>
-
-            </div>
+            <SubDetails
+              title="When does suffering actually begin?"
+              answer="Suffering begins when biological strain, psychological stress, social pressure, and loss of meaning act together."
+            >
+              <p>Pain, fatigue, anxiety, illness — these are not the roof.</p>
+              <p>They are water on the floor.</p>
+              <p>Signals, not failures.</p>
+            </SubDetails>
           </Details>
 
-          {/* 8 */}
           <Details
             title="Why is BPSS / holistic care necessary?"
             answer="Because only a whole-system approach can stop stress from entering the body at its source."
@@ -214,7 +192,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             </p>
           </Details>
 
-          {/* 9 */}
           <Details
             title="What does this mean for Me?"
             answer="If my symptoms improved but didn’t heal, it means I adapted to the problem instead of removing it."
@@ -231,7 +208,6 @@ When health is treated in parts, improvement isn’t the same as healing.`}
             </p>
           </Details>
 
-          {/* 10 */}
           <Details
             title="One simple thought to leave with"
             answer="If the floor keeps getting wet, it’s time to look up."
@@ -266,14 +242,11 @@ function Details({
 }) {
   return (
     <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-        <div>
-          <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
-          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-            {answer}
-          </p>
-        </div>
-        <span className="rounded-full border px-3 py-1 text-xs">Expand</span>
+      <summary className="flex cursor-pointer list-none flex-col gap-1">
+        <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {answer}
+        </p>
       </summary>
       <div className="mt-5 space-y-3 text-sm leading-relaxed">
         {children}
@@ -292,17 +265,14 @@ function SubDetails({
   children: React.ReactNode;
 }) {
   return (
-    <details className="group rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-        <div>
-          <h3 className="text-base font-semibold">{title}</h3>
-          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-            {answer}
-          </p>
-        </div>
-        <span className="rounded-full border px-2 py-0.5 text-xs">
-          Expand
-        </span>
+    <details className="group mb-6">
+      <summary className="cursor-pointer list-none">
+        <h3 className="text-lg font-semibold leading-snug">
+          {title}
+        </h3>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {answer}
+        </p>
       </summary>
       <div className="mt-3 space-y-3 text-sm leading-relaxed">
         {children}
