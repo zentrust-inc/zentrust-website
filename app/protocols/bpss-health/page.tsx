@@ -266,13 +266,18 @@ function SubDetails({
 }) {
   return (
     <details className="group mb-6">
-      <summary className="cursor-pointer list-none">
-        <h3 className="text-lg font-semibold leading-snug">
-          {title}
-        </h3>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {answer}
-        </p>
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+        <div>
+          <h3 className="text-lg font-semibold leading-snug">
+            {title}
+          </h3>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            {answer}
+          </p>
+        </div>
+        <span className="shrink-0 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+          Expand
+        </span>
       </summary>
       <div className="mt-3 space-y-3 text-sm leading-relaxed">
         {children}
