@@ -1,7 +1,7 @@
 import { GlobalHero } from "@/components/hero/GlobalHero";
 import { RitualPause } from "@/components/hero/RitualPause";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { fetchQuestions, getQuestionSlugs } from "@/lib/questions";
+import { fetchQuestions } from "@/lib/questions";
 import { notFound } from "next/navigation";
 
 type HeroMode = "full_answer" | "answer_below";
@@ -78,9 +78,12 @@ export default async function QuestionPage({
   params: { slug: string };
 }) {
   const questions = await fetchQuestions();
+
   const question = questions.find(
-    (item) =>
-      item.status === "published" && item._sys.filename === params.slug,
+    (item): item is NonNullable<typeof item> =>
+      !!item &&
+      item.status === "published" &&
+      item._sys?.filename === params.slug,
   );
 
   if (!question) {
@@ -103,7 +106,10 @@ export default async function QuestionPage({
       />
 
       {question.youtubeUrl && question.youtubeUrl.trim().length > 0 && (
-        <YouTubeThumbnail url={question.youtubeUrl} title={question.question} />
+        <YouTubeThumbnail
+          url={question.youtubeUrl}
+          title={question.question}
+        />
       )}
 
       <section
@@ -123,6 +129,14 @@ export default async function QuestionPage({
 }
 
 export async function generateStaticParams() {
-  const slugs = await getQuestionSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const questions = await fetchQuestions();
+
+  return questions
+    .filter(
+      (item): item is NonNullable<typeof item> =>
+        !!item && item.status === "published" && !!item._sys?.filename,
+    )
+    .map((item) => ({
+      slug: item._sys.filename,
+    }));
 }

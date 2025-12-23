@@ -16,12 +16,16 @@ export default async function QuestionsIndexPage() {
   const questions = await fetchQuestions();
 
   const published = questions.filter(
-    (question) => question.status === "published",
+    (question): question is NonNullable<typeof question> =>
+      !!question && question.status === "published",
   );
 
   const grouped = CATEGORY_ORDER.map((category) => ({
     category,
-    items: published.filter((question) => question.category === category),
+    items: published.filter(
+      (question) =>
+        question.category === category && !!question._sys?.filename,
+    ),
   })).filter(({ items }) => items.length > 0);
 
   return (
@@ -63,7 +67,7 @@ Enter to see clearly.`}
           {grouped.map(({ category, items }) => (
             <div key={category} className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold text-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
                   {category
                     .split(" ")
                     .map((word) => word[0])
