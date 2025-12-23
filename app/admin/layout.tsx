@@ -2,7 +2,12 @@
 
 import type { ReactNode } from "react";
 import { useMemo } from "react";
-import { TinaCMS, TinaAdminApi, TinaCMSProvider } from "tinacms";
+import {
+  TinaCMS,
+  TinaAdminApi,
+  TinaCMSProvider,
+  TinaCloudProvider,
+} from "tinacms";
 import client from "@/tina/__generated__/client";
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
@@ -13,11 +18,19 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
     });
 
     cmsInstance.flags.set("tina-admin", true);
+
+    // 🔑 REQUIRED: register generated client
     cmsInstance.registerApi("tina", client);
+
+    // 🔑 REQUIRED: admin api
     cmsInstance.registerApi("admin", new TinaAdminApi(cmsInstance));
 
     return cmsInstance;
   }, []);
 
-  return <TinaCMSProvider cms={cms}>{children}</TinaCMSProvider>;
+  return (
+    <TinaCloudProvider client={client}>
+      <TinaCMSProvider cms={cms}>{children}</TinaCMSProvider>
+    </TinaCloudProvider>
+  );
 }
