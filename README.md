@@ -1,6 +1,6 @@
 # ZenTrust Nonprofit Website
 
-A modern, future-resilient nonprofit website built with Next.js 14 App Router, Tailwind CSS v4, and TinaCMS for content management.
+A modern, future-resilient nonprofit website built with Next.js 14 App Router and Tailwind CSS v4.
 
 ## Features
 
@@ -17,10 +17,9 @@ A modern, future-resilient nonprofit website built with Next.js 14 App Router, T
 - Fast loading times and SEO optimization
 
 ### 📝 Content Management
-- TinaCMS integration for easy content editing
+- File-based content powered by MDX/JSON in the `content/` directory
 - Support for pages, blog posts, team members, programs, and stories
-- Rich text editing with Markdown support
-- Media library management
+- Rich text content rendered via custom renderer
 
 ### 💝 Nonprofit Features
 - Interactive donation calculator with impact visualization
@@ -51,7 +50,6 @@ zentrust-website/
 │   ├── blog/
 │   │   ├── page.tsx             # Blog listing page
 │   │   └── [slug]/page.tsx      # Individual blog post
-│   ├── admin/page.tsx           # TinaCMS admin interface
 │   └── globals.css              # Global styles
 ├── components/                   # Reusable UI components
 │   ├── layout/
@@ -76,11 +74,9 @@ zentrust-website/
 │   ├── utils.ts                 # General utilities
 │   ├── calculator.ts            # Donation impact calculator
 │   └── api.ts                   # API integration utilities
-├── content/                     # TinaCMS content files
+├── content/                     # File-based content
 │   ├── pages/                   # Static pages
 │   └── blog/                    # Blog posts
-├── tina/                        # TinaCMS configuration
-│   └── config.ts                # TinaCMS schema
 ├── public/                      # Static assets
 │   └── images/                  # Image storage
 └── Configuration files
@@ -105,14 +101,9 @@ cd zentrust-website
 npm install
 ```
 
-3. Set up environment variables (optional for local mode):
+3. (Optional) Create an `.env.local` file:
 ```bash
-# For local mode (recommended), no environment variables needed
-# The CMS will run directly from your filesystem
-
-# Optional: Create .env.local file
 cp .env.example .env.local
-# Edit .env.local only if switching to Tina Cloud mode later
 ```
 
 4. Run the development server:
@@ -120,34 +111,8 @@ cp .env.example .env.local
 npm run dev
 ```
 
-5. Run TinaCMS (in a separate terminal):
-```bash
-npm run tina
-```
-
-6. Open your browser:
+5. Open your browser:
 - Website: [http://localhost:3000](http://localhost:3000)
-- CMS Admin: [http://localhost:3000/admin](http://localhost:3000/admin)
-
-### TinaCMS Setup (Local Mode)
-
-**✅ Current Setup: Local Mode**
-- No signup required
-- No credentials needed
-- Direct filesystem access
-- Perfect for development
-
-**🔄 Switch to Tina Cloud Later**
-When ready for team collaboration:
-1. Sign up for [TinaCMS](https://tina.io/)
-2. Create a new project
-3. Get your Client ID and Read Token
-4. Update `tina/config.ts` to disable local mode
-4. Update the environment variables
-5. Run TinaCMS development server:
-```bash
-npm run tina
-```
 
 ## Scripts
 
@@ -155,8 +120,6 @@ npm run tina
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run tina` - Start TinaCMS development server
-- `npm run tina:build` - Build TinaCMS admin interface
 
 ## Deployment
 
@@ -187,15 +150,13 @@ The website uses CSS custom properties for theming. Modify the color scheme in `
 ```
 
 ### Content Updates
-1. Use the TinaCMS admin interface at `/admin`
-2. Or manually edit markdown files in the `content/` directory
-3. Update images in the `public/images/` directory
+1. Edit markdown/MDX or JSON files in the `content/` directory
+2. Update images in the `public/images/` directory
 
 ### Adding New Features
 1. Create components in the `components/` directory
 2. Add pages in the `app/` directory
-3. Update TinaCMS configuration in `tina/config.ts`
-4. Update navigation in `components/layout/Navbar.tsx`
+3. Update navigation in `components/layout/Navbar.tsx`
 
 ## Troubleshooting
 
@@ -208,10 +169,6 @@ The website uses CSS custom properties for theming. Modify the color scheme in `
 **Invalid Next.js Config Warning**
 - **Issue**: `Unrecognized key(s) in object: 'appDir' at "experimental"`
 - **Fix**: ✅ Already resolved - removed `experimental.appDir` from `next.config.js`
-
-**TinaCMS Dependencies Error**
-- **Issue**: `No matching version found for @tinacms/toolkit`
-- **Fix**: ✅ Already resolved - removed problematic dependency from `package.json`
 
 **Build Issues**
 - **Issue**: TypeScript errors or build failures
@@ -250,6 +207,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Built with [Next.js](https://nextjs.org/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Content managed by [TinaCMS](https://tina.io/)
 - Icons by [Lucide](https://lucide.dev/)
 - Animations by [Framer Motion](https://www.framer.com/motion/)
