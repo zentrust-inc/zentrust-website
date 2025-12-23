@@ -92,10 +92,9 @@ async function fetchQuestionFromTinaBySlug(
   slug: string,
 ): Promise<QuestionDocument | null> {
   try {
-    const res = await client.queries.questions({
-      variables: { relativePath: `${slug}.mdx` },
-    });
-
+const res = await client.queries.questions({
+  relativePath: `${slug}.mdx`,
+});
     const tinaQuestion = res?.data?.questions;
     if (!tinaQuestion) return null;
 
