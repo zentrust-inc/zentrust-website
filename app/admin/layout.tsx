@@ -2,22 +2,22 @@
 
 import type { ReactNode } from "react";
 import { useMemo } from "react";
-import { TinaProvider } from "tinacms/dist/toolkit";
-import { TinaAdminApi, TinaCMS } from "tinacms";
+import { TinaCMS, TinaAdminApi } from "tinacms";
+import { TinaProvider } from "tinacms/react";
 import client from "@/tina/__generated__/client";
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const cms = useMemo(() => {
-    const instance = new TinaCMS({
+    const cmsInstance = new TinaCMS({
       enabled: true,
       sidebar: true,
     });
 
-    instance.flags.set("tina-admin", true);
-    instance.registerApi("tina", client);
-    instance.registerApi("admin", new TinaAdminApi(instance));
+    cmsInstance.flags.set("tina-admin", true);
+    cmsInstance.registerApi("tina", client);
+    cmsInstance.registerApi("admin", new TinaAdminApi(cmsInstance));
 
-    return instance;
+    return cmsInstance;
   }, []);
 
   return <TinaProvider cms={cms}>{children}</TinaProvider>;
