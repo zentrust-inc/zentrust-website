@@ -7,6 +7,7 @@ import {
   TinaAdminApi,
   TinaCMSProvider,
   TinaCloudProvider,
+  staticMedia,
 } from "tinacms";
 import client from "@/tina/__generated__/client";
 
@@ -19,7 +20,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
     cmsInstance.flags.set("tina-admin", true);
 
-    // Register generated GraphQL client for collections/documents
+    // Generated GraphQL client (collections & documents)
     cmsInstance.registerApi("tina", client);
 
     // Admin API
@@ -31,6 +32,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <TinaCloudProvider
       tinaGraphQLVersion="0.0.1"
+      staticMedia={staticMedia}
     >
       <TinaCMSProvider cms={cms}>
         {children}
