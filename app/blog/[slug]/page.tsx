@@ -9,11 +9,15 @@ import client from "../../../tina/__generated__/client";
 import TinaBlogClient from "./TinaBlogClient";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const slug = params?.slug;
   if (!slug) return notFound();
 
-  // Fetch single post
+  // Fetch single post (build-time / server-only)
   let data;
   try {
     data = await client.queries.blog({
@@ -26,7 +30,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const post = data?.data?.blog;
   if (!post) return notFound();
 
-  // Fetch all posts
+  // Fetch all posts (for related / prev / next)
   let allPostsRes;
   try {
     allPostsRes = await client.queries.blogConnection();
@@ -69,7 +73,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       .slice(0, 3) ?? [];
 
   // NEXT / PREVIOUS
-  const currentIndex = allPosts.findIndex((p) => p?._sys?.filename === slug);
+  const currentIndex = allPosts.findIndex(
+    (p) => p?._sys?.filename === slug
+  );
   const prevPost = currentIndex >= 0 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
@@ -87,6 +93,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         belowAnchorId={contentId}
         mode="confirm"
       />
+
       <div id={contentId} className="pt-[110px] md:pt-[130px]">
         <TinaBlogClient
           data={{
@@ -95,8 +102,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               date: post?.date ?? "",
             },
           }}
-          query={data?.query}
-          variables={data?.variables}
           relatedPosts={relatedPosts}
           prevPost={prevPost}
           nextPost={nextPost}
