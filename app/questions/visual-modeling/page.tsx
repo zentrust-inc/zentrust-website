@@ -138,6 +138,34 @@ not just described?`}
           </Details>
 
           <Details
+  title="How are visual explanations derived from research models?"
+  answer="By computing system behavior first, then translating reviewed outputs."
+>
+  <p>
+    In some cases, ZenTrust builds or studies computational models that simulate
+    how systems evolve over time.
+  </p>
+  <p>
+    These models may involve repeated simulations, interacting variables,
+    delayed effects, and scenario comparisons that cannot be followed reliably
+    without computation.
+  </p>
+  <p>
+    Visual outputs are generated as part of the modeling process to inspect
+    behavior, test assumptions, and identify patterns such as instability,
+    recovery, or collapse.
+  </p>
+  <p className="font-medium">
+    Only after these outputs are reviewed are selected results translated into
+    visual explanations for public understanding.
+  </p>
+  <p>
+    Educational videos, when used, are derived artifacts — not substitutes for
+    research, and not independent narratives.
+  </p>
+</Details>
+
+          <Details
             title="Why translate research into visual explanations for the public?"
             answer="Because misunderstood research can do as much harm as no research."
           >
