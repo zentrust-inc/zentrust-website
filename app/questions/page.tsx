@@ -43,14 +43,14 @@ const CATEGORY_ICONS: Partial<Record<QuestionCategory, ReactElement>> = {
   "Tools & Technology": <Wrench className="h-5 w-5" aria-hidden />,
 };
 
-// ⬇️ TypeScript-safe Webpack context (NO new files, NO globals)
-const context = (require as any).context("./", true, /page\.tsx$/);
+// 🔒 IMPORTANT: non-recursive, one-level deep only
+const context = (require as any).context("./", false, /\/page\.tsx$/);
 
 function collectQuestions(): Question[] {
   return context
     .keys()
     .map((key: string) => {
-      // Ignore the index page itself
+      // Skip the index page itself
       if (key === "./page.tsx") {
         return null;
       }
@@ -58,6 +58,7 @@ function collectQuestions(): Question[] {
       const mod = context(key) as { metadata?: Metadata };
       const metadata = mod.metadata;
 
+      // ./slug/page.tsx → slug
       const slug = key.replace("./", "").split("/")[0];
 
       if (!metadata || typeof metadata.other?.category !== "string") {
@@ -70,8 +71,8 @@ function collectQuestions(): Question[] {
         category: metadata.other.category,
       } satisfies Question;
     })
- .filter((entry: Question | null): entry is Question => entry !== null)
-.sort((a: Question, b: Question) => a.title.localeCompare(b.title));
+    .filter((entry: Question | null): entry is Question => entry !== null)
+    .sort((a: Question, b: Question) => a.title.localeCompare(b.title));
 }
 
 function getCategoryWeight(category: string) {
@@ -88,12 +89,15 @@ function groupQuestions(questions: Question[]) {
   }
 
   return Array.from(grouped.entries())
-    .sort(([categoryA], [categoryB]) =>
-      getCategoryWeight(categoryA) - getCategoryWeight(categoryB),
+    .sort(
+      ([categoryA], [categoryB]) =>
+        getCategoryWeight(categoryA) - getCategoryWeight(categoryB),
     )
     .map(([category, items]) => ({
       category,
-      items: [...items].sort((a, b) => a.title.localeCompare(b.title)),
+      items: [...items].sort((a, b) =>
+        a.title.localeCompare(b.title),
+      ),
     }));
 }
 
