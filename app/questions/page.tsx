@@ -70,7 +70,7 @@ function collectQuestions(): Question[] {
         category: metadata.other.category,
       } satisfies Question;
     })
-    .filter((entry): entry is Question => Boolean(entry))
+ .filter((entry: Question | null): entry is Question => entry !== null)
     .sort((a, b) => a.title.localeCompare(b.title));
 }
 
