@@ -43,18 +43,21 @@ const CATEGORY_ICONS: Partial<Record<QuestionCategory, ReactElement>> = {
   "Tools & Technology": <Wrench className="h-5 w-5" aria-hidden />,
 };
 
-const context = require.context("./", true, /page\\.tsx$/);
+// ⬇️ TypeScript-safe Webpack context (NO new files, NO globals)
+const context = (require as any).context("./", true, /page\.tsx$/);
 
 function collectQuestions(): Question[] {
   return context
     .keys()
-    .map((key) => {
+    .map((key: string) => {
+      // Ignore the index page itself
       if (key === "./page.tsx") {
         return null;
       }
 
       const mod = context(key) as { metadata?: Metadata };
       const metadata = mod.metadata;
+
       const slug = key.replace("./", "").split("/")[0];
 
       if (!metadata || typeof metadata.other?.category !== "string") {
@@ -63,7 +66,7 @@ function collectQuestions(): Question[] {
 
       return {
         slug,
-        title: metadata.title ?? slug,
+        title: typeof metadata.title === "string" ? metadata.title : slug,
         category: metadata.other.category,
       } satisfies Question;
     })
@@ -73,7 +76,6 @@ function collectQuestions(): Question[] {
 
 function getCategoryWeight(category: string) {
   const index = CATEGORY_ORDER.indexOf(category as QuestionCategory);
-
   return index === -1 ? CATEGORY_ORDER.length : index;
 }
 
@@ -141,7 +143,7 @@ Enter to see clearly.`}
             <div key={category} className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                  {CATEGORY_ICONS[category]}
+                  {CATEGORY_ICONS[category as QuestionCategory]}
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-primary/70">
@@ -164,7 +166,10 @@ Enter to see clearly.`}
                         <span className="block max-w-3xl leading-tight">
                           {question.title}
                         </span>
-                        <span aria-hidden className="transition group-hover:translate-x-1">
+                        <span
+                          aria-hidden
+                          className="transition group-hover:translate-x-1"
+                        >
                           →
                         </span>
                       </Link>
