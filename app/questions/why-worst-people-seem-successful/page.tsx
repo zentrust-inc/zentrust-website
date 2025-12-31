@@ -5,7 +5,7 @@ import { GlobalHero } from "@/components/hero/GlobalHero";
 export const metadata: Metadata = {
   title: "Why do the worst people so often appear to be the most successful?",
   description:
-    "An ELI15, question-led exploration of why large systems can reward speed, dominance, and visibility over care, truth, and long-term stability.",
+    "An ELI15 explanation of why large systems can reward speed, dominance, and visibility over care, truth, and long-term stability.",
   other: {
     category: "Schools & Systems",
   },
@@ -23,30 +23,17 @@ appear to be the most successful?`}
         dek={
           <>
             <p>
-              In many places, the people who lie, dominate, and take credit seem
-              to rise the fastest.
+              Because many large modern systems reward speed, dominance, and
+              visibility more than care, truth, or long-term stability.
             </p>
             <p>
-              Meanwhile, steady, decent people often look invisible — or
-              exhausted.
-            </p>
-
-            <p className="mt-4">
-              This isn’t always because “badness wins.”
-            </p>
-            <p>
-              It’s often because large systems reward what they can measure
-              easily: speed, dominance, and visibility.
-            </p>
-
-            <p className="mt-4 italic">
-              What those systems reward — and why this can look like the world is
-              upside down — is explained below.
+              People adapted to those rewards can rise quickly, even while
+              damaging the system itself.
             </p>
           </>
         }
         belowAnchorId={contentId}
-        mode="confirm"
+        mode="answer"
       />
 
       {/* ================= CONTENT ================= */}
@@ -55,24 +42,22 @@ appear to be the most successful?`}
         className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16"
       >
         <div className="max-w-3xl space-y-4">
+
           <Details
             title="What does “successful” usually mean in large systems?"
-            answer="It often means matching what the system measures, not creating lasting value."
+            answer="It means matching what the system measures, not necessarily creating lasting value."
           >
             <p>
-              In a small group, success is hard to fake. People see what you do.
+              Large systems rely on simple signals to function: growth, profit,
+              attention, scale, rankings.
             </p>
-            <p>
-              In a large system, success is often reduced to numbers: growth,
-              profit, reach, rankings.
-            </p>
-            <p>
-              Numbers are useful — but they are also easy to chase in ways that
-              don’t help anyone for long.
-            </p>
+            <p>These signals are easy to track, so they become targets.</p>
+            <p>If a system measures speed, those who cut corners move faster.</p>
+            <p>If it measures dominance, those who intimidate rise.</p>
+            <p>If it measures visibility, those who exaggerate spread.</p>
             <p className="font-medium">
-              When “the number moved” becomes the main proof, appearance can
-              beat substance.
+              The system is not asking, “Is this good?” It is asking, “Did the
+              number move?”
             </p>
           </Details>
 
@@ -80,16 +65,17 @@ appear to be the most successful?`}
             title="Why do lying, narcissism, and bullying fit these systems so well?"
             answer="Because they reduce friction and bypass feedback in the short term."
           >
-            <p>Truth takes time. You have to explain it.</p>
-            <p>Care takes time. You have to listen.</p>
-            <p>Trust takes time. You have to earn it.</p>
+            <p>Truth requires explanation.</p>
+            <p>Care requires listening.</p>
+            <p>Trust requires time.</p>
             <p className="mt-3">
               Manipulation skips explanation. Self-promotion captures attention.
               Intimidation suppresses resistance.
             </p>
-            <p className="font-medium">
-              In fast, competitive environments, these moves can look like
-              “strength.”
+            <p>
+              In environments optimized for fast results, these behaviors appear
+              efficient—even when they quietly create damage that won’t show up
+              until much later.
             </p>
           </Details>
 
@@ -97,40 +83,42 @@ appear to be the most successful?`}
             title="If these traits cause harm, why aren’t they corrected sooner?"
             answer="Because harm in large systems is delayed, distributed, and hard to trace."
           >
+            <p>In small groups, harm is immediate and personal.</p>
             <p>
-              Imagine a person who keeps stealing small amounts from thousands
-              of people.
+              In large systems, harm is spread across people, time, and distance.
             </p>
             <p>
-              No single person feels the full loss. No single moment screams
-              “this is the cause.”
+              A decision can look successful while exhausting workers.
             </p>
-            <p className="mt-3">
-              Large systems spread consequences across time, distance, and
-              complexity.
+            <p>
+              A leader can look strong while eroding trust.
+            </p>
+            <p>
+              An economy can grow while degrading land and health.
             </p>
             <p className="font-medium">
-              By the time the damage becomes clear, the “winner” may already be
-              rewarded — and gone.
+              By the time consequences become visible, the system often
+              resets—or collapses—rather than correcting behavior.
             </p>
           </Details>
 
           <Details
-            title="Where are the decent people in all of this?"
-            answer="Often doing stabilizing work that doesn’t register as visible success."
+            title="Where does this leave people who act with care and integrity?"
+            answer="They often perform stabilizing work that doesn’t register as “success.”"
           >
+            <ul className="list-disc pl-5">
+              <li>prevent breakdowns,</li>
+              <li>absorb conflict,</li>
+              <li>maintain relationships,</li>
+              <li>repair small failures before they spread.</li>
+            </ul>
             <p>
-              Many people spend their lives preventing small collapses:
-              smoothing conflict, catching errors, supporting others, repairing
-              what breaks.
-            </p>
-            <p>
-              This work keeps the system running — but it rarely makes a big
-              headline.
+              This work keeps systems functioning—but produces no dramatic
+              signal.
             </p>
             <p className="font-medium">
-              Support beams don’t look impressive. They are noticed only when
-              removed.
+              Support beams don’t attract attention. They are noticed only when
+              they fail.
             </p>
           </Details>
 
@@ -138,28 +126,54 @@ appear to be the most successful?`}
             title="Does this mean ethics are weak or outdated?"
             answer="No. Ethics operate on longer time scales than most systems measure."
           >
-            <p>Extraction looks powerful early.</p>
-            <p>Regeneration looks slow.</p>
-            <p className="mt-3">
-              But extraction depends on something to take from: trust, people,
+            <p>Extractive strategies look powerful early.</p>
+            <p>Regenerative strategies look slow.</p>
+            <p>
+              But extraction depends on something to take from—people, trust,
               land, attention.
             </p>
             <p className="font-medium">
-              When that foundation thins, the “power” that depended on it
-              collapses.
+              When those are depleted, apparent strength collapses.
+            </p>
+            <p>
+              What remains valuable are systems that did not consume their
+              foundations.
             </p>
           </Details>
 
           <Details
-            title="Why does it keep feeling like the worst people win?"
+            title="Why does something like ZenTrust seem fragile by comparison?"
+            answer="Because it does not exploit the blind spots of extractive systems."
+          >
+            <ul className="list-disc pl-5">
+              <li>domination,</li>
+              <li>attention capture,</li>
+              <li>personal enrichment,</li>
+              <li>short-term performance metrics.</li>
+            </ul>
+            <p>It is structured for:</p>
+            <ul className="list-disc pl-5">
+              <li>transparency,</li>
+              <li>non-extraction,</li>
+              <li>public benefit,</li>
+              <li>long-term stewardship.</li>
+            </ul>
+            <p className="font-medium">
+              Inside extractive systems, this looks weak. When trust erodes, it
+              becomes essential.
+            </p>
+          </Details>
+
+          <Details
+            title="Why does it keep feeling like “the worst people win”?"
             answer="Because visibility favors loud success and hides silent failure."
           >
+            <p>Highly visible winners are rare—but memorable.</p>
+            <p>Quiet collapses are common—but unseen.</p>
+            <p>Failure does not trend.</p>
+            <p>Repair does not go viral.</p>
             <p>
-              Loud success is memorable. Quiet failure is common — and unseen.
-            </p>
-            <p>
-              Failure doesn’t trend. Repair doesn’t go viral. Collapse often
-              arrives after the spotlight has moved on.
+              Collapse often arrives after the spotlight has moved on.
             </p>
             <p className="font-medium">
               The mind mistakes visibility for frequency.
@@ -168,36 +182,38 @@ appear to be the most successful?`}
 
           <Details
             title="What changes when systems begin to fail?"
-            answer="The traits that looked powerful stop working."
+            answer="The traits that once looked powerful stop working."
           >
-            <p>
-              When trust declines, intimidation creates resistance. Manipulation
-              loses effectiveness. Spectacle stops persuading.
-            </p>
-            <p className="mt-3">
-              What begins to matter are reliability, openness, and structures
-              that don’t depend on coercion.
-            </p>
+            <ul className="list-disc pl-5">
+              <li>intimidation creates resistance,</li>
+              <li>manipulation loses effectiveness,</li>
+              <li>spectacle stops persuading.</li>
+            </ul>
+            <p>What begins to matter are:</p>
+            <ul className="list-disc pl-5">
+              <li>reliability,</li>
+              <li>openness,</li>
+              <li>structures that do not depend on coercion.</li>
+            </ul>
             <p className="font-medium">
               These qualities rarely win early. They tend to survive late.
             </p>
           </Details>
 
           <Details
-            title="So what is this question really pointing toward?"
-            answer="That the “upside down” feeling is often the system’s scoreboard, not reality."
+            title="Orientation"
+            answer="Understanding clarifies what kind of game is being observed."
           >
             <p>
-              If a scoreboard rewards speed and visibility, the fastest and
-              loudest can look like the best.
+              If harmful people appear to be thriving, it is often a sign that
+              the system itself is rewarding the wrong signals.
             </p>
             <p>
-              But “looking best on the scoreboard” is not the same as building
-              something that lasts.
+              Understanding this does not tell you what to do.
             </p>
-            <p className="font-medium">
-              The confusion eases when you realize you’re watching a system
-              reward its own blind spots.
+            <p>
+              It simply clarifies what kind of game you are observing—and why
+              its outcomes feel backward.
             </p>
           </Details>
         </div>
@@ -234,7 +250,9 @@ function Details({
           Expand
         </span>
       </summary>
-      <div className="mt-5 space-y-3 text-sm leading-relaxed">{children}</div>
+      <div className="mt-5 space-y-3 text-sm leading-relaxed">
+        {children}
+      </div>
     </details>
   );
 }
