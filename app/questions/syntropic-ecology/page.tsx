@@ -39,11 +39,12 @@ function AccordionItem({
           </p>
         </div>
 
+        {/* Expand affordance */}
         <span
-          className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-200 text-neutral-700 transition group-open:rotate-45 dark:border-neutral-800 dark:text-neutral-300"
+          className="mt-1 shrink-0 rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600 transition group-open:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-400 dark:group-open:bg-neutral-900/40"
           aria-hidden="true"
         >
-          +
+          Expand
         </span>
       </summary>
 
@@ -62,7 +63,7 @@ export default function SyntropicEcologyPage() {
       <GlobalHero
         headline={`Why does land keep degrading,
 even as we invest more into fixing it?`}
-            dek={`Many assume degradation means depleted soil, climate change, or not enough effort.
+        dek={`Many assume degradation means depleted soil, climate change, or not enough effort.
 That assumption quietly causes harm.
 When land is treated as a system of extractive outputs, effort hides failure instead of restoring function.
 Regeneration often begins when the question shifts from:
@@ -145,7 +146,10 @@ Regeneration often begins when the question shifts from:
             title="What changed when farming began to fail?"
             answer="Land was redesigned for extraction, not regeneration."
           >
-            <p>Soil biology was replaced with fertilizer. Water storage was replaced with irrigation. Balance was replaced with chemicals.</p>
+            <p>
+              Soil biology was replaced with fertilizer. Water storage was replaced with irrigation. Balance was replaced
+              with chemicals.
+            </p>
             <p>Each replacement worked — briefly.</p>
             <p>Each one increased dependence.</p>
           </AccordionItem>
@@ -199,7 +203,10 @@ Regeneration often begins when the question shifts from:
             title="Why might this be the future of farming?"
             answer="Because systems that regenerate themselves survive uncertainty."
           >
-            <p>As inputs become costly and conditions become unstable, systems that depend on constant correction struggle.</p>
+            <p>
+              As inputs become costly and conditions become unstable, systems that depend on constant correction
+              struggle.
+            </p>
             <p>Systems that repair themselves endure.</p>
           </AccordionItem>
 
@@ -212,7 +219,7 @@ Regeneration often begins when the question shifts from:
           </AccordionItem>
         </div>
 
-        {/* CONTINUATION (kept from current file) */}
+        {/* CONTINUATION */}
         <div className="mt-12 max-w-3xl grid gap-4 sm:grid-cols-2">
           <Link
             href="/stewardship"
