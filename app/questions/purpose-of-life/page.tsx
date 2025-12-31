@@ -64,12 +64,8 @@ for the purpose of life?`}
             title="Why does that realization feel so heavy?"
             answer="Because awareness reaches further than comfort."
           >
-            <p>
-              Humans can imagine futures they will never reach.
-            </p>
-            <p>
-              They can picture endings they cannot avoid.
-            </p>
+            <p>Humans can imagine futures they will never reach.</p>
+            <p>They can picture endings they cannot avoid.</p>
             <p>
               This gap—between what is imagined and what is lived—creates
               pressure.
@@ -90,24 +86,16 @@ for the purpose of life?`}
               The mind learns that movement works for a while, so it keeps
               moving.
             </p>
-            <p className="font-medium">
-              Not out of greed. Out of fatigue.
-            </p>
+            <p className="font-medium">Not out of greed. Out of fatigue.</p>
           </Details>
 
           <Details
             title="Why does the idea of a final purpose feel comforting?"
             answer="Because it promises rest."
           >
-            <p>
-              A purpose suggests that suffering will make sense later.
-            </p>
-            <p>
-              That death will be framed.
-            </p>
-            <p>
-              That effort will be justified.
-            </p>
+            <p>A purpose suggests that suffering will make sense later.</p>
+            <p>That death will be framed.</p>
+            <p>That effort will be justified.</p>
             <p className="font-medium">
               It is not meaning that is wanted. It is the end of strain.
             </p>
@@ -123,9 +111,7 @@ for the purpose of life?`}
             </p>
             <p>Nothing is solved.</p>
             <p>Nothing is concluded.</p>
-            <p className="font-medium">
-              The search simply stops pressing.
-            </p>
+            <p className="font-medium">The search simply stops pressing.</p>
           </Details>
 
           <Details
@@ -139,11 +125,27 @@ for the purpose of life?`}
               <li>wanting relief</li>
               <li>and expecting resolution</li>
             </ul>
+            <p>Life offers moments of relief.</p>
+            <p className="font-medium">The mind asks for guarantees.</p>
+          </Details>
+
+          {/* ======== MANDATORY ZENTRUST SUB-QUESTION ======== */}
+          <Details
+            title="Why does ZenTrust seem fragile or slow by comparison?"
+            answer="Because it is not organized around delivering relief or certainty."
+          >
             <p>
-              Life offers moments of relief.
+              ZenTrust does not promise answers that resolve uncertainty.
+            </p>
+            <p>
+              It does not optimize for reassurance, speed, or emotional closure.
+            </p>
+            <p>
+              It stays with questions that remain open and uncomfortable.
             </p>
             <p className="font-medium">
-              The mind asks for guarantees.
+              Inside systems that reward certainty and quick meaning, this can
+              look ineffective or weak.
             </p>
           </Details>
 
@@ -151,13 +153,9 @@ for the purpose of life?`}
             title="Orientation"
             answer="Understanding clarifies why the question keeps returning."
           >
-            <p>
-              The search for purpose is not accidental.
-            </p>
-            <p>
-              It arises when awareness meets finitude.
-            </p>
-            <p>
+            <p>The search for purpose is not accidental.</p>
+            <p>It arises when awareness meets finitude.</p>
+            <p className="font-medium">
               When that meeting becomes gentler, the search often quiets—without
               needing an answer.
             </p>
