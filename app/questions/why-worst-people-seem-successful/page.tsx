@@ -18,6 +18,7 @@ export default function SchoolsSystemsQuestionPage() {
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       {/* ================= HERO ================= */}
       <GlobalHero
+        mode="confirm"
         headline={`Why do the worst people so often
 appear to be the most successful?`}
         dek={
@@ -30,10 +31,12 @@ appear to be the most successful?`}
               People adapted to those rewards can rise quickly, even while
               damaging the system itself.
             </p>
+            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+              The detailed answer is unfolded below, one layer at a time.
+            </p>
           </>
         }
         belowAnchorId={contentId}
-        mode="answer"
       />
 
       {/* ================= CONTENT ================= */}
@@ -42,7 +45,6 @@ appear to be the most successful?`}
         className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16"
       >
         <div className="max-w-3xl space-y-4">
-
           <Details
             title="What does “successful” usually mean in large systems?"
             answer="It means matching what the system measures, not necessarily creating lasting value."
