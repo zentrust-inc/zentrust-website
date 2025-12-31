@@ -1,4 +1,4 @@
-
+// app/questions/visual-modeling/page.tsx
 import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
@@ -138,32 +138,32 @@ not just described?`}
           </Details>
 
           <Details
-  title="How are visual explanations derived from research models?"
-  answer="By computing system behavior first, then translating reviewed outputs."
->
-  <p>
-    In some cases, ZenTrust builds or studies computational models that simulate
-    how systems evolve over time.
-  </p>
-  <p>
-    These models may involve repeated simulations, interacting variables,
-    delayed effects, and scenario comparisons that cannot be followed reliably
-    without computation.
-  </p>
-  <p>
-    Visual outputs are generated as part of the modeling process to inspect
-    behavior, test assumptions, and identify patterns such as instability,
-    recovery, or collapse.
-  </p>
-  <p className="font-medium">
-    Only after these outputs are reviewed are selected results translated into
-    visual explanations for public understanding.
-  </p>
-  <p>
-    Educational videos, when used, are derived artifacts — not substitutes for
-    research, and not independent narratives.
-  </p>
-</Details>
+            title="How are visual explanations derived from research models?"
+            answer="By computing system behavior first, then translating reviewed outputs."
+          >
+            <p>
+              In some cases, ZenTrust builds or studies computational models that
+              simulate how systems evolve over time.
+            </p>
+            <p>
+              These models may involve repeated simulations, interacting
+              variables, delayed effects, and scenario comparisons that cannot
+              be followed reliably without computation.
+            </p>
+            <p>
+              Visual outputs are generated as part of the modeling process to
+              inspect behavior, test assumptions, and identify patterns such as
+              instability, recovery, or collapse.
+            </p>
+            <p className="font-medium">
+              Only after these outputs are reviewed are selected results
+              translated into visual explanations for public understanding.
+            </p>
+            <p>
+              Educational videos, when used, are derived artifacts — not
+              substitutes for research, and not independent narratives.
+            </p>
+          </Details>
 
           <Details
             title="Why translate research into visual explanations for the public?"
@@ -171,15 +171,34 @@ not just described?`}
           >
             <p>ZenTrust conducts non-commercial research for public benefit.</p>
             <p>
-              But research that cannot be understood is incomplete. Some
-              findings must be shown so educators, practitioners, and
-              communities can see what the research shows, what it does not
-              claim, and where uncertainty remains.
+              Research that cannot be understood is incomplete. Some findings
+              must be shown so educators, practitioners, and communities can see
+              what the research shows, what it does not claim, and where
+              uncertainty remains.
             </p>
             <p className="font-medium">
               Visual explanations are derived from research results.
             </p>
             <p>They are not narratives added afterward.</p>
+          </Details>
+
+          {/* ======== MANDATORY ZENTRUST SUB-QUESTION ======== */}
+          <Details
+            title="Why does ZenTrust emphasize visual modeling so strongly?"
+            answer="Because ZenTrust works with systems where time, interaction, and uncertainty cannot be safely compressed."
+          >
+            <p>
+              ZenTrust focuses on regenerative, health, and social systems where
+              effects unfold slowly and feedback is delayed.
+            </p>
+            <p>
+              In these contexts, static descriptions can create false certainty
+              or hide emerging risks.
+            </p>
+            <p className="font-medium">
+              Visual modeling is used not to persuade, but to prevent premature
+              conclusions.
+            </p>
           </Details>
 
           <Details
