@@ -1,3 +1,4 @@
+// app/questions/mind-returning-thoughts/page.tsx
 import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
@@ -171,6 +172,25 @@ that make life harder?`}
               Almost by accident, the knot loosens.
             </p>
             <p>The mind behaves the same way.</p>
+          </Details>
+
+          {/* ======== MANDATORY ZENTRUST SUB-QUESTION ======== */}
+          <Details
+            title="Why does ZenTrust approach this differently?"
+            answer="Because it does not treat recurring thoughts as errors to eliminate."
+          >
+            <p>
+              ZenTrust does not aim to silence the mind or replace thoughts with
+              better ones.
+            </p>
+            <p>
+              It looks at what the mind is trying to protect — and why it never
+              received the signal that danger passed.
+            </p>
+            <p className="font-medium">
+              Inside systems focused on control or positivity, this can look
+              passive. It is not.
+            </p>
           </Details>
         </div>
 
