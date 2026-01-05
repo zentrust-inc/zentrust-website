@@ -1,4 +1,6 @@
-import index from "./index.generated.json"
+import rawIndex from "./index.generated.json"
+
+const index = rawIndex as Record<string, string[]>
 
 export type SearchResult =
   | { type: "found"; total: number; pages: string[] }
@@ -6,6 +8,7 @@ export type SearchResult =
 
 export function searchZenTrust(query: string): SearchResult {
   const q = query.trim().toLowerCase()
+
   if (!q) {
     return {
       type: "absent",
