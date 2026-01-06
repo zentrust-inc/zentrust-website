@@ -41,17 +41,18 @@ export default function FindPage({ searchParams }: Props) {
         const q = query.toLowerCase();
         const titleLower = entry.title.toLowerCase();
 
-        const titleHasMatch = titleLower.includes(q);
-
-        // Only real body lines that contain the word
         const matchingLines = entry.lines.filter((line) => {
           const l = line.toLowerCase();
           return l.includes(q) && l !== titleLower && !titleLower.includes(l);
         });
 
+        if (matchingLines.length === 0 && !titleLower.includes(q)) {
+          return null;
+        }
+
         return (
           <section key={slug} className="space-y-4">
-            {/* TITLE — hard navigation, no RSC */}
+            {/* TITLE — always rendered */}
             <a
               href={`${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
@@ -59,8 +60,8 @@ export default function FindPage({ searchParams }: Props) {
               {highlightText(entry.title, query)} →
             </a>
 
-            {/* BODY — show exactly where the word exists */}
-            {!titleHasMatch && matchingLines.length > 0 && (
+            {/* BODY — every place the word exists */}
+            {matchingLines.length > 0 && (
               <div className="space-y-2">
                 {matchingLines.map((line, i) => (
                   <p
