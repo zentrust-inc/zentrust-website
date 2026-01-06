@@ -18,9 +18,7 @@ export default function FindPage({ searchParams }: Props) {
   if (!query) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-10">
-        <p>
-          ZenTrust does not yet hold a question specifically about this.
-        </p>
+        <p>ZenTrust does not yet hold a question specifically about this.</p>
       </main>
     );
   }
@@ -46,29 +44,22 @@ export default function FindPage({ searchParams }: Props) {
 
         const titleHasMatch = titleLower.includes(q);
 
-        // ✅ FIX: remove title-like lines from body matches
         const matchingLines = entry.lines.filter((line) => {
           const l = line.toLowerCase();
-          return (
-            l.includes(q) &&
-            l !== titleLower &&
-            !titleLower.includes(l)
-          );
+          return l.includes(q) && l !== titleLower && !titleLower.includes(l);
         });
 
         return (
           <section key={slug} className="space-y-4">
-            {/* TITLE — always first, always unique */}
+            {/* TITLE — correct URL */}
             <Link
-              href={`/questions${slug}?highlight=${encodeURIComponent(
-                query,
-              )}`}
+              href={`${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
             >
               {highlightText(entry.title, query)} →
             </Link>
 
-            {/* BODY / H2 — only real body lines */}
+            {/* BODY */}
             {!titleHasMatch && matchingLines.length > 0 && (
               <div className="space-y-2">
                 {matchingLines.map((line, i) => (
