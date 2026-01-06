@@ -19,41 +19,37 @@ function walk(dir, files = []) {
 }
 
 /* -------------------------------------------------- */
-/* Extract ONLY human-visible text                    */
+/* Extract EVERYTHING human-visible                   */
 /* -------------------------------------------------- */
-function extractVisibleText(source) {
+function extractAllText(source) {
   return source
-    // remove block comments
+    // remove comments
     .replace(/\/\*[\s\S]*?\*\//g, "")
-    // remove line comments
     .replace(/\/\/.*$/gm, "")
     // remove imports / exports
     .replace(/^import[\s\S]*?;$/gm, "")
     .replace(/^export[\s\S]*?;$/gm, "")
-    // remove file paths
-    .replace(/app\/questions\/[a-z0-9\-\/]+/gi, "")
-    // replace JSX tags with newlines
+    // replace JSX / HTML tags with newlines
     .replace(/<[^>]+>/g, "\n")
     // normalize quotes
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
-    // lowercase for indexing
+    // normalize whitespace
+    .replace(/\r/g, "")
     .toLowerCase();
 }
 
 /* -------------------------------------------------- */
-/* Extract metadata title (robust)                    */
+/* Extract metadata title (required anchor)           */
 /* -------------------------------------------------- */
 function extractTitle(source) {
-  // full metadata block
-  let match = source.match(
+  let m = source.match(
     /metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m
   );
-  if (match) return match[1];
+  if (m) return m[1];
 
-  // fallback
-  match = source.match(/title\s*:\s*["'`](.*?)["'`]/);
-  if (match) return match[1];
+  m = source.match(/title\s*:\s*["'`](.*?)["'`]/);
+  if (m) return m[1];
 
   return null;
 }
@@ -70,42 +66,38 @@ for (const file of files) {
   const relPath =
     "/" + path.relative(APP_DIR, dir).replace(/\\/g, "/");
 
-  // only index question pages
+  // only index questions
   if (!relPath.startsWith("/questions/")) continue;
 
   const raw = fs.readFileSync(file, "utf8");
   const title = extractTitle(raw);
 
-  // 🔒 RULE: no title → no indexing
+  // 🔒 invariant: every result must have a title
   if (!title) continue;
 
-  const text = extractVisibleText(raw);
+  const text = extractAllText(raw);
 
+  // break into readable lines for /find rendering
   const lines = text
     .split(/\n+/)
     .map(l => l.trim())
-    .filter(l =>
-      l.length > 4 &&
-      !l.startsWith("//") &&
-      !l.includes("page.tsx") &&
-      !l.includes("export") &&
-      !l.includes("import")
-    );
+    .filter(l => l.length > 3);
 
-  // 🔒 RULE: no body → no entry
   if (lines.length === 0) continue;
 
+  // store all visible lines
   linesIndex[relPath] = { title, lines };
 
-  // word → slug index
-const words = [
-  ...text.split(/[^a-z0-9]+/),
-  ...title.toLowerCase().split(/[^a-z0-9]+/)
-].filter(w => w.length > 2);
+  // 🔑 INDEX EVERY WORD FROM EVERY STRING
+  const words = text
+    .split(/[^a-z0-9]+/)
+    .filter(w => w.length > 1);
 
   for (const word of new Set(words)) {
     if (!index[word]) index[word] = [];
-    if (!index[word].includes(relPath)) index[word].push(relPath);
+    if (!index[word].includes(relPath)) {
+      index[word].push(relPath);
+    }
   }
 }
 
