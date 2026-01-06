@@ -15,23 +15,66 @@ function walk(dir, acc = []) {
   return acc;
 }
 
-/* Extract visible text only */
-function extractVisibleText(src) {
+/* Remove comments/imports/exports (keep content) */
+function stripNoise(src) {
   return src
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/\/\/.*$/gm, "")
+    .replace(/\/\*[\s\S]*?\*\//g, "")  // block comments
+    .replace(/\/\/.*$/gm, "")          // line comments
     .replace(/^import[\s\S]*?;$/gm, "")
-    .replace(/^export[\s\S]*?;$/gm, "")
-    .replace(/<[^>]+>/g, "\n")
-    .replace(/[“”]/g, '"')
-    .replace(/[‘’]/g, "'")
-    .toLowerCase();
+    .replace(/^export[\s\S]*?;$/gm, "");
 }
 
-/* Extract page title (H1 via metadata) */
+/* Extract title (robust) */
 function extractTitle(src) {
   const m = src.match(/title\s*:\s*["'`](.+?)["'`]/i);
   return m ? m[1] : null;
+}
+
+/* Extract visible-ish text from JSX */
+function extractJsxText(src) {
+  return src
+    .replace(/<[^>]+>/g, "\n")       // tags -> newlines
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/\r/g, "");
+}
+
+/* Extract string literals (catches accordion content stored in arrays/objects) */
+function extractStringLiterals(src) {
+  const out = [];
+  const re = /(["'`])((?:\\.|(?!\1)[\s\S])*?)\1/g;
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    const s = m[2];
+    if (!s) continue;
+    out.push(
+      s.replace(/\s+/g, " ").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").trim()
+    );
+  }
+  return out;
+}
+
+/* Heuristic: drop obvious className / utility strings */
+function isProbablyUtilityString(s) {
+  const t = s.trim();
+  if (t.length < 4) return true;
+
+  // common non-content fields
+  if (t.startsWith("/") || t.includes("page.tsx")) return true;
+
+  // looks like Tailwind / utility soup (lots of hyphens/colons, few letters in sentences)
+  const letters = (t.match(/[a-zA-Z]/g) || []).length;
+  const spaces = (t.match(/\s/g) || []).length;
+  const symbols = (t.match(/[-:_/[\]]/g) || []).length;
+
+  // utility strings tend to be space-separated tokens with many symbols and no sentence punctuation
+  const hasSentencePunct = /[.!?]/.test(t);
+
+  if (!hasSentencePunct && symbols >= 6 && spaces >= 2 && letters / t.length < 0.6) {
+    return true;
+  }
+
+  return false;
 }
 
 const files = walk(APP_DIR);
@@ -47,23 +90,37 @@ for (const file of files) {
   const title = extractTitle(raw);
   if (!title) continue;
 
-  const text = extractVisibleText(raw);
+  const cleaned = stripNoise(raw);
 
-  const lines = text
+  // 1) JSX-derived text
+  const jsxText = extractJsxText(cleaned);
+
+  // 2) string literals (accordion content, etc.)
+  const literals = extractStringLiterals(cleaned);
+
+  const linesFromJsx = jsxText
     .split(/\n+/)
     .map(l => l.trim())
     .filter(l => l.length > 2);
 
-  if (!lines.length) continue;
+  const allLines = [...linesFromJsx, ...literals]
+    .map(l => l.replace(/\s+/g, " ").trim())
+    .filter(l => l.length > 2)
+    .filter(l => !isProbablyUtilityString(l));
 
-  linesIndex[slug] = { title, lines };
+  // de-dupe
+  const unique = Array.from(new Set(allLines));
+
+  if (!unique.length) continue;
+
+  // store lowercased lines for consistent search
+  linesIndex[slug] = {
+    title,
+    lines: unique.map(s => s.toLowerCase()),
+  };
 }
 
 fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
 fs.writeFileSync(OUTPUT, JSON.stringify(linesIndex, null, 2));
 
-console.log(
-  "Search index generated:",
-  Object.keys(linesIndex).length,
-  "questions"
-);
+console.log("Search index generated:", Object.keys(linesIndex).length, "questions");
