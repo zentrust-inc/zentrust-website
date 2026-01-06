@@ -98,9 +98,10 @@ for (const file of files) {
   linesIndex[relPath] = { title, lines };
 
   // word → slug index
-  const words = text
-    .split(/[^a-z0-9]+/)
-    .filter(w => w.length > 2);
+const words = [
+  ...text.split(/[^a-z0-9]+/),
+  ...title.toLowerCase().split(/[^a-z0-9]+/)
+].filter(w => w.length > 2);
 
   for (const word of new Set(words)) {
     if (!index[word]) index[word] = [];
