@@ -26,49 +26,59 @@ export default function FindPage({ searchParams }: Props) {
 
   const result = searchZenTrust(query);
 
-  if (result.type === "absent") {
+  const renderedSections: JSX.Element[] = [];
+
+  if (result.type === "found") {
+    for (const slug of result.pages) {
+      const entry = (linesIndex as Record<string, PageEntry>)[slug];
+      if (!entry) continue;
+
+      const matchedLines = entry.lines.filter((line) =>
+        line.toLowerCase().includes(q),
+      );
+
+      if (matchedLines.length === 0) continue;
+
+      renderedSections.push(
+        <section key={slug} className="space-y-4">
+          {/* ALWAYS show the correct page title first */}
+          <Link
+            href={`${slug}?highlight=${encodeURIComponent(query)}`}
+            className="block text-lg font-semibold leading-snug hover:underline"
+          >
+            {highlightText(entry.title, query)} →
+          </Link>
+
+          <div className="space-y-2">
+            {matchedLines.map((line, i) => (
+              <p
+                key={i}
+                className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+              >
+                {highlightText(line, query)}
+              </p>
+            ))}
+          </div>
+        </section>,
+      );
+    }
+  }
+
+  // ✅ NOTHING rendered → show absence
+  if (renderedSections.length === 0) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-10">
-        <p>{result.absence}</p>
+        <p>
+          ZenTrust does not yet hold a question specifically about{" "}
+          <strong>{query}</strong>.
+        </p>
       </main>
     );
   }
 
   return (
     <main className="mx-auto max-w-3xl space-y-12 px-4 py-10">
-      {result.pages.map((slug) => {
-        const entry = (linesIndex as Record<string, PageEntry>)[slug];
-        if (!entry) return null;
-
-        const matchedLines = entry.lines.filter((line) =>
-          line.toLowerCase().includes(q),
-        );
-
-        if (matchedLines.length === 0) return null;
-
-        return (
-          <section key={slug} className="space-y-4">
-            {/* ✅ slug already includes /questions */}
-            <Link
-              href={`${slug}?highlight=${encodeURIComponent(query)}`}
-              className="block text-lg font-semibold leading-snug hover:underline"
-            >
-              {highlightText(entry.title, query)} →
-            </Link>
-
-            <div className="space-y-2">
-              {matchedLines.map((line, i) => (
-                <p
-                  key={i}
-                  className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
-                >
-                  {highlightText(line, query)}
-                </p>
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      {renderedSections}
     </main>
   );
 }
