@@ -7,7 +7,7 @@ const OUTPUT_INDEX = path.join(ROOT, "lib/search/index.generated.json");
 const OUTPUT_LINES = path.join(ROOT, "lib/search/lines.generated.json");
 
 /* -------------------------------------------------- */
-/* file walker                                        */
+/* Walk filesystem                                    */
 /* -------------------------------------------------- */
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -19,7 +19,7 @@ function walk(dir, files = []) {
 }
 
 /* -------------------------------------------------- */
-/* extract only human-visible text                    */
+/* Extract ONLY human-visible text                    */
 /* -------------------------------------------------- */
 function extractVisibleText(source) {
   return source
@@ -32,7 +32,7 @@ function extractVisibleText(source) {
     .replace(/^export[\s\S]*?;$/gm, "")
     // remove file paths
     .replace(/app\/questions\/[a-z0-9\-\/]+/gi, "")
-    // replace JSX tags with line breaks
+    // replace JSX tags with newlines
     .replace(/<[^>]+>/g, "\n")
     // normalize quotes
     .replace(/[“”]/g, '"')
@@ -42,15 +42,24 @@ function extractVisibleText(source) {
 }
 
 /* -------------------------------------------------- */
-/* extract metadata title                             */
+/* Extract metadata title (robust)                    */
 /* -------------------------------------------------- */
 function extractTitle(source) {
-  const match = source.match(/title:\s*["'`](.*?)["'`]/);
-  return match ? match[1] : null;
+  // full metadata block
+  let match = source.match(
+    /metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m
+  );
+  if (match) return match[1];
+
+  // fallback
+  match = source.match(/title\s*:\s*["'`](.*?)["'`]/);
+  if (match) return match[1];
+
+  return null;
 }
 
 /* -------------------------------------------------- */
-/* main                                               */
+/* Main                                               */
 /* -------------------------------------------------- */
 const files = walk(APP_DIR);
 const index = {};
@@ -61,15 +70,17 @@ for (const file of files) {
   const relPath =
     "/" + path.relative(APP_DIR, dir).replace(/\\/g, "/");
 
-  // only index questions
+  // only index question pages
   if (!relPath.startsWith("/questions/")) continue;
 
   const raw = fs.readFileSync(file, "utf8");
   const title = extractTitle(raw);
 
+  // 🔒 RULE: no title → no indexing
+  if (!title) continue;
+
   const text = extractVisibleText(raw);
 
-  // split into real, human-visible lines
   const lines = text
     .split(/\n+/)
     .map(l => l.trim())
@@ -81,12 +92,12 @@ for (const file of files) {
       !l.includes("import")
     );
 
-  // save clean lines per question
-  if (title && lines.length) {
-    linesIndex[relPath] = { title, lines };
-  }
+  // 🔒 RULE: no body → no entry
+  if (lines.length === 0) continue;
 
-  // build word → slug index
+  linesIndex[relPath] = { title, lines };
+
+  // word → slug index
   const words = text
     .split(/[^a-z0-9]+/)
     .filter(w => w.length > 2);
@@ -98,7 +109,7 @@ for (const file of files) {
 }
 
 /* -------------------------------------------------- */
-/* write outputs                                      */
+/* Write outputs                                      */
 /* -------------------------------------------------- */
 fs.mkdirSync(path.dirname(OUTPUT_INDEX), { recursive: true });
 fs.writeFileSync(OUTPUT_INDEX, JSON.stringify(index, null, 2));
