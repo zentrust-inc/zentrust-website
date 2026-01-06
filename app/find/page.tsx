@@ -9,17 +9,17 @@ type Props = {
 
 type PageEntry = {
   title: string;   // canonical H1
-  lines: string[]; // visible body lines
+  lines: string[];
 };
 
 export default function FindPage({ searchParams }: Props) {
   const query = searchParams.q?.trim() ?? "";
   const q = query.toLowerCase();
 
-  // No query at all
+  // No query
   if (!query) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10">
+      <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
         <p>ZenTrust does not yet hold a question specifically about this.</p>
       </main>
     );
@@ -28,13 +28,11 @@ export default function FindPage({ searchParams }: Props) {
   const result = searchZenTrust(query);
   const renderedSections: JSX.Element[] = [];
 
-  // Only attempt rendering if search returned pages
   if (result.type === "found") {
     for (const slug of result.pages) {
       const entry = (linesIndex as Record<string, PageEntry>)[slug];
       if (!entry) continue;
 
-      // Find only lines that actually contain the query
       const matchedLines = entry.lines.filter((line) =>
         line.toLowerCase().includes(q),
       );
@@ -48,7 +46,7 @@ export default function FindPage({ searchParams }: Props) {
                      shadow-sm space-y-4
                      dark:border-neutral-800 dark:bg-neutral-900/50"
         >
-          {/* TITLE — always visible, always first */}
+          {/* Title */}
           <Link
             href={`${slug}?highlight=${encodeURIComponent(query)}`}
             className="block text-lg font-semibold leading-snug hover:underline"
@@ -56,7 +54,7 @@ export default function FindPage({ searchParams }: Props) {
             {highlightText(entry.title, query)} →
           </Link>
 
-          {/* BODY — clearly belongs to this title */}
+          {/* Body */}
           <div className="space-y-2">
             {matchedLines.map((line, i) => (
               <p
@@ -72,10 +70,10 @@ export default function FindPage({ searchParams }: Props) {
     }
   }
 
-  // NOTHING rendered → show absence message
+  // Nothing rendered → absence
   if (renderedSections.length === 0) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10">
+      <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
         <p>
           ZenTrust does not yet hold a question specifically about{" "}
           <strong>{query}</strong>.
@@ -84,9 +82,9 @@ export default function FindPage({ searchParams }: Props) {
     );
   }
 
-  // Normal results view
+  // Normal results
   return (
-    <main className="mx-auto max-w-3xl space-y-12 px-4 py-10">
+    <main className="mx-auto max-w-3xl space-y-12 px-4 pt-28 pb-16">
       {renderedSections}
     </main>
   );
