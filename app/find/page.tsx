@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { searchZenTrust } from "@/lib/search/search";
 import linesIndex from "@/lib/search/lines.generated.json";
 import { highlightText } from "@/lib/highlight";
 
-type Props = { searchParams: { q?: string } };
+type Props = {
+  searchParams: { q?: string };
+};
 
-type Entry = {
+type PageEntry = {
   title: string;
   lines: string[];
 };
@@ -16,52 +17,69 @@ export default function FindPage({ searchParams }: Props) {
 
   if (!query) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10">
+      <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
         <p>ZenTrust does not yet hold a question specifically about this.</p>
       </main>
     );
   }
 
-  const result = searchZenTrust(query);
+  const renderedSections: JSX.Element[] = [];
 
-  if (result.type === "absent") {
+  for (const [slug, entry] of Object.entries(
+    linesIndex as Record<string, PageEntry>
+  )) {
+    const matchedLines = entry.lines.filter(line =>
+      line.includes(q)
+    );
+
+    if (!matchedLines.length && !entry.title.toLowerCase().includes(q)) {
+      continue;
+    }
+
+    renderedSections.push(
+      <section
+        key={slug}
+        className="rounded-xl border border-neutral-200 bg-white/70 p-6
+                   shadow-sm space-y-4
+                   dark:border-neutral-800 dark:bg-neutral-900/50"
+      >
+        {/* Title ALWAYS shown */}
+        <Link
+          href={`${slug}?highlight=${encodeURIComponent(query)}`}
+          className="block text-lg font-semibold leading-snug hover:underline"
+        >
+          {highlightText(entry.title, query)} →
+        </Link>
+
+        {/* Only lines that actually contain the string */}
+        <div className="space-y-2">
+          {matchedLines.map((line, i) => (
+            <p
+              key={i}
+              className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+            >
+              {highlightText(line, query)}
+            </p>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  if (renderedSections.length === 0) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10">
-        <p>{result.absence}</p>
+      <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
+        <p>
+          ZenTrust does not yet hold a question specifically about{" "}
+          <strong>{query}</strong>.
+        </p>
       </main>
     );
   }
 
   return (
-    <main className="mx-auto max-w-3xl space-y-12 px-4 py-10">
-      {result.pages.map(slug => {
-        const entry = (linesIndex as Record<string, Entry>)[slug];
-        if (!entry) return null;
-
-        const matches = entry.lines.filter(line =>
-          line.includes(q)
-        );
-
-        return (
-          <section
-            key={slug}
-            className="rounded-xl border p-6 space-y-3"
-          >
-            <Link
-              href={`${slug}?highlight=${encodeURIComponent(query)}`}
-              className="block text-lg font-semibold hover:underline"
-            >
-              {highlightText(entry.title, query)} →
-            </Link>
-
-            {matches.map((line, i) => (
-              <p key={i} className="text-sm text-neutral-700 dark:text-neutral-300">
-                {highlightText(line, query)}
-              </p>
-            ))}
-          </section>
-        );
-      })}
+    <main className="mx-auto max-w-3xl space-y-12 px-4 pt-28 pb-16">
+      {renderedSections}
     </main>
   );
 }
