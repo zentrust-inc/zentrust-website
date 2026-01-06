@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { GlobalHero } from "@/components/hero/GlobalHero";
+import { highlightText } from "@/lib/highlight";
 import {
   Brain,
   Compass,
@@ -103,17 +104,21 @@ function groupQuestions(questions: Question[]) {
     )
     .map(([category, items]) => ({
       category,
-      items: [...items].sort((a, b) =>
-        a.title.localeCompare(b.title),
-      ),
+      items: [...items].sort((a, b) => a.title.localeCompare(b.title)),
     }));
 }
 
-export default function QuestionsIndexPage() {
+type Props = {
+  searchParams?: { highlight?: string };
+};
+
+export default function QuestionsIndexPage({ searchParams }: Props) {
   const contentId = "questions-list";
 
   const questions = collectQuestions();
   const grouped = groupQuestions(questions);
+
+  const highlight = searchParams?.highlight?.trim() || "";
 
   return (
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
@@ -169,24 +174,34 @@ Enter to see clearly.`}
 
               <div className="rounded-2xl border border-neutral-200 bg-white/80 p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/50">
                 <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
-                  {items.map((question) => (
-                    <li key={question.slug} className="py-3">
-                      <Link
-                        href={`/questions/${question.slug}`}
-                        className="group inline-flex items-center gap-2 text-lg font-semibold text-neutral-900 transition hover:text-primary dark:text-neutral-100"
-                      >
-                        <span className="block max-w-3xl leading-tight">
-                          {question.title}
-                        </span>
-                        <span
-                          aria-hidden
-                          className="transition group-hover:translate-x-1"
+                  {items.map((question) => {
+                    const href = highlight
+                      ? `/questions/${question.slug}?highlight=${encodeURIComponent(
+                          highlight,
+                        )}`
+                      : `/questions/${question.slug}`;
+
+                    return (
+                      <li key={question.slug} className="py-3">
+                        <Link
+                          href={href}
+                          className="group inline-flex items-center gap-2 text-lg font-semibold text-neutral-900 transition hover:text-primary dark:text-neutral-100"
                         >
-                          →
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
+                          <span className="block max-w-3xl leading-tight">
+                            {highlight
+                              ? highlightText(question.title, highlight)
+                              : question.title}
+                          </span>
+                          <span
+                            aria-hidden
+                            className="transition group-hover:translate-x-1"
+                          >
+                            →
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
