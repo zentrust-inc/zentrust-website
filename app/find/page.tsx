@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { searchZenTrust } from "@/lib/search/search";
 import linesIndex from "@/lib/search/lines.generated.json";
 import { highlightText } from "@/lib/highlight";
@@ -44,6 +43,7 @@ export default function FindPage({ searchParams }: Props) {
 
         const titleHasMatch = titleLower.includes(q);
 
+        // Only real body lines that contain the word
         const matchingLines = entry.lines.filter((line) => {
           const l = line.toLowerCase();
           return l.includes(q) && l !== titleLower && !titleLower.includes(l);
@@ -51,15 +51,15 @@ export default function FindPage({ searchParams }: Props) {
 
         return (
           <section key={slug} className="space-y-4">
-            {/* TITLE — correct URL */}
-            <Link
+            {/* TITLE — hard navigation, no RSC */}
+            <a
               href={`${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
             >
               {highlightText(entry.title, query)} →
-            </Link>
+            </a>
 
-            {/* BODY */}
+            {/* BODY — show exactly where the word exists */}
             {!titleHasMatch && matchingLines.length > 0 && (
               <div className="space-y-2">
                 {matchingLines.map((line, i) => (
