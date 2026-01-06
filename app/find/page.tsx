@@ -7,14 +7,9 @@ type Props = {
   searchParams: { q?: string };
 };
 
-type Section = {
-  title: string;
-  lines: string[];
-};
-
 type PageEntry = {
-  pageTitle: string;   // ← H1 (canonical question)
-  sections: Section[];
+  title: string;   // H1
+  lines: string[]; // body lines
 };
 
 export default function FindPage({ searchParams }: Props) {
@@ -45,16 +40,9 @@ export default function FindPage({ searchParams }: Props) {
         const entry = (linesIndex as Record<string, PageEntry>)[slug];
         if (!entry) return null;
 
-        // Collect ALL matching lines across the page
-        const matchedLines: string[] = [];
-
-        for (const section of entry.sections) {
-          for (const line of section.lines) {
-            if (line.toLowerCase().includes(q)) {
-              matchedLines.push(line);
-            }
-          }
-        }
+        const matchedLines = entry.lines.filter((line) =>
+          line.toLowerCase().includes(q),
+        );
 
         if (matchedLines.length === 0) return null;
 
@@ -65,10 +53,10 @@ export default function FindPage({ searchParams }: Props) {
               href={`/questions${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
             >
-              {highlightText(entry.pageTitle, query)} →
+              {highlightText(entry.title, query)} →
             </Link>
 
-            {/* Body matches */}
+            {/* Matched body sentences */}
             <div className="space-y-2">
               {matchedLines.map((line, i) => (
                 <p
