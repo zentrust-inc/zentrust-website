@@ -3,7 +3,7 @@ import path from "path";
 
 const ROOT = process.cwd();
 const APP_DIR = path.join(ROOT, "app");
-const OUT_LINES = path.join(ROOT, "lib/search/lines.generated.json");
+const OUTPUT = path.join(ROOT, "lib/search/lines.generated.json");
 
 /* Walk filesystem */
 function walk(dir, acc = []) {
@@ -15,7 +15,7 @@ function walk(dir, acc = []) {
   return acc;
 }
 
-/* Extract human-visible text */
+/* Extract visible text only */
 function extractVisibleText(src) {
   return src
     .replace(/\/\*[\s\S]*?\*\//g, "")
@@ -28,11 +28,9 @@ function extractVisibleText(src) {
     .toLowerCase();
 }
 
-/* Extract page title */
+/* Extract page title (H1 via metadata) */
 function extractTitle(src) {
-  const m = src.match(
-    /metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m
-  );
+  const m = src.match(/title\s*:\s*["'`](.+?)["'`]/i);
   return m ? m[1] : null;
 }
 
@@ -61,8 +59,8 @@ for (const file of files) {
   linesIndex[slug] = { title, lines };
 }
 
-fs.mkdirSync(path.dirname(OUT_LINES), { recursive: true });
-fs.writeFileSync(OUT_LINES, JSON.stringify(linesIndex, null, 2));
+fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
+fs.writeFileSync(OUTPUT, JSON.stringify(linesIndex, null, 2));
 
 console.log(
   "Search index generated:",
