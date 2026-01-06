@@ -1,6 +1,4 @@
-import { ZEN_QUESTIONS } from "@/lib/search/index";
-import { searchZenTrust } from "@/lib/search/search";
-
+import { searchZenTrust, ZEN_QUESTIONS } from "@/lib/search/search";
 type Props = {
   searchParams: { q?: string };
 };
@@ -47,3 +45,4 @@ export default function SearchPage({ searchParams }: Props) {
     </main>
   );
 }
+
