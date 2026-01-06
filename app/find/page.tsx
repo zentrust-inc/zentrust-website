@@ -7,28 +7,28 @@ type Props = {
 };
 
 type PageEntry = {
-  title: string;   // canonical H1
+  title: string;
   lines: string[];
 };
 
 /**
- * Normalize noise, not meaning.
+ * Normalize noise, not meaning (ES5-safe).
  * - lowercase
  * - collapse whitespace
- * - remove punctuation / unicode symbols
+ * - remove punctuation/symbols (ASCII)
  */
 function normalize(input: string) {
   return input
     .toLowerCase()
     .replace(/\s+/g, " ")
-    .replace(/[^\p{L}\p{N}\s]/gu, "");
+    .replace(/[^a-z0-9 ]+/g, "")
+    .trim();
 }
 
 export default function FindPage({ searchParams }: Props) {
   const query = searchParams.q?.trim() ?? "";
   const nq = normalize(query);
 
-  // No query
   if (!query) {
     return (
       <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
@@ -40,26 +40,21 @@ export default function FindPage({ searchParams }: Props) {
   const renderedSections: JSX.Element[] = [];
 
   for (const [slug, entry] of Object.entries(
-    linesIndex as Record<string, PageEntry>
+    linesIndex as Record<string, PageEntry>,
   )) {
     const titleMatch = normalize(entry.title).includes(nq);
 
-    const matchedLines = entry.lines.filter(line =>
-      normalize(line).includes(nq)
+    const matchedLines = entry.lines.filter((line) =>
+      normalize(line).includes(nq),
     );
 
-    if (!titleMatch && matchedLines.length === 0) {
-      continue;
-    }
+    if (!titleMatch && matchedLines.length === 0) continue;
 
     renderedSections.push(
       <section
         key={slug}
-        className="rounded-xl border border-neutral-200 bg-white/70 p-6
-                   shadow-sm space-y-4
-                   dark:border-neutral-800 dark:bg-neutral-900/50"
+        className="rounded-xl border border-neutral-200 bg-white/70 p-6 shadow-sm space-y-4 dark:border-neutral-800 dark:bg-neutral-900/50"
       >
-        {/* Title ALWAYS shown */}
         <Link
           href={`${slug}?highlight=${encodeURIComponent(query)}`}
           className="block text-lg font-semibold leading-snug hover:underline"
@@ -67,7 +62,6 @@ export default function FindPage({ searchParams }: Props) {
           {highlightText(entry.title, query)} →
         </Link>
 
-        {/* Only lines that actually contain the string */}
         <div className="space-y-2">
           {matchedLines.map((line, i) => (
             <p
@@ -78,11 +72,10 @@ export default function FindPage({ searchParams }: Props) {
             </p>
           ))}
         </div>
-      </section>
+      </section>,
     );
   }
 
-  // Honest absence
   if (renderedSections.length === 0) {
     return (
       <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
