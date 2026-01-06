@@ -42,16 +42,23 @@ export default function FindPage({ searchParams }: Props) {
         if (!entry) return null;
 
         const q = query.toLowerCase();
+        const titleLower = entry.title.toLowerCase();
 
-        const titleHasMatch = entry.title.toLowerCase().includes(q);
+        const titleHasMatch = titleLower.includes(q);
 
-        const matchingLines = entry.lines.filter((line) =>
-          line.toLowerCase().includes(q),
-        );
+        // ✅ FIX: remove title-like lines from body matches
+        const matchingLines = entry.lines.filter((line) => {
+          const l = line.toLowerCase();
+          return (
+            l.includes(q) &&
+            l !== titleLower &&
+            !titleLower.includes(l)
+          );
+        });
 
         return (
           <section key={slug} className="space-y-4">
-            {/* TITLE — anchor first */}
+            {/* TITLE — always first, always unique */}
             <Link
               href={`/questions${slug}?highlight=${encodeURIComponent(
                 query,
@@ -61,7 +68,7 @@ export default function FindPage({ searchParams }: Props) {
               {highlightText(entry.title, query)} →
             </Link>
 
-            {/* BODY / H2 — only where the word exists */}
+            {/* BODY / H2 — only real body lines */}
             {!titleHasMatch && matchingLines.length > 0 && (
               <div className="space-y-2">
                 {matchingLines.map((line, i) => (
