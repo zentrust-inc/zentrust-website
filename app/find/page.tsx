@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { searchZenTrust } from "@/lib/search/search";
 import linesIndex from "@/lib/search/lines.generated.json";
 import { highlightText } from "@/lib/highlight";
@@ -6,13 +7,19 @@ type Props = {
   searchParams: { q?: string };
 };
 
-type LinesEntry = {
+type Section = {
   title: string;
   lines: string[];
 };
 
+type PageEntry = {
+  pageTitle: string;   // ← H1 (canonical question)
+  sections: Section[];
+};
+
 export default function FindPage({ searchParams }: Props) {
   const query = searchParams.q?.trim() ?? "";
+  const q = query.toLowerCase();
 
   if (!query) {
     return (
@@ -35,44 +42,43 @@ export default function FindPage({ searchParams }: Props) {
   return (
     <main className="mx-auto max-w-3xl space-y-12 px-4 py-10">
       {result.pages.map((slug) => {
-        const entry = (linesIndex as Record<string, LinesEntry>)[slug];
+        const entry = (linesIndex as Record<string, PageEntry>)[slug];
         if (!entry) return null;
 
-        const q = query.toLowerCase();
-        const titleLower = entry.title.toLowerCase();
+        // Collect ALL matching lines across the page
+        const matchedLines: string[] = [];
 
-        const matchingLines = entry.lines.filter((line) => {
-          const l = line.toLowerCase();
-          return l.includes(q) && l !== titleLower && !titleLower.includes(l);
-        });
-
-        if (matchingLines.length === 0 && !titleLower.includes(q)) {
-          return null;
+        for (const section of entry.sections) {
+          for (const line of section.lines) {
+            if (line.toLowerCase().includes(q)) {
+              matchedLines.push(line);
+            }
+          }
         }
+
+        if (matchedLines.length === 0) return null;
 
         return (
           <section key={slug} className="space-y-4">
-            {/* TITLE — always rendered */}
-            <a
-              href={`${slug}?highlight=${encodeURIComponent(query)}`}
+            {/* ✅ ALWAYS show H1 */}
+            <Link
+              href={`/questions${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
             >
-              {highlightText(entry.title, query)} →
-            </a>
+              {highlightText(entry.pageTitle, query)} →
+            </Link>
 
-            {/* BODY — every place the word exists */}
-            {matchingLines.length > 0 && (
-              <div className="space-y-2">
-                {matchingLines.map((line, i) => (
-                  <p
-                    key={i}
-                    className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
-                  >
-                    {highlightText(line, query)}
-                  </p>
-                ))}
-              </div>
-            )}
+            {/* Body matches */}
+            <div className="space-y-2">
+              {matchedLines.map((line, i) => (
+                <p
+                  key={i}
+                  className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+                >
+                  {highlightText(line, query)}
+                </p>
+              ))}
+            </div>
           </section>
         );
       })}
