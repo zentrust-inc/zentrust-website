@@ -1,38 +1,44 @@
-import rawIndex from "./index.generated.json"
+import linesIndex from "./lines.generated.json";
 
-const index = rawIndex as Record<string, string[]>
+type Entry = {
+  title: string;
+  lines: string[];
+};
 
 export type SearchResult =
-  | { type: "found"; total: number; pages: string[] }
-  | { type: "absent"; absence: string }
+  | { type: "found"; pages: string[] }
+  | { type: "absent"; absence: string };
 
 export function searchZenTrust(query: string): SearchResult {
-  const q = query.trim().toLowerCase()
+  const q = query.trim().toLowerCase();
 
   if (!q) {
     return {
       type: "absent",
       absence:
         "ZenTrust does not yet hold a question specifically about this.",
+    };
+  }
+
+  const pages: string[] = [];
+
+  for (const [slug, entry] of Object.entries(
+    linesIndex as Record<string, Entry>
+  )) {
+    if (
+      entry.title.toLowerCase().includes(q) ||
+      entry.lines.some(line => line.includes(q))
+    ) {
+      pages.push(slug);
     }
   }
 
-  const matches = Object.keys(index)
-    .filter(term => term.includes(q))
-    .flatMap(term => index[term])
-
-  const unique = Array.from(new Set(matches))
-
-  if (unique.length === 0) {
+  if (!pages.length) {
     return {
       type: "absent",
       absence: `ZenTrust does not yet hold a question specifically about ${query}.`,
-    }
+    };
   }
 
-  return {
-    type: "found",
-    total: unique.length,
-    pages: unique,
-  }
+  return { type: "found", pages };
 }
