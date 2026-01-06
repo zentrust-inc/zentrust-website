@@ -3,108 +3,92 @@ import path from "path";
 
 const ROOT = process.cwd();
 const APP_DIR = path.join(ROOT, "app");
-const OUTPUT_INDEX = path.join(ROOT, "lib/search/index.generated.json");
-const OUTPUT_LINES = path.join(ROOT, "lib/search/lines.generated.json");
+const OUT_INDEX = path.join(ROOT, "lib/search/index.generated.json");
+const OUT_LINES = path.join(ROOT, "lib/search/lines.generated.json");
 
-/* -------------------------------------------------- */
-/* Walk filesystem                                    */
-/* -------------------------------------------------- */
-function walk(dir, files = []) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, files);
-    else if (/\.(ts|tsx|mdx)$/.test(entry.name)) files.push(full);
+/* ---------------------------------- */
+/* Walk filesystem                    */
+/* ---------------------------------- */
+function walk(dir, acc = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) walk(full, acc);
+    else if (/\.(ts|tsx|mdx)$/.test(e.name)) acc.push(full);
   }
-  return files;
+  return acc;
 }
 
-/* -------------------------------------------------- */
-/* Extract ALL human-visible text                     */
-/* -------------------------------------------------- */
-function extractVisibleText(source) {
-  return source
-    // remove block comments
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    // remove line comments
-    .replace(/\/\/.*$/gm, "")
-    // remove imports / exports
+/* ---------------------------------- */
+/* Extract visible text only          */
+/* ---------------------------------- */
+function extractVisibleText(src) {
+  return src
+    .replace(/\/\*[\s\S]*?\*\//g, "")   // block comments
+    .replace(/\/\/.*$/gm, "")           // line comments
     .replace(/^import[\s\S]*?;$/gm, "")
     .replace(/^export[\s\S]*?;$/gm, "")
-    // replace JSX tags with newlines
-    .replace(/<[^>]+>/g, "\n")
-    // normalize quotes
+    .replace(/<[^>]+>/g, "\n")          // JSX → text
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
-    // normalize whitespace
-    .replace(/\s+/g, " ")
     .toLowerCase();
 }
 
-/* -------------------------------------------------- */
-/* Extract page title (H1 via metadata)               */
-/* -------------------------------------------------- */
-function extractTitle(source) {
-  let match = source.match(
-    /metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m
-  );
-  if (match) return match[1];
-
-  match = source.match(/title\s*:\s*["'`](.*?)["'`]/);
-  return match ? match[1] : null;
+/* ---------------------------------- */
+/* Extract page title (H1 source)     */
+/* ---------------------------------- */
+function extractTitle(src) {
+  const meta = src.match(/metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m);
+  if (meta) return meta[1];
+  const fallback = src.match(/title\s*:\s*["'`](.*?)["'`]/);
+  return fallback ? fallback[1] : null;
 }
 
-/* -------------------------------------------------- */
-/* Main                                               */
-/* -------------------------------------------------- */
+/* ---------------------------------- */
+/* Build indexes                      */
+/* ---------------------------------- */
 const files = walk(APP_DIR);
-const index = {};
+const wordIndex = {};
 const linesIndex = {};
 
 for (const file of files) {
   const dir = path.dirname(file);
-  const relPath =
-    "/" + path.relative(APP_DIR, dir).replace(/\\/g, "/");
+  const slug = "/" + path.relative(APP_DIR, dir).replace(/\\/g, "/");
 
-  // Only index actual question pages
-  if (!relPath.startsWith("/questions/")) continue;
+  if (!slug.startsWith("/questions/")) continue;
 
   const raw = fs.readFileSync(file, "utf8");
   const title = extractTitle(raw);
-
-  // No title → skip (not a real question page)
   if (!title) continue;
 
   const text = extractVisibleText(raw);
 
   const lines = text
-    .split(/[\n\.]/)
+    .split(/\n+/)
     .map(l => l.trim())
     .filter(l => l.length > 3);
 
-  linesIndex[relPath] = { title, lines };
+  if (!lines.length) continue;
 
-  // Build word → page index
-  const words = text
+  linesIndex[slug] = { title, lines };
+
+  const tokens = text
     .split(/[^a-z0-9]+/)
-    .filter(w => w.length > 2);
+    .filter(w => w.length > 1);
 
-  for (const word of new Set(words)) {
-    if (!index[word]) index[word] = [];
-    if (!index[word].includes(relPath)) index[word].push(relPath);
+  for (const token of new Set(tokens)) {
+    if (!wordIndex[token]) wordIndex[token] = [];
+    if (!wordIndex[token].includes(slug)) wordIndex[token].push(slug);
   }
 }
 
-/* -------------------------------------------------- */
-/* Write outputs                                      */
-/* -------------------------------------------------- */
-fs.mkdirSync(path.dirname(OUTPUT_INDEX), { recursive: true });
-fs.writeFileSync(OUTPUT_INDEX, JSON.stringify(index, null, 2));
-fs.writeFileSync(OUTPUT_LINES, JSON.stringify(linesIndex, null, 2));
+fs.mkdirSync(path.dirname(OUT_INDEX), { recursive: true });
+fs.writeFileSync(OUT_INDEX, JSON.stringify(wordIndex, null, 2));
+fs.writeFileSync(OUT_LINES, JSON.stringify(linesIndex, null, 2));
 
 console.log(
   "Search index generated:",
-  Object.keys(index).length,
-  "terms |",
+  Object.keys(wordIndex).length,
+  "tokens |",
   Object.keys(linesIndex).length,
   "questions"
 );
