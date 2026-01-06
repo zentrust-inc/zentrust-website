@@ -19,39 +19,38 @@ function walk(dir, files = []) {
 }
 
 /* -------------------------------------------------- */
-/* Extract EVERYTHING human-visible                   */
+/* Extract ALL human-visible text                     */
 /* -------------------------------------------------- */
-function extractAllText(source) {
+function extractVisibleText(source) {
   return source
-    // remove comments
+    // remove block comments
     .replace(/\/\*[\s\S]*?\*\//g, "")
+    // remove line comments
     .replace(/\/\/.*$/gm, "")
     // remove imports / exports
     .replace(/^import[\s\S]*?;$/gm, "")
     .replace(/^export[\s\S]*?;$/gm, "")
-    // replace JSX / HTML tags with newlines
+    // replace JSX tags with newlines
     .replace(/<[^>]+>/g, "\n")
     // normalize quotes
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     // normalize whitespace
-    .replace(/\r/g, "")
+    .replace(/\s+/g, " ")
     .toLowerCase();
 }
 
 /* -------------------------------------------------- */
-/* Extract metadata title (required anchor)           */
+/* Extract page title (H1 via metadata)               */
 /* -------------------------------------------------- */
 function extractTitle(source) {
-  let m = source.match(
+  let match = source.match(
     /metadata\s*=\s*{[\s\S]*?title\s*:\s*["'`](.*?)["'`]/m
   );
-  if (m) return m[1];
+  if (match) return match[1];
 
-  m = source.match(/title\s*:\s*["'`](.*?)["'`]/);
-  if (m) return m[1];
-
-  return null;
+  match = source.match(/title\s*:\s*["'`](.*?)["'`]/);
+  return match ? match[1] : null;
 }
 
 /* -------------------------------------------------- */
@@ -66,38 +65,32 @@ for (const file of files) {
   const relPath =
     "/" + path.relative(APP_DIR, dir).replace(/\\/g, "/");
 
-  // only index questions
+  // Only index actual question pages
   if (!relPath.startsWith("/questions/")) continue;
 
   const raw = fs.readFileSync(file, "utf8");
   const title = extractTitle(raw);
 
-  // 🔒 invariant: every result must have a title
+  // No title → skip (not a real question page)
   if (!title) continue;
 
-  const text = extractAllText(raw);
+  const text = extractVisibleText(raw);
 
-  // break into readable lines for /find rendering
   const lines = text
-    .split(/\n+/)
+    .split(/[\n\.]/)
     .map(l => l.trim())
     .filter(l => l.length > 3);
 
-  if (lines.length === 0) continue;
-
-  // store all visible lines
   linesIndex[relPath] = { title, lines };
 
-  // 🔑 INDEX EVERY WORD FROM EVERY STRING
+  // Build word → page index
   const words = text
     .split(/[^a-z0-9]+/)
-    .filter(w => w.length > 1);
+    .filter(w => w.length > 2);
 
   for (const word of new Set(words)) {
     if (!index[word]) index[word] = [];
-    if (!index[word].includes(relPath)) {
-      index[word].push(relPath);
-    }
+    if (!index[word].includes(relPath)) index[word].push(relPath);
   }
 }
 
