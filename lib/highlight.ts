@@ -1,26 +1,32 @@
 import type { ReactNode } from "react";
 
-export function highlightText(
-  text: string,
-  term?: string
-): ReactNode {
-  if (!term) return text;
+export function highlightText(text: string, term?: string): ReactNode {
+  const t = term?.trim();
+  if (!t) return text;
 
-  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const regex = new RegExp(`\\b(${escaped})\\b`, "gi");
+  // escape regex special chars
+  const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // whole-word, case-insensitive
+  const regex = new RegExp(`\\b(${escaped})\\b`, "i");
 
-  const parts = text.split(regex);
+  // Split while preserving matches (no /g to avoid lastIndex issues)
+  const parts = text.split(new RegExp(`\\b(${escaped})\\b`, "i"));
 
-  return parts.map((part, i) =>
-    regex.test(part) ? (
+  // If no match, return original
+  if (parts.length === 1) return text;
+
+  return parts.map((part, idx) => {
+    // Odd indices are captured matches because of the capturing group
+    const isMatch = idx % 2 === 1 && regex.test(part);
+    return isMatch ? (
       <mark
-        key={i}
+        key={idx}
         className="rounded-sm bg-amber-100 px-1 dark:bg-amber-900/40"
       >
         {part}
       </mark>
     ) : (
-      part
-    )
-  );
+      <span key={idx}>{part}</span>
+    );
+  });
 }
