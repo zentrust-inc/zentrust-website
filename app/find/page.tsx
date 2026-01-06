@@ -9,7 +9,7 @@ type Props = {
 
 type PageEntry = {
   title: string;   // H1
-  lines: string[]; // body lines
+  lines: string[];
 };
 
 export default function FindPage({ searchParams }: Props) {
@@ -48,15 +48,14 @@ export default function FindPage({ searchParams }: Props) {
 
         return (
           <section key={slug} className="space-y-4">
-            {/* ✅ ALWAYS show H1 */}
+            {/* ✅ slug already includes /questions */}
             <Link
-              href={`/questions${slug}?highlight=${encodeURIComponent(query)}`}
+              href={`${slug}?highlight=${encodeURIComponent(query)}`}
               className="block text-lg font-semibold leading-snug hover:underline"
             >
               {highlightText(entry.title, query)} →
             </Link>
 
-            {/* Matched body sentences */}
             <div className="space-y-2">
               {matchedLines.map((line, i) => (
                 <p
