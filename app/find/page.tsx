@@ -7,14 +7,28 @@ type Props = {
 };
 
 type PageEntry = {
-  title: string;
+  title: string;   // canonical H1
   lines: string[];
 };
 
+/**
+ * Normalize noise, not meaning.
+ * - lowercase
+ * - collapse whitespace
+ * - remove punctuation / unicode symbols
+ */
+function normalize(input: string) {
+  return input
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .replace(/[^\p{L}\p{N}\s]/gu, "");
+}
+
 export default function FindPage({ searchParams }: Props) {
   const query = searchParams.q?.trim() ?? "";
-  const q = query.toLowerCase();
+  const nq = normalize(query);
 
+  // No query
   if (!query) {
     return (
       <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
@@ -28,11 +42,13 @@ export default function FindPage({ searchParams }: Props) {
   for (const [slug, entry] of Object.entries(
     linesIndex as Record<string, PageEntry>
   )) {
+    const titleMatch = normalize(entry.title).includes(nq);
+
     const matchedLines = entry.lines.filter(line =>
-      line.includes(q)
+      normalize(line).includes(nq)
     );
 
-    if (!matchedLines.length && !entry.title.toLowerCase().includes(q)) {
+    if (!titleMatch && matchedLines.length === 0) {
       continue;
     }
 
@@ -66,6 +82,7 @@ export default function FindPage({ searchParams }: Props) {
     );
   }
 
+  // Honest absence
   if (renderedSections.length === 0) {
     return (
       <main className="mx-auto max-w-3xl px-4 pt-28 pb-10">
