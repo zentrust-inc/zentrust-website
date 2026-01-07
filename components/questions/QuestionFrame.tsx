@@ -9,7 +9,7 @@ type QuestionSection = {
   /** One-sentence visible answer */
   answer: string;
 
-  /** Expandable ELI explanation (70–80 words, enforced elsewhere) */
+  /** Expandable ELI explanation (70–80 words, string only) */
   children: string;
 
   /** Section metaphor (exactly three sentences, string) */
