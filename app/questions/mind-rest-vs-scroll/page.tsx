@@ -17,13 +17,9 @@ export default function MindRestVsScrollPage() {
       category="Mind & Experience"
       question="Why does the mind rest when we do nothing, but feel tired after watching or scrolling for hours?"
       shortAnswer="Because the mind recovers by settling what it already holds, while constant watching keeps introducing unfinished impressions."
-      heroMetaphor={
-        <>
-          <p>Imagine a room where guests keep arriving without ever leaving.</p>
-          <p>Chairs fill, coats pile up, and conversations overlap.</p>
-          <p>The doorway stays busy while the room grows crowded.</p>
-        </>
-      }
+  heroMetaphor={
+  "Imagine a room where guests keep arriving without ever leaving. Chairs fill, coats pile up, and conversations overlap. The doorway stays busy while the room grows crowded."
+}
       sections={[
         {
           title: "Why can doing nothing feel restful instead of empty?",
