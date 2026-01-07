@@ -18,8 +18,7 @@ export default function BPSSHealthPage() {
     <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       {/* ================= HERO (DO NOT TOUCH) ================= */}
       <GlobalHero
-        headline={`Why did things improve,
-but still not feel better?`}
+        headline={`Why does treating the body succeed, yet suffering remain?`}
         dek={
           <>
             <p>Many people assume this means they failed.</p>
