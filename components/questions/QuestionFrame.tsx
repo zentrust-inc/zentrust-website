@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import { RitualPause } from "@/components/hero/RitualPause";
 
 type QuestionSection = {
   /** Sub-question title (must end with ?) */
@@ -52,27 +53,28 @@ export function QuestionFrame({
             {question}
           </h1>
 
-          {/* Short Answer */}
+          {/* Short Answer (Recognition) */}
           <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-300">
             {shortAnswer}
           </p>
 
-          {/* Whisper */}
-          <p className="text-sm text-neutral-500">
-            ▶ Pause here ▷
-          </p>
+          {/* Whisper / Ritual Pause (Suspension) */}
+          <RitualPause enabled />
 
-          {/* Structure Line (LOCKED) */}
+          {/* Hero Metaphor (Orientation) */}
+          <div className="mt-4 italic text-sm text-neutral-600 dark:text-neutral-300">
+            {heroMetaphor}
+          </div>
+
+          {/* Structure Line (Permission) */}
           <p className="text-sm italic text-neutral-500">
             Detailed answer below. Nothing here requires agreement.
           </p>
-
-          {/* Hero Metaphor */}
-          <div className="mt-6 italic text-sm text-neutral-600 dark:text-neutral-300">
-            {heroMetaphor}
-          </div>
         </div>
       </section>
+
+      {/* Anchor for post-ritual continuation */}
+      <div id="content" />
 
       {/* ================= EXPANDABLE SECTIONS ================= */}
       <section className="mx-auto max-w-3xl px-6 pb-24">
