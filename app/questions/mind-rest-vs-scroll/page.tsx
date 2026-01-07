@@ -51,28 +51,7 @@ export default function MindRestVsScrollPage() {
       id="content"
       className="min-h-screen bg-white px-4 py-12 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50"
     >
-      <GlobalHero
-        headline={`Why does the mind rest when we do nothing,
-but feel tired after watching or scrolling for hours?`}
-        dek={
-          <>
-            <p>
-              Because the mind recovers by settling what it already holds, while
-              constant watching keeps introducing unfinished impressions.
-            </p>
-            <p className="mt-4">▶ Pause here ▷</p>
-            <p className="mt-2">
-              A fuller explanation appears below, one layer at a time.
-            </p>
-          </>
-        }
-      >
-        <div className="mt-6 rounded-xl bg-neutral-50 p-4 text-sm italic dark:bg-neutral-900">
-          <p>Imagine a room where guests keep arriving without ever leaving.</p>
-          <p>Chairs fill, coats pile up, and conversations overlap.</p>
-          <p>The doorway stays busy while the room grows crowded.</p>
-        </div>
-      </GlobalHero>
+   
 
       <section className="mx-auto mt-12 max-w-3xl space-y-6">
         <Section
@@ -83,6 +62,30 @@ but feel tired after watching or scrolling for hours?`}
 The air grows still.
 The ground slowly evens out.`}
         />
+<GlobalHero
+  headline={`Why does the mind rest when we do nothing,
+but feel tired after watching or scrolling for hours?`}
+  dek={
+    <>
+      <p>
+        Because the mind recovers by settling what it already holds, while
+        constant watching keeps introducing unfinished impressions.
+      </p>
+
+      <p className="mt-4">▶ Pause here ▷</p>
+
+      <p className="mt-2">
+        A fuller explanation appears below, one layer at a time.
+      </p>
+
+      <div className="mt-6 rounded-xl bg-neutral-50 p-4 text-sm italic dark:bg-neutral-900">
+        <p>Imagine a room where guests keep arriving without ever leaving.</p>
+        <p>Chairs fill, coats pile up, and conversations overlap.</p>
+        <p>The doorway stays busy while the room grows crowded.</p>
+      </div>
+    </>
+  }
+/>
 
         <Section
           title="Why does the idea that rest means activity seem convincing but fall short?"
