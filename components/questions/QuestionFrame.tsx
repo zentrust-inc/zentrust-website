@@ -15,7 +15,7 @@ type QuestionSection = {
 };
 
 type QuestionFrameProps = {
-  /** Category label (rendered quietly) */
+  /** Category (used for metadata, not rendered in Hero) */
   category: string;
 
   /** Full-sentence Question headline */
@@ -32,7 +32,6 @@ type QuestionFrameProps = {
 };
 
 export function QuestionFrame({
-  category,
   question,
   shortAnswer,
   heroMetaphor,
@@ -42,10 +41,10 @@ export function QuestionFrame({
     <main className="bg-[#faf7f2] text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       {/* ================= FULL-SCREEN HERO ================= */}
       <section className="flex h-[100svh] min-h-[100svh] items-center justify-center">
-        <div className="mx-auto max-w-3xl px-6 text-center space-y-5">
-          {/* Category */}
+        <div className="mx-auto max-w-3xl px-6 text-center space-y-6">
+          {/* Trust Kicker (GlobalHero-aligned) */}
           <p className="text-xs uppercase tracking-widest text-neutral-500">
-            {category}
+            ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487
           </p>
 
           {/* Question */}
@@ -62,9 +61,9 @@ export function QuestionFrame({
           <RitualPause enabled />
 
           {/* Hero Metaphor (Orientation) */}
-          <div className="mt-4 italic text-sm text-neutral-600 dark:text-neutral-300">
+          <p className="mt-4 text-sm font-semibold italic text-neutral-700 dark:text-neutral-300">
             {heroMetaphor}
-          </div>
+          </p>
 
           {/* Structure Line (Permission) */}
           <p className="text-sm italic text-neutral-500">
@@ -77,7 +76,7 @@ export function QuestionFrame({
       <div id="content" />
 
       {/* ================= EXPANDABLE SECTIONS ================= */}
-      <section className="mx-auto max-w-3xl px-6 pb-24">
+      <section className="mx-auto max-w-3xl px-6 pb-20">
         {sections.map((section, i) => (
           <details
             key={i}
@@ -104,6 +103,11 @@ export function QuestionFrame({
           </details>
         ))}
       </section>
+
+      {/* ================= FOOTER TRUST MARKER ================= */}
+      <footer className="mx-auto max-w-3xl px-6 pb-12 text-center text-sm text-neutral-500">
+        ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
+      </footer>
     </main>
   );
 }
