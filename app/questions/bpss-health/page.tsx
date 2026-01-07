@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export const metadata: Metadata = {
-  title: "Why did things improve, but still not feel better?",
+  title: "Why does treating the body succeed, yet suffering remain?",
   description:
     "A whole-system explanation for why symptoms improve without healing — and why a Biopsychosocial-Spiritual approach is necessary.",
   other: {
