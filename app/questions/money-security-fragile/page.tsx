@@ -5,123 +5,98 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why can saving money for security make life feel more fragile, not safer?",
   description:
-    "A question-led exploration of how savings can become a source of fear when they are treated as untouchable safety rather than a living tool.",
+    "A question-led exploration of how saving can turn into fear when money becomes untouchable safety instead of a living tool.",
   other: {
     category: "Schools & Systems",
-    subcategory: "money-security-paradox", // internal only
   },
-};
-
-const question = {
-  question: "Why can saving money for security make life feel more fragile, not safer?",
-  category: "Schools & Systems",
-  subcategory: "money-security-paradox",
-  hero: {
-    shortAnswer:
-      "Because security built only by holding money still often turns money into something fragile itself, and fear grows around whatever is not allowed to move.",
-    whisper: "▶ Pause here ▷",
-    structureLine: "Detailed answer below. Nothing here requires agreement.",
-    metaphor:
-      "Imagine keeping a glass cup wrapped tightly in your hands because you are afraid it might fall. Your grip gets tighter, your arms get tired, and your hands begin to shake. The harder you try to protect it, the more likely it is to slip.",
-  },
-  sections: [
-    {
-      role: 1,
-      title: "Why does saving for security feel like the responsible thing to do?",
-      oneSentenceAnswer:
-        "Because saving is socially taught as proof of discipline, foresight, and moral control.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "Saving is often praised as a sign of maturity and wisdom, especially in uncertain environments. When resources feel scarce, holding onto money appears to promise protection against future harm. This belief becomes stronger when people around you repeat it or when hardship has already happened before. Over time, saving stops being just a financial act and becomes part of personal identity. Letting money sit untouched feels like doing the right thing, even when daily life quietly tightens.",
-      metaphor:
-        "Imagine storing emergency food in a cupboard and refusing to open it even when you are hungry. The shelves look reassuring, but your body grows weaker each day. The food remains safe while you do not.",
-    },
-    {
-      role: 2,
-      title: "Why does that sense of safety start to feel unstable over time?",
-      oneSentenceAnswer:
-        "Because the future keeps demanding payment while the savings are not allowed to respond.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "Life does not pause just because money is being protected. Rent changes, health issues appear, tools wear out, and needs arrive without warning. When savings are treated as untouchable, every unexpected expense feels like a threat rather than part of living. The mind starts watching the numbers closely, measuring safety by how long they can survive untouched. This creates tension because reality keeps testing something that was meant to stay still.",
-      metaphor:
-        "Imagine trying to hold back a river with a thin wooden door. Each wave makes the door creak louder. The water has not changed, but your fear grows with every push.",
-    },
-    {
-      role: 3,
-      title: "What quietly shifts when money becomes a symbol of safety?",
-      oneSentenceAnswer:
-        "Money stops being a tool and becomes something that carries emotional weight.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "Once money represents safety, touching it feels risky. Spending starts to feel like failure, even when it solves real problems. Decisions are no longer about usefulness but about preserving a feeling. This shift is subtle and often unnoticed. The person does not feel greedy, only cautious. Yet the money now controls emotional states, tightening fear whenever it moves and offering only brief relief when it stays still.",
-      metaphor:
-        "Imagine placing a fragile ornament in the center of your living room. Everyone begins walking carefully around it. The room still exists, but movement becomes tense and limited.",
-    },
-    {
-      role: 4,
-      title: "How does fear grow even as savings increase?",
-      oneSentenceAnswer:
-        "Fear grows because the stakes rise with every amount added.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "Each saved amount increases what could be lost. Instead of creating peace, the numbers raise the pressure to protect them perfectly. The mind starts calculating worst case scenarios, replaying moments when money disappeared suddenly. Rest becomes difficult because safety depends on conditions staying unchanged. The person works more, rests less, and worries silently. What was meant to reduce fear becomes something that multiplies it.",
-      metaphor:
-        "Imagine stacking stones higher and higher on a narrow table. Each stone adds value, but also increases the danger of collapse. You start watching the stack instead of living in the room.",
-    },
-    {
-      role: 5,
-      title: "Why do emergencies break the illusion so quickly?",
-      oneSentenceAnswer:
-        "Because emergencies reveal that static protection cannot meet moving life.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "When an urgent need arrives, savings are forced to move all at once. The careful separation between safety and life collapses. Money leaves suddenly, and the emotional shock feels larger than the expense itself. Instead of relief, there is often panic. The person realizes how thin the protection was and how fast it vanished. This moment exposes that safety was never about the amount, but about flexibility and response.",
-      metaphor:
-        "Imagine saving candles for a blackout but never lighting them. When darkness finally comes, you light all of them at once. The room brightens briefly, then goes dark again.",
-    },
-    {
-      role: 6,
-      title: "Why does using money imperfectly sometimes feel more stabilizing?",
-      oneSentenceAnswer:
-        "Because movement creates feedback, while stillness creates silence.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "When money is used to support daily function, even in small ways, it starts interacting with life. It fixes problems, reduces strain, and sometimes returns in new forms. Mistakes may happen, but learning follows. The person sees cause and effect instead of only loss. Over time, confidence replaces rigidity. Safety begins to come from participation rather than preservation.",
-      metaphor:
-        "Imagine pedaling a bicycle slowly on uneven ground. You wobble, adjust, and learn balance. Standing still would feel safer, but it would never take you anywhere.",
-    },
-    {
-      role: 7,
-      title: "Why does ZenTrust notice this pattern appearing so often?",
-      oneSentenceAnswer:
-        "Because systems that reward control often punish adaptability.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "ZenTrust observes that many systems teach people to equate safety with accumulation and restraint. These systems rarely account for lived instability or human limits. When reality does not match the model, individuals blame themselves rather than the assumption. The pattern repeats across cultures and income levels. Understanding emerges when the assumption itself becomes visible, not when behavior is judged.",
-      metaphor:
-        "Imagine being taught to cross a river only by memorizing maps. When the river floods, the maps remain correct, but your feet are still wet.",
-    },
-    {
-      role: 8,
-      title: "What is left for the reader to notice now?",
-      oneSentenceAnswer:
-        "The question is not how much safety you have saved, but how safety behaves when life moves.",
-      expandAffordance: "Expand for the fuller picture",
-      eli15:
-        "This question does not ask for different choices or better discipline. It invites noticing what feels heavy, fragile, or tense around money. Some people may see secrecy. Others may notice fear, exhaustion, or constant calculation. The recognition itself changes the relationship. Nothing needs to be fixed immediately. Seeing clearly is enough for the moment.",
-      metaphor:
-        "Imagine sitting in a quiet room and hearing a clock you forgot was ticking. The sound was always there. You just had not noticed how loud it had become.",
-    },
-  ],
-  ending: [
-    "Security that cannot move often becomes another source of fear.",
-    "Stability grows when resources are allowed to interact with life.",
-    "Clarity begins when protection stops pretending to be still.",
-  ],
-  trustMarker: "ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)",
 };
 
 export default function MoneySecurityFragilePage() {
-  return <QuestionFrame question={question} />;
+  return (
+    <QuestionFrame
+      category="Schools & Systems"
+      question="Why can saving money for security make life feel more fragile, not safer?"
+      shortAnswer="Because holding money still can make it feel like the only shield, and any expense starts to feel like collapse rather than life."
+      heroMetaphor="Imagine gripping a glass cup tightly because you fear dropping it. Your arms tire, your hands begin to shake, and the cup feels even more at risk. The harder you try to protect it, the more fragile it starts to feel."
+      sections={[
+        {
+          title: "Why does saving for security feel like the responsible thing to do?",
+          answer:
+            "Because saving is praised as discipline and foresight, especially when life feels unstable.",
+          children:
+            "Saving is often treated as proof you are serious, careful, and prepared. When the environment feels uncertain, holding money back can feel like the only way to protect your family from sudden shocks. The habit becomes more than financial. It becomes moral. Spending on small comforts starts to feel wrong, even when those comforts make daily life bearable. The money in reserve begins to represent a future that must not be threatened.",
+          metaphor:
+            "Imagine stacking blankets for winter and refusing to use one on a cold night. The pile looks reassuring in the corner. Your body still shivers under a thin sheet.",
+        },
+        {
+          title: "Why does that sense of safety start to feel unstable over time?",
+          answer:
+            "Because the future keeps demanding payment while the savings are treated as untouchable.",
+          children:
+            "Life does not pause while you save. Costs change. Needs appear. Tools wear out. Illness arrives without asking permission. When savings are treated like a sacred object, each new expense feels like an attack on safety itself. You start watching the amount closely, measuring peace by how long the money can remain untouched. The mind becomes tense, not because you are careless, but because reality keeps pressing on something you hoped could stay still.",
+          metaphor:
+            "Imagine trying to hold back rainwater with a single wooden board. The board flexes with every push. The water keeps coming, and your worry grows louder.",
+        },
+        {
+          title: "What quietly shifts when money becomes a symbol of safety?",
+          answer:
+            "Money stops being a tool and becomes something emotionally loaded and easy to fear.",
+          children:
+            "Once money stands for safety, spending starts to feel like danger. Even necessary purchases can feel like failure. You do not only ask, do we need this, you also ask, will this ruin us. The money is no longer neutral. It carries weight. It becomes a secret source of tension, because touching it feels like weakening protection. You begin to protect the number more than the life the number was meant to support.",
+          metaphor:
+            "Imagine placing a fragile ornament in the middle of the floor. Everyone walks around it carefully. The room still exists, but movement becomes nervous.",
+        },
+        {
+          title: "How does fear grow even as savings increase?",
+          answer:
+            "Fear grows because every added amount increases what could be lost.",
+          children:
+            "As the amount grows, the stakes feel higher. You imagine losing it, spending it, or having it taken by an emergency. The money becomes a target in your mind. Rest becomes difficult because safety depends on nothing going wrong. You work more, sleep less, and become more protective. The savings might increase, but the feeling of security does not. Instead, you become more alert to every possible threat that could force the money to move.",
+          metaphor:
+            "Imagine building a tall stack of plates on a small table. Each plate adds value to the stack. Each plate also increases the risk of collapse.",
+        },
+        {
+          title: "Why do emergencies break the feeling of safety so quickly?",
+          answer:
+            "Because emergencies force money to move suddenly, exposing how thin stillness-based safety is.",
+          children:
+            "When a real need arrives, savings are pulled out fast. The careful plan collapses into a moment of necessity. The money leaves, and instead of relief you may feel panic, because the amount was carrying more than purchasing power. It was carrying hope. The event reveals that safety was never only about the amount saved. It was about whether your life had flexibility, support, and a way to recover after the spending happened.",
+          metaphor:
+            "Imagine saving candles for a blackout and never lighting them. When darkness finally comes, you burn several at once. The light is real, and the candles still vanish quickly.",
+        },
+        {
+          title: "Why can using money imperfectly sometimes feel more stabilizing?",
+          answer:
+            "Because action creates feedback and learning, while hiding creates silence.",
+          children:
+            "When money is used to reduce strain in daily life, it interacts with reality. It solves problems. It prevents small breakdowns from becoming large ones. Sometimes it even returns, directly or indirectly, through regained energy, saved time, or small new income. Mistakes can happen, but learning follows. You start to see what works instead of only fearing loss. Stability begins to feel connected to participation, not just preservation.",
+          metaphor:
+            "Imagine pedaling a bicycle slowly on uneven ground. You wobble and adjust. You stay upright through movement, not through freezing.",
+        },
+        {
+          title: "Why does ZenTrust notice this pattern appearing so often?",
+          answer:
+            "Because many systems reward control and shame movement, even when life requires adaptation.",
+          children:
+            "ZenTrust notices how easily people are taught to equate safety with accumulation and restraint. When reality does not match that story, individuals blame themselves instead of questioning the assumption. In unstable conditions, control feels like virtue, and movement feels like risk. This makes fear stick to money. The point is not to judge saving. The point is to notice when saving becomes a form of hiding, and when hiding quietly increases strain.",
+          metaphor:
+            "Imagine being taught to cross a river only by reading maps. When the river floods, the map stays correct. Your feet still get wet.",
+        },
+        {
+          title: "What is left for the reader to notice now?",
+          answer:
+            "That the deeper issue may be what money is being asked to represent in your life.",
+          children:
+            "This question does not demand different choices. It invites you to notice what becomes tense around money, what becomes secret, and what becomes fragile. Some people notice fear of spending. Some notice exhaustion from constant calculation. Some notice the way safety gets reduced to a number. The noticing itself can loosen something. Nothing needs to be solved immediately. A quieter relationship begins when the hidden assumption becomes visible.",
+          metaphor:
+            "Imagine hearing a clock ticking in a quiet room for the first time. The sound was always there. You just stopped ignoring it.",
+        },
+      ]}
+      ending={[
+        "Security that cannot move can become another source of fear.",
+        "Stability often grows through careful use, not perfect holding.",
+        "Sometimes safety begins when the assumption changes, not the amount.",
+      ]}
+    />
+  );
 }
