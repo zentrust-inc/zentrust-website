@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why can saving money for security make life feel more fragile, not safer?",
+  title: "Why can saving money make life feel fragile?",
   description:
     "A question-led exploration of how saving for safety can quietly increase fear instead of reducing it.",
   other: {
