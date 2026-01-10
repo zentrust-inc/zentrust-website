@@ -15,7 +15,7 @@ export default function MindRestVsScrollPage() {
   return (
     <QuestionFrame
       category="Mind & Experience"
-      question="Why does the mind rest when we do nothing, but feel tired after watching or scrolling for hours?"
+      question="Why does the mind rest doing nothing but tire scrolling?"
       shortAnswer="Because the mind recovers by settling what it already holds, while constant watching keeps introducing unfinished impressions."
       heroMetaphor="Imagine a room where guests keep arriving without ever leaving. Chairs fill, coats pile up, and conversations overlap. The doorway stays busy while the room grows crowded."
       sections={[
