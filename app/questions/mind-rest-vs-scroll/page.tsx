@@ -3,7 +3,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title:
-    "Why does the mind rest when we do nothing, but feel tired after watching or scrolling for hours?",
+    "Why does the mind rest doing nothing but tire scrolling?",
   description:
     "A question-led exploration of why mental rest comes from stillness while passive consumption leads to fatigue.",
   other: {
