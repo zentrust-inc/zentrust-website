@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does treating the body succeed, yet suffering remain?",
+  title: "Why does treating the body help, yet suffering remain?",
   description:
     "A question-led exploration of why symptoms can improve while deeper suffering continues.",
   other: {
@@ -14,7 +14,7 @@ export default function BPSSHealthPage() {
   return (
     <QuestionFrame
       category="Health & Suffering"
-      question="Why does treating the body succeed, yet suffering remain?"
+      question="Why does treating the body help, yet suffering remain?"
       shortAnswer="Because relieving symptoms does not automatically change the conditions that keep the whole system under strain."
       heroMetaphor="Imagine living in a house with a slow leak in the roof. You mop the floor and place buckets until the room looks fine again. Each time it rains, you still listen for the drip."
       sections={[
