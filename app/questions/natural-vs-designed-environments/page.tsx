@@ -16,7 +16,7 @@ export default function NaturalVsDesignedEnvironmentsPage() {
   return (
     <QuestionFrame
       category="Nature & Land"
-      question="Why do human-designed environments struggle to sustain life the way natural ones do?"
+      question="Why do human-designed environments struggle to sustain life?"
       shortAnswer="Because natural environments evolve through long, interconnected relationships, while human-designed environments are usually built for specific functions, often overlooking the wider systems that keep life balanced."
       heroMetaphor="Imagine a forest growing on its own over hundreds of years. Every plant, animal, and stream adjusts to the others without a blueprint. Now imagine a place built quickly with clear boundaries and rules."
       sections={[
