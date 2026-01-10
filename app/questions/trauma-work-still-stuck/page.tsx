@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does working endlessly on “trauma” sometimes leave people feeling just as stuck as before?",
+  title: "Why does trauma work sometimes leave people stuck?",
   description:
     "A question-led exploration of how sincere healing effort can remain inside repeating patterns, even while insight grows.",
   other: {
@@ -16,7 +16,7 @@ export default function TraumaWorkStillStuckPage() {
   return (
     <QuestionFrame
       category="Meaning & Seeking"
-      question="Why does working endlessly on “trauma” sometimes leave people feeling just as stuck as before?"
+      question="Why does trauma work sometimes leave people stuck?"
       shortAnswer="Because the effort can stay focused on managing patterns without ever questioning what those patterns actually are."
       heroMetaphor="Imagine trying to fix a flickering light by changing the bulb again and again. Each replacement feels productive. The wiring behind the wall is never checked."
       sections={[
