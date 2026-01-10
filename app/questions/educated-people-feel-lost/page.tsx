@@ -4,7 +4,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title:
-    "Why do so many educated people feel lost, even after doing everything they were taught to succeed?",
+    "Why do educated people feel lost after success?",
   description:
     "A question-led exploration of how schooling can create outward competence while leaving inner orientation undeveloped.",
   other: {
