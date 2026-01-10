@@ -4,7 +4,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title:
-    "Why does planning for the future feel harder just as technology becomes more powerful?",
+    "Why does future planning feel harder with technology?",
   description:
     "A question-led exploration of how rapid technological acceleration disrupts long-held assumptions about work, security, and orientation.",
   other: {
