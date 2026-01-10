@@ -114,10 +114,17 @@ for (const file of files) {
   if (!unique.length) continue;
 
   // store lowercased lines for consistent search
-  linesIndex[slug] = {
-    title,
-    lines: unique.map(s => s.toLowerCase()),
-  };
+const titleLine = title.toLowerCase();
+
+linesIndex[slug] = {
+  title,
+  lines: Array.from(
+    new Set([
+      titleLine,
+      ...unique.map(s => s.toLowerCase()),
+    ])
+  ),
+};
 }
 
 fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
