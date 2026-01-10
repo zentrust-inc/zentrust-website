@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export const metadata: Metadata = {
-  title: "Why does adapting to society often feel like losing something essential?",
+  title: "Why does adapting to society feel like loss??",
   description:
     "An ELI15 explanation of why fitting in can quietly create a sense of loss, even when life appears successful.",
   other: {
@@ -19,7 +19,7 @@ export default function AdaptingLossQuestionPage() {
       {/* ================= HERO ================= */}
       <GlobalHero
         mode="answer"
-        headline="Why does adapting to society often feel like losing something essential?"
+        headline="Why does adapting to society feel like loss?"
         dek={
           <>
             <p>
