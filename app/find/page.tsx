@@ -6,9 +6,14 @@ type Props = {
   searchParams: { q?: string };
 };
 
+type LineEntry = {
+  raw: string;
+  norm: string;
+};
+
 type PageEntry = {
   title: string;
-  lines: string[];
+  lines: LineEntry[];
 };
 
 /**
@@ -45,7 +50,7 @@ export default function FindPage({ searchParams }: Props) {
     const titleMatch = normalize(entry.title).includes(nq);
 
     const matchedLines = entry.lines.filter((line) =>
-      normalize(line).includes(nq),
+      line.norm.includes(nq),
     );
 
     if (!titleMatch && matchedLines.length === 0) continue;
@@ -68,7 +73,7 @@ export default function FindPage({ searchParams }: Props) {
               key={i}
               className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
             >
-              {highlightText(line, query)}
+              {highlightText(line.raw, query)}
             </p>
           ))}
         </div>
