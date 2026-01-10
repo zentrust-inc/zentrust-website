@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why do human-designed environments struggle to sustain life the way natural ones do?",
+  title: "Why do human-designed environments struggle to sustain life?",
   description:
     "A question-led exploration of how natural environments self-regulate over time, while human-designed environments often require constant control and maintenance.",
   other: {
