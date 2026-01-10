@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export const metadata: Metadata = {
-  title: "Why do the people who understand society best often choose to leave it?",
+  title: "Why do people who understand society choose to leave it?",
   description:
     "A system-level explanation for why deep understanding can make participation feel optional rather than inevitable.",
   other: {
