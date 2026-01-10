@@ -49,9 +49,19 @@ export default function FindPage({ searchParams }: Props) {
   )) {
     const titleMatch = normalize(entry.title).includes(nq);
 
-    const matchedLines = entry.lines.filter((line) =>
+    const matchedLines: LineEntry[] = entry.lines.filter((line) =>
       line.norm.includes(nq),
     );
+
+    // 🔑 IMPORTANT FIX:
+    // If the title matches but no body lines do,
+    // surface the title itself as a matched line.
+    if (titleMatch && matchedLines.length === 0) {
+      matchedLines.push({
+        raw: entry.title,
+        norm: normalize(entry.title),
+      });
+    }
 
     if (!titleMatch && matchedLines.length === 0) continue;
 
