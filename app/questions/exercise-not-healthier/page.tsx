@@ -4,7 +4,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does regular exercise still not make us healthier?",
   description:
-    "A question about why modern exercise often fails to reduce disease and suffering.",
+    "A question about why modern exercise can fail to reduce disease and suffering.",
   other: {
     category: "Health & Suffering",
     subcategory: "exercise-stress-mismatch",
@@ -16,86 +16,86 @@ export default function ExerciseNotHealthierPage() {
     <QuestionFrame
       category="Health & Suffering"
       question="Why does regular exercise still not make us healthier?"
-      shortAnswer="Because movement is being used to manage chronic stress it was never designed to resolve."
-      heroMetaphor="Imagine revving an engine every day to keep it from stalling. The noise feels productive, but the underlying problem never clears. Over time, the wear quietly increases."
+      shortAnswer="Because exercise is often asked to solve chronic stress that never ends."
+      heroMetaphor="Imagine revving a car in park every day. The engine gets louder, but the car goes nowhere. After a while, the smell of heat becomes familiar."
       sections={[
         {
-          title: "Why does the promise of exercise feel confusing?",
+          title: "Why does this feel confusing in real life?",
           answer:
-            "Because effort increases while illness often does not decrease.",
+            "Because people can work hard at exercise and still feel unwell.",
           metaphor:
-            "Imagine paying more each month for repairs while the machine keeps breaking.",
+            "Imagine watering a plant on schedule. The leaves still droop by afternoon. You keep checking the soil anyway.",
           children:
-            "Exercise is widely promoted as a solution to modern illness. Many people follow the guidance carefully, yet fatigue, metabolic problems, pain, and stress-related disease persist. The confusion comes from doing what is recommended and still feeling unwell. When effort rises without relief, the explanation needs to look beyond motivation or consistency.",
+            "Many people follow exercise routines faithfully. They track steps, join gyms, and stay consistent for months. Yet fatigue, pain, poor sleep, or metabolic problems stay. The confusion comes from doing what is praised while suffering continues. When the effort is real but relief is not, the promise needs a deeper explanation than motivation or discipline.",
         },
         {
-          title: "What kind of movement did the body evolve for?",
+          title: "Why does the obvious explanation fall short?",
           answer:
-            "Short bursts of intense action followed by full recovery.",
+            "Because exercise is treated as a universal solution, not a context-dependent tool.",
           metaphor:
-            "Imagine sprinting to escape danger, then sitting down once safety is reached.",
+            "Imagine using the same key for every lock. Sometimes it turns a little. Most doors stay closed.",
           children:
-            "Human stress physiology evolved for brief, high-intensity events. Fight or flight mobilized energy quickly, then shut off once the threat ended. These cycles typically lasted minutes, not hours. After action, the body expected rest, repair, and return to baseline. That rhythm shaped how hormones, muscles, and metabolism developed.",
+            "The standard story says more exercise should reliably produce better health. That story ignores timing, stress state, and recovery. It assumes the body is starting from neutral and simply needs activity. For many people, the body is already running hot from ongoing pressure. In that situation, adding more demand can look like progress while quietly increasing strain.",
         },
         {
-          title: "What changed in modern stress?",
+          title: "What is actually doing the work under stress?",
           answer:
-            "The stress no longer ends.",
+            "The fight-flight system mobilizes fuel for short, intense action, not long effort.",
           metaphor:
-            "Imagine an alarm that never stops ringing.",
+            "Imagine a smoke alarm built to blare for a brief emergency. Now imagine it chirping all day. You stop noticing the sound, but your shoulders never drop.",
           children:
-            "Modern stress is psychological, social, and continuous. Deadlines, surveillance, financial pressure, and social evaluation do not resolve through movement. The body stays in a low-grade fight–flight state for days or years. There is no clear moment when the system is allowed to stand down.",
+            "Fight-flight evolved for short threats and fast bursts of action. The body releases glucose, raises heart rate, and sharpens attention. That mode is meant to peak and then shut off. In most natural conditions, this cycle lasted minutes, often under about thirty minutes, followed by recovery. When people live in prolonged stress, the same system stays partially on, even before exercise begins.",
         },
         {
-          title: "Why doesn’t longer exercise fix this?",
+          title: "How does this play out over time?",
           answer:
-            "Because it adds load without completing the stress cycle.",
+            "Long sessions can extend activation without delivering the recovery the system expects.",
           metaphor:
-            "Imagine running harder on a treadmill while the exit stays locked.",
+            "Imagine running a washing machine on a long cycle without ever letting it finish. The water keeps sloshing. The lid never unlocks.",
           children:
-            "Long-duration exercise extends energy expenditure but does not resolve the original stress signal. The body remains activated before, during, and after the workout. Instead of completing a stress response, exercise becomes another demand layered on top of existing strain. Cortisol stays elevated. Recovery is partial. The system never fully resets.",
+            "When stress is already present, long-duration exercise can keep cortisol and adrenaline elevated. The body may complete the workout, but the nervous system does not fully stand down afterward. Short, high-intensity bursts can match what fight-flight evolved to discharge, often within minutes rather than hours. Long sessions can feel virtuous while leaving the body in an unfinished state. Over time, that unfinished state becomes the baseline.",
         },
         {
-          title: "Why do metabolic problems still appear?",
+          title: "What does this look like inside the body?",
           answer:
-            "Because the body is managing excess activation, not inactivity.",
+            "Fuel can be released faster than it is cleared, and the system adapts by protecting itself.",
           metaphor:
-            "Imagine keeping the lights on day and night to avoid darkness.",
+            "Imagine boxes arriving at your door every day. You do not have time to unpack them. Soon you start stacking them in the hallway.",
           children:
-            "Chronic stress releases glucose even without eating. Exercise does not always burn this off, especially when activation remains high. Insulin works harder to contain circulating fuel. Over time, tissues protect themselves by responding less. This pattern reflects constant readiness, not laziness or lack of effort.",
+            "Chronic stress tells the liver to release glucose even without eating. If movement does not fully discharge the signal, glucose and insulin remain elevated more often. Cells respond by becoming less responsive to insulin as a form of protection. This can look like insulin resistance even in people who exercise regularly. The body is not refusing effort. It is managing overflow from repeated activation.",
         },
         {
-          title: "Why does exercise sometimes worsen fatigue or pain?",
+          title: "Why does the pattern persist even with good intentions?",
           answer:
-            "Because the body is already operating near its limit.",
+            "Because the dominant narrative rewards visible effort and ignores invisible recovery.",
           metaphor:
-            "Imagine tightening a bolt that is already stripped.",
+            "Imagine being praised for staying late while no one counts the hours you lost sleeping. You look reliable from the outside. You feel thinner from the inside.",
           children:
-            "When recovery is incomplete, adding more demand increases wear instead of resilience. Muscles, joints, and the nervous system adapt by enduring. Pain and exhaustion appear not because movement is wrong, but because the context in which it occurs is already overloaded.",
+            "Modern systems can reward intensity, consistency, and endurance. Recovery is quiet, private, and hard to measure. People learn to add effort when they feel worse, because that is the recognized currency. The body can endure for a while, so the mismatch stays hidden. When symptoms eventually appear, they are treated as personal failure rather than a predictable consequence of prolonged activation.",
         },
         {
           title: "What question does ZenTrust ask here?",
           answer:
-            "What is exercise being asked to compensate for?",
+            "What problem is exercise being asked to cover up?",
           metaphor:
-            "Imagine using a fan to cool a room with a fire still burning.",
+            "Imagine using air freshener in a room where smoke keeps seeping in. The scent changes for a moment. The source stays active.",
           children:
-            "This question shifts attention away from exercise itself and toward what it is covering. When movement is tasked with fixing chronic stress, social pressure, and unresolved threat, it cannot succeed. Seeing this removes blame without demanding immediate change.",
+            "This question does not attack exercise. It asks what role exercise has been assigned in a life that never fully powers down. When exercise is expected to fix chronic threat, social pressure, and constant evaluation, it cannot succeed. Seeing that removes blame without demanding an immediate solution. It makes the assignment visible.",
         },
         {
-          title: "What becomes possible once this mismatch is seen?",
+          title: "Return to the reader: what becomes possible once this is seen?",
           answer:
-            "Movement and recovery can separate again.",
+            "The body can stop being treated as the problem that must be pushed harder.",
           metaphor:
-            "Imagine turning the engine off instead of revving it.",
+            "Imagine setting a heavy bag down without announcing it. Your hand keeps the imprint for a while. The floor does not argue.",
           children:
-            "When exercise is no longer expected to solve chronic stress, it loses its burden. Short, intense movement can complete stress cycles. Rest can actually restore. Health improves not through more effort, but through alignment with how the body was designed to recover.",
+            "Once the mismatch is recognized, effort stops automatically escalating. The body no longer has to prove itself through constant strain. Short bursts can be understood differently from long endurance, especially in a stressed system. Recovery can become real again, not symbolic. Health becomes less about performing effort and more about ending unfinished cycles.",
         },
       ]}
       ending={[
-        "More effort does not always mean more health.",
-        "The body suffers when roles are misassigned.",
-        "Seeing the mismatch reduces unnecessary strain.",
+        "A tool can be burdened with the wrong job.",
+        "More effort can hide a deeper mismatch.",
+        "Seeing the mismatch reduces needless strain.",
       ]}
     />
   );
