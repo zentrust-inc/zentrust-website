@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does stress make us eat instead of act?",
   description:
-    "An exploration of how modern stress blocks action and turns food into the last permitted release.",
+    "An exploration of how chronic pressure prepares the body for action while blocking action from ever completing.",
   other: {
     category: "Health & Suffering",
     subcategory: "chronic-stress-metabolism",
@@ -18,86 +18,86 @@ export default function StressEatingFawnPage() {
     <QuestionFrame
       category="Health & Suffering"
       question="Why does stress make us eat instead of act?"
-      shortAnswer="Because modern stress prepares the body for action while quietly preventing action from ever occurring."
-      heroMetaphor="Imagine sitting in a car with the engine revving, foot on the brake, fuel burning, and nowhere to go. The dashboard keeps flashing warnings, but the road ahead never opens. You stay seated, alert, and ready, waiting for a signal that never comes."
+      shortAnswer="Because modern stress demands readiness while quietly forbidding release."
+      heroMetaphor="Imagine sitting in a car with the engine revving and the brake pressed down. The fuel keeps burning, the warning lights stay on, and the road ahead never opens. You remain alert and still, waiting for permission that never comes."
       sections={[
         {
-          title: "Why does the usual explanation feel incomplete?",
+          title: "Why does the common explanation feel thin?",
           answer:
-            "Because willpower and food choices explain behavior, not the pressure driving it.",
+            "Because it blames behavior while ignoring the conditions producing it.",
           metaphor:
-            "Imagine blaming a warning light for a deeper mechanical problem. You cover the light with tape so it stops blinking. The engine keeps overheating anyway.",
+            "Imagine being told the problem is your driving while the road remains blocked. You adjust your grip on the wheel again and again. The barrier never moves.",
           children:
-            "Many people are told their eating reflects poor discipline. Yet the effort to control food often increases strain instead of relieving it. The explanation feels thin because it looks only at behavior, not at the conditions producing it. When pressure continues and relief is scarce, the body searches for any outlet it can access. Food is not the cause. It is the visible endpoint of a longer, hidden process.",
+            "People are often told stress eating reflects poor discipline or emotional weakness. That explanation focuses on the visible act while leaving the pressure untouched. When control is emphasized without relief, effort increases but strain does too. The body is not acting randomly. It is responding predictably to an environment that demands regulation without allowing resolution. Behavior becomes the scapegoat for a system that stays unnamed.",
         },
         {
-          title: "What does the body prepare for under stress?",
+          title: "What does the body actually prepare for under stress?",
           answer:
-            "The body prepares for immediate physical action, even when none is possible.",
+            "It prepares for physical action that is expected but never allowed.",
           metaphor:
-            "Imagine packing your bag for an urgent trip that keeps getting postponed. You stay dressed, alert, and ready, never fully unpacking. Days pass, but the readiness never turns into movement.",
+            "Imagine packing for an urgent departure that keeps getting delayed. You stay dressed, alert, and half standing. The suitcase remains by the door for days.",
           children:
-            "When the brain senses threat, it signals the liver to release glucose so muscles and attention are fully fueled. This response evolved for running, fighting, or lifting. In modern stress, the threat is abstract and continuous. The preparation happens, but the action does not. The body remains in readiness without resolution, repeating the same cycle again and again.",
+            "Stress signals the body to mobilize energy for movement. Muscles tense, attention sharpens, and fuel is released. This response evolved for short bursts of action. In modern life, threats are abstract and constant. The preparation keeps happening, but the moment to act never arrives. The body stays suspended in readiness, repeating the same unfinished cycle without completion.",
         },
         {
           title: "Why does blood sugar rise even without eating?",
           answer:
-            "Because stress alone tells the liver to release fuel in anticipation of movement.",
+            "Because stress alone tells the liver to release fuel.",
           metaphor:
-            "Imagine stocking a kitchen every morning for guests who never arrive. The shelves stay full, but nothing gets used. Each day, more supplies are added anyway.",
+            "Imagine stocking supplies every morning for workers who never show up. The shelves stay full. Each day, more is added anyway.",
           children:
-            "Stress hormones signal the liver to release glucose so the brain stays alert and muscles stay ready. This happens even before food enters the picture. In a physical threat, that sugar would be burned off quickly. In modern stress, the body stays seated. The fuel remains unused, circulating in the blood, while insulin works harder to contain it.",
+            "Stress hormones instruct the liver to release glucose so the brain and muscles stay ready. This happens before food is involved. In a physical emergency, that fuel would be burned quickly. In chronic stress, the body remains still. The glucose circulates unused while insulin works to contain it. The system is not malfunctioning. It is responding exactly as designed in the wrong conditions.",
         },
         {
-          title: "Why does eating feel calming under stress?",
+          title: "Why does eating feel like the only relief?",
           answer:
-            "Because food briefly dampens the stress response when nothing else is allowed to.",
+            "Because it is one of the few releases that remains permitted.",
           metaphor:
-            "Imagine finding a quiet corner in a loud room where the noise fades for a moment. You stay longer than planned because it is the only place that feels tolerable.",
+            "Imagine finding a quiet stairwell in a loud building. You stay there longer than planned because it is the only place without noise.",
           children:
-            "High fat and high sugar foods trigger dopamine and reduce stress hormone activity. The relief is real, even if temporary. In many modern systems, other forms of release are restricted, moralized, or impractical. Food remains accessible and socially acceptable. Eating becomes less about hunger and more about quieting an overactivated nervous system.",
+            "Food reliably dampens stress signals through dopamine and hormonal shifts. The calming effect is brief but real. Other forms of release are often restricted, delayed, or moralized. Rest feels earned. Movement feels risky. Expression feels unsafe. Eating stays accessible and acceptable. It becomes less about hunger and more about giving the nervous system a pause it cannot find elsewhere.",
         },
         {
-          title: "What happens when action is never allowed?",
+          title: "What happens when action is consistently blocked?",
           answer:
-            "Fight and flight shut down, leaving only compliance and vigilance.",
+            "Fight and flight withdraw, leaving compliance and vigilance.",
           metaphor:
-            "Imagine being ready to run or push back, but realizing neither is permitted. You lower your voice, stay polite, and absorb the pressure instead.",
+            "Imagine being ready to push back or leave, then realizing neither is allowed. You soften your tone and stay agreeable. The pressure does not leave.",
           children:
-            "In earlier environments, stress ended in movement. Today, social rules, economic dependence, and constant monitoring block physical responses. You cannot run from an email or fight a deadline. The nervous system adapts by fawning, staying agreeable, responsive, and outwardly calm. The body carries the unused energy internally as tension, glucose, and fatigue.",
+            "When movement is not possible, the nervous system adapts. The body learns to stay alert without acting. Polite responsiveness replaces force or escape. This fawn state keeps systems running smoothly while carrying the cost internally. Energy that should have discharged through action stays stored as tension, fatigue, and metabolic strain.",
         },
         {
-          title: "Why does insulin resistance appear over time?",
+          title: "Why does insulin resistance develop over time?",
           answer:
-            "Because cells protect themselves from constant energy overflow.",
+            "Because cells protect themselves from constant overflow.",
           metaphor:
-            "Imagine being offered food continuously, even when you are full. Eventually, you stop opening the door.",
+            "Imagine someone knocking with gifts every hour. At first you open the door. Eventually, you stop answering.",
           children:
-            "With repeated stress-driven glucose release and stress-soothing eating, insulin levels remain high. Cells respond by reducing their sensitivity. This is not failure. It is protection against overload. Insulin resistance reflects a system that has been managing excess preparation for too long without resolution.",
+            "Repeated stress-driven glucose release combined with stress-soothing eating keeps insulin levels high. Cells respond by reducing sensitivity to protect themselves. This is not failure. It is boundary setting at a cellular level. Insulin resistance reflects long-term exposure to preparation without completion, not a lack of effort or discipline.",
         },
         {
           title: "What question does ZenTrust ask here?",
           answer:
-            "What pressure am I adapting to without noticing?",
+            "What pressure am I cooperating with without noticing?",
           metaphor:
-            "Imagine realizing you have been holding your breath, not because you chose to, but because the room never felt safe to exhale.",
+            "Imagine realizing you have been holding a heavy bag because no one said you could set it down.",
           children:
-            "This question does not ask what you should eat or how to behave. It asks what kind of environment makes constant readiness feel necessary. When action is blocked and rest feels unsafe, the body adapts quietly. Seeing that adaptation clearly changes how responsibility and compassion are understood.",
+            "This question does not ask how to fix eating or improve control. It asks what kind of environment requires constant readiness while discouraging release. When cooperation with pressure becomes invisible, the body adapts quietly. Naming that cooperation shifts responsibility away from the body and back toward the conditions shaping it.",
         },
         {
           title: "What becomes possible once this pattern is seen?",
           answer:
-            "The pressure can be addressed without fighting the body.",
+            "Pressure can ease without fighting the body.",
           metaphor:
-            "Imagine finally releasing the brake after realizing the engine was never the problem.",
+            "Imagine taking your foot off the brake and noticing the engine finally settle.",
           children:
-            "When stress is recognized as unresolved pressure rather than personal failure, the body no longer needs to signal through excess eating or metabolic strain. Movement can complete stress cycles. Rest can feel permitted. Eating can return to nourishment rather than relief. Nothing is forced. The system softens once the conditions change.",
+            "When stress is understood as unresolved demand rather than personal failure, the body no longer needs to signal through excess eating or metabolic strain. Action can complete when allowed. Rest can arrive without justification. Eating can return to nourishment instead of regulation. Nothing needs to be forced. The system softens when the pressure changes.",
         },
       ]}
       ending={[
-        "The body adapts before it complains.",
-        "Signals appear when pressure stays unresolved.",
-        "Seeing the pattern changes where effort is placed.",
+        "Adaptation hides until it becomes costly.",
+        "The body signals what the system will not name.",
+        "Seeing the pattern shifts where effort belongs.",
       ]}
     />
   );
