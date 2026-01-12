@@ -18,8 +18,8 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Health & Suffering"
       question="Why does chronic stress keep insulin elevated?"
-      shortAnswer="Because the body is responding logically to a world that signals demand without ever allowing completion."
-      heroMetaphor="Imagine a fire alarm that goes off every day at low volume. No fire ever appears, so no one evacuates, but the alarm is never turned off. Over time, the building fills with tension even though nothing is burning."
+      shortAnswer="Because stress keeps adding sugar to the blood without real movement, insulin stays high to manage it, and eating is used to soothe unfinished stress, which further raises insulin."
+      heroMetaphor="Imagine a fire alarm that beeps softly all day, every day. There is no fire, so no one leaves, but the sound never stops. The building stays tense, not because of danger, but because the alert is never resolved."
       sections={[
         {
           title: "Why does everything seem to worsen despite effort?",
