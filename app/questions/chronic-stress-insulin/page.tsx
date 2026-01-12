@@ -26,7 +26,7 @@ export default function QuestionPage() {
           answer:
             "Because visible effort does not change the condition the body is responding to.",
           children:
-            "Many people eat carefully, move regularly, and follow medical advice, yet their weight, blood sugar, or fatigue slowly worsen. This feels confusing because effort is real and consistency is high. When outcomes still decline, the explanation quietly turns inward. It begins to sound like a personal failure. What stays hidden is that the body is not responding to effort. It is responding to whether the environment feels demanding or safe.",
+            "Many people eat carefully, move regularly, and follow medical advice, yet their weight, blood sugar, or fatigue slowly worsen. This feels confusing because effort is real and consistency is high. When outcomes still decline, the explanation quietly turns inward. It begins to sound like a personal failure. What stays hidden is that the body is not responding to effort. It is responding to whether insulin is being asked to stay active all day.",
           metaphor:
             "Imagine rowing harder against a river that keeps speeding up. You gain strength and discipline, but the current never slows. Eventually the exhaustion feels personal, even though the river was never yours to control.",
         },
@@ -35,7 +35,7 @@ export default function QuestionPage() {
           answer:
             "Because food and genetics describe fuel, not ongoing readiness.",
           children:
-            "Calories, sugar, and heredity matter, but they do not explain why the body behaves as if action is always imminent. Two people can eat similarly and live similarly, yet their metabolic responses diverge. When explanations focus only on intake, they miss the signals that tell the body what kind of world it is in. Stress here is not an emotion. It is a continuous message about demand.",
+            "Calories, sugar, and heredity matter, but they do not explain why the body behaves as if action is always imminent. Two people can eat similarly and live similarly, yet their metabolic responses diverge. When explanations focus only on intake, they miss the signals that tell the body what kind of world it is in. Stress here is not an emotion. It is a continuous message that keeps insulin engaged.",
           metaphor:
             "Imagine adjusting the fuel gauge again and again while the engine remains locked in first gear. You keep changing the input, but the problem was never the gasoline.",
         },
@@ -60,7 +60,7 @@ export default function QuestionPage() {
           title: "How does this show up in daily life?",
           answer: "As hunger, fatigue, and a sense of fighting the body.",
           children:
-            "People feel hungry even after eating and tired even after resting. Weight increases while energy drops. Low intensity routines may calm the mind, but the body remains prepared for action that never occurs. Recovery feels partial. The mismatch between readiness and release becomes normal. Over time, this state is mistaken for personal weakness instead of unfinished stress.",
+            "People feel hungry even after eating and tired even after resting. High insulin blocks access to stored energy, so hunger appears even when fuel is abundant. Weight increases while energy drops. Low intensity routines may calm the mind, but the body remains prepared for action that never occurs. Recovery feels partial. The mismatch between readiness and release becomes normal. Over time, this state is mistaken for personal weakness instead of unfinished stress.",
           metaphor:
             "Imagine trying to sleep in a room where lights flicker and doors slam unpredictably. Sleep happens, but deep rest never quite arrives.",
         },
@@ -68,7 +68,7 @@ export default function QuestionPage() {
           title: "Why does the pattern keep repeating?",
           answer: "Because modern systems reward endurance without completion.",
           children:
-            "Work, finances, and constant evaluation create low level threat without resolution. The body repeatedly prepares but rarely finishes the cycle it started. Medical systems often treat the numbers insulin controls, not the conditions that require insulin to stay high. Remaining functional is valued more than restoring safety. The pattern continues because it keeps people operational.",
+            "Work, finances, and constant evaluation create low level threat without resolution. The body repeatedly prepares but rarely finishes the cycle it started. Medical systems often treat the numbers insulin controls, while leaving the conditions that keep insulin elevated unchanged. Remaining functional is valued more than restoring safety. The pattern continues because it keeps people operational.",
           metaphor:
             "Imagine being asked to hold your breath repeatedly throughout the day, but never being told when you can exhale. You adapt, and the adaptation becomes the injury.",
         },
