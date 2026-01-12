@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does the system fear people who need little?",
   description:
-    "A question about why modern systems feel unsettled by people who live simply, quietly, and without constant striving.",
+    "A question about why modern systems feel unsettled by people who live simply, speak plainly, and do not chase status.",
   other: {
     category: "Schools & Systems",
     subcategory: "simplicity-system-threat",
@@ -25,79 +25,79 @@ export default function QuestionPage() {
           title: "Why do people who live simply seem out of place?",
           answer:
             "Because their lives do not signal urgency, ambition, or visible striving.",
+          children:
+            "In many environments, value is inferred from motion. Being busy and visibly stretched is treated as proof of importance. When someone moves slowly, speaks plainly, and shows no anxiety about keeping up, others struggle to place them. They do not fit the cues people rely on, even though nothing is wrong. The mismatch is cultural, not moral.",
           metaphor:
             "Imagine standing at a busy crosswalk where everyone rushes when the light turns green. One person waits, not confused or delayed, simply unhurried. No rule is broken, yet their stillness stands out.",
-          children:
-            "In many environments, value is inferred from motion. Being busy, stressed, and visibly stretched is treated as proof of importance. When someone moves slowly, speaks plainly, or shows no anxiety about keeping up, others struggle to place them. They do not fit the cues people are trained to recognize, even though nothing is wrong.",
         },
         {
           title: "Why does the obvious explanation fall short?",
           answer:
-            "Because simplicity is often mislabeled as laziness or lack of intelligence.",
+            "Because simplicity is often mislabeled as laziness, ignorance, or lack of potential.",
+          children:
+            "The system explains simplicity using deficit language. Unambitious. Naive. Underachieving. These labels protect existing assumptions and prevent a deeper question from forming. It becomes easier to judge the person than to ask whether constant striving is necessary or whether exhaustion has been normalized.",
           metaphor:
             "Imagine assuming a quiet lake is empty because nothing splashes at the surface. The water looks still, so you conclude nothing is happening below.",
-          children:
-            "The system explains simplicity using deficit language. Unambitious. Naive. Underachieving. These labels avoid harder questions about whether constant striving is necessary or whether exhaustion has been normalized. The explanation feels convenient because it protects existing assumptions without examining what simplicity might actually represent.",
         },
         {
           title: "What is the system actually protecting?",
           answer:
-            "Its dependence on fear, comparison, and external validation.",
-          metaphor:
-            "Imagine a market that only works if everyone believes they must keep buying. One person leaves satisfied. The stalls remain, but something weakens.",
+            "Its dependence on comparison, insecurity, and the promise that more will finally be enough.",
           children:
-            "Many systems function smoothly when people feel they are falling behind or not enough. Status, productivity, and accumulation become substitutes for safety. A person who needs little disrupts this cycle without trying. Their life suggests that dignity and meaning may not require endless acquisition.",
+            "Many systems run on the idea that satisfaction is always just out of reach. You are shown what others have and what you lack. This creates motion that looks like progress but often feels like pressure. A person who needs little disrupts this cycle without trying. Their life quietly suggests that dignity and meaning may not require endless accumulation.",
+          metaphor:
+            "Imagine a market that only works if everyone believes they must keep buying. One person leaves satisfied. The stalls remain, but the spell weakens.",
         },
         {
           title: "How does this play out over time?",
           answer:
-            "Through quiet pressure, subtle marginalization, and reframing.",
+            "Through subtle pressure to justify yourself and quiet penalties for not competing.",
+          children:
+            "The system rarely attacks simplicity directly. Instead, it reframes it. You are encouraged to optimize, scale, and stay visible. If you do not, you may be overlooked or described as unrealistic. These are not dramatic punishments. They are steady nudges that keep most people inside the same race without naming it.",
           metaphor:
             "Imagine a classroom where one student finishes early and sits calmly. Soon, extra work appears so stillness does not spread.",
-          children:
-            "Simple people are rarely confronted directly. Instead, they are nudged to optimize, scale, or justify themselves. Over time, they may be overlooked or dismissed as unrealistic. The system does not attack simplicity openly. It quietly teaches others not to imitate it.",
         },
         {
           title: "Where does this show up in daily life?",
           answer:
-            "In how worth is measured through output and visibility.",
+            "In how worth gets measured through output, speed, and visibility.",
+          children:
+            "Rest can look suspicious. Quiet can look like disengagement. Contentment can look like stagnation. In many environments, effort must be displayed to be believed. Someone who does not advertise struggle can be treated as less committed, even if they are steady and capable.",
           metaphor:
             "Imagine two clocks on a wall. One ticks loudly and draws attention. The other keeps accurate time in silence.",
-          children:
-            "Workplaces and social spaces reward visible strain. Rest looks suspicious. Contentment looks like stagnation. Silence is mistaken for disengagement. Someone who does not advertise effort or chase recognition disrupts these signals, raising unspoken questions about what really counts.",
         },
         {
-          title: "Why does this pattern persist?",
+          title: "Why does the pattern keep persisting?",
           answer:
-            "Because complexity allows responsibility to be diffused.",
+            "Because complexity allows responsibility to dissolve into roles and procedures.",
+          children:
+            "Complex systems make it easy to participate without feeling personally accountable. You can say you were only following policy or fulfilling a role. Simplicity collapses that distance. It returns decisions to basic moral ground, which weakens the comfort of hiding inside abstraction.",
           metaphor:
             "Imagine a long chain of levers controlling a distant outcome. Each person pulls one and says the result is not theirs.",
-          children:
-            "Complex systems make it easy to comply without feeling responsible. Roles and procedures soften moral tension. Simple people collapse these layers by asking basic questions about necessity and harm. Not loudly, but persistently. That clarity threatens structures built on abstraction.",
         },
         {
-          title: "Why does someone who needs little feel unsettling?",
+          title: "Why does ZenTrust notice simplicity can feel threatening?",
           answer:
-            "Because they are harder to motivate through fear or reward.",
-          metaphor:
-            "Imagine offering prizes to move someone forward, only to realize they are already where they want to be.",
+            "Because independence can resemble refusal, even when no message is intended.",
           children:
-            "When identity is not tied to status or accumulation, common pressures lose force. Disapproval stings less. Comparison matters less. This independence reflects a possibility others sense but feel unable to choose. The discomfort comes from what that possibility reveals.",
+            "When someone needs little, common pressures lose force. Fear of judgment and fear of falling behind weaken. This independence can be misread as arrogance or criticism. It may also stir discomfort in others who feel trapped in striving they did not choose. ZenTrust treats this not as virtue, but as a mirror effect.",
+          metaphor:
+            "Imagine a room where everyone stands when a powerful person enters. One person stays seated, not to insult, but because they were already at ease.",
         },
         {
           title: "What remains when striving loosens its grip?",
           answer:
-            "A quieter form of responsibility.",
-          metaphor:
-            "Imagine turning off background noise you did not realize was always on. The room stays the same, but you hear yourself.",
+            "A quieter form of responsibility that does not require performance.",
           children:
-            "Without constant striving, attention returns to conscience, relationships, and presence. Nothing needs to be proven. Nothing needs to be defended. Life becomes internally coherent, even if externally unimpressive. The system struggles to engage with this kind of clarity.",
+            "Without constant striving, attention returns to conscience, relationships, and presence. Nothing needs to be proved publicly to feel real privately. Life does not become effortless, but it becomes internally coherent. The system struggles with this because its usual levers begin to matter less.",
+          metaphor:
+            "Imagine turning off background noise you did not realize was always on. The room stays the same, but you hear yourself more clearly.",
         },
       ]}
       ending={[
-        "You may notice where effort feels compulsory rather than meaningful.",
-        "You may notice where simplicity feels quietly unsettling.",
-        "Nothing here asks you to change. Only to notice.",
+        "You may notice where effort becomes a requirement, not a choice.",
+        "You may notice how needing less changes how pressure feels.",
+        "Nothing here asks you to act. Only to see.",
       ]}
     />
   );
