@@ -45,7 +45,7 @@ export default function QuestionPage() {
           metaphor:
             "Imagine standing on a small step while others stand on the floor. The step is removed without warning. You blink and look around at eye level.",
           children:
-            c3,
+            "An identity built on comparison needs contrast to survive. Status and possessions provide that contrast by separating higher from lower, more from less. When those markers vanish, the comparison-based identity loses its reference points. What collapses is not presence or awareness, but the structure that relied on being seen a certain way. The discomfort comes from losing orientation, not from losing existence. The floor was always there.",
         },
         {
           title: "How does achievement quietly replace lived identity?",
