@@ -18,7 +18,7 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Nature & Land"
       question="If no country claimed you, where would you sleep in peace for sleep safety?"
-      shortAnswer="This question asks what kind of land, shelter, and rhythm create sleep safety when identity and permission disappear."
+      shortAnswer="You would sleep in peace where the night is predictable, the shelter is trusted, and nothing requires you to stay alert."
       heroMetaphor="Imagine arriving at night with no documents and nowhere to explain yourself. Streetlights glare and every sound feels sharp. Then you step into a small place where the air softens and your shoulders drop without effort."
       sections={[
         {
