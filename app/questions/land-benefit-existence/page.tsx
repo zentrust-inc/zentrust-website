@@ -18,7 +18,7 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Nature & Land"
       question="Does the land benefit from your existence?"
-      shortAnswer="Most human relationships with land are structured around extraction, even when they feel neutral or harmless."
+      shortAnswer="Often, no. In most cases, the land does not benefit; it is managed to tolerate us. The land usually adapts to humans, not the other way around."
       heroMetaphor="Imagine renting a room where you cook, wash, and sleep every day. You never clean the floor, fix the sink, or open the windows. When you leave, the room is quieter, but more worn than when you arrived."
       sections={[
         {
