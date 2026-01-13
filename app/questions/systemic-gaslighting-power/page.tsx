@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does modern power feel like gaslighting?",
   description:
-    "A question-led look at how systemic gaslighting operates through overload, denial, reframing, and blame shifting.",
+    "A question-led look at how systemic gaslighting erodes shared reality through repetition, denial, and overload.",
   other: {
     category: "Schools & Systems",
     subcategory: "systemic-gaslighting",
@@ -18,86 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Schools & Systems"
       question="Why does modern power feel like gaslighting?"
-      shortAnswer="Because many systems keep control by flooding attention with competing stories, denying lived signals, and shifting responsibility onto individuals until shared reality feels unstable."
-      heroMetaphor="Imagine walking through a city where a fog machine runs every hour. The street signs are still there, but each time you try to read one, a new cloud rolls in. You start wondering if your eyes are the problem, even though the fog is the policy."
+      shortAnswer="Because many systems maintain control by repeatedly distorting signals until people doubt their own perception."
+      heroMetaphor="Imagine walking through a building where the hallway lights turn off one by one as you pass. The floor is still solid under your feet. You cannot see how long the hallway is."
       sections={[
         {
           title: "Why does gaslighting feel personal when it is structural?",
           answer:
-            "Because the pressure lands on one nervous system at a time, so a collective gaslighting pattern gets experienced as private confusion.",
-          children:
-            "When reality keeps getting bent in small ways, it rarely announces itself as a system. It arrives as a tone, a dismissal, a smile that contradicts the consequences. You feel the shift inside your own body first. If many people are living through the same gaslighting pattern, they may still believe it is just their own sensitivity.",
+            "Because gaslighting reaches people individually, even when it is produced by a system.",
           metaphor:
-            "Imagine a classroom where the lights flicker randomly all day. Each student thinks they are the only one getting headaches.",
+            "Imagine sitting in a room where the clock ticks at an uneven pace. You glance at it, then look away, then check again. No one else comments on the sound.",
+          children:
+            "Gaslighting often arrives in small moments rather than dramatic events. A concern is brushed aside. A contradiction is softened. You notice something feels off, but nothing stands out enough to name. Because the experience lands in your body and thoughts, it feels private. When many people experience the same pattern separately, it still appears personal.",
         },
         {
           title: "Why does gaslighting resist obvious explanations?",
           answer:
-            "Because gaslighting is not just lying. It is reality management through repetition, overload, and selective framing.",
-          children:
-            "A lie can be disproved. Gaslighting works by preventing any signal from staying stable long enough to be judged. Claims are softened, denied, reframed, or blamed on interpretation until exhaustion replaces clarity.",
+            "Because gaslighting is not a single false statement but a shifting pattern.",
           metaphor:
-            "Imagine a radio that changes stations every time you reach for the volume knob.",
+            "Imagine reading a sign that changes its wording each time you look back at it. The letters are clear every time. The message never stays the same.",
+          children:
+            "A clear lie can be checked and challenged. Gaslighting keeps moving before it can be pinned down. Statements are adjusted, denied, reframed, or dismissed as jokes. Each version sounds close enough to the last to feel confusing rather than false. The effort required to keep track slowly increases.",
         },
         {
           title: "What actually does the gaslighting work?",
           answer:
-            "Gaslighting works by controlling the frame, deciding what counts as reasonable, credible, or excessive.",
-          children:
-            "Concerns become attitudes. Evidence becomes obsession. Once framed as unstable or disloyal, your words arrive already discredited. Gaslighting succeeds without refuting facts by shaping who you appear to be.",
+            "Gaslighting works by controlling how events are framed rather than what happened.",
           metaphor:
-            "Imagine a game where the referee writes the rulebook during the match.",
+            "Imagine playing a game where the rules are announced after each round. You recognize the pieces on the table. You never know which move will count.",
+          children:
+            "In gaslighting environments, meaning is assigned from above. A question becomes an attitude. A memory becomes misinterpretation. Once the frame is set, evidence arrives already weakened. The issue is no longer what occurred, but how you are being described.",
         },
         {
           title: "How does gaslighting play out over time?",
           answer:
-            "Over time, gaslighting turns confusion into exhaustion and exhaustion into compliance.",
-          children:
-            "At first you argue with contradictions. Then you notice the twisting is the rhythm. Silence becomes cheaper than clarity. Gaslighting does not require agreement, only disengagement from shared reality.",
+            "Over time, gaslighting turns repeated doubt into quiet withdrawal.",
           metaphor:
-            "Imagine carrying a bucket with a tiny hole that never stays patched.",
+            "Imagine carrying a bucket with a thin crack along the side. You refill it again and again. Water keeps slipping out before you reach the door.",
+          children:
+            "Early on, you try to clarify and correct. You explain carefully. You adjust your words. When nothing holds, effort starts to feel wasted. Gradually, speaking less feels easier than being misunderstood. The pattern continues without needing agreement.",
         },
         {
           title: "Where does digital gaslighting intensify it?",
           answer:
-            "Digital systems reward certainty and speed, making gaslighting scale faster than careful truth.",
-          children:
-            "Confidence travels farther than accuracy. Two people can inhabit different realities and both feel informed. Attempts to bridge gaps are treated as attacks, reinforcing gaslighting through the medium itself.",
+            "Digital environments amplify gaslighting by rewarding speed and certainty.",
           metaphor:
-            "Imagine a marketplace where the loudest stall gets all the foot traffic.",
+            "Imagine standing in a crowd where everyone is shouting different directions. Each voice sounds confident. The noise never pauses.",
+          children:
+            "Online spaces move quickly and reward strong signals. Context is trimmed away. Conflicting versions appear side by side without resolution. Attempts to slow things down can look like opposition. The pace itself makes checking harder than reacting.",
         },
         {
           title: "Why does gaslighting persist in workplaces and institutions?",
           answer:
-            "Because gaslighting protects systems by shifting structural harm onto individuals.",
-          children:
-            "Burnout becomes a mindset issue. Toxic culture becomes a resilience gap. Naming harm threatens the system, so gaslighting reframes the person as the problem.",
+            "Because gaslighting protects systems from having to change.",
           metaphor:
-            "Imagine a factory belt set too fast while workers are given motivational posters.",
+            "Imagine a factory where the alarm rings every afternoon. Management replaces the clock instead of the machine. The noise returns the next day.",
+          children:
+            "Structural problems are often redirected toward individuals. Burnout becomes a mindset issue. Confusion becomes a communication problem. By relocating the cause, institutions avoid adjusting their design. The pattern repeats without naming itself.",
         },
         {
-          title: "Why does gaslighting make me doubt my own reality?",
+          title: "What does ZenTrust ask about gaslighting?",
           answer:
-            "Because repeated dismissal trains self doubt before external checking.",
-          children:
-            "You pre explain, pre apologize, and pre shrink. The danger is not only being misled, but learning to abandon your own perception to stay safe.",
+            "ZenTrust asks what assumptions are quietly being accepted as normal.",
           metaphor:
-            "Imagine smelling smoke while everyone insists the air is clean.",
+            "Imagine noticing a window that has been slowly fogging over all day. You wipe a small circle with your sleeve. The rest of the glass stays cloudy.",
+          children:
+            "ZenTrust does not argue with frames or replace them. It notices where perception began to narrow. When gaslighting is present, certainty often comes with pressure to agree. The question is not who is right, but what is being taken for granted without noticing.",
         },
         {
-          title: "What does ZenTrust ask about systemic gaslighting?",
+          title: "How does gaslighting return attention to the reader?",
           answer:
-            "Whether belonging has been made conditional on accepting someone else’s frame.",
-          children:
-            "ZenTrust does not ask you to expose or persuade. It asks what trade is being offered. When that trade is seen, gaslighting loses part of its grip.",
+            "Gaslighting often leaves the reader checking themselves before checking the situation.",
           metaphor:
-            "Imagine waves erasing footprints, while you still know where you walked.",
+            "Imagine pausing at a crosswalk where the signal keeps switching too fast. You step forward, then stop. Cars continue to pass.",
+          children:
+            "Repeated dismissal can train self-doubt. You begin rehearsing explanations before speaking. You notice hesitation appearing earlier each time. The confusion becomes internal even though its source is external. Attention slowly turns inward instead of outward.",
         },
       ]}
       ending={[
-        "Some confusion is not a personal flaw.",
-        "Some gaslighting is manufactured, not discovered.",
-        "You are allowed to see clearly without rushing to prove it.",
+        "Some confusion is not a personal defect.",
+        "Some doubt is introduced, not discovered.",
+        "You can notice without resolving.",
       ]}
     />
   );
