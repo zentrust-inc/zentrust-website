@@ -134,6 +134,38 @@ export default function AboutPage() {
 
         </div>
       </section>
+      {/* CONDITIONS & CONTINUITY */}
+      <section className="pt-6 md:pt-8 pb-10">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          <h2 className="text-sm tracking-[0.25em] uppercase text-muted-foreground mb-4">
+            Conditions
+          </h2>
+
+          <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+            A Lamp Burns Only With Oil
+          </h3>
+
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto space-y-3">
+            <span className="block">
+              ZenTrust does not claim exemption from material reality.
+              Like any living system, it depends on nourishment,
+              shelter, and care to continue.
+            </span>
+            <span className="block">
+              Voluntary support is the oil that allows this work
+              to remain visible. When it flows, the lamp burns.
+              When it pauses, the lamp dims or rests.
+            </span>
+            <span className="block">
+              If the oil does not arrive, the light is not
+              performed or borrowed. It simply goes quiet,
+              without debt, urgency, or pretense.
+            </span>
+          </p>
+
+        </div>
+      </section>
 
       {/* GOVERNANCE & TRANSPARENCY */}
       <section className="pt-12 md:pt-14 pb-12">
