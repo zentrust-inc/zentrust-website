@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Are you truly free, or just choosing between permitted cages?",
   description:
-    "A question-led look at how freedom can feel like choice while the environment quietly selects the boundaries.",
+    "A question-led look at how freedom can feel like choice while the boundaries remain pre-arranged as permitted cages.",
   other: {
     category: "Mind & Experience",
     subcategory: "freedom-permitted-cages",
@@ -18,83 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Mind & Experience"
       question="Are you truly free, or just choosing between permitted cages?"
-      shortAnswer="Because freedom is often defined by what is allowed rather than what is chosen, many people experience choice without authorship and mistake it for freedom."
-      heroMetaphor="Imagine walking through a hallway lined with open doors. Each door leads to a furnished room with a different color and layout. You are told you are free to choose any room, but the hallway itself never ends."
+      shortAnswer="Because most freedom is performed by selecting between cages that were pre-arranged to look like destinations, choice often replaces authorship and feels like freedom."
+      heroMetaphor="A man sits in a theater watching a film of a wide, open road. He feels the wind on his face because a fan has been placed in the corner of the room. He believes he is traveling, but he is only sitting in the dark."
       sections={[
         {
-          title: "Why does freedom feel available yet limited?",
-          answer: "Because freedom is presented as choice, not as authorship.",
-          metaphor:
-            "Imagine standing at a vending machine with many buttons. You can choose any item that lights up. Nothing inside the machine can be changed.",
-          children:
-            "Most people are told they are free because they can pick between options. Education paths, careers, lifestyles, and opinions are offered as menus. The feeling of freedom comes from selecting something, not from questioning where the options came from. Over time, freedom becomes choosing well rather than choosing independently. The limits stay mostly unseen because the act of choosing feels active enough.",
-        },
-        {
-          title: "Why does having many choices not guarantee freedom?",
-          answer: "Because choice can exist without genuine alternatives.",
-          metaphor:
-            "Imagine a train with many empty seats. You can move from one seat to another. The train never leaves its track.",
-          children:
-            "Modern culture equates freedom with an abundance of options. If you can switch jobs, cities, or identities, you are told you are free. What is rarely asked is whether those options change the underlying structure of life. Many choices adjust comfort, status, or aesthetics without touching the deeper constraints. Freedom becomes preference inside a fixed system.",
-        },
-        {
-          title: "What quietly defines the limits of freedom?",
-          answer:
-            "The environment selects the boundaries within which freedom is expressed.",
-          metaphor:
-            "Imagine fish swimming in a large glass tank. They move freely in every direction. The glass is invisible from inside.",
-          children:
-            "From childhood onward, environments shape what feels realistic, respectable, or possible. Language, economics, social reward, and fear work together to narrow imagination. Most people adapt so early that the boundaries feel natural. Freedom then operates inside conditions that were never consciously chosen. The cage is not locked, but it is rarely seen.",
-        },
-        {
-          title: "How does conditioned freedom shape a life?",
-          answer:
-            "It creates movement without direction and change without authorship.",
-          metaphor:
-            "Imagine walking on a moving walkway at an airport. You are traveling forward without effort. Stepping off feels disorienting.",
-          children:
-            "When freedom is defined by permitted movement, life can feel busy but repetitive. People make changes, upgrades, and pivots while staying aligned with expectations. Over time, dissatisfaction appears without a clear cause. The person feels responsible for outcomes but disconnected from the script. Freedom feels present, yet something essential feels missing.",
-        },
-        {
           title: "Why do these cages rarely feel like cages?",
-          answer: "Because they are rewarded, normalized, and shared.",
+          answer:
+            "Because cages are padded with social approval and predictable safety, the bars blend into rewards and stop registering as limits.",
           metaphor:
-            "Imagine wearing the same comfortable shoes every day. They fit so well you forget you are wearing them. Only when you try to run do you notice the stiffness.",
+            "A bird lives in a cage made of polished gold. It spends the morning rubbing the bars until they shine. It sings toward the window and never touches the latch.",
           children:
-            "Cages that offer safety, approval, and identity rarely feel oppressive. They are reinforced by praise, belonging, and predictability. Leaving them risks confusion, loss, or judgment. As a result, many people defend the limits they live inside. Freedom becomes abstract while comfort stays concrete. The boundaries feel like normal life instead of structure.",
+            "You wake up and check your schedule, and the full day feels like proof of competence. Messages come in, you reply quickly, and small praise arrives like receipts. The routine is familiar, so it feels safe and self-chosen. Later, when the day ends, you feel strangely empty even after doing everything right. The pace was set elsewhere, but it arrives wearing your own handwriting.",
         },
         {
-          title: "Why does the illusion of freedom survive awareness?",
+          title: "How do permitted cages shape a human life into cages?",
           answer:
-            "Because questioning freedom threatens stability more than confinement does.",
+            "Permitted cages fragment a life by rewarding the scripted performer while quietly starving the unscripted parts that do not fit.",
           metaphor:
-            "Imagine a city built around a single power source. Everyone knows it is fragile. No one wants to imagine the lights going out.",
+            "A river is diverted into a concrete channel to power a distant city. The water moves faster and makes bright noise at the bends. The old riverbed dries and fills with dust and weeds.",
           children:
-            "Recognizing limited freedom introduces uncertainty. It raises questions with no immediate answers. Systems prefer manageable dissatisfaction over unpredictable change. Individuals often prefer familiar constraint over open ambiguity. Awareness may flicker, but adaptation returns because daily life still needs to function. The idea of freedom becomes a topic, not a lived examination.",
+            "In one room you speak like a professional, in another like a partner, in another like a polite citizen. Each room has phrases that get smiles and phrases that bring silence. You switch quickly and call it maturity because it keeps things smooth. Over months, you notice you cannot find the voice that speaks when no one is watching. The roles still work, but the person behind them feels faint.",
         },
         {
-          title: "What does ZenTrust notice about freedom here?",
+          title: "Why does having many choices hide the cages as cages?",
           answer:
-            "ZenTrust notices how freedom is discussed without examining who selected the cages.",
+            "Because many options create a constant decision fever, attention stays on selecting items while the cages underneath remain unchanged.",
           metaphor:
-            "Imagine reading a script handed to you on stage. You perform it well and receive applause. No one asks who wrote it.",
+            "A child is given a box of one hundred crayons. The paper already has a maze printed in faint gray. The child colors hard for an hour and never turns the page over.",
           children:
-            "ZenTrust does not define what freedom should be. It notices how easily freedom is reduced to compliance with acceptable options. When people feel unfree, they are often pushed to optimize rather than question structure. ZenTrust holds attention on that moment of noticing without offering a replacement script. The point is not to win an argument, but to see what was assumed.",
+            "You stand in a supermarket aisle with dozens of cereals and feel the weight of a meaningful decision. You compare labels, prices, and brand stories, and the choosing feels like identity. The same pattern repeats with careers, hobbies, and opinions, each offered like a shelf. You stay busy selecting, adjusting, and optimizing, so it feels active and free. Meanwhile the shelves remain the shelves, and nothing else is considered.",
         },
         {
-          title: "What remains when freedom is seen clearly?",
+          title: "What quietly defines the limits of these cages as cages?",
           answer:
-            "A quieter recognition that choice and freedom are not the same thing.",
+            "The environment sustains cages by training your imagination to stop at an invisible line that feels like common sense.",
           metaphor:
-            "Imagine stopping in the hallway between rooms. The doors remain open. For the first time, you notice the hallway itself.",
+            "A mountain goat lives on a narrow ledge above a wide valley. It looks at the open sky each morning from the same spot. Its hooves stop at the edge without any rope or fence.",
           children:
-            "Seeing the difference between choice and freedom does not demand action. It often brings stillness instead. Some people may keep choosing within the same structures. Others may simply notice the boundaries for the first time. What matters is not escape, but clarity about what has been assumed. Freedom becomes a question of perception before it becomes a plan.",
+            "As a child you learned which paths were respectable and which were embarrassing, risky, or strange. Some possibilities were never named, so they never became real options inside you. Years later, you look at your life and feel a wide horizon, yet your feet stop at the same familiar boundary. No one is blocking you in the moment. The limit feels like prudence, but it is an old lesson still running.",
+        },
+        {
+          title: "Why does the mind defend its own cages as cages?",
+          answer:
+            "The mind defends cages because admitting the bars would expose wasted effort and invite uncertainty that the ego feels too tired to hold.",
+          metaphor:
+            "A prisoner is handed a key that fits the heavy iron door. He steps outside and hears insects and distant wind in the dark trees. He turns back, locks the door again, and sits on the cot.",
+          children:
+            "Someone calls your career a refined form of captivity, and heat rises in your chest before you think. You list benefits, weekends, travel, and the dignity of being responsible. The argument is fast because it protects the world you have built around familiar rules. In the quiet after, you notice how much energy it took to defend the frame. The defense is not about truth, it is about keeping the ground from moving under your feet.",
+        },
+        {
+          title: 'Why does "free will" often keep us inside cages?',
+          answer:
+            'Modern "free will" keeps cages intact by rewarding people for improving their position inside the structure instead of noticing the structure itself.',
+          metaphor:
+            "A sailor polishes brass on the same ship every morning. He trims the sails to catch small gusts that pass through the harbor. The anchor chain stays tight and loud against the dock.",
+          children:
+            "On weekends you learn skills to become more valuable, and the progress feels clean and logical. You read about productivity so work takes less time, then you use the saved time to prepare for more work. Exercise becomes fuel for Monday, and rest becomes another form of efficiency. Each choice sounds like freedom because it is chosen deliberately. Over time, the choices circle the same center, and the structure stays unquestioned while you become excellent at fitting it.",
+        },
+        {
+          title: "What does ZenTrust notice about cages here, and why do cages persist?",
+          answer:
+            'ZenTrust notices how "freedom" is used like a sedative that keeps attention away from cages, so choosing feels sufficient and questioning rarely begins.',
+          metaphor:
+            "A mirror is placed in the middle of a crowded marketplace. People pass, bargaining over fruit and cloth, and the mirror stays still. It reflects faces, hands, and motion without moving a single stall.",
+          children:
+            "ZenTrust watches people move from one acceptable room to another and call it progress. It sees the tiredness that comes from maintaining a life that feels like a script performed under bright lights. ZenTrust does not offer an exit map or a tool to break bars. It stays with the moment of choosing, when the chooser feels separate from the cage. In that still moment, the cage and the chooser appear as one continuous motion, without judgment.",
+        },
+        {
+          title: "Why does the illusion of freedom survive even when cages are seen?",
+          answer:
+            "The illusion survives because the system replaces truth with comfort, and comfort makes cages feel livable again after the first sharp glance.",
+          metaphor:
+            "A gardener kneels all day pulling weeds from a flower bed. He fills a bucket and feels satisfied by the neat rows. When he finally stands, the high stone wall around the garden is already in shadow.",
+          children:
+            "You see the bars for a moment and a quiet panic rises, not dramatic, just sharp. If you stayed with that seeing, you might lose friends, status, and the story that holds your days together. Very quickly, a new project, purchase, or philosophy arrives and the pressure fades. The bars begin to look like decoration again, something normal and manageable. You keep living, and the old comfort returns, even while the memory lingers underneath.",
         },
       ]}
       ending={[
-        "Nothing here defines freedom for you.",
-        "Nothing here asks you to break your cage.",
-        "It only asks whether the bars were noticed.",
+        "Choice and freedom are not the same thing.",
+        "The cages are made of scripts that can feel like your own voice.",
+        "The hallway stays quiet even when the rooms are loud.",
       ]}
     />
   );
