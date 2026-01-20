@@ -1,102 +1,103 @@
-// app/questions/altruism-egoism/page.tsx
+// app/questions/incentives-altruism-egoism/page.tsx
+
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does society demand altruism but reward egoism?",
+  title: "Why do incentives demand altruism but reward egoism?",
   description:
-    "A question-led look at how moral language can demand care while incentives advance self-interest.",
+    "A question-led look at how incentives shape behavior by asking for care while distributing advantage elsewhere.",
   other: {
     category: "Schools & Systems",
-    subcategory: "moral-incentives",
+    subcategory: "incentives-altruism-egoism",
   },
 };
 
-export default function AltruismEgoismPage() {
+export default function QuestionPage() {
   return (
     <QuestionFrame
       category="Schools & Systems"
-      question="Why does society demand altruism but reward egoism?"
-      shortAnswer="Because many systems depend on people acting selflessly, yet they allocate status and security to those who protect their own advantage."
-      heroMetaphor="Imagine a team that keeps repeating, “We are a family.” One person stays late to cover gaps so nobody gets blamed. Another person takes the visible wins and leaves on time, and that is what gets noticed."
+      question="Why do incentives demand altruism but reward egoism?"
+      shortAnswer="Because incentives stabilize systems by extracting altruism while allocating safety, status, and power to egoism."
+      heroMetaphor="A workplace praises teamwork every morning. One person quietly absorbs extra tasks so nothing breaks. Another person presents the results and receives the promotion."
       sections={[
         {
-          title: "Why does this contradiction feel so unsettling?",
+          title: "Why do incentives rely on altruism?",
           answer:
-            "Because what is praised in words often does not match what is rewarded in outcomes.",
+            "Incentives rely on altruism because care absorbs friction that would otherwise destabilize the system.",
           metaphor:
-            "Imagine being told at home to speak honestly. When you finally name what hurts, the room goes cold. Later, you are asked why you are so quiet.",
+            "A shock absorber sits beneath a car. It compresses every time the road is uneven. The ride stays smooth while the absorber wears down.",
           children:
-            "You grow up hearing that good people share, forgive, and think of others first. Then you enter workplaces, families, or communities where those traits are admired in speeches but rarely protected in practice. You watch someone who sacrifices get taken for granted. You watch someone who pushes for themselves get promoted, trusted, or excused. The mismatch creates a strange unease, because the rules you were taught sound noble, yet the scoreboard keeps rewarding something else.",
+            "Incentives are designed to keep systems functioning without constant conflict. Altruism fills gaps, smooths tension, and prevents visible failure. Because it works quietly, it becomes assumed rather than protected. Over time, care is treated as an unlimited resource instead of a finite contribution. The system remains stable while the cost accumulates elsewhere.",
         },
         {
-          title: "What role does moral language play in this pattern?",
+          title: "How do incentives reward egoism?",
           answer:
-            "It sets expectations for cooperation without changing the incentives that drive decisions.",
+            "Incentives reward egoism by concentrating recognition and protection around visible self-advantage.",
           metaphor:
-            "Imagine a company poster that says, “Well-being matters.” The workload still grows every week. The poster stays clean while people look tired.",
+            "Two people cross a river. One builds the bridge while the other cuts the ribbon. The crowd applauds the ribbon.",
           children:
-            "Moral language makes systems smoother. It encourages patience, restraint, and forgiveness, especially from those who already carry more. It also reduces open conflict, which helps leaders and institutions maintain calm surfaces. But words do not automatically shift pay, promotions, attention, or protection. Over time, people learn that values are often used as atmosphere, not as structure. The language remains, but it starts functioning like decoration, while incentives keep steering behavior underneath.",
+            "Egoistic behavior announces itself through speed, confidence, and claims of ownership. Incentives are built to notice outputs, not maintenance. The person who takes credit becomes legible to the system. The person who prevents collapse often disappears into normality. Over time, visibility becomes confused with value.",
         },
         {
-          title: "What kinds of behavior do systems actually select for?",
+          title: "Why do incentives create moral confusion?",
           answer:
-            "They tend to select for behavior that secures resources, attention, and leverage under pressure.",
+            "Incentives create moral confusion by praising one behavior in language while rewarding another in outcomes.",
           metaphor:
-            "Imagine a meeting where only the last speaker shapes the decision. The quiet person with the best information is skipped. The confident person reframes the whole plan in two minutes.",
+            "A sign says quiet is required. The loudest table gets served first. Everyone notices but keeps eating.",
           children:
-            "In competitive environments, resources feel scarce and evaluation feels constant. People who promote themselves, take credit, or hold firm boundaries often appear decisive. People who hesitate, double-check impact, or share credit can look slower and less certain. The system does not reliably measure inner intention. It measures visible outputs, signals of confidence, and the ability to claim space. Over time, this creates a quiet selection effect that favors self-protection over consideration.",
+            "People are taught that goodness will be protected. Incentives then contradict that lesson through lived experience. The mismatch creates unease rather than rebellion. Individuals begin to doubt themselves instead of the structure. Confusion persists because the rules are split between speech and consequence.",
         },
         {
-          title: "How does altruism become costly over time?",
+          title: "How do incentives make altruism invisible?",
           answer:
-            "It absorbs stress and responsibility while remaining hard to see and easy to assign.",
+            "Incentives hide altruism by normalizing it once it becomes reliable.",
           metaphor:
-            "Imagine the dependable coworker who always says yes. The moment they ask for help, everyone is suddenly busy. Next week, the same person is asked to cover again.",
+            "A clock keeps perfect time for years. No one mentions it. When it stops, everyone complains.",
           children:
-            "Altruistic people often become the hidden supports of a system. They fix mistakes, smooth tensions, and prevent small failures from becoming visible problems. Because they do it quietly, their contribution can blend into the background and start looking like a natural resource. Others assume it will always be there. Over months and years, the person carrying extra load starts to feel tired, confused, and sometimes ashamed, even though the pattern was built into expectations around them.",
+            "When care is consistent, it fades into expectation. The system stops registering it as an action and starts treating it as background. This invisibility makes altruism easy to assign and hard to defend. The person giving care may feel unnecessary even while being essential. The structure continues unchanged.",
         },
         {
-          title: "Why is egoism so often mistaken for strength?",
+          title: "Why do incentives train egoism as strength?",
           answer:
-            "Because it produces quick, visible outcomes and signals confidence in environments that reward certainty.",
+            "Incentives train egoism as strength by rewarding certainty and boundary enforcement under pressure.",
           metaphor:
-            "Imagine a family dinner where one person talks over everyone. The room reorganizes around their mood. Later, they are described as “the strong one.”",
+            "One person claims the last chair without asking. Others stand. The seated person is called decisive.",
           children:
-            "Self-interested behavior can look clean and direct. It reduces inner debate, avoids second-guessing, and moves fast toward a goal. In systems that prize momentum, that speed reads as competence. Meanwhile, restraint looks like hesitation, and consideration looks like weakness. The costs often appear later, in trust damage, burnout, or resentment, which are harder to quantify. So the early signals of confidence get rewarded, even when the long-term effects quietly spread across others.",
+            "Egoism reduces ambiguity. It signals self-protection and speed. Incentives often equate these signals with reliability. Consideration and restraint appear slower and less certain. The system selects for what moves quickly, not what sustains quietly.",
         },
         {
-          title: "Why does this pattern repeat across families, schools, and workplaces?",
+          title: "Why do incentives repeat this pattern everywhere?",
           answer:
-            "Because similar incentive structures shape behavior in many settings, even when the language changes.",
+            "Incentives repeat the pattern by reproducing the same reward logic across institutions.",
           metaphor:
-            "Imagine different classrooms using the same grading rubric. The student who performs for the teacher gets rewarded. The student who asks honest questions is seen as difficult.",
+            "Different games use different boards. The scoring system stays the same. Players adapt quickly.",
           children:
-            "A child learns that being agreeable keeps adults calm. A student learns that compliance is safer than challenge. A worker learns that sacrifice is normal if they want to belong. Each setting feels unique, but the logic is familiar: stability depends on some people yielding more than others. Altruism keeps the surface smooth. Egoism captures attention and resources. Because these lessons start early and repeat often, the pattern can feel like human nature, even when it is partly design.",
+            "Schools, families, and workplaces use different language but similar rewards. Compliance stabilizes environments. Assertion captures resources. People learn early which role brings safety. The repetition makes the pattern feel natural rather than designed.",
         },
         {
-          title: "Why does it appear that altruism fails?",
+          title: "What does ZenTrust notice about incentives here?",
           answer:
-            "Because systems can rely on care quietly while directing rewards toward self-interest.",
+            "ZenTrust notices how incentives extract care while redirecting reward without acknowledgment.",
           metaphor:
-            "Imagine a house where the cleanest room is the one nobody notices. The messiest room gets all the attention. The cleaning keeps happening anyway.",
+            "A mirror hangs in a hallway. People pass through carrying different loads. The mirror stays still.",
           children:
-            "When care does not bring recognition or safety, it can look pointless. But altruism may be doing the invisible work that prevents collapse: calming conflicts, covering gaps, maintaining trust, keeping things humane. The system benefits from that steadiness, yet it may not reward it, because rewarding it would change the incentive structure. So care remains a quiet foundation, while status flows toward those who claim wins loudly. What looks like failure may be unregistered contribution.",
+            "ZenTrust does not argue for or against incentives. It observes how they quietly shape behavior and expectation. It notices the exhaustion that follows unprotected care. ZenTrust holds attention on the moment where the structure becomes visible. Nothing is corrected or replaced.",
         },
         {
-          title: "What becomes possible once this contradiction is seen clearly?",
+          title: "Why do incentives remain unquestioned once seen?",
           answer:
-            "Clarity becomes possible without needing to idealize altruism or demonize egoism.",
+            "Incentives remain unquestioned because comfort replaces clarity after initial recognition.",
           metaphor:
-            "Imagine reading the fine print on a contract. Nothing changes in the room, but your confusion drops. You can finally name what the agreement actually rewards.",
+            "A gardener trims plants inside a walled garden. The rows look neat at dusk. The wall stays tall.",
           children:
-            "Seeing the pattern does not require anger or a new identity. It simply removes a layer of confusion. You can notice when moral language is being used to request sacrifice, and notice when incentives are steering toward self-advantage. You stop treating outcomes as proof of personal worth. You also stop expecting every environment to recognize care. The situation becomes legible, and that legibility creates space inside you, even before anything else changes.",
+            "Seeing the structure creates brief discomfort. Acting on that recognition would disrupt identity and belonging. The system offers comfort in return for compliance. Over time, the discomfort fades and routines resume. The incentive logic continues intact.",
         },
       ]}
       ending={[
-        "Some systems run on care.",
-        "Some reward self-interest.",
-        "Confusion fades when the difference is seen.",
+        "Care can hold systems together.",
+        "Rewards often follow a different path.",
+        "Clarity begins when incentives are seen.",
       ]}
     />
   );
