@@ -1,11 +1,12 @@
 // app/questions/gratitude-demanded-pain-harder-to-name/page.tsx
+
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does being told to feel grateful sometimes make real pain harder to name?",
+  title: "Why does being told to feel gratitude sometimes make real pain harder to name?",
   description:
-    "A question-led exploration of how demanded gratitude can replace honesty with formatting, and why premature reframing can silence what hurts.",
+    "A question-led look at how demanded gratitude can obscure biological honesty and delay the naming of lived pain.",
   other: {
     category: "Meaning & Seeking",
     subcategory: "gratitude-and-honesty",
@@ -16,87 +17,87 @@ export default function GratitudeDemandedPainHarderToNamePage() {
   return (
     <QuestionFrame
       category="Meaning & Seeking"
-      question="Why does being told to feel grateful sometimes make real pain harder to name?"
-      shortAnswer="Because gratitude, when demanded too early or too often, can replace honesty with formatting."
-      heroMetaphor="Imagine being handed a thank-you card while your foot is still being stepped on. The card is polite. The pressure does not stop."
+      question="Why does being told to feel gratitude sometimes make real pain harder to name?"
+      shortAnswer="Being told to feel gratitude can make real pain harder to name because gratitude, when demanded, replaces honest perception with emotional formatting that rewards silence over clarity."
+      heroMetaphor="Imagine being handed a thank-you card while your foot is still being stepped on. The card is polite and carefully written. The pressure on your bones does not change."
       sections={[
         {
-          title: "Why does gratitude feel different when it is suggested instead of felt?",
+          title: "Why does gratitude feel dissonant when it is demanded?",
           answer:
-            "Because suggested gratitude often arrives before clarity has had time to form.",
+            "Gratitude feels dissonant when demanded because it arrives before perception has completed its work.",
           metaphor:
-            "Imagine being asked to smile for a photo while still catching your breath.",
+            "Imagine being asked to smile for a photograph while still catching your breath. Your face arranges itself correctly. Your lungs are still burning.",
           children:
-            "There are moments when gratitude appears on its own. Something resolves. Something clicks. Relief arrives quietly. But when gratitude is offered as a response before confusion, hurt, or anger have been named, it feels hollow. Not because gratitude is wrong, but because it is premature. It replaces contact with completion. The feeling doesn’t land. It floats above what is actually happening.",
+            "There are moments when gratitude arises naturally after something resolves. Relief settles and appreciation follows. When gratitude is introduced too early, it floats above the experience instead of touching it. Confusion, anger, or sadness are still active, but the script asks you to move past them. The result is not peace. It is a gap between what is felt and what is permitted to be named.",
         },
         {
-          title: "Why does forced gratitude make certain emotions feel unacceptable?",
+          title: "How does gratitude become ranked above other emotions?",
           answer:
-            "Because it subtly ranks emotions instead of allowing them.",
+            "Gratitude becomes ranked because it signals social harmony while other emotions signal friction.",
           metaphor:
-            "Imagine a room where only one color is considered clean.",
+            "Imagine a room where only one color is praised as clean. All other shades are quietly treated as stains. You learn which corners to repaint.",
           children:
-            "When gratitude is treated as the preferred emotional state, other reactions begin to feel like failures. Anger feels excessive. Sadness feels weak. Confusion feels immature. People learn which feelings receive approval and which ones create discomfort. Over time, this teaches selection rather than awareness. Emotions are filtered, not felt. What remains is calm on the surface and tension underneath.",
+            "When gratitude is treated as emotional maturity, other responses begin to feel wrong. Anger sounds ungrateful. Sadness sounds weak. Confusion sounds unrefined. Over time, you learn to select emotions that receive approval. This selection replaces awareness. What remains looks calm on the surface, but underneath, reactions are still happening without language or resolution.",
         },
         {
-          title: "What happens when pain is reframed before it is understood?",
+          title: "What happens when gratitude replaces naming pain?",
           answer:
-            "Meaning replaces contact.",
+            "When gratitude replaces naming pain, meaning is imposed before contact is made.",
           metaphor:
-            "Imagine putting a label on a box without opening it.",
+            "Imagine labeling a box before opening it. The words feel decisive. The contents remain unknown.",
           children:
-            "Reframing can be useful after something has been processed. Before that, it skips steps. When pain is immediately turned into a lesson, the lived experience is bypassed. Questions about cause, responsibility, or fairness disappear. The story moves forward, but the body does not. This creates coherence without resolution. Things make sense, but they do not settle.",
+            "Pain carries specific information about boundaries and violations. When it is immediately reframed as a lesson or gift, that information is skipped. The story moves forward while the body stays behind. This creates coherence without completion. Things make sense intellectually, but the experience does not settle. Gratitude fills the space where investigation might have occurred.",
         },
         {
-          title: "How does gratitude become a way to manage discomfort rather than meet it?",
+          title: "Why does gratitude smooth over discomfort so effectively?",
           answer:
-            "By smoothing over what would otherwise disrupt the narrative.",
+            "Gratitude smooths discomfort because it shifts attention from conditions to attitude.",
           metaphor:
-            "Imagine turning down the volume instead of listening closely.",
+            "Imagine turning down the volume on a radio instead of listening carefully. The noise becomes quieter. The message is lost.",
           children:
-            "Gratitude language can soften conversations quickly. It reduces tension. It signals acceptance. This makes it socially useful. But it also shortens inquiry. Instead of asking what is wrong, attention shifts to how well someone is coping. The focus moves from conditions to attitude. Discomfort fades from view, not because it is gone, but because it no longer has a place to speak.",
+            "Gratitude language is socially efficient. It reduces tension and signals adaptation. Conversations end faster. Questions dissolve. Instead of asking what caused harm, attention moves to how well someone is coping. Discomfort fades from view not because it is resolved, but because it no longer has permission to speak. Gratitude becomes a tool for quieting inquiry.",
         },
         {
-          title: "Why does gratitude often get praised where questioning does not?",
+          title: "Why is gratitude rewarded where questioning is discouraged?",
           answer:
-            "Because gratitude maintains harmony without requiring change.",
+            "Gratitude is rewarded because it preserves environmental stability without requiring change.",
           metaphor:
-            "Imagine a bridge that looks stable as long as no one jumps.",
+            "Imagine a bridge that looks stable as long as no one jumps or tests it. Everyone walks lightly and praises the calm. Rust spreads underneath.",
           children:
-            "Gratitude reassures systems. It signals that things are working well enough. Questioning introduces uncertainty. It slows momentum. In environments that value smooth functioning, gratitude feels safe. It confirms that people are adapting. Over time, this creates a subtle pressure. Appreciation is rewarded. Friction is discouraged. The message is not spoken, but it is learned.",
+            "Gratitude reassures systems that the current arrangement is acceptable. Questioning introduces uncertainty and slows momentum. In environments that value smooth functioning, appreciation is interpreted as health and maturity. Over time, this creates pressure to reframe discomfort quickly. Gratitude becomes a signal of belonging. Questioning becomes a risk.",
         },
         {
-          title: "What is lost when gratitude replaces naming what hurts?",
+          title: "What is lost when gratitude replaces precision?",
           answer:
-            "Precision.",
+            "When gratitude replaces precision, the ability to respond accurately is lost.",
           metaphor:
-            "Imagine treating every injury with the same bandage.",
+            "Imagine treating every injury with the same bandage. The wounds are covered. None of them heal correctly.",
           children:
-            "Pain carries information. It points to limits, violations, or needs. When it is quickly reframed, that information is blurred. Everything becomes personal growth. Nothing is allowed to be simply wrong. Without naming what hurts, responses stay general. Healing becomes abstract. The original experience remains unresolved, even as the language around it sounds evolved.",
+            "Pain is precise. It points to specific needs and limits. When every experience is converted into appreciation, those signals blur. Everything becomes growth. Nothing is allowed to be simply wrong. Without precision, responses stay general and abstract. Healing becomes conceptual rather than embodied. The original experience remains unresolved beneath polished language.",
         },
         {
-          title: "Why does ZenTrust ask what gratitude might be covering?",
+          title: "Why does ZenTrust observe gratitude rather than reject it?",
           answer:
-            "Because understanding begins where honesty is allowed to stay incomplete.",
+            "ZenTrust observes gratitude to notice when it conceals unfinished honesty.",
           metaphor:
-            "Imagine stopping mid-sentence and letting the silence speak.",
+            "Imagine stopping mid-sentence and allowing silence to finish the thought. The room feels unfamiliar. Nothing rushes to fill it.",
           children:
-            "ZenTrust does not reject gratitude. It questions timing and pressure. When gratitude appears naturally, it settles the body. When it is required, it often conceals something unfinished. This question is not about choosing better emotions. It is about noticing when an emotional script replaces contact with what is actually happening. Meaning cannot arrive before truth.",
+            "ZenTrust does not oppose gratitude. It notices timing and pressure. When gratitude arises naturally, it settles the body. When it is required, it often covers something unnamed. ZenTrust holds attention on that moment without prescribing emotion. The question exposes the script without replacing it. The mirror shows where honesty paused.",
         },
         {
-          title: "What returns when gratitude is no longer required on demand?",
+          title: "What remains when gratitude is no longer demanded?",
           answer:
-            "The ability to trust your own reactions.",
+            "When gratitude is no longer demanded, trust in one’s own perception returns.",
           metaphor:
-            "Imagine hearing your own voice clearly after a long echo.",
+            "Imagine hearing your own voice clearly after a long echo. You say one true sentence. The walls do not move.",
           children:
-            "When no feeling is mandatory, awareness widens. Anger can inform. Sadness can move. Gratitude can arise without pressure. Nothing has to be resolved immediately. This does not create chaos. It creates accuracy. The system inside you begins responding instead of performing. From there, any feeling that appears has weight because it was not forced.",
+            "When no emotion is mandatory, awareness widens. Anger can inform. Sadness can move. Gratitude can appear without effort. Nothing has to resolve immediately. This does not create chaos. It creates accuracy. The internal system begins responding instead of performing. Feelings regain weight because they are not being managed.",
         },
       ]}
       ending={[
-        "Some emotions arrive quietly.",
-        "Others need space before they can speak.",
-        "Nothing real asks to be rushed.",
+        "Meaning cannot arrive before truth.",
+        "Gratitude cannot replace perception.",
+        "Silence appears when honesty is allowed to finish.",
       ]}
     />
   );
