@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does chronic stress keep insulin elevated?",
   description:
-    "A question-led look at how chronic sublethal stress keeps insulin active long after it is meant to stand down.",
+    "A question-led look at how chronic stress and social performance sustain insulin activity long after its original purpose has passed.",
   other: {
     category: "Health & Suffering",
     subcategory: "stress-hyperinsulinemia",
@@ -18,86 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Health & Suffering"
       question="Why does chronic stress keep insulin elevated?"
-      shortAnswer="Because stress keeps adding sugar to the blood without real movement, insulin stays high to manage it, and eating is used to soothe unfinished stress, which further raises insulin."
-      heroMetaphor="Imagine a fire alarm that beeps softly all day, every day. There is no fire, so no one leaves, but the sound never stops. The building stays tense, not because of danger, but because the alert is never resolved."
+      shortAnswer="Because chronic stress is maintained by ongoing social performance, insulin stays elevated to manage glucose for demands that are rehearsed but never completed."
+      heroMetaphor="Imagine a stage where the curtain never closes. The actor keeps adjusting posture, voice, and timing even when the audience has left. The body stays ready because the role never officially ends."
       sections={[
         {
-          title: "Why does insulin stay high despite constant effort?",
+          title: "Why does insulin remain elevated under chronic stress?",
           answer:
-            "Because insulin responds to ongoing demand signals, not to effort or discipline.",
+            "Because insulin responds to sustained readiness created by unfinished social demands.",
           children:
-            "Many people eat carefully, exercise regularly, and follow medical advice, yet insulin levels remain high or rise over time. This feels confusing because effort is real and sustained. When insulin does not respond as expected, the explanation often turns inward. It begins to sound like a failure of will or consistency. What stays hidden is that insulin is not responding to effort. It is responding to whether the body senses ongoing demand or safety.",
+            "Days are filled with anticipation, monitoring, and self correction. The body prepares for meetings, evaluations, messages, and judgments that may or may not arrive. Glucose is released to support that readiness. Insulin manages it repeatedly. Nothing fully resolves. The performance resets each morning. Insulin remains active because the body is kept in rehearsal, not recovery.",
           metaphor:
-            "Imagine rowing harder against a river that keeps speeding up. You gain strength and skill, but the current never slows. Eventually the exhaustion feels personal, even though the river was never yours to control.",
+            "Imagine a theater rehearsal that restarts every hour. Costumes stay on, lights stay warm, and actors never hear the word finished. The stage is quiet, but never closed.",
         },
         {
-          title: "Why do common explanations for insulin elevation feel incomplete?",
+          title: "Why does effort fail to lower insulin during chronic stress?",
           answer:
-            "Because food and genetics explain fuel, not why insulin stays switched on.",
+            "Because insulin follows the role being played, not the effort applied to escape it.",
           children:
-            "Calories, sugar, and heredity matter, but they do not explain why insulin behaves as if action is always imminent. Two people can eat similarly and live similarly, yet one maintains low insulin while the other does not. When explanations focus only on intake, they miss the signals that tell insulin whether the world is demanding or safe. Stress here is not an emotion. It is a continuous message that keeps insulin engaged.",
+            "People diet, exercise, track, and optimize while staying inside the same expectations. The body continues preparing to be productive, responsive, and acceptable. Insulin stays elevated because the role has not changed. Effort becomes part of the performance. The signal to stand down never arrives.",
           metaphor:
-            "Imagine adjusting the fuel gauge again and again while the engine remains locked in first gear. You keep changing the input, but the problem was never the gasoline.",
+            "Imagine polishing a uniform between drills. The fabric shines, but the marching never stops. The polishing becomes another duty.",
         },
         {
-          title: "What keeps insulin active beneath the surface?",
+          title: "What does chronic stress actually signal to insulin?",
           answer:
-            "A chronic stress response that continually mobilizes glucose and calls insulin into action.",
+            "That availability must be constant because evaluation may happen at any moment.",
           children:
-            "Persistent psychological stress keeps hormones like cortisol and adrenaline elevated. Their job is to release glucose so muscles can act. Insulin is then released to manage that glucose and keep it from causing damage. When no physical action follows, this cycle repeats. Insulin is activated again and again without resolution. Over time, high insulin stops being a temporary response and becomes the body’s default state.",
+            "Chronic stress does not require danger. It only requires being watched, measured, or compared. Glucose is released so the body can respond instantly. Insulin stays active to control that fuel. The signal repeats even in stillness. The body remains on call for a judgment that never fully lands.",
           metaphor:
-            "Imagine keeping a warehouse fully staffed and brightly lit at all hours in case an emergency order arrives. The order never comes, but the lights stay on and the costs quietly grow.",
+            "Imagine keeping your phone unlocked all day waiting for a message. The screen glows, the battery drains, and silence feels tense.",
         },
         {
-          title: "How does chronic insulin elevation change the body over time?",
+          title: "How does chronic stress redefine insulin’s role?",
           answer:
-            "Insulin gradually shifts from protection to physiological strain.",
+            "Insulin becomes the manager of constant readiness rather than short-term survival.",
           children:
-            "Insulin keeps pushing energy into storage while limiting access to it. Fat accumulates not because of excess desire, but because of instruction. Blood vessels stiffen, pressure rises, and cells respond less clearly to insulin’s signals. The pancreas works harder to compensate. Years pass. The original reason insulin stayed high fades, but the pattern remains. The body continues preparing for a demand that never fully arrives.",
+            "Insulin shifts from handling brief emergencies to supporting continuous performance. Energy is stored, not accessed. Fatigue grows alongside weight. The body adapts to being always available. This is not a malfunction. It is compliance with the conditions it senses.",
           metaphor:
-            "Imagine wearing protective armor every day. At first it feels sensible. Years later, movement is restricted, breathing is shallow, and rest no longer restores you.",
+            "Imagine a warehouse that never closes because orders might come. Boxes pile up, aisles narrow, and movement slows. Nothing is technically wrong.",
         },
         {
-          title: "How does elevated insulin feel in daily life?",
+          title: "How does elevated insulin feel inside daily life?",
           answer:
-            "As hunger, fatigue, and a sense of fighting insulin itself.",
+            "As hunger, fatigue, and the sense of being managed rather than living.",
           children:
-            "People feel hungry even after eating and tired even after resting. High insulin blocks access to stored energy, so hunger appears even when fuel is plentiful. Weight increases while energy drops. Low intensity routines may calm the mind, but insulin remains elevated because the body still expects action. Recovery feels partial. Over time, this struggle is mistaken for personal weakness instead of ongoing insulin activation.",
+            "Hunger appears without need. Rest does not restore. The day feels heavy before it begins. These sensations are often treated as personal problems. They are signals of ongoing regulation. Insulin continues to manage a life lived on display.",
           metaphor:
-            "Imagine trying to sleep in a room where lights flicker and doors slam unpredictably. Sleep happens, but deep rest never fully arrives.",
+            "Imagine wearing a badge that never comes off. Even alone, posture stays upright. Rest feels incomplete.",
         },
         {
-          title: "Why does insulin elevation keep repeating?",
+          title: "Why does chronic stress keep insulin elevated over years?",
           answer:
-            "Because modern systems keep insulin active without allowing completion.",
+            "Because modern systems reward visible coping more than actual completion.",
           children:
-            "Work, finances, and constant evaluation create low level threat without clear resolution. The body prepares repeatedly, and insulin follows. Medical systems often treat the numbers insulin controls, not the conditions that require insulin to stay elevated. Remaining functional is rewarded more than restoring safety. Insulin keeps doing its job because the demand signal never truly ends.",
+            "Work, health culture, and social norms reward endurance. Being functional is praised. Standing down is rare. Insulin remains elevated because the body learns that readiness is safer than rest. The role becomes identity.",
           metaphor:
-            "Imagine being asked to hold your breath repeatedly throughout the day, but never being told when you can exhale. You adapt, and the adaptation becomes the injury.",
+            "Imagine applause that only happens while you keep moving. Stopping feels like disappearing.",
         },
         {
-          title: "What does ZenTrust ask about insulin here?",
+          title: "What does ZenTrust notice about insulin in this pattern?",
           answer:
-            "Whether insulin is reacting to food alone, or to a life that never stands down.",
+            "That insulin often reflects obedience to an unspoken script rather than biological failure.",
           children:
-            "ZenTrust does not ask how to lower insulin or how to manage stress better. It asks what assumption made constant insulin release seem normal. If the body has been preparing for years, insulin may be functioning exactly as designed. The confusion shifts away from personal failure and toward the conditions that keep insulin permanently engaged.",
+            "ZenTrust observes insulin as a faithful responder to expectation. The body adapts to what is demanded, not to what is said. Seeing this shifts the mirror. The question is no longer why insulin will not calm down, but what keeps being silently performed.",
           metaphor:
-            "Imagine checking the fuel gauge repeatedly while ignoring the warning light that says the engine has been running without pause.",
+            "Imagine realizing the mirror was never judging you. It was showing the costume you never took off.",
         },
         {
-          title: "What remains when insulin is seen clearly?",
+          title: "What remains when insulin is seen without the role?",
           answer:
-            "Understanding insulin without urgency or self blame.",
+            "A pause where the performance briefly loosens.",
           children:
-            "Nothing here demands action. Seeing why insulin stayed high is enough for now. When the pattern is named, self blame loosens. Insulin no longer looks like the enemy. Understanding does not fix the world, but it can quiet the belief that something inside you was broken.",
+            "Nothing here asks for change. Recognition alone alters the room. Insulin no longer looks like an enemy or a defect. The script becomes visible. The body waits, as it always has, for a different signal.",
           metaphor:
-            "Imagine realizing the alarm was never your fault. You did not fail to cope. You were responding to noise that never stopped.",
+            "Imagine the rehearsal stopping mid sentence. No applause. No instruction. Just stillness.",
         },
       ]}
       ending={[
-        "You were not weak for adapting.",
-        "Insulin was doing its job in the world it sensed.",
-        "Understanding can come before change.",
+        "The body prepares for the roles it is given.",
+        "Insulin follows readiness, not worth.",
+        "Seeing the script is not the same as leaving it.",
       ]}
     />
   );
