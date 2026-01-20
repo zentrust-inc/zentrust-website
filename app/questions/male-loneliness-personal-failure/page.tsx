@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why is male loneliness mistaken for personal failure?",
   description:
-    "A question-led look at why male loneliness is often judged as failure, and how modern friendship norms can distort what solitude actually means.",
+    "A question-led look at how loneliness in men is misread as failure when it is often the collapse of a social performance script.",
   other: {
     category: "Mind & Experience",
     subcategory: "male-loneliness-failure",
@@ -18,86 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Mind & Experience"
       question="Why is male loneliness mistaken for personal failure?"
-      shortAnswer="Because modern culture treats social visibility as proof of health, male loneliness is judged as a defect, even when it follows a shift away from approval-driven friendship and social performance."
+      shortAnswer="Because loneliness in men is interpreted through a script that treats visibility as proof of health, causing silence to be misread as personal defect rather than a change in social participation."
       heroMetaphor="Imagine a man standing alone in a bright cafeteria after lunch ends. The chairs scrape, the room empties, and he stays seated while the floor is being swept. A few people glance back as they leave, and no one asks why he stayed."
       sections={[
         {
-          title: "Why does male loneliness trigger suspicion so fast?",
+          title: "Why does male loneliness trigger suspicion so quickly?",
           answer:
-            "Because male loneliness is read as a warning sign instead of a neutral change in social life.",
+            "Because loneliness is treated as a warning sign of non-compliance rather than a neutral change in social state.",
           metaphor:
-            "Imagine a phone that stops buzzing for a whole afternoon. You pick it up and check the screen again. The silence feels louder than the earlier noise.",
+            "Imagine a phone that stops buzzing for an entire afternoon. You pick it up again and again. The silence feels louder than the earlier noise.",
           children:
-            "When a man is seen alone, many people assume something is wrong before they know anything else. Modern friendship is treated like a scoreboard, and being off the board looks like losing. Male loneliness gets framed as antisocial, unwanted, or broken. The judgment often happens without asking what changed, what was dropped, or what kind of friendship was there before the quiet began.",
+            "When a man is seen alone, assumptions appear before curiosity does. Modern friendship is measured by visibility, not by depth or fit. Being quiet or socially absent is read as malfunction because the system expects constant participation. Loneliness becomes suspicious not because it is harmful, but because it cannot be easily measured or displayed.",
         },
         {
-          title: "Why does the standard story about male loneliness fall short?",
+          title: "Why does the standard story about male loneliness fail?",
           answer:
-            "Because it blames the man, while ignoring how friendship is structured and rewarded.",
+            "Because it blames the individual while ignoring the structure of friendship that rewards performance over honesty.",
           metaphor:
-            "Imagine counting chairs in a room and calling it a good party. The chairs can be full for an hour and empty by night. The count never shows what the conversations were like.",
+            "Imagine counting chairs in a room and calling it a good gathering. The chairs can be full for an hour and empty by night. The count never shows what the conversations were like.",
           children:
-            "The usual explanation says male loneliness comes from poor social skills or personal failure. That story skips the environment that rewards constant contact and easy banter over honesty. Many friendships survive by staying light, not by going deep. When a man stops performing the easy version of himself, the connections that depended on that performance can thin out. The result is labeled failure, even when it is a change in what he can tolerate.",
+            "The dominant explanation frames loneliness as poor social skill or emotional weakness. This ignores how many friendships are built on speed, humor, and mutual reassurance rather than truth. When a man stops performing the agreeable version of himself, those bonds often thin. The loss is labeled failure even when it reflects a change in tolerance rather than a lack of capacity.",
         },
         {
           title: "What kind of male loneliness is most often misunderstood?",
           answer:
-            "The male loneliness that appears when approval-based friendship starts dissolving.",
+            "The loneliness that appears when approval-based friendship begins to dissolve.",
           metaphor:
-            "Imagine taking down holiday decorations after a long season. The room looks bare for a while. Nothing is damaged, but the old sparkle is gone.",
+            "Imagine taking down decorations after a long season. The room looks bare for a while. Nothing is broken, but the sparkle is gone.",
           children:
-            "Not all male loneliness is the same. Some loneliness is painful lack, but another kind appears when a man steps away from friendships built on jokes, status, or mutual reassurance. If a friendship required him to stay agreeable, upbeat, or useful, it may not survive a more honest version of him. From the outside it looks like social loss. Inside it can feel like the end of a role, not the end of his ability to connect.",
+            "Not all loneliness signals lack. Some loneliness arrives after a role ends. When friendships depended on constant joking, status signaling, or usefulness, they may not survive a shift toward honesty. From the outside it looks like social loss. Inside it can feel like relief mixed with emptiness, not rejection.",
         },
         {
-          title: "How does male loneliness grow when the social mask weakens?",
+          title: "How does loneliness grow when the social mask weakens?",
           answer:
-            "Because the social mask kept friendships smooth, and without it, many bonds lose their script.",
+            "Because the mask provided smoothness, and without it many bonds lose their script.",
           metaphor:
-            "Imagine wearing the same work uniform every day for years. One weekend you show up in plain clothes and people stare. A few still nod, but the usual chatter does not start.",
+            "Imagine wearing the same uniform every day for years. One weekend you arrive in plain clothes. People nod, but the usual conversations do not begin.",
           children:
-            "Many men learn early to keep feelings contained and to stay functional in groups. The social mask helps him sound confident, funny, or unfazed, even when he is tired inside. Some friendships are built around that mask because it makes interactions easy and predictable. When the mask weakens, the pace changes. Male loneliness can increase not because he hates people, but because he can no longer maintain the old version of friendship without paying a cost.",
+            "Many men learn to stay functional and emotionally contained to maintain belonging. That mask makes interaction predictable. When it weakens, pauses appear and rhythms change. Loneliness increases not because connection is unwanted, but because the cost of maintaining the old pace becomes too high to pay.",
         },
         {
-          title: "Why does male loneliness get worse when approval fades?",
+          title: "Why does loneliness intensify when approval fades?",
           answer:
-            "Because approval is a social glue, and when it stops being the goal, many friendships stop sticking.",
+            "Because approval acts as social adhesive, and without it many connections no longer hold.",
           metaphor:
-            "Imagine stepping off a moving walkway in an airport. People keep drifting forward without noticing you. You stand still for a moment and watch the gap widen.",
+            "Imagine stepping off a moving walkway in an airport. People keep drifting forward. You stand still and watch the gap widen.",
           children:
-            "Modern friendship often runs on quick approval: likes, laughs, group momentum, easy agreement. When a man stops chasing that approval, he may become quieter, harder to read, and less available for the usual social rituals. Others can interpret that as coldness or rejection. The man may interpret it as relief. Male loneliness grows in the gap between a new inner pace and an old friendship culture that expects constant social proof.",
+            "Modern friendship often runs on quick affirmation. When approval is no longer pursued, a man becomes quieter and harder to read. Others may experience this as withdrawal. The loneliness grows in the space between a slower inner pace and a culture that expects constant social proof.",
         },
         {
-          title: "Why is male loneliness labeled personal failure instead of a transition?",
+          title: "Why is male loneliness labeled failure instead of transition?",
           answer:
-            "Because society has a simple script for friendship and little patience for quiet change.",
+            "Because the social script has little tolerance for quiet change.",
           metaphor:
-            "Imagine a bus route posted on a wall with only the main stops listed. You take a smaller road and the sign does not mention it. Someone points at the sign and says you went the wrong way.",
+            "Imagine a bus route posted with only major stops. You take a smaller road. Someone points to the sign and says you went the wrong way.",
           children:
-            "Culture has a narrow picture of what a healthy man looks like socially: active, joking, surrounded, always connected. When male loneliness appears, it gets moralized as weakness or decline. The possibility that a shrinking circle could reflect clearer standards is rarely entertained. Friendship is treated as quantity, not fit. So a man in transition is judged using the old scoreboard, even if his inner life has already changed the rules.",
+            "Cultural images of healthy masculinity emphasize visibility and momentum. When a man becomes quieter, the change is moralized as decline. The idea that a shrinking circle could reflect clearer standards is rarely considered. Loneliness is judged using an outdated scoreboard that no longer matches the inner terrain.",
         },
         {
-          title: "ZenTrust: What does ZenTrust notice about male loneliness?",
+          title: "What does ZenTrust notice about male loneliness?",
           answer:
-            "ZenTrust notices how male loneliness is judged before anyone asks what kind of friendship was left behind.",
+            "ZenTrust notices how loneliness is judged before anyone asks what kind of connection ended.",
           metaphor:
             "Imagine closing a door to a loud room and sitting in the hallway. People inside assume you are sulking. They do not notice the ringing in your ears has stopped.",
           children:
-            "ZenTrust does not claim male loneliness is good, bad, or noble. It notices how quickly loneliness becomes a verdict about character. Some loneliness is a signal of unmet need, and some loneliness is the fallout of dropping performative friendship. ZenTrust holds attention on the difference. The question is not whether a man has enough friends, but whether the friendships available required him to keep wearing a mask.",
+            "ZenTrust does not define loneliness as good or bad. It observes how quickly it becomes a verdict about character. Some loneliness signals unmet need. Some follows the end of performative bonds. ZenTrust holds attention on that difference without asking for correction or improvement.",
         },
         {
-          title: "What changes when male loneliness is viewed without the failure story?",
+          title: "What remains when loneliness is no longer framed as failure?",
           answer:
-            "Male loneliness becomes easier to examine, and friendship can be seen as depth and fit, not proof.",
+            "A quieter space where connection can be evaluated by fit rather than visibility.",
           metaphor:
-            "Imagine a lake after the boats leave at sunset. The water keeps moving, but the surface looks calmer. A single ripple crosses the middle and disappears.",
+            "Imagine a lake after the boats leave at sunset. The water keeps moving, but the surface calms. A single ripple crosses and disappears.",
           children:
-            "When the failure story loosens, male loneliness becomes less humiliating and more readable. A man can notice whether he misses intimacy, trust, shared work, or simply the noise that used to hide boredom. Friendship can be seen as a real bond rather than a performance requirement. This does not romanticize being alone. It challenges the norm that a shrinking circle automatically means something is wrong, instead of asking what kind of friendship was being maintained, and at what price.",
+            "When the failure story drops, loneliness becomes readable instead of shameful. A man can notice what is actually missing rather than defending against judgment. Friendship is no longer a performance requirement. It becomes a question of depth, timing, and truth rather than proof.",
         },
       ]}
       ending={[
-        "Nothing here asks you to become more social.",
-        "Nothing here calls loneliness a virtue.",
-        "It only asks whether failure was assumed too quickly.",
+        "Loneliness is not always a problem to solve.",
+        "Visibility is not the same as connection.",
+        "Silence is not evidence of failure.",
       ]}
     />
   );
