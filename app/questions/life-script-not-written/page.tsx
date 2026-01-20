@@ -6,7 +6,7 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does your life follow a script you did not write?",
   description:
-    "A question-led exploration of how conditioned scripts shape daily life, even when awareness is present.",
+    "A question-led examination of how a script formed through repetition and reward can shape daily life without conscious authorship.",
   other: {
     category: "Mind & Experience",
     subcategory: "life-script-conditioning",
@@ -18,86 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Mind & Experience"
       question="Why does your life follow a script you did not write?"
-      shortAnswer="Because the script is formed through repetition, reward, and pressure long before it is noticed, so daily life runs on learned patterns that feel personal."
-      heroMetaphor="Imagine opening a notebook and finding today’s plan already written in your handwriting. You cannot remember writing it, but the ink looks fresh and the timing fits the day. You stare at the page while the day begins anyway."
+      shortAnswer="Your life follows a script you did not write because repeated reward and pressure train the nervous system to reuse familiar patterns long before awareness is present."
+      heroMetaphor="Imagine opening a notebook and finding today’s plan already written in your handwriting. You do not remember writing it, yet the timing fits the day perfectly. The day begins whether you agree or not."
       sections={[
         {
           title: "Why does the script feel like your personality?",
           answer:
-            "Because repetition turns learned responses into something familiar that gets mistaken for identity.",
+            "The script feels like personality because repetition converts learned responses into familiarity that is mistaken for nature.",
           metaphor:
-            "Imagine wearing the same jacket every day for years. One morning you put it on without noticing. Later you cannot remember how your shoulders feel without it.",
+            "Imagine wearing the same heavy jacket every day for years. One morning you put it on without noticing. Later you cannot remember how your shoulders feel without it.",
           children:
-            "From early on, you learn which parts of you bring ease and which bring friction. The script forms through praise, correction, silence, and attention. Over time you stop noticing the choices you are not making because the script handles them for you. You reach for the same words, tone, and role in familiar situations. It can feel like personality, even though it is also practice repeated until it feels natural.",
+            "From early life, certain behaviors bring ease while others bring correction or silence. Over time, the body remembers which responses reduce friction. You reach for the same tone, posture, and role automatically. Because these patterns feel familiar, they are labeled as personality. The script hides by feeling ordinary, even though it was trained by environment rather than chosen freely.",
         },
         {
-          title: "Why does free will not cancel the script?",
+          title: "Why does free will not erase the script?",
           answer:
-            "Because choosing inside a script still limits what feels possible to choose.",
+            "Free will does not erase the script because choice still occurs inside boundaries the script already defined.",
           metaphor:
-            "Imagine a menu with many items, but the kitchen only prepares a few. You take time deciding. The plate arrives different in name, but similar in taste.",
+            "Imagine a menu with many items listed. The kitchen prepares only a few. You decide carefully and still receive what the kitchen planned.",
           children:
-            "You make decisions all day, which makes the script harder to see. The question is where the options came from. The script defines what feels realistic, embarrassing, or out of reach. You may choose the safer sentence, job, or relationship pattern and call it preference. The script stays hidden because it speaks in your own voice and uses familiar reasons to justify itself.",
+            "Daily decisions create the sense of authorship. What remains unseen is how the range of options was filtered before choice appeared. The script quietly edits what feels realistic, embarrassing, or unreachable. You select among permitted paths and experience that selection as freedom. The script stays invisible because it speaks through your own reasoning and preferences.",
         },
         {
-          title: "What is the script actually made of?",
+          title: "What is the script actually built from?",
           answer:
-            "The script is built from repeated incentives, threats, and roles that trained your nervous system.",
+            "The script is built from accumulated incentives, threats, and social cues stored as automatic responses.",
           metaphor:
-            "Imagine a narrow path worn through grass behind a building. No sign directs you there. Your feet follow it because the ground is already pressed down.",
+            "Imagine a narrow path worn through grass behind a building. No sign points the way. Your feet follow it because the ground is already pressed flat.",
           children:
-            "The script is not a single decision but an accumulation of small moments. It forms from what earned approval, reduced conflict, or kept you included. The script stores shortcuts so you do not have to face uncertainty every time. It guides how you act around authority, family, friends, and strangers. It can be useful, but it can also keep you living by rules that no longer match your present life.",
+            "The script forms through thousands of small moments rather than a single decision. Approval, avoidance of conflict, and the need to belong shape reactions that later run on their own. These shortcuts reduce uncertainty for the system and for the body. Over time, the script becomes the default route through life, even when circumstances change.",
         },
         {
-          title: "Why does the script keep running after you notice it?",
+          title: "Why does the script keep running after it is noticed?",
           answer:
-            "Because the script is tied to safety, not understanding.",
+            "The script keeps running because it is tied to biological safety rather than intellectual agreement.",
           metaphor:
-            "Imagine a song playing quietly in your head while you try to read. You recognize the melody. It continues underneath your thoughts anyway.",
+            "Imagine a song playing quietly while you read. You recognize the melody. It continues underneath your thoughts.",
           children:
-            "Seeing the script does not automatically stop it, especially under pressure. In tense moments, the body reaches for what once reduced risk. People-pleasing, freezing, performing competence, or avoiding disagreement can return without effort. Awareness may arrive like light in a room, but the furniture remains arranged the same way. The script continues because it once protected you from something real.",
+            "Recognition does not immediately undo conditioning. In moments of pressure, the body returns to what once reduced risk. People-pleasing, performing competence, or avoiding disagreement reappear automatically. Awareness may illuminate the pattern, but the nervous system still trusts what previously ensured belonging. The script persists because it was learned as protection.",
         },
         {
           title: "Why does the script discourage curiosity?",
           answer:
-            "Because curiosity threatens the conditions the script was designed to preserve.",
+            "The script discourages curiosity because curiosity introduces variation that threatens predictability.",
           metaphor:
-            "Imagine a group photo where everyone is told to hold still. One person shifts to breathe. The photographer snaps even though the pose was uncomfortable.",
+            "Imagine a group photo where everyone is told to hold still. One person shifts slightly to breathe. The image captures blur instead of symmetry.",
           children:
-            "Many scripts are built around staying acceptable and included. Curiosity can slow things down, question rules, or expose discomfort others rely on. The script trains you to anticipate that reaction and avoid it. This is how a system quietly teaches you that curiosity is a problem. The danger is not curiosity itself, but learning to distrust it in order to belong.",
+            "Curiosity slows routines and questions assumptions. For systems built on smooth operation, this creates friction. The script teaches anticipation of disapproval and trains curiosity to retreat before it surfaces. Over time, inquiry feels risky even when nothing is explicitly forbidden. The script survives by making exploration feel socially unsafe.",
         },
         {
-          title: "Why does following the script feel easier than writing your own life?",
+          title: "Why does following the script feel easier than authorship?",
           answer:
-            "Because the script offers clarity and approval, while authorship brings uncertainty.",
+            "Following the script feels easier because it offers approval and clarity while authorship brings uncertainty.",
           metaphor:
-            "Imagine walking with a voice giving directions every few steps. You stop reading street signs. When the voice goes silent, familiar roads suddenly feel confusing.",
+            "Imagine walking with a voice giving directions every few steps. You stop reading street signs. When the voice disappears, familiar roads feel confusing.",
           children:
-            "The script reduces effort by telling you what to say, want, and avoid. Stepping outside it can feel slow or exposed, even if nothing bad happens. The script also protects others from your unpredictability, which is why it is rewarded. Writing your own life can feel like standing without cues. The script feels easier because it is already approved.",
+            "The script reduces effort by preloading expectations. It tells you what to want, how to speak, and which risks to avoid. Stepping outside it feels exposed because cues disappear. Others reward your predictability with trust and inclusion. Authorship lacks that immediate reinforcement. The script feels easier because it has already been accepted.",
         },
         {
-          title: "ZenTrust: What does ZenTrust notice about the script?",
+          title: "What does ZenTrust notice about the script?",
           answer:
-            "ZenTrust notices how the script borrows your voice so completely that it rarely feels like a script.",
+            "ZenTrust notices the script as a pattern mistaken for identity rather than a failure of awareness.",
           metaphor:
-            "Imagine reading a letter that sounds exactly like you. The phrases feel familiar. Halfway through, you realize you never wrote it.",
+            "Imagine reading a letter written in your exact voice. The phrasing feels familiar. Halfway through, you realize you never wrote it.",
           children:
-            "ZenTrust does not claim to know your true story. It observes how scripts hide inside normal behavior. A script can look like responsibility, politeness, ambition, or maturity. ZenTrust holds attention on moments where actions feel automatic and curiosity feels risky. It does not demand change. It only questions whether the script has been mistaken for you.",
+            "ZenTrust does not offer a replacement story. It observes how scripts hide inside responsibility, maturity, and reliability. When actions feel automatic and curiosity feels dangerous, the script is active. ZenTrust holds attention on that condition without judgment. The mirror reflects the pattern, not a demand for change.",
         },
         {
-          title: "What changes when the script is seen without fear?",
+          title: "What remains when the script is seen clearly?",
           answer:
-            "The script becomes something observable, not a verdict about who you are.",
+            "When the script is seen clearly, it becomes observable rather than authoritative.",
           metaphor:
-            "Imagine watching a familiar play from the back row. You know the lines already. This time you notice the pauses and lighting.",
+            "Imagine watching a familiar play from the back of an empty theater. You know every line. This time you notice the lighting and pauses.",
           children:
-            "When the script is seen calmly, it stops proving that you are trapped or broken. You may notice what it protected and what it still protects. You may also see where it creates unnecessary strain. The point is not to erase the script. The point is to notice when a day is being lived by a pattern written long ago, and when something real is trying to speak.",
+            "Seeing the script does not erase it. It changes relationship. The pattern stops proving that something is wrong with you. You may notice what it once protected and what it still restricts. The day is no longer fully lived by rehearsal. A small space opens where presence appears without instruction.",
         },
       ]}
       ending={[
-        "Nothing here asks you to rewrite your life today.",
-        "Nothing here calls your script a mistake.",
-        "It only asks when the script began and what it has been protecting.",
+        "The script was learned before it was noticed.",
+        "Repetition felt like identity.",
+        "Seeing the pattern changes the weight it carries.",
       ]}
     />
   );
