@@ -19,8 +19,7 @@ export default function QuestionPage() {
       category="Tools & Technology"
       question="Why does constant connection make rest feel harder instead of easier?"
       shortAnswer="Because constant connection replaces biological completion with permanent availability, keeping the nervous system in a state of unfinished readiness."
-      pauseLine="▶ Pause here ▷"
-      heroMetaphor="Imagine sitting in a quiet room while a doorbell rings at random intervals. You are told you do not have to answer it, but you never know when it will ring again. Even in silence, part of your body stays alert."
+            heroMetaphor="Imagine sitting in a quiet room while a doorbell rings at random intervals. You are told you do not have to answer it, but you never know when it will ring again. Even in silence, part of your body stays alert."
       sections={[
         {
           title: "Why does connection prevent the body from entering rest?",
