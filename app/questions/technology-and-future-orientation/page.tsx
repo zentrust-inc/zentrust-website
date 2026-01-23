@@ -1,15 +1,15 @@
 // app/questions/technology-and-future-orientation/page.tsx
+
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title:
-    "Why does future planning feel harder with technology?",
+  title: "Why does future planning feel harder as technology accelerates?",
   description:
-    "A question-led exploration of how rapid technological acceleration disrupts long-held assumptions about work, security, and orientation.",
+    "A sharp examination of how technological acceleration removes stable assumptions faster than orientation can reform.",
   other: {
     category: "Schools & Systems",
-    subcategory: "technology-disruption-and-orientation",
+    subcategory: "technology-orientation-fracture",
   },
 };
 
@@ -17,89 +17,87 @@ export default function TechnologyAndFutureOrientationPage() {
   return (
     <QuestionFrame
       category="Schools & Systems"
-      question="Why does planning for the future feel harder just as technology becomes more powerful?"
-      shortAnswer="Because rapid technological change reshapes how value, work, and security are created faster than people and institutions can adapt their assumptions."
-      heroMetaphor="Imagine learning to navigate using familiar landmarks. Roads, buildings, and signs stay mostly the same. One day, the terrain begins shifting while you are still walking."
+      question="Why does future planning feel harder as technology accelerates?"
+      shortAnswer="Because technological acceleration dissolves the assumptions that once linked effort to outcome, leaving planning without a stable reference frame."
+      heroMetaphor="A map works as long as landmarks stay put. One day the landmarks begin moving while the map remains the same. Walking continues, but orientation quietly collapses."
       sections={[
         {
-          title: "Why does technological acceleration create unease instead of confidence?",
+          title: "Why does acceleration feel destabilizing rather than empowering?",
           answer:
-            "Because speed removes the sense of stable ground people rely on to plan.",
-          metaphor:
-            "Imagine standing on a moving walkway that keeps speeding up. At first it helps. Eventually, balance becomes harder to maintain.",
+            "Acceleration destabilizes planning by shortening the lifespan of assumptions.",
           children:
-            "When change happens gradually, people adjust expectations alongside it. Jobs, education, and savings strategies evolve slowly. Rapid acceleration breaks that rhythm. Skills lose relevance faster and long-term plans feel fragile. Even when technology promises abundance, the pace of change creates uncertainty about where to stand and what will still matter next.",
+            "Planning depends on continuity. Skills, roles, and rewards are expected to persist long enough to justify effort. When technology advances quickly, those expectations expire early. The body senses this mismatch before language catches up. Anxiety appears not because change exists, but because reference points dissolve faster than new ones form.",
+          metaphor:
+            "A bridge is crossed while its supports are being replaced. The steps continue. Trust thins.",
         },
         {
-          title: "Why does advanced automation threaten so many professions at once?",
+          title: "Why do long-term plans lose credibility first?",
           answer:
-            "Because it replaces patterns of thinking, not just physical labor.",
-          metaphor:
-            "Imagine many doors that once required different keys. Suddenly, one master key opens them all.",
+            "Because long-term plans rely on stable payoff structures.",
           children:
-            "Earlier technologies automated muscles. New systems automate judgment, analysis, and coordination. This reaches into law, finance, medicine, and administration simultaneously. When many roles rely on similar cognitive patterns, disruption spreads broadly instead of sector by sector. Concern shifts from specific jobs to how work itself is defined.",
+            "Education, careers, and savings once followed predictable arcs. Technology compresses cycles so outcomes arrive late or not at all. Promises remain verbal while conditions shift underneath them. The future stops feeling like a destination and starts feeling provisional. Planning weakens because completion can no longer be assumed.",
+          metaphor:
+            "Seeds are planted in soil that is moved each season. Growth becomes uncertain.",
         },
         {
-          title: "What happens when technology advances faster than social agreement?",
+          title: "What changes when value creation accelerates?",
           answer:
-            "Trust in systems begins to weaken.",
-          metaphor:
-            "Imagine playing a game where the rules keep changing mid-round. Eventually, players stop believing the score matters.",
+            "Value detaches from duration and reattaches to immediacy.",
           children:
-            "Institutions depend on shared belief that rules are fair and outcomes are legitimate. When technological change outpaces governance, disagreement intensifies. Loss is experienced differently and interpreted as injustice. Without trusted ways to resolve tension, polarization grows and cooperation becomes harder to sustain.",
+            "Previously, value accumulated through time spent. Acceleration rewards speed, adaptability, and timing instead. This reorders effort without warning. People trained for endurance find themselves displaced by responsiveness. The confusion is not personal failure. It is a change in what counts as contribution.",
+          metaphor:
+            "A clock switches from hours to seconds. The hands still move.",
         },
         {
-          title: "Why do periods of technological dominance often lead to conflict?",
+          title: "Why does technology disrupt many roles at once?",
           answer:
-            "Because control over powerful tools reshapes economic and political balance.",
-          metaphor:
-            "Imagine one team suddenly gaining a much faster vehicle in a race. The race continues, but its meaning changes.",
+            "Because it replaces shared patterns of judgment rather than isolated tasks.",
           children:
-            "Across history, groups that gain decisive technological advantages accumulate influence quickly. Others feel threatened or left behind. Competition intensifies and technology becomes both an engine of progress and a source of fear. The same tools that create growth can amplify rivalry when trust erodes.",
+            "Modern tools do not only automate labor. They replicate coordination, analysis, and decision logic. When many professions rely on similar cognitive patterns, disruption spreads simultaneously. Planning fails because no adjacent role feels safe. The ground shifts across entire categories at once.",
+          metaphor:
+            "Several doors use different locks until one key fits them all.",
         },
         {
-          title: "Why does financial preparation alone feel insufficient in uncertain times?",
+          title: "Why does money feel less protective in accelerated systems?",
           answer:
-            "Because money protects outcomes, not orientation.",
-          metaphor:
-            "Imagine packing supplies for a journey without knowing which direction the road will take.",
+            "Because money buffers shocks but cannot restore orientation.",
           children:
-            "Saving and investing help buffer shocks, but they do not address deeper questions about purpose, belonging, or adaptability. When systems shift, knowing where to move, what to learn, and whom to trust matters as much as financial reserves. Security becomes multidimensional rather than purely monetary.",
+            "Savings can soften impact, but they do not answer what to prepare for. When futures branch unpredictably, financial planning loses narrative coherence. Security becomes temporary rather than directional. The discomfort is not poverty anxiety. It is orientation loss.",
+          metaphor:
+            "Supplies are packed without knowing which climate lies ahead.",
         },
         {
-          title: "Why does flexibility of location and skill become more valuable than stability?",
+          title: "Why does flexibility replace stability as the praised trait?",
           answer:
-            "Because change favors those who can move and reorient.",
-          metaphor:
-            "Imagine having several exits in a building instead of only one. You may never use them, but they change how safe the space feels.",
+            "Because adaptability survives assumption collapse better than commitment.",
           children:
-            "In uncertain environments, the ability to relocate, retrain, or adjust lifestyle becomes a form of resilience. History shows that those who could adapt geographically or professionally often fared better during major transitions. Stability still matters, but rigidity becomes a liability when conditions shift rapidly.",
+            "Rigid plans depend on continuity. Flexible positioning tolerates disruption. As assumptions fail faster, systems reward those who can reorient quickly. This does not mean stability is wrong. It means stability without adaptability becomes fragile.",
+          metaphor:
+            "A tent bends in wind while a rigid frame snaps.",
         },
         {
-          title:
-            "Why does it appear, from a ZenTrust perspective, that individuals are failing rather than the assumptions guiding the system?",
+          title: "ZenTrust: What does ZenTrust notice about future anxiety?",
           answer:
-            "Because systems rarely question the beliefs they were built on.",
-          metaphor:
-            "Imagine blaming yourself for being lost while following a map drawn for a different city.",
+            "ZenTrust notices anxiety arising where outdated models are still applied.",
           children:
-            "From a ZenTrust perspective, anxiety emerges when old expectations are applied to new conditions. Productivity, career paths, and success were shaped by earlier technological eras. When those assumptions stop matching reality, confusion is internalized as personal inadequacy rather than recognized as a mismatch of models.",
+            "ZenTrust does not offer forecasts or strategies. It observes how confusion is internalized when inherited assumptions no longer match conditions. When orientation models lag reality, distress appears personal. Naming the mismatch restores accuracy without demanding solutions.",
+          metaphor:
+            "A compass spins because the field has changed.",
         },
         {
-          title:
-            "What remains meaningful when work, money, and systems feel uncertain?",
+          title: "What remains when future certainty dissolves?",
           answer:
-            "Relationships, contribution, and adaptability retain their grounding role.",
-          metaphor:
-            "Imagine a ship at sea during changing weather. The anchor does not stop the storm, but it prevents drifting completely.",
+            "Orientation shifts from prediction to presence and adaptability.",
           children:
-            "Across societies and eras, well-being correlates strongly with connection and meaningful engagement. When external structures wobble, these elements continue to support people. They do not eliminate uncertainty, but they anchor experience. Meaning shifts from fixed outcomes to ongoing participation in life with others.",
+            "When certainty fades, attention returns to what can move, learn, and relate now. Planning becomes lighter, provisional, and less identity-bound. The future stops being a guarantee and becomes a directionless horizon. This does not remove uncertainty. It removes the false expectation that certainty was ever promised.",
+          metaphor:
+            "A sailor trims sails instead of fixing the weather.",
         },
       ]}
       ending={[
-        "Technology changes the terrain faster than belief.",
-        "Anxiety often marks where assumptions lag behind reality.",
-        "Orientation begins when we notice that gap.",
+        "Acceleration dissolves old guarantees.",
+        "Anxiety marks where models expired.",
+        "Orientation begins when prediction loosens.",
       ]}
     />
   );
