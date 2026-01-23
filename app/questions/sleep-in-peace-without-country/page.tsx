@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "If no country claimed you, where would you sleep in peace for sleep safety?",
+  title: "If no country claimed you, where would sleep safety come from?",
   description:
-    "A question about sleep safety and how the body finds rest when permission, nationality, and identity protections are removed.",
+    "A sharp examination of how sleep safety emerges from predictable land and shelter rather than identity, permission, or symbolic protection.",
   other: {
     category: "Nature & Land",
     subcategory: "sleep-safety",
@@ -17,86 +17,86 @@ export default function QuestionPage() {
   return (
     <QuestionFrame
       category="Nature & Land"
-      question="If no country claimed you, where would you sleep in peace for sleep safety?"
-      shortAnswer="You would sleep in peace where the night is predictable, the shelter is trusted, and nothing requires you to stay alert."
-      heroMetaphor="Imagine arriving at night with no documents and nowhere to explain yourself. Streetlights glare and every sound feels sharp. Then you step into a small place where the air softens and your shoulders drop without effort."
+      question="If no country claimed you, where would sleep safety come from?"
+      shortAnswer="Sleep safety would come from a place where the night behaves predictably, boundaries are trusted, and the body does not need to remain alert."
+      heroMetaphor="A person arrives after dark with nothing to explain and nowhere to check in. Street sounds keep cutting through the air, and the body stays tight. Then one small place quiets the noise, and the shoulders drop without instruction."
       sections={[
         {
-          title: "Why does sleep safety feel urgent the moment identity disappears?",
+          title: "Why does sleep safety become urgent when identity disappears?",
           answer:
-            "Because sleep safety is the first place where protection becomes physical instead of symbolic.",
+            "Because sleep safety is the first requirement that cannot be symbolically substituted.",
           children:
-            "During the day, uncertainty can be managed with movement and distraction. At night, the body must surrender control in order to sleep. Without sleep safety, rest becomes shallow and fragmented. The body listens for danger instead of releasing into recovery. This makes the loss of nationality feel immediate and visceral, not abstract. Sleep safety exposes whether a place can actually hold you when vigilance must stop.",
+            "During the day, uncertainty can be managed through movement, planning, or distraction. At night, the body must release control in order to sleep. Without sleep safety, rest fragments and vigilance continues. This makes loss of protection feel physical rather than abstract. Sleep safety exposes whether a place can actually hold a body when awareness has to stand down.",
           metaphor:
-            "Imagine lying down while a door behind you keeps clicking open and shut. The room looks quiet. Your body stays awake anyway.",
+            "A light is switched off while a door keeps rattling. The room looks dark and quiet. The body stays awake.",
         },
         {
-          title: "Why is sleep safety not guaranteed by having a bed?",
+          title: "Why does sleep safety not come from having a bed?",
           answer:
-            "Because sleep safety depends on threat absence, not physical comfort.",
+            "Because sleep safety depends on threat absence, not comfort.",
           children:
-            "A bed solves tired muscles, but it does not calm alert systems. Thin walls, unfamiliar sounds, or uncertain access can keep the nervous system active. Sleep safety requires predictability and containment, not softness alone. This is why luxury can still feel unsafe and simplicity can feel restful. The body prioritizes protection cues over comfort cues when deciding whether to sleep deeply.",
+            "A soft surface can relax muscles, but it does not silence alert systems. Unfamiliar sounds, uncertain access, or thin boundaries keep scanning active. Sleep safety requires containment and predictability more than softness. This is why luxury can still feel unsafe and simple shelter can feel deeply restful. The body decides based on cues of protection, not on appearances.",
           metaphor:
-            "Imagine lying on a soft mattress in a room where footsteps pass the door all night. The sheets are clean. Your ears never rest.",
+            "A thick blanket lies on a bed near a busy corridor. Footsteps pass all night. Warmth does not bring sleep.",
         },
         {
-          title: "What does the body look for to establish sleep safety?",
+          title: "What cues does the body use to establish sleep safety?",
           answer:
-            "The body looks for consistent shelter, low noise, and reliable boundaries.",
+            "The body looks for consistent boundaries, familiar sounds, and reliable morning return.",
           children:
-            "Sleep safety emerges when nights behave the same way repeatedly. The body learns whether sounds escalate or settle, whether doors remain closed, whether morning arrives predictably. These patterns matter more than explanations. Over time, the body relaxes its scanning. Sleep deepens not because conditions are perfect, but because they are familiar and non-threatening.",
+            "Sleep safety forms when nights repeat without escalation. Doors stay closed, sounds settle, and dawn arrives as expected. Over time, the nervous system learns that nothing needs response. This learning is not intellectual. It is built through repetition. Sleep deepens because the environment proves itself night after night.",
           metaphor:
-            "Imagine a cat returning to the same corner every evening. No one trains it. The corner never surprises it.",
+            "A bird returns to the same ledge at dusk. No decision is made. The ledge does not surprise it.",
         },
         {
           title: "Why do systems replace land in defining sleep safety?",
           answer:
-            "Because systems promise protection without requiring familiarity with place.",
+            "Because systems offer portable permission instead of requiring relationship with place.",
           children:
-            "Documents, borders, and status act as portable assurances. They reduce friction and offer access, but they bypass direct relationship with land. Over time, people rely on permission rather than environment for sleep safety. When permission disappears, many realize they do not know which places actually let their bodies rest. This question reverses that reliance.",
+            "Documents and status promise safety through recognition. They reduce friction but bypass direct familiarity with land. Over time, people rely on permission rather than environment to rest. When permission disappears, the absence of a trusted place becomes clear. The question shifts attention back to where the body itself can stand down.",
           metaphor:
-            "Imagine carrying an umbrella that only opens if someone recognizes the logo. It looks official. The rain keeps falling.",
+            "An umbrella opens only when a badge is scanned. It looks official. Rain still reaches the ground.",
         },
         {
-          title: "How does land quietly teach sleep safety over time?",
+          title: "How does land teach sleep safety without instruction?",
           answer:
-            "Through repeated nights of uninterrupted rest.",
+            "Through repeated nights where nothing goes wrong.",
           children:
-            "Land becomes associated with sleep safety when the body repeatedly sleeps without interruption. Temperature, airflow, sound, and light begin to feel predictable. The body stops negotiating with the night. Over time, sleep arrives faster and lasts longer. This learning happens without conscious effort or belief.",
+            "Land becomes associated with sleep safety when interruption does not occur. Temperature, airflow, and sound patterns remain stable. The body stops negotiating with the night. Sleep arrives faster and lasts longer. This learning does not require belief or explanation. It happens through continuity alone.",
           metaphor:
-            "Imagine waking to the same dawn light through the same window. You stop checking the clock. Your body expects rest there.",
+            "Morning light enters through the same window each day. The eyes stop checking the time. The body expects rest there.",
         },
         {
           title: "Why does losing sleep safety feel more frightening than losing status?",
           answer:
-            "Because sleep safety determines whether recovery is possible at all.",
+            "Because sleep safety determines whether recovery is possible.",
           children:
-            "Status loss threatens identity, but sleep safety loss threatens regulation. Without sleep, the body accumulates stress and confusion. Hunger, fear, and vigilance intensify. This makes uncertainty feel unbearable. The fear is not about reputation, but about whether the body will ever stand down long enough to restore itself.",
+            "Status loss threatens identity, but sleep loss destabilizes regulation. Without rest, stress accumulates and perception distorts. Fear grows without a clear object. This makes uncertainty feel overwhelming. The fear is not about recognition, but about whether the body will ever restore itself enough to face the next day.",
           metaphor:
-            "Imagine trying to recharge a phone while the charger sparks on and off. The battery never fills. The warning light stays on.",
+            "A charger sparks on and off through the night. The battery never fills. Morning arrives anyway.",
         },
         {
-          title: "What does ZenTrust notice about sleep safety in this question?",
+          title: "ZenTrust: What does ZenTrust notice about sleep safety?",
           answer:
-            "ZenTrust notices how rarely sleep safety is named as a requirement for belonging.",
+            "ZenTrust notices how rarely sleep safety is named as a condition of belonging.",
           children:
-            "ZenTrust does not ask where someone is legally allowed to live. It notices where the body can rest without guarding itself. When people answer quickly, they often name countries or identities. When they slow down, they describe rooms, sounds, climates, and rhythms. ZenTrust holds attention on that shift without judging it.",
+            "ZenTrust does not ask where someone is legally allowed to stay. It observes where the body can rest without guarding itself. When people answer quickly, they name countries or identities. When they slow down, they describe rooms, climates, sounds, and rhythms. ZenTrust holds attention on that difference without correcting it.",
           metaphor:
-            "Imagine being asked for your address every day and never being asked where you sleep best. One question feels normal. The other feels strangely personal.",
+            "One question asks for an address. Another asks where sleep comes easily. Only one is usually practiced.",
         },
         {
-          title: "What if sleep safety comes from a small place, not a nation?",
+          title: "What remains if sleep safety comes from a place, not a nation?",
           answer:
-            "Then sleep safety becomes measurable through the body rather than identity.",
+            "Sleep safety becomes something the body can recognize directly.",
           children:
-            "The answer may be modest: a courtyard, a hillside, a quiet room, a familiar climate. It may not align with official narratives of home. That mismatch is not failure. It reveals how sleep safety operates at human scale. The body recognizes what allows rest, even when language struggles to justify it.",
+            "The answer may be modest: a quiet room, a hillside, a familiar climate, a courtyard. It may not match official stories of home. That mismatch is not failure. It reveals how sleep safety operates at human scale. The body identifies what allows rest even when language hesitates.",
           metaphor:
-            "Imagine finding one warm step in winter sunlight. You pause there without planning to. Your body stays.",
+            "Sun warms one step in winter. Feet stop there without planning. The body decides.",
         },
       ]}
       ending={[
-        "Sleep is where safety becomes undeniable.",
-        "Land can hold a body without paperwork.",
+        "Sleep is where safety becomes physical.",
+        "Land can hold a body without permission.",
         "Home may be where vigilance finally stops.",
       ]}
     />
