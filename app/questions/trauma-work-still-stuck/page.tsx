@@ -1,14 +1,15 @@
 // app/questions/trauma-work-still-stuck/page.tsx
+
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title: "Why does trauma work sometimes leave people stuck?",
   description:
-    "A question-led exploration of how sincere healing effort can remain inside repeating patterns, even while insight grows.",
+    "A sharp examination of how trauma work can stabilize identity around patterns instead of dissolving the conditions that keep those patterns active.",
   other: {
     category: "Meaning & Seeking",
-    subcategory: "trauma-and-identity",
+    subcategory: "trauma-pattern-stability",
   },
 };
 
@@ -17,86 +18,86 @@ export default function TraumaWorkStillStuckPage() {
     <QuestionFrame
       category="Meaning & Seeking"
       question="Why does trauma work sometimes leave people stuck?"
-      shortAnswer="Because the effort can stay focused on managing patterns without ever questioning what those patterns actually are."
-      heroMetaphor="Imagine trying to fix a flickering light by changing the bulb again and again. Each replacement feels productive. The wiring behind the wall is never checked."
+      shortAnswer="Because trauma work can focus on managing and interpreting patterns while leaving the underlying loop that sustains them structurally intact."
+      heroMetaphor="A warning light on a dashboard is studied every day. Manuals are read and labels are memorized. The engine keeps running the same way."
       sections={[
         {
-          title: "Why does trauma often get framed as something broken inside a person?",
+          title: "Why is trauma framed as something inside the person?",
           answer:
-            "Because locating the problem internally makes it easier to work on without disturbing the surrounding structure.",
-          metaphor:
-            "Imagine being told the problem is the echo in your voice, not the canyon you are standing in.",
+            "Because internalizing the problem makes it easier to work on without disturbing surrounding conditions.",
           children:
-            "Trauma is often described as a wound carried inside the self. This framing feels personal and precise. It gives language to suffering and offers a path of repair. But it also quietly narrows the field of inquiry. Attention turns inward immediately. The question becomes what is wrong with me, rather than what happened, what conditions existed, or what patterns were learned. The story becomes private even when the origins were relational or systemic.",
+            "Trauma is commonly described as damage carried within the individual. This framing offers language, validation, and a sense of responsibility. It also quietly limits the scope of inquiry. Attention turns inward immediately. External conditions, timing, and learned adaptations fade into the background. The work becomes personal even when the pattern was shaped relationally or structurally.",
+          metaphor:
+            "An echo is blamed on the voice. The canyon remains unnamed.",
         },
         {
-          title: "Why does so much trauma work feel repetitive rather than resolving?",
+          title: "Why does trauma work often feel repetitive?",
           answer:
-            "Because the same patterns keep being addressed without questioning the framework that defines them.",
-          metaphor:
-            "Imagine deleting files on a computer while the same program keeps reopening them.",
+            "Because the same response patterns are revisited without questioning why they are still running.",
           children:
-            "Many people move from one focus to another. Anxiety, then self-worth, then attachment, then childhood experiences. Each area feels distinct, yet the emotional tone stays the same. Relief appears briefly, then fades. This repetition can feel like depth, but it may also be containment. Effort stays busy inside a loop. Progress is measured by insight rather than change in orientation. Something is happening, but nothing is actually moving.",
+            "Different themes are explored over time: fear, attachment, worth, safety. Each brings insight and temporary relief. Yet the emotional rhythm remains familiar. The system stays busy while orientation does not change. Repetition feels like progress because effort continues. The loop persists because its existence is assumed rather than examined.",
+          metaphor:
+            "A looped track plays from different speakers. The song does not change.",
         },
         {
-          title: "What gets overlooked when trauma is treated as personal damage?",
+          title: "What is missed when trauma is treated as damage?",
           answer:
-            "The difference between an experience and the pattern that formed around it.",
-          metaphor:
-            "Imagine mistaking the scar for the body itself.",
+            "The distinction between the original experience and the pattern built to survive it.",
           children:
-            "Painful experiences matter. They leave impressions. But over time, reactions to those experiences can harden into familiar responses. These responses feel personal because they repeat internally. Yet repetition does not automatically mean authenticity. A reaction can feel deeply me simply because it has been running for a long time. When this distinction is missed, patterns are protected instead of questioned.",
+            "Experiences leave marks, but responses organize around them. Over time, those responses become automatic. They feel personal because they repeat internally. Familiarity gives them authority. When response is mistaken for identity, the pattern is protected instead of questioned. Survival logic is preserved long after the situation that required it has passed.",
+          metaphor:
+            "A scar is mistaken for the body.",
         },
         {
-          title: "How does identity quietly form around trauma narratives?",
+          title: "How does identity form around trauma work?",
           answer:
-            "By making repetition feel like truth.",
-          metaphor:
-            "Imagine hearing the same story so often that it starts to sound like your own memory.",
+            "By turning repetition into a stable self-description.",
           children:
-            "When trauma becomes the primary lens for understanding oneself, identity begins to orbit around it. Language, explanations, and expectations align. Certain emotions feel justified. Certain limitations feel fixed. This can bring coherence and community, but it can also reduce flexibility. The self becomes defined by what happened rather than by what is possible now. The story stabilizes, even if the person inside it does not feel free.",
+            "Language shapes perception. When trauma becomes the primary explanation for reactions, it organizes expectation and meaning. Certain limits feel justified. Certain emotions feel inevitable. This can bring coherence and belonging, but it also narrows possibility. Identity stabilizes around what happened rather than what is occurring now. The story holds even when movement does not.",
+          metaphor:
+            "A map is followed long after the road has changed.",
         },
         {
-          title: "Why does insight alone not seem to dissolve these patterns?",
+          title: "Why does insight alone not dissolve these patterns?",
           answer:
-            "Because understanding a pattern is not the same as stepping out of it.",
-          metaphor:
-            "Imagine recognizing a song while still humming along to it.",
+            "Because recognizing a loop does not interrupt its operation.",
           children:
-            "Insight is often treated as the goal. Naming the wound. Understanding the origin. Making sense of reactions. This can be valuable. Yet many people notice that even with deep understanding, the same responses keep appearing. The body reacts before thought. The narrative returns automatically. Awareness increases, but distance does not. The pattern remains active even while being observed.",
+            "Insight can name origins, triggers, and meanings. Yet many patterns run faster than reflection. The body responds before explanation arrives. Awareness grows while distance does not. Understanding becomes layered on top of repetition. The system learns about itself without altering its timing or output.",
+          metaphor:
+            "A song is recognized while it continues to play.",
         },
         {
-          title: "What keeps trauma-based patterns running over time?",
+          title: "What actually keeps trauma patterns active?",
           answer:
-            "Familiarity and repetition.",
-          metaphor:
-            "Imagine walking the same path every day until it becomes the only one you see.",
+            "Use and familiarity keep the loop stable.",
           children:
-            "Patterns persist because they are used. They organize perception, interpretation, and behavior. Over time, they become the default way the system maintains coherence. This does not mean they are correct or necessary. It means they are stable. Stability can be mistaken for truth. The longer something runs, the more natural it feels, even if it began as a response to a specific moment that no longer exists.",
+            "Patterns persist because they are executed repeatedly. They organize attention and interpretation automatically. Stability feels like truth when it is uninterrupted. The loop remains active not because it is correct, but because nothing has required it to stop. Continuity is mistaken for necessity.",
+          metaphor:
+            "A path becomes visible because it is walked daily.",
         },
         {
-          title: "Why does ZenTrust ask whether the pattern itself is being mistaken for the self?",
+          title: "ZenTrust: What does ZenTrust notice here?",
           answer:
-            "Because freedom begins when identity loosens.",
-          metaphor:
-            "Imagine realizing the lens you are looking through is removable.",
+            "ZenTrust notices when a pattern is mistaken for the self.",
           children:
-            "ZenTrust does not deny suffering. It questions identification. When patterns are treated as who you are, they gain authority. When they are seen as responses that formed under certain conditions, space opens. This is not about rejecting experience or bypassing pain. It is about noticing what continues automatically and asking whether it still needs to be running now.",
+            "ZenTrust does not deny pain or invalidate experience. It observes how identification grants authority to repetition. When a pattern is seen as a response rather than an identity, space appears. The question shifts from how to fix the self to what no longer needs to keep running. ZenTrust remains an observing presence only.",
+          metaphor:
+            "A lens is noticed on the eye.",
         },
         {
-          title: "What returns when trauma is no longer treated as the core of identity?",
+          title: "What changes when the pattern is no longer the center?",
           answer:
-            "A sense of immediacy.",
-          metaphor:
-            "Imagine stepping out of a looping recording and hearing the room again.",
+            "Immediacy returns without effort.",
           children:
-            "When the pattern loosens, something quieter becomes available. Attention returns to the present moment rather than the remembered one. Reactions soften without being forced. There is no dramatic breakthrough. Just a reduction in effort. The self feels less like something that needs constant work and more like something that responds naturally. Nothing is fixed. Nothing is repaired. Something simply stops repeating.",
+            "When identification loosens, attention moves closer to what is present. Responses soften without instruction. There is no dramatic release. Effort reduces because maintenance is no longer required. The system stops rehearsing the past as if it were current. What remains is responsiveness rather than repetition.",
+          metaphor:
+            "Background noise fades when a machine shuts off.",
         },
       ]}
       ending={[
-        "Some patterns form to help us survive.",
-        "Not all of them need to keep running forever.",
-        "What feels most familiar is not always what is most true.",
+        "Some patterns formed for survival.",
+        "Stability is not the same as truth.",
+        "What stops running creates space.",
       ]}
     />
   );
