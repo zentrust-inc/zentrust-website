@@ -1,244 +1,104 @@
 // app/questions/prevention-invisible/page.tsx
+
 import type { Metadata } from "next";
-import { GlobalHero } from "@/components/hero/GlobalHero";
+import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title: "Why does prevention feel invisible compared to treatment?",
   description:
-    "It resolves why prevention struggles to feel real: its success is an absence, hard to attribute, and rarely rewarded by stories or systems.",
+    "A sharp examination of how prevention removes events rather than producing them, leaving no signal for systems that reward visible intervention.",
   other: {
     category: "Health & Suffering",
+    subcategory: "prevention-systemic-invisibility",
   },
 };
 
-function AccordionItem({
-  title,
-  answer,
-  children,
-}: {
-  title: string;
-  answer: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <details className="group rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition dark:border-neutral-800 dark:bg-neutral-950">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-        <div>
-          <h3 className="text-base font-semibold tracking-tight sm:text-lg">
-            {title}
-          </h3>
-          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
-            {answer}
-          </p>
-        </div>
-
-        <span className="mt-1 select-none text-neutral-400 transition group-open:rotate-45 dark:text-neutral-500">
-          +
-        </span>
-      </summary>
-
-      <div className="prose prose-neutral mt-4 max-w-none text-neutral-900 dark:prose-invert dark:text-neutral-50">
-        {children}
-      </div>
-    </details>
-  );
-}
-
 export default function PreventionInvisiblePage() {
-  const contentId = "content";
-
   return (
-    <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
-      {/* ================= HERO (DO NOT TOUCH) ================= */}
-      <GlobalHero
-        headline={`Why does prevention feel invisible
-compared to treatment?`}
-        dek={
-          <>
-            <p>
-              Treatment creates a visible event: a clear problem, a clear
-              intervention, and a noticeable change.
-            </p>
-            <p>
-              Prevention works by making the event never arrive — and the mind
-              struggles to feel the value of what did not happen.
-            </p>
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">
-              Detailed answer below. Nothing here requires agreement.
-            </p>
-          </>
-        }
-      />
-
-      {/* ================= CONTENT ================= */}
-      <section
-        id={contentId}
-        className="mx-auto w-full max-w-[820px] px-4 pb-16 pt-10 sm:px-6"
-      >
-        <div className="space-y-4">
-          <AccordionItem
-            title="Why does prevention feel like “nothing,” even when it works?"
-            answer="Because its success is an absence: the crisis doesn’t show up, so there is no moment to notice."
-          >
-            <p>
-              Imagine two nights in the same house.
-            </p>
-            <p>
-              One night, a fire breaks out. Sirens arrive. People run. A dramatic
-              rescue happens. Everyone can point to the event and say, “That was
-              the problem — and that was the response.”
-            </p>
-            <p>
-              Another night, the smoke alarm battery was replaced earlier in the
-              year, and the wiring was kept safe. Nothing happens. No sirens.
-              No story. No moment where the mind gets to feel, “We survived
-              because of that.”
-            </p>
-            <p>
-              Prevention often looks exactly like a normal day. And normal days
-              rarely feel like achievements.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why does treatment feel more emotionally compelling?"
-            answer="Because it offers urgency, relief, and a clean before/after that the brain can register."
-          >
-            <p>
-              The human nervous system is tuned to immediate signals.
-              Visible threat produces urgency. Urgency produces focus.
-            </p>
-            <p>
-              Treatment sits inside that loop: pain → intervention → relief.
-              Even when the situation is complex, the mind receives a simple,
-              satisfying pattern.
-            </p>
-            <p>
-              Prevention asks for something different: present effort in exchange
-              for a future that stays quiet. Quiet does not trigger the same
-              emotional circuitry.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why is prevention so hard to “prove” in a single life?"
-            answer="Because you can’t directly attribute a non-event to one cause, even if the pattern is real at scale."
-          >
-            <p>
-              If a person receives treatment and improves, the connection feels
-              direct: something happened, then something changed.
-            </p>
-            <p>
-              With prevention, the outcome is the absence of a moment you can
-              point to. The heart attack that never occurred cannot be replayed
-              as evidence. The infection that never arrived cannot be compared
-              against an alternate timeline.
-            </p>
-            <p>
-              Prevention can be statistically strong and personally unverifiable
-              at the same time — not because it is weak, but because the human
-              mind was not built to celebrate counterfactuals.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why do systems measure treatment more easily than prevention?"
-            answer="Because systems count events, bills, and procedures — not the disasters that never formed."
-          >
-            <p>
-              Treatment produces records: visits, diagnoses, prescriptions,
-              surgeries, hospital stays. Those are countable units.
-            </p>
-            <p>
-              Prevention produces fewer visible units precisely when it succeeds.
-              It reduces the number of dramatic lines in the ledger.
-            </p>
-            <p>
-              So the system ends up “seeing” the presence of illness more
-              clearly than the presence of health — even when health is the
-              actual achievement.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why do incentives often lean toward treatment?"
-            answer="Because urgency concentrates attention now, while prevention spreads benefits across time and many people."
-          >
-            <p>
-              Treatment rewards are immediate and attributable: a patient arrives
-              in crisis, a response is delivered, a visible outcome follows.
-            </p>
-            <p>
-              Prevention’s benefits are distributed: small risk reductions across
-              many people, over long time horizons. The people who invest are not
-              always the same people who later benefit.
-            </p>
-            <p>
-              This mismatch can make prevention look weak in the short term,
-              even when it is powerful in the long term.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why does preventive guidance sometimes feel confusing or unstable?"
-            answer="Because prevention deals in probabilities and evolving evidence, not a single obvious enemy."
-          >
-            <p>
-              Treatment often targets a visible problem: a fracture, an
-              infection, an acute episode.
-            </p>
-            <p>
-              Prevention often targets risk landscapes: patterns that shift as
-              research improves and populations change. That can look like
-              inconsistency, even when the deeper aim is the same: fewer crises.
-            </p>
-            <p>
-              When the mind expects certainty, probability can feel like
-              unreliability — even when it is the most honest frame available.
-            </p>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Why does ZenTrust seem fragile, slow, or ineffective by comparison?"
-            answer="Because it often invests in conditions that prevent harm, and prevention rarely produces dramatic proof on demand."
-          >
-            <p>
-              ZenTrust can appear “less effective” when compared to visible
-              rescues, because it often works upstream: building understanding,
-              research access, and public education that reduces confusion before
-              it becomes crisis.
-            </p>
-            <p>
-              In a culture trained to recognize sirens, quiet work can look like
-              inaction. In a world that rewards measurable events, the most
-              valuable outcomes can be the ones that leave the least visible
-              trace.
-            </p>
-            <p>
-              This is an appearance problem — not necessarily a value problem.
-            </p>
-          </AccordionItem>
-        </div>
-
-        {/* ================= ENDING BLOCK (REQUIRED) ================= */}
-        <div className="mx-auto mt-10 max-w-[720px]">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5 text-neutral-900 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50">
-            <p className="text-sm text-neutral-700 dark:text-neutral-300">
-              A rescue is easy to point to.
-            </p>
-            <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-              A prevented crisis leaves no photograph.
-            </p>
-            <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-              The quiet day may be the real outcome.
-            </p>
-
-            <div className="mt-4 border-t border-neutral-200 pt-4 text-xs text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
-              ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <QuestionFrame
+      category="Health & Suffering"
+      question="Why does prevention feel invisible compared to treatment?"
+      shortAnswer="Because prevention removes future events before they form, leaving no measurable signal for systems that depend on visible action and crisis-based validation."
+      heroMetaphor="A bridge is inspected every morning and never collapses. No crowds gather, no sirens sound, and no story is told. The absence of disaster looks identical to neglect."
+      sections={[
+        {
+          title: "Why does prevention feel like nothing is happening?",
+          answer:
+            "Because prevention succeeds by eliminating events rather than producing outcomes that can be seen.",
+          children:
+            "Days pass without incident when prevention is working. No emergency interrupts routines. No moment announces success. Over time, the absence of disruption blends into the background of daily life. The body remains steady, and nothing demands attention. What is removed leaves no memory. The system cannot point to a moment and say this is where prevention worked.",
+          metaphor:
+            "A smoke alarm battery is replaced months before it is needed. The house remains quiet. No one remembers the battery when nothing burns.",
+        },
+        {
+          title: "Why does prevention receive less recognition than treatment?",
+          answer:
+            "Because recognition is attached to visible intervention, not to avoided harm.",
+          children:
+            "Treatment creates a clear sequence of before and after. Pain is present, action is taken, and change is observed. Prevention interrupts this sequence by removing the starting point. Without a visible problem, there is no narrative arc. Systems built on documentation and response reward what can be recorded. Prevention leaves the record blank.",
+          metaphor:
+            "A fire truck arrives with lights and noise. A fire extinguisher checked earlier stays on the wall. Only one draws a crowd.",
+        },
+        {
+          title: "How does prevention challenge system accounting?",
+          answer:
+            "Prevention reduces measurable events, which appear as a lack of activity rather than success.",
+          children:
+            "Systems count visits, procedures, and interventions. When prevention works, these numbers decline. Fewer entries appear on dashboards. The reduction looks like inactivity rather than achievement. Over time, prevention is interpreted as underperformance because it produces less data. The absence of crisis is not treated as evidence.",
+          metaphor:
+            "A ledger shows fewer entries after maintenance improves. The page looks empty. The balance depends on what is not written.",
+        },
+        {
+          title: "Why does prevention require sustained effort without feedback?",
+          answer:
+            "Because prevention operates continuously without providing immediate confirmation.",
+          children:
+            "Preventive work repeats daily without producing milestones. There is no finish line to cross and no signal to stop. Effort continues without applause or relief. Over time, this creates a sense of unreality. The body keeps working while the mind searches for proof. Prevention asks for endurance without reward.",
+          metaphor:
+            "A watchmaker oils gears each morning. The clock keeps time. No one thanks the oil.",
+        },
+        {
+          title: "Why is prevention often reframed as inaction?",
+          answer:
+            "Because systems mistake the absence of visible struggle for lack of contribution.",
+          children:
+            "When nothing goes wrong, prevention appears passive. Activity is measured by response, not by restraint. Choosing not to intervene aggressively is read as disengagement. The system confuses calm with neglect. Prevention becomes invisible precisely because it prevents the signals that would prove effort.",
+          metaphor:
+            "A lifeguard watches a calm pool all day. No rescues occur. Observers assume nothing was done.",
+        },
+        {
+          title: "How does prevention affect personal identity?",
+          answer:
+            "Prevention shifts achievement into private time rather than public moments.",
+          children:
+            "Living without crisis removes social validation. There is no role to perform and no story to tell. Stability becomes a solitary condition. Over time, people question whether they are doing enough. Prevention offers no audience. The absence of recognition can feel like absence of value.",
+          metaphor:
+            "A runner trains alone before dawn. No finish tape is crossed. The legs still carry the miles.",
+        },
+        {
+          title: "ZenTrust: What does ZenTrust notice about prevention?",
+          answer:
+            "ZenTrust notices how prevention conflicts with systems that depend on visible urgency.",
+          children:
+            "ZenTrust does not recommend programs or strategies. It observes how prevention removes the very signals that justify intervention. It notices how quiet stability is mistaken for emptiness. By holding attention on this mismatch, prevention becomes visible as a structural blind spot rather than a personal failure. ZenTrust remains an observing presence only.",
+          metaphor:
+            "A mirror is placed in an empty hallway. Nothing new appears. The space becomes noticeable.",
+        },
+        {
+          title: "What remains when prevention is fully seen?",
+          answer:
+            "The recognition that absence can be the most complete outcome.",
+          children:
+            "When prevention is understood, the demand for visible proof loosens. Stability no longer needs justification. The body recognizes that nothing happening is not nothing. The quiet years regain weight. Prevention is seen as a condition, not an event.",
+          metaphor:
+            "A lake stays frozen through the winter. No waves form. The surface holds.",
+        },
+      ]}
+      ending={[
+        "Prevention leaves no spectacle.",
+        "A quiet day is its only record.",
+        "What did not happen still counts.",
+      ]}
+    />
   );
 }
