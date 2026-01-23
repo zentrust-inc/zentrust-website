@@ -1,188 +1,104 @@
 // app/questions/why-adapting-to-society-feels-like-loss/page.tsx
+
 import type { Metadata } from "next";
-import { GlobalHero } from "@/components/hero/GlobalHero";
+import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title: "Why does adapting to society feel like loss?",
   description:
-    "An ELI15 explanation of why fitting in can quietly create a sense of loss, even when life appears successful.",
+    "A sharp examination of how adaptation functions as a narrowing mechanism that trades internal range for external stability.",
   other: {
     category: "Mind & Experience",
+    subcategory: "adaptation-narrowing",
   },
 };
 
-export default function AdaptingLossQuestionPage() {
-  const contentId = "content";
-
+export default function QuestionPage() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
-      {/* ================= HERO ================= */}
-      <GlobalHero
-        mode="answer"
-        headline="Why does adapting to society feel like loss?"
-        dek={
-          <>
-            <p>
-              Because adaptation often requires narrowing parts of ourselves
-              that don’t fit existing expectations.
-            </p>
-            <p>
-              What helps us belong externally can quietly reduce internal
-              wholeness.
-            </p>
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
-              The detailed answer unfolds below, one layer at a time.
-            </p>
-          </>
-        }
-        belowAnchorId={contentId}
-      />
-
-      {/* ================= CONTENT ================= */}
-      <section
-        id={contentId}
-        className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16"
-      >
-        <div className="max-w-3xl space-y-4">
-          <Details
-            title="What does “adapting to society” usually mean?"
-            answer="Learning how to fit into expectations that already exist."
-          >
-            <p>Learning what is rewarded.</p>
-            <p>Learning what is tolerated.</p>
-            <p>Learning what should stay hidden.</p>
-            <p>
-              Adaptation helps us function, earn, and belong — at least on the
-              surface.
-            </p>
-          </Details>
-
-          <Details
-            title="Why can adaptation feel necessary?"
-            answer="Because humans need safety, belonging, and stability."
-          >
-            <p>Belonging reduces risk.</p>
-            <p>Predictability reduces fear.</p>
-            <p>
-              Adapting often begins as a way to survive, not a choice to
-              diminish oneself.
-            </p>
-          </Details>
-
-          <Details
-            title="A simple picture: trimming a plant to fit a pot"
-            answer="The plant survives, but growth is constrained."
-          >
-            <p>Imagine a healthy plant placed in a small pot.</p>
-            <p>Its roots curl inward.</p>
-            <p>Its growth slows.</p>
-            <p>
-              Nothing is wrong with the plant. The container is simply too
-              tight.
-            </p>
-          </Details>
-
-          <Details
-            title="What is often lost during adaptation?"
-            answer="Range, spontaneity, and inner permission."
-          >
-            <p>Curiosity narrows.</p>
-            <p>Expression becomes selective.</p>
-            <p>
-              Parts of the self that do not serve immediate roles become quiet.
-            </p>
-            <p className="font-medium">
-              The loss is subtle, not dramatic.
-            </p>
-          </Details>
-
-          <Details
-            title="Why does success not always prevent this feeling?"
-            answer="Because success measures fit, not fullness."
-          >
-            <p>Success can confirm external alignment.</p>
-            <p>It does not guarantee internal coherence.</p>
-            <p>
-              A life can look stable while still feeling reduced from the
-              inside.
-            </p>
-          </Details>
-
-          <Details
-            title="Why do some people eventually step away?"
-            answer="Because the cost of continued narrowing becomes too high."
-          >
-            <p>
-              Over time, adaptation can turn into exhaustion or quiet grief.
-            </p>
-            <p>
-              Leaving is often not rebellion, but relief from compression.
-            </p>
-          </Details>
-
-          <Details
-            title="Why does ZenTrust seem slow or misaligned with mainstream success?"
-            answer="Because it does not organize itself around maximum adaptation."
-          >
-            <p>
-              ZenTrust avoids structures that require people to shrink
-              themselves to function.
-            </p>
-            <p>
-              Inside systems that reward performance over wholeness, this can
-              appear inefficient.
-            </p>
-          </Details>
-
-          <Details
-            title="Orientation"
-            answer="Understanding clarifies why adaptation can quietly feel like loss."
-          >
-            <p>
-              Adapting to society often involves trade-offs that are not named
-              or measured.
-            </p>
-            <p className="font-medium">
-              Noticing this reduces confusion without assigning blame.
-            </p>
-          </Details>
-        </div>
-
-        <footer className="mt-14 border-t pt-6 text-sm text-neutral-600 dark:text-neutral-400">
-          ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
-        </footer>
-      </section>
-    </main>
-  );
-}
-
-/* ================= DETAILS COMPONENT ================= */
-
-function Details({
-  title,
-  answer,
-  children,
-}: {
-  title: string;
-  answer: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-        <div>
-          <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {answer}
-          </p>
-        </div>
-        <span className="shrink-0 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
-          Expand
-        </span>
-      </summary>
-      <div className="mt-5 space-y-3 text-sm leading-relaxed">
-        {children}
-      </div>
-    </details>
+    <QuestionFrame
+      category="Mind & Experience"
+      question="Why does adapting to society feel like loss?"
+      shortAnswer="Because adaptation rewards narrowing behavior to fit existing structures, extracting range and spontaneity that once allowed a fuller inner life."
+      heroMetaphor="A river is diverted into concrete channels so it can pass safely through a city. Flooding stops. The wetlands downstream quietly dry up."
+      sections={[
+        {
+          title: "What does adapting to society actually require?",
+          answer:
+            "It requires learning which expressions are rewarded and which must be muted.",
+          children:
+            "Adaptation begins with observation. You notice which behaviors are praised, which are ignored, and which create friction. Over time, this becomes automatic. Certain questions are not asked. Certain impulses are delayed or dropped. Function improves while range quietly contracts. Nothing breaks. Something narrows.",
+          metaphor:
+            "A radio is tuned to a single clear station. The static disappears. So does the rest of the spectrum.",
+        },
+        {
+          title: "Why does adaptation feel necessary rather than chosen?",
+          answer:
+            "Because safety and belonging are tied to predictability.",
+          children:
+            "Human systems reward reliability. Predictable people are easier to place, manage, and trust. Adapting becomes a survival strategy before it becomes an identity. The nervous system learns that fitting in reduces risk. What begins as protection slowly becomes habit.",
+          metaphor:
+            "Shoes are tightened for a long walk. The feet stop feeling the ground.",
+        },
+        {
+          title: "What is gradually reduced through adaptation?",
+          answer:
+            "Range of expression, curiosity, and internal permission.",
+          children:
+            "Parts of the self that do not serve immediate roles lose airtime. Curiosity narrows toward what is useful. Expression becomes selective. Spontaneity waits for permission that never arrives. The loss is not dramatic. It is cumulative.",
+          metaphor:
+            "Branches are trimmed each season so they do not touch the road.",
+        },
+        {
+          title: "Why does success not prevent this feeling?",
+          answer:
+            "Because success measures fit, not fullness.",
+          children:
+            "Achievement confirms alignment with external standards. It does not measure internal coherence. A life can look stable, respected, and complete while still feeling reduced from the inside. Success stabilizes the structure that required narrowing in the first place.",
+          metaphor:
+            "A container is perfectly filled. The contents no longer move.",
+        },
+        {
+          title: "Why does the loss remain unnamed?",
+          answer:
+            "Because it has no metric and no visible failure.",
+          children:
+            "Nothing is obviously wrong. Bills are paid. Roles are held. Relationships function. Without a clear problem, the sense of loss feels personal rather than structural. The system reads stability as success and has no language for quiet contraction.",
+          metaphor:
+            "A room slowly loses air. No alarm sounds.",
+        },
+        {
+          title: "Why do some people eventually step away?",
+          answer:
+            "Because the cost of continued narrowing becomes perceptible.",
+          children:
+            "Over time, the effort to remain compressed produces fatigue or quiet grief. Stepping away is often misread as rebellion or weakness. Internally, it is experienced as relief from sustained reduction rather than rejection of society itself.",
+          metaphor:
+            "A hand opens after gripping a tool for too long.",
+        },
+        {
+          title: "ZenTrust: What does ZenTrust notice about adaptation?",
+          answer:
+            "ZenTrust notices where adaptation replaces wholeness with function.",
+          children:
+            "ZenTrust does not oppose adaptation or participation. It observes when fitting in requires sustained self-reduction. By making the trade visible, confusion softens without assigning blame. ZenTrust remains an observing presence only.",
+          metaphor:
+            "A mirror reflects what was compressed, not what should change.",
+        },
+        {
+          title: "What remains when the mechanism is seen clearly?",
+          answer:
+            "Distinction between belonging and self-erasure.",
+          children:
+            "Seeing the mechanism does not demand withdrawal or resistance. It clarifies why adaptation can feel costly even when it works. What remains is a quieter understanding of which compromises were structural and which were optional.",
+          metaphor:
+            "The channel is visible. The river is remembered.",
+        },
+      ]}
+      ending={[
+        "Adaptation stabilizes systems by narrowing people.",
+        "Loss appears where range was exchanged for safety.",
+        "Seeing the trade restores orientation.",
+      ]}
+    />
   );
 }
