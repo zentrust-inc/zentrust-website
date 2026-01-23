@@ -1,10 +1,12 @@
+// app/questions/stress-outlasts-evolution/page.tsx
+
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title: "Why does modern stress last longer than nature intended?",
   description:
-    "A question about stress lasting longer than the body’s threat systems were built to sustain.",
+    "A sharp examination of how stress systems built for brief danger are held open by modern conditions that rarely resolve.",
   other: {
     category: "Health & Suffering",
     subcategory: "chronic-stress-duration",
@@ -16,86 +18,86 @@ export default function StressOutlastsEvolutionPage() {
     <QuestionFrame
       category="Health & Suffering"
       question="Why does modern stress last longer than nature intended?"
-      shortAnswer="Because stress systems were built for short bursts, but modern stress rarely ends."
-      heroMetaphor="Imagine holding your breath to swim across a small pool. Now imagine being told to do that through the whole day. No one calls it drowning because you are still standing."
+      shortAnswer="Because stress systems evolved for short, resolving threats, while modern stress keeps situations open-ended, preventing the body from standing down."
+      heroMetaphor="A person holds their breath to cross a short pool. Halfway through the day, no one has told them they can exhale. They are still upright, but the strain keeps growing."
       sections={[
         {
-          title: "Why does stress feel heavy even when nothing is happening?",
+          title: "Why does stress feel present even when nothing is happening?",
           answer:
-            "Because stress keeps the body ready when situations never feel complete.",
-          metaphor:
-            "Imagine waiting for a delivery that keeps getting delayed. You keep listening for the door. The day passes, but you never settle.",
+            "Stress remains active when situations never clearly end.",
           children:
-            "People can feel stress while sitting still. The body reacts to uncertainty, evaluation, and lack of control as unresolved stress signals. There is no clear end point where stress can stand down. Readiness stays on in the background. That ongoing stress consumes energy, disrupts sleep, and changes appetite. It feels like pressure without an event.",
+            "The body looks for completion signals. In modern life, evaluation, uncertainty, and dependency often have no finish line. Even while sitting still, the nervous system stays alert. There is no moment where readiness is dismissed. Stress becomes background noise rather than a spike. Energy is consumed without an event to justify it.",
+          metaphor:
+            "A doorbell rings once and never stops humming. The house looks quiet. The body waits anyway.",
         },
         {
-          title: "Why does the usual stress explanation fall short?",
+          title: "Why does the usual explanation for stress miss the core issue?",
           answer:
-            "Because stress is treated as a mindset problem instead of a duration problem.",
-          metaphor:
-            "Imagine blaming a phone battery for draining quickly. You ignore the apps running nonstop. You keep lowering the screen brightness.",
+            "Because stress is framed as a mindset problem instead of a duration problem.",
           children:
-            "Many explanations frame stress as weakness, poor coping, or attitude. Those ideas focus on the person, not the stress exposure. The body responds to how long stress lasts, not how positive someone feels. When stress is continuous, the issue is not resilience. The issue is that the stress signal does not stop.",
+            "Advice often targets attitude, resilience, or positivity. These approaches assume stress is brief and internal. The body, however, responds primarily to how long stress signals last. Continuous exposure overwhelms even strong coping. When stress does not end, the problem is not outlook. It is prolonged activation.",
+          metaphor:
+            "A phone battery drains while apps run in the background. The screen is dimmed. The drain continues.",
         },
         {
-          title: "What stress system is actually doing the work?",
+          title: "What were stress systems originally built to do?",
           answer:
-            "Stress chemistry keeps mobilizing energy for action that should be brief.",
-          metaphor:
-            "Imagine a flashlight designed for emergencies. You keep it on all night. By morning, the batteries are warm.",
+            "Stress systems mobilize energy for short bursts of action.",
           children:
-            "Stress systems evolved for short episodes. Adrenaline and cortisol rise, glucose becomes available, and focus narrows. This stress response is designed to peak and resolve, often within minutes and usually under about thirty minutes of intense stress. After that, the body expects recovery. When stress stays on, the same chemistry becomes a slow drain.",
+            "Stress chemistry narrows focus, releases glucose, and sharpens reaction. These changes are designed to peak and resolve quickly. In natural settings, threats usually end within minutes. Afterward, recovery restores balance. The system expects an off switch. When that switch never comes, the same chemistry becomes harmful.",
+          metaphor:
+            "An emergency light is turned on during a power cut. Morning arrives. The light stays on.",
         },
         {
-          title: "How does long-term stress play out over time?",
+          title: "How does long-lasting stress change bodily priorities?",
           answer:
-            "Stress forces the body to trade repair for ongoing readiness.",
-          metaphor:
-            "Imagine a shop that stays open late every night. The shelves get messier. No one has time to restock properly.",
+            "Ongoing stress trades repair for readiness.",
           children:
-            "With prolonged stress, the body keeps choosing vigilance over restoration. Digestion, immune balance, and deep sleep are pushed aside by stress readiness. Small problems accumulate because stress prevents completion. People may appear functional while feeling worn down. Over time, stress shows itself through fatigue, pain, mood shifts, or metabolic strain.",
+            "When stress remains active, the body delays maintenance. Digestion, immune balance, and deep sleep receive less support. Small damage accumulates because restoration keeps being postponed. People can appear functional while feeling depleted. The cost shows up slowly, often disconnected from the original pressure.",
+          metaphor:
+            "A shop stays open every night. Shelves thin out. No one has time to restock.",
         },
         {
           title: "What does chronic stress look like inside the body?",
           answer:
-            "Stress shifts fuel use, increases inflammation, and shortens recovery.",
-          metaphor:
-            "Imagine carrying groceries with arms already tired. You tighten your grip anyway. The bags cut into your fingers.",
+            "Chronic stress shortens recovery and strains metabolism.",
           children:
-            "When stress hormones stay elevated, glucose release becomes frequent and insulin remains active. Muscles and nerves recover more slowly under stress. Inflammation can rise because repair work is delayed. These stress-related changes may appear separate, but they share the same pattern: too much time under stress and too little time returning to baseline.",
+            "Frequent stress hormone release keeps glucose circulating. Insulin remains active longer than intended. Muscles and nerves recover slowly. Inflammation can rise because repair work is delayed. These effects share one cause: stress stays on longer than the body was built to tolerate.",
+          metaphor:
+            "Groceries are carried with arms already tired. Grip tightens. Pain appears first.",
         },
         {
-          title: "Why does modern stress keep repeating?",
+          title: "Why does modern stress keep repeating without resolution?",
           answer:
-            "Because modern stressors are designed to be continuous.",
-          metaphor:
-            "Imagine a faucet that never fully turns off. You learn to live with the drip. You stop expecting silence.",
+            "Because modern stressors are continuous conditions rather than events.",
           children:
-            "Modern stress often comes from money, evaluation, surveillance, and dependence. These stressors are not single events. They are ongoing conditions. People adapt by staying reachable, polite, and productive under stress. The costs appear privately, so the system does not see them. Stress persistence is not always a choice. It is often the price of participation.",
+            "Financial pressure, evaluation, surveillance, and dependence do not end cleanly. They persist across days and years. Participation often requires staying reachable and composed. The body absorbs the cost privately, so the system does not register strain. Stress repetition is often the price of remaining included.",
+          metaphor:
+            "A faucet never fully closes. Drips continue. Silence is forgotten.",
         },
         {
-          title: "What stress question does ZenTrust ask here?",
+          title: "ZenTrust: What does ZenTrust notice about stress duration?",
           answer:
-            "What stress am I being asked to carry without an endpoint?",
-          metaphor:
-            "Imagine realizing the test has no final page. You keep flipping forward. The stack never thins.",
+            "ZenTrust notices how stress is carried without a clear endpoint.",
           children:
-            "This stress question does not demand action or resistance. It simply names the duration problem. When the body is reacting to prolonged stress, self-blame becomes misplaced. Seeing stress as a time issue shifts attention away from personality and toward conditions. That clarity alone reduces confusion.",
+            "ZenTrust does not instruct coping or resistance. It observes how stress persists when completion is removed. When the duration problem is named, confusion softens. Stress is no longer misread as personal weakness. Attention shifts from self-correction to conditions that keep activation open.",
+          metaphor:
+            "A test booklet has no final page. Pages turn. The stack remains.",
         },
         {
-          title: "How does seeing stress differently change things?",
+          title: "What changes when stress duration is seen clearly?",
           answer:
-            "Stress eases when its duration is named accurately.",
-          metaphor:
-            "Imagine noticing you have been clenching your jaw. You do not force it open. The tension loosens when it is seen.",
+            "Stress eases when its timeline is recognized accurately.",
           children:
-            "When stress is understood as prolonged exposure, exhaustion makes sense. The question stops being why you cannot handle stress. It becomes what stress you are handling for too long. Nothing needs to be fixed immediately. The body often softens when stress is no longer framed as a personal failure. Perspective returns.",
+            "When stress is understood as prolonged exposure, exhaustion makes sense. The question changes from why you cannot handle stress to what stress you are carrying for too long. Nothing needs immediate fixing. The body often loosens when stress is no longer framed as a personal failure.",
+          metaphor:
+            "A clenched jaw is noticed. No command is given. The release follows seeing.",
         },
       ]}
       ending={[
         "Stress evolved for cycles, not permanence.",
-        "Stress duration matters even when intensity is low.",
-        "Naming stress timelines reduces confusion.",
+        "Duration matters even when intensity is low.",
+        "Seeing timelines restores accuracy.",
       ]}
     />
   );
