@@ -1,260 +1,104 @@
 // app/questions/visual-modeling/page.tsx
+
 import type { Metadata } from "next";
-import { GlobalHero } from "@/components/hero/GlobalHero";
+import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
   title: "Why do some systems need to be seen, not just described?",
   description:
-    "An answer-first explanation of why regenerative systems require visual modeling — and how seeing change over time prevents false certainty.",
+    "A sharp examination of why systems that change through time cannot be understood through static explanation alone.",
   other: {
     category: "Tools & Technology",
+    subcategory: "visual-modeling-systems",
   },
 };
 
-export default function VisualModelingQuestionPage() {
-  const contentId = "content";
-
+export default function QuestionPage() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
-      {/* ================= HERO (DO NOT TOUCH) ================= */}
-      <GlobalHero
-        headline={`Why do some systems need to be seen,
-not just described?`}
-        dek={
-          <>
-            <p>
-              Some systems don’t make sense in still pictures or single
-              explanations.
-            </p>
-            <p>
-              When change, relationships, and time matter, description alone can
-              quietly distort the truth.
-            </p>
-            <p className="mt-4 font-medium">
-              The answer isn’t more detail.
-            </p>
-            <p className="italic">It’s seeing how the system actually moves.</p>
-          </>
-        }
-        belowAnchorId={contentId}
-        mode="confirm"
-      />
-
-      {/* ================= CONTENT ================= */}
-      <section
-        id={contentId}
-        className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16"
-      >
-        <div className="max-w-3xl space-y-4">
-          <Details
-            title="Why isn’t description alone enough for regenerative systems?"
-            answer="Because regenerative systems change through time, not just parts."
-          >
-            <p>Imagine trying to understand a storm from a single photograph.</p>
-            <p>
-              You might see clouds. You might see rain. But you would not see
-              pressure building, wind shifting, or when the storm will pass.
-            </p>
-            <p>
-              Regenerative systems behave the same way. Soil, ecosystems, and
-              health do not respond instantly. They accumulate, adapt, and
-              sometimes collapse only after long delays.
-            </p>
-            <p className="font-medium">
-              When we rely only on description, we mistake snapshots for
-              understanding.
-            </p>
-          </Details>
-
-          <Details
-            title="What kind of systems need to be seen over time?"
-            answer="Systems where outcomes emerge from relationships, not single causes."
-          >
-            <p>Healthy soil is not one ingredient.</p>
-            <p>Recovery is not one intervention.</p>
-            <p>Stability is not one number.</p>
-            <p>
-              These outcomes emerge from relationships — between organisms,
-              environment, behavior, stress, and recovery.
-            </p>
-            <p>
-              When relationships are separated into parts, they stop explaining
-              the whole.
-            </p>
-            <p className="font-medium">
-              Seeing them interact restores meaning.
-            </p>
-          </Details>
-
-          <Details
-            title="What goes wrong when we don’t visualize these systems?"
-            answer="We develop confidence in explanations that are incomplete."
-          >
-            <p>Some systems look stable right before they fail.</p>
-            <p>Others look chaotic right before they recover.</p>
-            <p>
-              Without visual continuity, we often confuse short-term improvement
-              with long-term health, or adaptation with healing.
-            </p>
-            <p className="font-medium">
-              Visualization does not guarantee truth.
-            </p>
-            <p>But avoiding it often guarantees distortion.</p>
-          </Details>
-
-          <Details
-            title="Why isn’t this just about making things easier to understand?"
-            answer="Because visualization here is about accuracy, not simplification."
-          >
-            <p>This is not about making research entertaining.</p>
-            <p>It is about preventing misunderstanding.</p>
-            <p>
-              Some truths become less accurate when over-simplified. Visual
-              models help preserve complexity without overwhelming language.
-            </p>
-            <p className="font-medium">
-              In these cases, seeing is not a shortcut.
-            </p>
-            <p>It is a safeguard.</p>
-          </Details>
-
-          <Details
-            title="Where do computation and AI enter this process?"
-            answer="When systems become too complex to follow by hand."
-          >
-            <p>
-              Some models involve many interacting variables, repeated
-              simulations, comparisons across scenarios, and changes unfolding
-              over months or years.
-            </p>
-            <p>
-              Computational tools, including AI-assisted workflows, help trace
-              these consequences without inventing them.
-            </p>
-            <p className="font-medium">
-              The role of AI here is not creativity.
-            </p>
-            <p>It is continuity.</p>
-          </Details>
-
-          <Details
-            title="How are visual explanations derived from research models?"
-            answer="By computing system behavior first, then translating reviewed outputs."
-          >
-            <p>
-              In some cases, ZenTrust builds or studies computational models that
-              simulate how systems evolve over time.
-            </p>
-            <p>
-              These models may involve repeated simulations, interacting
-              variables, delayed effects, and scenario comparisons that cannot
-              be followed reliably without computation.
-            </p>
-            <p>
-              Visual outputs are generated as part of the modeling process to
-              inspect behavior, test assumptions, and identify patterns such as
-              instability, recovery, or collapse.
-            </p>
-            <p className="font-medium">
-              Only after these outputs are reviewed are selected results
-              translated into visual explanations for public understanding.
-            </p>
-            <p>
-              Educational videos, when used, are derived artifacts — not
-              substitutes for research, and not independent narratives.
-            </p>
-          </Details>
-
-          <Details
-            title="Why translate research into visual explanations for the public?"
-            answer="Because misunderstood research can do as much harm as no research."
-          >
-            <p>ZenTrust conducts non-commercial research for public benefit.</p>
-            <p>
-              Research that cannot be understood is incomplete. Some findings
-              must be shown so educators, practitioners, and communities can see
-              what the research shows, what it does not claim, and where
-              uncertainty remains.
-            </p>
-            <p className="font-medium">
-              Visual explanations are derived from research results.
-            </p>
-            <p>They are not narratives added afterward.</p>
-          </Details>
-
-          {/* ======== MANDATORY ZENTRUST SUB-QUESTION ======== */}
-          <Details
-            title="Why does ZenTrust emphasize visual modeling so strongly?"
-            answer="Because ZenTrust works with systems where time, interaction, and uncertainty cannot be safely compressed."
-          >
-            <p>
-              ZenTrust focuses on regenerative, health, and social systems where
-              effects unfold slowly and feedback is delayed.
-            </p>
-            <p>
-              In these contexts, static descriptions can create false certainty
-              or hide emerging risks.
-            </p>
-            <p className="font-medium">
-              Visual modeling is used not to persuade, but to prevent premature
-              conclusions.
-            </p>
-          </Details>
-
-          <Details
-            title="So what is visual modeling really for?"
-            answer="To avoid mistaking clarity for truth."
-          >
-            <p>
-              Visual modeling does not replace theory, measurement, or lived
-              experience.
-            </p>
-            <p>It supports them when description alone would flatten reality.</p>
-            <p className="font-medium">
-              The real question is not whether we should visualize everything,
-            </p>
-            <p>
-              but when avoiding visualization would hide the truth instead of
-              protecting it.
-            </p>
-          </Details>
-        </div>
-
-        <footer className="mt-14 border-t pt-6 text-sm text-neutral-600 dark:text-neutral-400">
-          ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
-        </footer>
-      </section>
-    </main>
-  );
-}
-
-/* ================= COMPONENTS ================= */
-
-function Details({
-  title,
-  answer,
-  children,
-}: {
-  title: string;
-  answer: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <details className="group rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-        <div>
-          <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {answer}
-          </p>
-        </div>
-        <span className="shrink-0 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
-          Expand
-        </span>
-      </summary>
-      <div className="mt-5 space-y-3 text-sm leading-relaxed">
-        {children}
-      </div>
-    </details>
+    <QuestionFrame
+      category="Tools & Technology"
+      question="Why do some systems need to be seen, not just described?"
+      shortAnswer="Because systems that change through time express their behavior through relationships and delays that language alone compresses into false certainty."
+      heroMetaphor="A weather report lists temperature, wind, and pressure. You understand the words but not the storm. Only when clouds move and fronts collide does the system reveal itself."
+      sections={[
+        {
+          title: "Why does description fail for time-based systems?",
+          answer:
+            "Because description freezes what only exists through motion.",
+          children:
+            "Language captures states, not transitions. Regenerative systems such as ecosystems, health, or social dynamics evolve through feedback loops and delays. When these are described statically, the listener receives conclusions without witnessing how they form. This creates confidence without orientation. What is lost is not detail, but causality unfolding through time.",
+          metaphor:
+            "A photograph of a river shows water. It does not show flow.",
+        },
+        {
+          title: "What kinds of systems resist explanation?",
+          answer:
+            "Systems where outcomes emerge from interaction rather than single causes.",
+          children:
+            "In regenerative systems, no single variable explains the result. Soil health, recovery, and stability arise from relationships among many elements. When these elements are separated into parts, the system stops making sense. Explanation fragments what only functions as a whole. Seeing interaction restores coherence that words alone flatten.",
+          metaphor:
+            "Individual gears are labeled. The machine still does not run.",
+        },
+        {
+          title: "Why do static models create false confidence?",
+          answer:
+            "Because they hide delay, accumulation, and threshold effects.",
+          children:
+            "Some systems look stable until they collapse. Others look chaotic before they recover. Static explanation favors immediate outcomes and clean narratives. It disguises long delays where causes and effects are separated by time. Confidence grows because uncertainty is hidden, not because understanding is complete.",
+          metaphor:
+            "A dam looks strong the day before it fails.",
+        },
+        {
+          title: "What does visualization preserve that language removes?",
+          answer:
+            "Continuity of cause and effect across time.",
+          children:
+            "Visual models allow patterns to be observed as they develop. They reveal acceleration, slowing, feedback, and saturation. This does not simplify the system. It prevents premature conclusions. Seeing change unfold protects against mistaking short-term improvement for long-term health.",
+          metaphor:
+            "A line drawn point by point reveals its curve.",
+        },
+        {
+          title: "Why is this not about making things easier?",
+          answer:
+            "Because visual modeling increases accuracy, not comfort.",
+          children:
+            "Some truths become less accurate when simplified. Visual modeling is not entertainment or persuasion. It holds complexity without compressing it into slogans. Difficulty is preserved where it is real. What disappears is the illusion of certainty created by explanation alone.",
+          metaphor:
+            "Clear glass shows cracks that paint would hide.",
+        },
+        {
+          title: "When does computation become necessary?",
+          answer:
+            "When interactions exceed what the human mind can reliably track.",
+          children:
+            "Systems with many variables, delayed feedback, and repeated interactions cannot be followed accurately by intuition. Computational modeling traces consequences without inventing them. The role of computation is continuity, not creativity. It allows the system to be observed without narrative interference.",
+          metaphor:
+            "Too many threads move for the hand to follow.",
+        },
+        {
+          title: "ZenTrust: What does ZenTrust notice about visual modeling?",
+          answer:
+            "ZenTrust notices that seeing prevents premature certainty.",
+          children:
+            "ZenTrust works with systems where effects unfold slowly and feedback is delayed. In these contexts, explanation alone often produces false confidence or misplaced blame. Visual modeling is used to keep uncertainty visible, not to persuade. ZenTrust remains an observing presence, allowing behavior to be seen without instruction.",
+          metaphor:
+            "A window stays open while the weather passes.",
+        },
+        {
+          title: "What becomes possible when systems are seen clearly?",
+          answer:
+            "Distinction between clarity and truth.",
+          children:
+            "Seeing a system move does not resolve it. It removes false conclusions. Understanding shifts from certainty to orientation. What remains is a quieter relationship with complexity, where explanation no longer pretends to be final.",
+          metaphor:
+            "The fog lifts. The terrain remains.",
+        },
+      ]}
+      ending={[
+        "Some systems cannot be reduced without distortion.",
+        "Seeing preserves causality that language compresses.",
+        "Clarity is not the same as truth.",
+      ]}
+    />
   );
 }
