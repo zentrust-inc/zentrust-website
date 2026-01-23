@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does seeking freedom begin to feel like another cage?",
+  title: "Why does seeking freedom begin to feel like a cage?",
   description:
-    "A question-led look at how freedom, once treated as a goal, becomes a managed project that quietly replaces seeing.",
+    "A sharp examination of how seeking freedom converts seeing into management, turning relief into a project that never completes.",
   other: {
     category: "Meaning & Seeking",
     subcategory: "seeking-freedom-cage",
@@ -17,86 +17,87 @@ export default function QuestionPage() {
   return (
     <QuestionFrame
       category="Meaning & Seeking"
-      question="Why does seeking freedom begin to feel like another cage?"
-      shortAnswer="Because once freedom is treated as something to achieve, it turns into a project that must be managed, maintained, and defended, quietly replacing seeing."
-      heroMetaphor="Imagine refreshing your email every few minutes at work. Each time, the screen looks the same. Near the end of the day, you stop checking."
+      question="Why does seeking freedom begin to feel like a cage?"
+      shortAnswer="Because once freedom is treated as an outcome to be achieved, it becomes a managed project that replaces direct seeing with continuous self-correction."
+      heroMetaphor="A person keeps adjusting a chair that is already level. Each adjustment feels necessary because stopping feels careless. The floor never changes."
       sections={[
         {
-          title: "Why does seeking freedom rarely seem to finish?",
-          answer: "Because seeking freedom can shift from seeing into continuous self-management.",
-          metaphor:
-            "Imagine following a checklist long after the task is done. You keep reviewing items, correcting small details, and rewriting the same notes. The paper grows messy while the room stays the same.",
+          title: "Why does seeking freedom rarely reach an endpoint?",
+          answer:
+            "Seeking freedom persists because it converts relief into an ongoing task rather than a condition.",
           children:
-            "Many people enter practice hoping for relief, but slowly it becomes something to maintain. There is always another habit to refine, another rule to remember, another flaw to notice. Time passes, effort accumulates, yet completion never quite arrives. The day ends with a sense of unfinished business, even when nothing urgent is happening, and freedom starts to feel like a job that never clocks out.",
+            "Seeking often begins with the hope of ease, but gradually becomes a routine of maintenance. There is always another habit to refine or insight to secure. Days pass with effort but without arrival. Completion is deferred because stopping feels premature. The structure continues not because it works, but because it has become familiar. Seeking survives by redefining continuation as responsibility.",
+          metaphor:
+            "A checklist is reviewed after the work is done. Boxes are checked again. The room stays the same.",
         },
         {
-          title: "Why do rules make seeking freedom feel like identity?",
+          title: "How does seeking freedom turn into identity?",
           answer:
-            "Because rules can start organizing who you are, not just what you do, while seeking freedom continues.",
-          metaphor:
-            "Imagine wearing a uniform meant for a short task. Days pass and the fabric begins to feel normal on your skin. One morning you reach for it before showing your face.",
+            "Seeking freedom becomes identity when rules and practices organize who you are rather than what you notice.",
           children:
-            "Rules can stabilize behavior at first, but over time they can define a person. Attention shifts from direct experience to correctness, then to self-monitoring. Small slips feel bigger than the original confusion that brought you here. You begin to measure your day by compliance and failure, not by ease. The sense of freedom becomes tied to staying inside approved lines, even when those lines feel tight.",
+            "Practices can begin as tools, but over time they shape self-image. Attention shifts from immediate experience to correctness and compliance. Small deviations feel threatening. The sense of self becomes tied to being someone who seeks properly. Freedom is no longer sensed directly, but measured through adherence. The role becomes stable even if the original tension remains unresolved.",
+          metaphor:
+            "A uniform meant for a short task is worn daily. The fabric softens. Removing it feels strange.",
         },
         {
-          title: "What keeps seeking freedom going when relief never arrives?",
+          title: "Why does effort continue even when relief does not appear?",
           answer:
-            "The belief that seeking freedom is still leading somewhere keeps effort alive even when nothing resolves.",
-          metaphor:
-            "Imagine walking toward a sign that always looks the same distance away. You speed up, then slow down, then check your watch. The sign stays put while your legs keep moving.",
+            "Effort continues because seeking freedom is framed as future-oriented progress.",
           children:
-            "When freedom is framed as a future result, effort becomes endless. Discomfort is tolerated because progress is assumed. The mind keeps a quiet scoreboard of how long you have been trying and how far you should be by now. Stopping feels like failure, not completion. Even rest can feel suspicious, as if pausing will erase what you have earned, so the loop continues without closure.",
+            "When freedom is placed in the future, effort feels justified indefinitely. Discomfort is tolerated because arrival is assumed. Time invested becomes proof that stopping would be failure. Even rest is interpreted as regression. The loop sustains itself by promising that the next refinement will finally resolve what the last one did not.",
+          metaphor:
+            "A sign on the road stays the same distance away. The pace changes. The distance does not.",
         },
         {
-          title: "Why does complexity keep seeking freedom trapped?",
+          title: "How does complexity trap seeking freedom?",
           answer:
-            "Because complexity can delay verification, making seeking freedom depend on authority and long study.",
-          metaphor:
-            "Imagine a machine with hundreds of buttons and tiny labels. You are told it works only after long training. Each day you press more buttons while the room remains quiet.",
+            "Complexity delays verification, making freedom dependent on authority rather than direct observation.",
           children:
-            "Highly complex frameworks raise the cost of questioning. Doubt is reframed as not understanding enough, so you wait and study instead of checking what is happening right now. Clarity is deferred to experts and advanced stages. Over time, the effort invested becomes the reason to continue. Letting go feels like wasting years, so the structure is defended even when it no longer reduces strain.",
+            "Highly structured systems raise the cost of questioning. Doubt is reframed as misunderstanding or insufficient training. Clarity is postponed to later stages. Time invested becomes a reason to continue rather than a reason to stop. The system protects itself by making exit feel like waste instead of resolution.",
+          metaphor:
+            "A panel of buttons fills the wall. Instructions grow thicker. The room stays quiet.",
         },
         {
-          title: "How does seeking freedom turn into a role you protect?",
+          title: "Why does seeking freedom become something to defend?",
           answer:
-            "Because seeking freedom can provide belonging and status that replace the relief you expected.",
-          metaphor:
-            "Imagine being assigned a seat in a room and never moving. People begin to greet the seat before they greet you. One day you stand elsewhere and no one knows where to look.",
+            "Seeking freedom can provide stability and belonging that replace the relief it promised.",
           children:
-            "Practice can become a social and inner role that stabilizes life. Being a practitioner provides structure, language, and recognition, especially when daily life feels uncertain. The role becomes predictable even if relief does not appear. You may begin defending the identity more than the original intention. Freedom becomes something you represent and perform, while the underlying tension that started the journey stays largely unchanged.",
+            "The identity of a seeker offers language, community, and predictability. It creates a place to stand even when ease does not arrive. Over time, the role itself is protected. Questioning the process feels like risking belonging. Freedom becomes something performed rather than something noticed. The original motivation fades behind the need to remain oriented within the structure.",
+          metaphor:
+            "A seat in a room becomes familiar. People greet the seat. Standing elsewhere feels disruptive.",
         },
         {
-          title: "Why does a system reward seeking freedom more than finishing it?",
+          title: "Why do systems reward continued seeking over completion?",
           answer:
-            "Because seekers keep participating, while someone who stops seeking freedom no longer serves the cycle.",
-          metaphor:
-            "Imagine a workshop where everyone is polishing parts all day. The moment a part is finished, it is set aside and no one touches it again. The workers are praised for staying at the bench.",
+            "Systems depend on participation, and completion removes the participant.",
           children:
-            "Institutions depend on continuation. Practitioners attend, comply, repeat, and help the structure persist. Someone who no longer seeks has no obvious place and no measurable progress to display. They do not reinforce hierarchy or shared stories in the same way. The system naturally honors continuity over completion, not through cruelty, but through simple dependence on those who keep showing up and keep trying.",
+            "Those who continue seeking attend, comply, and reinforce the structure. Someone who no longer seeks has no metrics to display and no role to perform. They do not feed continuity. The system does not need to oppose completion. It simply has no use for it. Continuation is rewarded because it sustains the cycle.",
+          metaphor:
+            "Parts are polished at a bench all day. Finished parts are set aside. The bench stays busy.",
         },
         {
-          title: "ZenTrust: What changes when seeking freedom itself is questioned?",
+          title: "ZenTrust: What does ZenTrust notice about seeking freedom?",
           answer:
-            "ZenTrust exists to notice how seeking freedom can become the structure that maintains dissatisfaction.",
-          metaphor:
-            "Imagine turning off a machine and hearing the room for the first time. The hum is gone, but nothing dramatic happens. You stand there with your hand still near the switch.",
+            "ZenTrust notices how seeking freedom becomes the mechanism that maintains dissatisfaction.",
           children:
-            "ZenTrust does not offer a better method or a truer ladder. It points to the moment when the effort to fix experience is seen as unnecessary. When seeking pauses, there is no substitute project waiting to replace it. No new identity appears to hold onto. The absence of a task can feel strange, because so much meaning was carried by trying, improving, and staying oriented toward a future release.",
+            "ZenTrust does not offer a better path or method. It observes the moment when the effort to fix experience is seen as unnecessary. When seeking pauses, there is no replacement project waiting. The absence of effort can feel disorienting because so much meaning was invested in trying. ZenTrust remains an observing presence only.",
+          metaphor:
+            "A machine is turned off. The hum stops. The room sounds ordinary.",
         },
         {
-          title: "What remains when seeking freedom stops being a project?",
+          title: "What remains when seeking freedom is no longer a project?",
           answer:
-            "Ordinary life remains, and seeking freedom no longer organizes perception, time, or identity.",
-          metaphor:
-            "Imagine setting down a heavy bag after a long walk and forgetting you were carrying it. The road looks the same and the sky does not change. Your shoulders feel different before you can name why.",
+            "Ordinary life remains without being organized around improvement or escape.",
           children:
-            "When the management project ends, life does not become special. It becomes simpler and more direct. Sensations arise without commentary, and decisions happen without reference to progress. Nothing needs to be preserved, defended, or proven. There is no urge to report results or hold a position. The absence of seeking can look unimpressive from the outside, but it quietly removes the pressure that kept the cycle running.",
+            "When seeking ends, nothing special replaces it. Sensations occur without commentary. Decisions happen without reference to progress. There is no position to defend and no result to report. The absence of seeking may look unimpressive from the outside, but it quietly removes the pressure that sustained the cycle.",
+          metaphor:
+            "A heavy bag is set down after a long walk. The road stays the same. The shoulders notice first.",
         },
       ]}
       ending={[
-        "Nothing has to be escaped.",
-        "Nothing needs to be completed.",
-        "When the project ends, what remains was never missing.",
+        "Seeking turns relief into work.",
+        "Work sustains the cage.",
+        "What remains was never missing.",
       ]}
     />
   );
