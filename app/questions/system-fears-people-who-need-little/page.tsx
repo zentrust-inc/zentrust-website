@@ -6,10 +6,10 @@ import { QuestionFrame } from "@/components/questions/QuestionFrame";
 export const metadata: Metadata = {
   title: "Why does the system fear people who need little?",
   description:
-    "A question about why modern systems feel unsettled by people who live simply, speak plainly, and do not chase status.",
+    "A sharp examination of why modern systems destabilize around people whose lives do not require constant consumption, validation, or escalation.",
   other: {
     category: "Schools & Systems",
-    subcategory: "simplicity-system-threat",
+    subcategory: "need-minimization-threat",
   },
 };
 
@@ -18,86 +18,86 @@ export default function QuestionPage() {
     <QuestionFrame
       category="Schools & Systems"
       question="Why does the system fear people who need little?"
-      shortAnswer="Because systems rely on fear, comparison, and manufactured need, and a person who is content with enough quietly withdraws from those controls."
-      heroMetaphor="Imagine a large machine powered by spinning belts and pulleys. Every part depends on constant motion to keep running. One small wheel slows down, not out of rebellion, but because it no longer needs the speed."
+      shortAnswer="Because systems depend on manufactured need to sustain participation, and a person who needs little withdraws demand without opposing the structure."
+      heroMetaphor="A large engine runs smoothly as long as every gear spins at speed. One small gear slows because it no longer needs the motion. The engine shudders, not from damage, but from imbalance."
       sections={[
         {
-          title: "Why do people who live simply seem out of place?",
+          title: "Why does needing little register as a disturbance?",
           answer:
-            "Because their lives do not signal urgency, ambition, or visible striving.",
+            "Because reduced need interrupts the feedback loops that keep systems predictable.",
           children:
-            "In many environments, value is inferred from motion. Being busy and visibly stretched is treated as proof of importance. When someone moves slowly, speaks plainly, and shows no anxiety about keeping up, others struggle to place them. They do not fit the cues people rely on, even though nothing is wrong. The mismatch is cultural, not moral.",
+            "Most systems infer stability from ongoing demand. When someone consumes less, asks for little, and remains calm, expected signals disappear. There is no escalation to respond to and no urgency to manage. The system reads this absence as uncertainty rather than sufficiency. What looks like contentment locally appears as unpredictability structurally.",
           metaphor:
-            "Imagine standing at a busy crosswalk where everyone rushes when the light turns green. One person waits, not confused or delayed, simply unhurried. No rule is broken, yet their stillness stands out.",
+            "A meter spins slower than expected. No alarm is triggered. Technicians still gather.",
         },
         {
-          title: "Why does the obvious explanation fall short?",
+          title: "Why is simplicity misread as deficiency?",
           answer:
-            "Because simplicity is often mislabeled as laziness, ignorance, or lack of potential.",
+            "Because systems explain low participation using deficit narratives.",
           children:
-            "The system explains simplicity using deficit language. Unambitious. Naive. Underachieving. These labels protect existing assumptions and prevent a deeper question from forming. It becomes easier to judge the person than to ask whether constant striving is necessary or whether exhaustion has been normalized.",
+            "Instead of questioning why striving is assumed, simplicity is reframed as lack. Unmotivated. Underutilized. Falling behind. These labels protect the system from examining its own dependence on pressure. The person is interpreted as missing something rather than having finished something. The misreading keeps the structure intact.",
           metaphor:
-            "Imagine assuming a quiet lake is empty because nothing splashes at the surface. The water looks still, so you conclude nothing is happening below.",
+            "A shelf remains empty after stocking day. The assumption is neglect, not completion.",
         },
         {
-          title: "What is the system actually protecting?",
+          title: "What does needing little remove from the system?",
           answer:
-            "Its dependence on comparison, insecurity, and the promise that more will finally be enough.",
+            "It removes leverage based on fear, comparison, and promised reward.",
           children:
-            "Many systems run on the idea that satisfaction is always just out of reach. You are shown what others have and what you lack. This creates motion that looks like progress but often feels like pressure. A person who needs little disrupts this cycle without trying. Their life quietly suggests that dignity and meaning may not require endless accumulation.",
+            "Many controls operate by amplifying insecurity. Status hierarchies, deadlines, and incentives only work if people feel they must comply to survive or belong. When someone is already sufficient, these levers lose force. Nothing is refused, yet nothing pulls. The system cannot easily motivate someone who is not reaching.",
           metaphor:
-            "Imagine a market that only works if everyone believes they must keep buying. One person leaves satisfied. The stalls remain, but the spell weakens.",
+            "A rope is pulled. The other end does not tighten.",
         },
         {
-          title: "How does this play out over time?",
+          title: "Why does this absence feel threatening rather than neutral?",
           answer:
-            "Through subtle pressure to justify yourself and quiet penalties for not competing.",
+            "Because systems are optimized for acceleration, not sufficiency.",
           children:
-            "The system rarely attacks simplicity directly. Instead, it reframes it. You are encouraged to optimize, scale, and stay visible. If you do not, you may be overlooked or described as unrealistic. These are not dramatic punishments. They are steady nudges that keep most people inside the same race without naming it.",
+            "Growth-oriented structures assume more is always required. Sufficiency introduces a stopping point the system cannot process. There is no metric for enough. Without escalation, forecasting fails. The discomfort arises not from moral judgment, but from design limits. The system does not know how to respond to completion.",
           metaphor:
-            "Imagine a classroom where one student finishes early and sits calmly. Soon, extra work appears so stillness does not spread.",
+            "A progress bar reaches full. The screen does not advance.",
         },
         {
-          title: "Where does this show up in daily life?",
+          title: "How is pressure applied without confrontation?",
           answer:
-            "In how worth gets measured through output, speed, and visibility.",
+            "Through subtle penalties for not displaying ambition or urgency.",
           children:
-            "Rest can look suspicious. Quiet can look like disengagement. Contentment can look like stagnation. In many environments, effort must be displayed to be believed. Someone who does not advertise struggle can be treated as less committed, even if they are steady and capable.",
+            "People who need little are rarely challenged directly. Instead, they are bypassed, deprioritized, or described as unrealistic. Opportunities favor those who signal hunger. Visibility replaces steadiness as a proxy for value. These pressures guide behavior without naming enforcement. Participation resumes quietly.",
           metaphor:
-            "Imagine two clocks on a wall. One ticks loudly and draws attention. The other keeps accurate time in silence.",
+            "A lane narrows without signage. Most drivers merge automatically.",
         },
         {
-          title: "Why does the pattern keep persisting?",
+          title: "Why does needing little destabilize social comparison?",
           answer:
-            "Because complexity allows responsibility to dissolve into roles and procedures.",
+            "Because comparison requires shared metrics of desire.",
           children:
-            "Complex systems make it easy to participate without feeling personally accountable. You can say you were only following policy or fulfilling a role. Simplicity collapses that distance. It returns decisions to basic moral ground, which weakens the comfort of hiding inside abstraction.",
+            "Status systems rely on visible wants. When someone does not pursue the same markers, ranking becomes difficult. Their presence raises an unspoken question: if they are fine without this, why am I chasing it? The discomfort does not come from the person, but from the mirror effect they create.",
           metaphor:
-            "Imagine a long chain of levers controlling a distant outcome. Each person pulls one and says the result is not theirs.",
+            "A scoreboard hangs above a game. One player stops looking up.",
         },
         {
-          title: "Why does ZenTrust notice simplicity can feel threatening?",
+          title: "ZenTrust: What does ZenTrust notice here?",
           answer:
-            "Because independence can resemble refusal, even when no message is intended.",
+            "ZenTrust notices how sufficiency exposes reliance on pressure.",
           children:
-            "When someone needs little, common pressures lose force. Fear of judgment and fear of falling behind weaken. This independence can be misread as arrogance or criticism. It may also stir discomfort in others who feel trapped in striving they did not choose. ZenTrust treats this not as virtue, but as a mirror effect.",
+            "ZenTrust does not frame needing little as virtue or solution. It observes how systems react when demand drops without conflict. The response reveals what was holding participation in place. ZenTrust remains an observing presence, allowing the mechanism to become visible without instruction.",
           metaphor:
-            "Imagine a room where everyone stands when a powerful person enters. One person stays seated, not to insult, but because they were already at ease.",
+            "A light is removed from a machine. Shadows reveal its shape.",
         },
         {
-          title: "What remains when striving loosens its grip?",
+          title: "What remains when the fear is seen clearly?",
           answer:
-            "A quieter form of responsibility that does not require performance.",
+            "The distinction between participation by choice and participation by necessity.",
           children:
-            "Without constant striving, attention returns to conscience, relationships, and presence. Nothing needs to be proved publicly to feel real privately. Life does not become effortless, but it becomes internally coherent. The system struggles with this because its usual levers begin to matter less.",
+            "Seeing the pattern does not require withdrawal or defiance. It clarifies why certain lives attract pressure and others do not. The fear belongs to the system, not the person. What remains is a clearer sense of which needs are real and which were installed to keep motion going.",
           metaphor:
-            "Imagine turning off background noise you did not realize was always on. The room stays the same, but you hear yourself more clearly.",
+            "A conveyor belt slows. Objects stay upright.",
         },
       ]}
       ending={[
-        "You may notice where effort becomes a requirement, not a choice.",
-        "You may notice how needing less changes how pressure feels.",
-        "Nothing here asks you to act. Only to see.",
+        "Systems stabilize through demand.",
+        "Needing little removes leverage without resistance.",
+        "Seeing this changes where pressure is placed.",
       ]}
     />
   );
