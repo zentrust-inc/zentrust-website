@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
 
 export const metadata: Metadata = {
-  title: "Why does being replaceable feel like being disposable?",
+  title: "Why does replaceable feel like disposable?",
   description:
-    "A question-led look at why functional replacement is often experienced as personal erasure.",
+    "A sharp examination of how replaceable becomes experienced as disposable when systems optimize for function without preserving human continuity.",
   other: {
     category: "Schools & Systems",
     subcategory: "replaceable-disposable",
@@ -17,87 +17,87 @@ export default function QuestionPage() {
   return (
     <QuestionFrame
       category="Schools & Systems"
-      question="Why does being replaceable feel like being disposable?"
-      shortAnswer="Because when systems replace functions without acknowledging people, the body can register replacement as erasure rather than efficiency."
-      heroMetaphor="Imagine your name written in pencil on a list. One day it is erased cleanly, with no tear in the paper and no mark left behind. The list continues, neat and orderly, as if you were never there."
+      question="Why does replaceable feel like disposable?"
+      shortAnswer="Because replaceable removes a function cleanly while the human nervous system interprets unmarked removal as erasure rather than transition."
+      heroMetaphor="A name is written on a whiteboard at the start of the week. By Friday it is wiped away, leaving no smudge or pause. The board looks clean, but the hand remembers writing."
       sections={[
         {
-          title: "What does replaceable start to feel like?",
+          title: "Why does replaceable register as loss rather than efficiency?",
           answer:
-            "It often feels like your presence mattered only until something smoother arrived.",
-          metaphor:
-            "Imagine a chair quietly removed from a room overnight. The space looks cleaner in the morning, and no one mentions the missing seat. You stand there, holding the memory of where you used to sit.",
+            "Replaceable removes a role without acknowledging presence, which the body experiences as disappearance.",
           children:
-            "At first, the word replaceable sounds technical and neutral. Over time, it gathers weight through small experiences. You notice fewer check-ins, fewer explanations, and fewer pauses around you. The work continues, meetings continue, and plans continue. The feeling does not come from a single event. It comes from watching life reorganize itself without leaving a place for you to stand.",
+            "In systems, replacement is framed as neutral optimization. For the person involved, the signal arrives through silence. Access ends, routines change, and conversation moves on without a marker. There is no moment to place the experience in time. The nervous system does not read efficiency. It reads sudden absence. What was once part of the flow is no longer referenced, and that gap is interpreted as loss.",
+          metaphor:
+            "A chair is removed from a room overnight. The floor looks wider in the morning. Someone still reaches for where the seat was.",
         },
         {
-          title: "Why does the obvious explanation fall short?",
+          title: "Why does replaceable feel personal even when it is not?",
           answer:
-            "Because knowing something is efficient does not protect against the experience of disappearance.",
-          metaphor:
-            "Imagine a store rearranges its shelves overnight. The items you reach for are gone, replaced by new ones. The aisles are brighter, but your hands hesitate in the empty space.",
+            "Replaceable feels personal because the removal occurs at the level of daily contact.",
           children:
-            "People say replacement is not about you, and that is often true at a technical level. But the experience arrives through absence, not logic. Your routines change, your access changes, and your role fades without ceremony. Efficiency explains the decision, but it does not address the sensation of being removed from the flow of ordinary life.",
+            "Decisions may be abstract and systemic, but their effects land locally. Messages stop arriving. Doors that opened yesterday no longer open. The explanation, if any, comes after the experience. The body encounters the change before the story does. This sequencing makes replaceable feel like judgment even when no evaluation occurred. The feeling is produced by timing, not intent.",
+          metaphor:
+            "A light switch is flipped in another room. The hallway goes dark. No one explains why.",
         },
         {
-          title: "What actually turns replacement into disposability?",
+          title: "What turns replaceable into disposable?",
           answer:
-            "Disposability emerges when replacement happens without recognition or closure.",
-          metaphor:
-            "Imagine a library book returned to the shelf with no stamp, no note, and no record of having been borrowed. The book is intact, but its history is invisible.",
+            "Replaceable becomes disposable when replacement happens without recognition or closure.",
           children:
-            "When systems replace tasks, they rarely acknowledge the human effort that held them before. There is no ritual, no pause, and no signal that what came before mattered. Without recognition, replacement feels like deletion. The body interprets this as being discarded rather than transitioned, even if the system itself has no such intent.",
+            "Systems often move forward without marking what was held before. There is no signal that effort mattered or that continuity existed. Without acknowledgment, replacement resembles deletion. The person is not transitioned out of a role, they simply vanish from it. The absence of ritual or pause removes context. Disposability is not in the replacement itself, but in the lack of marking.",
+          metaphor:
+            "A file is deleted with one keystroke. No archive opens. The folder closes.",
         },
         {
-          title: "How does this feeling build over time?",
+          title: "How does repeated replacement shape behavior?",
           answer:
-            "Over time, replaceable can sink into the body as a quiet expectation of erasure.",
-          metaphor:
-            "Imagine writing lightly on paper, knowing it will be erased. Your hand moves carefully, and the lines stay faint. You stop pressing down, even when the page is blank.",
+            "Repeated replacement conditions people to reduce visibility and investment.",
           children:
-            "After repeated experiences of quiet removal, people begin to hold themselves back. They hesitate to invest, speak boldly, or plan far ahead. Not because they lack ability, but because they sense how easily space can vanish. The future feels provisional. Presence starts to feel conditional.",
+            "After seeing how easily space can disappear, people adapt quietly. They speak less, plan shorter horizons, and avoid attaching identity to roles. This is not apathy. It is calibration. Presence becomes cautious because continuity feels unreliable. The system continues functioning, but the person learns to stay lighter inside it. Replaceable settles into the body as expectation.",
+          metaphor:
+            "Writing is done in pencil instead of ink. Lines stay faint. Erasing becomes easy.",
         },
         {
-          title: "Why does disposability feel existential?",
+          title: "Why does disposable feel existential?",
           answer:
-            "Because being disposable suggests that your existence itself was optional.",
-          metaphor:
-            "Imagine watching a file delete instantly with no recycle bin. The screen refreshes, and the space is gone. You stare at the spot where something used to be.",
+            "Disposable suggests that existence itself was optional, not just the role.",
           children:
-            "Humans are sensitive to signals about belonging and continuity. When replacement is silent and complete, it resembles social disappearance. The mind fills that gap with questions about value, necessity, and permanence. Even when the situation is economic or technical, the feeling reaches deeper, touching the fear of being unnecessary at all.",
+            "Humans track signals of belonging over time. When removal is total and unmarked, it resembles social disappearance. The mind extends that signal beyond the role into identity. Questions about necessity and value appear even if the situation was procedural. The feeling goes deeper than employment or function. It touches the fear of being unnecessary at all.",
+          metaphor:
+            "A footprint is washed away by water. The sand looks untouched. The walk still happened.",
         },
         {
-          title: "Why does this pattern repeat in modern systems?",
+          title: "Why do modern systems repeat this pattern?",
           answer:
-            "Because large systems optimize for outcomes, not for human continuity.",
-          metaphor:
-            "Imagine a conveyor belt that never stops moving. Objects are placed on it and taken off it smoothly. The belt does not slow down to notice which items lingered longer.",
+            "Modern systems optimize for continuity of output, not continuity of people.",
           children:
-            "Automation and scale reward speed, consistency, and output. They do not pause for transition or acknowledgment. As these systems spread, more people encounter replacement without context. The repetition comes not from cruelty, but from design choices that exclude human signaling as unnecessary overhead.",
+            "Scale, automation, and speed reward smooth transitions between functions. Human acknowledgment slows that movement and is treated as overhead. As systems expand, replacement becomes frequent and unmarked by design. The repetition does not require cruelty. It follows from architectures that value flow over memory. Replaceable becomes common because remembering is inefficient.",
+          metaphor:
+            "A conveyor belt moves without stopping. Objects are placed and removed. The belt never asks who was there before.",
         },
         {
-          title: "What does ZenTrust notice about disposability here?",
+          title: "ZenTrust: What does ZenTrust notice about replaceable?",
           answer:
-            "ZenTrust notices how replacement without recognition quietly trains people to disappear themselves.",
-          metaphor:
-            "Imagine folding a jacket smaller each time you put it away. Eventually it fits into a narrow space, and you forget it was ever larger. The closet looks orderly, but something has been compressed.",
+            "ZenTrust notices how replaceable trains people to erase themselves preemptively.",
           children:
-            "This Question does not argue against technology or efficiency. ZenTrust watches how meaning collapses when people absorb replacement as a verdict rather than a condition. Seeing that pattern can interrupt the reflex to shrink yourself preemptively. The system may continue to replace functions, but the added layer of self-erasure is not required for that to happen.",
+            "ZenTrust does not oppose replacement or efficiency. It observes how people absorb replaceable as a verdict on worth rather than a property of systems. That absorption leads to shrinking, withholding, and quiet self-removal. By holding attention on the mechanism, the extra layer of self-erasure becomes visible. The system may replace functions, but the conclusion about self is not required.",
+          metaphor:
+            "A coat is folded smaller each day. Eventually it fits a narrow shelf. The room looks tidy.",
         },
         {
-          title: "What changes when replacement is seen clearly?",
+          title: "What remains when replaceable is fully seen?",
           answer:
-            "When replacement is seen as functional, the feeling of disposability can loosen without denying the loss.",
-          metaphor:
-            "Imagine stepping back from a sand drawing after a wave passes. The shape is gone, but the beach remains wide. You notice the tide instead of blaming the drawing.",
+            "Seeing replaceable clearly separates functional change from personal erasure.",
           children:
-            "Loss can still hurt, and uncertainty can still remain. What can shift is the conclusion drawn from the experience. Replacement does not have to mean that you were a mistake or an excess. It can be understood as a system moving without human language. That clarity does not fix the situation, but it can reduce the extra harm of interpreting efficiency as erasure.",
+            "Loss can still be real and uncertainty can remain. What changes is the conclusion drawn from the event. Replaceable is recognized as movement of structure, not proof of excess. The system continues or it does not. The added harm of interpreting replacement as disappearance loosens. What remains is a clearer view of what happened without turning it into a verdict on existence.",
+          metaphor:
+            "A tide comes in and removes a drawing. The beach stays wide. The tide is noticed.",
         },
       ]}
       ending={[
-        "Replacement can happen without warning or ceremony.",
-        "That does not mean you were meant to vanish.",
-        "It may only mean the system never learned how to say goodbye.",
+        "Replaceable removes functions, not lives.",
+        "Disposability appears when removal is unmarked.",
+        "Seeing the mechanism reduces the extra harm.",
       ]}
     />
   );
