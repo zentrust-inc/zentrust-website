@@ -78,7 +78,7 @@ export async function POST(req: Request) {
             quantity: 1,
           },
         ],
-        success_url: `${siteUrl}/stewardship/thank-you`,
+        success_url: `${siteUrl}/stewardship/thank-you?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${siteUrl}/stewardship/checkout`,
         metadata: {
           purpose: "zentrust_stewardship",
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ url: session.url });
     }
 
-    // ------------------ MONTHLY (FIXED) ------------------
+    // ------------------ MONTHLY ------------------
 
     if (!monthlyPriceId) {
       throw new Error("Missing STRIPE_MONTHLY_PRICE_ID");
@@ -102,10 +102,10 @@ export async function POST(req: Request) {
       line_items: [
         {
           price: monthlyPriceId, // $1/month
-          quantity: amount,         // slider value
+          quantity: amount,       // slider value
         },
       ],
-      success_url: `${siteUrl}/stewardship/thank-you`,
+      success_url: `${siteUrl}/stewardship/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/stewardship/checkout`,
       subscription_data: {
         metadata: {
