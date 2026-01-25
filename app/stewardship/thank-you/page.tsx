@@ -17,12 +17,14 @@ export default function ThankYouPage() {
   const [iconFlip, setIconFlip] = useState(true);
 
   // ---------------------------------------------------------------------------
-  // 🔔 GOOGLE ADS CONVERSION — FIRE ONCE ON PAGE LOAD
+  // ✅ GOOGLE CONSENT UPDATE — UNBLOCK ADS CONVERSION
+  // Fires once when a real donation completes
   // ---------------------------------------------------------------------------
   useEffect(() => {
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "conversion", {
-        send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
+      (window as any).gtag("consent", "update", {
+        ad_storage: "granted",
+        ad_user_data: "granted",
       });
     }
   }, []);
