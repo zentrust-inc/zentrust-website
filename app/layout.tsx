@@ -40,20 +40,20 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'ad_user_data': 'denied',
-              'analytics_storage': 'granted'
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              analytics_storage: 'granted'
             });
           `}
         </Script>
 
-        {/* GA4 */}
+        {/* EXISTING GA4 (foreign / uncontrolled, do NOT remove) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2G4CVKHFZR"
           strategy="afterInteractive"
         />
 
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-existing-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
@@ -62,13 +62,27 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* ✅ SW moved out of critical path */}
+        {/* ZENTRUST-OWNED GOOGLE TAG (GA4 + GOOGLE ADS) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-V8LRV2WBDE"
+          strategy="afterInteractive"
+        />
+
+        <Script id="gtag-zentrust-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V8LRV2WBDE');
+          `}
+        </Script>
+
+        {/* SERVICE WORKER */}
         {process.env.NODE_ENV === "production" && (
           <Script id="sw-register" strategy="afterInteractive">
             {`
               if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js')
-                  .catch(() => {});
+                navigator.serviceWorker.register('/sw.js').catch(() => {});
               }
             `}
           </Script>
