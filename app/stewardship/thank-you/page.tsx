@@ -16,6 +16,20 @@ export default function ThankYouPage() {
   const [index, setIndex] = useState(0);
   const [iconFlip, setIconFlip] = useState(true);
 
+  // ---------------------------------------------------------------------------
+  // 🔔 GOOGLE ADS CONVERSION — FIRE ONCE ON PAGE LOAD
+  // ---------------------------------------------------------------------------
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
+      });
+    }
+  }, []);
+
+  // ---------------------------------------------------------------------------
+  // Rotating poetic lines
+  // ---------------------------------------------------------------------------
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % ROTATING_LINES.length);
