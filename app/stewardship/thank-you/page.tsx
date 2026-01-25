@@ -17,14 +17,15 @@ export default function ThankYouPage() {
   const [iconFlip, setIconFlip] = useState(true);
 
   // ---------------------------------------------------------------------------
-  // ✅ GOOGLE CONSENT UPDATE — UNBLOCK ADS CONVERSION
-  // Fires once when a real donation completes
+  // ✅ GOOGLE ADS PURCHASE CONVERSION
+  // Fires ONCE when the thank-you page loads
   // ---------------------------------------------------------------------------
   useEffect(() => {
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("consent", "update", {
-        ad_storage: "granted",
-        ad_user_data: "granted",
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-17898582360/BssVCI6UwuwbENji2tZC",
+        value: 5.0,
+        currency: "USD",
       });
     }
   }, []);
@@ -43,7 +44,7 @@ export default function ThankYouPage() {
   return (
     <main className="min-h-[100svh] flex items-center justify-center px-6 py-16 bg-[#F6F0E6] dark:bg-[#0f1110]">
       <div className="max-w-md w-full text-center">
-        {/* Transparent Sprout */}
+        {/* Icon */}
         <div className="flex justify-center mb-4">
           <Sprout
             className="h-12 w-12 text-green-600/80 dark:text-green-400/70"
@@ -52,7 +53,7 @@ export default function ThankYouPage() {
           />
         </div>
 
-        {/* Stewardship Received */}
+        {/* Label */}
         <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black/70 dark:text-white/60">
           Stewardship Received
         </p>
@@ -62,7 +63,7 @@ export default function ThankYouPage() {
           The ecosystem is stronger because you are in it.
         </h1>
 
-        {/* Rotating Line */}
+        {/* Rotating line */}
         <div className="flex items-center justify-center gap-3 mb-8">
           {iconFlip ? (
             <Waves className="h-5 w-5 text-sky-700/70 dark:text-sky-400/60" />
@@ -87,7 +88,7 @@ export default function ThankYouPage() {
           “The earth remembers every hand that helps it heal.”
         </blockquote>
 
-        {/* Footer */}
+        {/* Receipt */}
         <p className="text-sm text-black/55 dark:text-white/55 mb-7">
           A receipt has been sent to your email.
         </p>
