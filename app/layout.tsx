@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* CONSENT MODE */}
+        {/* CONSENT DEFAULT */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -47,33 +47,25 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* EXISTING GA4 (foreign / uncontrolled, do NOT remove) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-2G4CVKHFZR"
-          strategy="afterInteractive"
-        />
-
-        <Script id="gtag-existing-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-2G4CVKHFZR', { anonymize_ip: true });
-          `}
-        </Script>
-
-        {/* ZENTRUST-OWNED GOOGLE TAG (GA4 + GOOGLE ADS) */}
+        {/* GOOGLE TAG LOADER (single loader is enough) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-V8LRV2WBDE"
           strategy="afterInteractive"
         />
 
-        <Script id="gtag-zentrust-init" strategy="afterInteractive">
+        {/* GOOGLE TAG INIT (GA4 + ADS) */}
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            // GA4
+            gtag('config', 'G-2G4CVKHFZR', { anonymize_ip: true });
             gtag('config', 'G-V8LRV2WBDE');
+
+            // GOOGLE ADS (REQUIRED)
+            gtag('config', 'AW-17898582360');
           `}
         </Script>
 
