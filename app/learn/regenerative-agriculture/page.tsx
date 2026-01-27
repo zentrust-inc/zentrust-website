@@ -14,21 +14,26 @@ type FeaturedQuestion = {
   kicker?: string;
 };
 
-const featured: FeaturedQuestion[] = [
+const coreQuestions: FeaturedQuestion[] = [
+  {
+    title: "Does the land benefit from your extraction?",
+    href: "/questions/land-benefit-existence",
+    kicker: "Start here",
+  },
   {
     title: "Why do we keep extracting from soil instead of working with it?",
     href: "/questions/extracting-from-soil",
-    kicker: "Start here",
   },
   {
     title: "Why do human-designed environments struggle to sustain life?",
     href: "/questions/natural-vs-designed-environments",
   },
-  {
-    title: "Does the land benefit from your extraction?",
-    href: "/questions/land-benefit-existence",
-  },
 ];
+
+const failureQuestion: FeaturedQuestion = {
+  title: "Why does land repair keep failing even as investment increases?",
+  href: "/questions/syntropic-ecology",
+};
 
 export default function Page() {
   return (
@@ -50,8 +55,8 @@ export default function Page() {
         </p>
 
         <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          This guide introduces the core ideas in clear, practical terms,
-          without ideology or advocacy.
+          This page explains the core ideas, limits, and failure modes of
+          regenerative approaches in clear, non-ideological terms.
         </p>
 
         <div className="pt-2">
@@ -66,13 +71,14 @@ export default function Page() {
 
       {/* Guide */}
       <section id="guide" className="mt-12 space-y-10">
+        {/* Core questions */}
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-neutral-900">
             Core questions
           </h2>
 
           <ul className="grid gap-4 sm:grid-cols-2">
-            {featured.map((q) => (
+            {coreQuestions.map((q) => (
               <li
                 key={q.href}
                 className="rounded-xl border border-neutral-200 bg-white p-4"
@@ -93,6 +99,28 @@ export default function Page() {
           </ul>
         </section>
 
+        {/* Failure mode */}
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-neutral-900">
+            When regeneration fails
+          </h2>
+
+          <div className="rounded-xl border border-neutral-200 bg-white p-4">
+            <Link
+              href={failureQuestion.href}
+              className="block text-base font-semibold text-neutral-900 hover:underline"
+            >
+              {failureQuestion.title}
+            </Link>
+            <p className="mt-2 text-sm text-neutral-700">
+              Explains why funding, technology, and intent alone often fail to
+              restore land when incentives, timelines, and ecological feedback
+              loops remain misaligned.
+            </p>
+          </div>
+        </section>
+
+        {/* Support */}
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
             Supporting public education
