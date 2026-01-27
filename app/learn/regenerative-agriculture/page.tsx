@@ -16,31 +16,28 @@ type FeaturedQuestion = {
 
 const featured: FeaturedQuestion[] = [
   {
-    title: "Does the land benefit from your extraction?",
-    href: "/questions/does-the-land-benefit-from-your-extraction",
+    title: "Why do we keep extracting from soil instead of working with it?",
+    href: "/questions/extracting-from-soil",
     kicker: "Start here",
   },
   {
-    title: "Why do we keep extracting from soil instead of working with it?",
-    href: "/questions/why-do-we-keep-extracting-from-soil-instead-of-working-with-it",
+    title: "Why do human-designed environments struggle to sustain life?",
+    href: "/questions/natural-vs-designed-environments",
   },
   {
-    title: "Why do human-designed environments struggle to sustain life?",
-    href: "/questions/why-do-human-designed-environments-struggle-to-sustain-life",
+    title: "Does the land benefit from your extraction?",
+    href: "/questions/land-benefit-existence",
   },
 ];
-
-const failureMode: FeaturedQuestion = {
-  title: "Why does land repair keep failing even as investment increases?",
-  href: "/questions/why-does-land-repair-keep-failing-even-as-investment-increases",
-};
 
 export default function Page() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10 sm:py-14">
       {/* Above the fold */}
       <header className="space-y-4">
-        <p className="text-sm font-medium text-neutral-600">Educational guide</p>
+        <p className="text-sm font-medium text-neutral-600">
+          Educational guide
+        </p>
 
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
           Regenerative Agriculture
@@ -53,8 +50,8 @@ export default function Page() {
         </p>
 
         <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          This page explains the core ideas, limits, and failure modes of
-          regenerative approaches in clear, non-ideological terms.
+          This guide introduces the core ideas in clear, practical terms,
+          without ideology or advocacy.
         </p>
 
         <div className="pt-2">
@@ -98,34 +95,16 @@ export default function Page() {
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
-            When regeneration fails
-          </h2>
-
-          <div className="rounded-xl border border-neutral-200 bg-white p-4">
-            <Link
-              href={failureMode.href}
-              className="block text-base font-semibold text-neutral-900 hover:underline"
-            >
-              {failureMode.title}
-            </Link>
-            <p className="mt-2 text-sm text-neutral-700">
-              Explains why funding, technology, and intent alone often fail to
-              restore land when incentives and timelines remain misaligned.
-            </p>
-          </div>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-neutral-900">
             Supporting public education
           </h2>
+
           <p className="text-base leading-7 text-neutral-700">
-            ZenTrust provides open educational resources on land stewardship and
-            long-term systems thinking. Support is optional.
+            ZenTrust provides open educational resources on land stewardship
+            and long-term systems thinking. Support is optional.
           </p>
 
           <Link
-            href="/donate"
+            href="/stewardship"
             className="inline-flex rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50"
           >
             Support the work
