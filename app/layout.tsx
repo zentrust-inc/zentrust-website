@@ -13,6 +13,22 @@ import { Footer } from "@/components/layout/Footer";
 import { TrackPageView } from "@/components/analytics/TrackPageView";
 import { DarkSky } from "@/components/background/DarkSky";
 
+/**
+ * Vercel sets this automatically:
+ * - production on your real domain
+ * - preview on *.vercel.app
+ * - development locally
+ */
+const IS_VERCEL_PRODUCTION = process.env.VERCEL_ENV === "production";
+
+/**
+ * Your measurement IDs
+ * Keep these centralized so you do not accidentally mismatch loader vs config.
+ */
+const GA4_PRIMARY_ID = "G-V8LRV2WBDE";
+const GA4_SECONDARY_ID = "G-2G4CVKHFZR";
+const GOOGLE_ADS_ID = "AW-17898582360";
+
 export const metadata: Metadata = {
   title: {
     default: "ZenTrust - Regenerative Agriculture & Environmental Stewardship",
@@ -34,43 +50,54 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* CONSENT DEFAULT */}
-        <Script id="consent-default" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              analytics_storage: 'granted'
-            });
-          `}
-        </Script>
+        {/* Only load Google tags on real production deployments */}
+        {IS_VERCEL_PRODUCTION && (
+          <>
+            {/* CONSENT DEFAULT
+               Note: this only sets the default state.
+               If you use a consent banner/CMP, it must call gtag('consent','update', ...) after user choice.
+            */}
+            <Script id="consent-default" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
 
-        {/* GOOGLE TAG LOADER (single loader is enough) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-V8LRV2WBDE"
-          strategy="afterInteractive"
-        />
+                gtag('consent', 'default', {
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  analytics_storage: 'granted'
+                });
+              `}
+            </Script>
 
-        {/* GOOGLE TAG INIT (GA4 + ADS) */}
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
+            {/* GOOGLE TAG LOADER */}
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA4_PRIMARY_ID}`}
+              strategy="afterInteractive"
+            />
 
-            // GA4
-            gtag('config', 'G-2G4CVKHFZR', { anonymize_ip: true });
-            gtag('config', 'G-V8LRV2WBDE');
+            {/* GOOGLE TAG INIT (GA4 + ADS) */}
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            // GOOGLE ADS (REQUIRED)
-            gtag('config', 'AW-17898582360');
-          `}
-        </Script>
+                // GA4 (keep both only if you truly need both properties)
+                gtag('config', '${GA4_SECONDARY_ID}', { anonymize_ip: true });
+                gtag('config', '${GA4_PRIMARY_ID}');
 
-        {/* SERVICE WORKER */}
-        {process.env.NODE_ENV === "production" && (
+                // Google Ads
+                gtag('config', '${GOOGLE_ADS_ID}');
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* SERVICE WORKER
+           Gate by Vercel production, not NODE_ENV, because Preview builds also have NODE_ENV="production".
+        */}
+        {IS_VERCEL_PRODUCTION && (
           <Script id="sw-register" strategy="afterInteractive">
             {`
               if ('serviceWorker' in navigator) {
