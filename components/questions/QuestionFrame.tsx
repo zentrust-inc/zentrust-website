@@ -110,15 +110,30 @@ export function QuestionFrame({
         ))}
       </section>
 
-      {/* ================= ENDING ================= */}
-      <footer className="mx-auto max-w-3xl px-6 pb-12 text-center text-sm text-neutral-500 space-y-1">
-        <p>{ending[0]}</p>
-        <p>{ending[1]}</p>
-        <p>{ending[2]}</p>
-        <p className="pt-4">
-          ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
-        </p>
-      </footer>
+{/* ================= ENDING ================= */}
+<footer className="mx-auto max-w-3xl px-6 pb-12 text-center text-sm text-neutral-500 space-y-3">
+  <p>{ending[0]}</p>
+  <p>{ending[1]}</p>
+  <p>{ending[2]}</p>
+
+  {/* Optional support CTA (GLOBAL, QUIET) */}
+  <div className="pt-6 space-y-2">
+    <p className="text-xs uppercase tracking-wide text-neutral-500">
+      Healing land • Human wellbeing • Systems thinking
+    </p>
+
+    <a
+      href="/stewardship"
+      className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-900"
+    >
+      Support the work
+    </a>
+  </div>
+
+  <p className="pt-6 text-xs">
+    ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
+  </p>
+</footer>
     </main>
   );
 }
