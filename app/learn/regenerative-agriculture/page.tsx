@@ -1,10 +1,11 @@
 // app/learn/regenerative-agriculture/page.tsx
+import React from "react";
 import Link from "next/link";
 
 export const metadata = {
   title: "Regenerative Agriculture: An Educational Guide | ZenTrust",
   description:
-    "An educational guide to regenerative agriculture focused on soil health, biodiversity, and long-term land stewardship. Explore core questions and common failure modes in land repair.",
+    "An educational guide to regenerative agriculture focused on soil health, biodiversity, and long-term land stewardship.",
 };
 
 type FeaturedQuestion = {
@@ -39,81 +40,98 @@ export default function Page() {
     <main className="mx-auto w-full max-w-4xl px-4 py-10 sm:py-14">
       {/* Above the fold */}
       <header className="space-y-4">
-        <p className="text-sm font-medium text-neutral-600">
-          Educational guide
-        </p>
+        <p className="text-sm font-medium text-neutral-600">Educational guide</p>
 
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-          Regenerative Agriculture: An Educational Guide
+          Regenerative Agriculture
         </h1>
 
         <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          Regenerative agriculture is an approach to land stewardship focused on
-          restoring soil health, biodiversity, and long-term ecological
-          resilience. It looks at how food systems, land use, and economic
-          incentives affect the living systems that support them.
+          Regenerative agriculture focuses on restoring soil health,
+          biodiversity, and long-term ecological stability by working with
+          natural systems rather than extracting from them.
         </p>
 
         <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          This guide provides nonprofit educational resources explaining
-          regenerative principles, real-world challenges, and common points of
-          failure, without promoting products or political positions.
+          This page explains the core ideas, limits, and failure modes of
+          regenerative approaches in clear, non-ideological terms.
         </p>
 
         <div className="pt-2">
           <a
             href="#guide"
-            className="inline-flex items-center justify-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            className="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800"
           >
             Explore the guide
           </a>
         </div>
       </header>
 
-      {/* Guide content */}
+      {/* Guide */}
       <section id="guide" className="mt-12 space-y-10">
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-neutral-900">
-            What regenerative agriculture addresses
-          </h2>
-          <p className="text-base leading-7 text-neutral-700">
-            Modern agriculture has increased short-term yields while degrading
-            soil structure, water retention, and ecosystem stability.
-            Regenerative approaches aim to reverse these outcomes by working
-            with biological processes rather than overriding them.
-          </p>
-          <p className="text-base leading-7 text-neutral-700">
-            Key areas of focus include soil regeneration, nutrient cycling, water
-            management, and the long-term viability of farming communities.
-          </p>
-        </section>
-
         <section className="space-y-4">
-          <div className="space-y-2">
-            <h2 className="text-xl font-semibold text-neutral-900">
-              Core questions explored in this guide
-            </h2>
-            <p className="text-base leading-7 text-neutral-700">
-              This guide introduces a small set of educational questions that
-              examine regenerative agriculture from different angles. Each
-              question focuses on a concrete tension observed in land use, not
-              on ideology.
-            </p>
-          </div>
+          <h2 className="text-xl font-semibold text-neutral-900">
+            Core questions
+          </h2>
 
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid gap-4 sm:grid-cols-2">
             {featured.map((q) => (
               <li
                 key={q.href}
                 className="rounded-xl border border-neutral-200 bg-white p-4"
               >
-                <div className="space-y-2">
-                  {q.kicker ? (
-                    <p className="text-xs font-medium uppercase tracking-wide text-neutral-500">
-                      {q.kicker}
-                    </p>
-                  ) : null}
+                {q.kicker && (
+                  <p className="text-xs uppercase tracking-wide text-neutral-500">
+                    {q.kicker}
+                  </p>
+                )}
+                <Link
+                  href={q.href}
+                  className="block text-base font-semibold text-neutral-900 hover:underline"
+                >
+                  {q.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-                  <Link
-                    href={q.href}
-                    className="block text-base font-semi
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-neutral-900">
+            When regeneration fails
+          </h2>
+
+          <div className="rounded-xl border border-neutral-200 bg-white p-4">
+            <Link
+              href={failureMode.href}
+              className="block text-base font-semibold text-neutral-900 hover:underline"
+            >
+              {failureMode.title}
+            </Link>
+            <p className="mt-2 text-sm text-neutral-700">
+              Explains why funding, technology, and intent alone often fail to
+              restore land when incentives and timelines remain misaligned.
+            </p>
+          </div>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-neutral-900">
+            Supporting public education
+          </h2>
+          <p className="text-base leading-7 text-neutral-700">
+            ZenTrust provides open educational resources on land stewardship and
+            long-term systems thinking. Support is optional.
+          </p>
+
+          <Link
+            href="/donate"
+            className="inline-flex rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50"
+          >
+            Support the work
+          </Link>
+        </section>
+      </section>
+    </main>
+  );
+}
