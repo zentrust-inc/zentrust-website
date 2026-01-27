@@ -22,11 +22,11 @@ import { DarkSky } from "@/components/background/DarkSky";
 const IS_VERCEL_PRODUCTION = process.env.VERCEL_ENV === "production";
 
 /**
- * Your measurement IDs
- * Keep these centralized so you do not accidentally mismatch loader vs config.
+ * Measurement IDs
+ * NOTE: The gtag.js loader uses ONE ID, but you can config multiple IDs after.
  */
-const GA4_PRIMARY_ID = "G-V8LRV2WBDE";
-const GA4_SECONDARY_ID = "G-2G4CVKHFZR";
+const GA4_LOADER_ID = "G-V8LRV2WBDE";
+const GA4_CONFIG_IDS = ["G-V8LRV2WBDE", "G-2G4CVKHFZR"] as const;
 const GOOGLE_ADS_ID = "AW-17898582360";
 
 export const metadata: Metadata = {
@@ -50,61 +50,45 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Only load Google tags on real production deployments */}
+        {/* PRODUCTION-ONLY: Google tags + service worker
+           This prevents Vercel preview domains from being detected by Google diagnostics.
+        */}
         {IS_VERCEL_PRODUCTION && (
           <>
-            {/* CONSENT DEFAULT
-               Note: this only sets the default state.
-               If you use a consent banner/CMP, it must call gtag('consent','update', ...) after user choice.
-            */}
-            <Script id="consent-default" strategy="beforeInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-
-                gtag('consent', 'default', {
-                  ad_storage: 'denied',
-                  ad_user_data: 'denied',
-                  analytics_storage: 'granted'
-                });
-              `}
-            </Script>
-
             {/* GOOGLE TAG LOADER */}
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA4_PRIMARY_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA4_LOADER_ID}`}
               strategy="afterInteractive"
             />
 
-            {/* GOOGLE TAG INIT (GA4 + ADS) */}
+            {/* GOOGLE TAG INIT (NO CONSENT MODE)
+               Option A: Consent Mode removed entirely.
+            */}
             <Script id="gtag-init" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){window.dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                // GA4 (keep both only if you truly need both properties)
-                gtag('config', '${GA4_SECONDARY_ID}', { anonymize_ip: true });
-                gtag('config', '${GA4_PRIMARY_ID}');
+                // GA4
+                ${GA4_CONFIG_IDS.map(
+                  (id) => `gtag('config', '${id}', { anonymize_ip: true });`
+                ).join("\n")}
 
                 // Google Ads
                 gtag('config', '${GOOGLE_ADS_ID}');
               `}
             </Script>
-          </>
-        )}
 
-        {/* SERVICE WORKER
-           Gate by Vercel production, not NODE_ENV, because Preview builds also have NODE_ENV="production".
-        */}
-        {IS_VERCEL_PRODUCTION && (
-          <Script id="sw-register" strategy="afterInteractive">
-            {`
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js').catch(() => {});
-              }
-            `}
-          </Script>
+            {/* SERVICE WORKER */}
+            <Script id="sw-register" strategy="afterInteractive">
+              {`
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.register('/sw.js').catch(() => {});
+                }
+              `}
+            </Script>
+          </>
         )}
       </head>
 
