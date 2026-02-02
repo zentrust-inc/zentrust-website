@@ -51,7 +51,7 @@ export default function QuestionPage() {
         {
           title: "Why did friction protect identity formation?",
           answer:
-            "When friction is removed, the "Self" becomes a public commodity rather than a private sanctuary.",
+            "When friction is removed, the Self becomes a public commodity rather than a private sanctuary.",
           children:
             "A teenager tries on different clothes before leaving the house. No photos are taken. No one sees the failed attempts. The mirror is the only witness. The choice feels tentative but personal. What is worn that day disappears with the day.",
           metaphor:
