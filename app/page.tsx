@@ -11,17 +11,18 @@ export default function HomePage() {
   return (
     <div className="relative">
       <GlobalHero
-         headline={`Healing land.
-Elevating humanity.
-Science for regeneration.`}
-  dek={`ZenTrust is a public charity helping nature and communities heal together
-through research, learning, and long-term stewardship.`}
+        headline={`Land systems and public ecology.
+Research notes and context.
+Education from ZenTrust.`}
+        dek={`ZenTrust is a nonprofit public charity.
+This page provides educational material for public understanding.
+It does not offer medical, therapeutic, legal, or professional advice.
+This page explores research, field observations, and public learning on regenerative ecology and community context.`}
         determination={{
           text: "Recognized as a 170(b)(1)(A)(vi) public charity.",
-          label: "View official determination letter",
+          label: "Official determination letter",
           href: "https://apps.irs.gov/pub/epostcard/dl/FinalLetter_33-4318487_ZENTRUSTINC_04072025_00.pdf",
         }}
-        primaryCta={{ label: "Enter the Stewardship Portal", href: "/stewardship" }}
         belowAnchorId={contentId}
         mode="answer"
       />
