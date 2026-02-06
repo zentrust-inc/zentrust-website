@@ -17,6 +17,42 @@ export default function StewardshipPortalPage() {
       />
 
       <div id="content" className="pt-6 scroll-mt-24">
+        {/* INTRODUCTION */}
+        <section className="pt-10 md:pt-12 pb-12">
+          <div className="max-w-4xl mx-auto px-6 space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-center">
+              Introduction to Our Stewardship Model
+            </h2>
+
+            <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
+              ZenTrust’s stewardship work is grounded in long-term observation of
+              living systems rather than intervention or instruction. Across land,
+              water, and community contexts, we document how regenerative patterns
+              emerge when ecological processes are allowed to operate with minimal
+              disruption. The focus is not on promoting techniques, but on recording
+              what consistently appears across different environments when extraction
+              pressure is reduced and biological relationships are restored.
+            </p>
+
+            <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
+              Our research emphasizes pattern documentation over outcome claims.
+              Instead of asking whether a method succeeds or fails, we examine the
+              conditions under which soil structure recovers, forests regenerate,
+              and communities sustain stewardship efforts over time. This approach
+              allows comparisons across regions and cultures without collapsing
+              complex systems into simplified metrics or prescriptions.
+            </p>
+
+            <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
+              The stewardship model presented here serves as a public record of
+              observed ecological behavior. By making these patterns visible,
+              ZenTrust supports education and independent understanding of
+              regenerative systems. The sections below organize this documentation
+              across research areas, methods, and collaborative contexts.
+            </p>
+          </div>
+        </section>
+
         {/* RESEARCH AREAS */}
         <section className="pt-10 md:pt-12 pb-10">
           <div className="max-w-5xl mx-auto px-6 text-center">
@@ -78,7 +114,7 @@ export default function StewardshipPortalPage() {
                 <h3 className="font-semibold mb-2">Regenerative Ecology</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Documenting patterns in forest, soil, and watershed recovery
-                  across different ecological contexts and land management approaches.
+                  across different ecological contexts.
                 </p>
               </div>
 
@@ -86,8 +122,7 @@ export default function StewardshipPortalPage() {
                 <TreePine className="h-7 w-7 text-primary mb-3" />
                 <h3 className="font-semibold mb-2">Community Patterns</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Studying how communities engage with land stewardship and what
-                  patterns emerge in collaborative ecological management.
+                  Studying how communities engage with land stewardship.
                 </p>
               </div>
 
@@ -95,8 +130,7 @@ export default function StewardshipPortalPage() {
                 <Microscope className="h-7 w-7 text-primary mb-3" />
                 <h3 className="font-semibold mb-2">Cultural Documentation</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recording traditional ecological knowledge and land management
-                  practices across different cultural contexts.
+                  Recording traditional ecological knowledge across contexts.
                 </p>
               </div>
 
@@ -104,36 +138,35 @@ export default function StewardshipPortalPage() {
                 <Globe className="h-7 w-7 text-primary mb-3" />
                 <h3 className="font-semibold mb-2">Research Collaboration</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Partnering with researchers, universities, and organizations to share
-                  findings and deepen understanding of regenerative systems.
+                  Partnering with researchers and institutions to share findings.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CLOSING */}
-        <section className="pt-10 md:pt-12 pb-20 text-center">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-              Research and Documentation
+        {/* SUPPORT (OPTIONAL, COMPLIANT) */}
+        <section className="pt-12 pb-20 text-center">
+          <div className="max-w-3xl mx-auto px-6 space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              How This Research Is Sustained
             </h2>
 
-            <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed mb-6">
-              ZenTrust conducts observational research on regenerative land systems
-              and ecological restoration patterns. All findings are published for
-              public education.
+            <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed">
+              ZenTrust’s research and documentation efforts are sustained through
+              voluntary public support. Contributions help maintain open access
+              to research findings and long-term observation of regenerative systems.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Button asChild size="lg">
-                <Link href="/research">
-                  View Research
+                <Link href="/stewardship/checkout">
+                  Support This Research
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/learn">
-                  Browse Learning
+                <Link href="/research">
+                  View Research
                 </Link>
               </Button>
             </div>
