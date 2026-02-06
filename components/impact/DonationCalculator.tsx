@@ -2,16 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { BookOpen, TrendingUp, TreePine, Leaf, Users, Microscope } from "lucide-react"
+import { BookOpen, TrendingUp, TreePine, Users, Microscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { calculateResearchMetrics } from "@/lib/calculator"
-
-interface ResearchMetrics {
-  documentation_hours: number
-  research_areas: number
-  ecological_zones: number
-  community_patterns: number
-}
+import type { ResearchMetrics } from "@/lib/calculator"
 
 interface ResearchRowProps {
   label: string
@@ -35,16 +29,17 @@ function ResearchRow({ label, value, Icon, highlight = false }: ResearchRowProps
 
 export function DonationCalculator() {
   const [level, setLevel] = useState(50)
-  const [metrics, setMetrics] = useState<ResearchMetrics>(() => calculateResearchMetrics())
+  const [metrics, setMetrics] = useState<ResearchMetrics>(
+    () => calculateResearchMetrics()
+  )
   const [selectedTier, setSelectedTier] = useState<number | null>(null)
 
   useEffect(() => {
-    setMetrics(calculateResearchMetrics(level))
+    setMetrics(calculateResearchMetrics())
   }, [level])
 
   return (
     <section className="w-full py-20 overflow-hidden">
-
       {/* INTRO */}
       <motion.div
         className="max-w-[1500px] mx-auto px-6 text-center mb-12"
@@ -61,7 +56,6 @@ export function DonationCalculator() {
 
       {/* CARD GRID */}
       <div className="grid lg:grid-cols-2 gap-10 max-w-[1700px] mx-auto px-6">
-
         {/* LEFT CARD */}
         <motion.div
           className="p-8 rounded-2xl bg-card border border-border/30 shadow-sm"
@@ -81,13 +75,16 @@ export function DonationCalculator() {
               { amount: 25, label: "Basic" },
               { amount: 50, label: "Standard" },
               { amount: 100, label: "Extended" },
-              { amount: 250, label: "Comprehensive" }
+              { amount: 250, label: "Comprehensive" },
             ].map((t) => (
               <button
                 key={t.amount}
-                onClick={() => { setLevel(t.amount); setSelectedTier(t.amount); }}
+                onClick={() => {
+                  setLevel(t.amount)
+                  setSelectedTier(t.amount)
+                }}
                 className={`p-4 rounded-xl border border-border/20 transition-all ${
-                  selectedTier === t.amount 
+                  selectedTier === t.amount
                     ? "text-primary font-semibold"
                     : "text-foreground hover:text-primary"
                 }`}
@@ -100,13 +97,18 @@ export function DonationCalculator() {
 
           {/* Slider */}
           <div className="space-y-2">
-            <label className="text-sm font-medium">Or select a custom engagement level</label>
+            <label className="text-sm font-medium">
+              Or select a custom engagement level
+            </label>
             <input
               type="range"
               min={10}
               max={500}
               value={level}
-              onChange={(e) => { setLevel(Number(e.target.value)); setSelectedTier(null); }}
+              onChange={(e) => {
+                setLevel(Number(e.target.value))
+                setSelectedTier(null)
+              }}
               className="w-full h-2 bg-muted cursor-pointer rounded-full"
             />
 
@@ -117,7 +119,9 @@ export function DonationCalculator() {
 
             <p className="text-2xl font-bold text-primary mt-2">
               ${level}
-              <span className="text-muted-foreground text-base ml-1">engagement level</span>
+              <span className="text-muted-foreground text-base ml-1">
+                engagement level
+              </span>
             </p>
           </div>
         </motion.div>
@@ -145,27 +149,40 @@ export function DonationCalculator() {
               </h3>
 
               <div className="space-y-4">
-                <ResearchRow label="Documentation Hours" value={metrics.documentation_hours} Icon={BookOpen} />
-                <ResearchRow label="Research Areas Covered" value={metrics.research_areas} Icon={Microscope} />
-                <ResearchRow label="Ecological Zones Documented" value={metrics.ecological_zones} Icon={TreePine} />
-                <ResearchRow 
-                  label="Community Patterns Studied" 
-                  value={metrics.community_patterns} 
-                  Icon={Users} 
-                  highlight 
+                <ResearchRow
+                  label="Documentation Hours"
+                  value={metrics.documentation_hours}
+                  Icon={BookOpen}
+                />
+                <ResearchRow
+                  label="Research Areas Covered"
+                  value={metrics.research_areas}
+                  Icon={Microscope}
+                />
+                <ResearchRow
+                  label="Ecological Zones Documented"
+                  value={metrics.ecological_zones}
+                  Icon={TreePine}
+                />
+                <ResearchRow
+                  label="Community Patterns Studied"
+                  value={metrics.community_patterns}
+                  Icon={Users}
+                  highlight
                 />
               </div>
 
               <Button
                 className="w-full mt-8"
-                onClick={() => window.open("https://www.zentrust.world/research", "_blank")}
+                onClick={() =>
+                  window.open("https://www.zentrust.world/research", "_blank")
+                }
               >
                 View Research Documentation
               </Button>
             </motion.div>
           </AnimatePresence>
         </motion.div>
-
       </div>
 
       {/* OUTRO */}
@@ -177,14 +194,14 @@ export function DonationCalculator() {
         transition={{ duration: 0.75 }}
       >
         <p className="text-xl md:text-2xl font-semibold">
-          Research documentation supports public education on regenerative systems.
+          Research documentation supports public education on regenerative
+          systems.
           <br />
           <span className="text-primary font-bold text-[22px] md:text-[24px]">
             All findings are published for educational purposes.
           </span>
         </p>
       </motion.div>
-
     </section>
   )
 }
