@@ -3,9 +3,9 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Health and Suffering: Stress, Insulin, and Chronic Strain | ZenTrust",
+  title: "Health Patterns: Stress, Insulin, and Chronic Strain | ZenTrust",
   description:
-    "An educational guide exploring chronic stress, insulin regulation, and why modern health systems often reduce disease without reducing suffering.",
+    "An educational guide exploring chronic stress patterns, insulin regulation, and why health outcomes persist despite treatment improvements.",
 };
 
 type FeaturedQuestion = {
@@ -17,26 +17,26 @@ type FeaturedQuestion = {
 const coreQuestions: FeaturedQuestion[] = [
   {
     title:
-      "Why is insulin almost never measured, even though it governs most chronic disease?",
+      "Why is insulin rarely measured in standard health assessments?",
     href: "/questions/insulin-unmeasured",
     kicker: "Start here",
   },
   {
-    title: "Why does chronic stress keep insulin elevated?",
+    title: "What patterns connect chronic stress to insulin levels?",
     href: "/questions/chronic-stress-insulin",
   },
   {
-    title: "Why does modern stress last longer than nature intended?",
+    title: "How do modern stress patterns differ from historical patterns?",
     href: "/questions/stress-outlasts-evolution",
   },
   {
-    title: "Why does prevention feel invisible compared to treatment?",
+    title: "Why does prevention remain less visible than treatment?",
     href: "/questions/prevention-invisible",
   },
 ];
 
 const failureQuestion: FeaturedQuestion = {
-  title: "Why does treating the body help, yet suffering remain?",
+  title: "Why do health improvements sometimes leave underlying patterns intact?",
   href: "/questions/bpss-health",
 };
 
@@ -105,10 +105,10 @@ export default function Page() {
           </ul>
         </section>
 
-        {/* Failure mode */}
+        {/* When treatment does not resolve patterns */}
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
-            When treatment does not reduce suffering
+            When treatment does not resolve patterns
           </h2>
 
           <div className="rounded-xl border border-neutral-200 bg-white p-4">
@@ -119,8 +119,8 @@ export default function Page() {
               {failureQuestion.title}
             </Link>
             <p className="mt-2 text-sm text-neutral-700">
-              Examines why addressing physical symptoms alone often leaves
-              chronic stress, metabolic strain, and unresolved pressure intact.
+              Examining why addressing physical symptoms alone often leaves
+              underlying patterns of stress and strain unresolved.
             </p>
           </div>
         </section>
@@ -128,20 +128,12 @@ export default function Page() {
         {/* Support */}
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
-            Supporting public education
+            About This Research
           </h2>
 
           <p className="text-base leading-7 text-neutral-700">
-            ZenTrust provides open educational resources on health, stress, and
-            long-term systems shaping human wellbeing. Support is optional.
+            ZenTrust provides open educational resources on stress, insulin, and the patterns that shape human health. This material is for informational purposes only and does not constitute medical advice.
           </p>
-
-          <Link
-            href="/stewardship"
-            className="inline-flex rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50"
-          >
-            Support the work
-          </Link>
         </section>
       </section>
     </main>

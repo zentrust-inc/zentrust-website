@@ -1,75 +1,75 @@
 {
   "hero": {
     "title": "Our Programs",
-    "subtitle": "Explore our comprehensive programs designed to create lasting positive change through sustainable agriculture, environmental restoration, and community empowerment.",
-    "primaryCta": "Support Our Programs",
-    "primaryCtaLink": "https://www.zentrust.world/stewardship",
-    "secondaryCta": "See Our Impact",
-    "secondaryCtaLink": "/impact"
+    "subtitle": "Explore our educational content on regenerative ecology, watershed restoration, and community resilience research.",
+    "primaryCta": "Explore Research",
+    "primaryCtaLink": "/research",
+    "secondaryCta": "Read Our Perspective",
+    "secondaryCtaLink": "/about"
   },
   "featured": {
-    "title": "Featured Program",
-    "subtitle": "Our flagship program that's making the biggest impact in sustainable agriculture training."
+    "title": "Featured Topic",
+    "subtitle": "An area of current research and field observation."
   },
   "allPrograms": {
-    "title": "All Programs",
-    "subtitle": "Browse our complete range of programs by category",
-    "emptyTitle": "No programs found",
-    "emptySubtitle": "Try selecting a different category to see more programs.",
-    "resetCta": "View All Programs"
+    "title": "All Topics",
+    "subtitle": "Browse our research and educational content by category",
+    "emptyTitle": "Content coming soon",
+    "emptySubtitle": "New research and observations are being prepared.",
+    "resetCta": "View All Content"
   },
   "impact": {
-    "title": "Program Impact",
-    "subtitle": "Combined impact from all our programs working together to create change.",
+    "title": "Current Research Indicators",
+    "subtitle": "Ongoing work and field observations across our areas of study.",
     "metrics": [
       {
         "value": "6",
-        "label": "Active Programs",
-        "subtext": "Across 4 categories"
+        "label": "Active Research Areas",
+        "subtext": "Across multiple domains"
       },
       {
         "value": "25+",
-        "label": "Communities",
-        "subtext": "Globally served"
-      },
-      {
-        "value": "15,000+",
-        "label": "People Impacted",
-        "subtext": "Direct beneficiaries"
+        "label": "Communities Studied",
+        "subtext": "Global observations"
       },
       {
         "value": "5+",
-        "label": "Years Running",
-        "subtext": "Proven track record"
+        "label": "Years of Research",
+        "subtext": "Ongoing study"
+      },
+      {
+        "value": "1",
+        "label": "Watershed Under Observation",
+        "subtext": "Primary research site"
       }
     ]
   },
   "getInvolved": {
-    "title": "Get Involved in Our Programs",
-    "subtitle": "Whether you're a farmer looking to learn new techniques, a student interested in environmental science, or a community member wanting to make a difference, we have opportunities for you.",
+    "title": "Ways to Learn",
+    "subtitle": "Opportunities to engage with our research and educational materials.",
     "audiences": [
       {
-        "title": "For Farmers",
-        "description": "Join our training programs and learn sustainable farming practices",
-        "cta": "Learn More"
+        "title": "For Researchers",
+        "description": "Access our publications and research methodologies",
+        "cta": "View Research"
       },
       {
         "title": "For Students",
-        "description": "Apply for our youth leadership and internship programs",
-        "cta": "Apply Now"
+        "description": "Explore educational resources on regenerative systems",
+        "cta": "Browse Learning"
       },
       {
-        "title": "For Communities",
-        "description": "Partner with us to bring programs to your community",
-        "cta": "Partner With Us"
+        "title": "For Community Members",
+        "description": "Read field notes and observations from our work",
+        "cta": "Read Updates"
       },
       {
-        "title": "For Organizations",
-        "description": "Corporate partnerships and collaboration opportunities",
-        "cta": "Explore Partnership"
+        "title": "For Educators",
+        "description": "Utilize our open educational materials",
+        "cta": "Access Materials"
       }
     ],
-    "contactCta": "Contact Our Team",
-    "supportCta": "Support Our Programs"
+    "contactCta": "Contact Us",
+    "supportCta": "View Research"
   }
 }

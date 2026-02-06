@@ -1,51 +1,42 @@
 {
   "hero": {
-    "title": "Our Impact in Action",
-    "subtitle": "See the tangible difference we're making together. Every donation, every volunteer hour, every program participant contributes to measurable positive change in communities worldwide.",
-    "primaryCta": "Support Our Impact",
-    "primaryCtaLink": "https://www.zentrust.world/stewardship",
-    "secondaryCta": "Read Success Stories",
-    "secondaryCtaLink": "#stories"
+    "title": "Research Documentation",
+    "subtitle": "ZenTrust documents patterns in regenerative systems, ecological restoration, and community-based land management approaches through observational research.",
+    "primaryCta": "View Research",
+    "primaryCtaLink": "/research",
+    "secondaryCta": "Browse Topics",
+    "secondaryCtaLink": "/learn"
   },
   "focusAreas": {
-    "title": "Our Focus Areas",
-    "subtitle": "We tackle environmental challenges through four interconnected focus areas, each designed to create lasting, measurable impact."
+    "title": "Research Focus Areas",
+    "subtitle": "ZenTrust studies patterns across interconnected domains of ecological and community systems."
   },
   "stories": {
-    "title": "Success Stories",
-    "subtitle": "Real stories of transformation and hope from communities we've had the privilege to work alongside. These are the faces and places behind our impact numbers.",
-    "cta": "View All Success Stories"
-  },
-  "awards": {
-    "title": "Recognition & Awards",
-    "subtitle": "Our impact has been recognized by leading environmental and social impact organizations."
+    "title": "Research Notes",
+    "subtitle": "Documentation of patterns observed in our research on regenerative systems and community engagement.",
+    "cta": "Read Documentation"
   },
   "transparency": {
-    "title": "Transparency & Accountability",
-    "subtitle": "We believe in complete transparency. Every dollar donated, every project completed, and every person impacted is tracked and reported.",
+    "title": "Transparency",
+    "subtitle": "All research findings and methodological documentation are available for public review.",
     "cards": [
       {
-        "title": "Financial Transparency",
-        "body": "98% of donations go directly to programs. Complete financial reports available quarterly.",
-        "cta": "View Financial Reports"
+        "title": "Research Methodology",
+        "body": "Documentation of observation methods and analysis approaches is available for review.",
+        "cta": "View Methodology"
       },
       {
-        "title": "Impact Measurement",
-        "body": "Every project includes clear metrics and regular impact assessments by third parties.",
-        "cta": "See Our Methodology"
-      },
-      {
-        "title": "Community Voice",
-        "body": "Regular surveys and feedback from program participants ensure we're meeting real needs.",
-        "cta": "Read Testimonials"
+        "title": "Research Findings",
+        "body": "All documented patterns and observations are published for public education.",
+        "cta": "View Findings"
       }
     ]
   },
   "cta": {
-    "title": "Be Part of Our Impact Story",
-    "subtitle": "Your support helps us continue creating measurable positive change. Join thousands of donors who are making a real difference in communities worldwide.",
-    "primaryCta": "Donate Now",
-    "secondaryCta": "Get Involved",
+    "title": "Explore Our Research",
+    "subtitle": "Learn about our documentation of ecological patterns and regenerative systems.",
+    "primaryCta": "View Research",
+    "secondaryCta": "Contact Us",
     "secondaryCtaLink": "/contact"
   }
 }

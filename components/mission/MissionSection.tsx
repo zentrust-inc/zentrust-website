@@ -6,27 +6,27 @@ const pillars = [
   {
     title: "Regenerative Ecology",
     icon: "🌱",
-    text: "We restore forests, soils, and watersheds using regenerative science, supporting biodiversity and helping landscapes recover their natural resilience and self-healing capacity.",
+    text: "Research on restoring forests, soils, and watersheds using regenerative science, supporting biodiversity and observing how landscapes recover their natural resilience.",
   },
   {
-    title: "Holistic BPSS Wellness",
+    title: "Integrated Health Research",
     icon: "🧬",
-    text: "We strengthen human wellbeing through the Bio-Psycho-Social-Spiritual model, integrating body, emotion, community, and meaning into a unified healing framework.",
+    text: "Study of how biological, psychological, social, and meaning-based factors interact in human wellbeing, examining patterns rather than prescribing interventions.",
   },
   {
-    title: "Community Upliftment",
+    title: "Community Observation",
     icon: "🤝",
-    text: "We support communities with regenerative livelihoods, shared leadership, and accessible knowledge, enabling long-term resilience and collective wellbeing.",
+    text: "Documentation of how communities develop regenerative livelihoods and shared leadership, observing patterns of resilience and autonomy.",
   },
   {
-    title: "Cultural Preservation",
+    title: "Cultural Documentation",
     icon: "🌀",
-    text: "We protect cultural memory and traditional ecological wisdom, ensuring identity, continuity, and belonging remain strong across generations.",
+    text: "Recording of cultural memory and traditional ecological knowledge, ensuring identity and continuity are documented for future study.",
   },
   {
-    title: "Global Partnerships",
+    title: "Research Partnerships",
     icon: "🌍",
-    text: "We collaborate with aligned nonprofits, researchers, and networks worldwide to scale ecological restoration and shared learning.",
+    text: "Collaboration with aligned researchers, universities, and networks worldwide to share findings and deepen understanding of ecological restoration.",
   },
 ]
 
@@ -119,10 +119,10 @@ export default function MissionSection() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <p className="text-lg md:text-xl font-medium text-foreground leading-snug">
-          Modern life has divided us from ourselves, each other, and the Earth.
+          Modern life has created distance from natural systems, each other, and inner life.
         </p>
         <p className="mt-1 text-[18px] md:text-[20px] font-semibold text-primary">
-          ZenTrust exists to gently weave these back into wholeness.
+          ZenTrust studies these patterns through research and public education.
         </p>
       </motion.div>
     </section>

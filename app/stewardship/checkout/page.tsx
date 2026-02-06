@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lock, ShieldCheck, ArrowRight } from "lucide-react";
-import { TaxDeductionInfo } from "@/components/Taxcalculator/TaxDeductionInfo";
+import { Lock, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -28,7 +27,7 @@ export default function StewardshipCheckoutPage() {
     setError(null);
 
     if (!agreed) {
-      setError("Please acknowledge this voluntary stewardship exchange.");
+      setError("Please acknowledge this voluntary contribution.");
       return;
     }
 
@@ -49,13 +48,12 @@ export default function StewardshipCheckoutPage() {
       const data = await res.json();
 
       if (!res.ok || !data.url) {
-        throw new Error(data?.error || "Unable to start checkout.");
+        throw new Error(data?.error || "Unable to process request.");
       }
 
-      // ✅ Redirect ONLY after user action
       window.location.href = data.url;
     } catch (err: any) {
-      setError(err.message || "Unable to start secure checkout.");
+      setError(err.message || "Unable to process request.");
       setLoading(false);
     }
   };
@@ -63,9 +61,9 @@ export default function StewardshipCheckoutPage() {
   return (
     <div className="min-h-screen">
       <GlobalHero
-        kicker="Stewardship"
-        headline="Steward a resource flow quietly and securely."
-        dek="Choose an amount and cadence; the checkout stays silent and direct."
+        kicker="Contribution"
+        headline="Support public research on regenerative systems."
+        dek="Contributions support educational research on ecological patterns and land stewardship."
         belowAnchorId="content"
         mode="confirm"
       />
@@ -74,26 +72,20 @@ export default function StewardshipCheckoutPage() {
 
         {/* Header */}
         <div className="space-y-4 mb-10">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/70 dark:bg-emerald-900/30 px-3 py-1 text-xs font-medium text-emerald-800 dark:text-emerald-100">
-            <ShieldCheck className="h-4 w-4" />
-            Secure Stewardship
-          </div>
-
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Steward a Resource Flow
+            Make a Contribution
           </h1>
 
           <p className="text-muted-foreground text-lg">
-            Choose an amount and frequency. Payment is completed securely on Stripe.
+            Choose an amount and frequency. Payment is processed securely through Stripe.
           </p>
 
           <div className="flex items-start gap-3 text-sm text-muted-foreground">
-  <Lock className="h-4 w-4 mt-0.5" />
-  <span>
-     501(c)(3) public charity · EIN 33-4318487 · IRS-recognized ·{" "}
-    <TaxDeductionInfo /> (up to 60% of income for most U.S. donors) ·
-    Secure Stripe checkout
-  </span>
+            <Lock className="h-4 w-4 mt-0.5" />
+            <span>
+              ZenTrust is a 501(c)(3) public charity (EIN 33-4318487).
+              Secure payment processing.
+            </span>
           </div>
         </div>
 
@@ -127,7 +119,7 @@ export default function StewardshipCheckoutPage() {
 
           {/* Frequency */}
           <div className="pt-4 space-y-2">
-            <Label>Flow Frequency</Label>
+            <Label>Frequency</Label>
             <RadioGroup
               value={frequency}
               onValueChange={(v: Frequency) => setFrequency(v)}
@@ -135,12 +127,12 @@ export default function StewardshipCheckoutPage() {
             >
               <FrequencyPill
                 value="once"
-                label="One-time flow"
+                label="One-time"
                 selected={frequency === "once"}
               />
               <FrequencyPill
                 value="monthly"
-                label="Recurring flow"
+                label="Monthly"
                 selected={frequency === "monthly"}
               />
             </RadioGroup>
@@ -157,8 +149,8 @@ export default function StewardshipCheckoutPage() {
               className="mt-1"
             />
             <span>
-              I understand this is a voluntary stewardship exchange with
-              ZenTrust, Inc., a registered public charity.
+              I understand this is a voluntary contribution to ZenTrust, Inc.,
+              a registered public charity.
             </span>
           </label>
 
@@ -174,7 +166,7 @@ export default function StewardshipCheckoutPage() {
             size="lg"
             className="w-full inline-flex items-center justify-center gap-2"
           >
-            {loading ? "Redirecting…" : "Proceed to secure checkout"}
+            {loading ? "Processing..." : "Continue to secure payment"}
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>

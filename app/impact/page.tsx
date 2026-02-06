@@ -85,20 +85,13 @@ export default function ImpactPage() {
       <section className="pt-2 pb-14 md:pb-16 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We Are Not Just Planting Trees.
-            <br />
-            We Are Planting Time.
+            Ongoing Documentation
           </h2>
 
           <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed mb-6">
-            If you believe that foundations matter more than headlines,
-            we invite you to flow with us.
-            Your stewardship ensures that this work remains quiet, patient, and true.
+            Patterns are being observed. Data is being collected.
+            The work continues quietly.
           </p>
-
-          <Button asChild size="lg">
-            <Link href="/stewardship">Enter the Flow</Link>
-          </Button>
         </div>
       </section>
 

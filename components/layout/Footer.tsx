@@ -21,8 +21,7 @@ const footerLinks = {
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Accessibility', href: '/accessibility' },
   ],
-  support: [
-    { name: 'Stewardship Portal', href: 'https://www.zentrust.world/stewardship' },
+  connect: [
     { name: 'Partnership', href: '/partner' },
     { name: 'General Inquiries', href: '/contact' },
   ],
@@ -131,11 +130,11 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Participation */}
+            {/* Connect */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Participation</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-4">Connect</h3>
               <ul className="space-y-2">
-                {footerLinks.support.map((link) => (
+                {footerLinks.connect.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}

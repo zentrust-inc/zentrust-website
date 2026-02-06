@@ -49,8 +49,8 @@ export function StoriesSection() {
             Success <span className="gradient-text">Stories</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real stories of transformation and hope from communities we've had the 
-            privilege to work alongside in our mission for a sustainable future.
+            Real stories of hope and progress from communities we've had the 
+            privilege to document alongside in our research for a sustainable future.
           </p>
         </div>
 

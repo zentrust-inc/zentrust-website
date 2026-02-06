@@ -3,9 +3,9 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Regenerative Agriculture: An Educational Guide | ZenTrust",
+  title: "Regenerative Agriculture: Patterns in Soil Health | ZenTrust",
   description:
-    "An educational guide to regenerative agriculture focused on soil health, biodiversity, and long-term land stewardship.",
+    "An educational guide exploring patterns in regenerative agriculture focused on soil health, biodiversity, and ecological stability.",
 };
 
 type FeaturedQuestion = {
@@ -16,22 +16,22 @@ type FeaturedQuestion = {
 
 const coreQuestions: FeaturedQuestion[] = [
   {
-    title: "Does the land benefit from your extraction?",
+    title: "What patterns emerge when land benefit is examined?",
     href: "/questions/land-benefit-existence",
     kicker: "Start here",
   },
   {
-    title: "Why do we keep extracting from soil instead of working with it?",
+    title: "Why do extraction patterns persist in soil management?",
     href: "/questions/extracting-from-soil",
   },
   {
-    title: "Why do human-designed environments struggle to sustain life?",
+    title: "What distinguishes natural environments from human-designed ones?",
     href: "/questions/natural-vs-designed-environments",
   },
 ];
 
 const failureQuestion: FeaturedQuestion = {
-  title: "Why does land repair keep failing even as investment increases?",
+  title: "Why does land repair often fail despite increased investment?",
   href: "/questions/syntropic-ecology",
 };
 
@@ -49,14 +49,9 @@ export default function Page() {
         </h1>
 
         <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          Regenerative agriculture focuses on restoring soil health,
-          biodiversity, and long-term ecological stability by working with
-          natural systems rather than extracting from them.
-        </p>
-
-        <p className="max-w-2xl text-base leading-7 text-neutral-700">
-          This page explains the core ideas, limits, and failure modes of
-          regenerative approaches in clear, non-ideological terms.
+          This page documents patterns in regenerative agriculture approaches,
+          examining how soil health, biodiversity, and ecological stability
+          relate to different land management methods.
         </p>
 
         <div className="pt-2">
@@ -113,30 +108,22 @@ export default function Page() {
               {failureQuestion.title}
             </Link>
             <p className="mt-2 text-sm text-neutral-700">
-              Explains why funding, technology, and intent alone often fail to
-              restore land when incentives, timelines, and ecological feedback
-              loops remain misaligned.
+              Exploring why funding, technology, and effort alone often fail to
+              restore land when design principles and ecological feedback are not considered.
             </p>
           </div>
         </section>
 
-        {/* Support */}
+        {/* About */}
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
-            Supporting public education
+            About This Research
           </h2>
 
           <p className="text-base leading-7 text-neutral-700">
             ZenTrust provides open educational resources on land stewardship
-            and long-term systems thinking. Support is optional.
+            and ecological systems. This material is for informational purposes only.
           </p>
-
-          <Link
-            href="/stewardship"
-            className="inline-flex rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50"
-          >
-            Support the work
-          </Link>
         </section>
       </section>
     </main>

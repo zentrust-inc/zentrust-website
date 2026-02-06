@@ -2,33 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
-import { Sprout, Waves, Wind } from "lucide-react";
+import { Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const dynamic = "force-dynamic";
 
-const ROTATING_LINES = [
-  "Nothing was taken. Something began to move.",
-  "Your gift is the water that wakes the seed.",
-  "A small flow, entering a much longer river.",
-];
-
 export default function ThankYouPage() {
-  const [index, setIndex] = useState(0);
-  const [iconFlip, setIconFlip] = useState(true);
-  const didStartRotation = useRef(false);
+  const [showMessage, setShowMessage] = useState(false);
 
-  // Rotating poetic lines (UI only)
   useEffect(() => {
-    if (didStartRotation.current) return;
-    didStartRotation.current = true;
-
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % ROTATING_LINES.length);
-      setIconFlip((v) => !v);
-    }, 9000);
-
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => setShowMessage(true), 500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -69,58 +53,37 @@ export default function ThankYouPage() {
           </div>
 
           <p className="mb-4 text-[13px] tracking-[0.18em] uppercase font-medium text-black/70 dark:text-white/60">
-            Stewardship Received
+            Contribution Received
           </p>
 
-          <h1 className="text-2xl sm:text-3xl font-semibold text-black/85 dark:text-white leading-tight mb-8">
-            The ecosystem is stronger because you are in it.
+          <h1 className="text-2xl sm:text-3xl font-semibold text-black/85 dark:text-white leading-tight mb-6">
+            Thank you for your contribution
           </h1>
 
-          <div className="flex items-center justify-center gap-3 mb-8">
-            {iconFlip ? (
-              <Waves className="h-5 w-5 text-sky-700/70 dark:text-sky-400/60" />
-            ) : (
-              <Wind className="h-5 w-5 text-sky-700/70 dark:text-sky-400/60" />
-            )}
-
-            <p
-              key={index}
-              className="text-[15px] sm:text-base text-black/70 dark:text-white/70 animate-[fadeUp_0.8s_ease-out]"
-            >
-              {ROTATING_LINES[index]}
-            </p>
-          </div>
+          <p
+            className={`text-base text-black/70 dark:text-white/70 mb-6 transition-opacity duration-500 ${
+              showMessage ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Your contribution has been processed successfully. A receipt will be sent to your email address.
+          </p>
 
           <div className="mx-auto my-6 h-px w-20 bg-black/15 dark:bg-white/20" />
 
-          <blockquote className="italic text-black/70 dark:text-white/70 text-base leading-relaxed mb-4">
-            “The earth remembers every hand that helps it heal.”
-          </blockquote>
-
           <p className="text-sm text-black/55 dark:text-white/55 mb-7">
-            A receipt has been sent to your email.
+            ZenTrust is a 501(c)(3) public charity (EIN 33-4318487).
           </p>
 
           <Button asChild className="rounded-full px-7 py-3 text-sm font-semibold">
-            <a href="/">Return to the Field</a>
+            <a href="/">
+              Return to Home
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
 
           <p className="mt-6 text-[11px] text-black/40 dark:text-white/40">
             ZenTrust · 501(c)(3) Public Charity · EIN 33-4318487
           </p>
-
-          <style jsx>{`
-            @keyframes fadeUp {
-              from {
-                opacity: 0;
-                transform: translateY(6px);
-              }
-              to {
-                opacity: 1;
-                transform: translateY(0);
-              }
-            }
-          `}</style>
         </div>
       </main>
     </>

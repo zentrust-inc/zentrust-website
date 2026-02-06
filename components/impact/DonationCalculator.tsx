@@ -2,25 +2,25 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Heart, TrendingUp, TreePine, Leaf, Users, Microscope } from "lucide-react"
+import { BookOpen, TrendingUp, TreePine, Leaf, Users, Microscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { calculateDonationImpact, DONATION_TIERS } from "@/lib/calculator"
+import { calculateResearchMetrics } from "@/lib/calculator"
 
-interface ImpactValues {
-  trees: number
-  households: number
-  acres: number
-  research_plots: number
+interface ResearchMetrics {
+  documentation_hours: number
+  research_areas: number
+  ecological_zones: number
+  community_patterns: number
 }
 
-interface ImpactRowProps {
+interface ResearchRowProps {
   label: string
   value: number
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   highlight?: boolean
 }
 
-function ImpactRow({ label, value, Icon, highlight = false }: ImpactRowProps) {
+function ResearchRow({ label, value, Icon, highlight = false }: ResearchRowProps) {
   return (
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center space-x-3">
@@ -34,13 +34,13 @@ function ImpactRow({ label, value, Icon, highlight = false }: ImpactRowProps) {
 }
 
 export function DonationCalculator() {
-  const [amount, setAmount] = useState(50)
-  const [impact, setImpact] = useState<ImpactValues>(calculateDonationImpact(50))
+  const [level, setLevel] = useState(50)
+  const [metrics, setMetrics] = useState<ResearchMetrics>(calculateResearchMetrics(50))
   const [selectedTier, setSelectedTier] = useState<number | null>(null)
 
   useEffect(() => {
-    setImpact(calculateDonationImpact(amount))
-  }, [amount])
+    setMetrics(calculateResearchMetrics(level))
+  }, [level])
 
   return (
     <section className="w-full py-20 overflow-hidden">
@@ -54,8 +54,8 @@ export function DonationCalculator() {
         transition={{ duration: 0.7 }}
       >
         <p className="text-[20px] md:text-[22px] text-muted-foreground font-medium leading-snug md:leading-normal">
-          Explore how your voluntary resource flow strengthens ecosystems,
-          stabilizes communities, and activates regenerative pathways.
+          This calculator shows research documentation metrics for different
+          levels of research engagement and observation.
         </p>
       </motion.div>
 
@@ -72,15 +72,20 @@ export function DonationCalculator() {
           whileHover={{ scale: 1.02 }}
         >
           <h3 className="text-xl md:text-2xl font-semibold mb-6 flex items-center">
-            <Heart className="h-6 w-6 text-primary mr-3" />
-            Select Resource Flow Level
+            <BookOpen className="h-6 w-6 text-primary mr-3" />
+            Research Engagement Level
           </h3>
 
           <div className="grid grid-cols-2 gap-3 mb-6">
-            {DONATION_TIERS.map((t) => (
+            {[
+              { amount: 25, label: "Basic" },
+              { amount: 50, label: "Standard" },
+              { amount: 100, label: "Extended" },
+              { amount: 250, label: "Comprehensive" }
+            ].map((t) => (
               <button
                 key={t.amount}
-                onClick={() => { setAmount(t.amount); setSelectedTier(t.amount); }}
+                onClick={() => { setLevel(t.amount); setSelectedTier(t.amount); }}
                 className={`p-4 rounded-xl border border-border/20 transition-all ${
                   selectedTier === t.amount 
                     ? "text-primary font-semibold"
@@ -95,24 +100,24 @@ export function DonationCalculator() {
 
           {/* Slider */}
           <div className="space-y-2">
-            <label className="text-sm font-medium">Or choose a custom amount</label>
+            <label className="text-sm font-medium">Or select a custom engagement level</label>
             <input
               type="range"
-              min={5}
-              max={1000}
-              value={amount}
-              onChange={(e) => { setAmount(Number(e.target.value)); setSelectedTier(null); }}
+              min={10}
+              max={500}
+              value={level}
+              onChange={(e) => { setLevel(Number(e.target.value)); setSelectedTier(null); }}
               className="w-full h-2 bg-muted cursor-pointer rounded-full"
             />
 
             <div className="flex justify-between text-xs text-muted-foreground">
-              <span>$5</span>
-              <span>$1000+</span>
+              <span>$10</span>
+              <span>$500+</span>
             </div>
 
             <p className="text-2xl font-bold text-primary mt-2">
-              ${amount}
-              <span className="text-muted-foreground text-base ml-1">resource flow</span>
+              ${level}
+              <span className="text-muted-foreground text-base ml-1">engagement level</span>
             </p>
           </div>
         </motion.div>
@@ -128,7 +133,7 @@ export function DonationCalculator() {
         >
           <AnimatePresence mode="wait">
             <motion.div
-              key={amount}
+              key={level}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -136,29 +141,26 @@ export function DonationCalculator() {
             >
               <h3 className="text-xl md:text-2xl font-semibold mb-6 flex items-center">
                 <TrendingUp className="h-6 w-6 text-primary mr-3" />
-                Regenerative Influence Preview
+                Research Documentation Scope
               </h3>
 
               <div className="space-y-4">
-                <ImpactRow label="Ecosystem Layers Activated" value={impact.trees} Icon={TreePine} />
-                <ImpactRow label="Regenerative Cells Strengthening" value={impact.acres} Icon={Leaf} />
-                <ImpactRow label="Families Advancing Sovereignty" value={impact.households} Icon={Users} />
-
-                {impact.research_plots > 0 && (
-                  <ImpactRow
-                    label="Research Pathways Enabled"
-                    value={impact.research_plots}
-                    Icon={Microscope}
-                    highlight
-                  />
-                )}
+                <ResearchRow label="Documentation Hours" value={metrics.documentation_hours} Icon={BookOpen} />
+                <ResearchRow label="Research Areas Covered" value={metrics.research_areas} Icon={Microscope} />
+                <ResearchRow label="Ecological Zones Documented" value={metrics.ecological_zones} Icon={TreePine} />
+                <ResearchRow 
+                  label="Community Patterns Studied" 
+                  value={metrics.community_patterns} 
+                  Icon={Users} 
+                  highlight 
+                />
               </div>
 
               <Button
                 className="w-full mt-8"
-                onClick={() => window.open("https://www.zentrust.world/stewardship", "_blank")}
+                onClick={() => window.open("https://www.zentrust.world/research", "_blank")}
               >
-                Proceed to Stewardship Portal
+                View Research Documentation
               </Button>
             </motion.div>
           </AnimatePresence>
@@ -175,10 +177,10 @@ export function DonationCalculator() {
         transition={{ duration: 0.75 }}
       >
         <p className="text-xl md:text-2xl font-semibold">
-          Generosity is a regenerative force.
+          Research documentation supports public education on regenerative systems.
           <br />
           <span className="text-primary font-bold text-[22px] md:text-[24px]">
-            Your contribution becomes part of a living ecological system.
+            All findings are published for educational purposes.
           </span>
         </p>
       </motion.div>

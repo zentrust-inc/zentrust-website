@@ -1,131 +1,46 @@
 {
   "hero": {
-    "title": "Invest in a Sustainable Future",
-    "subtitle": "Every donation creates ripples of positive change. Join us in building communities that thrive in harmony with nature through regenerative agriculture and environmental stewardship.",
-    "primaryCta": "Donate Now",
-    "secondaryCta": "Calculate Your Impact"
+    "title": "Research Documentation",
+    "subtitle": "ZenTrust conducts observational research on regenerative systems, ecological patterns, and community-based land management approaches.",
+    "primaryCta": "View Research",
+    "primaryCtaLink": "/research",
+    "secondaryCta": "Browse Learning",
+    "secondaryCtaLink": "/learn"
   },
-  "methods": {
-    "title": "Choose Your Giving Method",
-    "subtitle": "Select the donation method that works best for you and your goals for impact.",
-    "items": [
-      {
-        "title": "One-Time Donation",
-        "description": "Make a single contribution to support our current initiatives.",
-        "benefits": [
-          "Immediate impact",
-          "Flexible amount",
-          "Tax-deductible"
-        ],
-        "badge": "Most Popular",
-        "cta": "Get Started"
-      },
-      {
-        "title": "Monthly Giving",
-        "description": "Become a sustaining partner with recurring monthly donations.",
-        "benefits": [
-          "Ongoing support",
-          "Predictable funding",
-          "Greater impact"
-        ],
-        "cta": "Learn More"
-      },
-      {
-        "title": "Corporate Partnership",
-        "description": "Partner with us as an organization for maximum impact.",
-        "benefits": [
-          "Custom programs",
-          "Brand collaboration",
-          "Employee engagement"
-        ],
-        "cta": "Learn More"
-      }
-    ]
-  },
-  "calculator": {
-    "title": "See Your Impact in Action",
-    "subtitle": "Use our interactive calculator to see exactly how your donation creates positive change in communities around the world."
+  "approach": {
+    "title": "Research Approach",
+    "subtitle": "Our methodology focuses on observation and documentation rather than intervention."
   },
   "transparency": {
-    "title": "Transparency in Action",
-    "subtitle": "We believe in complete transparency. Here's exactly how we allocate your generous donations to maximize impact and ensure accountability.",
-    "impactAreas": [
-      {
-        "title": "Tree Planting & Conservation",
-        "description": "Restore forests and protect biodiversity",
-        "percentage": 40
-      },
-      {
-        "title": "Community Education",
-        "description": "Train farmers and educate communities",
-        "percentage": 35
-      },
-      {
-        "title": "Research & Innovation",
-        "description": "Advance sustainable agriculture practices",
-        "percentage": 20
-      },
-      {
-        "title": "Operations & Outreach",
-        "description": "Support programs and expand reach",
-        "percentage": 5
-      }
-    ],
+    "title": "Financial Overview",
+    "subtitle": "ZenTrust is a 501(c)(3) public charity. Financial information is available for public review.",
     "financial": {
-      "title": "Financial Transparency",
-      "subtitle": "We're committed to complete accountability",
+      "title": "Financial Documentation",
+      "subtitle": "Complete financial records are available upon request.",
       "breakdown": [
-        { "label": "Program Services", "value": "95%" },
-        { "label": "Administrative Costs", "value": "3%" },
-        { "label": "Fundraising", "value": "2%" }
+        { "label": "Research Programs", "value": "100%" }
       ],
-      "note": "98% of donations go directly to programs and impact initiatives",
-      "reportCta": "View Full Financial Report"
+      "reportCta": "Request Financial Information"
     }
   },
-  "testimonials": {
-    "title": "Donor Testimonials",
-    "subtitle": "Hear from our community of donors about why they choose to support ZenTrust.",
-    "quotes": [
-      {
-        "quote": "ZenTrust's transparency gives me confidence that my donation makes a real difference.",
-        "author": "Sarah M.",
-        "role": "Monthly Donor"
-      },
-      {
-        "quote": "I've been supporting their work for 3 years. The impact reports show exactly where my money goes.",
-        "author": "David L.",
-        "role": "Corporate Partner"
-      },
-      {
-        "quote": "Knowing that my monthly donation directly funds local farmers makes me proud to contribute.",
-        "author": "Maria R.",
-        "role": "Sustaining Donor"
-      }
-    ]
-  },
   "assurances": {
-    "title": "Security & Privacy",
+    "title": "About ZenTrust",
     "items": [
       {
-        "title": "Secure Payments",
-        "description": "Your donation is processed securely with bank-level encryption"
+        "title": "501(c)(3) Status",
+        "description": "ZenTrust is a registered public charity (EIN 33-4318487)."
       },
       {
-        "title": "Tax Deductible",
-        "description": "ZenTrust is a 501(c)(3) organization. Donations are tax-deductible"
-      },
-      {
-        "title": "Regular Updates",
-        "description": "Receive impact reports showing how your donation makes a difference"
+        "title": "Research Focus",
+        "description": "All activities support public education on regenerative systems."
       }
     ]
   },
   "finalCta": {
-    "title": "Ready to Make a Difference?",
-    "subtitle": "Join thousands of donors who are creating positive change in communities around the world. Your contribution matters.",
-    "primaryCta": "Donate Now",
-    "secondaryCta": "Questions? Contact Us",
+    "title": "Explore Our Research",
+    "subtitle": "Learn about our documentation of ecological patterns and regenerative systems.",
+    "primaryCta": "View Research",
+    "secondaryCta": "Contact Us",
     "secondaryCtaLink": "/contact"
   }
 }

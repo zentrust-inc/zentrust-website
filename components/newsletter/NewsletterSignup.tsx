@@ -22,8 +22,8 @@ export function NewsletterSignup() {
 
         {/* DESCRIPTION */}
         <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed mb-6">
-          Receive reflections on regenerative initiatives, ecological research,
-          and community-led transformations as they emerge across our network.
+          Receive updates on ecological research, field observations,
+          and patterns in regenerative systems as they are documented.
         </p>
 
         {/* INPUT + ACTION — grounded, visible outline */}

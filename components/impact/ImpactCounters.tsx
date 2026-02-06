@@ -17,36 +17,36 @@ const impactMetrics: Metric[] = [
     icon: TreePine,
     value: 50000,
     suffix: "+",
-    label: "Ecosystem Layers to Regenerate",
-    text: "Awakening canopy, understory, shrubs, herbs, and root systems across emerging syntropic forests.",
+    label: "Ecosystem Layers Under Study",
+    text: "Observation of canopy, understory, shrubs, herbs, and root systems in syntropic forest research sites.",
   },
   {
     icon: Leaf,
     value: 2500,
     suffix: "+",
-    label: "Regenerative Cells Becoming Anti-Fragile",
-    text: "Micro-watershed zones shifting toward self-renewing, drought-resilient ecological behavior.",
+    label: "Watershed Zones Monitored",
+    text: "Micro-watershed zones observed for self-renewing, drought-resilient ecological behavior patterns.",
   },
   {
     icon: Users,
     value: 1200,
     suffix: "+",
-    label: "Families Moving Toward Self-Sufficiency",
-    text: "Restoring autonomy, dignity, and regenerative livelihood pathways.",
+    label: "Families Documented",
+    text: "Observation of autonomy, dignity, and regenerative livelihood patterns in community research.",
   },
   {
     icon: Microscope,
     value: 15,
     suffix: "",
-    label: "Regenerative Research Initiatives",
-    text: "Deepening ecological and BPSS-aligned scientific understanding.",
+    label: "Research Initiatives",
+    text: "Ecological and integrated health research studies underway.",
   },
   {
     icon: BookOpen,
     value: 8500,
     suffix: "+",
-    label: "Hours of Ecological & Inner Learning",
-    text: "Cultivating ecological literacy and inner resilience.",
+    label: "Hours of Research",
+    text: "Documentation of ecological literacy and integrated health patterns.",
   },
 ]
 
@@ -101,9 +101,8 @@ export function ImpactCounters() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <p className="text-[18px] md:text-[20px] font-medium text-muted-foreground leading-snug">
-          Regeneration is not charity — it is a return to relationship.
-          These milestones reflect landscapes remembering how to heal
-          and communities rising into sovereignty.
+          This work documents patterns in landscape recovery and community resilience.
+          These observations reflect ongoing research at the intersection of ecology and human systems.
         </p>
       </motion.div>
 
@@ -182,10 +181,10 @@ export function ImpactCounters() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <p className="text-lg md:text-xl font-medium text-foreground leading-snug">
-          Land heals through relationship — and so do we.
+          Research shows patterns between land health and community patterns.
         </p>
         <p className="mt-1 text-[18px] md:text-[20px] font-semibold text-primary">
-          Each step of regeneration strengthens the whole web.
+          Each observation strengthens understanding of these connections.
         </p>
       </motion.div>
     </section>

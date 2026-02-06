@@ -50,9 +50,6 @@ export default function ProgramsPage() {
             <Button asChild size="lg">
               <Link href="/research">Read the research approach</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Share community priorities</Link>
-            </Button>
           </div>
         </div>
       </section>
@@ -61,18 +58,16 @@ export default function ProgramsPage() {
       <section className="pb-12">
         <div className="max-w-4xl mx-auto px-6">
           <h3 className="text-2xl font-semibold mb-4">
-            Regenerative Agriculture Training
+            Regenerative Agriculture Observation
           </h3>
 
           <p className="text-muted-foreground leading-relaxed mb-4">
-            This is not a course. It is a re-learning.
-            Hands return to soil. Observation replaces prescription.
-            Farmers and landscapes learn from each other again.
+            This research area examines patterns in soil health, farm ecosystem recovery, and the relationship between agricultural practices and landscape regeneration.
           </p>
 
           <p className="text-muted-foreground leading-relaxed mb-3">
-            Land heals when relationship is restored.
-            Everything else follows.
+            Observation replaces prescription in this work.
+            Farmers and landscapes are studied as interconnected systems.
           </p>
 
           <p className="font-mono text-xs text-muted-foreground">
@@ -174,11 +169,11 @@ export default function ProgramsPage() {
       <section className="pt-2 pb-14 md:pb-16 text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Growing Slowly. Growing Strong.
+            Current Status
           </h2>
           <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed">
-            These programs are seeds.
-            Alive. Quiet. Gathering strength beneath the surface.
+            These research areas are developing.
+            Observations continue. Analysis is ongoing.
           </p>
         </div>
       </section>

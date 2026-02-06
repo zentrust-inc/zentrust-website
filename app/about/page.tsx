@@ -11,10 +11,10 @@ export default function AboutPage() {
       <GlobalHero
         kicker="About ZenTrust"
         headline="Regeneration begins with relationship, not urgency."
-        dek="ZenTrust is a 501(c)(3) public charity working where land, science, and human wellbeing meet. We remember living systems instead of fixing broken machines."
+        dek="ZenTrust is a 501(c)(3) public charity studying where land, science, and human systems intersect. We observe living systems rather than treating them as broken machines."
         belowAnchorId="content"
         mode="confirm"
-        secondaryCta={{ label: "Read our perspective", href: "#content" }}
+        secondaryCta={{ label: "Read more", href: "#content" }}
       />
 
       <div id="content" className="pt-10">
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           <h2 className="text-sm tracking-[0.25em] uppercase text-muted-foreground mb-4">
-            Conditions
+            Continuity
           </h2>
 
           <h3 className="text-2xl md:text-3xl font-semibold mb-6">
@@ -150,16 +150,16 @@ export default function AboutPage() {
             <span className="block">
               ZenTrust does not claim exemption from material reality.
               Like any living system, it depends on nourishment,
-              shelter, and care to continue.
+              shelter, and care to continue operations.
             </span>
             <span className="block">
-              Voluntary support is the oil that allows this work
-              to remain visible. When it flows, the lamp burns.
-              When it pauses, the lamp dims or rests.
+              Voluntary contributions allow this work
+              to remain visible. When contributions arrive, the work continues.
+              When they pause, operations scale back accordingly.
             </span>
             <span className="block">
-              If the oil does not arrive, the light is not
-              performed or borrowed. It simply goes quiet,
+              If contributions do not arrive, the work is not
+              performed or borrowed. It simply slows,
               without debt, urgency, or pretense.
             </span>
           </p>
@@ -203,7 +203,7 @@ export default function AboutPage() {
             Governance is handled with calm discipline. Stewardship teams publish narrative field notes alongside financials so donors, regulators, and neighbors can see how resources are moving. Independent auditors and pro bono legal counsel verify filings, and our public benefit statement is revisited annually to ensure alignment with evolving ecological and social realities. Transparency is treated as a daily practice, not a marketing line.
           </p>
           <p className="text-base leading-relaxed text-foreground/80">
-            The public benefit we pursue is tangible: healthier soils, safer water tables, and resilient families who can stay rooted where they belong. Research partnerships with universities and local clinics track outcomes across the Bio-Psycho-Social-Spiritual spectrum, pairing qualitative community testimony with quantitative ecological indicators. This is how we know the work is honest, adaptive, and worthy of support.
+            The public benefit pursued is documented: soil health patterns, water table observations, and community resilience indicators. Research partnerships with universities track patterns across biological, psychological, social, and meaning-based dimensions, pairing qualitative community testimony with quantitative ecological indicators. This documentation shows the work is honest and adaptive.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Button asChild>
@@ -221,43 +221,37 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-6">
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            If This Resonates
+            Learning and Observation
           </h2>
 
           <p className="text-muted-foreground leading-relaxed mb-10">
-            We do not seek followers. We seek alignment.
-            If our perspective on land, science, and human wellbeing
-            mirrors your own, there are quiet ways to join
-            this field of possibility.
+            Our work documents patterns at the intersection of land systems, human health, and community resilience. Those interested in these topics can explore our research and educational materials.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-8">
 
             <div>
               <Waves className="h-7 w-7 mx-auto mb-3 text-slate-500" strokeWidth={1} />
-              <h4 className="font-semibold mb-2">Practice Stewardship</h4>
+              <h4 className="font-semibold mb-2">Research Updates</h4>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                A voluntary resource flow that supports
-                the ongoing work of regeneration.
-                No pressure. No urgency.
+                Field notes and observations on regenerative systems and human health patterns.
               </p>
               <Button asChild variant="outline">
-                <Link href="/stewardship">
-                  Enter the Flow
+                <Link href="/research">
+                  View Research
                 </Link>
               </Button>
             </div>
 
             <div>
               <Feather className="h-7 w-7 mx-auto mb-3 text-slate-500" strokeWidth={1} />
-              <h4 className="font-semibold mb-2">Stay Present</h4>
+              <h4 className="font-semibold mb-2">Educational Materials</h4>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Infrequent, thoughtful dispatches
-                from the field and the science of living systems.
+                Publications and learning resources on ecological and health systems.
               </p>
               <Button asChild variant="outline">
-                <Link href="/newsletter">
-                  Listen With Us
+                <Link href="/learn">
+                  Browse Learning
                 </Link>
               </Button>
             </div>
