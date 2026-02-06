@@ -36,7 +36,8 @@ const coreQuestions: FeaturedQuestion[] = [
 ];
 
 const failureQuestion: FeaturedQuestion = {
-  title: "Why do health improvements sometimes leave underlying patterns intact?",
+  title:
+    "Why do health improvements sometimes leave underlying patterns intact?",
   href: "/questions/bpss-health",
 };
 
@@ -64,19 +65,59 @@ export default function Page() {
           biological strain and lived suffering often continue beneath the
           surface.
         </p>
-
-        <div className="pt-2">
-          <a
-            href="#guide"
-            className="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800"
-          >
-            Explore the guide
-          </a>
-        </div>
       </header>
 
       {/* Guide */}
-      <section id="guide" className="mt-12 space-y-10">
+      <section id="guide" className="mt-12 space-y-12">
+        {/* Understanding Health Patterns */}
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold text-neutral-900">
+            Understanding Health Patterns
+          </h2>
+
+          <p className="text-base leading-7 text-neutral-700">
+            Modern healthcare has achieved remarkable success in diagnosing
+            disease and managing symptoms, yet many people continue to
+            experience chronic strain despite ongoing treatment. One reason is
+            that health outcomes are often shaped less by isolated conditions
+            than by repeating physiological and environmental patterns. Stress
+            and metabolic regulation operate continuously in the background,
+            influencing how the body allocates energy, repairs tissue, and
+            responds to threat.
+          </p>
+
+          <p className="text-base leading-7 text-neutral-700">
+            Insulin plays a central role in this process. It governs how fuel is
+            stored and released, how cells access energy, and how the body
+            adapts to periods of demand. When insulin remains elevated for long
+            periods, the body is effectively locked into a storage and defense
+            posture. This state can persist even in the absence of obvious
+            disease markers, shaping fatigue, inflammation, and resilience in
+            subtle but cumulative ways.
+          </p>
+
+          <p className="text-base leading-7 text-neutral-700">
+            Chronic stress interacts with insulin regulation by extending
+            physiological activation beyond its original purpose. While acute
+            stress responses evolved to be brief and situational, modern stress
+            often lacks a clear endpoint. Social pressure, economic insecurity,
+            constant alertness, and disrupted rest patterns keep regulatory
+            systems engaged long after the immediate stimulus has passed. Over
+            time, this alters baseline metabolism rather than producing a
+            single, discrete illness.
+          </p>
+
+          <p className="text-base leading-7 text-neutral-700">
+            This guide explores health not as a collection of diagnoses, but as
+            a set of patterns unfolding across biological, psychological, and
+            social systems. The questions below examine why certain measurements
+            remain invisible, why prevention struggles to gain attention, and
+            why improvements in treatment do not always translate into reduced
+            suffering. The aim is to clarify what is already happening, not to
+            propose solutions.
+          </p>
+        </section>
+
         {/* Core questions */}
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-neutral-900">
@@ -125,14 +166,16 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Support */}
+        {/* About */}
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-neutral-900">
             About This Research
           </h2>
 
           <p className="text-base leading-7 text-neutral-700">
-            ZenTrust provides open educational resources on stress, insulin, and the patterns that shape human health. This material is for informational purposes only and does not constitute medical advice.
+            ZenTrust provides open educational resources on stress, insulin, and
+            the patterns that shape human health. This material is for
+            informational purposes only.
           </p>
         </section>
       </section>
