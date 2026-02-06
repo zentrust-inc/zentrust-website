@@ -35,7 +35,7 @@ function ResearchRow({ label, value, Icon, highlight = false }: ResearchRowProps
 
 export function DonationCalculator() {
   const [level, setLevel] = useState(50)
-  const [metrics, setMetrics] = useState<ResearchMetrics>(calculateResearchMetrics())
+  const [metrics, setMetrics] = useState<ResearchMetrics>(() => calculateResearchMetrics())
   const [selectedTier, setSelectedTier] = useState<number | null>(null)
 
   useEffect(() => {
