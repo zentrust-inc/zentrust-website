@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import { Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,31 +17,32 @@ export default function ThankYouPage() {
 
   return (
     <>
-      {/* ------------------------------------------------------------------
-          GOOGLE ADS CONVERSION — SYNCHRONOUS, DETERMINISTIC
-          ------------------------------------------------------------------ */}
+      {/* --------------------------------------------------------------
+          GOOGLE ADS CONVERSION — FIRE ONCE PER SESSION
+          -------------------------------------------------------------- */}
       <Script id="zt-ads-donation-conversion" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          try {
+            const key = 'zt_donation_conversion_fired';
+            if (!sessionStorage.getItem(key)) {
+              sessionStorage.setItem(key, 'true');
 
-          // Update consent BEFORE firing conversion
-          gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            analytics_storage: 'granted'
-          });
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
 
-          // Fire Google Ads conversion
-          gtag('event', 'conversion', {
-            send_to: 'AW-17898582360/BssVCI6UwuwbENji2tZC',
-            value: 5.0,
-            currency: 'USD'
-          });
+              gtag('event', 'conversion', {
+                send_to: 'AW-17898582360/BssVCI6UwuwbENji2tZC',
+                value: 5.0,
+                currency: 'USD'
+              });
+            }
+          } catch (e) {
+            // fail silently
+          }
         `}
       </Script>
 
-      {/* ------------------------------------------------------------------ */}
+      {/* -------------------------------------------------------------- */}
       <main className="min-h-[100svh] flex items-center justify-center px-6 py-16 bg-[#F6F0E6] dark:bg-[#0f1110]">
         <div className="max-w-md w-full text-center">
           <div className="flex justify-center mb-4">
@@ -65,7 +66,8 @@ export default function ThankYouPage() {
               showMessage ? "opacity-100" : "opacity-0"
             }`}
           >
-            Your contribution has been processed successfully. A receipt will be sent to your email address.
+            Your contribution has been processed successfully. A receipt will be
+            sent to your email address.
           </p>
 
           <div className="mx-auto my-6 h-px w-20 bg-black/15 dark:bg-white/20" />
