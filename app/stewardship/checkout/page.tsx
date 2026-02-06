@@ -62,14 +62,16 @@ export default function StewardshipCheckoutPage() {
     <div className="min-h-screen">
       <GlobalHero
         kicker="Contribution"
-        headline="Support public research on regenerative systems."
+        headline="Public research on regenerative systems."
         dek="Contributions support educational research on ecological patterns and land stewardship."
         belowAnchorId="content"
         mode="confirm"
       />
 
-      <div id="content" className="container mx-auto px-4 py-16 max-w-2xl scroll-mt-24">
-
+      <div
+        id="content"
+        className="container mx-auto px-4 py-16 max-w-2xl scroll-mt-24"
+      >
         {/* Header */}
         <div className="space-y-4 mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
@@ -77,7 +79,8 @@ export default function StewardshipCheckoutPage() {
           </h1>
 
           <p className="text-muted-foreground text-lg">
-            Choose an amount and frequency. Payment is processed securely through Stripe.
+            Choose an amount and frequency. Payment is processed securely
+            through Stripe.
           </p>
 
           <div className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -91,7 +94,6 @@ export default function StewardshipCheckoutPage() {
 
         {/* Amount Card */}
         <div className="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-
           {/* Amount */}
           <div className="text-center">
             <div className="text-4xl font-bold">
@@ -169,6 +171,16 @@ export default function StewardshipCheckoutPage() {
             {loading ? "Processing..." : "Continue to secure payment"}
             <ArrowRight className="h-4 w-4" />
           </Button>
+
+          {/* Quiet exit */}
+          <div className="pt-2 text-center">
+            <a
+              href="/stewardship"
+              className="text-xs underline text-muted-foreground"
+            >
+              Return to stewardship research
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -195,7 +207,11 @@ function FrequencyPill({
           : "border-border text-muted-foreground hover:border-primary/50"
       }`}
     >
-      <RadioGroupItem id={`freq-${value}`} value={value} className="h-3 w-3" />
+      <RadioGroupItem
+        id={`freq-${value}`}
+        value={value}
+        className="h-3 w-3"
+      />
       {label}
     </Label>
   );
