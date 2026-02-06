@@ -4,7 +4,17 @@
 export interface ResearchMetrics {
   data_points: number
   observation_period: number
-  documentation_status: 'preliminary' | 'ongoing' | 'completed'
+  documentation_status: "preliminary" | "ongoing" | "completed"
+}
+
+// Neutral research metrics generator
+// Returns descriptive placeholders with no implied outcomes or impact
+export function calculateResearchMetrics(): ResearchMetrics {
+  return {
+    data_points: 0,
+    observation_period: 0,
+    documentation_status: "ongoing",
+  }
 }
 
 // Basic unit conversion utilities for research documentation
@@ -25,10 +35,10 @@ export function formatDuration(days: number): string {
 }
 
 export const RESEARCH_CATEGORIES = [
-  'regenerative_agriculture',
-  'health_systems',
-  'community_wellbeing',
-  'ecological_restoration'
+  "regenerative_agriculture",
+  "health_systems",
+  "community_wellbeing",
+  "ecological_restoration",
 ] as const
 
 export type ResearchCategory = typeof RESEARCH_CATEGORIES[number]
