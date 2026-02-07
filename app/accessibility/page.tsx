@@ -118,8 +118,8 @@ export default function AccessibilityPage() {
     <div className="min-h-screen">
       <GlobalHero
         kicker="ZenTrust Accessibility"
-        headline="Accessibility keeps regenerative work open to everyone."
-        dek="We commit to digital access for all people and continuously improve every surface of our site and services. Details sit directly below."
+        headline="Digital accessibility for educational research."
+        dek="ZenTrust is a 501(c)(3) public charity. We commit to digital access for all users as we compile and share research findings on ecological restoration."
         belowAnchorId={contentId}
         mode="confirm"
         secondaryCta={{ label: "Review commitments", href: `#${contentId}` }}
@@ -134,17 +134,16 @@ export default function AccessibilityPage() {
                 Our Accessibility <span className="gradient-text">Commitment</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                As a newly formed nonprofit dedicated to building inclusive communities 
-                and regenerative systems, accessibility is core to our mission and values.
+                As a 501(c)(3) public charity providing educational materials, digital 
+                accessibility is essential to ensuring our compiled research is available to the public.
               </p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 mb-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">Inclusion as a Core Value</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">Educational Access</h3>
               <p className="text-muted-foreground mb-6">
-                ZenTrust believes that regenerative agriculture and ecological restoration 
-                must include all communities and voices. Digital accessibility is essential 
-                to ensuring equal participation in our mission, programs, and community.
+                ZenTrust compiles research literature on ecological restoration and regenerative agriculture. 
+                Digital accessibility ensures that these educational resources remain open and available to all users.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -174,11 +173,11 @@ export default function AccessibilityPage() {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">
-                  Community Impact
+                  Public Access
                 </h3>
                 <p className="text-muted-foreground">
-                  Accessible digital platforms enable broader participation in regenerative 
-                  agriculture education, research sharing, and community building.
+                  Accessible digital platforms enable broader access to ecological restoration 
+                  research documentation and compiled educational materials.
                 </p>
               </div>
               
@@ -187,11 +186,11 @@ export default function AccessibilityPage() {
                   <Target className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">
-                  Continuous Improvement
+                  Standards Maintenance
                 </h3>
                 <p className="text-muted-foreground">
-                  We view accessibility as an ongoing journey, not a destination, 
-                  continuously improving based on user feedback and evolving standards.
+                  We view accessibility as an ongoing journey, continuously improving 
+                  our digital interfaces based on user feedback and evolving standards.
                 </p>
               </div>
             </div>
@@ -367,40 +366,6 @@ export default function AccessibilityPage() {
               </div>
             ))}
           </div>
-
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4 text-center">
-                Quarterly Accessibility Reviews
-              </h3>
-              <p className="text-muted-foreground text-center mb-6">
-                We conduct comprehensive accessibility reviews every quarter to identify 
-                areas for improvement and ensure ongoing compliance.
-              </p>
-              <div className="grid md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Q4</div>
-                  <div className="text-sm text-muted-foreground">2025</div>
-                  <div className="text-xs text-muted-foreground">Initial audit</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Q1</div>
-                  <div className="text-sm text-muted-foreground">2026</div>
-                  <div className="text-xs text-muted-foreground">Feature updates</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Q2</div>
-                  <div className="text-sm text-muted-foreground">2026</div>
-                  <div className="text-xs text-muted-foreground">User testing</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">Q3</div>
-                  <div className="text-sm text-muted-foreground">2026</div>
-                  <div className="text-xs text-muted-foreground">Compliance review</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -432,7 +397,7 @@ export default function AccessibilityPage() {
                 <p className="text-muted-foreground mb-4">
                   Send detailed accessibility feedback
                 </p>
-                <p className="text-primary font-semibold">accessibility@zentrust.org</p>
+                <p className="text-primary font-semibold">accessibility@zentrust.world</p>
               </div>
               
               <div className="glass-card rounded-2xl p-6 text-center">
@@ -446,95 +411,6 @@ export default function AccessibilityPage() {
                     Submit Feedback
                   </Link>
                 </Button>
-              </div>
-            </div>
-
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                What to Include in Your Report
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Technical Details</h4>
-                  <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• Page URL where the issue occurs</li>
-                    <li>• Browser and version you're using</li>
-                    <li>• Assistive technology (if applicable)</li>
-                    <li>• Steps to reproduce the issue</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Issue Description</h4>
-                  <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• What you were trying to do</li>
-                    <li>• What happened instead</li>
-                    <li>• How the issue affected you</li>
-                    <li>• Any suggestions for improvement</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild>
-                <Link href="/contact">
-                  Report Accessibility Issue
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="/newsletter">
-                  Subscribe for Updates
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Response Commitment */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Response <span className="gradient-text">Commitment</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We are committed to promptly addressing accessibility issues and 
-              keeping you informed about our progress.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-2">24 Hours</div>
-                <div className="text-sm text-muted-foreground">Initial acknowledgment</div>
-                <div className="text-xs text-muted-foreground mt-1">We confirm receipt of your report</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-2">5 Business Days</div>
-                <div className="text-sm text-muted-foreground">Detailed response</div>
-                <div className="text-xs text-muted-foreground mt-1">We provide investigation timeline</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-2">30 Days</div>
-                <div className="text-sm text-muted-foreground">Resolution or status update</div>
-                <div className="text-xs text-muted-foreground mt-1">We resolve or provide progress report</div>
-              </div>
-            </div>
-
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                Alternative Formats Available
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                If you need this accessibility statement in an alternative format 
-                (such as large print, audio, or Braille), please contact us and 
-                we will provide it promptly.
-              </p>
-              <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
-                <p className="text-sm text-green-800 dark:text-green-200 text-center">
-                  <strong>Commitment:</strong> We will work with you to find the best 
-                  format to meet your accessibility needs.
-                </p>
               </div>
             </div>
           </div>
