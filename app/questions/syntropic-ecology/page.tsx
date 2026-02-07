@@ -1,18 +1,7 @@
-// app/questions/syntropic-ecology/page.tsx
+"use client";
 
-import type { Metadata } from "next";
+import React from "react";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
-
-export const metadata: Metadata = {
-  title: "Research Documentation: Patterns in Land Repair Persistence | ZenTrust",
-  description:
-    "An educational examination of documented patterns in land management where repeated intervention correlates with a lack of ecological recovery.",
-  other: {
-    category: "Nature & Land",
-    subcategory: "land-repair-research",
-    intent: "educational-documentation", 
-  },
-};
 
 export default function QuestionPage() {
   return (
@@ -36,10 +25,7 @@ export default function QuestionPage() {
           answer:
             "Data often shows temporary yield spikes when inputs substitute for lost ecosystem functions.",
           children:
-            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology in the short term. Research suggests these create visible spikes in productivity, but can mask the loss of underlying internal function. 
-
-[Image of the nitrogen cycle in soil]
-",
+            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology in the short term. Research suggests these create visible spikes in productivity, but can mask the loss of underlying internal function.",
           metaphor:
             "Paint hides a crack in a wall. Rain reveals it later.",
         },
@@ -48,7 +34,7 @@ export default function QuestionPage() {
           answer:
             "Research examines how targeting surface symptoms can correlate with deepening structural loss.",
           children:
-            "When documentation focuses only on visible metrics, unseen relationships—such as microbial networks and soil compaction—may degrade. Each documented 'fix' can narrow the options for subsequent seasons, leading to an observed increase in dependency on external intervention.",
+            "When documentation focuses only on visible metrics, unseen relationships—such as microbial networks and soil compaction—may degrade. Each documented fix can narrow the options for subsequent seasons, leading to an observed increase in dependency on external intervention.",
           metaphor:
             "A leak is sealed while pressure increases elsewhere in the pipe.",
         },
@@ -57,10 +43,7 @@ export default function QuestionPage() {
           answer:
             "Forest systems often document higher resilience due to uninterrupted biological cycles.",
           children:
-            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. While these systems may not maximize short-term human efficiency, data shows they achieve ecological 'completion.' 
-
-[Image of forest succession stages]
-",
+            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. While these systems may not maximize short-term human efficiency, data shows they achieve ecological completion.",
           metaphor:
             "A wheel turns smoothly when nothing blocks its motion.",
         },
@@ -81,7 +64,7 @@ export default function QuestionPage() {
             "ZenTrust reviews research to see if land is allowed to complete its own cycles. Documentation suggests that when repair prevents recovery, the effort can become an ecological obstruction. ZenTrust's role is to act as an observing presence, compiling evidence on where functional completion is missing.",
           metaphor:
             "Hands keep adjusting a clock that only needed winding once.",
-        },
+        }
       ]}
       ending={[
         "Documentation indicates repair fails when recovery is interrupted.",
