@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export default function StewardshipRightsPage() {
@@ -7,8 +10,8 @@ export default function StewardshipRightsPage() {
     <div className="min-h-screen">
       <GlobalHero
         kicker="Governance & Ethics"
-        headline="Stewardship Rights & Participation Ethics."
-        dek="A clear statement of rights and responsibilities within our regenerative ecosystem. The full text follows immediately below."
+        headline="Stewardship Ethics & Participation Principles"
+        dek="A transparent framework of our commitments to those participating in ZenTrust's educational and research initiatives."
         belowAnchorId={contentId}
         mode="confirm"
       />
@@ -18,209 +21,168 @@ export default function StewardshipRightsPage() {
 
           {/* 1. Purpose */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              1. Right to Clarity of Purpose
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              1. Commitment to Clarity of Purpose
             </h2>
             <p className="text-muted-foreground">
-              Participants have the right to understand the purpose and direction of
-              ZenTrust&apos;s work, including:
+              Participants have the right to understand the mission and direction of 
+              ZenTrust’s educational work, including:
             </p>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Our mission in regenerative ecology and BPSS-integrative research.</li>
-              <li>How resources are stewarded toward long-term ecological benefit.</li>
-              <li>The values that guide our decisions: transparency, regeneration, sovereignty, and interdependence.</li>
+              <li>Our focus on regenerative ecology and contextual systems research.</li>
+              <li>How resources are stewarded toward long-term ecological documentation.</li>
+              <li>The values of transparency, regeneration, and interdependence that guide our research.</li>
             </ul>
             <p className="text-sm text-muted-foreground">
-              We commit to communicating these foundations in clear, accessible language.
+              ZenTrust (EIN: 33-4318487) is a 501(c)(3) public charity committed to open access learning.
             </p>
           </article>
 
           {/* 2. Voluntary Participation */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              2. Right to Voluntary Participation
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              2. Principle of Voluntary Engagement
             </h2>
             <p className="text-muted-foreground">
-              All forms of engagement with ZenTrust are entirely voluntary. Individuals
-              will never be pressured, coerced, or manipulated into participating in
-              any form, including resource exchanges.
+              All forms of engagement with ZenTrust—whether through research, learning, or 
+              resource sharing—are entirely voluntary. We maintain a strict policy against 
+              pressure, coercion, or manipulative solicitation.
             </p>
             <p className="text-sm text-muted-foreground">
-              Participation arises from inner alignment with the work, not from external
-              demand or obligation.
+              Participation is invited based on alignment with educational goals, not 
+              external obligation.
             </p>
           </article>
 
           {/* 3. Respect & Dignity */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              3. Right to Respect & Dignity
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              3. Commitment to Respect & Dignity
             </h2>
             <p className="text-muted-foreground">
-              Every participant will be treated with respect and dignity, regardless of
-              the form or scale of their engagement. We recognize participants as
-              co-stewards, not as benefactors or clients.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              No hierarchy is assumed between those who share resources, those who share
-              knowledge, and those who steward land or communities. All are part of one
-              ecological field.
+              Every participant is treated as a co-steward of ecological knowledge. 
+              We do not recognize a hierarchy between those who share resources and 
+              those who share knowledge or land-based observations.
             </p>
           </article>
 
           {/* 4. Transparent Stewardship */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              4. Right to Transparent Stewardship of Resources
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              4. Transparent Stewardship of Resources
             </h2>
             <p className="text-muted-foreground">
-              Participants have the right to understand, at a reasonable level of detail,
-              how ZenTrust stewards voluntary resource flows, including:
+              ZenTrust provides public summaries of how voluntary contributions are 
+              stewarded to support:
             </p>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Allocation toward ecological and watershed regeneration.</li>
-              <li>Support for scientific and BPSS-aligned research.</li>
-              <li>Strengthening of community sovereignty and livelihoods.</li>
-              <li>Development of open-access educational tools and trainings.</li>
+              <li>Ecological documentation and watershed regeneration research.</li>
+              <li>The development of open-access educational tools and trainings.</li>
+              <li>Community-based land stewardship observations.</li>
             </ul>
-            <p className="text-sm text-muted-foreground">
-              Transparency is an ecological principle for us: it strengthens systems and
-              builds trust.
-            </p>
           </article>
 
-          {/* 5. Privacy & Data Sovereignty */}
+          {/* 5. Data Sovereignty */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              5. Right to Privacy & Data Sovereignty
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              5. Privacy & Data Sovereignty
             </h2>
             <p className="text-muted-foreground">
-              Participants have the right to know how their personal information is
-              collected, used, and protected. This includes:
+              ZenTrust does not sell or trade personal data. We treat information 
+              shared with us as a trust relationship, with commitments to:
             </p>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>The ability to request access, correction, or deletion of their data.</li>
-              <li>The option to engage without public recognition.</li>
-              <li>Anonymity where requested and reasonably feasible.</li>
+              <li>Anonymity in research and participation where requested.</li>
+              <li>Accessible requests for data correction or deletion.</li>
+              <li>Engagement without public recognition for all participants.</li>
             </ul>
-            <p className="text-sm text-muted-foreground">
-              ZenTrust does not sell or trade personal data. Any information shared with
-              us is treated as a trust relationship.
-            </p>
           </article>
 
-          {/* 6. Non-Solicitation */}
+          {/* 6. Non-Solicitation Policy */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              6. Right to Non-Solicitation
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              6. Non-Solicitation Policy
             </h2>
             <p className="text-muted-foreground">
-              ZenTrust does not engage in high-pressure fundraising or solicitation.
-              Individuals have the right:
+              To preserve the integrity of our research environment, ZenTrust 
+              does not engage in high-pressure fundraising. Participants have the right:
             </p>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Not to receive repeated or unwanted appeals for resources.</li>
-              <li>Not to be framed as “donors” or “benefactors.”</li>
-              <li>To participate purely through learning, reflection, or sharing.</li>
+              <li>To participate purely through reflection and learning without donating.</li>
+              <li>To be free from repeated or unwanted resource appeals.</li>
+              <li>To be recognized as a participant in a research community, not a "donor."</li>
             </ul>
-            <p className="text-sm text-muted-foreground">
-              Any resource flow that occurs is understood as a voluntary expression of
-              stewardship, not a response to solicitation.
-            </p>
           </article>
 
           {/* 7. Honest Communication */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              7. Right to Honest & Clear Communication
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              7. Commitment to Honest & Clear Communication
             </h2>
             <p className="text-muted-foreground">
-              Participants have the right to receive communication that is honest,
-              accurate, and grounded. We will not:
+              Our communications are grounded in observed data. We commit to:
             </p>
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Exaggerate impact or make misleading claims.</li>
-              <li>Use imagery or language that manipulates emotions for response.</li>
-              <li>Hide risks, limitations, or uncertainties in our work.</li>
+              <li>Avoiding exaggerated claims or emotionally manipulative imagery.</li>
+              <li>Transparently sharing the limitations and uncertainties of our research.</li>
+              <li>Using language that reflects ecological reality rather than artificial urgency.</li>
             </ul>
-            <p className="text-sm text-muted-foreground">
-              Our language aims to reflect reality, not to create artificial urgency.
-            </p>
           </article>
 
-          {/* 8. Withdraw / Modify Participation */}
+          {/* 8. Modify Participation */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              8. Right to Withdraw or Modify Participation
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              8. Autonomy to Modify Participation
             </h2>
             <p className="text-muted-foreground">
-              Participants may change how they engage with ZenTrust at any time. This
-              includes:
-            </p>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Adjusting or ending recurring resource flows.</li>
-              <li>Unsubscribing from communications.</li>
-              <li>Stepping back from involvement without judgment or pressure.</li>
-            </ul>
-            <p className="text-sm text-muted-foreground">
-              There is no expectation of continuity; participation is always a choice.
+              Participation is always a choice. Participants may adjust their engagement, 
+              end recurring resource flows, or unsubscribe from communications 
+              at any time without judgment or pressure.
             </p>
           </article>
 
           {/* 9. Accountability */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              9. Right to Accountability from ZenTrust
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              9. Institutional Accountability
             </h2>
             <p className="text-muted-foreground">
-              Participants have the right to expect that ZenTrust will:
-            </p>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>Operate within the law as a 501(c)(3) public charity.</li>
-              <li>Align resource use with its stated mission and values.</li>
-              <li>Maintain governance structures that enable oversight.</li>
-              <li>Respond in good faith to reasonable questions or concerns.</li>
-            </ul>
-            <p className="text-sm text-muted-foreground">
-              Accountability is part of our understanding of ecological and social integrity.
+              ZenTrust maintains governance structures to ensure all activities 
+              remain aligned with our mission as an educational non-profit. 
+              We respond in good faith to all inquiries regarding our 
+              stewardship practices.
             </p>
           </article>
 
           {/* 10. Access to Information */}
           <article className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              10. Right to Access Key Information
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
+              10. Access to Public Records
             </h2>
             <p className="text-muted-foreground">
-              Participants may request access to publicly available documents, including:
-            </p>
-            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-              <li>ZenTrust&apos;s IRS determination letter.</li>
-              <li>Governing documents such as bylaws and key policies.</li>
-              <li>Required public filings and high-level stewardship summaries.</li>
-            </ul>
-            <p className="text-sm text-muted-foreground">
-              Open access supports trust, informed participation, and shared learning.
+              ZenTrust makes key organizational records available for public review, 
+              including our IRS determination letter and annual public filings, 
+              to ensure transparency in our stewardship.
             </p>
           </article>
 
           {/* Closing Reflection */}
           <article className="space-y-3 border-t border-border pt-8 mt-4">
-            <h2 className="text-xl md:text-2xl font-semibold">
+            <h2 className="text-xl md:text-2xl font-semibold text-neutral-900">
               A Shared Field of Stewardship
             </h2>
             <p className="text-muted-foreground">
-              Participation in ZenTrust is not transactional; it is relational. This
-              framework exists to protect autonomy and dignity while honoring the
-              interdependence of people, land, water, and living systems.
+              This framework exists to protect the autonomy and dignity of our 
+              community members. It ensures that the interdependence of people, 
+              land, and water is honored through ethical and transparent governance.
             </p>
-            <p className="text-sm text-muted-foreground italic">
-              “Regeneration begins with sovereignty — of ecosystems, of communities, and of
-              the individuals who choose to care for them.”
+            <p className="text-xs text-muted-foreground leading-relaxed italic">
+              ZenTrust provides educational resources and research documentation. 
+              Our work does not constitute medical, financial, or legal advice.
             </p>
           </article>
         </div>
       </section>
     </div>
-  )
+  );
 }
