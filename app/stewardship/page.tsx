@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Leaf, TreePine, Microscope, Globe } from "lucide-react";
@@ -11,7 +12,7 @@ export default function StewardshipPortalPage() {
       <GlobalHero
         kicker="Stewardship"
         headline="Research on regenerative systems and land stewardship."
-        dek="This page documents patterns in ecological restoration and community-based land management approaches."
+        dek="Documentation of patterns in ecological restoration and community-based land management approaches for educational use."
         belowAnchorId="content"
         mode="answer"
       />
@@ -20,156 +21,168 @@ export default function StewardshipPortalPage() {
         {/* INTRODUCTION */}
         <section className="pt-10 md:pt-12 pb-12">
           <div className="max-w-4xl mx-auto px-6 space-y-4">
-            <h2 className="text-2xl md:text-3xl font-semibold text-center">
-              Introduction to Our Stewardship Model
+            <h2 className="text-2xl md:text-3xl font-semibold text-center text-neutral-900">
+              Introduction to the Stewardship Model
             </h2>
 
             <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
-              ZenTrust’s stewardship work is grounded in long-term observation of
-              living systems rather than intervention or instruction. Across land,
-              water, and community contexts, we document how regenerative patterns
-              emerge when ecological processes are allowed to operate with minimal
-              disruption. The focus is not on promoting techniques, but on recording
-              what consistently appears across different environments when extraction
-              pressure is reduced and biological relationships are restored.
+              ZenTrust’s stewardship work is grounded in long-term observation of 
+              living systems. Across land, water, and community contexts, we 
+              document how regenerative patterns emerge when ecological processes 
+              operate with minimal disruption. The focus is on recording 
+              observations across different environments when extraction 
+              pressure is reduced.
             </p>
 
             <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
-              Our research emphasizes pattern documentation over outcome claims.
-              Instead of asking whether a method succeeds or fails, we examine the
-              conditions under which soil structure recovers, forests regenerate,
-              and communities sustain stewardship efforts over time. This approach
-              allows comparisons across regions and cultures without collapsing
-              complex systems into simplified metrics or prescriptions.
+              Our research emphasizes documentation over specific outcome claims. 
+              Instead of promoting specific results, we examine the conditions 
+              under which soil structure, forest systems, and communities 
+              sustain stewardship efforts. This approach allows for 
+              comparison across regions without collapsing complex systems 
+              into simplified metrics.
             </p>
 
             <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed">
-              The stewardship model presented here serves as a public record of
-              observed ecological behavior. By making these patterns visible,
-              ZenTrust supports education and independent understanding of
-              regenerative systems. The sections below organize this documentation
-              across research areas, methods, and collaborative contexts.
+              This stewardship model serves as a public record of observed 
+              ecological behavior. By making these patterns visible, ZenTrust 
+              supports open education and independent research into 
+              regenerative systems.
             </p>
           </div>
         </section>
 
         {/* RESEARCH AREAS */}
-        <section className="pt-10 md:pt-12 pb-10">
+        <section className="pt-10 md:pt-12 pb-10 border-t border-border/40">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">
               Research Documentation
             </h2>
 
             <p className="text-[16px] md:text-[17px] text-muted-foreground max-w-2xl mx-auto mb-8">
-              ZenTrust documents patterns in regenerative land management
-              and ecological restoration across multiple research areas.
+              ZenTrust compiles data on regenerative land management and 
+              ecological restoration across multiple observation areas.
             </p>
 
             <div className="grid md:grid-cols-3 gap-5">
-              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center bg-white shadow-sm">
                 <Leaf className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold text-lg mb-2">Soil Research</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Documenting soil health patterns and regeneration timelines
-                  across different land management approaches.
+                  Documenting soil structure patterns and biological 
+                  regeneration across varying management approaches.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center bg-white shadow-sm">
                 <TreePine className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold text-lg mb-2">Ecosystem Patterns</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Observing how forest systems regenerate and what conditions
-                  support natural recovery processes.
+                  Observing forest system recovery and the conditions 
+                  that support natural ecological progression.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center">
+              <div className="rounded-2xl border border-border/40 px-6 py-6 text-center bg-white shadow-sm">
                 <Microscope className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-semibold text-lg mb-2">Research Methods</h3>
+                <h3 className="font-semibold text-lg mb-2">Observation Methods</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Documentation of observation methods and analysis approaches
-                  for ecological research.
+                  Standardizing documentation and analysis approaches for 
+                  long-term ecological research.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* RESEARCH FOCUS */}
-        <section className="pt-10 md:pt-12 pb-10 bg-[#faf7f2]">
+        {/* RESEARCH FOCUS AREAS */}
+        <section className="pt-10 md:pt-12 pb-10 bg-neutral-50 border-y border-border/40">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-2xl md:text-3xl font-semibold text-center mb-4">
-              Research Focus Areas
+              Focus Areas
             </h2>
 
             <p className="text-[16px] md:text-[17px] text-muted-foreground max-w-3xl mx-auto text-center mb-10">
-              These areas document ZenTrust's research patterns across land systems
-              and human community engagement.
+              Documenting systemic patterns across ecological and 
+              community engagement contexts.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-2xl border border-border/40 px-6 py-6">
+              <div className="rounded-2xl border border-border/40 bg-white px-6 py-6">
                 <Leaf className="h-7 w-7 text-primary mb-3" />
                 <h3 className="font-semibold mb-2">Regenerative Ecology</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Documenting patterns in forest, soil, and watershed recovery
-                  across different ecological contexts.
+                  Documentation of forest, soil, and watershed patterns 
+                  across diverse ecological environments.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/40 px-6 py-6">
+              <div className="rounded-2xl border border-border/40 bg-white px-6 py-6">
                 <TreePine className="h-7 w-7 text-primary mb-3" />
-                <h3 className="font-semibold mb-2">Community Patterns</h3>
+                <h3 className="font-semibold mb-2">Community Documentation</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Studying how communities engage with land stewardship.
+                  Studying how communities interact with and maintain 
+                  land stewardship practices.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/40 px-6 py-6">
+              <div className="rounded-2xl border border-border/40 bg-white px-6 py-6">
                 <Microscope className="h-7 w-7 text-primary mb-3" />
-                <h3 className="font-semibold mb-2">Cultural Documentation</h3>
+                <h3 className="font-semibold mb-2">Knowledge Compilation</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recording traditional ecological knowledge across contexts.
+                  Recording and preserving ecological knowledge patterns 
+                  found across different regions.
                 </p>
               </div>
 
-              <div className="md:col-span-2 rounded-2xl border border-border/40 px-6 py-6">
+              <div className="rounded-2xl border border-border/40 bg-white px-6 py-6">
                 <Globe className="h-7 w-7 text-primary mb-3" />
-                <h3 className="font-semibold mb-2">Research Collaboration</h3>
+                <h3 className="font-semibold mb-2">Open Collaboration</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Partnering with researchers and institutions to share findings.
+                  Coordinating with independent researchers to share and 
+                  document findings for the public domain.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SUPPORT (OPTIONAL, COMPLIANT) */}
-        <section className="pt-12 pb-20 text-center">
-          <div className="max-w-3xl mx-auto px-6 space-y-4">
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              How This Research Is Sustained
-            </h2>
+        {/* SUPPORT SECTION: HIGH COMPLIANCE FOR GOOGLE ADS 2026 */}
+        <section className="pt-16 pb-24 text-center">
+          <div className="max-w-3xl mx-auto px-6 space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">
+                Organization Stewardship
+              </span>
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                Public Support & Open Research
+              </h2>
+            </div>
 
             <p className="text-[17px] md:text-lg text-muted-foreground leading-relaxed">
-              ZenTrust’s research and documentation efforts are sustained through
-              voluntary public support. Contributions help maintain open access
-              to research findings and long-term observation of regenerative systems.
+              ZenTrust is a 501(c)(3) non-profit research organization. Our 
+              documentation efforts are sustained through voluntary public 
+              support, ensuring research findings remain open-access and 
+              independently verifiable.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Button asChild size="lg">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button asChild size="lg" className="px-8">
                 <Link href="/stewardship/checkout">
                   Support This Research
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="px-8">
                 <Link href="/research">
-                  View Research
+                  View Published Data
                 </Link>
               </Button>
             </div>
+            
+            <p className="text-[11px] text-muted-foreground mt-4">
+              Contributions are tax-deductible to the extent permitted by law. 
+              EIN: 33-4318487.
+            </p>
           </div>
         </section>
       </div>
