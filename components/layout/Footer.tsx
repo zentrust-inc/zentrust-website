@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { Leaf, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const footerLinks = {
-  programs: [
-    { name: 'All Programs', href: '/programs' },
-    { name: 'Education & Training', href: '/programs?category=Education' },
-    { name: 'Research & Innovation', href: '/programs?category=Research' },
-    { name: 'Community Initiatives', href: '/programs?category=Community' },
+  research: [
+    { name: 'Research Areas', href: '/research-areas' },
+    { name: 'Research Status', href: '/research-status' },
+    { name: 'Soil Health Documentation', href: '/learn/regenerative-agriculture' },
+    { name: 'Systems Stress Patterns', href: '/learn/health-and-suffering' },
   ],
   organization: [
     { name: 'About Us', href: '/about' },
@@ -17,7 +17,7 @@ const footerLinks = {
   ],
   resources: [
     { name: 'Newsletter', href: '/newsletter' },
-    { name: 'Stewardship Rights', href: '/stewardship-rights' },
+    { name: 'Stewardship Portal', href: '/stewardship' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Accessibility', href: '/accessibility' },
@@ -39,19 +39,18 @@ export function Footer() {
     <footer className="bg-card border-t border-border mt-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* CRITICAL COMPLIANCE BLOCK: MEDICAL DISCLAIMER */}
-        {/* Required for Ads involving health patterns, insulin, or stress topics */}
+        {/* CRITICAL COMPLIANCE BLOCK: MEDICAL & EDUCATIONAL DISCLAIMER */}
         <div className="pt-12 pb-6 border-b border-border">
           <div className="rounded-lg bg-muted/50 p-6 border border-border/50">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">
               Medical & Educational Disclaimer
             </h4>
             <p className="text-sm leading-relaxed text-muted-foreground italic">
-              ZenTrust content is provided for informational and educational purposes only and does 
-              not constitute medical advice, diagnosis, or treatment. Always seek the advice of 
-              your physician or other qualified health provider with any questions you may have 
-              regarding a medical condition. Never disregard professional medical advice or delay 
-              in seeking it because of something you have read on this website.
+              ZenTrust content is provided for informational and educational research purposes only and does 
+              not constitute medical advice, diagnosis, or treatment. Our documentation of biological and 
+              ecological patterns is intended to support systems education. Always seek the advice of 
+              your physician or other qualified health provider with any questions regarding a medical 
+              condition.
             </p>
           </div>
         </div>
@@ -73,12 +72,12 @@ export function Footer() {
               </div>
 
               <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
-                Advancing regenerative agriculture, ecological restoration, 
-                and open scientific education to support healthier ecosystems 
-                and thriving communities.
+                Advancing the documentation of regenerative systems, ecological 
+                patterns, and open scientific education. We provide research 
+                resources to support land stewardship and community-based systems science.
               </p>
 
-              {/* Contact Information - Mandatory for Merchant/Ad Transparency */}
+              {/* Contact Information */}
               <div className="space-y-3">
                 <a href="mailto:hello@zentrust.org" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="h-4 w-4" />
@@ -102,9 +101,9 @@ export function Footer() {
 
             {/* Links Columns */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">Programs</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-4">Research</h3>
               <ul className="space-y-2">
-                {footerLinks.programs.map((link) => (
+                {footerLinks.research.map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {link.name}
