@@ -27,10 +27,7 @@ export default function QuestionPage() {
           answer:
             "Documentation suggests repair repeats when management interrupts the land before biological cycles conclude.",
           children:
-            "Research into healthy land management focuses on complete cycles: organic matter return, water infiltration, and soil life rebuilding structure. 
-
-[Image of the nitrogen cycle in soil]
- Modern data shows that extracting outputs before recovery ends can lead to a state where each season begins from a weaker baseline. In these documented cases, repair becomes a permanent maintenance requirement rather than a path to restoration.",
+            "Research into healthy land management focuses on complete cycles: organic matter return, water infiltration, and soil life rebuilding structure. Modern data shows that extracting outputs before recovery ends can lead to a state where each season begins from a weaker baseline.",
           metaphor:
             "A wound is cleaned every day but never covered. It stays open and sensitive.",
         },
@@ -39,7 +36,10 @@ export default function QuestionPage() {
           answer:
             "Data often shows temporary yield spikes when inputs substitute for lost ecosystem functions.",
           children:
-            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology in the short term. While these create visible spikes in productivity, research suggests they can mask the loss of underlying internal function. When inputs are removed in study environments, the underlying degradation often becomes visible again.",
+            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology in the short term. Research suggests these create visible spikes in productivity, but can mask the loss of underlying internal function. 
+
+[Image of the nitrogen cycle in soil]
+",
           metaphor:
             "Paint hides a crack in a wall. Rain reveals it later.",
         },
@@ -57,10 +57,10 @@ export default function QuestionPage() {
           answer:
             "Forest systems often document higher resilience due to uninterrupted biological cycles.",
           children:
-            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. 
+            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. While these systems may not maximize short-term human efficiency, data shows they achieve ecological 'completion.' 
 
 [Image of forest succession stages]
- While these systems may not maximize short-term human efficiency, data shows they achieve ecological 'completion.'",
+",
           metaphor:
             "A wheel turns smoothly when nothing blocks its motion.",
         },
@@ -69,7 +69,7 @@ export default function QuestionPage() {
           answer:
             "Literature suggests that the compression of time is a primary factor in repair persistence.",
           children:
-            "Biological recovery requires specific time windows. Documentation of modern systems shows a trend toward continuous output, which can harvest land before regeneration is complete. In these research contexts, time is often treated as a loss of productivity rather than a functional requirement.",
+            "Biological recovery requires specific time windows. Documentation of modern systems shows a trend toward continuous output, which can harvest land before regeneration is complete. In these research contexts, time is often treated as a loss of productivity.",
           metaphor:
             "Bread is cut before it finishes baking. The center stays raw.",
         },
