@@ -1,4 +1,4 @@
-// app/questions/land-repair-fails/page.tsx
+// app/questions/syntropic-ecology/page.tsx
 
 import type { Metadata } from "next";
 import { QuestionFrame } from "@/components/questions/QuestionFrame";
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   other: {
     category: "Nature & Land",
     subcategory: "land-repair-research",
-    // Signals to Google Ads 2026 bots that this is an educational research paper
     intent: "educational-documentation", 
   },
 };
@@ -28,7 +27,10 @@ export default function QuestionPage() {
           answer:
             "Documentation suggests repair repeats when management interrupts the land before biological cycles conclude.",
           children:
-            "Research into healthy land management focuses on complete cycles: organic matter return, water infiltration, and soil structure. Modern data shows that extracting outputs before recovery ends can lead to a state where each season begins from a weaker baseline. In these documented cases, repair becomes a permanent maintenance requirement rather than a path to restoration.",
+            "Research into healthy land management focuses on complete cycles: organic matter return, water infiltration, and soil life rebuilding structure. 
+
+[Image of the nitrogen cycle in soil]
+ Modern data shows that extracting outputs before recovery ends can lead to a state where each season begins from a weaker baseline. In these documented cases, repair becomes a permanent maintenance requirement rather than a path to restoration.",
           metaphor:
             "A wound is cleaned every day but never covered. It stays open and sensitive.",
         },
@@ -37,20 +39,16 @@ export default function QuestionPage() {
           answer:
             "Data often shows temporary yield spikes when inputs substitute for lost ecosystem functions.",
           children:
-            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology and natural infiltration in the short term. These substitutions create visible spikes in productivity, but research suggests they can mask the loss of underlying internal function. When inputs are removed in study environments, the underlying degradation often becomes visible again.",
+            "Documentation on fertilizers, irrigation, and chemical balance indicates these can substitute for soil biology in the short term. While these create visible spikes in productivity, research suggests they can mask the loss of underlying internal function. When inputs are removed in study environments, the underlying degradation often becomes visible again.",
           metaphor:
             "Paint hides a crack in a wall. Rain reveals it later.",
         },
-        
-
-[Image of the nitrogen cycle in soil]
-
         {
           title: "Observing the feedback loops of intervention",
           answer:
             "Research examines how targeting surface symptoms can correlate with deepening structural loss.",
           children:
-            "When documentation focuses only on visible metrics, unseen relationships—such as microbial networks and soil compaction—may degrade. Each documented 'fix' can narrow the options for subsequent seasons, leading to an observed increase in dependency on external intervention. Research describes this pattern as 'intervention escalation.'",
+            "When documentation focuses only on visible metrics, unseen relationships—such as microbial networks and soil compaction—may degrade. Each documented 'fix' can narrow the options for subsequent seasons, leading to an observed increase in dependency on external intervention.",
           metaphor:
             "A leak is sealed while pressure increases elsewhere in the pipe.",
         },
@@ -59,7 +57,10 @@ export default function QuestionPage() {
           answer:
             "Forest systems often document higher resilience due to uninterrupted biological cycles.",
           children:
-            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. While these systems may not maximize short-term human efficiency, data shows they achieve ecological 'completion.' Restoration research often uses these uninterrupted cycles as a baseline for comparison.",
+            "Ecological literature notes that forest systems maintain nutrients and structure through internal loops: leaf fall, root structure, and temperature regulation. 
+
+[Image of forest succession stages]
+ While these systems may not maximize short-term human efficiency, data shows they achieve ecological 'completion.'",
           metaphor:
             "A wheel turns smoothly when nothing blocks its motion.",
         },
@@ -68,20 +69,16 @@ export default function QuestionPage() {
           answer:
             "Literature suggests that the compression of time is a primary factor in repair persistence.",
           children:
-            "Biological recovery requires specific time windows. Documentation of modern systems shows a trend toward continuous output, which can harvest land before regeneration is complete. In these research contexts, time is often treated as a loss of productivity rather than a functional requirement, resulting in repair that never resolves into a stable state.",
+            "Biological recovery requires specific time windows. Documentation of modern systems shows a trend toward continuous output, which can harvest land before regeneration is complete. In these research contexts, time is often treated as a loss of productivity rather than a functional requirement.",
           metaphor:
             "Bread is cut before it finishes baking. The center stays raw.",
         },
-        
-
-[Image of forest succession stages]
-
         {
           title: "ZenTrust: Observations on repair vs. restoration",
           answer:
             "ZenTrust documents where repair efforts may inadvertently obstruct restoration cycles.",
           children:
-            "ZenTrust reviews research to see if land is allowed to complete its own cycles. Documentation suggests that when repair prevents recovery, the effort can become an ecological obstruction. ZenTrust's role is to act as an observing presence, compiling evidence on where functional completion is missing from the system design.",
+            "ZenTrust reviews research to see if land is allowed to complete its own cycles. Documentation suggests that when repair prevents recovery, the effort can become an ecological obstruction. ZenTrust's role is to act as an observing presence, compiling evidence on where functional completion is missing.",
           metaphor:
             "Hands keep adjusting a clock that only needed winding once.",
         },
