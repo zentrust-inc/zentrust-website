@@ -4,14 +4,14 @@ import { Leaf, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-
 
 const footerLinks = {
   research: [
-    { name: 'Research Areas', href: '/research-areas' },
-    { name: 'Research Status', href: '/research-status' },
+    { name: 'Research Areas', href: '/research' },
+    { name: 'Research Status', href: '/research#status' },
     { name: 'Soil Health Documentation', href: '/learn/regenerative-agriculture' },
     { name: 'Systems Stress Patterns', href: '/learn/health-and-suffering' },
   ],
   organization: [
     { name: 'About Us', href: '/about' },
-    { name: 'Governance & Policies', href: '/governance' },
+    { name: 'Governance & Policies', href: '/financials' },
     { name: 'Questions', href: '/questions' },
     { name: 'Contact Us', href: '/contact' },
   ],
@@ -39,18 +39,18 @@ export function Footer() {
     <footer className="bg-card border-t border-border mt-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* CRITICAL COMPLIANCE BLOCK: MEDICAL & EDUCATIONAL DISCLAIMER */}
+        {/* COMPLIANCE BLOCK: MEDICAL & EDUCATIONAL DISCLAIMER */}
         <div className="pt-12 pb-6 border-b border-border">
           <div className="rounded-lg bg-muted/50 p-6 border border-border/50">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">
               Medical & Educational Disclaimer
             </h4>
             <p className="text-sm leading-relaxed text-muted-foreground italic">
-              ZenTrust content is provided for informational and educational research purposes only and does 
-              not constitute medical advice, diagnosis, or treatment. Our documentation of biological and 
-              ecological patterns is intended to support systems education. Always seek the advice of 
-              your physician or other qualified health provider with any questions regarding a medical 
-              condition.
+              ZenTrust is an educational research organization. Our content is provided for informational 
+              and educational research purposes only and does not constitute medical advice, diagnosis, 
+              or treatment. Our documentation of biological and ecological patterns is intended to 
+              support systems education. Always seek the advice of your physician or other qualified 
+              health provider with any questions regarding a medical condition.
             </p>
           </div>
         </div>
@@ -73,15 +73,15 @@ export function Footer() {
 
               <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
                 Advancing the documentation of regenerative systems, ecological 
-                patterns, and open scientific education. We provide research 
+                patterns, and open scientific education. ZenTrust provides research 
                 resources to support land stewardship and community-based systems science.
               </p>
 
               {/* Contact Information */}
               <div className="space-y-3">
-                <a href="mailto:hello@zentrust.org" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:hello@zentrust.world" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="h-4 w-4" />
-                  <span>hello@zentrust.org</span>
+                  <span>hello@zentrust.world</span>
                 </a>
 
                 <a href="tel:+15083177517" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -159,13 +159,14 @@ export function Footer() {
         <div className="border-t border-border py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
 
-            <div className="text-center md:text-left space-y-1">
-              <p className="text-sm text-muted-foreground">
+            <div className="text-center md:text-left space-y-2">
+              <p className="text-sm text-muted-foreground font-medium">
                 © {new Date().getFullYear()} ZenTrust. All rights reserved.
               </p>
-              <p className="text-[11px] leading-tight text-muted-foreground/80 max-w-md">
-                ZenTrust, Inc. is a registered 501(c)(3) public charity. <br className="hidden sm:block" />
-                Employer Identification Number (EIN): 33-4318487.
+              <p className="text-[11px] leading-relaxed text-muted-foreground/80 max-w-xl">
+                ZenTrust, Inc. is a registered 501(c)(3) nonprofit public charity dedicated to the 
+                documentation of regenerative land systems and ecological research. <br className="hidden sm:block" />
+                Employer Identification Number (EIN): 33-4318487. Recognized as a 170(b)(1)(A)(vi) public charity.
               </p>
             </div>
 
