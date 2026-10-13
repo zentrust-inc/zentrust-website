@@ -12,6 +12,19 @@ const MAX_AMOUNT_USD = 1000;
 
 type Frequency = "once" | "monthly";
 
+// Donor program preference. Recorded for reporting only — it does not
+// restrict use of funds (ZenTrust's board retains discretion and control).
+const PROGRAMS = {
+  general: "Where most needed",
+  nepal: "Nepal Food Forest & Watershed",
+  abhilekh: "Abhilekh Health Record",
+} as const;
+type Program = keyof typeof PROGRAMS;
+
+function successUrl(siteUrl: string, amount: number, frequency: Frequency) {
+  return `${siteUrl}/stewardship/thank-you?session_id={CHECKOUT_SESSION_ID}&amount=${amount}&frequency=${frequency}`;
+}
+
 // -----------------------------------------------------------------------------
 // POST handler
 // -----------------------------------------------------------------------------
@@ -34,10 +47,14 @@ export async function POST(req: Request) {
       typescript: true,
     });
 
-    const { amount, frequency } = (await req.json()) as {
+    const { amount, frequency, program: rawProgram } = (await req.json()) as {
       amount: number;
       frequency: Frequency;
+      program?: string;
     };
+
+    const program: Program =
+      rawProgram && rawProgram in PROGRAMS ? (rawProgram as Program) : "general";
 
     // ------------------ Validation ------------------
 
@@ -78,12 +95,13 @@ export async function POST(req: Request) {
             quantity: 1,
           },
         ],
-        success_url: `${siteUrl}/stewardship/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: successUrl(siteUrl, amount, "once"),
         cancel_url: `${siteUrl}/stewardship/checkout`,
         metadata: {
           purpose: "zentrust_stewardship",
           frequency: "once",
           amount_usd: amount.toString(),
+          program_preference: program,
         },
       });
 
@@ -105,13 +123,20 @@ export async function POST(req: Request) {
           quantity: amount,       // slider value
         },
       ],
-      success_url: `${siteUrl}/stewardship/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: successUrl(siteUrl, amount, "monthly"),
       cancel_url: `${siteUrl}/stewardship/checkout`,
+      metadata: {
+        purpose: "zentrust_stewardship",
+        frequency: "monthly",
+        amount_usd: amount.toString(),
+        program_preference: program,
+      },
       subscription_data: {
         metadata: {
           purpose: "zentrust_stewardship",
           frequency: "monthly",
           amount_usd: amount.toString(),
+          program_preference: program,
         },
       },
     });
