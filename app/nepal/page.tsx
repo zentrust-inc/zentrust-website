@@ -1,233 +1,313 @@
 // app/nepal/page.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Droplets,
-  Sprout,
-  Mountain,
-  Users,
-  ShieldCheck,
-  MapPin,
-} from "lucide-react";
+import "./nepal.css";
+
+import { HeroVideo } from "@/components/nepal/HeroVideo";
+import { Raindrop } from "@/components/nepal/Raindrop";
+
+import bareSlopes from "./media/bare-slopes.webp";
+import erodedBank from "./media/eroded-bank.webp";
+import gully from "./media/gully.webp";
+import pineFire from "./media/pine-fire-2.webp";
+import villageAbove from "./media/village-above.webp";
+import ridgeCrown from "./media/ridge-crown.webp";
 
 export const metadata: Metadata = {
-  title: "Nepal Food Forest & Watershed Restoration",
+  title: "Nepal: From Pine Monoculture to a Living Forest",
   description:
-    "ZenTrust's program to restore a 150-hectare hillside in Kakani, Nepal with watershed management and a syntropic food forest. Help fund the Year-1 nursery and watershed work.",
+    "On 150 hectares of hillside in Chauthe, Kakani, ZenTrust is turning a pine monoculture into a layered food forest so rain soaks in and springs recover. Help fund the Year-1 water work and nursery.",
   alternates: { canonical: "/nepal" },
+  openGraph: {
+    title: "Bring the water back to Chauthe’s hills",
+    description:
+      "Turning a pine monoculture into a layered food forest in Kakani, Nepal.",
+    images: [{ url: "/nepal/hero-ridge-poster.jpg", width: 1280, height: 720 }],
+  },
 };
 
-const DONATE_HREF = "/stewardship/checkout?program=nepal&amount=100";
+const DONATE = (amount: number) => `/stewardship/checkout?program=nepal&amount=${amount}`;
 
-const facts = [
-  { label: "Area", value: "150 hectares" },
-  { label: "Elevation", value: "1,200–1,600 m" },
-  { label: "Location", value: "Chauthe, Ward 3, Kakani Rural Municipality" },
-  { label: "Year-1 goal", value: "$100,000" },
-];
+function Drop() {
+  return (
+    <svg width="16" height="20" viewBox="0 0 16 20" aria-hidden="true">
+      <path d="M8 1 C 5 6, 2 9, 2 13 a6 6 0 0 0 12 0 c0 -4 -3 -7 -6 -12 Z" fill="currentColor" />
+    </svg>
+  );
+}
 
-const plan = [
-  {
-    icon: Droplets,
-    title: "Watershed management",
-    text: "Slow, spread and sink monsoon rain so it recharges springs instead of washing soil downhill — using proven low-cost measures such as contour trenches, gully plugs, small check dams, recharge ponds and protection of spring sources.",
-  },
-  {
-    icon: Sprout,
-    title: "Community nursery",
-    text: "Raise native trees, fodder, fruit and support species on site, so planting stock is adapted to the hills and local families gain nursery skills.",
-  },
-  {
-    icon: Mountain,
-    title: "Syntropic food forest",
-    text: "Plant layered systems — canopy, fruit, shrubs and ground cover together — that rebuild soil and shade over time while producing food and fodder.",
-  },
-  {
-    icon: Users,
-    title: "Community-led stewardship",
-    text: "Work with the people who live with this land, so the forest, the water and the income it creates are managed locally for the long term.",
-  },
+const LAYERS = [
+  { label: "Tall native trees", color: "#4f7f35" },
+  { label: "Fruit trees", color: "#8bb24f" },
+  { label: "Shrubs and fodder", color: "#7fa64a" },
+  { label: "Herbs and vegetables", color: "#a9c46a" },
+  { label: "Ground cover", color: "#c4d88a" },
+  { label: "Roots that open the soil", color: "#b08a5a" },
 ];
 
 export default function NepalProgramPage() {
   return (
-    <div className="min-h-screen">
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-b from-background via-background to-muted/40 pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-foreground/70">
-            ZenTrust Program · Nepal
+    <div className="np">
+      {/* 1. Hero: the real ridge, from the drone */}
+      <section className="np-hero" aria-labelledby="np-title">
+        <HeroVideo />
+        <div className="np-wrap np-hero-body">
+          <h1 id="np-title">Bring the water back to Chauthe’s hills</h1>
+          <p className="np-hero-ne" lang="ne">पानी फर्काऔं, डाँडा फेरि हरियो बनाऔं।</p>
+          <p className="np-hero-lead">
+            On 150 hectares above Kakani, Nepal, we&apos;re turning a pine
+            monoculture into a layered food forest, so monsoon rain soaks in,
+            springs recover, and the hillside feeds the families around it.
           </p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-            Bringing water back to a Himalayan hillside
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-foreground/80">
-            On 150 hectares of steep hill country in Kakani, Nepal, we are
-            starting a watershed restoration and syntropic food forest — so
-            rain soaks in, springs recover, and degraded slopes become living
-            forest that feeds the community around it.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href={DONATE_HREF}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Fund the Year-1 work
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href="#plan"
-              className="inline-flex items-center rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:border-foreground/50"
-            >
-              See the plan
-            </a>
+          <div className="np-hero-actions">
+            <Link className="np-btn np-btn--water" href={DONATE(100)}>Fund the Year-1 work</Link>
+            <a className="np-btn np-btn--ghost" href="#rain">See how the water is lost</a>
           </div>
-          <p className="mt-5 text-xs text-foreground/60">
-            ZenTrust, Inc. is a 501(c)(3) public charity (EIN 33-4318487). US
-            donations are tax-deductible as allowed by law.
+        </div>
+        <p className="np-hero-credit">Drone footage of the site, May 2026</p>
+      </section>
+
+      {/* 2. The place */}
+      <section className="np-place" aria-labelledby="np-place-title">
+        <div className="np-wrap np-place-grid">
+          <div>
+            <h2 id="np-place-title">A hillside planted for speed, now short of water</h2>
+            <div className="np-measure">
+              <p>
+                Decades ago, pine was planted across Nepal&apos;s middle hills to
+                cover bare slopes quickly. It did that. But pine is now widely
+                linked to drying springs, poorer soil and dry-season fires.
+              </p>
+              <p>
+                In Chauthe we believe it is a major cause of the water the hills
+                have lost, and we&apos;ll measure the change as the forest grows
+                back in layers.
+              </p>
+            </div>
+          </div>
+          <dl className="np-facts">
+            <dt>Where</dt><dd>Chauthe, Ward 3, Kakani Rural Municipality</dd>
+            <dt>Area</dt><dd>150 hectares</dd>
+            <dt>Elevation</dt><dd>1,200 to 1,600 m</dd>
+            <dt>Managed by</dt><dd>Thumki Danda Gairikharka Community Forest User Group</dd>
+            <dt>Year-1 goal</dt><dd>$100,000</dd>
+          </dl>
+        </div>
+      </section>
+
+      {/* 3. Follow a raindrop */}
+      <section id="rain" className="np-rain" aria-labelledby="np-rain-title">
+        <div className="np-wrap">
+          <div className="np-rain-head">
+            <h2 id="np-rain-title">Follow a raindrop down the hill</h2>
+            <p>Scroll to see where monsoon rain goes under pine, and under a layered forest.</p>
+          </div>
+          <Raindrop />
+          <p className="np-rain-note">
+            Illustration. Research across the Himalaya links pine plantations
+            with less groundwater recharge than mixed broadleaf forest; how much
+            it matters here is what our spring and soil monitoring will show.
           </p>
         </div>
       </section>
 
-      {/* FACTS */}
-      <section className="border-y border-border bg-muted/30">
-        <dl className="mx-auto grid max-w-5xl grid-cols-2 gap-px px-6 py-10 md:grid-cols-4">
-          {facts.map((f) => (
-            <div key={f.label} className="px-2 py-3 text-center">
-              <dt className="text-xs uppercase tracking-wide text-muted-foreground">
-                {f.label}
-              </dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground">
-                {f.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      <div className="mx-auto max-w-3xl px-6 py-16 space-y-16">
-        {/* PROBLEM */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-            Why this land, why now
-          </h2>
-          <p className="text-base leading-7 text-foreground/80">
-            In Nepal&apos;s middle hills, most rain arrives in a few monsoon
-            months. On bare or degraded slopes it runs straight off — taking
-            topsoil with it — and the springs that villages depend on in the
-            dry season weaken. Restoring forest cover and the way water moves
-            through a hillside is one of the most direct ways to reverse that.
-          </p>
-          <p className="text-base leading-7 text-foreground/80">
-            Our site sits between 1,200 and 1,600 metres in Chauthe, Ward 3 of
-            Kakani Rural Municipality. Its range of elevations and aspects makes
-            it a working example that neighbouring communities can see, visit
-            and copy.
-          </p>
-        </section>
-
-        {/* PLAN */}
-        <section id="plan" className="scroll-mt-24 space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-              The plan
-            </h2>
-            <p className="text-base leading-7 text-foreground/80">
-              The first year focuses on the two foundations everything else
-              depends on: water and planting stock.
+      {/* 4. Year zero: the real land */}
+      <section className="np-year0" aria-labelledby="np-year0-title">
+        <div className="np-wrap">
+          <div className="np-year0-head">
+            <h2 id="np-year0-title">Year zero, on the record</h2>
+            <p>
+              These are the hills as they are today. We&apos;ll photograph the
+              same places every season, so anyone can see what changes, and what
+              doesn&apos;t.
             </p>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {plan.map(({ icon: Icon, title, text }) => (
-              <li
-                key={title}
-                className="rounded-2xl border border-border bg-card p-5"
-              >
-                <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                <h3 className="mt-3 text-base font-semibold text-foreground">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-foreground/75">
-                  {text}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
+          <div className="np-mosaic">
+            <figure className="np-tile np-tile--a">
+              <Image src={bareSlopes} alt="Aerial view of pale, gullied slopes with scattered pine trees" fill sizes="(min-width: 760px) 66vw, 100vw" placeholder="blur" />
+              <figcaption><b>Bare, gullied slopes under thin pine.</b> Drone, May 2026</figcaption>
+            </figure>
+            <figure className="np-tile np-tile--b">
+              <Image src={erodedBank} alt="A collapsing earth bank below a slope of pine trees" fill sizes="(min-width: 760px) 33vw, 100vw" placeholder="blur" />
+              <figcaption><b>A bank giving way below the pines.</b> June 2023</figcaption>
+            </figure>
+            <figure className="np-tile np-tile--c">
+              <Image src={pineFire} alt="Aerial view of a pine slope with smoke rising from a fire" fill sizes="(min-width: 760px) 33vw, 100vw" placeholder="blur" />
+              <figcaption><b>Smoke from a forest fire on the pine slope.</b> May 2026</figcaption>
+            </figure>
+            <figure className="np-tile np-tile--d">
+              <Image src={gully} alt="Aerial view of a dry gully cutting down beside farm terraces" fill sizes="(min-width: 760px) 33vw, 100vw" placeholder="blur" />
+              <figcaption><b>A dry gully beside the terraces.</b> May 2026</figcaption>
+            </figure>
+            <figure className="np-tile np-tile--e">
+              <Image src={villageAbove} alt="Aerial view of houses, a road and terraces on the ridge" fill sizes="(min-width: 760px) 33vw, 100vw" placeholder="blur" />
+              <figcaption><b>Homes and terraces downhill from the forest.</b> May 2026</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-        {/* YEAR 1 GOAL */}
-        <section className="rounded-2xl border border-border bg-muted/30 p-6 sm:p-8 space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-            Year-1 goal: $100,000
-          </h2>
-          <p className="text-base leading-7 text-foreground/80">
-            Our first-year target funds the watershed works and the community
-            nursery that will supply the food forest. Every contribution —
-            one-time or monthly — moves this work forward, and we will report
-            progress openly as it happens.
+      {/* 5. The food forest and the plan */}
+      <section className="np-forest" aria-labelledby="np-forest-title">
+        <div className="np-wrap">
+          <h2 id="np-forest-title">A forest that holds water and feeds people</h2>
+          <p className="np-forest-intro">
+            A syntropic food forest grows in layers, the way a natural forest
+            does. Each layer shades, feeds and protects the next, and together
+            they keep the soil covered, open and wet.
           </p>
-          <Link
-            href={DONATE_HREF}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
-          >
-            Give to the Nepal program
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </section>
 
-        {/* STATUS & PARTNERS */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-            Where things stand
-          </h2>
-          <p className="text-base leading-7 text-foreground/80">
-            The program is in its planning and setup stage. The site lies
-            within community forest managed by the Thumki Danda Gairikharka
-            Community Forest User Group, and work will proceed under the
-            group&apos;s forest management arrangements and the local approvals
-            it requires. A Nepal-registered not-for-profit implementing entity
-            is being established to carry out the work on the ground.
-          </p>
-          <p className="text-base leading-7 text-foreground/80">
-            We will publish updates, photos and spending reports here as the
-            work begins.
-          </p>
-        </section>
+          <figure className="np-forest-art">
+            <svg className="ff" viewBox="0 0 1000 440" role="img" aria-labelledby="ff-t">
+              <title id="ff-t">Cross-section of a layered food forest, from tall trees down to roots</title>
+              {/* soil and roots */}
+              <rect x="0" y="330" width="1000" height="110" fill="#3a2e22" />
+              <path d="M0 330 H780" stroke="#5a4532" strokeWidth="3" />
+              {[120, 300, 470, 640].map((x) => (
+                <path key={x} d={`M${x} 330 q -30 40 -60 70 M${x} 330 q 6 50 2 90 M${x} 330 q 34 34 64 52`} fill="none" stroke="#b08a5a" strokeWidth="3" strokeLinecap="round" />
+              ))}
+              {/* ground cover */}
+              {Array.from({ length: 26 }, (_, i) => 15 + i * 30).map((x) => (
+                <ellipse key={x} cx={x} cy={326} rx={18} ry={6} fill="#c4d88a" />
+              ))}
+              {/* herbs */}
+              {[40, 160, 250, 380, 520, 590, 700].map((x) => (
+                <g key={x}>
+                  <path d={`M${x} 326 v -26`} stroke="#a9c46a" strokeWidth="3" />
+                  <ellipse cx={x - 8} cy={302} rx={10} ry={5} fill="#a9c46a" />
+                  <ellipse cx={x + 8} cy={296} rx={10} ry={5} fill="#a9c46a" />
+                </g>
+              ))}
+              {/* shrubs */}
+              {[80, 215, 340, 430, 560, 690].map((x) => (
+                <ellipse key={x} cx={x} cy={292} rx={34} ry={26} fill="#7fa64a" />
+              ))}
+              {/* fruit trees */}
+              {[180, 400, 610].map((x) => (
+                <g key={x}>
+                  <rect x={x - 4} y={220} width="8" height="110" fill="#5a4532" />
+                  <circle cx={x} cy={205} r={48} fill="#8bb24f" />
+                  {[[-18, -6], [14, -18], [6, 14], [-24, 18], [26, 8]].map(([dx, dy], i) => (
+                    <circle key={i} cx={x + dx} cy={205 + dy} r={6} fill="#e0a83a" />
+                  ))}
+                </g>
+              ))}
+              {/* tall native trees */}
+              {[90, 300, 500, 710].map((x) => (
+                <g key={x}>
+                  <rect x={x - 6} y={110} width="12" height="220" fill="#4a3a28" />
+                  <circle cx={x} cy={100} r={66} fill="#4f7f35" />
+                  <circle cx={x + 40} cy={120} r={44} fill="#5e8f3c" />
+                </g>
+              ))}
+              {/* labels with leaders */}
+              <g className="ff-labels">
+                {[
+                  [100, LAYERS[0].label, 776],
+                  [205, LAYERS[1].label, 660],
+                  [272, LAYERS[2].label, 726],
+                  [300, LAYERS[3].label, 712],
+                  [326, LAYERS[4].label, 790],
+                  [392, LAYERS[5].label, 706],
+                ].map(([yy, label, from], i) => (
+                  <g key={i}>
+                    <line className="ff-lead" x1={from as number} y1={(yy as number) + (i === 3 ? 4 : 0)} x2={808} y2={(yy as number) + (i === 3 ? 4 : 0)} />
+                    <circle cx={from as number} cy={(yy as number) + (i === 3 ? 4 : 0)} r="3" fill="#eef2ee" />
+                    <text x={816} y={(yy as number) + 6 + (i === 3 ? 4 : 0)}>{label as string}</text>
+                  </g>
+                ))}
+              </g>
+            </svg>
+            <ul className="ff-legend">
+              {LAYERS.map((l) => (
+                <li key={l.label}><i style={{ background: l.color }} aria-hidden="true" />{l.label}</li>
+              ))}
+            </ul>
+          </figure>
 
-        {/* ACCOUNTABILITY */}
-        <section className="flex gap-4 rounded-2xl border border-border p-6">
-          <ShieldCheck
-            className="h-6 w-6 shrink-0 text-primary"
-            aria-hidden="true"
-          />
-          <div className="space-y-2 text-sm leading-6 text-foreground/75">
-            <h2 className="text-base font-semibold text-foreground">
-              How your gift is governed
-            </h2>
+          <ol className="np-plan" aria-label="The plan">
+            <li className="np-phase">
+              <p className="np-phase-when">Year 1</p>
+              <h3>Hold the water</h3>
+              <p>Contour trenches, small check dams and recharge ponds slow the monsoon rain. Spring sources are protected, and a community nursery starts raising native and fruit trees.</p>
+            </li>
+            <li className="np-phase">
+              <p className="np-phase-when">Years 2 and 3</p>
+              <h3>Plant in layers</h3>
+              <p>Native trees, fruit, fodder and ground cover go in between the pines. Pine is thinned step by step, only where the forest user group and forest office approve.</p>
+            </li>
+            <li className="np-phase">
+              <p className="np-phase-when">Year 4 onward</p>
+              <h3>Let the forest lead</h3>
+              <p>The forest yields food, fodder and income for local families, and is managed by them. We keep measuring the springs and publishing what we find.</p>
+            </li>
+          </ol>
+          <p className="np-plan-note">Timings are our plan, not a promise of results; they will shift with approvals, funding and what the land tells us.</p>
+        </div>
+      </section>
+
+      {/* 6. Measure, status, governance */}
+      <section className="np-honest" aria-labelledby="np-measure-title">
+        <div className="np-wrap np-honest-grid">
+          <div>
+            <h2 id="np-measure-title">What we&apos;ll measure, starting now</h2>
+            <p>We&apos;d rather show you numbers than promises. From year zero we will track:</p>
+            <ul className="np-track">
+              <li><Drop /><span><b>Spring flow</b> in the dry season, at the same sources every month</span></li>
+              <li><Drop /><span><b>Fixed photo points</b> on the ground and from the drone, every season</span></li>
+              <li><Drop /><span><b>Ground cover and soil moisture</b> under pine and under new planting</span></li>
+              <li><Drop /><span><b>Trees planted and surviving</b>, by species and by layer</span></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Where things stand</h2>
             <p>
+              The program is in its planning and setup stage. The site lies
+              within community forest managed by the Thumki Danda Gairikharka
+              Community Forest User Group, and work will proceed under the
+              group&apos;s forest management arrangements and the local
+              approvals it requires. A Nepal-registered not-for-profit
+              implementing entity is being established to carry out the work on
+              the ground.
+            </p>
+            <div className="np-govern">
               Contributions are made to ZenTrust, Inc., a US 501(c)(3) public
               charity. ZenTrust&apos;s board approves and oversees all program
               funding, including any grants to implementing partners, under
               written agreements with reporting requirements. We honor donor
               program preferences wherever possible; final use of funds remains
               at the discretion of ZenTrust&apos;s board in furtherance of its
-              charitable purposes.
-            </p>
-            <p>
-              <Link href="/financials" className="underline underline-offset-4">
-                Governance &amp; policies
-              </Link>
-            </p>
+              charitable purposes. <Link href="/financials">Governance and policies</Link>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* LOCATION NOTE */}
-        <p className="flex items-center gap-2 text-xs text-muted-foreground">
-          <MapPin className="h-4 w-4" aria-hidden="true" />
-          Chauthe, Ward 3, Kakani Rural Municipality, Nepal
-        </p>
-      </div>
+      {/* 7. Give */}
+      <section className="np-give" aria-labelledby="np-give-title">
+        <div className="np-give-bg" aria-hidden="true">
+          <Image src={ridgeCrown} alt="" fill sizes="100vw" placeholder="blur" />
+        </div>
+        <div className="np-wrap np-give-body">
+          <h2 id="np-give-title">Help the hills hold their water</h2>
+          <p className="np-give-lead">
+            Our Year-1 goal is $100,000 for the water work and the community
+            nursery. Every gift, one-time or monthly, moves it forward, and we
+            will report progress openly.
+          </p>
+          <div className="np-amounts">
+            <Link className="np-btn np-btn--ghost" href={DONATE(25)}>Give $25</Link>
+            <Link className="np-btn np-btn--ghost" href={DONATE(100)}>Give $100</Link>
+            <Link className="np-btn np-btn--ghost" href={DONATE(500)}>Give $500</Link>
+            <Link className="np-btn np-btn--water" href={DONATE(50)}>Choose an amount</Link>
+          </div>
+          <p className="np-give-fine">
+            ZenTrust, Inc. is a 501(c)(3) public charity (EIN 33-4318487). US
+            donations are tax-deductible as allowed by law.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
