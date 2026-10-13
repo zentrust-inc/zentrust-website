@@ -183,3 +183,8 @@
 .np-amounts .np-btn--ghost { color: var(--paper); }
 .np-give-fine { margin-top: 22px; font-size: 15px; color: color-mix(in srgb, var(--paper) 70%, transparent); max-width: 40em; }
 @media (max-width: 759px) { .rd text { font-size: 26px; font-weight: 600; } }
+/* Background video: never show native play controls (iOS Low Power Mode overlay) */
+.np-hero video { pointer-events: none; }
+.np-hero video::-webkit-media-controls,
+.np-hero video::-webkit-media-controls-start-playback-button,
+.np-hero video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
