@@ -12,7 +12,15 @@ import { cn } from "@/lib/utils"
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { 
+  {
+    name: "Programs",
+    href: "/nepal",
+    children: [
+      { name: "Nepal Food Forest & Watershed", href: "/nepal" },
+      { name: "Abhilekh Health Record", href: "/abhilekh" },
+    ],
+  },
+  {
     name: "Research", 
     href: "/research-areas", 
     children: [
@@ -81,7 +89,7 @@ export function Navbar() {
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
                       <div className="absolute top-full left-0 hidden group-hover:block pt-2">
-                        <div className="bg-background border border-border rounded-lg shadow-xl py-2 w-48">
+                        <div className="bg-background border border-border rounded-lg shadow-xl py-2 w-64">
                           {item.children.map((child) => (
                             <Link
                               key={child.name}
