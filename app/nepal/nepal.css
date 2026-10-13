@@ -1,0 +1,185 @@
+/* /nepal — page-scoped styles. Fonts are self-hosted (SIL OFL), with
+   Devanagari subsets so Nepali lines render in the same families. */
+
+@font-face { font-family: "Martel"; font-weight: 800; font-display: swap; src: url("/nepal/fonts/martel-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Martel"; font-weight: 800; font-display: swap; src: url("/nepal/fonts/martel-devanagari-800-normal.woff2") format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Martel"; font-weight: 400; font-display: swap; src: url("/nepal/fonts/martel-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Martel"; font-weight: 400; font-display: swap; src: url("/nepal/fonts/martel-devanagari-400-normal.woff2") format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Mukta"; font-weight: 400; font-display: swap; src: url("/nepal/fonts/mukta-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Mukta"; font-weight: 400; font-display: swap; src: url("/nepal/fonts/mukta-devanagari-400-normal.woff2") format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Mukta"; font-weight: 600; font-display: swap; src: url("/nepal/fonts/mukta-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Mukta"; font-weight: 600; font-display: swap; src: url("/nepal/fonts/mukta-devanagari-600-normal.woff2") format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+
+.np {
+  /* Colour carries meaning: duff = pine litter and runoff, spring = water
+     that soaks in, leaf = the forest that replaces the monoculture. */
+  --mist: #e4e9e5;
+  --mist-2: #d4ddd7;
+  --pine: #15251e;
+  --pine-2: #22392f;
+  --ink: #18231e;
+  --ink-soft: #46554e;
+  --paper: #eef2ee;
+  --duff: #a07b43;
+  --spring: #2b86b0;
+  --spring-ink: #1d6489;
+  --leaf: #6b9a3c;
+  --display: "Martel", Georgia, serif;
+  --text: "Mukta", system-ui, sans-serif;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.np *:focus-visible { outline: 3px solid var(--spring); outline-offset: 3px; border-radius: 2px; }
+.np h1, .np h2, .np h3 { font-family: var(--display); font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+.np p { margin: 0; }
+.np-wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+.np-measure { max-width: 34em; }
+
+/* Buttons */
+.np-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font-weight: 600; font-size: 17px; text-decoration: none; transition: background-color .2s, color .2s, border-color .2s; }
+.np-btn--water { background: var(--spring); color: #fff; }
+.np-btn--water:hover { background: var(--spring-ink); }
+.np-btn--ghost { border: 1.5px solid currentColor; color: inherit; }
+.np-btn--ghost:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
+
+/* Hero */
+.np-hero { position: relative; min-height: 100svh; display: grid; align-items: end; color: var(--paper); overflow: hidden; background: var(--pine); }
+.np-hero video, .np-hero .np-hero-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.np-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,24,19,.86) 0%, rgba(14,24,19,.35) 45%, rgba(14,24,19,.15) 100%); }
+.np-hero-body { position: relative; z-index: 1; padding: 0 0 clamp(48px, 9vh, 96px); }
+.np-hero h1 { font-size: clamp(44px, 7.4vw, 96px); line-height: 1.02; max-width: 13ch; }
+.np-hero-ne { font-family: var(--display); font-weight: 400; font-size: clamp(20px, 2.3vw, 28px); margin-top: 18px; opacity: .92; }
+.np-hero-lead { font-size: clamp(18px, 1.6vw, 21px); max-width: 36em; margin-top: 20px; color: color-mix(in srgb, var(--paper) 88%, transparent); }
+.np-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.np-hero-credit { position: absolute; right: 20px; bottom: 16px; z-index: 1; font-size: 14px; color: color-mix(in srgb, var(--paper) 70%, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  .np-hero-body > * { animation: np-rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .np-hero-body > *:nth-child(2) { animation-delay: .12s; }
+  .np-hero-body > *:nth-child(3) { animation-delay: .24s; }
+  .np-hero-body > *:nth-child(4) { animation-delay: .36s; }
+  .np-hero video { animation: np-clear 2.2s ease-out both; }
+}
+@keyframes np-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes np-clear { from { opacity: 0; filter: blur(8px); } to { opacity: 1; filter: none; } }
+
+/* The place */
+.np-place { padding: clamp(72px, 10vw, 128px) 0; }
+.np-place-grid { display: grid; gap: 48px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .np-place-grid { grid-template-columns: 1.35fr 1fr; gap: 72px; align-items: start; } }
+.np-place h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15; }
+.np-place p + p { margin-top: 1em; }
+.np-place .np-measure { margin-top: 22px; color: var(--ink-soft); }
+.np-facts { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 14px 24px; padding-top: 8px; border-top: 2px solid var(--ink); }
+.np-facts dt { color: var(--ink-soft); font-size: 16px; padding-top: 2px; }
+.np-facts dd { margin: 0; font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.3; }
+
+/* Raindrop */
+.np-rain { background: var(--mist-2); padding: clamp(72px, 9vw, 120px) 0 clamp(48px, 6vw, 80px); }
+.np-rain-head { margin-bottom: 40px; }
+.np-rain-head h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15; max-width: 18ch; }
+.np-rain-head p { margin-top: 14px; color: var(--ink-soft); max-width: 34em; }
+.np-rain-grid { display: grid; grid-template-columns: 1fr; }
+.np-rain-stage { position: sticky; top: 64px; z-index: 1; background: var(--mist-2); padding: 8px 0; }
+.np-rain-stage svg { display: block; width: 100%; height: auto; max-height: 46vh; }
+.np-rain-steps { position: relative; z-index: 2; }
+.np-step { min-height: 62vh; display: flex; align-items: center; }
+.np-step-card { background: var(--paper); border-radius: 14px; padding: 22px 24px; box-shadow: 0 10px 30px rgba(21,37,30,.10); max-width: 30em; opacity: .45; transition: opacity .35s; }
+.np-step.is-active .np-step-card { opacity: 1; }
+.np-step-card h3 { font-size: 22px; line-height: 1.3; margin-bottom: 6px; }
+.np-step-card p { color: var(--ink-soft); font-size: 17px; }
+.np-step-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+@media (min-width: 900px) {
+  .np-rain-grid { grid-template-columns: minmax(300px, 1fr) 1.6fr; gap: 56px; }
+  .np-rain-steps { order: 1; }
+  .np-rain-stage { order: 2; top: 15vh; align-self: start; padding: 0; }
+  .np-rain-stage svg { max-height: 72vh; }
+  .np-step { min-height: 78vh; }
+}
+.np-rain-note { margin-top: 28px; font-size: 15px; color: var(--ink-soft); max-width: 46em; }
+
+/* Raindrop SVG states */
+.rd text { font-family: var(--text); font-size: 17px; fill: var(--ink); }
+.rd .rd-fade { transition: opacity .6s ease; }
+.rd .rd-off { opacity: 0; }
+.rd .rd-dim { opacity: .25; }
+@media (prefers-reduced-motion: no-preference) {
+  .rd .rd-drop { animation: rd-fall 1.4s linear infinite; }
+  .rd .rd-run { animation: rd-run 1.6s linear infinite; }
+  .rd .rd-sink { animation: rd-sink 1.8s ease-in infinite; }
+  .rd .rd-flow { animation: rd-run 1.2s linear infinite; }
+}
+@keyframes rd-fall { from { transform: translateY(-40px); opacity: 0; } 15% { opacity: 1; } to { transform: translateY(70px); opacity: 0; } }
+@keyframes rd-run { to { stroke-dashoffset: -48; } }
+@keyframes rd-sink { from { transform: translateY(-6px); opacity: 0; } 30% { opacity: 1; } to { transform: translateY(26px); opacity: 0; } }
+
+/* Year zero */
+.np-year0 { padding: clamp(72px, 10vw, 128px) 0; }
+.np-year0-head { display: grid; gap: 20px; margin-bottom: 40px; }
+@media (min-width: 900px) { .np-year0-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 72px; } }
+.np-year0 h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15; }
+.np-year0-head p { color: var(--ink-soft); }
+.np-mosaic { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 760px) {
+  .np-mosaic { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 150px; }
+  .np-tile--a { grid-column: span 4; grid-row: span 3; }
+  .np-tile--b { grid-column: span 2; grid-row: span 3; }
+  .np-tile--c { grid-column: span 2; grid-row: span 2; }
+  .np-tile--d { grid-column: span 2; grid-row: span 2; }
+  .np-tile--e { grid-column: span 2; grid-row: span 2; }
+}
+.np-tile { position: relative; margin: 0; overflow: hidden; border-radius: 6px; background: var(--pine); min-height: 220px; }
+.np-tile img { object-fit: cover; }
+.np-tile figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 12px; font-size: 15px; line-height: 1.4; color: var(--paper); background: linear-gradient(0deg, rgba(14,24,19,.82), transparent); }
+.np-tile figcaption b { font-weight: 600; }
+
+/* Food forest */
+.np-forest { background: var(--pine); color: var(--paper); padding: clamp(72px, 10vw, 128px) 0; }
+.np-forest h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15; max-width: 16ch; }
+.np-forest-intro { margin-top: 18px; max-width: 36em; color: color-mix(in srgb, var(--paper) 82%, transparent); }
+.np-forest-art { margin: 48px 0 0; }
+.np-forest-art svg { display: block; width: 100%; height: auto; }
+.ff text { font-family: var(--text); font-size: 16px; fill: var(--paper); }
+.ff-legend { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; font-size: 16px; }
+.ff-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 10px; vertical-align: 0; }
+@media (min-width: 760px) { .ff-legend { display: none; } }
+@media (max-width: 759px) { .ff .ff-labels { display: none; } .np-forest-art svg { margin-inline: -20px; width: calc(100% + 40px); max-width: none; } }
+.ff .ff-lead { stroke: color-mix(in srgb, var(--paper) 45%, transparent); stroke-width: 1; }
+
+/* Plan */
+.np-plan { margin-top: clamp(64px, 8vw, 104px); display: grid; gap: 28px; grid-template-columns: 1fr; list-style: none; padding: 0; }
+@media (min-width: 900px) { .np-plan { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+.np-phase { border-top: 2px solid color-mix(in srgb, var(--paper) 35%, transparent); padding-top: 18px; }
+.np-phase-when { font-size: 16px; color: var(--leaf); font-weight: 600; filter: brightness(1.35); }
+.np-phase h3 { font-size: 24px; margin: 4px 0 10px; }
+.np-phase p { color: color-mix(in srgb, var(--paper) 80%, transparent); font-size: 17px; }
+.np-plan-note { margin-top: 28px; font-size: 15px; color: color-mix(in srgb, var(--paper) 65%, transparent); max-width: 52em; }
+
+/* Measure + status */
+.np-honest { padding: clamp(72px, 10vw, 128px) 0; }
+.np-honest-grid { display: grid; gap: 56px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .np-honest-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+.np-honest h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.2; }
+.np-honest p { color: var(--ink-soft); margin-top: 14px; }
+.np-track { list-style: none; margin: 24px 0 0; padding: 0; }
+.np-track li { padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); display: grid; grid-template-columns: 22px 1fr; gap: 12px; }
+.np-track li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+.np-track svg { margin-top: 5px; color: var(--spring-ink); }
+.np-track b { font-weight: 600; color: var(--ink); }
+.np-track span { color: var(--ink-soft); }
+.np-govern { margin-top: 28px; padding: 22px 24px; background: var(--paper); border-radius: 14px; font-size: 16px; color: var(--ink-soft); }
+.np-govern a { color: var(--spring-ink); }
+
+/* Give */
+.np-give { position: relative; color: var(--paper); overflow: hidden; background: var(--pine); }
+.np-give-bg { position: absolute; inset: 0; }
+.np-give-bg img { object-fit: cover; opacity: .38; }
+.np-give-body { position: relative; padding: clamp(80px, 12vw, 150px) 0; }
+.np-give h2 { font-size: clamp(36px, 5vw, 64px); line-height: 1.08; max-width: 14ch; }
+.np-give-lead { margin-top: 18px; max-width: 34em; color: color-mix(in srgb, var(--paper) 86%, transparent); }
+.np-amounts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.np-amounts .np-btn--ghost { color: var(--paper); }
+.np-give-fine { margin-top: 22px; font-size: 15px; color: color-mix(in srgb, var(--paper) 70%, transparent); max-width: 40em; }
+@media (max-width: 759px) { .rd text { font-size: 26px; font-weight: 600; } }
