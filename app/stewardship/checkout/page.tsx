@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Lock, ArrowRight } from "lucide-react";
 
@@ -13,12 +13,39 @@ import {
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 type Frequency = "once" | "monthly";
+type Program = "general" | "nepal" | "abhilekh";
+
+const PROGRAM_OPTIONS: { value: Program; label: string }[] = [
+  { value: "general", label: "Where most needed" },
+  { value: "nepal", label: "Nepal Food Forest & Watershed" },
+  { value: "abhilekh", label: "Abhilekh Health Record" },
+];
+
+function isProgram(v: string | null): v is Program {
+  return v === "general" || v === "nepal" || v === "abhilekh";
+}
 
 export default function StewardshipCheckoutPage() {
   const router = useRouter();
 
   const [amount, setAmount] = useState(50);
   const [frequency, setFrequency] = useState<Frequency>("once");
+  const [program, setProgram] = useState<Program>("general");
+
+  // Preselect program/amount from links such as /stewardship/checkout?program=nepal&amount=100
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get("program");
+      if (isProgram(p)) setProgram(p);
+      const a = Number(params.get("amount"));
+      if (Number.isFinite(a) && a >= 5) {
+        setAmount(Math.min(1000, Math.round(a / 5) * 5));
+      }
+    } catch {
+      // ignore malformed query strings
+    }
+  }, []);
   const [agreed, setAgreed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +69,7 @@ export default function StewardshipCheckoutPage() {
       const res = await fetch("/api/stewardship/create-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount, frequency }),
+        body: JSON.stringify({ amount, frequency, program }),
       });
 
       const data = await res.json();
@@ -62,8 +89,8 @@ export default function StewardshipCheckoutPage() {
     <div className="min-h-screen">
       <GlobalHero
         kicker="Contribution"
-        headline="Public research on regenerative systems."
-        dek="Contributions support educational research on ecological patterns and land stewardship."
+        headline="Support land, water and health in Nepal."
+        dek="Contributions fund ZenTrust's charitable programs — watershed and food-forest restoration in Nepal, the Abhilekh health record, and open research."
         belowAnchorId="content"
         mode="confirm"
       />
@@ -139,6 +166,40 @@ export default function StewardshipCheckoutPage() {
               />
             </RadioGroup>
           </div>
+
+          {/* Program preference (non-binding) */}
+          <fieldset className="pt-4 space-y-2">
+            <legend className="text-sm font-medium leading-none mb-2">
+              Program preference (optional)
+            </legend>
+            <div className="flex flex-wrap gap-2">
+              {PROGRAM_OPTIONS.map((opt) => (
+                <label
+                  key={opt.value}
+                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs cursor-pointer ${
+                    program === opt.value
+                      ? "border-primary bg-primary/10 text-primary"
+                      : "border-border text-muted-foreground hover:border-primary/50"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="program"
+                    value={opt.value}
+                    checked={program === opt.value}
+                    onChange={() => setProgram(opt.value)}
+                    className="h-3 w-3 accent-current"
+                  />
+                  {opt.label}
+                </label>
+              ))}
+            </div>
+            <p className="text-[11px] text-muted-foreground">
+              We honor program preferences wherever possible. Final use of
+              funds is at the discretion of ZenTrust&apos;s board in furtherance
+              of its charitable purposes.
+            </p>
+          </fieldset>
         </div>
 
         {/* Confirmation */}
