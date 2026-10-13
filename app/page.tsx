@@ -4,11 +4,11 @@ import { GlobalHero } from "@/components/hero/GlobalHero";
 import MissionSection from "@/components/mission/MissionSection";
 import { ImpactCounters } from "@/components/impact/ImpactCounters";
 import { NewsletterSignup } from "@/components/newsletter/NewsletterSignup";
+import { HomePrograms } from "@/components/programs/HomePrograms";
 
 /**
- * The HomePage serves as the primary educational entry point for ZenTrust.
- * Content is curated to provide public research and ecological documentation
- * in accordance with 170(b)(1)(A)(vi) public charity standards.
+ * HomePage: states what ZenTrust funds (Nepal programs) and how to give,
+ * followed by the research/education pillars.
  */
 export default function HomePage() {
   const contentId = "content";
@@ -16,13 +16,11 @@ export default function HomePage() {
   return (
     <main className="relative min-h-screen">
       <GlobalHero
-        headline={`Documenting land systems. 
-Synthesizing public ecology. 
-Advancing collective research.`}
-        dek={`ZenTrust is a 501(c)(3) public charity.
-This platform provides open-access research for public understanding.
-We do not offer professional advice. We focus on field observations, 
-literature reviews, and the documentation of regenerative ecological systems.`}
+        headline={`Restoring land, water and health
+in the hills of Nepal.`}
+        dek={`ZenTrust is a US 501(c)(3) public charity. We fund watershed restoration and a syntropic food forest in Kakani, Nepal, build Abhilekh — a patient-controlled health record — and publish open research on how land and people recover.`}
+        primaryCta={{ label: "Support the Nepal program", href: "/nepal" }}
+        secondaryCta={{ label: "Give now", href: "/stewardship/checkout" }}
         determination={{
           text: "Recognized as a 170(b)(1)(A)(vi) public charity.",
           label: "View Determination Letter",
@@ -33,6 +31,11 @@ literature reviews, and the documentation of regenerative ecological systems.`}
       />
 
       <div id={contentId} className="relative z-0">
+        {/* Programs ZenTrust funds — primary landing destinations */}
+        <section className="scroll-mt-20">
+          <HomePrograms />
+        </section>
+
         {/* MissionSection handles the core 'Why' and 'How' of our research mission */}
         <section className="scroll-mt-20">
           <MissionSection />

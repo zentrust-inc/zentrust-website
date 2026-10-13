@@ -4,14 +4,25 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Mail, Leaf, Search, BookOpen, BarChart3 } from "lucide-react"
 import { GlobalHero } from "@/components/hero/GlobalHero"
+import { subscribeToNewsletter } from "@/lib/newsletter"
 
 export default function ResearchNewsletterPage() {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubscribed(true)
+    setError(null)
+    setLoading(true)
+    const result = await subscribeToNewsletter(email, "newsletter_page")
+    setLoading(false)
+    if (result.ok) {
+      setIsSubscribed(true)
+    } else {
+      setError(result.error)
+    }
   }
 
   if (isSubscribed) {
@@ -73,9 +84,14 @@ export default function ResearchNewsletterPage() {
                     className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-neutral-50 focus:ring-2 focus:ring-primary/20 transition-all"
                   />
                 </div>
-                <Button type="submit" className="w-full" size="lg">
-                  <Mail className="mr-2 h-4 w-4" /> Subscribe to Digest
+                <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                  <Mail className="mr-2 h-4 w-4" /> {loading ? "Subscribing…" : "Subscribe to Digest"}
                 </Button>
+                {error && (
+                  <p role="alert" className="text-sm text-destructive text-center">
+                    {error}
+                  </p>
+                )}
                 <div className="pt-4 border-t border-neutral-100">
                   <p className="text-[11px] text-muted-foreground text-center leading-tight">
                     By subscribing, you agree to receive educational research 

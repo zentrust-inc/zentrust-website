@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Script from "next/script";
 import { Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,34 +14,55 @@ export default function ThankYouPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  /* ----------------------------------------------------------------
+     GOOGLE ADS / GA4 DONATION CONVERSION
+     - Reports the real gift amount (passed in the Stripe success URL)
+     - Fires once per Stripe session (reloads don't double count)
+     - transaction_id lets Google de-duplicate as well
+     ---------------------------------------------------------------- */
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get("session_id") || "";
+      const amount = Number(params.get("amount"));
+      const value =
+        Number.isFinite(amount) && amount > 0 ? amount : 5;
+
+      const key = `zt_donation_conversion_${sessionId || "nosession"}`;
+      if (sessionStorage.getItem(key)) return;
+      sessionStorage.setItem(key, "true");
+
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      const gtag =
+        typeof w.gtag === "function"
+          ? w.gtag
+          : function () {
+              // eslint-disable-next-line prefer-rest-params
+              w.dataLayer.push(arguments);
+            };
+
+      gtag("event", "conversion", {
+        send_to: "AW-17898582360/BssVCI6UwuwbENji2tZC",
+        value,
+        currency: "USD",
+        transaction_id: sessionId || undefined,
+      });
+
+      // GA4 recommended event for donations/purchases
+      gtag("event", "purchase", {
+        transaction_id: sessionId || undefined,
+        value,
+        currency: "USD",
+        items: [{ item_name: `Donation (${params.get("frequency") || "once"})` }],
+      });
+    } catch {
+      // fail silently
+    }
+  }, []);
+
   return (
     <>
-      {/* --------------------------------------------------------------
-          GOOGLE ADS CONVERSION — FIRE ONCE PER SESSION
-          -------------------------------------------------------------- */}
-      <Script id="zt-ads-donation-conversion" strategy="afterInteractive">
-        {`
-          try {
-            const key = 'zt_donation_conversion_fired';
-            if (!sessionStorage.getItem(key)) {
-              sessionStorage.setItem(key, 'true');
-
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-
-              gtag('event', 'conversion', {
-                send_to: 'AW-17898582360/BssVCI6UwuwbENji2tZC',
-                value: 5.0,
-                currency: 'USD'
-              });
-            }
-          } catch (e) {
-            // fail silently
-          }
-        `}
-      </Script>
-
-      {/* -------------------------------------------------------------- */}
       <main className="min-h-[100svh] flex items-center justify-center px-6 py-16 bg-[#F6F0E6] dark:bg-[#0f1110]">
         <div className="max-w-md w-full text-center">
           <div className="flex justify-center mb-4">
