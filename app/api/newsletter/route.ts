@@ -10,19 +10,23 @@ import { NextResponse } from "next/server";
  * (see supabase/newsletter_subscribers.sql) using the REST API, so no
  * extra npm dependency is needed.
  *
- * Required environment variables (server-side only, never NEXT_PUBLIC_):
- *   SUPABASE_URL                e.g. https://xxxx.supabase.co
- *   SUPABASE_SERVICE_ROLE_KEY   service role key (bypasses RLS)
+ * Required environment variables:
+ *   SUPABASE_URL               e.g. https://xxxx.supabase.co
+ *   SUPABASE_PUBLISHABLE_KEY   the project's publishable (public) key
+ *
+ * The table's row-level security lets the public key INSERT only: it cannot
+ * read, change or delete subscribers, so no secret key is needed here.
+ * Duplicates hit the unique email constraint (HTTP 409) and count as success.
  */
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(req: Request) {
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
 
   if (!url || !key) {
-    console.error("Newsletter: SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not set.");
+    console.error("Newsletter: SUPABASE_URL / SUPABASE_PUBLISHABLE_KEY not set.");
     return NextResponse.json(
       { error: "Signups are temporarily unavailable. Please try again later." },
       { status: 503 }
@@ -50,21 +54,20 @@ export async function POST(req: Request) {
 
   try {
     const res = await fetch(
-      `${url.replace(/\/$/, "")}/rest/v1/newsletter_subscribers?on_conflict=email`,
+      `${url.replace(/\/$/, "")}/rest/v1/newsletter_subscribers`,
       {
         method: "POST",
         headers: {
           apikey: key,
-          Authorization: `Bearer ${key}`,
           "Content-Type": "application/json",
-          // Existing subscribers are left as-is (no error, no duplicate).
-          Prefer: "resolution=ignore-duplicates,return=minimal",
+          Prefer: "return=minimal",
         },
         body: JSON.stringify({ email, source }),
       }
     );
 
-    if (!res.ok) {
+    // 409 = already subscribed: treat as success, no duplicate stored.
+    if (!res.ok && res.status !== 409) {
       console.error("Newsletter insert failed:", res.status, await res.text());
       return NextResponse.json(
         { error: "Could not subscribe right now. Please try again." },
