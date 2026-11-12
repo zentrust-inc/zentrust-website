@@ -1,6 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { RitualPause } from "@/components/hero/RitualPause";
+import { InlineSignup } from "@/components/newsletter/InlineSignup";
 
 type QuestionSection = {
   /** Sub-question title (must end with ?) */
@@ -43,6 +45,9 @@ export function QuestionFrame({
   sections,
   ending,
 }: QuestionFrameProps) {
+  const pathname = usePathname() || "";
+  const slug = pathname.split("/").filter(Boolean).pop() || "question";
+
   return (
     <main className="bg-[#faf7f2] text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
       {/* ================= FULL-SCREEN HERO ================= */}
@@ -109,6 +114,11 @@ export function QuestionFrame({
           </details>
         ))}
       </section>
+
+      {/* ================= NEWSLETTER ================= */}
+      <div className="px-6">
+        <InlineSignup source={`question:${slug}`} />
+      </div>
 
 {/* ================= ENDING ================= */}
 <footer className="mx-auto max-w-3xl px-6 pb-12 text-center text-sm text-neutral-500 space-y-3">
