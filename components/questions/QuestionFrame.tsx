@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RitualPause } from "@/components/hero/RitualPause";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
@@ -36,6 +37,9 @@ type QuestionFrameProps = {
 
   /** Ending reflection (exactly 3 lines) */
   ending: [string, string, string];
+
+  /** Optional bridge to a ZenTrust program (shown before the sign-up box) */
+  nextStep?: { heading: string; text: string; href: string; label: string };
 };
 
 export function QuestionFrame({
@@ -44,6 +48,7 @@ export function QuestionFrame({
   heroMetaphor,
   sections,
   ending,
+  nextStep,
 }: QuestionFrameProps) {
   const pathname = usePathname() || "";
   const slug = pathname.split("/").filter(Boolean).pop() || "question";
@@ -114,6 +119,24 @@ export function QuestionFrame({
           </details>
         ))}
       </section>
+
+      {/* ================= NEXT STEP (optional) ================= */}
+      {nextStep && (
+        <div className="px-6">
+          <aside className="mx-auto max-w-3xl rounded-2xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-900 dark:bg-emerald-950/40">
+            <h2 className="text-lg font-semibold">{nextStep.heading}</h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-800 dark:text-neutral-200">
+              {nextStep.text}
+            </p>
+            <Link
+              href={nextStep.href}
+              className="mt-4 inline-block rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800"
+            >
+              {nextStep.label}
+            </Link>
+          </aside>
+        </div>
+      )}
 
       {/* ================= NEWSLETTER ================= */}
       <div className="px-6">
