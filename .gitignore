@@ -89,3 +89,4 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+lib/search/lines.generated.json
