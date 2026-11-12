@@ -1,6 +1,7 @@
 // app/questions/purpose-of-life/page.tsx
 import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
+import { InlineSignup } from "@/components/newsletter/InlineSignup";
 
 export const metadata: Metadata = {
   title: "Why do humans keep searching for the purpose of life?",
@@ -161,6 +162,8 @@ for the purpose of life?`}
             </p>
           </Details>
         </div>
+
+        <InlineSignup source="question:purpose-of-life" />
 
         <footer className="mt-14 border-t pt-6 text-sm text-neutral-600 dark:text-neutral-400">
           ZenTrust, Inc. | EIN 33-4318487 | 501(c)(3)
