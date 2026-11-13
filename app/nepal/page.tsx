@@ -6,6 +6,7 @@ import "./nepal.css";
 
 import { HeroVideo } from "@/components/nepal/HeroVideo";
 import { Raindrop } from "@/components/nepal/Raindrop";
+import { NepalFilm } from "@/components/nepal/NepalFilm";
 
 import bareSlopes from "./media/bare-slopes.webp";
 import erodedBank from "./media/eroded-bank.webp";
@@ -95,6 +96,9 @@ export default function NepalProgramPage() {
           </dl>
         </div>
       </section>
+
+      {/* 2b. The film (hidden until its YouTube ID is set) */}
+      <NepalFilm poster={ridgeCrown} />
 
       {/* 3. Follow a raindrop */}
       <section id="rain" className="np-rain" aria-labelledby="np-rain-title">
