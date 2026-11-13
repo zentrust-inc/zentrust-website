@@ -35,7 +35,7 @@ export function NepalFilm({ poster }: Props) {
   };
 
   return (
-    <section className="np-film" aria-labelledby="np-film-title">
+    <section id="film" className="np-film" aria-labelledby="np-film-title">
       <div className="np-wrap">
         <div className="np-film-head">
           <h2 id="np-film-title">The story in 75 seconds</h2>
