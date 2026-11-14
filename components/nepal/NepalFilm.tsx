@@ -13,7 +13,7 @@ import Image, { type StaticImageData } from "next/image";
    To publish: paste the video's ID (the part after "watch?v=" or after
    "youtu.be/") into NEPAL_FILM_YOUTUBE_ID. While it is empty, the whole
    section stays hidden. */
-export const NEPAL_FILM_YOUTUBE_ID = "";
+export const NEPAL_FILM_YOUTUBE_ID = "BgoXwGtXiqc";
 
 type Props = { poster: StaticImageData };
 
