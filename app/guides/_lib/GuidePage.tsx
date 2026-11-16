@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
+import { FilmCard } from "@/components/film/FilmCard";
 import { GUIDES, getGuide } from "./guides";
 
 export function guideMetadata(slug: string): Metadata {
@@ -80,6 +81,8 @@ export function GuidePage({ slug }: { slug: string }) {
             </Link>
           </div>
         </section>
+
+        <FilmCard source={`guide:${g.slug}`} />
 
         <InlineSignup
           source={`guide:${g.slug}`}
