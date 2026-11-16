@@ -7,6 +7,7 @@ import "./nepal.css";
 import { HeroVideo } from "@/components/nepal/HeroVideo";
 import { Raindrop } from "@/components/nepal/Raindrop";
 import { NepalFilm } from "@/components/nepal/NepalFilm";
+import { GivingTuesdayBanner } from "@/components/givingtuesday/GivingTuesdayBanner";
 
 import bareSlopes from "./media/bare-slopes.webp";
 import erodedBank from "./media/eroded-bank.webp";
@@ -50,6 +51,7 @@ const LAYERS = [
 export default function NepalProgramPage() {
   return (
     <div className="np">
+      <GivingTuesdayBanner />
       {/* 1. Hero: the real ridge, from the drone */}
       <section className="np-hero" aria-labelledby="np-title">
         <HeroVideo />
