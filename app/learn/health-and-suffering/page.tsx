@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata = {
   // Neutralized title to avoid Restricted Drug Term (PDT) flags
-  title: "Health Systems Research: Stress and Metabolic Patterns | ZenTrust",
+  title: { absolute: "Health Systems Research: Stress and Metabolic Patterns | ZenTrust" },
   description:
     "An educational guide exploring chronic stress patterns, metabolic energy markers, and the documentation of physiological outcomes in research literature.",
 };

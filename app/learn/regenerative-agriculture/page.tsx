@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Ecological Systems Research: Regenerative Agriculture Patterns | ZenTrust",
+  title: { absolute: "Ecological Systems Research: Regenerative Agriculture Patterns | ZenTrust" },
   description:
     "Documentation of patterns in regenerative agriculture research focusing on soil health, biodiversity, and ecosystem stability.",
 };

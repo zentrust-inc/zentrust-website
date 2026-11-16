@@ -2,7 +2,7 @@ import { GlobalHero } from "@/components/hero/GlobalHero";
 import { FileText, ShieldCheck, PieChart, Landmark } from "lucide-react";
 
 export const metadata = {
-  title: "Financials | ZenTrust",
+  title: { absolute: "Financials | ZenTrust" },
   description:
     "Plain details about ZenTrust's financial transparency commitments and compliance filings.",
 };

@@ -5,7 +5,7 @@ import { FilmCard } from "@/components/film/FilmCard";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
 
 export const metadata: Metadata = {
-  title: "What Is GivingTuesday? 1 December 2026 | ZenTrust",
+  title: { absolute: "What Is GivingTuesday? 1 December 2026 | ZenTrust" },
   description:
     "GivingTuesday is a global day of giving on the Tuesday after US Thanksgiving: 1 December 2026. How it works, how to check a charity, and our Nepal project.",
   alternates: { canonical: "/givingtuesday" },

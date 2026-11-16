@@ -5,7 +5,7 @@ import { InlineSignup } from "@/components/newsletter/InlineSignup";
 import { GUIDES } from "./_lib/guides";
 
 export const metadata: Metadata = {
-  title: "Land and Water Guides: Food Forests, Soil and Springs | ZenTrust",
+  title: { absolute: "Land and Water Guides: Food Forests, Soil and Springs | ZenTrust" },
   description:
     "Plain-language guides to food forests, syntropic agriculture, erosion control, contour trenches, recharge ponds and drying springs, from ZenTrust.",
   alternates: { canonical: "/guides" },

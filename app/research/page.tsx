@@ -1,7 +1,7 @@
 import { GlobalHero } from "@/components/hero/GlobalHero";
 
 export const metadata = {
-  title: "Research | ZenTrust",
+  title: { absolute: "Research | ZenTrust" },
   description: "Status update for ZenTrust research resources.",
 };
 
