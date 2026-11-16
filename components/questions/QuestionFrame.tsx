@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RitualPause } from "@/components/hero/RitualPause";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
+import { FilmCard } from "@/components/film/FilmCard";
 
 type QuestionSection = {
   /** Sub-question title (must end with ?) */
@@ -137,6 +138,11 @@ export function QuestionFrame({
           </aside>
         </div>
       )}
+
+      {/* ================= FILM ================= */}
+      <div className="px-6">
+        <FilmCard source={`question:${slug}`} />
+      </div>
 
       {/* ================= NEWSLETTER ================= */}
       <div className="px-6">
