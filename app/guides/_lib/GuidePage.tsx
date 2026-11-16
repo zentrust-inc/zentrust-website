@@ -9,7 +9,7 @@ import { GUIDES, getGuide } from "./guides";
 export function guideMetadata(slug: string): Metadata {
   const g = getGuide(slug);
   return {
-    title: g.metaTitle,
+    title: { absolute: g.metaTitle },
     description: g.description,
     alternates: { canonical: `/guides/${g.slug}` },
     openGraph: { title: g.title, description: g.description, url: `/guides/${g.slug}` },
