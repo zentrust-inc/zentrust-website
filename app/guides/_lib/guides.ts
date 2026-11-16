@@ -2869,6 +2869,2249 @@ export const GUIDES: Guide[] = [
       "what-is-ecological-succession",
     ],
   },
+  {
+    slug: "what-is-a-keystone-species",
+    title: "What is a keystone species?",
+    metaTitle: "Keystone Species: What They Are, With Examples | ZenTrust",
+    description: "A keystone species has a large effect on its ecosystem compared with how common it is. Classic examples, related ideas and why it matters for land care.",
+    shortAnswer: "A keystone species is a plant, animal or other organism whose effect on its ecosystem is much larger than its numbers would suggest. If it disappears, the community around it can change sharply, sometimes losing many other species.",
+    sections: [
+      {
+        heading: "Where the name comes from",
+        paragraphs: [
+          "A keystone is the wedge-shaped stone at the top of an arch. It is one stone among many, but if you pull it out, the arch falls. Ecologists borrowed the word for species that hold a community together in a similar way.",
+          "The key idea is that the effect is out of proportion to abundance. A very common species that matters simply because there is a lot of it is not usually called keystone. The term is for species whose influence far outweighs how common they are.",
+        ],
+      },
+      {
+        heading: "Classic examples",
+        list: [
+          "Sea stars on rocky shores: by eating mussels, they stop mussels from crowding out other shore life. Where sea stars were removed in experiments, variety on the rocks dropped.",
+          "Sea otters in kelp forests: they eat sea urchins. Without otters, urchins can graze kelp down to bare rock.",
+          "Beavers: their dams slow streams, raise water levels and create wetlands that many other species use.",
+          "Elephants on savannas: by knocking over and eating trees, they help keep open grassland from turning into woodland.",
+          "Fig trees in many tropical forests: they fruit at different times of year, so they feed birds, bats and monkeys when little else is available.",
+        ],
+      },
+      {
+        heading: "Related ideas",
+        list: [
+          "Ecosystem engineers: species that physically change their surroundings, such as beavers building dams or earthworms mixing soil.",
+          "Keystone resources: a food or habitat that many species depend on at a critical time, such as fruiting figs or a permanent water source.",
+          "Foundation species: common, dominant species such as reef corals or the main trees in a forest, which build the habitat itself.",
+          "Keystone mutualists: partners such as certain pollinators or seed dispersers that many plants rely on to reproduce.",
+        ],
+      },
+      {
+        heading: "Why it matters for land and water",
+        paragraphs: [
+          "Losing one keystone species can set off a chain of changes that is hard to reverse. That is one reason conservation work often focuses on protecting particular species or bringing them back.",
+          "For people restoring land, the idea is a reminder that not every plant or animal plays an equal role. Some trees feed wildlife in lean seasons, some animals spread seeds, and some organisms change how water moves. A mix of native species is more likely to include these key players than a single planted crop or tree.",
+        ],
+      },
+      {
+        heading: "Limits of the idea",
+        list: [
+          "It is often hard to prove a species is keystone without long study or careful experiments.",
+          "A species can have a strong role in one place and a weak one somewhere else.",
+          "The label is sometimes used loosely for any important or popular species.",
+          "Most ecosystems depend on many interactions, not on one species alone, so local ecologists are the best guide for a given site.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's program in Chauthe is at the planning and setup stage, and work on the hillside has not started. The plan begins with holding water in year one, through contour trenches, small check dams, recharge ponds and a community nursery.",
+      "In years two and three, the plan is to plant in layers: native and fruit trees, nitrogen fixers and ground cover. The site is now a pine monoculture above springs that ZenTrust reports are drying. ZenTrust sees the pine as a major cause, which it will measure. Pine will be thinned only where the Thumki Danda Gairikharka Community Forest User Group and the Division Forest Office approve. Species will be chosen with the user group and local nurseries.",
+    ],
+    related: [
+      "why-plant-native-trees",
+      "what-is-a-monoculture",
+      "what-is-ecological-succession",
+      "what-is-a-riparian-buffer",
+    ],
+  },
+  {
+    slug: "what-is-a-lichen",
+    title: "What is a lichen?",
+    metaTitle: "What Is a Lichen? Partnership, Types and Role | ZenTrust",
+    description: "A lichen is a partnership between a fungus and an alga or cyanobacterium. How lichens live, the main types and why they matter.",
+    shortAnswer: "A lichen is not a single organism but a partnership. A fungus lives together with a photosynthetic partner, usually a green alga or a cyanobacterium. The fungus provides structure and shelter, and the partner makes food from sunlight. Together they can grow on bare rock, bark and soil where few other things survive.",
+    sections: [
+      {
+        heading: "How the partnership works",
+        paragraphs: [
+          "The fungus makes up most of the lichen's body. It holds water, anchors the lichen to a surface and protects its partner from drying out and strong light. The alga or cyanobacterium lives inside the fungal layers and uses sunlight to make sugars, which feed both.",
+          "Some lichens also host other fungi and bacteria, so a lichen is best thought of as a small community rather than a pair.",
+        ],
+      },
+      {
+        heading: "Main types",
+        list: [
+          "Crustose: flat crusts pressed tightly onto rock or bark, hard to lift off.",
+          "Foliose: leafy, lobed sheets attached at points, with a distinct upper and lower side.",
+          "Fruticose: shrubby or hanging forms, such as beard-like strands on branches.",
+          "Some lichens mix features of these forms, so the groups are a rough guide.",
+        ],
+      },
+      {
+        heading: "Why lichens matter",
+        list: [
+          "They are pioneer species that can settle on bare rock and help begin soil formation.",
+          "They slowly break down rock surfaces, and their remains add organic matter.",
+          "Lichens with cyanobacteria can take nitrogen from the air and add it to the surroundings.",
+          "They provide food, shelter and nesting material for many insects, snails, birds and some mammals.",
+          "Reindeer moss, an important winter food for reindeer and caribou, is actually a lichen.",
+        ],
+      },
+      {
+        heading: "Lichens and clean air",
+        paragraphs: [
+          "Lichens have no roots. They take in water and nutrients directly from rain, mist and air, along with any pollutants. Many species are sensitive to air pollution, especially sulfur dioxide. A wide variety of lichens is often a sign of fairly clean air, and their loss can point to a problem. They grow slowly, so a damaged lichen community can take a long time to recover.",
+        ],
+      },
+      {
+        heading: "Common questions",
+        list: [
+          "Do lichens harm trees? No. They use bark only as a surface and do not feed on the tree.",
+          "Are lichens moss? No. Mosses are plants. Lichens are fungus-based partnerships, though the two often grow side by side.",
+          "Can you eat them? Some have been used as food or dyes, but some are toxic. Do not eat wild lichens without expert guidance.",
+          "Why do they survive dry spells? Many can dry out almost completely, go dormant and revive when wet again.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's published plan for Chauthe does not mention lichens, so this topic has little direct link to the planned work.",
+      "The plan focuses on water and trees. ZenTrust reports that springs below the pine forest are drying. In Year 1, the plan is to hold water with contour trenches, small check dams and recharge ponds, and to start a community nursery. Work on the hillside has not started yet.",
+    ],
+    related: [
+      "what-are-pioneer-species",
+      "what-is-ecological-succession",
+      "what-is-mycelium",
+      "what-is-topsoil",
+    ],
+  },
+  {
+    slug: "what-is-a-monsoon",
+    title: "What is a monsoon?",
+    metaTitle: "What Is a Monsoon? Causes, Seasons and Effects | ZenTrust",
+    description: "A monsoon is a seasonal shift in winds that brings a long wet season and a dry season. How it works, where it happens and what it means for land and water.",
+    shortAnswer: "A monsoon is a seasonal reversal of the prevailing winds over a large region. It is largely caused by land and sea heating at different rates. In summer, moist air flows in from the ocean and brings a long rainy season. In winter, drier air flows out from the land. People often use 'the monsoon' to mean the rainy season itself.",
+    sections: [
+      {
+        heading: "What causes a monsoon",
+        paragraphs: [
+          "Land heats up and cools down faster than the ocean. In summer, a large landmass grows hotter than the sea around it. Warm air over the land rises, which lowers the air pressure there. Cooler, moist air from the ocean flows in to replace it. As that air rises and cools, its moisture falls as rain, in repeated spells over a rainy season that can last months. The seasonal shift of the tropical rain belt also plays a large part.",
+          "In winter the pattern mostly reverses. The land cools faster than the sea, so winds blow from land toward the ocean. These winds usually carry little moisture, which is why many monsoon regions have a long dry season. Some coasts are an exception, where winter winds pick up moisture crossing the sea.",
+          "The word is thought to come from the Arabic word mawsim, meaning season. This is likely because sailors and traders timed their voyages to winds that changed direction at the same time each year.",
+        ],
+      },
+      {
+        heading: "Where monsoons happen",
+        list: [
+          "South Asia, including India, Nepal, Bangladesh and Pakistan. This is the best-known monsoon system.",
+          "East and Southeast Asia.",
+          "West Africa.",
+          "Northern Australia.",
+          "The southwestern United States and northwestern Mexico, which have a smaller summer monsoon.",
+        ],
+      },
+      {
+        heading: "Monsoons and mountains",
+        paragraphs: [
+          "When moist monsoon air meets hills or mountains, it is forced upward. It cools as it rises, and more of its moisture falls as rain. Slopes facing the incoming wind often get much more rain than nearby lowlands. Valleys and slopes on the far side can stay much drier. This sheltered area is called a rain shadow.",
+          "Monsoon rain is not steady. It often comes in heavy bursts with breaks in between. The amount and timing also change from year to year.",
+        ],
+      },
+      {
+        heading: "Why monsoons matter for land and water",
+        list: [
+          "Monsoon rain refills rivers, ponds, soil moisture and groundwater, which can feed springs and wells through the dry season.",
+          "Many farming systems in monsoon regions are built around the arrival of the rains.",
+          "Heavy rain on bare or compacted ground runs off fast. This can cause erosion, floods and landslides.",
+          "Water that runs off quickly does not soak in, so less is stored for the dry months.",
+          "A late, weak or uneven monsoon can lead to drought stress for crops and trees and water shortages for people.",
+        ],
+      },
+      {
+        heading: "Working with monsoon rain",
+        paragraphs: [
+          "The common goal in monsoon landscapes is to slow water down and help it soak in. Then more of the wet season's rain is still in the ground when the dry season comes.",
+        ],
+        list: [
+          "Keep soil covered with plants, leaf litter or mulch so heavy drops do not break it apart.",
+          "Use contour features such as trenches, swales or terraces to slow runoff on slopes.",
+          "Store water in ponds or tanks where the site allows it.",
+          "Plant trees and deep-rooted plants, which can open the soil and help water infiltrate.",
+          "Earthworks on steep or unstable slopes can be risky. Get local expert advice, and check whether permits are needed.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Chauthe is a hillside site in Ward 3 of Kakani Rural Municipality, Nepal, at about 1,200 to 1,600 m. As in most of Nepal, most of the year's rain falls during the summer monsoon. ZenTrust reports that springs below the site are drying. It describes the pine monoculture as a major cause, which it will measure.",
+      "The first year of ZenTrust's plan will focus on holding monsoon water on the hillside. The work will include contour trenches, small check dams and recharge ponds. The aim is for more rain to soak in rather than run off. A community nursery will also be set up.",
+      "The land is community forest of the Thumki Danda Gairikharka Community Forest User Group (CFUG). In years two and three, the plan is to plant in layers with native and fruit trees, nitrogen fixers and ground cover. Pine will be thinned only where the CFUG and the Division Forest Office approve. Work on the hillside has not started yet.",
+    ],
+    related: [
+      "what-is-a-rain-shadow",
+      "groundwater-recharge",
+      "contour-trenches",
+      "what-causes-landslides",
+    ],
+  },
+  {
+    slug: "what-is-the-carbon-cycle",
+    title: "What is the carbon cycle?",
+    metaTitle: "What Is the Carbon Cycle? A Plain Guide | ZenTrust",
+    description: "The carbon cycle is how carbon moves between air, plants, soil, oceans and rock. Its main stores, how carbon moves, and how land use changes it.",
+    shortAnswer: "The carbon cycle is the constant movement of carbon between the air, living things, soil, oceans and rock. Plants take carbon dioxide from the air to grow. Breathing, decay and burning send it back. Some carbon is held for days, some for centuries, and some for millions of years.",
+    sections: [
+      {
+        heading: "Where carbon is stored",
+        paragraphs: [
+          "Carbon is found in every living thing and in many non-living ones. Scientists group these places into stores, sometimes called pools or reservoirs.",
+        ],
+        list: [
+          "The atmosphere, mainly as carbon dioxide, with smaller amounts of methane.",
+          "Living plants, animals, fungi and microbes.",
+          "Soil, as dead roots, leaf litter and humus.",
+          "Oceans, lakes and rivers, as dissolved carbon and in water life.",
+          "Rocks such as limestone, and fossil fuels such as coal, oil and gas.",
+        ],
+      },
+      {
+        heading: "How carbon moves",
+        list: [
+          "Photosynthesis: plants and algae take carbon dioxide from air or water and use sunlight to turn it into sugars and plant tissue.",
+          "Respiration: plants, animals and microbes break down sugars for energy and release carbon dioxide.",
+          "Decomposition: fungi and bacteria break down dead material. Some carbon returns to the air and some stays in the soil.",
+          "Ocean exchange: carbon dioxide dissolves into seawater and can also escape back to the air.",
+          "Burning: wildfires and the burning of wood and fossil fuels release stored carbon quickly.",
+          "Rock processes: weathering slowly draws carbon from the air, and volcanoes release it.",
+        ],
+      },
+      {
+        heading: "The fast cycle and the slow cycle",
+        paragraphs: [
+          "In the fast cycle, carbon moves between air, plants, animals, soil and the ocean surface. A leaf can grow, fall and rot within a year. A tree trunk or deep soil can hold carbon much longer.",
+          "In the slow cycle, carbon moves through rocks, deep ocean sediments and fossil fuels. These changes normally take a very long time. Burning fossil fuels takes carbon from the slow cycle and puts it into the fast cycle within a short span.",
+        ],
+      },
+      {
+        heading: "The role of forests and soil",
+        paragraphs: [
+          "Growing plants pull carbon from the air. Some of it goes into wood, and some goes underground through roots. Fallen leaves, dead roots and soil life turn part of it into soil organic matter.",
+          "This storage is not permanent. Fire, clearing, erosion and frequent plowing can send carbon back to the air. Land that keeps a living cover, healthy soil and a mix of plants tends to hold carbon more steadily than bare or disturbed ground. How much it holds depends on climate, soil and how the land is managed.",
+        ],
+      },
+      {
+        heading: "How people change the cycle",
+        list: [
+          "Burning coal, oil and gas releases carbon that was locked away underground.",
+          "Clearing forests removes plants that take up carbon and often releases carbon from the wood and soil.",
+          "Plowing, overgrazing and erosion can reduce the carbon held in soil.",
+          "Extra carbon dioxide and methane in the air trap more heat, which is the main driver of current climate change.",
+          "Restoring forests, wetlands and soils can help move some carbon back into land, though it does not cancel ongoing emissions.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's plan for Chauthe, Nepal, starts with water. The program is at the planning and setup stage, and work on the hillside has not started. ZenTrust reports that springs below the hillside are drying, and it describes the pine monoculture as a major cause, which it will measure.",
+      "In the first year, the plan is to hold water on the slope with contour trenches, small check dams and recharge ponds, and to start a community nursery. In years two and three, the plan is to plant native and fruit trees, nitrogen fixers and ground cover in layers. Pine will be thinned only where the community forest user group and the Division Forest Office approve.",
+      "From year four on, the plan is to let the forest lead. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "what-is-soil-organic-matter",
+      "what-is-leaf-litter",
+      "what-is-humus",
+      "what-is-the-nitrogen-cycle",
+    ],
+  },
+  {
+    slug: "what-is-a-berm",
+    title: "What is a berm?",
+    metaTitle: "Berm: What It Is and How It Works on Land | ZenTrust",
+    description: "A berm is a raised bank of earth used to guide, slow or hold water, or to block wind and noise. How berms work, common uses and what can go wrong.",
+    shortAnswer: "A berm is a raised bank or mound of earth, usually long and low. On farms and hillsides, berms are used to slow, spread or hold rainwater. They are often built from the soil dug out of a trench, swale or pond next to them.",
+    sections: [
+      {
+        heading: "What a berm is",
+        paragraphs: [
+          "A berm is a strip of raised ground with sloping sides. It can be made of soil, rock, gravel or a mix, and is usually covered with plants to hold it in place.",
+          "The word is used in several fields. In land and water work, it means a low earth bank that changes how water moves across the ground. In gardens, it can mean a shaped mound for planting. On beaches, it means a natural ridge of sand or gravel left by waves.",
+        ],
+      },
+      {
+        heading: "Common uses",
+        list: [
+          "Slowing runoff on a slope so more rain soaks into the ground.",
+          "Steering water away from buildings, paths or eroding areas.",
+          "Holding water in a pond, basin or rain garden.",
+          "Keeping floodwater or polluted runoff out of a field or stream.",
+          "Blocking wind, noise or views when planted with shrubs and trees.",
+        ],
+      },
+      {
+        heading: "Berms with swales and trenches",
+        paragraphs: [
+          "A berm is often paired with a ditch. When a swale or contour trench is dug along the level line of a slope, the dug soil is piled on the downhill side as a berm. Water running down the slope collects in the ditch, and the berm helps keep it there while it soaks in.",
+          "Because the ground beside a berm often stays moist longer, berms are often good places to plant trees, shrubs and ground cover. The roots then help hold the berm together.",
+        ],
+      },
+      {
+        heading: "How a berm is built",
+        list: [
+          "Mark the line first. For water work this is usually a contour, where every point is at the same height.",
+          "Pile and firm the soil in thin layers rather than in one loose heap.",
+          "Keep the sides gentle enough that they do not slump or wash away.",
+          "Plan a safe overflow, such as a lower spillway of rock or grass, for heavy rain.",
+          "Cover the fresh soil quickly with mulch, seed or plants.",
+        ],
+      },
+      {
+        heading: "Risks and trade-offs",
+        list: [
+          "A berm without a safe overflow can be overtopped in a storm and fail, which can cause more erosion than before.",
+          "Bare new berms erode easily until plants take hold.",
+          "On steep or unstable slopes, holding extra water in the ground can raise the risk of slips or landslides.",
+          "Large berms and berms that hold back water may need engineering advice and local permits.",
+          "Changing water flow can affect neighbors, roads and streams downhill, so it is worth checking with local authorities and the people affected.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Berms are not named as a separate step in ZenTrust's plan. Contour trenches and ponds of the kind the plan describes often have a berm on the downhill side, but ZenTrust has not set out those design details.",
+      "ZenTrust reports that springs below the Chauthe hillside are drying. In Year 1, the plan is to hold more rain on the slope with contour trenches, small check dams and recharge ponds, and to set up a community nursery. The program is at the planning and setup stage, and work on the hillside has not started. The site is community forest managed by the Thumki Danda Gairikharka Community Forest User Group.",
+    ],
+    related: ["what-is-a-swale", "contour-trenches", "recharge-ponds", "what-is-surface-runoff"],
+  },
+  {
+    slug: "how-to-plant-a-tree",
+    title: "How do you plant a tree?",
+    metaTitle: "How to Plant a Tree: A Step-by-Step Guide | ZenTrust",
+    description: "How to plant a tree step by step: choosing a spot, digging the hole, setting the root flare, watering, mulching and early care.",
+    shortAnswer: "Choose a tree that suits the site, then dig a hole that is wide and shallow, no deeper than the root ball. Set the tree so the root flare sits at or just above ground level, refill with the soil you dug out, and water well. Add mulch, keeping it off the trunk, and water regularly until the roots are established.",
+    sections: [
+      {
+        heading: "Before you dig",
+        list: [
+          "Pick a species that suits your climate, soil, sun and available space when fully grown.",
+          "Check how tall and wide the tree will get, and keep it clear of buildings, wires and paths.",
+          "Contact your local utility locating service before digging, so you do not hit buried lines.",
+          "Plant during the cool or rainy season for your area, when the tree is under less stress.",
+          "Keep the roots moist and shaded until planting. Dry roots are a common cause of failure.",
+        ],
+      },
+      {
+        heading: "Step by step",
+        list: [
+          "Dig a hole about two to three times as wide as the root ball, but no deeper than it.",
+          "Find the root flare, where the trunk widens into the roots. Set the tree so the flare is at or slightly above the surrounding soil.",
+          "Remove the pot and any synthetic wrapping, and cut away a wire basket at least from the top of the root ball. Gently loosen or cut roots that circle the root ball.",
+          "Refill the hole with the soil you dug out, firming it lightly with your hands to remove large air pockets.",
+          "Water slowly and deeply to settle the soil.",
+          "Spread mulch over the root area, leaving a gap around the trunk.",
+        ],
+      },
+      {
+        heading: "Common mistakes",
+        paragraphs: [
+          "Planting too deep is one of the most common problems. A buried root flare can lead to rot and weak growth over time. It is better to plant a little high than too low.",
+        ],
+        list: [
+          "Heaping mulch against the trunk, which keeps bark wet and invites rot and pests.",
+          "Filling the hole with rich compost only, which can make roots stay in the hole instead of spreading out.",
+          "Staking too tightly or for too long, which can weaken the trunk.",
+          "Forgetting to water during dry spells in the first years.",
+        ],
+      },
+      {
+        heading: "Bare-root, container and seedlings",
+        paragraphs: [
+          "Bare-root trees are sold without soil and are usually planted while dormant. Spread the roots out over a small mound of soil in the hole. Container trees can be planted over a longer season, but their roots often circle and need loosening. Small seedlings from a nursery are cheap and often establish well, though they need protection from weeds and grazing animals.",
+        ],
+      },
+      {
+        heading: "Aftercare",
+        paragraphs: [
+          "A new tree needs regular water until its roots grow into the surrounding soil, which can take a few seasons. Water deeply and less often rather than a little every day. Keep grass and weeds back from the base, and refresh mulch as it breaks down. Stake only if the tree cannot stand on its own or the site is very windy, and remove ties once it is stable.",
+        ],
+      },
+      {
+        heading: "Planting on slopes",
+        paragraphs: [
+          "On a hillside, a small flat basin or half-moon of soil on the downhill side helps catch rain around the tree. Trenches or swales dug along the contour slow runoff, and trees planted beside them can use the water they hold. Steep or unstable slopes need care, so local forestry or soil conservation advice is worth getting.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's Nepal program is still being planned, and work on the hillside has not started. In the plan, Year 1 focuses on holding water on the hillside and setting up a community nursery.",
+      "In years 2 and 3, the plan is to plant in layers: native and fruit trees, nitrogen fixers and ground cover. Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries. Pine will be thinned only where the user group and the Division Forest Office approve.",
+    ],
+    related: [
+      "when-to-plant-trees",
+      "how-to-grow-trees-from-seed",
+      "why-plant-native-trees",
+      "what-is-mulch",
+    ],
+  },
+  {
+    slug: "what-is-loam-soil",
+    title: "What is loam soil?",
+    metaTitle: "Loam Soil: What It Is and Why Growers Value It | ZenTrust",
+    description: "Loam is soil with a balanced mix of sand, silt and clay. What it is, why it suits most plants, its main types and how to tell if you have it.",
+    shortAnswer: "Loam is soil with a balanced mix of sand, silt and clay, usually with less clay than sand or silt, so no single particle size dominates how it behaves. It drains well but still holds moisture and nutrients, which is why it suits most garden plants and crops.",
+    sections: [
+      {
+        heading: "What loam is made of",
+        paragraphs: [
+          "All mineral soil is made of particles of three sizes. Sand is the largest and feels gritty. Silt is medium and feels smooth, like flour. Clay is the smallest and feels sticky when wet.",
+          "The share of each is called soil texture. Soil scientists use a chart called the soil texture triangle to name each mix. Loam sits in a central part of the triangle. It usually has less clay than sand or silt, because a little clay has a big effect, so the three sizes balance each other out in how the soil behaves.",
+        ],
+      },
+      {
+        heading: "Why growers value it",
+        list: [
+          "Sand keeps it open, so water drains and air reaches roots.",
+          "Clay and silt help it hold water and nutrients between rains.",
+          "It is usually easy to dig and work when moist.",
+          "Roots can spread through it without much resistance.",
+          "It responds well to added organic matter, which feeds soil life.",
+        ],
+      },
+      {
+        heading: "Main types of loam",
+        paragraphs: [
+          "Most real soils are not a perfect balance. When one particle size leans a little heavier, the soil gets a more specific name.",
+        ],
+        list: [
+          "Sandy loam: more sand, drains fast, warms quickly in spring, dries out sooner.",
+          "Silt loam: more silt, smooth and fertile, but can form a crust on the surface after heavy rain.",
+          "Clay loam: more clay, holds water and nutrients well, but can get sticky when wet and hard when dry.",
+          "Loam: a balanced mix, with none of these traits strongly showing.",
+        ],
+      },
+      {
+        heading: "How to tell what you have",
+        list: [
+          "Feel test: rub moist soil between your fingers. Gritty points to sand, silky to silt, sticky to clay.",
+          "Ribbon test: squeeze moist soil between thumb and finger. A long ribbon means more clay; loam forms a short ribbon that breaks easily.",
+          "Jar test: shake soil with water in a clear jar and let it settle. Sand sinks first, then silt, with clay settling last.",
+          "Lab test: a soil lab or local extension service can measure texture, and often pH and nutrients too.",
+        ],
+      },
+      {
+        heading: "Can you turn soil into loam?",
+        paragraphs: [
+          "Texture is hard to change. It depends mostly on the rock and minerals the soil formed from, and you would need to add huge amounts of material to shift it. Adding sand to clay soil is often discouraged, because a small amount can make it set harder.",
+          "What you can change is structure: how particles clump together and how much space there is for air and water. Adding compost, mulch and other organic matter, keeping roots in the ground and avoiding compaction all help most soils behave more like loam over time.",
+          "Note that \"loam\" sold in bags or by the truckload is a trade term. Quality varies, so it is worth asking what is in it.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Work on ZenTrust's hillside site in Chauthe, Nepal, has not started yet, so there are no soil results to report.",
+      "In Year 1, the plan is to hold water on the hillside with contour trenches, small check dams and recharge ponds, and to set up a community nursery. In Years 2-3, the plan is to plant in layers: native and fruit trees, nitrogen fixers and ground cover. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "what-is-topsoil",
+      "how-to-improve-clay-soil",
+      "what-is-soil-organic-matter",
+      "what-is-humus",
+    ],
+  },
+  {
+    slug: "what-is-a-floodplain",
+    title: "What is a floodplain?",
+    metaTitle: "Floodplains: What They Are and Why They Matter | ZenTrust",
+    description: "A floodplain is flat land beside a river that floods when water overflows its banks. How floodplains form, what they do and why building on them is risky.",
+    shortAnswer: "A floodplain is the flat, low land next to a river or stream that is covered with water when the river rises over its banks. Floods are a normal part of how this land works. They spread water out, slow it down and leave behind fresh layers of sediment.",
+    sections: [
+      {
+        heading: "How floodplains form",
+        paragraphs: [
+          "Rivers move sideways over time. They wear away the outside of bends and drop sand and silt on the inside. When a river floods, the water spreads out and slows down, and the fine sediment it carries settles on the land. Over many years, this builds a wide, flat valley floor.",
+          "Floodplains are widest where rivers flow through lower, gentler ground. Narrow mountain streams often have little or no floodplain because the valley is too steep for sediment to settle.",
+        ],
+      },
+      {
+        heading: "What floodplains do",
+        list: [
+          "Store floodwater and release it slowly, which can lower flood peaks downstream.",
+          "Let water soak into the ground, which can help refill groundwater.",
+          "Trap sediment and some pollutants before they travel further downstream.",
+          "Build fertile soil from repeated layers of silt.",
+          "Provide habitat for fish, birds, wetland plants and riverside forests.",
+        ],
+      },
+      {
+        heading: "Farming and living on floodplains",
+        paragraphs: [
+          "Floodplain soils are often deep and fertile, and the land is flat and close to water. That is why many farms, towns and cities grew up on them. The same features that make them useful also make them risky.",
+          "Buildings, roads and crops on a floodplain can be damaged when the river rises. Floods can also come faster and higher where land upstream has been cleared or paved, because more rain runs off the surface instead of soaking in.",
+        ],
+      },
+      {
+        heading: "Flood zones and local rules",
+        paragraphs: [
+          "Many governments map floodplains and mark areas by how likely they are to flood. These maps can affect where building is allowed, what permits are needed and whether flood insurance is required. Maps are estimates, not guarantees, and land outside a mapped zone can still flood.",
+          "Anyone buying, building on or changing land near a river should check local flood maps and talk to the local planning office or a qualified professional.",
+        ],
+      },
+      {
+        heading: "Managing and protecting floodplains",
+        list: [
+          "Keep or restore trees and plants along riverbanks to hold soil and slow water.",
+          "Leave room for the river to spread out instead of hemming it in everywhere.",
+          "Avoid new buildings in the most flood-prone areas.",
+          "Restore wetlands that store water during high flows.",
+          "Slow runoff higher in the watershed so less water rushes downstream at once.",
+        ],
+      },
+      {
+        heading: "Trade-offs of levees and walls",
+        paragraphs: [
+          "Levees and flood walls can protect a town, but they also cut the river off from its floodplain. Water that cannot spread out may rise higher and flow faster further along. When a levee fails or is overtopped, damage can be severe. For this reason, many places now combine built defenses with giving rivers more space.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The Chauthe site is a hillside at about 1,200 to 1,600 m, not a floodplain, so this topic applies only indirectly to ZenTrust's plan.",
+      "The link is the idea of slowing water where it falls. Work has not started yet. In the first year, ZenTrust plans to build contour trenches, small check dams and recharge ponds to hold rain on the slope. The aim will be to help water soak in, since ZenTrust reports that springs below the site are drying.",
+    ],
+    related: [
+      "what-is-a-riparian-buffer",
+      "what-is-a-watershed",
+      "what-is-surface-runoff",
+      "what-is-infiltration",
+    ],
+  },
+  {
+    slug: "what-is-a-monoculture",
+    title: "What is a monoculture?",
+    metaTitle: "Monoculture: What It Is, Pros and Cons | ZenTrust",
+    description: "A monoculture is one crop or tree species grown alone over a wide area. Why it is common, its risks for soil, water and pests, and the alternatives.",
+    shortAnswer: "A monoculture is the practice of growing a single crop or tree species over a large area, often year after year. It is simple to plant, manage and harvest, but it can wear down soil, invite pests and disease, and support far less wildlife than a mixed planting.",
+    sections: [
+      {
+        heading: "What the word means",
+        paragraphs: [
+          "Mono means one, and culture here means growing. A wheat field, a large cornfield, a palm oil estate and a pine plantation are all monocultures. The term can also cover one variety of a crop, where every plant is close to genetically the same.",
+          "The opposite is a polyculture, where several species grow together in the same space, as in a natural forest, a mixed garden or a food forest.",
+        ],
+      },
+      {
+        heading: "Why monocultures are common",
+        list: [
+          "Planting, spraying and harvesting can all be done with the same machines at the same time.",
+          "Uniform crops are easier to sell in bulk and to process.",
+          "Farmers and foresters can specialize in one crop and its needs.",
+          "In the short term, yields of that one product per area can be high.",
+        ],
+      },
+      {
+        heading: "The main risks",
+        list: [
+          "Pests and diseases spread easily when every plant is the same host. A classic example is the potato famine in Ireland, where heavy reliance on a few nearly identical potato varieties let blight spread widely and, alongside political and economic causes, led to mass hunger.",
+          "Soil can lose nutrients, organic matter and structure when the same crop draws on the same nutrients year after year and the ground is left bare between crops.",
+          "More fertilizer and pesticide are often needed to keep yields up, which costs money and can pollute water.",
+          "Fewer kinds of plants mean fewer insects, birds and soil organisms.",
+          "A single crop failure or price drop can hit a farm or community hard.",
+        ],
+      },
+      {
+        heading: "Tree plantations as monocultures",
+        paragraphs: [
+          "Forests can be monocultures too. Large plantations of a single fast-growing tree, such as pine or eucalyptus, are common for timber, pulp or quick reforestation. They give tree cover, but they usually lack the layers of shrubs, herbs and ground plants found in a natural forest.",
+          "Dense stands can shade out other plants, and some drop thick needle or leaf litter that few species grow through. Some plantations are also linked to concerns about water use and fire risk. The effects depend on species, climate, soil and how the stand is managed, so local study matters.",
+        ],
+      },
+      {
+        heading: "Alternatives",
+        list: [
+          "Crop rotation: changing the crop in a field from season to season.",
+          "Intercropping and companion planting: growing two or more crops side by side.",
+          "Cover crops: keeping soil covered and alive between main crops.",
+          "Agroforestry and food forests: mixing trees, shrubs and ground plants in layers.",
+          "Mixed native forest restoration: replacing or diversifying single-species stands over time.",
+        ],
+        paragraphs: [
+          "Moving away from a monoculture usually takes several seasons, and the right mix depends on local conditions. Extension services, forestry offices and experienced local growers are good places to start.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust describes the hillside at Chauthe, in Kakani Rural Municipality, as a pine monoculture. The land is community forest of the Thumki Danda Gairikharka Community Forest User Group. ZenTrust reports that springs below the slope are drying and describes pine as \"a major cause, which we'll measure.\"",
+      "Work on the hillside has not started. In the first year, the plan is to hold water with contour trenches, small check dams and recharge ponds, and to set up a community nursery. In years two and three, the plan is to plant native and fruit trees, nitrogen fixers and ground cover in layers. Pine will be thinned only where the user group and the Division Forest Office approve.",
+      "From year four on, the aim is to let the forest lead. Species will be chosen with the user group and local nurseries.",
+    ],
+    related: [
+      "pine-plantations-and-water",
+      "what-is-agroforestry",
+      "crop-rotation-and-intercropping",
+      "why-plant-native-trees",
+    ],
+  },
+  {
+    slug: "what-is-a-rain-shadow",
+    title: "What is a rain shadow?",
+    metaTitle: "Rain Shadow: What It Is and Why One Side Stays Dry | ZenTrust",
+    description: "A rain shadow is a dry area on the downwind side of mountains. How it forms, well-known examples, and what it means for land, water and planting.",
+    shortAnswer: "A rain shadow is a drier area on the downwind side of a mountain range. Moist air rises over the mountains, cools and drops much of its rain on the windward side. By the time it sinks down the far side, it is warmer and drier, so less rain falls there.",
+    sections: [
+      {
+        heading: "How a rain shadow forms",
+        list: [
+          "Wind carries moist air, often from the sea, toward a mountain range.",
+          "The mountains force the air to rise. Rising air cools.",
+          "Cool air holds less water vapor, so clouds form and rain or snow falls on the windward slopes.",
+          "The air crosses the ridge with much of its moisture gone.",
+          "As it sinks down the leeward side, it warms and dries further, so clouds tend to break up rather than rain.",
+        ],
+      },
+      {
+        heading: "Well-known examples",
+        paragraphs: [
+          "Rain shadows are found on every continent with large mountain ranges. A few widely cited examples are below. The size of the effect depends on the height of the mountains and the direction of the prevailing winds.",
+        ],
+        list: [
+          "The Tibetan Plateau, north of the Himalaya, is much drier than the southern slopes that face the monsoon.",
+          "Land east of the Sierra Nevada in the western United States, including Death Valley, lies in a rain shadow.",
+          "East of the Cascade Range in Washington and Oregon, forests give way to drier grassland and shrubland.",
+          "Parts of Patagonia, east of the southern Andes, are dry steppe.",
+        ],
+      },
+      {
+        heading: "Signs you are in one",
+        list: [
+          "Rainfall drops noticeably once you cross a ridge, even over a short distance.",
+          "Vegetation changes from forest to grass, scrub or desert plants on the downwind side.",
+          "Skies are often clearer, and days can be warmer and nights cooler.",
+          "Warm, dry winds sometimes blow down the slopes. These are called foehn winds in the Alps and chinook winds in North America.",
+        ],
+      },
+      {
+        heading: "Small-scale versions",
+        paragraphs: [
+          "The same idea works on a smaller scale. A single hill or ridge can leave one valley drier than the next. On a single hill, the side facing the main rain-bearing wind may get more rain than the sheltered side. Slope direction also changes how much sun and drying a site gets. These local differences are part of what is called a microclimate.",
+        ],
+      },
+      {
+        heading: "What it means for land and water",
+        list: [
+          "Less rain means less water to soak in and recharge springs and groundwater, so holding the rain that does fall matters more.",
+          "Bare soil dries and erodes easily, so ground cover and mulch are especially useful.",
+          "Plant choices should suit drier conditions. Local nurseries and growers often know what survives.",
+          "Rivers in rain-shadow areas are often fed by snow and rain from the wetter side, which can make water rights and sharing important.",
+          "Climate records for a nearby town may not match your site if a ridge sits between them, so local observation helps.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "A rain shadow is mainly a regional effect. This guide does not assess whether Chauthe lies in one.",
+      "ZenTrust's plan for Chauthe focuses on keeping more of the rain that falls on the hillside. ZenTrust reports that springs below the hillside are drying. In the first year, it plans contour trenches, small check dams, recharge ponds and a community nursery to help water soak in rather than run off. Work on the hillside has not started yet.",
+      "In years two and three, the plan is to plant in layers: native and fruit trees, nitrogen fixers and ground cover. Pine will be thinned only where the Community Forest User Group and the Division Forest Office approve. Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries.",
+    ],
+    related: [
+      "what-is-a-monsoon",
+      "what-is-a-microclimate",
+      "rainwater-harvesting-in-the-hills",
+      "what-is-evapotranspiration",
+    ],
+  },
+  {
+    slug: "what-is-the-nitrogen-cycle",
+    title: "What is the nitrogen cycle?",
+    metaTitle: "The Nitrogen Cycle: How Nitrogen Moves Through Soil | ZenTrust",
+    description: "The nitrogen cycle is how nitrogen moves between air, soil, water and living things. The main steps, why they matter and how the cycle gets out of balance.",
+    shortAnswer: "The nitrogen cycle is the natural process that moves nitrogen between the air, soil, water and living things. Most nitrogen sits in the air as a gas that plants cannot use. Bacteria and a few other processes turn it into forms plants can take up. It then passes through plants and animals, returns to the soil when they die or leave waste, and some of it is eventually returned to the air.",
+    sections: [
+      {
+        heading: "Why nitrogen matters",
+        paragraphs: [
+          "Every living thing needs nitrogen to build proteins and DNA. Plants use a lot of it for leaves and growth, which is why yellowing leaves and slow growth are common signs of a shortage, though other problems can cause the same signs.",
+          "The catch is that most of the air is nitrogen gas, but plants and animals cannot use it in that form. It has to be converted first. The nitrogen cycle is the set of steps that does this and then returns some of it to the air.",
+        ],
+      },
+      {
+        heading: "The main steps",
+        list: [
+          "Fixation: certain bacteria turn nitrogen gas into ammonia. Some live freely in soil. Others live in root nodules of legumes and some trees. Lightning also fixes a small amount.",
+          "Nitrification: other soil bacteria convert ammonia into nitrite and then nitrate, a form most plants take up easily.",
+          "Uptake: plants absorb nitrate and ammonium through their roots and build them into their tissues. Animals get nitrogen by eating plants or other animals.",
+          "Decomposition: when leaves fall, plants die or animals leave waste, fungi and bacteria break the material down and release ammonium back into the soil.",
+          "Denitrification: in wet, low-oxygen soil, some bacteria turn nitrate back into nitrogen gas, which returns to the air.",
+        ],
+      },
+      {
+        heading: "The role of soil life",
+        paragraphs: [
+          "Almost every step depends on microbes. Healthy soil with plenty of organic matter, moisture and air supports these bacteria and fungi. Bare, compacted or eroded soil usually supports fewer, so nitrogen moves through the system less smoothly.",
+          "Organic matter also acts as a store. Nitrogen held in leaf litter, roots and humus is released slowly as it breaks down, rather than all at once.",
+        ],
+      },
+      {
+        heading: "How the cycle gets out of balance",
+        list: [
+          "Too much fertilizer: nitrate the plants do not use can wash down into groundwater or run off into streams and ponds, where it can feed algae and harm water quality.",
+          "Bare soil: with no living roots to take up nitrate, it is more easily lost in heavy rain.",
+          "Erosion: topsoil carries much of the land's nitrogen, so losing it means losing nutrients too.",
+          "Burning: fire releases much of the nitrogen in plants and litter into the air.",
+          "Waterlogging: soggy soil speeds up denitrification, so nitrogen escapes as gas.",
+        ],
+      },
+      {
+        heading: "Working with the cycle on the land",
+        list: [
+          "Grow legumes or nitrogen-fixing trees among other plants.",
+          "Keep soil covered with mulch, cover crops or ground-cover plants.",
+          "Return plant material to the soil through compost or chop-and-drop.",
+          "Use fertilizer, if any, in amounts the plants can actually use. Local agricultural advisers can help with this.",
+          "Slow down runoff so soil and nutrients stay in place.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's plan for the hillside at Chauthe includes nitrogen-fixing plants as one of the layers to be planted in years 2 and 3, alongside native and fruit trees and ground cover. Plants like these can add nitrogen to the soil through the bacteria in their roots.",
+      "Work on the hillside has not started yet. In year 1, the plan is to hold water in place with contour trenches, small check dams and recharge ponds, and to set up a community nursery. In general, keeping soil in place also helps keep its nutrients. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "nitrogen-fixing-trees",
+      "what-is-green-manure",
+      "cover-crops",
+      "what-is-soil-organic-matter",
+    ],
+  },
+  {
+    slug: "what-is-mycelium",
+    title: "What is mycelium?",
+    metaTitle: "Mycelium: What It Is and What It Does in Soil | ZenTrust",
+    description: "Mycelium is the thread-like body of a fungus, mostly hidden in soil and wood. What it is, what it does for soil and plants, and how to support it.",
+    shortAnswer: "Mycelium is the main body of a fungus. It is a network of very thin threads, called hyphae, that grows through soil, leaf litter and wood. Mushrooms are only the fruiting part. The mycelium does the work of breaking down dead material, helping many plants take up water and nutrients, and helping hold soil together.",
+    sections: [
+      {
+        heading: "Mycelium and mushrooms",
+        paragraphs: [
+          "A fungus is mostly hidden. Its threads branch and spread through whatever it is feeding on, often far beyond what you can see. When conditions are right, some fungi push up a mushroom to release spores. The mushroom is like an apple on a tree. The mycelium is the tree.",
+          "You can often see mycelium as white or pale fuzz under a log, in old mulch or in leaf mold. Many fungi never make a visible mushroom at all.",
+        ],
+      },
+      {
+        heading: "What mycelium does",
+        list: [
+          "Breaks down leaves, wood and other dead material, returning nutrients to the soil.",
+          "In mycorrhizal fungi, partners with plant roots and helps them take up water and nutrients such as phosphorus.",
+          "Binds soil particles into crumbs, which helps water soak in and helps soil resist erosion.",
+          "Adds to soil organic matter as threads grow and die.",
+          "Feeds a wide range of soil animals and microbes.",
+        ],
+      },
+      {
+        heading: "Main ways fungi live",
+        list: [
+          "Decomposers: feed on dead material such as fallen leaves and logs.",
+          "Mycorrhizal fungi: live with plant roots, trading nutrients and water for sugars from the plant.",
+          "Parasites: feed on living plants or animals and can cause disease.",
+          "Lichens: a fungus living together with algae or cyanobacteria.",
+        ],
+      },
+      {
+        heading: "Mycorrhizal networks",
+        paragraphs: [
+          "Most land plants form partnerships with mycorrhizal fungi. Some fungi wrap around roots and some grow partly inside root cells. Many trees, including pines and oaks, depend heavily on these partners.",
+          "Fungal threads can link the roots of more than one plant. Popular articles sometimes describe this as trees talking or sharing food through a network. Scientists still debate how much is actually passed between trees this way, so treat strong claims with care.",
+        ],
+      },
+      {
+        heading: "How to support mycelium",
+        list: [
+          "Dig and till less, since digging breaks the threads.",
+          "Keep soil covered with mulch, leaf litter or wood chips.",
+          "Keep living roots in the ground for as much of the year as you can.",
+          "Avoid heavy use of fungicides and large amounts of fertilizer, which can reduce fungal partners.",
+          "Leave some fallen wood and leaves where it is safe to do so.",
+        ],
+      },
+      {
+        heading: "A note on safety",
+        paragraphs: [
+          "Some mushrooms are deadly and can look like edible ones. Never eat a wild mushroom unless an experienced local expert has identified it. If someone may have eaten a poisonous mushroom, get medical help right away.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's plan for Chauthe does not name soil fungi directly, so the link here is general.",
+      "In Years 2 to 3 the plan is to plant in layers, with native and fruit trees, nitrogen fixers and ground cover, and from Year 4 to let the forest lead. Covered soil with many living roots is the kind of setting where soil fungi tend to do well. Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries. Work on the hillside has not started.",
+    ],
+    related: [
+      "what-is-soil-organic-matter",
+      "what-is-leaf-litter",
+      "no-till-farming",
+      "what-is-humus",
+    ],
+  },
+  {
+    slug: "what-is-greywater",
+    title: "What is greywater?",
+    metaTitle: "Greywater: What It Is and How to Reuse It Safely | ZenTrust",
+    description: "Greywater is used water from bathroom sinks, showers and laundry. What counts as greywater, how it is reused, the risks and basic safety rules.",
+    shortAnswer: "Greywater is lightly used household water from showers, bathtubs, bathroom sinks and washing machines. It does not include toilet water. With care, it can be reused to water plants, which saves fresh water, but it can carry germs and soap residues, so it needs simple handling rules.",
+    sections: [
+      {
+        heading: "What counts as greywater",
+        paragraphs: [
+          "Greywater is the water left after washing. Blackwater is water from toilets, and it is handled separately because it carries far more germs. Definitions vary by place, so check local rules.",
+        ],
+        list: [
+          "Usually greywater: showers, bathtubs, bathroom sinks and laundry water.",
+          "Sometimes counted as greywater, sometimes not: kitchen sink and dishwasher water, which can carry grease and food scraps.",
+          "Not greywater: toilet water and water used to wash diapers.",
+          "Best kept out of any reuse system: water with harsh cleaners, bleach, paint or solvents.",
+        ],
+      },
+      {
+        heading: "Why people reuse it",
+        list: [
+          "It cuts the amount of fresh water used for watering gardens and trees.",
+          "It sends less water into sewers or septic systems.",
+          "It turns a waste stream into a steady water source in dry seasons.",
+          "Trees and shrubs can use the small amount of nutrients it carries.",
+        ],
+      },
+      {
+        heading: "How it is commonly reused",
+        paragraphs: [
+          "The simplest systems use gravity or the washing machine pump to send water through a pipe to mulched basins around trees and shrubs. The water soaks into the mulch and soil, where soil life breaks down much of what it carries. More complex systems filter and treat the water, and some can supply toilet flushing. These usually need professional design and permits.",
+        ],
+      },
+      {
+        heading: "Risks and basic safety rules",
+        list: [
+          "Never drink greywater, and avoid skin contact where you can.",
+          "Do not store it for long. Untreated greywater turns smelly and grows germs quickly.",
+          "Release it below mulch or soil, not as a spray, and do not let it pool or run off the property.",
+          "Keep it off vegetables and fruit that are eaten raw or grow close to the ground. Trees and ornamental plants are a safer choice.",
+          "Keep it well away from wells, springs and streams.",
+          "Use mild soaps low in salt and boron. Salt can build up in soil and harm plants over time.",
+        ],
+      },
+      {
+        heading: "Rules and getting advice",
+        paragraphs: [
+          "Greywater rules differ widely. Some places allow simple systems with no permit, some require permits or inspections, and some do not allow reuse at all. Check with your local building, health or water authority before you install anything. A plumber or designer who knows local codes can help with the layout. If anyone in the home has a stomach illness, divert greywater to the sewer or septic system until they recover.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's Nepal program in Chauthe is at the planning and setup stage, and work on the hillside has not started. The plan centres on holding rainwater on the hillside, where ZenTrust reports that springs below are drying.",
+      "Once work begins, Year 1 of the plan is to hold the water with contour trenches, small check dams and recharge ponds, which aim to slow rain and help it soak into the ground, along with a community nursery.",
+    ],
+    related: ["rainwater-harvesting-in-the-hills", "what-is-mulch", "what-is-drip-irrigation"],
+  },
+  {
+    slug: "what-is-drip-irrigation",
+    title: "What is drip irrigation?",
+    metaTitle: "Drip Irrigation: What It Is and How It Works | ZenTrust",
+    description: "Drip irrigation delivers water slowly to plant roots through tubes and emitters. How it works, its main parts, benefits, drawbacks and when it fits.",
+    shortAnswer: "Drip irrigation is a way of watering plants by delivering water slowly, drop by drop, to the soil near their roots through a network of tubes and small outlets called emitters. Less water is lost to evaporation and runoff than with sprinklers or flooding, and leaves and paths stay drier.",
+    sections: [
+      {
+        heading: "How it works",
+        paragraphs: [
+          "Water flows from a source such as a tap, pump or raised tank into a main line, then into smaller tubes laid along plant rows or around trees. Emitters on those tubes release water at a slow, steady rate. The water soaks into a zone of soil around each emitter instead of spreading across the whole surface.",
+          "Because the flow is slow, the soil has time to absorb it. Watering runs for longer periods at low rates rather than in short, heavy bursts.",
+        ],
+      },
+      {
+        heading: "Main parts of a system",
+        list: [
+          "Water source: a tap, well, pump or tank. A tank raised above the plants can feed a low-pressure gravity system.",
+          "Filter: removes sand, silt and debris that would block the emitters.",
+          "Pressure regulator: keeps pressure low and even so tubes and emitters work as intended.",
+          "Main line and lateral tubes: carry water to each row or plant.",
+          "Emitters or drip tape: release water at a set rate near the roots.",
+          "Backflow preventer: stops irrigation water from flowing back into drinking supplies. Local rules may require one.",
+        ],
+      },
+      {
+        heading: "Benefits",
+        list: [
+          "Uses water more efficiently, since less is lost to evaporation, wind and runoff.",
+          "Keeps foliage dry, which can reduce some leaf diseases.",
+          "Waters plants, not paths, so fewer weeds sprout between rows.",
+          "Works on slopes and uneven ground where flood watering would run off.",
+          "Can be run on a timer, saving labor.",
+          "Can deliver dissolved fertilizer along with the water, a practice called fertigation.",
+        ],
+      },
+      {
+        heading: "Drawbacks and common problems",
+        list: [
+          "Emitters clog from sediment, algae or mineral deposits, so filters need regular cleaning.",
+          "Tubes can be damaged by sun, tools, animals and rodents.",
+          "Setup costs more than a hose, and parts wear out over time.",
+          "Roots tend to stay near the wetted zone, so plants can suffer quickly if the system fails.",
+          "In dry climates, salts can build up at the edges of the wetted area unless rain or occasional deeper watering flushes them.",
+        ],
+      },
+      {
+        heading: "Making it work well",
+        paragraphs: [
+          "Match emitter spacing and flow to the soil. Water spreads more sideways in clay soil and moves more directly downward in sandy soil, so sandy ground usually needs emitters closer together. Cover the tubes with mulch to cut evaporation and protect them from sun. Check lines by walking them while the water is on, and flush the ends now and then to clear sediment.",
+          "Drip is most useful where water is scarce, expensive or must be carried, and for crops, nurseries or young trees that need steady moisture. For larger systems, or where water rights and connections to public supplies are involved, local irrigation suppliers or agricultural extension services can help with design and rules.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Drip irrigation is not part of ZenTrust's stated plan for Chauthe. The plan's first year will focus on holding rainwater in the hillside with contour trenches, small check dams and recharge ponds, so water soaks into the ground rather than being piped to plants, along with setting up a community nursery.",
+      "ZenTrust reports that springs below the site are drying. The aim of the water work will be to help the land store more water on its own, ahead of planting in layers in later years.",
+    ],
+    related: [
+      "rainwater-harvesting-in-the-hills",
+      "what-is-mulch",
+      "what-is-greywater",
+      "how-to-start-a-tree-nursery",
+    ],
+  },
+  {
+    slug: "what-causes-landslides",
+    title: "What causes landslides?",
+    metaTitle: "What Causes Landslides? Triggers and Warning Signs | ZenTrust",
+    description: "Landslides happen when gravity overcomes the strength of a slope. The main causes, common triggers, warning signs and ways to lower the risk.",
+    shortAnswer: "A landslide happens when the pull of gravity on a slope becomes greater than the strength holding the soil and rock in place. Steep ground and weak material set the stage. Heavy or long rain, earthquakes, undercutting by rivers or roads, and loss of vegetation are common triggers.",
+    sections: [
+      {
+        heading: "The basic idea",
+        paragraphs: [
+          "Every slope is a balance. Gravity pulls soil and rock downhill. Friction and cohesion between particles, along with plant roots, hold it in place. When something tips that balance, part of the slope moves.",
+          "Most landslides have more than one cause. A slope may be weak for years before a single event, such as a storm, sets it off.",
+        ],
+      },
+      {
+        heading: "Conditions that make a slope weak",
+        list: [
+          "Steep slopes, where gravity pulls harder along the surface.",
+          "Loose soil, weathered rock or clay layers that lose strength when wet.",
+          "Rock layers that tilt in the same direction as the slope, so they can slide along each other.",
+          "Old landslide areas, which often move again.",
+          "Poor drainage, where water collects in the ground instead of draining away.",
+        ],
+      },
+      {
+        heading: "Common triggers",
+        list: [
+          "Heavy or prolonged rain. Water fills the spaces between soil particles, adds weight and pushes particles apart, which reduces friction.",
+          "Earthquakes, which shake loose material and can set off many slides at once.",
+          "Undercutting at the base of a slope by rivers, waves or road and building cuts.",
+          "Extra weight at the top, such as buildings, fill or piled material.",
+          "Loss of vegetation from clearing, fire or overgrazing, which removes roots that bind soil.",
+          "Water from leaking pipes, blocked drains or runoff directed onto a slope.",
+        ],
+      },
+      {
+        heading: "Warning signs",
+        list: [
+          "New cracks in the ground, roads or walls on or near a slope.",
+          "Trees, poles or fences that start to tilt.",
+          "Springs or seeps appearing in new places, or water turning muddy.",
+          "Doors and windows that suddenly stick.",
+          "Sounds of cracking, rumbling or falling rocks, especially during rain.",
+        ],
+        paragraphs: [
+          "If you see these signs, move away from the slope and contact local authorities. Do not wait for the ground to move.",
+        ],
+      },
+      {
+        heading: "Reducing the risk",
+        paragraphs: [
+          "Good drainage is often one of the most useful steps, because water is behind so many slides. Keeping slopes vegetated, avoiding cuts at the base of a slope and not piling weight at the top also help. Deep-rooted trees and shrubs can bind shallow soil, but they usually cannot hold back a deep-seated failure.",
+          "Retaining walls, gabions and other structures need proper design. Slope stability depends on local soil, rock and water, so get advice from a qualified engineer or geologist, and check what permits apply, before major work on a slope.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The Chauthe site is a community forest hillside in Kakani Rural Municipality, Nepal, at about 1,200 to 1,600 m. In Nepal's hills, monsoon rain is a common landslide trigger. ZenTrust's work there has not started. The plan begins in Year 1 with contour trenches, small check dams, recharge ponds and a community nursery, followed in Years 2 to 3 by layered planting of native and fruit trees, nitrogen fixers and ground cover.",
+      "Roots and ground cover can help hold shallow soil. Holding water on a slope also has to be weighed against slope stability, which is a general reason this kind of work calls for local expert advice. Pine will be thinned only where the Thumki Danda Gairikharka Community Forest User Group and the Division Forest Office approve.",
+    ],
+    related: [
+      "how-to-stop-erosion-on-a-slope",
+      "what-is-a-monsoon",
+      "what-is-infiltration",
+      "what-is-a-gabion",
+    ],
+  },
+  {
+    slug: "how-to-build-a-pond",
+    title: "How do you build a pond?",
+    metaTitle: "How to Build a Pond: Steps, Sealing and Safety | ZenTrust",
+    description: "A plain guide to building a small pond: choosing a site, digging, sealing with clay or a liner, planning overflow, and staying safe and legal.",
+    shortAnswer: "To build a pond, pick a low, stable spot that can collect water, check local rules, then dig a basin with gentle sides. Seal it with compacted clay or a liner, give it a safe overflow, and plant the edges. Larger ponds or ponds with an earth dam need expert design and often permits.",
+    sections: [
+      {
+        heading: "Before you dig",
+        paragraphs: [
+          "Most pond problems start with the wrong site. A good site has a water source, soil that can hold water or be sealed, and room for overflow to leave without causing harm. Ask your local planning, water or environment office what rules apply before you start.",
+        ],
+        list: [
+          "Find where water flows naturally after rain, from a roof, a slope or a seasonal stream. Damming or diverting a stream often needs permission.",
+          "Dig a test hole to see the soil. Clay holds water well. Sand and gravel drain fast.",
+          "Check for buried pipes, cables and septic systems.",
+          "Avoid unstable slopes. Adding water to a hillside can make it more likely to slip.",
+          "Ask whether you need a permit. Wetlands, streams and earth dams are often regulated.",
+        ],
+      },
+      {
+        heading: "Basic steps for a small pond",
+        list: [
+          "Mark the outline with rope or stakes, keeping the shape simple.",
+          "Dig the basin with gently sloping sides and a shallow shelf around the edge.",
+          "Keep the rim level so water does not spill out at one low point.",
+          "Remove sharp stones and roots, then compact the base.",
+          "Seal the basin with clay or a liner, then fill it slowly.",
+          "Cover the bare soil around the pond with plants or mulch to stop erosion.",
+        ],
+      },
+      {
+        heading: "Ways to hold water",
+        list: [
+          "Native clay: if the soil has enough clay, it can be wetted and compacted in layers.",
+          "Added clay: clay or bentonite can be mixed into the base of leaky soil.",
+          "Flexible liner: a rubber or plastic sheet laid over a soft underlay. This suits small garden ponds.",
+          "No seal: some ponds are meant to leak slowly so water soaks into the ground. Ponds built for this are often called recharge ponds.",
+        ],
+      },
+      {
+        heading: "Plan for overflow",
+        paragraphs: [
+          "Every pond fills up sometimes. Water needs a planned exit, called a spillway, that leads it away across ground that will not wash out. Line the spillway with stone or grass. Without one, water can cut through the rim, and in an earth dam this can lead to failure. Any pond held back by an embankment should be designed by a qualified engineer.",
+        ],
+      },
+      {
+        heading: "Safety and upkeep",
+        list: [
+          "Open water is a drowning risk, especially for young children. Consider fencing and gentle edges.",
+          "Plant the margins to filter runoff and give wildlife a way in and out.",
+          "Keep fertilizer and manure runoff out to limit algae.",
+          "Check the rim and spillway after heavy rain and fix damage early.",
+          "Remove silt from time to time so the pond keeps its depth.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust reports that springs below the Chauthe hillside are drying, and it plans to start by helping the land hold water.",
+      "In Year 1, the plan includes recharge ponds alongside contour trenches and small check dams. Unlike a sealed garden pond, these ponds are intended to let rainwater soak slowly into the ground. Work on the hillside has not started yet. The land is community forest of the Thumki Danda Gairikharka Community Forest User Group.",
+    ],
+    related: [
+      "recharge-ponds",
+      "groundwater-recharge",
+      "rainwater-harvesting-in-the-hills",
+      "what-causes-landslides",
+    ],
+  },
+  {
+    slug: "what-is-leaf-litter",
+    title: "What is leaf litter?",
+    metaTitle: "Leaf Litter: What It Is and Why It Matters | ZenTrust",
+    description: "Leaf litter is the layer of fallen leaves, needles and twigs on the ground. What it does for soil and water, how it breaks down and when to leave it.",
+    shortAnswer: "Leaf litter is the layer of fallen leaves, needles, twigs, bark and other dead plant parts that covers the ground in forests, gardens and fields. It protects the soil, holds moisture, shelters small animals and slowly breaks down into organic matter that feeds the soil.",
+    sections: [
+      {
+        heading: "What leaf litter is",
+        paragraphs: [
+          "Leaf litter is the top layer of the forest floor. It is made of plant material that has dropped recently and has not yet rotted away. Below it, older material is partly broken down. Below that is the mineral soil.",
+          "Litter is found anywhere plants shed parts, but it is often thickest under trees and shrubs. Its depth changes with the season, the plants above and how fast it decays.",
+        ],
+      },
+      {
+        heading: "What it does",
+        list: [
+          "Covers bare soil, which softens the impact of rain and reduces erosion.",
+          "Slows water running over the surface, giving it more time to soak in.",
+          "Shades the ground and keeps it cooler and moister.",
+          "Gives food and shelter to insects, worms, fungi and other soil life.",
+          "Returns nutrients to the soil as it breaks down.",
+          "Adds organic matter that helps soil hold water and stay loose.",
+        ],
+      },
+      {
+        heading: "How it breaks down",
+        paragraphs: [
+          "Small animals such as worms, millipedes and insects shred the leaves. Fungi and bacteria then break the pieces down further. Over time some of the material becomes humus, the dark, more stable part of soil organic matter.",
+          "Decay is faster when it is warm and moist and slower when it is cold or dry. Soft, thin leaves rot faster than tough, waxy ones.",
+        ],
+      },
+      {
+        heading: "Not all litter is the same",
+        list: [
+          "Broadleaf litter often breaks down faster than conifer needles, though the rate varies with the species and the climate.",
+          "Needles from pines and other conifers are tough and waxy and usually break down more slowly.",
+          "Mixed litter from many species gives soil life a wider range of food than litter from a single species.",
+          "Thick, dry litter can build up and act as fuel in a fire.",
+        ],
+      },
+      {
+        heading: "Should you rake it up?",
+        paragraphs: [
+          "In most gardens and woodlands, leaving leaves in place or moving them onto beds as mulch usually helps the soil. Leaves can also be shredded, composted or piled to make leaf mold.",
+          "There are reasons to move litter. Thick, wet mats can smother lawns. Leaves from plants with fungal disease are sometimes removed to limit spread. Near homes in fire-prone areas, dry litter is often cleared, and local fire rules may say how. Local forestry or extension services can advise for your area.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust describes the hillside at Chauthe as a pine monoculture, and ZenTrust reports that springs below it are drying. The plan treats pine as a major cause, which ZenTrust will measure. The program is at the planning and setup stage, and work on the hillside has not started.",
+      "In years 2 to 3, the plan is to plant in layers: native and fruit trees, nitrogen fixers and ground cover. The aim is that, over time, this adds a wider mix of leaves to the forest floor. Pine will be thinned only where the community forest user group and the Division Forest Office approve, and species will be chosen with the user group and local nurseries.",
+    ],
+    related: ["what-is-humus", "what-is-leaf-mold", "what-is-mulch", "why-do-pine-forests-burn"],
+  },
+  {
+    slug: "what-is-a-cloud-forest",
+    title: "What is a cloud forest?",
+    metaTitle: "What Is a Cloud Forest? Fog, Water and Wildlife | ZenTrust",
+    description: "A cloud forest is a mountain forest wrapped in frequent low cloud. How it forms, how it catches water from fog, what lives there and why it matters.",
+    shortAnswer: "A cloud forest is a mountain forest that sits in low cloud or fog for much of the year, often right at canopy level. It is usually cool and damp. Trees are often draped in mosses, ferns and other plants that grow on branches. These forests catch water straight from the fog and feed streams and springs downhill.",
+    sections: [
+      {
+        heading: "What makes a cloud forest",
+        paragraphs: [
+          "Cloud forests form where moist air is pushed up a mountain slope. As the air rises, it cools, and its water vapor condenses into cloud. On some slopes this happens often enough that the forest sits in the cloud for much of the year.",
+          "Most cloud forests are in the tropics, on mountains near the sea or in the path of moist winds. The height at which they occur varies a lot from one mountain range to another. It depends on climate, the size of the mountain and local winds.",
+        ],
+        list: [
+          "Frequent or persistent fog and low cloud.",
+          "Cool temperatures and high humidity.",
+          "Less direct sunlight than forests outside the cloud zone.",
+          "Wet soils, often rich in partly decayed plant matter.",
+        ],
+      },
+      {
+        heading: "Where cloud forests are found",
+        list: [
+          "The mountains of Central and South America, including the Andes.",
+          "High mountains in East and Central Africa.",
+          "Mountains in Southeast Asia and on many tropical islands.",
+          "Scattered patches in other ranges, where local winds and terrain bring regular fog.",
+        ],
+      },
+      {
+        heading: "How they gather water",
+        paragraphs: [
+          "Cloud forests get water from rain, like other forests. They also get it from fog. Tiny cloud droplets blow through the canopy and collect on leaves, needles, mosses and branches. The droplets join, then drip to the ground or run down trunks. This is often called fog drip or cloud water interception.",
+          "Because the air is cool and damp and the sky is often overcast, less water evaporates from the plants and soil. Together, extra water from fog and lower water loss mean these forests can help keep streams flowing in drier months. In some regions, towns and farms downhill depend on that water.",
+        ],
+      },
+      {
+        heading: "Life in a cloud forest",
+        paragraphs: [
+          "The constant moisture supports plants that grow on other plants, called epiphytes. Branches can be thick with mosses, ferns and orchids, along with lichens. Trees are often shorter and more twisted near the top of the cloud zone, where wind and cold are harsher.",
+        ],
+        list: [
+          "Many species are found only in a single mountain range or region.",
+          "Amphibians, birds and insects are often especially varied.",
+          "Mosses and other epiphytes hold water like sponges and release it slowly.",
+          "Leaf litter breaks down slowly in the cool, wet conditions, so organic matter builds up in the soil.",
+        ],
+      },
+      {
+        heading: "Threats",
+        list: [
+          "Clearing for farming, grazing and roads.",
+          "Logging and firewood cutting, which open the canopy and dry the forest.",
+          "Changes in climate that can shift the cloud layer higher up the mountain.",
+          "Fire, which is rare in healthy cloud forest but more likely once it is opened and dried.",
+        ],
+      },
+      {
+        heading: "Why they matter",
+        paragraphs: [
+          "Cloud forests cover a small share of the world's land, yet they protect important water sources and hold many rare species. Once cleared, they are slow to come back, because the fog-catching canopy, mosses and soil take a long time to rebuild. Protecting what remains is usually far easier than restoring it. Local forest agencies and conservation groups are the best source of advice for any specific site.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "This guide is general background. It is not a description of ZenTrust's site in Chauthe, a pine monoculture hillside at 1,200 to 1,600 m, so it applies only loosely to ZenTrust's plan.",
+      "The shared idea is that forest cover affects how water reaches springs. ZenTrust reports that springs below the site are drying, and sees the pine as a major cause, which we'll measure. Work on the hillside has not started. Year 1 is planned to focus on holding rainwater on the slope with contour trenches, small check dams and recharge ponds, along with a community nursery.",
+    ],
+    related: [
+      "what-is-a-microclimate",
+      "what-is-a-watershed",
+      "how-do-springs-work",
+      "what-is-a-lichen",
+    ],
+  },
+  {
+    slug: "what-is-surface-runoff",
+    title: "What is surface runoff?",
+    metaTitle: "Surface Runoff: What It Is and Why It Matters | ZenTrust",
+    description: "Surface runoff is rainwater that flows over the ground instead of soaking in. What causes it, why it matters for soil and springs, and how to slow it.",
+    shortAnswer: "Surface runoff is water from rain or snowmelt that flows across the ground instead of soaking into the soil. It happens when water arrives faster than the ground can absorb it, or when the ground cannot absorb any more. Some runoff is natural, but too much of it strips soil, causes floods and leaves less water underground for springs and wells.",
+    sections: [
+      {
+        heading: "Where rain goes",
+        paragraphs: [
+          "When rain lands, part of it is caught by leaves and evaporates. Part soaks into the soil, which is called infiltration. Some of that water is used by plants, and some moves deeper to refill groundwater. Whatever cannot soak in flows downhill over the surface. That flow is surface runoff.",
+          "Runoff collects in rills, gullies and streams. On healthy, covered ground most rain soaks in. On bare, packed or paved ground much more of it runs off.",
+        ],
+      },
+      {
+        heading: "What causes more runoff",
+        list: [
+          "Heavy rain that falls faster than the soil can take it in.",
+          "Soil that is already soaked from earlier rain.",
+          "Bare soil, which can form a hard crust when raindrops hit it.",
+          "Compacted soil from machines, foot traffic or grazing.",
+          "Roofs, roads and paved areas that water cannot pass through.",
+          "Steep slopes, where water moves quickly and has less time to sink in.",
+        ],
+      },
+      {
+        heading: "Why it matters",
+        list: [
+          "Fast-moving water carries away topsoil, the most fertile layer.",
+          "Water that runs off quickly has less chance to recharge groundwater, so springs and wells can get less.",
+          "Runoff from a wide area can gather quickly and cause floods downstream.",
+          "It can carry mud, fertilizer, manure and other pollutants into streams and ponds.",
+          "Concentrated flow can cut gullies that keep growing with each storm.",
+        ],
+      },
+      {
+        heading: "How to slow it and help it soak in",
+        list: [
+          "Keep soil covered with plants, mulch or leaf litter.",
+          "Grow trees, shrubs and deep-rooted plants that open paths for water.",
+          "Dig contour trenches or swales along the slope to catch and hold water.",
+          "Build small check dams in gullies to slow flow and trap soil.",
+          "Use ponds or rain gardens to hold water and let it seep in slowly, or tanks to store it for later use.",
+          "Avoid compacting soil, and add organic matter so it holds more water.",
+        ],
+      },
+      {
+        heading: "Things to keep in mind",
+        paragraphs: [
+          "Some runoff is normal and feeds streams and wetlands. The aim is usually to slow it and spread it, not to stop it completely.",
+          "Earthworks on steep or unstable ground can cause harm if badly placed. Water held in the wrong spot can soften a slope or overflow somewhere new. Local soil, slope and rainfall all matter, so get advice from someone with local experience, and check whether permits are needed before digging or building.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust reports that springs below its planned site in Chauthe, Nepal are drying. Helping rain soak in rather than run off the hillside is central to the plan.",
+      "In the first year, the plan is to hold the water with contour trenches, small check dams and recharge ponds, along with a community nursery. In years two and three, layered planting with native and fruit trees, nitrogen fixers and ground cover will aim to keep the soil covered. Work on the hillside has not started yet.",
+    ],
+    related: [
+      "what-is-infiltration",
+      "contour-trenches",
+      "what-is-soil-erosion",
+      "groundwater-recharge",
+    ],
+  },
+  {
+    slug: "how-to-save-seeds",
+    title: "How do you save seeds?",
+    metaTitle: "How to Save Seeds: A Simple Guide for Gardeners | ZenTrust",
+    description: "How to save seeds from your garden: which plants to choose, how to collect, dry and store seed, and how to check it will still grow.",
+    shortAnswer: "To save seeds, choose healthy, open-pollinated plants and let the seed fully ripen. Collect it, clean off pulp or husk, and dry it well. Store it in a labeled, airtight container somewhere cool, dry and dark. Test a few seeds before sowing to check they still sprout.",
+    sections: [
+      {
+        heading: "Pick the right plants",
+        list: [
+          "Use open-pollinated or heirloom varieties. Their seed grows into plants much like the parent.",
+          "Avoid hybrids, often labeled F1. Their seed may grow into plants that differ from the parent or perform poorly.",
+          "Save from your healthiest, strongest plants, not just whichever happen to ripen first or last.",
+          "Save from several plants of the same variety when you can. This keeps more variety in the seed.",
+          "Skip plants that showed disease, since some diseases can pass on through seed.",
+        ],
+      },
+      {
+        heading: "Self-pollinating and cross-pollinating crops",
+        paragraphs: [
+          "Some crops mostly pollinate themselves. Beans, peas, lettuce and tomatoes are common examples, and they are the easiest place to start. Their seed usually stays true to type even when other varieties grow nearby.",
+          "Other crops cross easily with related varieties through wind or insects. Squash, corn, cucumbers and the cabbage family are examples. To keep them true, gardeners grow only one variety at a time, space varieties far apart, or cover flowers and pollinate by hand.",
+        ],
+      },
+      {
+        heading: "Collecting the seed",
+        list: [
+          "Dry seeds, such as beans, peas, lettuce and many flowers: leave pods or heads on the plant until they turn dry and brown, then pick and shell them.",
+          "If rain or birds threaten, cut whole stems and finish drying them indoors in a paper bag.",
+          "Wet seeds inside fruit, such as tomatoes, squash and cucumbers: let the fruit ripen fully, often past the eating stage, then scoop out the seeds.",
+          "Tomato seeds are often left in a little water for a few days to ferment, which removes the gel coat. Then rinse and dry them.",
+          "Squash and pepper seeds can simply be rinsed or wiped clean and dried.",
+        ],
+      },
+      {
+        heading: "Drying and storing",
+        list: [
+          "Spread seeds in a thin layer on paper or a screen, out of direct sun, with good airflow.",
+          "Dry until seeds are hard and brittle. Large seeds may snap rather than bend when fully dry.",
+          "Store in airtight jars or sealed packets once dry. Damp seed sealed in a jar can mold.",
+          "Keep them cool, dry and dark. Heat and moisture shorten seed life most.",
+          "Label each container with the plant, variety, date and where it came from.",
+          "Expect differences by crop. Some seeds, such as onions, lose vigor quickly, while others last several years.",
+        ],
+      },
+      {
+        heading: "Testing before you sow",
+        paragraphs: [
+          "Before planting, roll a small number of seeds in a damp paper towel and keep it warm and moist. Check after the usual sprouting time for that crop. If only some sprout, sow more thickly. If almost none sprout, it is time for fresh seed.",
+        ],
+      },
+      {
+        heading: "Tree seeds are different",
+        paragraphs: [
+          "Many tree seeds can be dried and stored like garden seed. Others, often large and moist ones such as acorns, die if they dry out and need to be sown fresh. Some tree seeds also need soaking, nicking the coat, or a cold period before they will sprout.",
+          "Local nurseries and forest offices can often advise on how local species behave. In forests and protected areas, collecting seed may need permission from the owners, managers or local authorities.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's plan for Chauthe includes a community nursery in Year 1, ahead of planting native and fruit trees, nitrogen fixers and ground cover in Years 2 and 3.",
+      "Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries. The program is still at the planning and setup stage, and work on the hillside has not started.",
+    ],
+    related: [
+      "how-to-start-a-tree-nursery",
+      "how-to-grow-trees-from-seed",
+      "what-is-a-seed-bank",
+      "companion-planting",
+    ],
+  },
+  {
+    slug: "when-to-plant-trees",
+    title: "When is the best time to plant trees?",
+    metaTitle: "When to Plant Trees: Best Seasons and Timing | ZenTrust",
+    description: "The best time to plant trees is when roots can grow before stress arrives: the dormant season in cold climates, early rains in monsoon ones.",
+    shortAnswer: "Plant trees when the soil is moist and workable and the tree will have time to grow roots before heat, drought or hard frost. In cold and temperate climates that usually means autumn or early spring, while the tree is dormant. In tropical and monsoon climates it usually means early in the rainy season.",
+    sections: [
+      {
+        heading: "The basic rule",
+        paragraphs: [
+          "A tree dug from the ground for transplanting loses much of its root system, and even a container tree has to grow its roots out into new soil. Either way, it needs time and steady moisture to grow new roots before it faces stress. The best planting time is whenever your local climate offers that window.",
+          "Cool air and moist soil are ideal. The tree loses less water through its leaves, and the roots can keep growing in soil that is not frozen.",
+        ],
+      },
+      {
+        heading: "Cold and temperate climates",
+        list: [
+          "Autumn: soil is still warm enough for root growth, and winter rain or snow often keeps it moist. Plant early enough for roots to settle before the ground freezes.",
+          "Early spring: plant once the ground thaws and dries enough to work, before buds break and summer heat arrives.",
+          "Some trees, especially certain evergreens and trees with fleshy roots, often do better planted in spring. Local nurseries can tell you which.",
+          "Midsummer planting is possible with container trees, but it needs much more watering.",
+        ],
+      },
+      {
+        heading: "Tropical and monsoon climates",
+        paragraphs: [
+          "Where the year is split into wet and dry seasons, temperature matters less than rain. Trees are usually planted once the rains have properly started and the soil is moist below the surface. This gives them the whole wet season to establish before the dry months.",
+          "Planting too late in the rains leaves young trees with shallow roots when the dry season starts. On steep or bare ground, very heavy rain can also wash out new plantings, so soil protection matters too.",
+        ],
+      },
+      {
+        heading: "Bare-root, balled or container trees",
+        list: [
+          "Bare-root trees have no soil around the roots. Plant them only while dormant, and soon after lifting, so the roots do not dry out.",
+          "Balled and wrapped trees are dug with a ball of soil. They are best moved in the cooler, dormant months.",
+          "Container trees have intact roots and can be planted over a longer season, but they still establish best in cool, moist conditions.",
+          "Seedlings raised in a nursery are usually timed so they are ready to plant when the planting season starts.",
+        ],
+      },
+      {
+        heading: "Times to avoid",
+        list: [
+          "When the ground is frozen or waterlogged.",
+          "During heat waves or long dry spells, unless you can water reliably.",
+          "Just before the dry season or a hard winter, when roots have no time to grow.",
+          "When the soil is so wet that digging smears and compacts it.",
+        ],
+      },
+      {
+        heading: "After planting",
+        paragraphs: [
+          "Timing helps, but care in the first year or two matters as much. Water deeply during dry spells, keep a ring of mulch around the base without touching the trunk, and keep weeds and grazing animals away. Local foresters, extension services or nurseries know the planting calendar for your area and are worth asking.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's Nepal program is at the planning and setup stage, and work on the hillside has not started. The plan does not start with planting. ZenTrust reports that springs below the site are drying, so Year 1 will focus on holding water with contour trenches, small check dams and recharge ponds, and on setting up a community nursery.",
+      "Planting in layers is planned for Years 2 and 3. It will include native and fruit trees, nitrogen fixers and ground cover. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "how-to-plant-a-tree",
+      "what-is-a-monsoon",
+      "how-to-start-a-tree-nursery",
+      "how-to-grow-trees-from-seed",
+    ],
+  },
+  {
+    slug: "what-is-soil-ph",
+    title: "What is soil pH?",
+    metaTitle: "Soil pH: What It Is and Why It Matters | ZenTrust",
+    description: "Soil pH measures how acidic or alkaline soil is. What the numbers mean, why pH matters to plants, how to test it and how to change it.",
+    shortAnswer: "Soil pH is a measure of how acidic or alkaline soil is, on a scale from 0 to 14. A value of 7 is neutral, lower is acidic and higher is alkaline. pH matters because it controls which nutrients plants can take up and how well soil life works. Many common plants grow best in slightly acidic to neutral soil.",
+    sections: [
+      {
+        heading: "What the numbers mean",
+        paragraphs: [
+          "The pH scale runs from 0 to 14. Below 7 is acidic, 7 is neutral and above 7 is alkaline. The scale is logarithmic, so each whole step is a tenfold change. Soil at pH 5 has ten times the hydrogen ion concentration of soil at pH 6, which makes it ten times more acidic in that sense.",
+          "Most soils fall well inside the middle of the scale. Even so, a shift of one unit can make a clear difference to what grows well.",
+        ],
+      },
+      {
+        heading: "Why pH matters",
+        list: [
+          "It controls nutrient availability. At the extremes, some nutrients get locked up in forms roots cannot absorb, even when they are present in the soil.",
+          "In very acidic soil, metals such as aluminum can dissolve and harm roots.",
+          "Soil bacteria, fungi and earthworms each have ranges they prefer, so pH shapes soil life.",
+          "Nitrogen-fixing bacteria on legume roots often work poorly in strongly acidic soil.",
+          "Some plants are adapted to acidic soil, such as blueberries and rhododendrons. Others tolerate alkaline soil better.",
+        ],
+      },
+      {
+        heading: "What makes soil acidic or alkaline",
+        list: [
+          "Parent rock: soils formed from limestone tend to be alkaline. Soils from granite and other silica-rich rocks often lean acidic.",
+          "Rainfall: heavy rain washes out calcium and other minerals over time, so soils in wet regions tend to become more acidic.",
+          "Dry climates: with less leaching, salts and minerals build up, and soils tend to be more alkaline.",
+          "Fertilizers: some nitrogen fertilizers make soil more acidic with repeated use.",
+          "Vegetation and organic matter: decomposing plant material releases acids, and forest topsoil is often acidic.",
+        ],
+      },
+      {
+        heading: "How to test it",
+        paragraphs: [
+          "Simple home kits and handheld meters give a rough reading. A lab test is more accurate and usually also reports nutrients and organic matter. Agricultural extension services and many universities offer soil testing in many regions.",
+          "Take several small samples from across an area, at root depth, and mix them. pH can vary a lot within one field or garden, so testing different zones separately can help.",
+        ],
+      },
+      {
+        heading: "Changing soil pH",
+        paragraphs: [
+          "Ground limestone is the usual way to raise pH. Wood ash also raises it, but it acts quickly and is easy to overdo. Elemental sulfur is commonly used to lower pH. Both lime and sulfur work slowly, and the right amount depends on the soil type, so follow a test result and local advice rather than guessing.",
+          "Adding organic matter such as compost helps buffer soil, which means it resists sudden swings in pH. Often the simplest approach is to choose plants that suit the soil you have rather than trying to change it.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's plan for Chauthe focuses first on holding water on the hillside. Work there has not started yet. ZenTrust reports that springs below the pine monoculture are drying, and it describes pine as a major cause, which it will measure.",
+      "In general, soil conditions such as pH affect which trees do well. In years two and three, the plan is to plant in layers with native and fruit trees, nitrogen fixers and ground cover. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "what-is-soil-organic-matter",
+      "what-is-loam-soil",
+      "how-to-improve-clay-soil",
+      "what-is-composting",
+    ],
+  },
+  {
+    slug: "what-is-agroecology",
+    title: "What is agroecology?",
+    metaTitle: "Agroecology: What It Is and How It Works | ZenTrust",
+    description: "Agroecology applies ecology to farming: working with natural processes and local knowledge. Core ideas, common practices, trade-offs and how it differs.",
+    shortAnswer: "Agroecology is the use of ecological ideas to design and manage farms and food systems. It treats a farm as an ecosystem, relying on diversity, healthy soil, natural nutrient cycles and local knowledge rather than mainly on bought inputs. The word is used for a science, a set of farming practices and a social movement.",
+    sections: [
+      {
+        heading: "Three meanings of one word",
+        list: [
+          "A science: studying how plants, animals, soil, water and people interact on farmland.",
+          "A practice: farming methods that copy natural processes, such as mixing crops, recycling nutrients and keeping soil covered.",
+          "A movement: efforts to give farmers and communities more control over land, seed and food.",
+        ],
+        paragraphs: [
+          "In everyday farming talk the word usually means the second one, the practice. The three overlap, and you will often see them discussed together.",
+        ],
+      },
+      {
+        heading: "Core ideas",
+        list: [
+          "Diversity: many species and varieties, which spreads risk and supports useful insects and soil life.",
+          "Recycling: returning crop residue, manure and compost to the soil instead of losing nutrients.",
+          "Soil health: keeping soil covered and alive, since it holds water and feeds plants.",
+          "Synergy: arranging plants and animals so they help each other, such as legumes adding nitrogen that can later benefit other plants.",
+          "Local knowledge: building on what farmers already know about their land and climate.",
+          "Fewer outside inputs: relying less on bought fertilizer and pesticide where natural processes can do the job.",
+        ],
+      },
+      {
+        heading: "Common practices",
+        list: [
+          "Intercropping and crop rotation.",
+          "Cover crops, green manure and mulch.",
+          "Composting and returning manure to fields.",
+          "Agroforestry, which mixes trees with crops or livestock.",
+          "Saving and sharing local seed.",
+          "Encouraging natural pest control through hedgerows and flowering plants.",
+        ],
+      },
+      {
+        heading: "How it differs from related approaches",
+        paragraphs: [
+          "Conventional farming often focuses on one crop and steady use of bought inputs. Agroecology focuses on the whole system and how its parts work together.",
+          "Organic farming is defined largely by certification rules, especially on which inputs are allowed. Agroecology is broader and is not a certification. A farm can be agroecological without being certified organic, and an organic farm is not automatically agroecological. Permaculture and agroforestry share many of the same ideas and are often seen as ways of putting agroecology into practice.",
+        ],
+      },
+      {
+        heading: "Trade-offs",
+        list: [
+          "Diverse systems usually need more knowledge and planning than a single crop.",
+          "Some practices need more labor, at least at first.",
+          "Benefits to soil and water build over years rather than one season.",
+          "Selling many small harvests can be harder than selling one large crop.",
+          "What works depends heavily on local soil, climate and markets, so local advice matters.",
+        ],
+      },
+      {
+        heading: "Getting started",
+        paragraphs: [
+          "Start small. Add one or two practices, such as a cover crop or a mixed planting, and watch how the land responds. Talk to experienced local farmers, extension services or farmer groups. Many agroecological ideas spread best from farmer to farmer, because they have to be adapted to each place.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's Nepal program is still at the planning and setup stage, and work on the hillside has not started. ZenTrust reports that springs below the site are drying, and it describes the pine monoculture as a major cause, which it will measure.",
+      "Several parts of the plan echo agroecological ideas. Year one is planned to focus on holding water with contour trenches, small check dams, recharge ponds and a community nursery. In years two and three, the plan is to plant native and fruit trees, nitrogen fixers and ground cover in layers. Pine is thinned only where the community forest user group and the Division Forest Office approve.",
+      "Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries, so local knowledge can inform which species are used.",
+    ],
+    related: [
+      "what-is-agroforestry",
+      "what-is-permaculture",
+      "crop-rotation-and-intercropping",
+      "what-is-a-food-forest",
+    ],
+  },
+  {
+    slug: "what-is-a-microclimate",
+    title: "What is a microclimate?",
+    metaTitle: "Microclimate: What It Is and Why It Matters | ZenTrust",
+    description: "A microclimate is the local climate of a small area that differs from its surroundings. What shapes one, common examples and how to work with them.",
+    shortAnswer: "A microclimate is the climate of a small area that is noticeably different from the area around it. It can be warmer, cooler, wetter, drier, windier or more sheltered. Slope, shade, water, wind and surfaces such as rock or pavement all create microclimates, from a single garden bed to a whole valley.",
+    sections: [
+      {
+        heading: "What shapes a microclimate",
+        list: [
+          "Sun exposure: which way the ground faces and how much shade falls on it.",
+          "Elevation and slope: higher ground is usually cooler, and cold air flows downhill.",
+          "Wind: walls, hedges, trees and hills block or funnel it.",
+          "Water: ponds, streams and wet soil soften temperature swings and raise humidity.",
+          "Surfaces: rock, bare soil and pavement heat up fast, while plant cover and mulch keep the ground beneath them cooler.",
+          "Plant cover: trees and ground cover shade the soil and release moisture into the air.",
+        ],
+      },
+      {
+        heading: "Common examples",
+        list: [
+          "A sunny wall that keeps nearby plants warmer at night.",
+          "A frost pocket at the bottom of a slope where cold air settles.",
+          "The cool, damp air under a dense tree canopy.",
+          "A windy ridge top that dries out faster than the slope below it.",
+          "A city that stays warmer than the countryside around it.",
+        ],
+      },
+      {
+        heading: "Microclimates on hillsides",
+        paragraphs: [
+          "Hills create strong microclimates. In the Northern Hemisphere, slopes that face south get more direct sun and tend to be warmer and drier. Slopes that face north stay cooler and hold moisture longer. The pattern is reversed in the Southern Hemisphere.",
+          "At night, cold air is heavier than warm air, so it drains downhill and pools in hollows and valley floors. That is why frost can hit low ground while the slope above stays clear. Gullies and stream banks often stay moister and more sheltered than open ridges.",
+        ],
+      },
+      {
+        heading: "How plants change a microclimate",
+        paragraphs: [
+          "Vegetation does not just respond to a microclimate. It helps make one. Tree canopies block direct sun and slow the wind. Leaves release water vapor, which cools the air around them. Leaf litter and ground cover keep the soil surface cooler and slow evaporation.",
+          "This is why a forest floor usually feels cooler and more humid than an open field nearby. It is also why young trees often grow better when planted near older plants that give some shelter.",
+        ],
+      },
+      {
+        heading: "Working with microclimates",
+        list: [
+          "Watch the land over several seasons and note where frost, wind, sun and wet ground occur.",
+          "Put plants that need warmth or shelter in the warmer, protected spots.",
+          "Use hedges or windbreaks to calm wind on exposed ground.",
+          "Keep soil covered with mulch or plants to hold moisture and steady soil temperature.",
+          "Remember that microclimates shift as trees grow and as land use changes.",
+          "Ask local farmers, foresters or extension services, who often know the patterns of a place well.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The Chauthe site runs from about 1,200 to 1,600 m, so conditions are likely to differ between higher and lower ground and, where the slope changes direction, between differently facing ground. ZenTrust's Nepal program is still at the planning and setup stage, and work on the hillside has not started.",
+      "In years 2 and 3, ZenTrust plans to plant in layers, with native and fruit trees, nitrogen fixers and ground cover. In general, layered planting like this shades the soil and slows drying. Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries, whose local knowledge can help match plants to the conditions of each part of the slope.",
+    ],
+    related: [
+      "what-is-a-windbreak",
+      "food-forest-layers",
+      "what-is-evapotranspiration",
+      "what-is-mulch",
+    ],
+  },
+  {
+    slug: "what-is-community-forestry",
+    title: "What is community forestry?",
+    metaTitle: "Community Forestry: How Local Groups Manage Forests | ZenTrust",
+    description: "Community forestry gives local people rights and duties to manage nearby forests. How it works, what user groups do, benefits and common challenges.",
+    shortAnswer: "Community forestry is a way of managing forests in which the people who live nearby hold recognized rights and responsibilities, often set in law, to protect, use and care for them. A local group, often called a forest user group, makes rules for the forest, usually under a plan approved by a government forest office.",
+    sections: [
+      {
+        heading: "What it means",
+        paragraphs: [
+          "In many places, forests were once run only by the state or by private owners. Community forestry hands part of that control to the people who depend on the forest every day for firewood, fodder, timber, water and food.",
+          "The idea is simple. People who live next to a forest, and who need it to stay healthy, are often well placed to look after it. Giving them clear rights and a share of the benefits gives them a reason to manage it for the long term.",
+        ],
+      },
+      {
+        heading: "How it usually works",
+        list: [
+          "Households near a forest form a user group with members and an elected committee.",
+          "The group agrees on a management plan with the government forest office.",
+          "The plan sets rules for what can be harvested, when, and by whom.",
+          "The group protects the forest, for example by limiting grazing, controlling fire and stopping illegal cutting.",
+          "Income from forest products is often shared or spent on local needs.",
+          "The plan is reviewed and renewed over time.",
+        ],
+      },
+      {
+        heading: "Benefits",
+        list: [
+          "Forests that were degraded can recover when cutting and grazing are controlled.",
+          "Local people get steady access to firewood, fodder and other products.",
+          "Decisions draw on local knowledge of the land, water and seasons.",
+          "Healthier forest cover can help protect soil and water on slopes.",
+          "Groups can raise money for schools, trails or other community projects.",
+        ],
+      },
+      {
+        heading: "Common challenges",
+        list: [
+          "Benefits are not always shared fairly, and poorer or marginalized members can be left out.",
+          "Rules and approvals from forest offices can be slow or hard to navigate.",
+          "Groups may focus on timber or protection and pay less attention to water or biodiversity.",
+          "Past plantings, such as single-species stands, can be hard to change.",
+          "Conflict can arise over boundaries, use rights or how money is spent.",
+        ],
+      },
+      {
+        heading: "Nepal as an example",
+        paragraphs: [
+          "Nepal is one of the best-known examples of community forestry. Thousands of community forest user groups manage forests across the hills, and their work is widely credited with helping many hillsides regain tree cover.",
+          "Rules and rights differ from country to country, and they change over time. Anyone who wants to work in a community forest should start by talking with the user group and the local forest office.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The land in Chauthe is community forest managed by the Thumki Danda Gairikharka Community Forest User Group. ZenTrust's work there will happen with the group, not around it. The program is still at the planning and setup stage; work on the hillside has not started.",
+      "ZenTrust describes the hillside as a pine monoculture and reports that springs below are drying. ZenTrust sees pine as a major cause, which it plans to measure. Pine will be thinned only where the user group and the Division Forest Office approve.",
+      "Species for the planned community nursery and the layered planting will be chosen with the user group and local nurseries.",
+    ],
+    related: [
+      "what-is-agroforestry",
+      "pine-plantations-and-water",
+      "assisted-natural-regeneration",
+      "why-plant-native-trees",
+    ],
+  },
+  {
+    slug: "what-is-compost-tea",
+    title: "What is compost tea?",
+    metaTitle: "Compost Tea: What It Is, How It's Made, Limits | ZenTrust",
+    description: "Compost tea is a liquid made by steeping compost in water. How it is brewed, what it may do for plants and soil, its limits and safety cautions.",
+    shortAnswer: "Compost tea is a liquid made by soaking finished compost in water, sometimes with air bubbled through it. Gardeners pour it on soil or spray it on leaves to add soluble nutrients and microbes. Its benefits are debated and vary a lot, so it is best seen as a small extra, not a replacement for compost itself.",
+    sections: [
+      {
+        heading: "What it is",
+        paragraphs: [
+          "Compost tea is made by steeping compost in water so that some of its nutrients and microbes move into the liquid. The name comes from the way it is steeped, like tea, and it often looks like weak tea or coffee.",
+          "It is different from compost leachate, which is the dark liquid that drains out of a compost pile. Leachate can be strong and may carry unwanted organisms, so it is not the same thing. Manure tea is a related idea made from manure instead of compost.",
+        ],
+      },
+      {
+        heading: "Main types",
+        list: [
+          "Aerated compost tea: air is pumped through the water while it brews, which favors microbes that need oxygen.",
+          "Non-aerated or passive tea: compost sits in water with occasional stirring, usually for longer.",
+          "Compost extract: compost is mixed or washed in water and used soon after, with little or no brewing time.",
+          "Some recipes add food sources such as molasses to feed microbes, which can also feed harmful ones.",
+        ],
+      },
+      {
+        heading: "How it is made and used",
+        paragraphs: [
+          "A typical method is to put well-made compost in a mesh bag or bucket of clean water and let it steep. Many people let tap water stand or bubble air through it first, since chlorine can harm microbes. This does not work as well where the water supply uses chloramine. Aerated tea is usually used within hours of brewing, before it starts to smell sour.",
+          "The tea is poured around the base of plants as a soil drench or sprayed on leaves. Spraying on leaves is the use with the most debate, and the most food safety concern.",
+        ],
+      },
+      {
+        heading: "What it may do",
+        list: [
+          "Add small amounts of soluble nutrients that plants can take up quickly.",
+          "Add microbes to soil or leaf surfaces.",
+          "Help some gardeners make a limited supply of compost go further.",
+          "Some growers report fewer plant diseases, but results are inconsistent and not well proven.",
+        ],
+      },
+      {
+        heading: "Limits and cautions",
+        list: [
+          "The tea is only as good as the compost. Poor or unfinished compost can carry pathogens.",
+          "Added sugars such as molasses can help harmful bacteria grow, so many food safety guides advise against them.",
+          "Avoid spraying edible parts of crops, especially leafy greens and anything eaten raw or close to harvest.",
+          "Brews that smell sour or rotten have likely gone low in oxygen and are best poured on compost, not plants.",
+          "Commercial growers and anyone selling food should check local food safety rules before using it.",
+        ],
+      },
+      {
+        heading: "Compost tea or compost?",
+        paragraphs: [
+          "Compost itself adds organic matter, improves soil structure and helps soil hold water. Compost tea adds very little organic matter. For building soil over time, spreading compost or mulch usually does more. Tea can be a small add-on where compost is scarce or plants are in containers.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Compost tea is not part of ZenTrust's stated plan for the Chauthe hillside. The plan will focus first on holding water with contour trenches, small check dams, recharge ponds and a community nursery, then on planting native and fruit trees, nitrogen fixers and ground cover in layers.",
+      "Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries, and work on the hillside has not started yet.",
+    ],
+    related: [
+      "what-is-composting",
+      "what-is-soil-organic-matter",
+      "what-is-mulch",
+      "how-to-start-a-tree-nursery",
+    ],
+  },
+  {
+    slug: "what-is-leaf-mold",
+    title: "What is leaf mold?",
+    metaTitle: "Leaf Mold: What It Is and How to Make It | ZenTrust",
+    description: "Leaf mold is fallen leaves broken down mainly by fungi. What it does for soil, how to make it, which leaves to use and how it differs from compost.",
+    shortAnswer: "Leaf mold is fallen leaves that have slowly rotted down, mostly through the work of fungi, into a dark, crumbly material. It is low in nutrients but very good at holding water and improving soil structure. It is used as a mulch, a soil conditioner and an ingredient in potting mixes.",
+    sections: [
+      {
+        heading: "What leaf mold is",
+        paragraphs: [
+          "In a forest, leaves fall each year and break down on the ground. Leaf mold is the same process done in a pile, bin or bag. Finished leaf mold is dark brown, soft and crumbly, and it smells earthy.",
+          "The name can be confusing. Leaf mold here is a soil material, not a mold disease on living plants.",
+        ],
+      },
+      {
+        heading: "What it does for soil",
+        list: [
+          "Holds water like a sponge, which helps sandy soils stay moist.",
+          "Loosens heavy clay and improves soil structure.",
+          "Adds organic matter and feeds soil fungi, worms and other life.",
+          "Protects bare soil from sun, rain and drying wind when spread as mulch.",
+          "Makes a light, low-nutrient base for starting seeds.",
+        ],
+      },
+      {
+        heading: "How to make it",
+        list: [
+          "Collect fallen leaves, ideally from a mix of tree species.",
+          "Shred or mow them if you can. Smaller pieces break down faster.",
+          "Pile them in a simple wire or wooden bin, or pack them into bags with a few holes.",
+          "Wet the leaves well and keep them damp, like a wrung-out sponge.",
+          "Leave the pile alone. Turning is optional, and it often takes a year or more to finish.",
+        ],
+      },
+      {
+        heading: "Which leaves work best",
+        list: [
+          "Soft leaves from many broadleaf trees break down fairly quickly.",
+          "Tough or waxy leaves, such as oak and holly, take longer. Shredding helps.",
+          "Pine and other conifer needles rot very slowly and are best kept to a small share of the pile.",
+          "Avoid leaves from plants with obvious disease, and leaves collected beside busy roads.",
+          "Some leaves, such as black walnut, contain compounds that can slow other plants, so many gardeners leave them out.",
+        ],
+      },
+      {
+        heading: "Leaf mold compared with compost",
+        paragraphs: [
+          "Compost is made from a mix of green and brown materials. It is broken down mainly by bacteria, often heats up and is richer in nutrients. Leaf mold is made from leaves alone. It breaks down cool and slow, mainly by fungi, and it adds structure and water-holding more than food for plants.",
+          "Many gardeners use both. Compost feeds plants, and leaf mold improves the soil they grow in. The main drawbacks of leaf mold are the time it takes and the space a pile needs while it sits.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Making leaf mold is not a named part of ZenTrust's plan for the Chauthe hillside. The closest link is the natural version: leaves falling and rotting in place on the forest floor.",
+      "ZenTrust reports that springs below the site are drying, and it describes the pine monoculture as a major cause, which it will measure. Work on the hillside has not started. In Years 2 and 3, the plan is to plant layers of native and fruit trees, nitrogen fixers and ground cover. Species will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries.",
+    ],
+    related: [
+      "what-is-leaf-litter",
+      "what-is-composting",
+      "what-is-mulch",
+      "what-is-soil-organic-matter",
+    ],
+  },
+  {
+    slug: "what-is-a-seed-bank",
+    title: "What is a seed bank?",
+    metaTitle: "Seed Banks: What They Are and How They Work | ZenTrust",
+    description: "A seed bank stores seeds so plants can be grown again later. How conservation, community and soil seed banks work, and their limits.",
+    shortAnswer: "A seed bank is a store of seeds kept alive for future planting. The term covers three things: conservation facilities that dry and chill seeds for the long term, community seed banks where farmers share and lend local seed, and the natural supply of dormant seeds in the soil.",
+    sections: [
+      {
+        heading: "Three meanings of seed bank",
+        list: [
+          "Conservation seed banks: facilities that store seeds of crops and wild plants as a backup against loss.",
+          "Community seed banks: local, often farmer-run collections that keep, share and lend seed of local varieties.",
+          "Soil seed banks: the living seeds buried in the ground that can sprout when conditions are right.",
+        ],
+      },
+      {
+        heading: "How conservation seed banks store seeds",
+        paragraphs: [
+          "Seeds are collected, cleaned and checked for health. They are then dried and sealed in containers, and kept cold. Dry, cool seeds age much more slowly, so many can stay alive for years or longer.",
+          "Stored seeds still lose their ability to sprout over time. Seed banks test samples now and then. When a batch weakens, they grow plants from it and collect fresh seed to refill the store.",
+        ],
+      },
+      {
+        heading: "Not every seed can be banked",
+        paragraphs: [
+          "Seeds that survive drying and cold are called orthodox seeds. Many grains, beans and vegetables fall into this group. Other seeds, called recalcitrant seeds, die if they dry out. Most acorns, mangoes, avocados and many tropical tree seeds are examples.",
+          "Plants with recalcitrant seeds are often conserved in other ways, such as living collections, field gene banks, nurseries or protected habitat. For many native trees, fresh seed sown soon after collection works best.",
+        ],
+      },
+      {
+        heading: "Community seed banks",
+        paragraphs: [
+          "A community seed bank is usually a simple store run by a village, cooperative or farmers' group. Members deposit seed after harvest. Others borrow seed at planting time and return the same amount or more after their own harvest.",
+          "These banks help keep local varieties that suit the area's soil, climate and food habits. They can also help after a poor season, when families may have eaten or lost their own seed.",
+        ],
+      },
+      {
+        heading: "The soil seed bank",
+        paragraphs: [
+          "Soil holds many seeds that are dormant, waiting for light, warmth, moisture or disturbance. When a tree falls or ground is opened, these seeds can sprout. Pioneer species often come up first this way.",
+          "The soil seed bank shapes what grows back on a site. Long periods of bare ground, heavy erosion or a single crop can leave few useful seeds. A soil seed bank can also be full of weeds, so what comes up is not always what people want.",
+        ],
+      },
+      {
+        heading: "Starting a small seed store",
+        list: [
+          "Collect seed from healthy, well-grown plants, and from several plants rather than one.",
+          "Dry orthodox seed well in shade before storing it.",
+          "Store it in sealed containers in a cool, dark, dry place.",
+          "Label each batch with the plant, place and date collected.",
+          "Sow recalcitrant tree seed fresh instead of storing it.",
+          "Check local rules, since collecting from forests or protected land may need permission.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust's Nepal program is at the planning and setup stage, and work on the hillside has not started. The plan includes a community nursery in Year 1.",
+      "Species for the layered planting planned for Years 2-3 will be chosen with the Thumki Danda Gairikharka Community Forest User Group and local nurseries. From Year 4 on, the plan is to let the forest lead. In general, natural regrowth depends partly on seeds already in the soil and seeds arriving from nearby forest.",
+    ],
+    related: [
+      "how-to-save-seeds",
+      "how-to-start-a-tree-nursery",
+      "assisted-natural-regeneration",
+      "how-to-grow-trees-from-seed",
+    ],
+  },
+  {
+    slug: "how-to-graft-fruit-trees",
+    title: "How do you graft fruit trees?",
+    metaTitle: "How to Graft Fruit Trees: Methods and Timing | ZenTrust",
+    description: "Grafting joins a cutting from one fruit tree to the roots of another. Why it is done, main methods, timing, basic steps and common mistakes.",
+    shortAnswer: "To graft a fruit tree, you join a short cutting of the variety you want (the scion) to a young rooted plant (the rootstock) so their growing layers touch. You then bind the joint and seal it. When the two heal together, the new tree bears the same fruit as the tree the scion came from.",
+    sections: [
+      {
+        heading: "Why fruit trees are grafted",
+        paragraphs: [
+          "Many fruit trees do not grow true from seed. A seed from a good apple or pear usually grows into a tree with different, often poorer fruit. Grafting copies a known variety exactly.",
+        ],
+        list: [
+          "Keeps a named variety true to type.",
+          "Lets the rootstock control tree size and vigor.",
+          "Can add tolerance to certain soils, pests or diseases through the roots.",
+          "Often brings a tree into fruit sooner than a seedling.",
+          "Can change the variety on an existing tree, or put several varieties on one tree.",
+        ],
+      },
+      {
+        heading: "Key terms",
+        list: [
+          "Scion: a short piece of young stem with buds, cut from the variety you want.",
+          "Rootstock: the rooted plant that supplies roots and the lower trunk.",
+          "Cambium: the thin growing layer between the bark and the wood. The cambium of scion and rootstock must touch for the graft to take.",
+          "Graft union: the point where the two parts heal and grow together.",
+          "Compatibility: grafts usually work within the same species. Some close relatives can be combined, but many cannot, so check before you try.",
+        ],
+      },
+      {
+        heading: "Common methods",
+        list: [
+          "Whip and tongue: scion and rootstock of similar thin size are cut at matching slants with an interlocking notch. Strong and widely used for young trees.",
+          "Cleft graft: a thicker stock is split and one or two thinner scions are wedged into the split. Common for changing the variety on an older tree.",
+          "Bark graft: scions are slipped under bark that lifts easily. Used on larger branches in spring.",
+          "Chip budding: a single bud with a thin chip of wood is set into a matching cut on the rootstock.",
+          "T-budding: a single bud is slid under flaps of bark cut in a T shape. Works when the bark separates easily from the wood.",
+        ],
+      },
+      {
+        heading: "When to graft",
+        paragraphs: [
+          "In temperate climates, scion wood is usually cut from dormant trees in winter and kept cool and slightly moist until use. Most stem grafts are then done in late winter or early spring, as the rootstock begins to wake up. Bud grafts are often done in summer, when the bark peels away easily.",
+          "In warm or tropical regions, and for evergreen fruit such as citrus or mango, timing and methods differ. Local nurseries and agricultural extension services can tell you what works for your crop and climate.",
+        ],
+      },
+      {
+        heading: "Basic steps",
+        list: [
+          "Choose healthy, disease-free scion wood about the thickness of a pencil, with several plump buds.",
+          "Use a very sharp, clean grafting knife. Cut away from your body and take care, since slips are common.",
+          "Make smooth matching cuts on scion and rootstock in single strokes, without touching the cut faces.",
+          "Fit the pieces so the cambium lines up on at least one side. Matching size matters less than matching this layer.",
+          "Wrap the union firmly with grafting tape or a rubber strip, and seal exposed cuts and the scion tip to stop drying.",
+          "Label the graft with the variety and date.",
+        ],
+      },
+      {
+        heading: "Aftercare and common mistakes",
+        paragraphs: [
+          "Watch for buds on the scion to swell and leaf out. This is a good sign, though not proof the graft has taken. Rub off shoots that grow from the rootstock below the union, or they will take over. Loosen or remove the wrap once the union has healed so it does not cut into the bark. Stake young grafts in windy places.",
+        ],
+        list: [
+          "Cambium layers not lined up, so the parts never join.",
+          "Scion wood that dried out or had already started growing.",
+          "Dull or dirty tools that crush or infect the cut.",
+          "Wrapping too loosely, so the joint moves, or leaving it on too long.",
+          "Grafting incompatible plants.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Grafting is only loosely connected to ZenTrust's current plan, which is still at the planning and setup stage. Work on the hillside has not started. The plan includes a community nursery in the first year and fruit trees among native trees and nitrogen fixers in years two and three. It does not yet say how trees will be propagated.",
+      "Which species are grown will be decided with the Thumki Danda Gairikharka Community Forest User Group and local nurseries.",
+    ],
+    related: [
+      "how-to-start-a-tree-nursery",
+      "how-to-grow-trees-from-seed",
+      "what-is-a-food-forest",
+      "how-to-plant-a-tree",
+    ],
+  },
+  {
+    slug: "what-is-a-gabion",
+    title: "What is a gabion?",
+    metaTitle: "Gabions: What They Are and How They Are Used | ZenTrust",
+    description: "A gabion is a wire mesh cage filled with stone, used for retaining walls, check dams and erosion control. How they work, where they fit and their limits.",
+    shortAnswer: "A gabion is a wire mesh cage or basket filled with rocks. Stacked or laid in place, gabions form walls, check dams and linings that hold soil and slow water. They are heavy enough to resist being moved, flexible enough to tolerate some settling, and open enough to let water drain through.",
+    sections: [
+      {
+        heading: "What a gabion is",
+        paragraphs: [
+          "A gabion is a box or cylinder made of strong steel wire mesh, usually galvanized or coated to slow rusting. It is set in place empty, then packed with hard stone that is larger than the mesh openings. The lid is wired shut, and neighboring baskets are wired together so they act as one structure.",
+          "The name comes from an Italian word for a large cage. Gabions have been used for a long time in military works, roads and river engineering. They are common in hill and mountain areas, partly because they can often be built by hand from local stone.",
+        ],
+      },
+      {
+        heading: "Common uses",
+        list: [
+          "Retaining walls that hold back soil on cut slopes and along roads.",
+          "Check dams across gullies and small streams to slow water and trap sediment.",
+          "Riverbank and stream channel protection against scour.",
+          "Thin, flat gabion mattresses that line channels or protect the toe of a slope.",
+          "Outlets and spillways where fast water would otherwise cut into soil.",
+        ],
+      },
+      {
+        heading: "Why they work",
+        list: [
+          "Weight: a filled gabion is very heavy, so it resists being pushed or washed away.",
+          "Drainage: water passes through the gaps between stones, so less pressure builds up behind a wall.",
+          "Flexibility: the mesh lets the structure tolerate some settling on uneven or shifting ground without cracking the way concrete can.",
+          "Local materials: the stone can often come from the site, which cuts transport.",
+          "Over time, silt fills the gaps and plants can root in it, which can bind the structure further, though it also reduces drainage.",
+        ],
+      },
+      {
+        heading: "Limits and risks",
+        list: [
+          "The wire is the weak point. Rust, abrasion from stones carried by floods, or damage can open the baskets.",
+          "Without a filter fabric or graded fill behind a wall, soil can wash out through the stones.",
+          "A poor foundation, or water cutting under or around the ends, can make a structure tip or fail.",
+          "Gabions need a lot of suitable stone and hand labor to fill well.",
+          "Tall walls and structures in active streams carry real risk to people and property below.",
+        ],
+      },
+      {
+        heading: "Building one well",
+        paragraphs: [
+          "Small, low gabions in a gully are a common hand-built job. Larger walls, river works and anything that protects homes, roads or paths need design by a qualified engineer. Work in streams, rivers or forest land may also need permission from local authorities, so check before starting.",
+        ],
+        list: [
+          "Dig to firm ground and set a level, stable base.",
+          "Key the ends well into the banks so water cannot go around.",
+          "Pack stone tightly by hand, with the best faces outward, and use internal bracing wires so baskets do not bulge.",
+          "Protect the area just downstream with a stone apron so falling water does not dig a hole at the base.",
+          "Inspect after heavy rain and repair broken wire early.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust reports that springs below the Chauthe hillside are drying. Work on the hillside has not started. ZenTrust's plan for the first year focuses on holding water on the slope, with contour trenches, small check dams and recharge ponds, along with a community nursery.",
+      "Gabions are one common way to build check dams in hill areas. This guide does not say which method will be used at Chauthe.",
+    ],
+    related: [
+      "check-dams",
+      "how-to-stop-erosion-on-a-slope",
+      "what-causes-landslides",
+      "what-is-a-riparian-buffer",
+    ],
+  },
+  {
+    slug: "what-is-contour-farming",
+    title: "What is contour farming?",
+    metaTitle: "Contour Farming: What It Is and How It Works | ZenTrust",
+    description: "Contour farming means plowing and planting across a slope, along its contour lines. How it slows runoff, how lines are marked, and its limits.",
+    shortAnswer: "Contour farming is plowing, planting and tending crops across a slope, following lines of equal height, instead of up and down it. Each row acts as a small barrier that slows rainwater, helps it soak in and reduces soil loss.",
+    sections: [
+      {
+        heading: "What it means",
+        paragraphs: [
+          "A contour line joins points on a slope that are at the same height. In contour farming, furrows and crop rows follow these lines, so they curve around a hill rather than running straight down it.",
+          "When rows run downhill, they act like channels. Water gathers speed and carries soil with it. When rows run across the slope, water meets a series of small ridges and slows down.",
+        ],
+      },
+      {
+        heading: "How it helps",
+        list: [
+          "Slows surface runoff, which reduces erosion.",
+          "Gives rain more time to soak into the soil.",
+          "Keeps more topsoil, seed and fertilizer in the field.",
+          "Can leave more moisture for crops in dry spells.",
+          "Costs little, since it changes the direction of work rather than adding structures.",
+        ],
+      },
+      {
+        heading: "How contour lines are marked",
+        paragraphs: [
+          "Farmers usually mark one guide line first, then lay out the other rows roughly parallel to it, adjusting where the slope changes.",
+        ],
+        list: [
+          "An A-frame: a simple wooden frame with a plumb line, walked across the slope to find level points.",
+          "A water tube level: a clear hose filled with water, using the water surface to match heights.",
+          "Surveying tools such as a builder's level or laser level, for larger or more precise work.",
+          "Stakes or stones to mark points before plowing.",
+        ],
+      },
+      {
+        heading: "Limits and trade-offs",
+        list: [
+          "It works best on gentle to moderate slopes. Steep land usually needs terraces or other structures as well.",
+          "Heavy storms can overtop the rows. Water then breaks through at the lowest point and can cut a gully.",
+          "Rows must stay close to level. A row that drifts off the contour runs slightly downhill along its length, gathering water and sending it to one spot.",
+          "Curved rows can be slower to work, especially with large machines.",
+          "Results depend on soil, rainfall and slope, so local advice is worth getting.",
+        ],
+      },
+      {
+        heading: "Practices often used with it",
+        list: [
+          "Strip cropping: bands of different crops along the contour, so a dense crop catches soil from the band above.",
+          "Grass or hedge strips planted along contours as permanent barriers.",
+          "Contour bunds, trenches and swales that hold more water than plow ridges alone.",
+          "Terraces, which turn steep slopes into a series of flatter steps.",
+          "Cover crops and mulch, which keep the soil protected between rows.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Contour farming is about cropland, and the Chauthe site is a community forest, so contour plowing is not part of ZenTrust's published plan.",
+      "The same principle guides the planned first year of work, though. ZenTrust reports that springs below the hillside are drying. The plan is to dig contour trenches that follow the shape of the land, along with small check dams and recharge ponds, to slow rain and help it soak in. This work has not started yet. It is planned with the Thumki Danda Gairikharka Community Forest User Group.",
+    ],
+    related: [
+      "contour-trenches",
+      "what-is-strip-cropping",
+      "terrace-farming",
+      "how-to-stop-erosion-on-a-slope",
+    ],
+  },
+  {
+    slug: "what-is-a-windbreak",
+    title: "What is a windbreak?",
+    metaTitle: "Windbreaks: What They Are and How They Work | ZenTrust",
+    description: "A windbreak is a row of trees or shrubs planted to slow the wind. How it protects soil, crops and homes, how to design one, and the trade-offs.",
+    shortAnswer: "A windbreak is one or more rows of trees, shrubs or tall plants set across the path of the wind to slow it down. It shelters the land behind it, which reduces soil erosion, protects crops and animals, and can cut heating and cooling needs for nearby buildings. Larger, multi-row windbreaks are often called shelterbelts.",
+    sections: [
+      {
+        heading: "What a windbreak does",
+        list: [
+          "Slows wind, which reduces the amount of soil it can blow away.",
+          "Shelters crops from physical damage and drying winds.",
+          "Lowers water loss from soil and plants on the sheltered side.",
+          "Protects livestock and buildings from cold or hot winds.",
+          "Provides habitat, food and travel corridors for birds and insects.",
+          "Can catch drifting snow, dust or spray before it reaches fields or homes.",
+        ],
+      },
+      {
+        heading: "How it works",
+        paragraphs: [
+          "A windbreak works best when it lets some air through. A partly open barrier slows the wind gently over a long distance behind it. A solid wall, by contrast, forces wind up and over, creating turbulence just behind it and a shorter sheltered zone.",
+          "The sheltered area grows with the height of the windbreak. Taller windbreaks protect a longer stretch of ground downwind, with the strongest effect fairly close behind the trees and fading with distance. There is also a smaller sheltered area on the upwind side.",
+        ],
+      },
+      {
+        heading: "Designing one",
+        list: [
+          "Run the rows across the direction of the most damaging wind, not along it.",
+          "Where space allows, use several rows of different heights, such as shrubs, small trees and tall trees, to avoid gaps near the ground.",
+          "Keep the line continuous, since gaps funnel and speed up the wind.",
+          "Extend the ends past the area you want to protect, because wind wraps around them.",
+          "Leave space between the windbreak and crops, roads or buildings for roots, shade and maintenance.",
+        ],
+      },
+      {
+        heading: "Choosing plants",
+        paragraphs: [
+          "Evergreens give shelter all year, while deciduous trees mainly protect during the growing season. Mixing species spreads risk if one is hit by pests, disease or drought. Native species are usually better adapted and support more local wildlife. Plants that also give fruit, fodder, fuel or timber can make a windbreak pay its way. Avoid species known to be invasive in your area, and check with a local forestry or extension office about what grows well there.",
+        ],
+      },
+      {
+        heading: "Trade-offs",
+        list: [
+          "Windbreaks take up land that could otherwise be cropped.",
+          "Roots and shade can compete with nearby crops for water, nutrients and light.",
+          "They take years to reach full height and need care while young.",
+          "Poorly placed windbreaks can shade roads, block views or trap cold air in low spots.",
+          "Local rules may apply near property lines, roads or power lines, so check before planting.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Windbreaks are not a specific part of ZenTrust's plan for Chauthe. Wind is not the problem ZenTrust describes there. ZenTrust reports that springs below the pine monoculture are drying, so the plan will focus on holding water first and then planting native and fruit trees in layers.",
+    ],
+    related: [
+      "what-is-a-microclimate",
+      "living-fences-and-hedgerows",
+      "what-is-agroforestry",
+      "what-is-soil-erosion",
+    ],
+  },
+  {
+    slug: "how-to-improve-clay-soil",
+    title: "How do you improve clay soil?",
+    metaTitle: "How to Improve Clay Soil: Practical Steps | ZenTrust",
+    description: "Clay soil holds water and nutrients but drains slowly and packs hard. How to improve it with organic matter, mulch, roots and less compaction.",
+    shortAnswer: "Improve clay soil by adding organic matter year after year, keeping it covered with mulch or plants, and avoiding walking on it or digging it when wet. Roots, compost and soil life slowly bind fine clay particles into crumbs, which lets air and water move through. Adding sand usually does not help.",
+    sections: [
+      {
+        heading: "How to tell if you have clay",
+        paragraphs: [
+          "Clay is made of very fine particles that pack closely together. Moist clay feels sticky and smooth. If you roll a damp pinch between your fingers, it forms a ribbon or a thin sausage that holds its shape. When dry, it often sets hard and cracks. Puddles that linger after rain are another common sign.",
+        ],
+        list: [
+          "Sticky and heavy when wet.",
+          "Hard and cracked when dry.",
+          "Slow to drain after rain or watering.",
+          "Clings to boots and tools.",
+        ],
+      },
+      {
+        heading: "Why clay is worth working with",
+        paragraphs: [
+          "Clay has real strengths. It holds water and nutrients better than sandy soil, so plants growing in it may need less feeding once the soil is in good shape. The main problem is usually structure rather than fertility. Tightly packed clay leaves little room for air, water and roots. The goal is to turn it into a crumbly soil with plenty of small spaces, not to replace it.",
+        ],
+      },
+      {
+        heading: "Steps that help",
+        list: [
+          "Add organic matter often: compost, leaf mold, aged manure or chopped plant material, spread on top or worked lightly into the surface.",
+          "Keep the soil covered with mulch so rain does not pound and seal the surface.",
+          "Grow cover crops or ground cover so living roots open channels and feed soil life.",
+          "Use deep-rooted plants, which can break up dense layers over time.",
+          "Set up permanent paths or beds so you rarely need to walk on the growing area.",
+          "Be patient: structure improves over several seasons, not in one.",
+        ],
+      },
+      {
+        heading: "What to avoid",
+        list: [
+          "Digging, tilling or walking on clay when it is wet, which squeezes out air and leaves hard clods.",
+          "Adding small amounts of sand, which can leave the soil denser and harder rather than looser.",
+          "Heavy machinery on the growing area.",
+          "Leaving soil bare for long periods, especially in heavy rain.",
+        ],
+      },
+      {
+        heading: "Raised beds and drainage",
+        paragraphs: [
+          "Where water sits for a long time, raised beds or mounds can give roots a drier zone to grow in. Some gardeners also plant on gentle ridges. Bigger drainage problems, slopes that slump, or building near clay soils are different matters. Clay can swell and shrink as it wets and dries, so for drains, walls or foundations, ask a local engineer or soil specialist.",
+        ],
+      },
+      {
+        heading: "Getting a soil test",
+        paragraphs: [
+          "A basic soil test can show pH and nutrient levels, and sometimes whether a soil has too much sodium. Some amendments, such as gypsum, help mainly in specific conditions, so it is better to test first than to guess. Local extension services, agricultural offices or garden centers can often point you to a testing lab and advice for your area.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "ZenTrust has not described the soil type on the Chauthe hillside, so this guide applies to the plan only in a general way. Work on the hillside has not started yet.",
+      "In years 2 to 3, ZenTrust plans to plant in layers, including native and fruit trees, nitrogen fixers and ground cover. Plants and ground cover like these are the kind of living cover this guide describes. Species will be chosen with the community forest user group and local nurseries.",
+    ],
+    related: [
+      "what-is-soil-compaction",
+      "what-is-soil-organic-matter",
+      "cover-crops",
+      "what-is-loam-soil",
+    ],
+  },
+  {
+    slug: "what-is-strip-cropping",
+    title: "What is strip cropping?",
+    metaTitle: "Strip Cropping: What It Is and How It Slows Erosion | ZenTrust",
+    description: "Strip cropping alternates bands of row crops with dense, soil-holding crops across a slope or the wind. Types, benefits, limits and how it is laid out.",
+    shortAnswer: "Strip cropping is a way of farming a field in long, alternating bands. Strips of row crops such as corn or potatoes sit between strips of dense, soil-holding crops such as grasses, legumes or small grains. The dense strips slow water or wind and catch soil before it leaves the field.",
+    sections: [
+      {
+        heading: "How it works",
+        paragraphs: [
+          "Row crops leave a lot of bare soil between plants, especially early in the season. Rain runs over that soil and carries it away. In strip cropping, a band of thick, close-growing plants sits just downhill or downwind of each row-crop band. Water and wind slow down when they hit the dense strip, and much of the loose soil settles there.",
+          "The strips are usually rotated over the years. A strip in grass or clover one season may grow corn later, so each part of the field gets time under a soil-building crop.",
+        ],
+      },
+      {
+        heading: "Main types",
+        list: [
+          "Contour strip cropping: strips follow the contour lines of a slope, so each band runs level across the hill.",
+          "Field strip cropping: strips run in straight, parallel bands across the general slope where the land is too uneven to follow contours exactly.",
+          "Wind strip cropping: strips run across the direction of the prevailing wind to reduce wind erosion on flat or gently rolling land.",
+          "Buffer strip cropping: permanent strips of grass or legumes are kept between crop strips, often on steep or badly eroded spots.",
+        ],
+      },
+      {
+        heading: "Benefits",
+        list: [
+          "Less soil lost to runoff and wind.",
+          "More rain soaks in where water is slowed down.",
+          "Legume strips can add nitrogen for the crops that follow.",
+          "Rotating strips can break pest and disease cycles.",
+          "Part of the field usually has living cover.",
+        ],
+      },
+      {
+        heading: "Limits and trade-offs",
+        list: [
+          "Fields are harder to work with large machines, and turning at strip ends takes time.",
+          "Strip width has to suit the slope, soil and equipment, which takes planning.",
+          "On steep slopes, strips alone may not be enough. Terraces, trenches or permanent cover may be needed.",
+          "Less land is in the main cash crop in any one year, which can affect income.",
+        ],
+      },
+      {
+        heading: "Laying out strips",
+        paragraphs: [
+          "For contour strips, the first step is marking a level line across the slope with a simple A-frame, water level or survey tool. Other strips are laid out from that key line. Steeper slopes generally call for narrower strips. Grassed waterways are often added where water naturally collects, so runoff has a safe path down the field.",
+          "Local soil conservation services can help with layout and may know of rules or support programs in your area.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Strip cropping is a method for crop fields, and it is not part of ZenTrust's plan for the community forest hillside in Chauthe.",
+      "The plan does share one idea with it: working across the slope rather than down it. ZenTrust reports that springs below the hillside are drying. In the first year, ZenTrust plans to dig contour trenches and build small check dams and recharge ponds to hold water on the hill.",
+    ],
+    related: [
+      "what-is-contour-farming",
+      "how-to-stop-erosion-on-a-slope",
+      "crop-rotation-and-intercropping",
+      "terrace-farming",
+    ],
+  },
 ];
 
 export function getGuide(slug: string): Guide {
