@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { GlobalHero } from "@/components/hero/GlobalHero";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
 import { FilmCard } from "@/components/film/FilmCard";
+import { YearEndAppeal } from "@/components/appeal/YearEndAppeal";
 
 export const metadata: Metadata = {
   title: "Why do humans keep searching for the purpose of life?",
@@ -163,6 +164,8 @@ for the purpose of life?`}
             </p>
           </Details>
         </div>
+
+        <YearEndAppeal source="question:purpose-of-life" />
 
         <FilmCard source="question:purpose-of-life" />
 

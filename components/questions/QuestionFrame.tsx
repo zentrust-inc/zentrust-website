@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { RitualPause } from "@/components/hero/RitualPause";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
 import { FilmCard } from "@/components/film/FilmCard";
+import { YearEndAppeal } from "@/components/appeal/YearEndAppeal";
 
 type QuestionSection = {
   /** Sub-question title (must end with ?) */
@@ -91,6 +92,7 @@ export function QuestionFrame({
 
       {/* ================= EXPANDABLE SECTIONS ================= */}
       <section className="mx-auto max-w-3xl px-6 pb-20">
+        <YearEndAppeal source={`question:${slug}`} variant="strip" />
         {sections.map((section, i) => (
           <details
             key={i}
@@ -120,6 +122,11 @@ export function QuestionFrame({
           </details>
         ))}
       </section>
+
+      {/* ================= SEASONAL APPEAL (GivingTuesday / year-end) ================= */}
+      <div className="px-6">
+        <YearEndAppeal source={`question:${slug}`} />
+      </div>
 
       {/* ================= NEXT STEP (optional) ================= */}
       {nextStep && (
