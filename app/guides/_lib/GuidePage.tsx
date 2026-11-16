@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { InlineSignup } from "@/components/newsletter/InlineSignup";
 import { FilmCard } from "@/components/film/FilmCard";
+import { YearEndAppeal } from "@/components/appeal/YearEndAppeal";
 import { GUIDES, getGuide } from "./guides";
 
 export function guideMetadata(slug: string): Metadata {
@@ -37,6 +38,8 @@ export function GuidePage({ slug }: { slug: string }) {
           <span className="font-semibold">Short answer: </span>
           {g.shortAnswer}
         </p>
+
+        <YearEndAppeal source={`guide:${g.slug}`} variant="strip" />
 
         {g.sections.map((s) => (
           <section key={s.heading} className="mt-10">
