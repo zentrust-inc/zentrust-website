@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Leaf, TreePine, Microscope, Globe } from "lucide-react";
 import { GlobalHero } from "@/components/hero/GlobalHero";
+import { GivingTuesdayBanner } from "@/components/givingtuesday/GivingTuesdayBanner";
 
 export default function StewardshipPortalPage() {
   return (
     <div className="min-h-screen">
+      <GivingTuesdayBanner />
       <GlobalHero
         kicker="Stewardship"
         headline="Research on regenerative systems and land stewardship."

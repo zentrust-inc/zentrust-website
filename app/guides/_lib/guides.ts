@@ -1133,6 +1133,443 @@ export const GUIDES: Guide[] = [
     ],
     related: ["what-is-a-food-forest", "what-is-syntropic-agriculture", "nitrogen-fixing-trees"],
   },
+  {
+    slug: "what-is-composting",
+    title: "What is composting, and how do you make compost?",
+    metaTitle: "What Is Composting? How to Make Compost, Simply | ZenTrust",
+    description:
+      "Composting turns food scraps, leaves and manure into dark, crumbly soil food. How it works, what to add, a simple method and common problems.",
+    shortAnswer:
+      "Composting is the controlled rotting of plant and food waste by microbes, worms and fungi until it becomes compost: a dark, crumbly material that feeds soil life and helps soil hold water. A good pile needs a mix of 'greens' and 'browns', air and moisture.",
+    sections: [
+      {
+        heading: "How composting works",
+        paragraphs: [
+          "Bacteria and fungi break down fresh organic matter, then worms, insects and other small creatures finish the job. In a well-built pile the microbes work so fast that the middle heats up, which speeds decomposition and kills many weed seeds.",
+          "The finished compost is not just fertilizer. It is mostly stable organic matter and living organisms that improve soil structure, so soil drains better when wet and holds more water when dry.",
+        ],
+      },
+      {
+        heading: "Greens and browns",
+        list: [
+          "Greens (rich in nitrogen): fresh grass clippings, vegetable scraps, fresh weeds without seeds, fresh manure from plant-eating animals.",
+          "Browns (rich in carbon): dry leaves, straw, shredded cardboard, small twigs, sawdust from untreated wood.",
+          "A common rule of thumb is roughly two to three parts browns to one part greens by volume.",
+          "Too many greens: the pile turns slimy and smells. Too many browns: it sits and barely changes.",
+        ],
+      },
+      {
+        heading: "A simple method",
+        list: [
+          "Choose a shaded spot on bare ground so worms can move in.",
+          "Start with coarse twigs at the bottom for air, then build alternating layers of browns and greens.",
+          "Keep it as damp as a wrung-out sponge.",
+          "Turn or fork the pile every week or two to add air; it will finish faster.",
+          "Compost is ready when it is dark, crumbly and smells like a forest floor, often in two to six months.",
+        ],
+      },
+      {
+        heading: "What to keep out of a home pile",
+        list: [
+          "Meat, fish, dairy and oily food, which attract animals and smell.",
+          "Pet and human waste, which can carry disease unless handled in a properly designed system.",
+          "Diseased plants and weeds that have set seed, unless the pile gets truly hot.",
+          "Treated wood, glossy printed paper and plastic-coated items.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Compost is planned for the community nursery, where native and fruit seedlings will be raised in soil enriched with compost made from local leaf litter, crop residues and manure.",
+      "On the hillside itself, the plan relies mostly on mulch and 'chop and drop' pruning, which compost in place on the ground without hauling material uphill.",
+    ],
+    related: ["what-is-mulch", "what-is-topsoil", "chop-and-drop"],
+  },
+  {
+    slug: "what-is-mulch",
+    title: "What is mulch, and why use it?",
+    metaTitle: "What Is Mulch? Benefits, Types and How to Use It | ZenTrust",
+    description:
+      "Mulch is a layer of material laid over soil. Its benefits for water, weeds and soil life, the main types, how thick to lay it and common mistakes.",
+    shortAnswer:
+      "Mulch is any layer of material spread on top of soil, such as wood chips, straw, leaves or compost. It shields the soil from sun, rain and wind, so the soil stays moist and cool, weeds struggle, and soil life has food as the mulch slowly breaks down.",
+    sections: [
+      {
+        heading: "Benefits of mulching",
+        list: [
+          "Less evaporation, so soil stays moist longer between rains or watering.",
+          "Rain soaks in instead of hammering and sealing the bare surface.",
+          "Fewer weeds, because light can't reach their seeds.",
+          "Steadier soil temperature: cooler in summer, less frozen in winter.",
+          "Organic mulches feed worms, fungi and microbes as they rot, building soil over time.",
+          "Less soil splashed or washed away in heavy rain.",
+        ],
+      },
+      {
+        heading: "Main types of mulch",
+        list: [
+          "Wood chips: long-lasting, good around trees and shrubs and on paths.",
+          "Straw: light and quick to break down, common in vegetable beds (use straw, not seedy hay).",
+          "Leaves: free in autumn; shredding stops them matting into a soggy layer.",
+          "Compost: feeds soil fast but breaks down quickly and suppresses weeds less.",
+          "Living mulch: low ground-cover plants that keep the soil covered all the time.",
+          "Inorganic mulches such as gravel or plastic sheet hold moisture but do not feed the soil.",
+        ],
+      },
+      {
+        heading: "How to mulch well",
+        list: [
+          "Lay it on moist soil, after rain or watering, not on dry ground.",
+          "Aim for about 5 to 10 cm (2 to 4 inches) for coarse mulch; thinner for fine material.",
+          "Keep mulch a hand's width away from tree trunks and plant stems to avoid rot.",
+          "Top it up as it breaks down; a mulched surface should never return to bare soil.",
+        ],
+      },
+      {
+        heading: "Common mistakes",
+        list: [
+          "'Mulch volcanoes' piled against tree trunks.",
+          "Mulch so thick and fine that water and air can't get through.",
+          "Using weed-filled hay or material sprayed with persistent herbicides.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Keeping soil covered is central to the plan for the hillside above Kakani. Pine needles, pruned branches and ground-cover plants are planned as mulch around new plantings so monsoon rain soaks in instead of running off.",
+      "Because pine needles burn easily in the dry season, the plan is to mix them with greener material and keep firebreaks, agreed with the community forest user group.",
+    ],
+    related: ["sheet-mulching", "chop-and-drop", "what-is-composting"],
+  },
+  {
+    slug: "what-is-an-aquifer",
+    title: "What is an aquifer, and what is the water table?",
+    metaTitle: "What Is an Aquifer? Aquifers and the Water Table, Explained | ZenTrust",
+    description:
+      "An aquifer is underground rock or soil that holds and passes water. What the water table is, how aquifers refill, and why wells and springs dry up.",
+    shortAnswer:
+      "An aquifer is a layer of underground rock, sand or gravel that holds water in its pores and cracks and lets it move, so wells and springs can draw from it. The water table is the top of the zone where the ground is completely soaked with water.",
+    sections: [
+      {
+        heading: "How water gets underground",
+        paragraphs: [
+          "When rain falls on land, some runs off, some evaporates or is used by plants, and some soaks down through the soil. The water that keeps moving down past the roots eventually reaches a zone where every gap is full of water. That zone is groundwater, and its upper surface is the water table.",
+          "The water table is not flat. It roughly follows the shape of the land and rises after wet seasons and falls in dry ones or when water is pumped out faster than it is replaced.",
+        ],
+      },
+      {
+        heading: "Types of aquifers",
+        list: [
+          "Unconfined aquifers: open to the surface above them, so they refill directly from rain soaking in. Many shallow wells and springs draw from these.",
+          "Confined aquifers: trapped between layers of clay or solid rock. They refill only where the layer reaches the surface, sometimes far away, and can take very long to recover.",
+          "Fractured-rock aquifers: water moves through cracks in hard rock, common in mountains. They hold less water and respond quickly to how much rain soaks in nearby.",
+        ],
+      },
+      {
+        heading: "Where springs come from",
+        paragraphs: [
+          "A spring appears where the water table meets the ground surface, or where groundwater flowing along a crack or layer comes out on a slope. If less rain soaks in uphill, or more is pumped, the water table drops and springs weaken or dry, often first in the dry season.",
+        ],
+      },
+      {
+        heading: "Why aquifers are falling in many places",
+        list: [
+          "Pumping more water than rain replaces.",
+          "Paving, compaction and bare soil that make rain run off instead of soaking in.",
+          "Loss of forest and ground cover in recharge areas.",
+          "Changes in rainfall patterns, with more intense storms and longer dry spells.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Springs in Nepal's middle hills mostly come from shallow, fractured-rock aquifers that refill from rain soaking in on nearby slopes. That makes what happens on the hillside directly important for the water downhill.",
+      "ZenTrust plans contour trenches, recharge ponds and layered tree cover so more monsoon rain soaks in, and plans to record spring flow over the years. These are plans; results will be measured, not assumed.",
+    ],
+    related: ["groundwater-recharge", "why-are-springs-drying-up", "what-is-a-watershed"],
+  },
+  {
+    slug: "what-is-topsoil",
+    title: "What is topsoil, and what is humus?",
+    metaTitle: "What Is Topsoil? Topsoil, Humus and Subsoil Explained | ZenTrust",
+    description:
+      "Topsoil is the dark upper layer of soil where most roots and soil life live. What humus is, how topsoil forms, and why losing it matters.",
+    shortAnswer:
+      "Topsoil is the upper layer of soil, usually the top 5 to 30 cm, where most roots, organic matter and soil life are found. Humus is the dark, stable organic matter in topsoil, left after plant and animal material has decomposed, which helps soil hold water and nutrients.",
+    sections: [
+      {
+        heading: "The layers of soil",
+        list: [
+          "Leaf litter: fallen leaves and twigs on the surface, often thin or missing on farmed or eroded land.",
+          "Topsoil: dark, crumbly and full of roots, fungi, worms and microbes.",
+          "Subsoil: lighter in color, with less organic matter and life; often heavier with clay.",
+          "Parent material and bedrock: the broken and solid rock that soil slowly forms from.",
+        ],
+      },
+      {
+        heading: "What humus does",
+        list: [
+          "Acts like a sponge, holding water that plants can use between rains.",
+          "Holds onto nutrients so they are not washed away.",
+          "Glues soil particles into crumbs, leaving spaces for air, water and roots.",
+          "Gives topsoil its dark color, which also helps it warm in spring.",
+        ],
+      },
+      {
+        heading: "How topsoil forms, and how it is lost",
+        paragraphs: [
+          "Topsoil forms very slowly as rock weathers and plants, roots and soil life add organic matter. Building a few centimeters can take many decades or longer, while heavy rain on bare ground can strip it away in a few storms.",
+          "Most topsoil loss comes from erosion by water and wind on bare or heavily tilled land, from compaction, and from organic matter being used up faster than it is returned.",
+        ],
+      },
+      {
+        heading: "How to protect and rebuild it",
+        list: [
+          "Keep soil covered with plants or mulch all year.",
+          "Keep living roots in the ground as much as possible.",
+          "Return organic matter: compost, mulch, crop residues, pruned material.",
+          "Disturb soil less: reduce digging and plowing where you can.",
+          "Slow water on slopes so it soaks in instead of carrying soil away.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Parts of the Chauthe hillside show thin, exposed soil and erosion gullies under pine. Rebuilding topsoil is planned through ground cover, mulch, pruned material left on the ground, and trenches that slow runoff.",
+      "The program is in its planning and setup stage, and soil changes will be described only once they are measured.",
+    ],
+    related: ["what-is-soil-erosion", "what-is-composting", "cover-crops"],
+  },
+  {
+    slug: "no-till-farming",
+    title: "What is no-till farming?",
+    metaTitle: "What Is No-Till Farming? No-Till and No-Dig, Explained | ZenTrust",
+    description:
+      "No-till farming grows crops without plowing or digging the soil. How it works, its benefits for soil and water, its trade-offs, and no-dig gardening.",
+    shortAnswer:
+      "No-till farming means growing crops without plowing, digging or turning the soil. Seeds are planted directly into the previous crop's residue or a mulch, which protects the surface, so soil structure, fungi and organic matter are left largely undisturbed.",
+    sections: [
+      {
+        heading: "Why stop tilling?",
+        paragraphs: [
+          "Plowing loosens soil and buries weeds, but it also breaks up the crumb structure and fungal networks that hold soil together, speeds the loss of organic matter, and leaves the surface bare and easy to wash away.",
+          "Without tillage, old roots leave channels that let water soak in, the surface stays covered with residue, and soil life rebuilds structure over a few years.",
+        ],
+      },
+      {
+        heading: "Benefits",
+        list: [
+          "Less erosion, because the surface stays covered.",
+          "Better water infiltration and less runoff over time.",
+          "More soil organic matter near the surface.",
+          "Less fuel, labor and machinery than repeated plowing.",
+        ],
+      },
+      {
+        heading: "Trade-offs",
+        list: [
+          "Weeds must be managed another way; many large farms rely on herbicides, which some growers want to avoid.",
+          "Soil can be cooler and wetter in spring, so planting may be slower.",
+          "Benefits build over several years, and the first seasons can see lower yields.",
+          "It works best combined with cover crops and diverse rotations, not on its own.",
+        ],
+      },
+      {
+        heading: "No-dig gardening",
+        paragraphs: [
+          "In gardens the same idea is often called no-dig. Instead of digging, gardeners add compost or mulch on top each year and plant into it, letting worms and roots do the mixing. Sheet mulching is a common way to start a no-dig bed on grass.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The planned food forest above Kakani is a no-dig system by design: trees, shrubs and ground cover are planted into small pits, and soil is built from mulch and pruned material on the surface rather than by plowing the slope.",
+      "Digging is planned only for contour trenches and small ponds to slow water, and only where the community forest user group agrees.",
+    ],
+    related: ["sheet-mulching", "cover-crops", "what-is-topsoil"],
+  },
+  {
+    slug: "what-is-desertification",
+    title: "What is desertification?",
+    metaTitle: "What Is Desertification? Causes, Effects and Solutions | ZenTrust",
+    description:
+      "Desertification is land in dry regions losing its ability to support plants, water and people. Causes, effects and what can reverse it.",
+    shortAnswer:
+      "Desertification is land degradation in dry areas: soil, water and vegetation decline until the land can support far less life. It is not deserts simply spreading. It is mostly caused by how land is used, made worse by drought and climate change.",
+    sections: [
+      {
+        heading: "What desertification is, and isn't",
+        paragraphs: [
+          "The UN defines desertification as land degradation in arid, semi-arid and dry sub-humid areas resulting from various factors, including climatic variations and human activities. The land does not have to turn into sand dunes; it loses soil, cover and the ability to hold water.",
+          "Similar degradation happens in wetter places too, including hill regions, where it is usually called land degradation.",
+        ],
+      },
+      {
+        heading: "Main causes",
+        list: [
+          "Overgrazing that strips vegetation and compacts soil.",
+          "Clearing forest and shrubs for farming, fuel or timber.",
+          "Farming that leaves soil bare, or overuses water for irrigation.",
+          "Drought and rising temperatures that stress already weakened land.",
+        ],
+      },
+      {
+        heading: "Effects",
+        list: [
+          "Topsoil blows or washes away and harvests fall.",
+          "Rain runs off instead of soaking in, so wells and springs decline.",
+          "More dust storms and more severe floods after heavy rain.",
+          "People are pushed into poverty or forced to move.",
+        ],
+      },
+      {
+        heading: "What helps reverse it",
+        list: [
+          "Restoring plant cover: trees, shrubs, grasses and ground cover.",
+          "Slowing and storing water with trenches, half-moon pits, terraces and check dams.",
+          "Better grazing management that lets land rest and recover.",
+          "Farmer-managed natural regeneration: protecting and pruning tree stumps and roots that are already there.",
+          "Local ownership: restoration lasts when the people who use the land lead and benefit.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Chauthe is not a desert, but its hillside shows some of the same signs: thin soil, gullies and springs that people say have weakened over the years.",
+      "ZenTrust's plan uses the same tools that work against desertification: slowing water on the slope, covering the soil, and planting diverse native trees, with the community forest user group in charge of the land.",
+    ],
+    related: ["what-is-soil-erosion", "how-to-stop-erosion-on-a-slope", "groundwater-recharge"],
+  },
+  {
+    slug: "companion-planting",
+    title: "What is companion planting?",
+    metaTitle: "Companion Planting: What It Is and What Actually Works | ZenTrust",
+    description:
+      "Companion planting means growing plants together so they help each other. The ideas behind it, classic pairings, the Three Sisters and what evidence supports.",
+    shortAnswer:
+      "Companion planting is growing different plants close together because they help each other: by sharing space and light well, feeding the soil, attracting helpful insects or confusing pests. Some pairings are well supported; many popular charts are folklore.",
+    sections: [
+      {
+        heading: "How companions can help each other",
+        list: [
+          "Nitrogen fixing: beans, peas and clover host bacteria that add nitrogen to the soil over time.",
+          "Physical support and shade: tall plants support climbers or shade plants that prefer less sun.",
+          "Ground cover: low, spreading plants keep soil covered and shade out weeds.",
+          "Attracting beneficial insects: flowering herbs such as dill, coriander and alyssum feed predators of pests.",
+          "Trap crops: a plant pests prefer, grown to draw them away from the main crop.",
+        ],
+      },
+      {
+        heading: "The Three Sisters",
+        paragraphs: [
+          "A well-known example from Indigenous agriculture in the Americas grows maize, climbing beans and squash together. The maize supports the beans, the beans add nitrogen, and the squash's broad leaves shade the soil and suppress weeds.",
+        ],
+      },
+      {
+        heading: "What the evidence says",
+        paragraphs: [
+          "Mixed planting in general (intercropping) is well studied and often gives more total harvest from the same land and fewer pest outbreaks than single crops. Specific claims about one plant 'loving' or 'hating' another are often untested.",
+          "Treat companion charts as ideas to try, and watch what happens in your own garden.",
+        ],
+      },
+      {
+        heading: "Tips",
+        list: [
+          "Give each plant enough light, water and space; crowding causes more harm than any bad 'pairing'.",
+          "Mix heights and root depths so plants share resources rather than compete for the same ones.",
+          "Add flowers throughout the garden for pollinators and pest predators.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "A food forest is companion planting at the scale of a hillside. The plan for Chauthe pairs nitrogen-fixing support trees with native and fruit trees, and fills lower layers with shrubs, herbs and ground cover.",
+      "Species will be chosen with the community forest user group and local nurseries, favoring plants that already grow well in the area.",
+    ],
+    related: ["crop-rotation-and-intercropping", "nitrogen-fixing-trees", "food-forest-layers"],
+  },
+  {
+    slug: "what-is-a-rain-garden",
+    title: "What is a rain garden?",
+    metaTitle: "What Is a Rain Garden? How It Works and How to Build One | ZenTrust",
+    description:
+      "A rain garden is a shallow planted dip that catches runoff from roofs and paving so it soaks in. How it works, where to put it, plants and steps.",
+    shortAnswer:
+      "A rain garden is a shallow, planted hollow that collects rainwater running off roofs, driveways and lawns, and lets it soak into the ground within a day or two. It reduces runoff and flooding, filters pollutants and refills groundwater.",
+    sections: [
+      {
+        heading: "How a rain garden works",
+        paragraphs: [
+          "Hard surfaces send rain straight into drains and streams, carrying soil, oil and fertilizer with it. A rain garden intercepts that water in a shallow basin. Deep-rooted plants and loose soil let it infiltrate, and soil microbes and roots help break down or trap pollutants.",
+          "A well-built rain garden drains within about a day or two, so it does not hold standing water long enough for mosquitoes to breed.",
+        ],
+      },
+      {
+        heading: "Where to put one",
+        list: [
+          "Where runoff naturally flows, such as below a downspout or at the low edge of a lawn.",
+          "At least about 3 m (10 ft) from building foundations, so water does not seep into basements.",
+          "Not over septic systems, utility lines or areas where water already ponds for days.",
+          "Test drainage first: dig a hole, fill it with water, and check it empties within a day.",
+        ],
+      },
+      {
+        heading: "Building it",
+        list: [
+          "Size: often about a fifth to a third of the roof or paved area that drains to it, depending on soil.",
+          "Depth: usually 10 to 20 cm (4 to 8 inches), with a level bottom.",
+          "Loosen the soil and mix in compost if it is heavy clay.",
+          "Plant deep-rooted, preferably native plants that tolerate both short flooding and dry spells.",
+          "Mulch the surface and add stones where water enters, so it does not scour the soil.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "The same principle, catch runoff and let it soak in, is behind the recharge ponds and contour trenches planned on the hillside above Kakani.",
+      "In villages, small planted basins below roofs and paths are one simple idea ZenTrust plans to share alongside the hillside work.",
+    ],
+    related: ["recharge-ponds", "rainwater-harvesting-in-the-hills", "groundwater-recharge"],
+  },
+  {
+    slug: "crop-rotation-and-intercropping",
+    title: "What are crop rotation and intercropping?",
+    metaTitle: "What Is Crop Rotation? Crop Rotation and Intercropping | ZenTrust",
+    description:
+      "Crop rotation changes which crop grows where each season; intercropping grows crops side by side. How each works, benefits and simple examples.",
+    shortAnswer:
+      "Crop rotation means growing different types of crops in the same place in a planned sequence over seasons or years. Intercropping means growing two or more crops in the same field at the same time. Both use diversity to protect soil and reduce pests.",
+    sections: [
+      {
+        heading: "Crop rotation",
+        paragraphs: [
+          "Growing the same crop in the same spot year after year lets its particular pests and diseases build up and drains the same nutrients. Rotating breaks those cycles.",
+          "A simple garden rotation moves four groups around four beds: legumes (beans, peas), then leafy crops that use the nitrogen they leave, then fruiting crops (tomatoes, squash), then roots.",
+        ],
+      },
+      {
+        heading: "Benefits of rotation",
+        list: [
+          "Fewer soil-borne pests and diseases.",
+          "Legumes in the sequence add nitrogen for the next crop.",
+          "Different root depths use and build soil at different levels.",
+          "Including cover crops or pasture in the rotation keeps soil covered.",
+        ],
+      },
+      {
+        heading: "Intercropping",
+        list: [
+          "Mixed intercropping: crops grown together with no set pattern.",
+          "Row intercropping: alternating rows, such as maize with beans or soybean.",
+          "Strip intercropping: wider strips that can still be worked separately.",
+          "Relay intercropping: a second crop sown into the first before it is harvested.",
+        ],
+      },
+      {
+        heading: "Benefits and trade-offs of intercropping",
+        paragraphs: [
+          "Intercrops often produce more total harvest per area than the same crops grown separately, cover the soil better and lower the risk of losing everything to one pest or bad season. They are harder to mechanize and need careful choice of crops that don't compete too strongly.",
+        ],
+      },
+    ],
+    inChauthe: [
+      "Farmers in Nepal's hills have long mixed crops, such as maize with beans or millet on terraces. A food forest takes that diversity further, with many species growing together permanently.",
+      "Between young trees on the hillside, the plan includes short-lived ground covers and support plants that will change as the forest grows, a kind of rotation in time.",
+    ],
+    related: ["companion-planting", "cover-crops", "terrace-farming"],
+  },
 ];
 
 export function getGuide(slug: string): Guide {
